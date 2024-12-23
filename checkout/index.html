@@ -124,19 +124,10 @@
             background-color: #f9f9f9;
         }
         .container {
-            height: 200px;
+            height: 500px;
             position: relative;
-            border: 3px solid rgb(0, 22, 145);
-            align-content: center;
-            text-align: center;
-        }
-
-        .vertical-center {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+            border: 1px solid rgb(0, 22, 145);
+            align-content: center;;
         }
     </style>
 </head>
@@ -160,19 +151,8 @@
 
     <!-- checkout -->
     <section>
-        <div class="container">
-            <div class="vertical-center">
-                <div id="paypal-container">
-                    <script src="https://www.paypal.com/sdk/js?client-id=BAAIzWttwGpOaVoBUrC3unsL7pFkVFPMiSUU3uYCOPDmZNAkF2-0M8IFlx1VcKPu5NIQWB4Xwaft9ixZg4&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
-                    <div id="paypal-container-59FYM4EDA8QQU"></div>
-                    <script>
-                        paypal.HostedButtons({
-                            hostedButtonId: "59FYM4EDA8QQU",
-                        }).render("#paypal-container-59FYM4EDA8QQU");
-                    </script>
-                </div>
-            </div>
-        </div>
+        <h1>Paypal Checkout</h1>
+        <a href="https://www.paypal.com/ncp/payment/59FYM4EDA8QQU" class="cta-button">Buy Now</a>
     </section>
      <!-- end checkout -->
 
