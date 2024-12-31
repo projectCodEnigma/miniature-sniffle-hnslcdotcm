@@ -10,12 +10,19 @@
 
     <!-- About Page -->
     <url>
-        <loc>https://www.hanslacida.com/#about</loc>
+        <loc>https://www.hanslacida.com/about</loc>
         <lastmod>2024-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <!-- About Page sub cat digital marketing-->
+    <url>
+        <loc>https://www.hanslacida.com/about/digital-marketing</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <!-- Services Page -->
     <url>
         <loc>https://www.hanslacida.com/services/</loc>
@@ -39,28 +46,34 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
+    <!-- Case Studies -->
+    <url>
+        <loc>https://www.hanslacida.com/case-studies</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     <!-- Hypothetical Case Studies -->
     <url>
-        <loc>https://www.hanslacida.com/case-studies/saas-entertainment</loc>
+        <loc>https://www.hanslacida.com/case-studies/hypothetical-case-studies/global-streaming</loc>
         <lastmod>2024-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.hanslacida.com/case-studies/global-streaming</loc>
+        <loc>https://www.hanslacida.com/case-studies/hypothetical-case-studies/logistics-company</loc>
         <lastmod>2024-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.hanslacida.com/case-studies/luxury-brand</loc>
+        <loc>https://www.hanslacida.com/case-studies/hypothetical-case-studies/luxury-brand</loc>
         <lastmod>2024-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.hanslacida.com/case-studies/logistics-company</loc>
+        <loc>https://www.hanslacida.com/case-studies/hypothetical-case-studies/saas-entertainment</loc>
         <lastmod>2024-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

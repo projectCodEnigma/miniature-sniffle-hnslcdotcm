@@ -79,6 +79,8 @@
             font-size: 1.8em;
             color: #2c3e50;
         }
+    
+        
         footer {
             background-color: #0d6bc2;
             color: white;
@@ -115,6 +117,81 @@
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+                /* Centering the Header */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0d6bc2; /* Optional for a cleaner look */
+        }
+
+        /* Center Align Navigation */
+        header nav {
+            display: inline-flex; /* Inline-flex keeps it centered */
+            justify-content: center;
+            gap: 15px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        /* General Navigation Styling */
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Specific Styling */
+        .dropdown-container {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%); /* Center the dropdown */
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Show Dropdown on Hover */
+        .dropdown-container:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -122,12 +199,22 @@
         <h1>PPC Management Packages</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/#about">About</a>
+            <div class="dropdown-container">
+                <a href="/about" class="dropdown-toggle">About</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/about/digital-marketing">Digital Marketing</a></li>
+                    <li><a href="/about/business-consulting">Business Consulting</a></li>
+                    <li><a href="/about/zelhan">Composer & Songwriter</a></li>
+                    <li><a href="/about/nero-empire">Music Licensing</a></li>
+                </ul>
+            </div>
             <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
+            <a href="/case-studies/" class="dropdown-toggle">Case Studies</a>
             <a href="/contact/">Contact</a>
         </nav>
     </header>
+    
+    
 
     <section class="hero">
         <h1>Choose Your PPC Plan</h1>
@@ -256,7 +343,7 @@
             <a href="/#about">About</a>
             <a href="/services/">Services</a>
             <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/case studies/">Case Studies</a>
+            <a href="/case-studies/">Case Studies</a>    
             <a href="/contact/">Contact</a>
     </footer>
 </body>
