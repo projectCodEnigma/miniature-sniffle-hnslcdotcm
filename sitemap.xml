@@ -16,6 +16,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- PPC management Page -->
+    <url>
+        <loc>https://www.hanslacida.com/ppc-management</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- About Page 4 Subcategories-->
     <url>
         <loc>https://www.hanslacida.com/about/digital-marketing</loc>
@@ -44,6 +52,14 @@
     <!-- Services Page -->
     <url>
         <loc>https://www.hanslacida.com/services/</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Services - PPC Management Page -->
+    <url>
+        <loc>https://www.hanslacida.com/services/ppc-management</loc>
         <lastmod>2024-12-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
