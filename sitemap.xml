@@ -80,6 +80,14 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Lead Marketing Firm Page -->
+    <url>
+        <loc>https://www.hanslacida.com/leading-marketing-firm</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <!-- Case Studies -->
     <url>
         <loc>https://www.hanslacida.com/case-studies</loc>
