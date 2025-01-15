@@ -81,6 +81,21 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Work With Me Page -->
+    <url>
+        <loc>https://www.hanslacida.com/work-with-me/</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Blog Page -->
+    <url>
+        <loc>https://www.hanslacida.com/blog/</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Stop managing ads Page -->
     <url>
         <loc>https://www.hanslacida.com/stop-managing-ads/</loc>
