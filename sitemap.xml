@@ -485,6 +485,13 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/locations/ppc-management-services-milwaukee</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
     <!-- About Page - Business Consulting Locations-->
     <url>
         <loc>https://www.hanslacida.com/about/business-consulting/locations/nyc</loc>
