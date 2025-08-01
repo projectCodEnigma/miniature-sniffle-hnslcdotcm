@@ -576,4 +576,11 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://www.hanslacida.com/about/achievements</loc>
+        <lastmod>2025-8-1</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
