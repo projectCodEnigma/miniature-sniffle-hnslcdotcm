@@ -1,0 +1,361 @@
+/* ===================================
+   HansLacida.com - Main CSS Input
+   =================================== */
+
+/* Import Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap');
+
+/* ===================================
+   Custom Base Styles
+   =================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1a3cd4;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #152a9e;
+  }
+
+  /* Focus styles */
+  *:focus {
+    outline: 2px solid #1a3cd4;
+    outline-offset: 2px;
+  }
+
+  /* Selection styles */
+  ::selection {
+    background-color: #1a3cd4;
+    color: white;
+  }
+}
+
+/* ===================================
+   Custom Component Styles
+   =================================== */
+
+@layer components {
+  /* Button Components */
+  .btn-primary {
+    @apply bg-theme-blue text-white px-6 py-3 rounded-lg font-semibold 
+           hover:bg-blue-700 transition-all duration-300 
+           focus:ring-4 focus:ring-blue-300 focus:outline-none
+           active:transform active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-theme-blue border-2 border-theme-blue px-6 py-3 
+           rounded-lg font-semibold hover:bg-theme-blue hover:text-white 
+           transition-all duration-300 focus:ring-4 focus:ring-blue-300 
+           focus:outline-none active:transform active:scale-95;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end text-white 
+           px-6 py-3 rounded-lg font-semibold hover:shadow-lg 
+           transition-all duration-300 focus:ring-4 focus:ring-purple-300 
+           focus:outline-none active:transform active:scale-95;
+  }
+
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-lg shadow-soft border border-gray-100 
+           hover:shadow-medium transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-large hover:-translate-y-1;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-gray-50 rounded-lg 
+           shadow-soft border border-gray-100;
+  }
+
+  /* Navigation Components */
+  .nav-link {
+    @apply text-gray-800 hover:text-theme-blue font-medium 
+           transition-colors duration-300 relative;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 
+           bg-theme-blue transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Form Components */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg 
+           focus:ring-2 focus:ring-theme-blue focus:border-theme-blue 
+           transition-all duration-300;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+
+  /* Section Components */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Typography Components */
+  .heading-primary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-baloo font-bold 
+           text-gray-800 leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-2xl md:text-3xl font-baloo font-bold text-gray-800;
+  }
+
+  .heading-tertiary {
+    @apply text-xl md:text-2xl font-baloo font-bold text-theme-blue;
+  }
+
+  .text-body {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end 
+           bg-clip-text text-transparent;
+  }
+}
+
+/* ===================================
+   Custom Utility Styles
+   =================================== */
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  /* Gradient Utilities */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .bg-gradient-success {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  /* Text Gradient Utilities */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #1a3cd4 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover Effect Utilities */
+  .hover-lift {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(26, 60, 212, 0.3);
+  }
+
+  /* Loading Animation */
+  .loader {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Custom Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.9); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      font-size: 12pt;
+      line-height: 1.4;
+    }
+    
+    .heading-primary {
+      font-size: 18pt;
+    }
+    
+    .heading-secondary {
+      font-size: 16pt;
+    }
+  }
+}
+
+/* ===================================
+   Responsive Design Utilities
+   =================================== */
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+
+  .padding-responsive {
+    @apply px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20;
+  }
+
+  .margin-responsive {
+    @apply mx-4 my-8 sm:mx-6 sm:my-12 md:mx-8 md:my-16 lg:mx-12 lg:my-20;
+  }
+}
+
+/* ===================================
+   Accessibility Enhancements
+   =================================== */
+
+@layer utilities {
+  /* Screen reader only text */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Focus visible for keyboard navigation */
+  .focus-visible:focus {
+    outline: 2px solid #1a3cd4;
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ===================================
+   Dark Mode Support (Future)
+   =================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here */
+  /* This is prepared for future dark mode implementation */
+}
+
+/* ===================================
+   High Contrast Mode Support
+   =================================== */
+
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-black;
+  }
+  
+  .card {
+    @apply border-2 border-gray-800;
+  }
+} 

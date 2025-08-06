@@ -1,0 +1,57 @@
+{
+  "name": "hanslacida-website",
+  "version": "1.0.0",
+  "description": "HansLacida.com - PPC Management & Digital Marketing Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify",
+    "postcss": "postcss src/input.css -o css/output.css",
+    "postcss:watch": "postcss src/input.css -o css/output.css --watch",
+    "postcss:build": "NODE_ENV=production postcss src/input.css -o css/output.min.css",
+    "lint": "stylelint '**/*.css'",
+    "format": "prettier --write '**/*.{css,js,html}'",
+    "optimize": "npm run build && npm run postcss:build"
+  },
+  "keywords": [
+    "ppc-management",
+    "google-ads",
+    "digital-marketing",
+    "tailwind-css",
+    "postcss"
+  ],
+  "author": "Hanzel Lacida",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.31",
+    "postcss-assets": "^6.0.0",
+    "postcss-cli": "^10.1.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-object-fit-images": "^1.1.2",
+    "postcss-preset-env": "^9.3.0",
+    "postcss-viewport-units": "^0.1.6",
+    "prettier": "^3.1.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "tailwindcss": "^3.3.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.16"
+  }
+}
