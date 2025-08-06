@@ -5,7 +5,9 @@ module.exports = {
     "./**/*.html",
     "!./node_modules/**/*.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./js/**/*.js"
+    "./js/**/*.js",
+    "./src/components/**/*.js",
+    "./src/utils/**/*.js"
   ],
   theme: {
     extend: {
