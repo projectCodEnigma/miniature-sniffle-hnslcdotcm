@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component System Test - HansLacida.com</title>
+    <link href="css/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-lato text-gray-600 bg-white">
+    <!-- Test Header Component -->
+    <div id="header-container"></div>
+    
+    <!-- Test Hero Component -->
+    <div id="hero-container"></div>
+    
+    <!-- Test About Component -->
+    <div id="about-container"></div>
+    
+    <!-- Test Services Component -->
+    <div id="services-container"></div>
+    
+    <!-- Test Contact Form Component -->
+    <div id="contact-container"></div>
+    
+    <!-- Test Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Component Scripts -->
+    <script type="module">
+        import { 
+            Header, Hero, About, Services, ContactForm, Footer,
+            renderComponent, initAllComponents 
+        } from './src/components/index.js';
+
+        // Test props for components
+        const heroProps = {
+            title: "Component System Test",
+            subtitle: "Testing the new modular component architecture",
+            primaryButton: { text: "Get Started", link: "#" },
+            secondaryButton: { text: "Learn More", link: "#" },
+            imageSrc: "images/banner.png",
+            imageAlt: "Test Hero Image"
+        };
+
+        const aboutProps = {
+            title: "About Our Component System",
+            subtitle: "Modern, modular, and maintainable",
+            heading: "Built for the Future",
+            description: "This component system makes it easy to build and maintain modern websites with reusable components.",
+            primaryLink: { text: "View Components", link: "#" },
+            secondaryLink: { text: "Documentation", link: "#" },
+            imageSrc: "images/banner1.png",
+            imageAlt: "About Component System"
+        };
+
+        const servicesProps = {
+            title: "Our Services",
+            subtitle: "Built with components",
+            services: [
+                {
+                    title: "Component Development",
+                    description: "Create reusable UI components",
+                    icon: "fas fa-cube",
+                    link: "#"
+                },
+                {
+                    title: "System Architecture",
+                    description: "Design modular systems",
+                    icon: "fas fa-sitemap",
+                    link: "#"
+                },
+                {
+                    title: "Performance Optimization",
+                    description: "Optimize for speed and efficiency",
+                    icon: "fas fa-tachometer-alt",
+                    link: "#"
+                }
+            ]
+        };
+
+        const contactProps = {
+            title: "Contact Us",
+            subtitle: "Get in touch about our component system",
+            formId: "test-contact-form"
+        };
+
+        // Render components
+        renderComponent(Header, 'header-container');
+        renderComponent(Hero, 'hero-container', heroProps);
+        renderComponent(About, 'about-container', aboutProps);
+        renderComponent(Services, 'services-container', servicesProps);
+        renderComponent(ContactForm, 'contact-container', contactProps);
+        renderComponent(Footer, 'footer-container');
+
+        // Initialize all components
+        initAllComponents();
+    </script>
+</body>
+</html> 

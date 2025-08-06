@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+              http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Main Sitemap -->
+  <sitemap>
+    <loc>https://hanslacida.com/sitemap.xml</loc>
+    <lastmod>2025-01-08</lastmod>
+  </sitemap>
+
+  <!-- Services Sitemap -->
+  <sitemap>
+    <loc>https://hanslacida.com/sitemap-services.xml</loc>
+    <lastmod>2025-01-08</lastmod>
+  </sitemap>
+
+  <!-- Blog Sitemap -->
+  <sitemap>
+    <loc>https://hanslacida.com/sitemap-blog.xml</loc>
+    <lastmod>2025-01-08</lastmod>
+  </sitemap>
+
+</sitemapindex> 
