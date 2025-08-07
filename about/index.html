@@ -1,217 +1,545 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-K1E3588F4M');
-</script>
-    <!-- Gen display ad -->
- <ins class="adsbygoogle"
- style="display:block"
- data-ad-client="ca-pub-2137593406454250"
- data-ad-slot="3363549025"
- data-ad-format="auto"
- data-full-width-responsive="true"></ins>
-<script>
- (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1E3588F4M');
+    </script>
+    
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about Hanzel Lacida, founder of Zeldigital.com, and his expertise in PPC management, digital marketing, and fractional CMO services.">
-    <meta name="keywords" content="Hanzel Lacida, Fractional CMO, PPC Management, Google Ads Pro, Digital Marketing">
+    
+    <!-- SEO Meta Tags -->
+    <title>About Hans Lacida - Digital Marketing Expert & PPC Strategist</title>
+    <meta name="description" content="Meet Hans Lacida, founder of Zel Digital Marketing Services. 10+ years of proven expertise in PPC management, Google Ads, and fractional CMO services. Discover his story and results.">
+    <meta name="keywords" content="Hans Lacida, Digital Marketing Expert, PPC Strategist, Google Ads Specialist, Fractional CMO, Zel Digital Marketing, Marketing Consultant">
     <meta name="author" content="Hans Lacida">
-    <title>About - Meet Hanzel Lacida</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Hans Lacida - Digital Marketing Expert & PPC Strategist">
+    <meta property="og:description" content="Meet the expert behind proven digital marketing results. 10+ years of experience, 744% ROAS achieved, $300K+ monthly ad spend managed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hanslacida.com/about/">
+    <meta property="og:site_name" content="Hans Lacida - Digital Marketing Expert">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/hanslacida_favicon.webp" type="image/webp">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+        html {
+            scroll-behavior: smooth;
         }
-        header {
-            background-color: #0d6bc2;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(209, 213, 219, 0.3);
         }
-        header nav {
-            margin: 10px 0;
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        header nav a:hover {
-            color: #18bc9c;
+        .feature-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
         }
-        .hero {
-            background-color: #0d6bc2;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        .hero h1 {
-            margin: 0;
-            font-size: 2.5em;
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
         }
-        .hero p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            margin-top: 20px;
-            background-color: #07539b;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .cta-button:hover {
-            background-color: #0a43e0;
-            transform: scale(1.05);
-        }
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section h2 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            color: #2c3e50;
-        }
-        .about-section {
-            margin: 0 auto;
-            width: 80%;
-            text-align: left;
-        }
-        .about-section h3 {
-            color: #0d6bc2;
-        }
-        .about-section p {
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #0d6bc2;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        footer nav {
-            margin: 10px 0;
-        }
-        footer nav a {
-            color: #ecebe1;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        footer nav a:hover {
-            color: #9e2828;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: #2563eb;
+            border-radius: 50%;
         }
     </style>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <h1>About Hanzel Lacida</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Meet Hanzel Lacida</h1>
-        <p>Founder of Zeldigital.com, and a seasoned Fractional CMO, PPC Management Expert, and Digital Marketing Leader.</p>
-    </section>
-
-    <section>
-        <h2>About Hanzel</h2>
-        <div class="about-section">
-            <h3>Your Partner in Digital Growth</h3>
-            <p>Hanzel Lacida is the founder of <a href="https://www.zeldigital.com"><strong>Zeldigital.com</strong></a>, a premier provider of data-driven digital marketing solutions. With over a decade of experience, Hanzel has helped businesses across industries scale efficiently through tailored PPC management, Fractional CMO services, and innovative marketing strategies.</p>
-            <p>Specializing in Google Ads and multi-channel campaign management, Hanzel combines strategic vision with hands-on execution to maximize ROI, reduce CPA, and deliver high-impact results. His expertise has empowered clients in industries such as eCommerce, SaaS, and local services to thrive in today’s competitive digital landscape.</p>
-            <p><strong>Why Zeldigital?</strong></p>
-                <ul>
-                    <li>Extensive High-Level Ongoing Management on Ad Campaigns.
-                        <p>Proven success in managing $300,000+ monthly ad spend with precision, delivering exceptional ROI for clients across diverse industries.</p>
-                    </li>
-                    <li>Mastery of advanced PPC strategies and creative problem-solving.
-                        <p>Expertise in leveraging innovative strategies and creative problem-solving to optimize campaign performance and exceed client expectations.</p>
-                    </li>
-                    <li>Proven track record of reducing CPA by up to 50% and increasing conversion rates by 15%.
-                        <p>A commitment to driving data-driven results that translate into tangible business growth, tailored to meet each client’s unique goals.</p>
-                    </li>
-                    <li>Focused on Measurable Growth
-                        <p>A commitment to driving data-driven results that translate into tangible business growth, tailored to meet each client’s unique goals.</p>
-                    </li>
-                </ul>
-                <p>As your trusted partner in digital marketing, Hanzel’s mission is to help your business achieve its full potential through cutting-edge strategies and personalized support.</p>
-                <p>Please see more info <a href="https://linktr.ee/hanslacida" target="_blank" rel="noopener">→here.</a></p>
-                <p><a href="/contact" class="cta-button">Request a Call Back - FREE Marketing Audit →</a></p>
+<body class="font-inter text-gray-900 antialiased bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-4">
+                    <!-- Back to Home Arrow -->
+                    <a href="/" class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors group" title="Back to Homepage">
+                        <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    
+                    <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
+                        </div>
+                        <div class="ml-3">
+                            <span class="text-xl font-bold text-gray-900">Hans Lacida</span>
+                            <div class="text-sm text-gray-500">About</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="/about/" class="text-primary-600 font-medium">About</a>
+                    <a href="/services/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Services</a>
+                    <a href="/case-studies/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Case Studies</a>
+                    <a href="/contact/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <a href="/work-with-me/" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors">
+                    Work With Me
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
             
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                    <a href="/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Home</a>
+                    <a href="/about/" class="block px-3 py-2 text-primary-600 font-medium">About</a>
+                    <a href="/services/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Services</a>
+                    <a href="/case-studies/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Case Studies</a>
+                    <a href="/contact/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-6">
+                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                        👋 Meet the Expert Behind the Results
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                    Meet 
+                    <span class="bg-gradient-to-r from-accent-500 to-yellow-400 bg-clip-text text-transparent">Hans Lacida</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
+                    Founder of Zel Digital Marketing Services & Digital Marketing Strategist
+                </p>
+                <p class="text-lg text-white/80 mb-10 max-w-3xl mx-auto">
+                    A seasoned expert with 10+ years of experience helping businesses scale through data-driven PPC management, strategic consulting, and innovative marketing solutions
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/work-with-me/" class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        🚀 Work With Me
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="/contact/" class="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                        📞 Request Call Back
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="testimonials">
-        <h3>Client Testimonials</h3>
-        <p>Here's what our clients are saying about working with Hans & Zeldigital:</p>
-        <iframe 
-          height="800px" 
-          id="testimonialto-zeldigital-testimonials-tag-all-dark-animated" 
-          src="https://embed-v2.testimonial.to/w/zeldigital-testimonials?animated=on&theme=dark&shadowColor=912f3c&speed=1&hideDate=on&hideSource&tag=all&disableHoverPause" 
-          frameborder="0" 
-          scrolling="no" 
-          width="100%"
-          title="Zeldigital Testimonials">
-        </iframe>
-        <a href="/work-with-me/" class="cta-button">Work With Me</a>
-        <a href="/letters-of-recommendation/" class="cta-button">View my Letters of Recommendations</a></section>
-        
-      </section>
-      
-    <footer>
-        <p>&copy; 2025 HansLacida. All Rights Reserved.</p>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/contact/">Contact</a>
-            <a href="/blog/">Blog</a>
-        </nav>
+
+    <!-- About Story Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🎯 Your Partner in Digital Growth</h2>
+                    <p class="text-xl text-gray-600">
+                        Discover the story behind proven results and learn how I can help transform your business
+                    </p>
+                </div>
+                
+                <div class="prose prose-lg max-w-none">
+                    <div class="bg-gray-50 rounded-2xl p-8 mb-8">
+                        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                            Hans Lacida is the founder of <a href="https://www.zeldigital.com" class="text-primary-600 hover:text-primary-700 font-semibold" target="_blank" rel="noopener">Zel Digital Marketing Services</a>, a premier provider of data-driven digital marketing solutions. With over a decade of experience, Hans has helped businesses across industries scale efficiently through tailored PPC management, Fractional CMO services, and innovative marketing strategies.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            Specializing in Google Ads and multi-channel campaign management, Hans combines strategic vision with hands-on execution to maximize ROI, reduce CPA, and deliver high-impact results. His expertise has empowered clients in industries such as eCommerce, SaaS, and local services to thrive in today's competitive digital landscape.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Results Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">📊 Proven Track Record</h2>
+                <p class="text-xl text-gray-600">
+                    Real results that speak for themselves
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">10+</div>
+                    <div class="text-gray-600 font-medium">Years Experience</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">744%</div>
+                    <div class="text-gray-600 font-medium">Peak ROAS Achieved</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-orange-600 mb-2">50%</div>
+                    <div class="text-gray-600 font-medium">CPA Reduction</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">$300K+</div>
+                    <div class="text-gray-600 font-medium">Monthly Ad Spend</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🌟 Why Zel Digital Marketing?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover what sets Hans apart and why businesses trust him with their most important growth initiatives
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Feature 1 -->
+                <div class="feature-card hover-lift">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">💰</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Extensive High-Level Campaign Management</h3>
+                            <p class="text-gray-600">
+                                Proven success in managing $300,000+ monthly ad spend with precision, delivering exceptional ROI for clients across diverse industries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card hover-lift">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">🎯</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Mastery of Advanced PPC Strategies</h3>
+                            <p class="text-gray-600">
+                                Expertise in leveraging innovative strategies and creative problem-solving to optimize campaign performance and exceed client expectations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card hover-lift">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">📈</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Proven Performance Optimization</h3>
+                            <p class="text-gray-600">
+                                Track record of reducing CPA by up to 50% and increasing conversion rates by 15% through data-driven optimization techniques.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card hover-lift">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">🚀</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Focused on Measurable Growth</h3>
+                            <p class="text-gray-600">
+                                A commitment to driving data-driven results that translate into tangible business growth, tailored to meet each client's unique goals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center bg-primary-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to Partner with a Proven Expert?</h3>
+                <p class="text-lg text-gray-600 mb-6">
+                    As your trusted partner in digital marketing, Hans's mission is to help your business achieve its full potential through cutting-edge strategies and personalized support.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/contact/" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        📞 Request FREE Marketing Audit
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="https://linktr.ee/hanslacida" target="_blank" rel="noopener" class="bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        🔗 More About Hans
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">💬 Client Testimonials</h2>
+                <p class="text-xl text-gray-600">
+                    Here's what our clients are saying about working with Hans & Zel Digital Marketing
+                </p>
+            </div>
+            
+            <!-- Testimonials Embed -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <iframe 
+                    height="800px" 
+                    id="testimonialto-zeldigital-testimonials-tag-all-dark-animated" 
+                    src="https://embed-v2.testimonial.to/w/zeldigital-testimonials?animated=on&theme=light&shadowColor=912f3c&speed=1&hideDate=on&hideSource&tag=all&disableHoverPause" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    width="100%"
+                    title="Zel Digital Marketing Testimonials"
+                    class="rounded-xl">
+                </iframe>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/work-with-me/" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        🚀 Work With Me
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="/letters-of-recommendation/" class="bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        📄 View Recommendations
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Brand Section -->
+                <div class="col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
+                        </div>
+                        <span class="ml-3 text-xl font-bold">Hans Lacida</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
+                        <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
+                        <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
+                        <li><a href="/leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
+                        <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
+                        <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Hans Lacida. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-     <!-- Gen display ad -->
- <ins class="adsbygoogle"
- style="display:block"
- data-ad-client="ca-pub-2137593406454250"
- data-ad-slot="3363549025"
- data-ad-format="auto"
- data-full-width-responsive="true"></ins>
-<script>
- (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
+    <!-- AdSense Ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2137593406454250"
+         data-ad-slot="3363549025"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+    </ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/90');
+            } else {
+                nav.classList.add('bg-white/90');
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+
 </body>
 </html>
