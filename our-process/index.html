@@ -1,188 +1,489 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1E3588F4M');
+    </script>
+    
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about our proven process for delivering tailored solutions that drive measurable success for businesses worldwide.">
-    <meta name="keywords" content="Our Process, Business Solutions, Strategy Development, Implementation, Success Outcomes">
+    
+    <!-- SEO Meta Tags -->
+    <title>Our Process - Hans Lacida | Proven Digital Marketing Methodology</title>
+    <meta name="description" content="Discover Hans Lacida's proven 7-step process for delivering exceptional digital marketing results. From discovery to scaling, learn how we transform businesses.">
+    <meta name="keywords" content="Digital Marketing Process, PPC Process, Marketing Strategy, Business Growth Process, Hans Lacida Process, Marketing Methodology">
     <meta name="author" content="Hans Lacida">
-    <title>Our Process - HansLacida.com</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Our Process - Hans Lacida | Proven Digital Marketing Methodology">
+    <meta property="og:description" content="Discover our proven 7-step process for delivering exceptional digital marketing results and driving sustainable business growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hanslacida.com/our-process/">
+    <meta property="og:site_name" content="Hans Lacida - Digital Marketing Process">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/hanslacida_favicon.webp" type="image/webp">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+        html {
+            scroll-behavior: smooth;
         }
-        header {
-            background-color: #0d6bc2;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: sticky;
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(209, 213, 219, 0.3);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .process-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+        .process-card::before {
+            content: '';
+            position: absolute;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #f59e0b);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
+        .process-card:hover::before {
+            transform: scaleX(1);
         }
-        header nav {
-            margin: 10px 0;
+        .process-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        header nav a {
+        .timeline-line {
+            background: linear-gradient(180deg, #3b82f6 0%, #f59e0b 100%);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #3b82f6, #f59e0b);
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            transition: color 0.3s;
-        }
-        header nav a:hover {
-            color: #18bc9c;
-        }
-        .hero {
-            background-color: #0d6bc2;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .hero h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            margin-top: 20px;
-            background-color: #07099b;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .cta-button:hover {
-            background-color: #2225df;
-            transform: scale(1.05);
-        }
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section h2 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            color: #2c3e50;
-        }
-        .process-step {
-            margin: 20px auto;
-            width: 80%;
-            text-align: left;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .process-step h3 {
-            color: #0d6bc2;
-        }
-        .process-step p {
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #0d6bc2;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        footer nav {
-            margin: 10px 0;
-        }
-        footer nav a {
-            color: #ecebe1;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        footer nav a:hover {
-            color: #9e2828;
+            font-size: 1.25rem;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
         }
     </style>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <h1>Our Process</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/#about">About</a>
-            <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Discover How We Work</h1>
-        <p>Learn about our proven process for delivering tailored solutions and achieving measurable results.</p>
+<body class="font-inter text-gray-900 antialiased bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-4">
+                    <!-- Back to Home Arrow -->
+                    <a href="/" class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors group" title="Back to Homepage">
+                        <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    
+                    <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
+                        </div>
+                        <div class="ml-3">
+                            <span class="text-xl font-bold text-gray-900">Hans Lacida</span>
+                            <div class="text-sm text-gray-500">Our Process</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="/about/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">About</a>
+                    <a href="/services/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Services</a>
+                    <a href="/our-process/" class="text-primary-600 font-medium">Our Process</a>
+                    <a href="/case-studies/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Case Studies</a>
+                    <a href="/contact/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <a href="/work-with-me/" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors">
+                    Work With Me
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="mobile-menu-button" title="Toggle mobile menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                    <a href="/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Home</a>
+                    <a href="/about/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">About</a>
+                    <a href="/services/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Services</a>
+                    <a href="/our-process/" class="block px-3 py-2 text-primary-600 font-medium">Our Process</a>
+                    <a href="/case-studies/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Case Studies</a>
+                    <a href="/contact/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-6">
+                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                        🔄 Proven Methodology
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                    Our Proven
+                    <span class="bg-gradient-to-r from-accent-500 to-yellow-400 bg-clip-text text-transparent">Process</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
+                    A systematic approach to delivering exceptional results and driving sustainable business growth
+                </p>
+                <p class="text-lg text-white/80 mb-10 max-w-3xl mx-auto">
+                    Discover how our 7-step methodology transforms businesses from discovery to scaling, ensuring measurable outcomes and long-term success
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#process-timeline" class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        🎯 Explore Our Process
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                    <a href="/work-with-me/" class="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                        🚀 Start Your Journey
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Our Process</h2>
+    <!-- Process Timeline Section -->
+    <section id="process-timeline" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                         <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🔄 Our 4-Step Process</h2>
+                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                     A streamlined process designed to get you results fast
+                 </p>
+             </div>
+            
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                                 <!-- Process Steps -->
+                 <div class="space-y-12">
+                     <!-- Step 1 -->
+                     <div class="relative flex items-center">
+                         <div class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20">
+                             <div class="step-number">1</div>
+                         </div>
+                         <div class="ml-8 md:ml-12 flex-1">
+                             <div class="process-card hover-lift">
+                                 <div class="flex items-start">
+                                     <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                         <span class="text-2xl">🔍</span>
+                                     </div>
+                                     <div class="flex-1">
+                                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Discovery Call</h3>
+                                         <p class="text-gray-600 mb-4 leading-relaxed">
+                                             We'll discuss your business goals and current challenges. During the call, I'll also walk you through a high-level roadmap — giving you clarity on what we'll focus on and how we'll move forward if we work together.
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
 
-        <div class="process-step">
-            <h3>Step 1: Discovery and Consultation</h3>
-            <p>We start by understanding your business goals, challenges, and unique needs through in-depth consultations and analysis.</p>
+                     <!-- Step 2 -->
+                     <div class="relative flex items-center">
+                         <div class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20">
+                             <div class="step-number">2</div>
+                         </div>
+                         <div class="ml-8 md:ml-12 flex-1">
+                             <div class="process-card hover-lift">
+                                 <div class="flex items-start">
+                                     <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                         <span class="text-2xl">💼</span>
+                                     </div>
+                                     <div class="flex-1">
+                                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Agreement & Payment</h3>
+                                         <p class="text-gray-600 mb-4 leading-relaxed">
+                                             Once aligned, we'll finalize the scope, pricing, and terms. This ensures everything is clear before we begin.
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- Step 3 -->
+                     <div class="relative flex items-center">
+                         <div class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20">
+                             <div class="step-number">3</div>
+                         </div>
+                         <div class="ml-8 md:ml-12 flex-1">
+                             <div class="process-card hover-lift">
+                                 <div class="flex items-start">
+                                     <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                         <span class="text-2xl">⚡</span>
+                                     </div>
+                                     <div class="flex-1">
+                                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Tailored Strategy & Execution</h3>
+                                         <p class="text-gray-600 mb-4 leading-relaxed">
+                                             I'll create and implement a custom strategy based on your specific goals, backed by data and proven frameworks.
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- Step 4 -->
+                     <div class="relative flex items-center">
+                         <div class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20">
+                             <div class="step-number">4</div>
+                         </div>
+                         <div class="ml-8 md:ml-12 flex-1">
+                             <div class="process-card hover-lift">
+                                 <div class="flex items-start">
+                                     <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                         <span class="text-2xl">📊</span>
+                                     </div>
+                                     <div class="flex-1">
+                                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Optimization & Reporting</h3>
+                                         <p class="text-gray-600 mb-4 leading-relaxed">
+                                             Ongoing performance monitoring, testing, and improvements — all aimed at maximizing your ROI.
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
         </div>
-
-        <div class="process-step">
-            <h3>Step 2: Strategy Development</h3>
-            <p>Our team creates a customized roadmap designed to achieve your objectives, including operational optimizations and marketing strategies tailored to your industry.</p>
-        </div>
-
-        <div class="process-step">
-            <h3>Step 3: Payment and Agreement</h3>
-            <p>Once the strategy is finalized, we outline the payment terms and agreement to ensure clarity and alignment. This phase secures your project’s foundation and moves it forward efficiently.</p>
-        </div>
-
-        <div class="process-step">
-            <h3>Step 4: Onboarding</h3>
-            <p>Our onboarding phase ensures a smooth start, including setting up tools, systems, and communication channels, and aligning with your team for seamless collaboration.</p>
-        </div>
-
-        <div class="process-step">
-            <h3>Step 5: Implementation</h3>
-            <p>We execute the plan, implementing advanced tools, systems, and processes to ensure efficiency and effectiveness in all aspects of your operations.</p>
-        </div>
-
-        <div class="process-step">
-            <h3>Step 6: Performance Monitoring</h3>
-            <p>Our experts monitor key metrics and provide real-time feedback, making necessary adjustments to ensure your goals are consistently met.</p>
-        </div>
-
-        <div class="process-step">
-            <h3>Step 7: Results and Scaling</h3>
-            <p>We present measurable outcomes and explore opportunities to scale successful strategies across additional regions or services.</p>
-        </div>
-
-        <a href="/request-call-back/" class="cta-button">Are You Ready to Scale? Start Now</a>
     </section>
 
-    <footer>
-        <p>&copy; 2024 HansLacida. All Rights Reserved.</p>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/#about">About</a>
-            <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/contact/">Contact</a>
-        </nav>
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 right-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">🚀 Ready to Start Your Journey?</h2>
+            <p class="text-xl md:text-2xl text-white/90 mb-10">
+                Join the businesses that have transformed their growth with our proven process and expert guidance.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/work-with-me/" class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                    🚀 Start Your Journey
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+                <a href="/discovery-call/" class="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                    📞 Schedule Discovery Call
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h8"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Brand Section -->
+                <div class="col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
+                        </div>
+                        <span class="ml-3 text-xl font-bold">Hans Lacida</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
+                        <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
+                        <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
+                        <li><a href="/leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
+                        <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
+                        <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+                         <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                 <p>&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> - Trusted Digital Advertising for U.S. Businesses. All Rights Reserved.</p>
+             </div>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/90');
+            } else {
+                nav.classList.add('bg-white/90');
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+
 </body>
 </html>
