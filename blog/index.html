@@ -1,174 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1E3588F4M');
+    </script>
+    
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Hans Lacida Blog - Expert Digital Marketing Insights & Strategies</title>
+    <meta name="description" content="Grow your business with expert insights and proven strategies for PPC, SEO, and data-driven marketing from Hans Lacida.">
+    <meta name="keywords" content="Digital Marketing Blog, PPC Strategies, SEO Tips, Google Ads Expert, Data Analytics, Marketing ROI, Hans Lacida">
+    <meta name="author" content="Hans Lacida">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hans Lacida Blog - Expert Digital Marketing Insights">
+    <meta property="og:description" content="Actionable strategies for Google Ads, Data Analytics, and SEO to grow your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hanslacida.com/blog/">
+    <meta property="og:site_name" content="Hans Lacida Blog">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/hanslacida_favicon.webp" type="image/webp">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(209, 213, 219, 0.3);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .article-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
+</head>
 
-  gtag('config', 'G-K1E3588F4M');
-</script>
-      <!-- Basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- Mobile Metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- Site Metas -->
-      <title>Hans Lacida Blog</title>
-      <meta name="description" content="Grow your business with expert insights and proven strategies for PPC, SEO, and data-driven marketing.">
-      <meta name="keywords" content="Digital Marketing, PPC, SEO, Case Studies, Google Ads Expert">
-      <meta name="author" content="Hans Lacida">
-      <!-- Stylesheets -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/responsive.css">
-      <link rel="icon" href="images/hanslacida_favicon.webp" type="image/gif" />
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   
-      <!-- Adsense script -->
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250"
-      crossorigin="anonymous"></script>
-   </head>
-   <body>
-      <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="head_top">
-            <div class="header">
-               <div class="container-fluid">
-                  <div class="row">
-                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                        <div class="full">
-                           <div class="center-desk">
-                              <div class="logo">
-                                 <a href="index.html"><img src="/images/hanslacida_favicon.jpg" alt="HansLacida.com" /></a>
-                              </div>
-                           </div>
+<body class="font-inter text-gray-900 antialiased bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-4">
+                    <!-- Back to Home Arrow -->
+                    <a href="/" class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors group" title="Back to Homepage">
+                        <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    
+                    <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
                         </div>
-                     </div>
-                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                        <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                           <span class="navbar-toggler-icon"></span>
-                           </button>
-                           <div class="collapse navbar-collapse" id="navbarsExample04">
-                              <ul class="navbar-nav mr-auto">
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#about">About</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#services">Services</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="/case studies/">Case Studies</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact</a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
+                        <div class="ml-3">
+                            <span class="text-xl font-bold text-gray-900">Hans Lacida</span>
+                            <div class="text-sm text-gray-500">Blog</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="/about/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">About</a>
+                    <a href="/services/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Services</a>
+                    <a href="/case-studies/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Case Studies</a>
+                    <a href="/contact/" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <a href="/work-with-me/" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors">
+                    Work With Me
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-            <!-- end header inner -->
-
-      <!-- Hero Section -->
-      <section class="hero">
-         <div class="container text-center">
-            <h1>Grow Your Business with Expert PPC Insights</h1>
-            <p>Actionable strategies for Google Ads, Data Analytics, and SEO.</p>
-            <div class="hero-cta">
-               <a href="https://blog.hanslacida.com" class="btn btn-primary">Read the Blog</a>
-               <a href="/work-with-me" class="btn btn-primary">Work With Me</a>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                    <a href="/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Home</a>
+                    <a href="/about/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">About</a>
+                    <a href="/services/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Services</a>
+                    <a href="/case-studies/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Case Studies</a>
+                    <a href="/contact/" class="block px-3 py-2 text-gray-600 hover:text-primary-600 font-medium">Contact</a>
+                </div>
             </div>
-         </div>
-      </section>
+        </div>
+    </nav>
 
-      <!-- Featured Articles Section -->
-      <section class="featured-articles">
-         <div class="container">
-            <h2>Trending Digital Marketing Insights</h2>
-            <div class="row">
-               <div class="col-md-4">
-                  <article>
-                     <a href="https://blog.hanslacida.com/2025/01/how-to-lower-google-ads-cpa-50-percent.html" target="_blank">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB2_v7sSRTuoQhxLsfJy1Hg3PEsl9ujtQEwv8nbMFJYUvtKADx_yFRZSuO4CuZhjtGgBItUodN6cieKEoJUBhFALgYMu5rcWKx270iFoV4IvK0XcQ1257sZgNEp01fQWi-yuKDwx60YZw5fvHBDt0MXjQqn4W8yBfVgzjSO0_uPcefVzGuibnSUsmN9iA/s600/DALL%C2%B7E%202025-01-20%2019.20.48%20-%20A%20professional%20and%20engaging%20banner%20image%20for%20a%20blog%20about%20lowering%20Google%20Ads%20CPA%20by%2050%25.%20The%20design%20should%20feature%20abstract%20elements%20of%20digital%20adver.webp=w660-h0-p-k-no-nu" alt="PPC Guide Cover Image" class="img-fluid">
-                      </a>
-                     <h3><a href="https://blog.hanslacida.com/2025/01/how-to-lower-google-ads-cpa-50-percent.html">How to Lower Google Ads CPA by 50%</a></h3>
-                     <p>Discover proven strategies to reduce your ad spend and boost ROI.</p>
-                  </article>
-               </div>
-               <div class="col-md-4">
-                  <article>
-                     <a href="https://blog.hanslacida.com/2025/01/best-tools-for-data-analytics-marketing-decisions.html" target="_blank">
-                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNbT2_1X9Pq7Y8kkaWUYAQBGgdNf7vvhohFC2RE2-olsKcZ38J66n2WH6JTRPP_FZdRrgR77qZBNZscV22FTU7907QWpMGZETtS3Ig4y_SNRE-Awu62rtCrqcrM7tZAa7bomxVY6EzKoUkxWv2kBxEHpFee_7Lkx86bQVhf1qELJIm0hzYKuQ1a-6wKJk/s600/DALL%C2%B7E%202025-01-20%2018.49.37%20-%20A%20modern%20and%20visually%20striking%20banner%20image%20for%20a%20blog%20about%20the%20best%20tools%20for%20data%20analytics%20in%20marketing.%20The%20design%20should%20incorporate%20abstract%20vi.webp=w660-h0-p-k-no-nu" alt="Data Analytics Tools" class="img-fluid">
-                  </a>
-                     <h3><a href="https://blog.hanslacida.com/2025/01/best-tools-for-data-analytics-marketing-decisions.html">Best Tools for Data Analytics</a></h3>
-                     <p>Top tools and tips to make data-driven marketing decisions.</p>
-                  </article>
-               </div>
-               <div class="col-md-4">
-                  <article>
-                     <a href="https://blog.hanslacida.com/2025/01/seo-trends-for-2025.html" target="_blank">
-                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8XRRIqvDd-ZuNq3z3S7Y-CbA2W6BSGhMeeoPRNS5Rz2IkFg728UumheWW9UJbpFgDAsyfknoveL0R9OzcdtxWul7aYH-fNDIER6Qx4OcQ6i3HrcZgm01scGzkqXwTqNCKv-RKZ3SgEst2SALD4jbU-kIU8ugP9sA3obCXdP-dWfM_cd7ljYh6m2LrOjc/s1792/DALL%C2%B7E%202025-01-20%2018.37.21%20-%20A%20visually%20appealing%20banner%20image%20for%20a%20blog%20about%20SEO%20trends%20in%202025.%20The%20design%20should%20be%20modern%20and%20tech-inspired,%20incorporating%20elements%20such%20as%20a.webp" alt="SEO Trends 2025" class="img-fluid">
-                  </a>
-                     <h3><a href="https://blog.hanslacida.com/2025/01/seo-trends-for-2025.html">SEO Trends for 2025</a></h3>
-                     <p>Stay ahead with the latest SEO strategies and techniques.</p>
-                  </article>
-               </div>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-6">
+                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                        📚 Expert Digital Marketing Insights
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                    Grow Your Business with 
+                    <span class="bg-gradient-to-r from-accent-500 to-yellow-400 bg-clip-text text-transparent">Expert PPC</span>
+                    Insights
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
+                    Actionable strategies for Google Ads, Data Analytics, and SEO
+                </p>
+                <p class="text-lg text-white/80 mb-10 max-w-3xl mx-auto">
+                    Discover proven strategies, insider tips, and real case studies from 10+ years of digital marketing experience
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://blog.hanslacida.com" class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        📖 Read the Blog
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="/work-with-me/" class="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                        🚀 Work With Me
+                    </a>
+                </div>
             </div>
-            <div class="text-center mt-4">
-               <a href="https://blog.hanslacida.com" class="btn btn-primary">Browse All Articles</a>
+        </div>
+    </section>
+
+    <!-- Featured Articles Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">📈 Trending Digital Marketing Insights</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Stay ahead of the competition with actionable strategies from real campaigns and proven results
+                </p>
             </div>
-         </div>
-      </section>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="article-card hover-lift">
+                    <a href="https://blog.hanslacida.com/2025/01/how-to-lower-google-ads-cpa-50-percent.html" target="_blank" class="block">
+                        <div class="aspect-w-16 aspect-h-9 relative overflow-hidden">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB2_v7sSRTuoQhxLsfJy1Hg3PEsl9ujtQEwv8nbMFJYUvtKADx_yFRZSuO4CuZhjtGgBItUodN6cieKEoJUBhFALgYMu5rcWKx270iFoV4IvK0XcQ1257sZgNEp01fQWi-yuKDwx60YZw5fvHBDt0MXjQqn4W8yBfVgzjSO0_uPcefVzGuibnSUsmN9iA/s600/DALL%C2%B7E%202025-01-20%2019.20.48%20-%20A%20professional%20and%20engaging%20banner%20image%20for%20a%20blog%20about%20lowering%20Google%20Ads%20CPA%20by%2050%25.%20The%20design%20should%20feature%20abstract%20elements%20of%20digital%20adver.webp=w660-h0-p-k-no-nu" 
+                                 alt="PPC Guide Cover Image" 
+                                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">PPC Strategy</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                            <a href="https://blog.hanslacida.com/2025/01/how-to-lower-google-ads-cpa-50-percent.html" target="_blank">
+                                How to Lower Google Ads CPA by 50%
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Discover proven strategies to reduce your ad spend and boost ROI with actionable tactics from real campaigns.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                5 min read
+                            </div>
+                            <a href="https://blog.hanslacida.com/2025/01/how-to-lower-google-ads-cpa-50-percent.html" target="_blank" class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- About Section -->
-      <section class="about bg-light py-5">
-         <div class="container">
-            <h2 class="text-center">Who is Hans Lacida?</h2>
-            <p class="text-center">Your trusted partner in digital marketing success with 10+ years of experience in PPC, SEO, and data analytics. Proven results like 744% ROAS and reducing CPA by 50%.</p>
-            <div class="text-center">
-               <a href="/about" class="btn btn-primary">Learn More About Hans</a>
-               <a href="/services/" class="btn btn-primary">Explore My Services</a>
+                <!-- Article 2 -->
+                <article class="article-card hover-lift">
+                    <a href="https://blog.hanslacida.com/2025/01/best-tools-for-data-analytics-marketing-decisions.html" target="_blank" class="block">
+                        <div class="aspect-w-16 aspect-h-9 relative overflow-hidden">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNbT2_1X9Pq7Y8kkaWUYAQBGgdNf7vvhohFC2RE2-olsKcZ38J66n2WH6JTRPP_FZdRrgR77qZBNZscV22FTU7907QWpMGZETtS3Ig4y_SNRE-Awu62rtCrqcrM7tZAa7bomxVY6EzKoUkxWv2kBxEHpFee_7Lkx86bQVhf1qELJIm0hzYKuQ1a-6wKJk/s600/DALL%C2%B7E%202025-01-20%2018.49.37%20-%20A%20modern%20and%20visually%20striking%20banner%20image%20for%20a%20blog%20about%20the%20best%20tools%20for%20data%20analytics%20in%20marketing.%20The%20design%20should%20incorporate%20abstract%20vi.webp=w660-h0-p-k-no-nu" 
+                                 alt="Data Analytics Tools" 
+                                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Analytics</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                            <a href="https://blog.hanslacida.com/2025/01/best-tools-for-data-analytics-marketing-decisions.html" target="_blank">
+                                Best Tools for Data Analytics
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Top tools and tips to make data-driven marketing decisions that actually impact your bottom line.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                7 min read
+                            </div>
+                            <a href="https://blog.hanslacida.com/2025/01/best-tools-for-data-analytics-marketing-decisions.html" target="_blank" class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card hover-lift">
+                    <a href="https://blog.hanslacida.com/2025/01/seo-trends-for-2025.html" target="_blank" class="block">
+                        <div class="aspect-w-16 aspect-h-9 relative overflow-hidden">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8XRRIqvDd-ZuNq3z3S7Y-CbA2W6BSGhMeeoPRNS5Rz2IkFg728UumheWW9UJbpFgDAsyfknoveL0R9OzcdtxWul7aYH-fNDIER6Qx4OcQ6i3HrcZgm01scGzkqXwTqNCKv-RKZ3SgEst2SALD4jbU-kIU8ugP9sA3obCXdP-dWfM_cd7ljYh6m2LrOjc/s1792/DALL%C2%B7E%202025-01-20%2018.37.21%20-%20A%20visually%20appealing%20banner%20image%20for%20a%20blog%20about%20SEO%20trends%20in%202025.%20The%20design%20should%20be%20modern%20and%20tech-inspired,%20incorporating%20elements%20such%20as%20a.webp" 
+                                 alt="SEO Trends 2025" 
+                                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">SEO</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                            <a href="https://blog.hanslacida.com/2025/01/seo-trends-for-2025.html" target="_blank">
+                                SEO Trends for 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Stay ahead with the latest SEO strategies and techniques that will dominate search rankings this year.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                6 min read
+                            </div>
+                            <a href="https://blog.hanslacida.com/2025/01/seo-trends-for-2025.html" target="_blank" class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
-         </div>
-      </section>
-
-      <!-- Newsletter Section -->
-      <section class="newsletter py-5">
-         <div class="container text-center">
-            <h2>Subscribe to My Newsletter</h2>
-            <p>Get exclusive tips, tools, and case studies to grow your business delivered straight to your inbox.</p>
-            <iframe src="https://hanslacida.beehiiv.com/subscribe" width="100%" height="400" style="border:none;"></iframe>
-         </div>
-      </section>
-
-      <!-- Footer Section -->
-      <footer class="footer">
-         <div class="container text-center">
-            <p>&copy; 2025 Hans Lacida. All Rights Reserved.</p>
-            <div class="social-links">
-               <a href="https://www.linkedin.com/company/hanslacida/" class="mr-3"><img src="/blog/images/LinkedIn.svg" alt="LinkedIn"></a>
-               <a href="https://www.twitter.com/hanslacida" class="mr-3"><img src="/blog/images/X_logo.png" alt="Twitter"></a>
+            
+            <div class="text-center mt-12">
+                <a href="https://blog.hanslacida.com" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                    📚 Browse All Articles
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
-         </div>
-      </footer>
+        </div>
+    </section>
 
-      <!-- Javascript Files -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
+    <!-- About Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <div class="w-24 h-24 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white font-bold text-3xl">HL</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">👋 Who is Hans Lacida?</h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Your trusted partner in digital marketing success with 10+ years of experience in PPC, SEO, and data analytics. 
+                        Proven results like <span class="font-semibold text-primary-600">744% ROAS</span> and reducing 
+                        <span class="font-semibold text-green-600">CPA by 50%</span>.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600">10+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">744%</div>
+                            <div class="text-sm text-gray-600">Peak ROAS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-orange-600">50%</div>
+                            <div class="text-sm text-gray-600">CPA Reduction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600">$300K+</div>
+                            <div class="text-sm text-gray-600">Monthly Ad Spend</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="/about/" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                            👤 Learn More About Hans
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="/services/" class="bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                            🛠️ Explore My Services
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">📧 Subscribe to My Newsletter</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Get exclusive tips, tools, and case studies to grow your business delivered straight to your inbox.
+                </p>
+                
+                <!-- Newsletter Benefits -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">💡</span>
+                        </div>
+                        <h3 class="font-semibold mb-2">Exclusive Tips</h3>
+                        <p class="text-sm text-gray-600">Advanced strategies not shared anywhere else</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <h3 class="font-semibold mb-2">Real Case Studies</h3>
+                        <p class="text-sm text-gray-600">Behind-the-scenes campaign breakdowns</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">🚀</span>
+                        </div>
+                        <h3 class="font-semibold mb-2">Growth Tools</h3>
+                        <p class="text-sm text-gray-600">Templates and frameworks that work</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Embed -->
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <iframe src="https://hanslacida.beehiiv.com/subscribe" 
+                        width="100%" 
+                        height="400" 
+                        style="border:none; border-radius: 1rem;"
+                        class="rounded-xl">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Brand Section -->
+                <div class="col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
+                        </div>
+                        <span class="ml-3 text-xl font-bold">Hans Lacida</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
+                        <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
+                        <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
+                        <li><a href="/leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
+                        <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
+                        <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Hans Lacida. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/90');
+            } else {
+                nav.classList.add('bg-white/90');
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+
+</body>
 </html>
