@@ -190,29 +190,124 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Choose Your PPC Plan</h1>
-        <p>Explore our pricing packages and elevate your digital marketing strategy.</p>
-        <a href="#pricing-table" class="cta-button">View Pricing</a>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-6">
+                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                        🚀 Professional Digital Marketing Services
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                    Strategic Digital
+                    <span class="bg-gradient-to-r from-accent-500 to-yellow-400 bg-clip-text text-transparent">Marketing</span>
+                    Solutions
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
+                    Data-driven strategies that deliver measurable results and sustainable growth
+                </p>
+                <p class="text-lg text-white/80 mb-10 max-w-3xl mx-auto">
+                    From PPC management to comprehensive marketing strategy, discover how my expertise can transform your business performance
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#services-overview" class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                        🎯 Explore Services
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                    <a href="/discovery-call/" class="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                        📞 Schedule Discovery Call
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="services-overview">
-        <h2>What I Can Do for You</h2>
-        <div class="service-item">
-            <h3>PPC Management</h3>
-            <p>Google Ads, Bing Ads, Programmatic.</p>
-        </div>
-        <div class="service-item">
-            <h3>SEO & Content Strategy</h3>
-            <p>Keyword research, on-page SEO, and analytics.</p>
-        </div>
-        <div class="service-item">
-            <h3>Data Analytics & Reporting</h3>
-            <p>GA4, Looker Studio reports, actionable insights.</p>
-        </div>
-        <div class="service-item">
-            <h3>Consulting</h3>
-            <p>Customized strategies with optional team training.</p>
+    <!-- Services Overview Section -->
+    <section id="services-overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🚀 What I Can Do for You</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive digital marketing solutions designed to drive measurable results and sustainable growth
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card hover-lift">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">PPC Management</h3>
+                    <p class="text-gray-600 mb-6">
+                        Google Ads, Bing Ads, and programmatic advertising campaigns optimized for maximum ROI and performance.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Campaign setup & optimization</li>
+                        <li>• Keyword research & targeting</li>
+                        <li>• Ad copy testing & refinement</li>
+                        <li>• Performance monitoring</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card hover-lift">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔍</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SEO & Content Strategy</h3>
+                    <p class="text-gray-600 mb-6">
+                        Comprehensive SEO strategy, keyword research, on-page optimization, and content that converts visitors into customers.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Technical SEO audits</li>
+                        <li>• Content strategy development</li>
+                        <li>• Local SEO optimization</li>
+                        <li>• Link building campaigns</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card hover-lift">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Data Analytics & Reporting</h3>
+                    <p class="text-gray-600 mb-6">
+                        GA4 setup, Looker Studio dashboards, and actionable insights that help you make data-driven decisions.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Analytics implementation</li>
+                        <li>• Custom dashboard creation</li>
+                        <li>• Conversion tracking setup</li>
+                        <li>• Performance reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card hover-lift">
+                    <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Strategic Consulting</h3>
+                    <p class="text-gray-600 mb-6">
+                        Customized marketing strategies with optional team training and ongoing support to accelerate your growth.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Marketing strategy development</li>
+                        <li>• Team training & workshops</li>
+                        <li>• Growth planning & execution</li>
+                        <li>• Ongoing strategic support</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -223,114 +318,48 @@
         <a href="/discovery-call/" class="cta-button">Schedule Your Discovery Call</a>
     </section>
 
-    <section id="pricing-table">
-        <h2>Our PPC Solutions</h2>
-        <p>Compare our plans and select the one that suits your business needs.</p>
-        <table>
-            <div class="service-item"></div><tr>
-                <th>Features</th>
-                <th>Green Plan</th>
-                <th>Blue Plan</th>
-                <th>Red Plan</th>
-                <th>Gold Plan</th>
-            </tr></div>
-            <tr>
-                <td>Price</td>
-                <td>$1,000/month</td>
-                <td>$2,500/month</td>
-                <td>$5,000/month</td>
-                <td>Custom Pricing</td>
-            </tr>
-            <tr>
-                <td>Ad Spend Management</td>
-                <td>Up to $5,000</td>
-                <td>Up to $15,000</td>
-                <td>Up to $50,000</td>
-                <td>Unlimited</td>
-            </tr>
-            <tr>
-                <td>Campaign Types</td>
-                <td>1 Campaign Type</td>
-                <td>Multiple Campaign Types</td>
-                <td>Full Campaign Suite</td>
-                <td>International Targeting</td>
-            </tr>
-            <tr>
-                <td>Keyword Research</td>
-                <td>Basic</td>
-                <td>Advanced</td>
-                <td>Comprehensive</td>
-                <td>Premium</td>
-            </tr>
-            <tr>
-                <td>Negative Keywords Sorting</td>
-                <td>Weekly Sorting: Identify and exclude a small list of irrelevant keywords that may negatively impact
-                    ad performance weekly.</td>
-                <td>Advanced Sorting: Regular updates to the negative keyword list, focusing on specific industry terms
-                    or phrases that waste budget daily.</td>
-                <td>Comprehensive Sorting: Conduct detailed keyword research to continuously refine the negative keyword
-                    list, minimizing irrelevant traffic daily.</td>
-                <td>Premium Sorting: AI-driven negative keyword analysis with predictive insights to anticipate and
-                    block low-value traffic.</td>
-            </tr>
-            <tr>
-                <td>Strategy/Planning</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Google Ads Managemnet</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Pmax or Shopping Ads</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Google Tag Set up</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Conversion Tracking Set up</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Strategy Call with Expert</td>
-                <td>Onboarding Only</td>
-                <td>Monthly</td>
-                <td>Monthly</td>
-                <td>Monthly</td>
-            </tr>
-            <tr>
-                <td>Support</td>
-                <td>Email Support</td>
-                <td>Email + Chat</td>
-                <td>Email + Monthly Calls</td>
-                <td>Dedicated Manager</td>
-            </tr>
-            <tr class="cta-row">
-                <td></td>
-                <td><a href="/contact/" class="cta-button">Request a Quote</a></td>
-                <td><a href="/contact/" class="cta-button">Request a Quote</a></td>
-                <td><a href="/contact/" class="cta-button">Request a Quote</a></td>
-                <td><a href="/contact/" class="cta-button">Request a Quote</a></td>
-            </tr>
-
-        </table>
+    <!-- Pricing CTA Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 text-center">
+                <div class="mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">💰 Transparent Pricing Plans</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Choose from flexible pricing packages designed to scale with your business growth and marketing needs.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Green Plan</h3>
+                        <p class="text-green-700">Perfect for small businesses getting started</p>
+                    </div>
+                    <div class="bg-primary-50 border border-primary-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">Blue Plan</h3>
+                        <p class="text-primary-700">Ideal for growing businesses</p>
+                    </div>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-red-800 mb-2">Red Plan</h3>
+                        <p class="text-red-700">For established businesses scaling fast</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-200 rounded-lg p-6 mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Enterprise Solutions</h3>
+                    <p class="text-gray-700">
+                        Need something different? I offer custom-tailored solutions designed specifically for your unique business requirements and goals.
+                    </p>
+                </div>
+                
+                <a href="https://pricing.hanslacida.com" target="_blank" rel="noopener noreferrer" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center">
+                    💰 View Complete Pricing
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
     </section>
     <section id="custom-plans" class="custom-plans-section">
         <div class="container">
@@ -375,26 +404,122 @@
     </section>
 
 
-    <footer>
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> - Trusted Digital Advertising for U.S.
-                            Businesses. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Brand Section -->
+                <div class="col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">HL</span>
+                        </div>
+                        <span class="ml-3 text-xl font-bold">Hans Lacida</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
+                        <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
+                        <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
+                        <li><a href="/leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
+                        <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
+                        <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Hans Lacida | <sup>ZEL DIGITAL®</sup> - Trusted Digital Advertising for U.S. Businesses. All Rights Reserved.</p>
             </div>
         </div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/#about">About</a>
-            <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/case-studies/">Case Studies</a>
-            <a href="/contact/">Contact</a>
-            <a href="/blog/">Blog</a>
     </footer>
-</body>
 
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/90');
+            } else {
+                nav.classList.add('bg-white/90');
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+
+</body>
 </html>
