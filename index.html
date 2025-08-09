@@ -478,10 +478,22 @@
 
     <!-- JavaScript -->
     <script>
-        // Hide loader when page loads
-        window.addEventListener('load', function() {
-            document.getElementById('loader').style.display = 'none';
+        // Hide loader when page loads - improved version
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        }
+
+        // Hide loader on DOM content loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loader after a short delay to ensure smooth transition
+            setTimeout(hideLoader, 500);
         });
+
+        // Also hide loader on window load as backup
+        window.addEventListener('load', hideLoader);
 
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -518,7 +530,4 @@
         });
     </script>
 </body>
-
 </html> 
-
-
