@@ -84,9 +84,9 @@
     <!-- Work With Me Page -->
     <url>
         <loc>https://www.hanslacida.com/work-with-me/</loc>
-        <lastmod>2024-12-23</lastmod>
+        <lastmod>2025-01-13</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <!-- Blog Page -->
     <url>
@@ -579,6 +579,22 @@
     <url>
         <loc>https://www.hanslacida.com/about/achievements</loc>
         <lastmod>2025-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- New Google Ads Specialist USA Landing Page -->
+    <url>
+        <loc>https://www.hanslacida.com/google-ads-specialist-usa/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- 20x ROAS Case Study -->
+    <url>
+        <loc>https://www.hanslacida.com/case-studies/20x-roas/</loc>
+        <lastmod>2025-01-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
