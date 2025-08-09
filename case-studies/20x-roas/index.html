@@ -125,14 +125,130 @@
             display: none;
         }
         
-        .chart-placeholder {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            border: 2px dashed #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
+        /* Case Study Specific Styles */
+        .cs-container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cs-hero {
+            background: #f7f7f8;
+            padding: 48px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cs-hero h1 {
+            margin: 0 0 6px;
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+        
+        .cs-note {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 16px;
             border-radius: 12px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+        
+        .goals {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .goals li {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 8px 12px;
+        }
+        
+        .stats-grid div {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 12px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .stats-grid div:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .stats-grid strong {
+            display: block;
+            font-size: 1.2rem;
+        }
+        
+        .stats-grid span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .table-wrap {
+            overflow-x: auto;
+            margin: 10px 0 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #eee;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background: #fafafa;
+        }
+        
+        .cta-box {
+            margin: 28px 0 40px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 14px;
+            background: #f9f9fb;
+        }
+        
+        .disclosure {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 900px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cs-hero h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
     
@@ -252,261 +368,175 @@
         </div>
     </section>
 
-    <!-- Client Background -->
-    <section class="py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-4">The Challenge</h2>
-                    <p class="text-lg text-gray-600">Understanding the starting point and obstacles</p>
+    <!-- Performance Table -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="cs-container max-w-5xl mx-auto px-4">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Performance Table</h3>
+            <div class="table-wrap overflow-x-auto mb-8">
+                <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-lg">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Metric</th>
+                            <th class="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Before (Apr 2022)</th>
+                            <th class="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">After (Apr 2023)</th>
+                            <th class="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-200 px-4 py-3">Monthly Conversion Value</td>
+                            <td class="border border-gray-200 px-4 py-3">$139</td>
+                            <td class="border border-gray-200 px-4 py-3 font-semibold text-green-600">$14,201</td>
+                            <td class="border border-gray-200 px-4 py-3 font-semibold text-green-600">+10,117%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3">Monthly ROAS</td>
+                            <td class="border border-gray-200 px-4 py-3">0.17×</td>
+                            <td class="border border-gray-200 px-4 py-3 font-semibold text-blue-600">9.06×</td>
+                            <td class="border border-gray-200 px-4 py-3 font-semibold text-blue-600">+5,235%</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-200 px-4 py-3">Peak Monthly ROAS</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                            <td class="border border-gray-200 px-4 py-3 font-bold text-red-600">21.55× (Jun 2022)</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3">Aggregate ROAS (Feb 2022–May 2023)</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                            <td class="border border-gray-200 px-4 py-3 font-bold text-purple-600">7.22×</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-200 px-4 py-3">Aggregate Spend</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                            <td class="border border-gray-200 px-4 py-3 font-bold text-gray-700">$17,946.98</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3">Aggregate Conversion Value</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                            <td class="border border-gray-200 px-4 py-3 font-bold text-green-700">$129,545.01</td>
+                            <td class="border border-gray-200 px-4 py-3">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-2">Conversion lift:</h4>
+                    <p class="text-green-700">Monthly revenue scaled ~100× in 12 months.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Client Profile:</h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-shopping-bag text-blue-600 mt-1 mr-3"></i>
-                                Direct-to-Consumer (DTC) brand in the lifestyle/wellness space
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-calendar-alt text-blue-600 mt-1 mr-3"></i>
-                                3+ years in business with established product line
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-dollar-sign text-blue-600 mt-1 mr-3"></i>
-                                Previous ROAS averaging 2.5x (below industry standard)
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-chart-line text-blue-600 mt-1 mr-3"></i>
-                                Monthly ad spend: $12,000-$15,000
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4 text-red-800">Key Problems:</h3>
-                        <ul class="space-y-2 text-red-700">
-                            <li>• Broad, unfocused targeting</li>
-                            <li>• Poorly optimized landing pages</li>
-                            <li>• Limited conversion tracking</li>
-                            <li>• Inefficient budget allocation</li>
-                            <li>• No systematic testing process</li>
-                        </ul>
-                    </div>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-2">Revenue efficiency:</h4>
+                    <p class="text-blue-700">Profitability unlocked and sustained, not a one-off spike.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strategy & Implementation -->
-    <section id="details" class="py-12 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-4">The Strategy</h2>
-                    <p class="text-lg text-gray-600">How we achieved exceptional results</p>
+    <!-- What We Changed -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="cs-container max-w-5xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">What We Changed (Strategy Highlights)</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">1) Campaign Restructuring</h4>
+                    <ul class="space-y-2 text-gray-700 ml-6">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            Consolidated high‑intent search into focused ad groups.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            Introduced & scaled Shopping and Dynamic Search Ads for full catalog coverage.
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-900">
-                            <i class="fas fa-search text-blue-600 mr-2"></i>
-                            Phase 1: Comprehensive Audit & Strategy (Week 1-2)
-                        </h3>
-                        <div class="bg-white p-6 rounded-lg border border-gray-200">
-                            <ul class="space-y-2 text-gray-600">
-                                <li>• Deep-dive analysis of existing campaigns and performance data</li>
-                                <li>• Competitor research and market opportunity identification</li>
-                                <li>• Customer journey mapping and conversion path optimization</li>
-                                <li>• Technical audit of tracking and measurement setup</li>
-                            </ul>
-                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
-                                <strong class="text-blue-800">Key Finding:</strong> 
-                                <span class="text-blue-700">47% of ad spend was going to irrelevant traffic with poor conversion potential</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-900">
-                            <i class="fas fa-bullseye text-green-600 mr-2"></i>
-                            Phase 2: Precision Targeting Implementation (Week 3-4)
-                        </h3>
-                        <div class="bg-white p-6 rounded-lg border border-gray-200">
-                            <ul class="space-y-2 text-gray-600">
-                                <li>• Implemented exact and phrase match keywords with tight negative lists</li>
-                                <li>• Created high-intent audience segments based on behavior data</li>
-                                <li>• Set up Performance Max campaigns with detailed asset groups</li>
-                                <li>• Optimized bidding strategies for maximum efficiency</li>
-                            </ul>
-                            <div class="mt-4 p-4 bg-green-50 rounded-lg">
-                                <strong class="text-green-800">Immediate Impact:</strong> 
-                                <span class="text-green-700">CTR improved by 73% and CPC decreased by 35% within 2 weeks</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-900">
-                            <i class="fas fa-chart-bar text-purple-600 mr-2"></i>
-                            Phase 3: Conversion Rate Optimization (Week 5-8)
-                        </h3>
-                        <div class="bg-white p-6 rounded-lg border border-gray-200">
-                            <ul class="space-y-2 text-gray-600">
-                                <li>• Redesigned landing pages with conversion-focused layouts</li>
-                                <li>• A/B tested headlines, CTAs, and social proof elements</li>
-                                <li>• Implemented advanced conversion tracking and attribution</li>
-                                <li>• Optimized checkout flow to reduce cart abandonment</li>
-                            </ul>
-                            <div class="mt-4 p-4 bg-purple-50 rounded-lg">
-                                <strong class="text-purple-800">Conversion Boost:</strong> 
-                                <span class="text-purple-700">Landing page conversion rate increased from 1.8% to 4.2%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-900">
-                            <i class="fas fa-rocket text-red-600 mr-2"></i>
-                            Phase 4: Scaling & Optimization (Week 9-12)
-                        </h3>
-                        <div class="bg-white p-6 rounded-lg border border-gray-200">
-                            <ul class="space-y-2 text-gray-600">
-                                <li>• Gradually increased budgets on highest-performing campaigns</li>
-                                <li>• Launched additional ad variations and expanded winning audiences</li>
-                                <li>• Implemented automated bidding with custom conversion goals</li>
-                                <li>• Weekly performance reviews and strategic adjustments</li>
-                            </ul>
-                            <div class="mt-4 p-4 bg-red-50 rounded-lg">
-                                <strong class="text-red-800">Final Result:</strong> 
-                                <span class="text-red-700">Achieved peak 20x ROAS while maintaining consistent daily performance</span>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">2) Bid & Budget Optimization</h4>
+                    <ul class="space-y-2 text-gray-700 ml-6">
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            Reallocated budget to top‑performing segments, taking ROAS from sub‑1× to 7×+ within months.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            Employed aggressive CPA targets during high‑conversion windows.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">3) Ongoing Refinements</h4>
+                    <ul class="space-y-2 text-gray-700 ml-6">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            Weekly negative‑keyword sweeps removed wasted spend.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            A/B tests on ad creatives and LP CTAs boosted click‑to‑conversion rates.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            Tight feedback loop between query → ad → landing page → checkout.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Performance Charts Placeholder -->
-    <section class="py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-4">Performance Visualization</h2>
-                    <p class="text-lg text-gray-600">Week-by-week improvement tracking</p>
+    <!-- Why It Worked -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="cs-container max-w-5xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Why It Worked (The Playbook)</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-lg font-semibold text-blue-600 mb-3">Intent first:</h4>
+                    <p class="text-gray-700">Exact/phrase match + aggressive negatives to protect budget.</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="chart-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-chart-line text-4xl text-gray-400 mb-4"></i>
-                            <p class="text-gray-500 font-semibold">ROAS Progression Chart</p>
-                            <p class="text-sm text-gray-400">Week 1: 2.5x → Week 12: 20x</p>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-dollar-sign text-4xl text-gray-400 mb-4"></i>
-                            <p class="text-gray-500 font-semibold">Revenue Growth Chart</p>
-                            <p class="text-sm text-gray-400">Monthly progression visualization</p>
-                        </div>
-                    </div>
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-lg font-semibold text-green-600 mb-3">Merchandising:</h4>
+                    <p class="text-gray-700">Product feed fixes + richer titles improved Shopping visibility.</p>
                 </div>
                 
-                <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
-                    <i class="fas fa-info-circle text-yellow-600 text-xl mb-2"></i>
-                    <p class="text-yellow-800">
-                        <strong>Note:</strong> Detailed performance charts and additional metrics are available during our strategy call. 
-                        <a href="../../google-ads-specialist-usa/#book" class="text-blue-600 hover:text-blue-800 underline">Book your free consultation</a> 
-                        to see the complete data breakdown.
-                    </p>
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-lg font-semibold text-purple-600 mb-3">Signal discipline:</h4>
+                    <p class="text-gray-700">Audience signals & creative assets tuned for PMax, not left on autopilot.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-lg font-semibold text-orange-600 mb-3">CRO basics:</h4>
+                    <p class="text-gray-700">Faster path to purchase, mobile friction removed, CTA clarity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Takeaways -->
-    <section class="py-12 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-4">Key Success Factors</h2>
-                    <p class="text-lg text-gray-600">What made this campaign exceptional</p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 hover-scale">
-                        <div class="text-blue-600 text-3xl mb-4">
-                            <i class="fas fa-crosshairs"></i>
-                        </div>
-                        <h3 class="font-semibold text-lg mb-3">Laser-Focused Targeting</h3>
-                        <p class="text-gray-600 text-sm">Eliminated waste by targeting only high-intent prospects with proven buying behavior.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 hover-scale">
-                        <div class="text-green-600 text-3xl mb-4">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <h3 class="font-semibold text-lg mb-3">Systematic Testing</h3>
-                        <p class="text-gray-600 text-sm">Weekly A/B tests on ads, landing pages, and audience segments drove continuous improvement.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 hover-scale">
-                        <div class="text-purple-600 text-3xl mb-4">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="font-semibold text-lg mb-3">Technical Excellence</h3>
-                        <p class="text-gray-600 text-sm">Proper tracking, attribution, and conversion optimization formed the foundation.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Can This Work For You -->
+    <section class="cta-box py-12 md:py-16 bg-blue-50 border-t border-b border-blue-200">
+        <div class="cs-container max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Can This Work For You?</h3>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                If you're a U.S. brand investing <strong class="text-blue-600">$5K–$50K+/mo</strong> in Google Ads and want profitable scale (not just more clicks), let's talk. You'll work directly with a specialist—not a rotating bench.
+            </p>
+            <a href="../../google-ads-specialist-usa/#book" class="btn-primary inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 text-lg">
+                Book Your Free 10‑Min Strategy Call
+            </a>
+            <p class="disclosure text-sm text-gray-600 mt-6">
+                <strong>Disclosure:</strong> All figures sourced from internal Google Ads reporting (Feb 2022–May 2023). Client details anonymized for confidentiality.
+            </p>
         </div>
     </section>
 
-    <!-- Testimonial -->
-    <section class="py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 md:p-12 rounded-lg">
-                    <i class="fas fa-quote-left text-3xl mb-6 opacity-50"></i>
-                    <blockquote class="text-lg md:text-xl font-medium mb-6 leading-relaxed">
-                        "The results speak for themselves. Hanzel didn't just improve our ROAS – he completely transformed our entire approach to Google Ads. The systematic methodology and attention to detail are what set him apart. We've sustained profitable growth far beyond the initial campaign."
-                    </blockquote>
-                    <div class="border-t border-white border-opacity-30 pt-6">
-                        <p class="font-semibold">Marketing Director</p>
-                        <p class="text-blue-100">DTC Lifestyle Brand</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="gradient-bg text-white py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-baloo font-bold mb-6">
-                    Ready to Achieve Similar Results?
-                </h2>
-                <p class="text-lg text-blue-100 mb-8 leading-relaxed">
-                    This case study represents just one example of what's possible with the right strategy, execution, and ongoing optimization. Let's discuss how we can scale your Google Ads performance.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="../../google-ads-specialist-usa/#book" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-center hover-scale">
-                        <i class="fas fa-calendar-check mr-2"></i>
-                        Book Your Free Strategy Call
-                    </a>
-                    <a href="../../google-ads-specialist-usa/" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 text-center hover-scale">
-                        <i class="fas fa-arrow-left mr-2"></i>
-                        Back to Landing Page
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16">

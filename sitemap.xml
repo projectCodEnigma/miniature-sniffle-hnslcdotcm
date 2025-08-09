@@ -52,7 +52,7 @@
     <!-- Services Page -->
     <url>
         <loc>https://www.hanslacida.com/services/</loc>
-        <lastmod>2024-12-23</lastmod>
+        <lastmod>2025-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -60,17 +60,105 @@
     <!-- Services - PPC Management Page -->
     <url>
         <loc>https://www.hanslacida.com/services/ppc-management</loc>
-        <lastmod>2024-12-23</lastmod>
+        <lastmod>2025-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Pricing Page -->
+    <!-- Detailed PPC Management Services -->
+    <url>
+        <loc>https://www.hanslacida.com/ppc-management/google-ads/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/ppc-management/facebook-ads/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/ppc-management/linkedin-ads/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- SEM Strategies -->
+    <url>
+        <loc>https://www.hanslacida.com/sem-strategies/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/sem-strategies/keyword-research/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/sem-strategies/campaign-optimization/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Business Consulting Services -->
+    <url>
+        <loc>https://www.hanslacida.com/business-consulting/fractional-cmo/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/business-consulting/digital-strategy/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Marketing Audits -->
+    <url>
+        <loc>https://www.hanslacida.com/marketing-audit/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Pricing Pages -->
     <url>
         <loc>https://www.hanslacida.com/services/ppc-services-pricing/</loc>
-        <lastmod>2024-12-23</lastmod>
+        <lastmod>2025-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://pricing.hanslacida.com/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/ppc-management-pricing/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/consulting-pricing/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <!-- Contact Page -->
@@ -91,9 +179,117 @@
     <!-- Blog Page -->
     <url>
         <loc>https://www.hanslacida.com/blog/</loc>
-        <lastmod>2024-12-23</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Categories -->
+    <url>
+        <loc>https://blog.hanslacida.com/category/ppc-management/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/category/google-ads/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/category/digital-marketing/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/category/business-consulting/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/category/case-studies/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://blog.hanslacida.com/2025/01/ppc-management-best-practices-2025/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/2025/01/google-ads-optimization-strategies/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/2025/01/fractional-cmo-benefits-small-business/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/2025/01/digital-marketing-trends-2025/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/2025/01/ppc-roi-measurement-guide/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Blog Resources -->
+    <url>
+        <loc>https://blog.hanslacida.com/resources/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/guides/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/tools/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/newsletter/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.hanslacida.com/subscribe/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 
     <!-- Stop managing ads Page -->
@@ -581,6 +777,75 @@
         <lastmod>2025-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Resources and Tools -->
+    <url>
+        <loc>https://www.hanslacida.com/resources/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/tools/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Portfolio and Work Examples -->
+    <url>
+        <loc>https://www.hanslacida.com/portfolio/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Music and Creative Work -->
+    <url>
+        <loc>https://www.hanslacida.com/music/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/composer/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://www.hanslacida.com/privacy-policy/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://www.hanslacida.com/terms-of-service/</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Social Media and External Links -->
+    <url>
+        <loc>https://linktr.ee/hanslacida</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Component System Pages -->
+    <url>
+        <loc>https://www.hanslacida.com/index-component.html</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
     <!-- New Google Ads Specialist USA Landing Page -->
