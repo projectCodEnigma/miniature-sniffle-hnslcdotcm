@@ -1,180 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1E3588F4M');
+    </script>
+
+     <!-- Tailwind CSS -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script>
+         tailwind.config = {
+             theme: {
+                 extend: {
+                     fontFamily: {
+                         'rajdhani': ['Rajdhani', 'sans-serif'],
+                         'poppins': ['Poppins', 'sans-serif'],
+                         'baloo': ['Baloo Chettan', 'cursive'],
+                         'lato': ['Lato', 'sans-serif']
+                     },
+                     colors: {
+                         'theme-blue': '#1a3cd4',
+                         'theme-dark': '#111111',
+                         'theme-gray': '#666666',
+                         'theme-light': '#f8f9fa'
+                     }
+                 }
+             }
+         }
+     </script>
+    
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- site metas -->
+    <title>Free Discovery Call | Hans Lacida - PPC Consulting, Fractional CMO & Digital Marketing Strategies</title>
+    <meta name="keywords" content="Discovery Call, PPC Consulting, Free Consultation, Digital Marketing Strategy, Fractional CMO, Maximize ROI, Hans Lacida">
     <meta name="description" content="Schedule your free discovery call for PPC consulting, Fractional CMO services, and digital marketing strategies. Maximize ROI with tailored solutions today!">
-    <meta name="keywords" content="Discovery Call, PPC Consulting, Free Consultation, Digital Marketing Strategy, Fractional CMO, Maximize ROI">
-    <meta name="author" content="Hanzel Lacida">
-    <title>Free Discovery Call | PPC Consulting, Fractional CMO & Digital Marketing Strategies</title>
+    <meta name="author" content="Hans Lacida">
+    <meta name="google-adsense-account" content="ca-pub-2137593406454250">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- favicon -->
+    <link rel="icon" href="../images/hanslacida_favicon.webp" type="image/webp" />
+    
+    <!-- Custom Styles -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+        html {
+            scroll-behavior: smooth;
         }
-        header {
-            background-color: #0d6bc2;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        
+        .loader {
+            animation: spin 1s linear infinite;
         }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        header nav {
-            margin: 10px 0;
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
+        
+        .hover-scale {
+            transition: transform 0.3s ease-in-out;
         }
-        header nav a:hover {
-            color: #18bc9c;
-        }
-        .hero {
-            background-color: #0d6bc2;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .hero h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            margin-top: 20px;
-            background-color: #07099b;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .cta-button:hover {
-            background-color: #2225df;
+        
+        .hover-scale:hover {
             transform: scale(1.05);
         }
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section h2 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            color: #2c3e50;
-        }
-        .content-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        footer {
-            background-color: #0d6bc2;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        footer nav {
-            margin: 10px 0;
-        }
-        footer nav a {
-            color: #ecebe1;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        footer nav a:hover {
-            color: #9e2828;
-        }
     </style>
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
 </head>
-<body>
+
+<body class="font-lato text-gray-600 bg-white">
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="loader w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+    </div>
+
     <!-- Header -->
-    <header>
-        <h1>Stop Spending Your Time Managing Ads—Focus on Scaling Your Business Instead</h1>
+    <header class="bg-white shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="../index.html" class="flex items-center">
+                        <img src="../images/hanslacida_favicon.jpg" alt="HansLacida.com" class="h-12 w-auto" />
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                    <a href="/#about" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
+                    <a href="/#services" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
+                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
+                    <a href="/case-studies/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Case Studies</a>
+                    <a href="/#contact" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-blue-600" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                    <a href="/#about" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
+                    <a href="/#services" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
+                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
+                    <a href="/case-studies/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Case Studies</a>
+                    <a href="/#contact" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h2>Simplify Your Google Ads Management and Boost Your ROI</h2>
-        <p>Hi, I’m Hanzel Lacida, a Google Ads Specialist with Over 10 Years of Experience Delivering Results.</p>
-        <a href="#contact" class="cta-button">Book a Free Strategy Call</a>
-        <a href="https://tidycal.com/hanslacida/discovery-call" class="cta-button">Book a Discovery Call</a>
-    </section>
-
-    <!-- Section 1: The Problem -->
-    <section id="problem">
-        <div class="content-container">
-            <h2>Struggling to Keep Up with Your Google Ads?</h2>
-            <h3>Managing Google Ads is time-consuming and complex. Staying glued to your screen for campaign monitoring and client calls drains your energy. The strategic “why” behind ad behavior is overwhelming.</h3>
-            <h4>
-                 <p>1. Endless hours spent optimizing campaigns.</p>
-                 <p>2. Difficulty creating actionable strategies.</p>
-                 <p>3. Stress from client calls and unexpected changes.</p>
-            </h4>
+    <section class="gradient-bg text-white py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-baloo font-bold leading-tight">
+                        Free Discovery Call
+                    </h1>
+                    <p class="text-lg sm:text-xl text-blue-100 leading-relaxed">
+                        Let's discuss your digital marketing goals and explore how we can transform your business with data-driven strategies. 
+                        Book your free discovery call today and take the first step toward maximizing your ROI.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://tidycal.com/zeldigital/discovery-call" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-center">
+                            Book Your Call
+                        </a>
+                        <a href="/#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 text-center">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center order-first md:order-last">
+                    <img src="../images/banner.png" alt="Discovery Call" class="w-full max-w-sm sm:max-w-md mx-auto hover-scale" />
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Section 5: Your Role -->
-    <section id="your-role">
-        <div class="content-container">
-            <h2>Focus on Scaling Your Business</h2>
-            <h3>Let me handle the technical work so you can focus on your clients.</p>
-            <h4>
-                 <p>1. Nurture client relationships.</p>
-                 <p>2. Expand your business operations.</p>
-                 <p>3. Enjoy peace of mind knowing your Google Ads are in expert hands.</p>
-            <h4>
+    <!-- What to Expect Section -->
+    <section class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-800 mb-4">
+                    What to Expect
+                </h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+                    Your discovery call is a no-obligation conversation to understand your business needs and explore potential solutions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-comments text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-baloo font-bold text-gray-800 mb-3">Initial Discussion</h3>
+                    <p class="text-gray-600">We'll discuss your current digital marketing challenges, goals, and business objectives.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-baloo font-bold text-gray-800 mb-3">Strategy Insights</h3>
+                    <p class="text-gray-600">I'll share initial thoughts on potential strategies and approaches for your business.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-arrow-right text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-baloo font-bold text-gray-800 mb-3">Next Steps</h3>
+                    <p class="text-gray-600">We'll determine if there's a good fit and discuss potential next steps forward.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us directly via email at <strong>contact@hanslacida.com</strong>.</p>
-    </section>
-
-    <!-- Booking Calendar Section -->
-    <section id="booking" class="booking">
-        <div class="container" style="text-align: left; max-width: 800px; margin: 0 auto;">
-            <h2 style="text-align: center;">Book Your Free Marketing Audit Call</h2>
-            <p>During your discovery call, we aim to connect, understand your background and business, and explore how we can assist. Here's what we'll cover:</p>
-            <ul style="padding-left: 20px;">
-                <li>Share your journey and background.</li>
-                <li>Discuss your business, target market, and processes.</li>
-                <li>Identify the best ways we can support your goals.</li>
-            </ul>
-            <div class="tidycal-embed" data-path="hanslacida/discovery-call"></div>
-            <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+    <!-- Why Book a Discovery Call Section -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-800">
+                        Why Book a Discovery Call?
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Free Consultation</h3>
+                                <p class="text-gray-600 text-sm">No cost, no obligation - just valuable insights for your business.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Expert Analysis</h3>
+                                <p class="text-gray-600 text-sm">Get professional insights from a former Google Senior Account Strategist.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Customized Solutions</h3>
+                                <p class="text-gray-600 text-sm">Tailored strategies based on your specific business needs and goals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clear Roadmap</h3>
+                                <p class="text-gray-600 text-sm">Understand the path forward to achieve your digital marketing objectives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-50 p-8 rounded-lg border border-blue-200">
+                        <h3 class="text-xl font-baloo font-bold text-gray-800 mb-4">Ready to Get Started?</h3>
+                        <p class="text-gray-600 mb-6">Book your free discovery call and let's discuss how we can help your business grow.</p>
+                        <a href="https://tidycal.com/zeldigital/discovery-call" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 inline-block">
+                            Schedule Now
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Hanzel Lacida. All Rights Reserved.</p>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/services/">Services</a>
-            <a href="/services/ppc-services-pricing/">Pricing</a>
-            <a href="/case-studies/">Case Studies</a>
-            <a href="/contact/">Contact</a>
-        </nav>
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-800 mb-4">
+                    Book Your Discovery Call
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Use the calendar below to schedule your free discovery call at a time that works for you.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <iframe 
+                        src="https://tidycal.com/zeldigital/discovery-call" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0"
+                        title="Book Discovery Call"
+                        class="rounded-lg">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="../images/hanslacida_favicon.jpg" alt="HansLacida.com" class="h-10 w-auto mr-3" />
+                        <span class="text-xl font-bold">Hans Lacida</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
+                        <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
+                        <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
+                        <li><a href="/leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
+                        <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
+                        <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> - Trusted Digital Advertising for U.S. Businesses. All Rights Reserved.</p>
+                <div class="mt-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Hide loader when page loads - improved version
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        }
+
+        // Hide loader on DOM content loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loader after a short delay to ensure smooth transition
+            setTimeout(hideLoader, 500);
+        });
+
+        // Also hide loader on window load as backup
+        window.addEventListener('load', hideLoader);
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
