@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing - ZELDIGITAL | Google Ads Management Plans</title>
+  <meta name="description" content="Top-Tier Google Ads Management Plans. Custom-built for entrepreneurs and agencies in the USA. Pricing is per Google Ads account. Unlimited client team members — no seat-based charges." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            rajdhani: ['Rajdhani','sans-serif'],
+            poppins: ['Poppins','sans-serif'],
+            baloo: ['Baloo Chettan','cursive'],
+            lato: ['Lato','sans-serif']
+          },
+          colors: {
+            'theme-blue': '#1a3cd4',
+            'theme-dark': '#111111',
+            'theme-gray': '#666666',
+            'theme-light': '#f8f9fa'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stripe Pricing Table -->
+  <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+
+  <!-- Base + Premium Styles -->
+  <style>
+    html{scroll-behavior:smooth}
+    .loader{animation:spin 1s linear infinite}
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+    .gradient-bg{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+    .hover-scale{transition:transform .3s ease-in-out}
+    .hover-scale:hover{transform:translateY(-2px) scale(1.02)}
+    .glass{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(255,255,255,.06)}
+    .shadow-soft{box-shadow:0 10px 40px rgba(0,0,0,.14)}
+  </style>
+</head>
+
+<body class="font-lato text-gray-700 bg-white">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div class="loader w-16 h-16 border-4 border-theme-blue border-t-transparent rounded-full"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white/95 backdrop-blur sticky top-0 z-40 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between py-4">
+        <!-- Brand -->
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-lg">HL</span>
+          </div>
+          <div class="leading-tight">
+            <div class="text-lg font-extrabold tracking-tight">HansLacida</div>
+            <div class="text-[11px] text-gray-500">a <span class="font-semibold">ZELDIGITAL®</span> company</div>
+          </div>
+        </a>
+        <!-- Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/" class="text-gray-800 hover:text-theme-blue">Home</a>
+          <a href="/about/" class="text-gray-800 hover:text-theme-blue">About</a>
+          <a href="/services/" class="text-gray-800 hover:text-theme-blue">Services</a>
+          <a href="#pricing" class="text-gray-800 hover:text-theme-blue font-semibold">Pricing</a>
+          <a href="/case-studies/" class="text-gray-800 hover:text-theme-blue">Case Studies</a>
+          <a href="/who-we-help/" class="text-gray-800 hover:text-theme-blue">Who We Help</a>
+          <a href="#faq" class="text-gray-800 hover:text-theme-blue">FAQ</a>
+          <a href="/contact/" class="text-gray-800 hover:text-theme-blue">Contact</a>
+        </nav>
+        <!-- CTA -->
+        <a href="/work-with-me/" class="hidden sm:inline-flex items-center gap-2 bg-theme-blue text-white px-4 py-2 rounded-lg hover:opacity-95">
+          Work With me
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-800" aria-label="Toggle menu">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="flex flex-col space-y-3">
+          <a href="/" class="text-gray-800 hover:text-theme-blue">Home</a>
+          <a href="/about/" class="text-gray-800 hover:text-theme-blue">About</a>
+          <a href="/services/" class="text-gray-800 hover:text-theme-blue">Services</a>
+          <a href="#pricing" class="text-gray-800 hover:text-theme-blue font-semibold">Pricing</a>
+          <a href="/case-studies/" class="text-gray-800 hover:text-theme-blue">Case Studies</a>
+          <a href="/who-we-help/" class="text-gray-800 hover:text-theme-blue">Who We Help</a>
+          <a href="#faq" class="text-gray-800 hover:text-theme-blue">FAQ</a>
+          <a href="/contact/" class="text-gray-800 hover:text-theme-blue">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white py-14 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="font-baloo text-4xl sm:text-5xl md:text-6xl leading-tight font-bold mb-4">Top-Tier Google Ads Management Plans</h1>
+      <p class="text-blue-100 text-lg mb-2">Custom-built for entrepreneurs and agencies in the USA.</p>
+      <p class="text-blue-200 text-sm">by Hans Lacida — Google Ads Strategist and Growth Partner</p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-14 md:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-6 text-center">
+        <p class="text-sm text-gray-700 bg-white inline-block px-6 py-3 rounded-lg shadow-soft">
+          💡 Pricing is per Google Ads account. Unlimited client team members — no seat-based charges.
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6 md:p-8">
+        <stripe-pricing-table 
+          pricing-table-id="prctbl_1QhxY5GhNWO2s117yXPAlY0C"
+          publishable-key="pk_live_51QhwQQGhNWO2s1173Bo9fGZlzkalF23UeC3CqQMKIfSgzZ1B9JxxaZHRWzTsLbC7C52Yo57mp4XN8uERXHx7jb9I00DtCpmZof">
+        </stripe-pricing-table>
+      </div>
+    </div>
+    </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-14 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-3">Why Choose Our Plans</h2>
+        <p class="text-gray-600">Comprehensive Google Ads management designed for growth.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-soft border border-gray-100 hover-scale">
+          <div class="text-theme-blue mb-3"><i class="fas fa-chart-line text-2xl"></i></div>
+          <h3 class="text-xl font-baloo font-bold mb-2">Performance-Driven</h3>
+          <p class="text-gray-600">Data-driven optimization focused on ROI and measurable results.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-soft border border-gray-100 hover-scale">
+          <div class="text-theme-blue mb-3"><i class="fas fa-users text-2xl"></i></div>
+          <h3 class="text-xl font-baloo font-bold mb-2">Unlimited Team Access</h3>
+          <p class="text-gray-600">No seat-based charges. Add unlimited team members to your account.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-soft border border-gray-100 hover-scale">
+          <div class="text-theme-blue mb-3"><i class="fas fa-headset text-2xl"></i></div>
+          <h3 class="text-xl font-baloo font-bold mb-2">Expert Support</h3>
+          <p class="text-gray-600">Direct access to Google Ads specialists and growth strategists.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-soft border border-gray-100 hover-scale">
+          <div class="text-theme-blue mb-3"><i class="fas fa-sync-alt text-2xl"></i></div>
+          <h3 class="text-xl font-baloo font-bold mb-2">Flexible Plans</h3>
+          <p class="text-gray-600">Choose monthly or yearly billing. Upgrade or downgrade anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-14 md:py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
+        <p class="text-gray-600">Everything you need to know about our Google Ads management plans.</p>
+      </div>
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">How does pricing work?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">Pricing is per Google Ads account, not per user. You can add unlimited team members to your account at no additional cost. Choose between monthly or yearly billing options, with discounts available for annual plans.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">Can I change plans later?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">Yes, absolutely! You can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle. Contact us if you need immediate changes or have questions about which plan is right for you.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">What's included in the management service?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">Our service includes strategic campaign setup, ongoing optimization, keyword research, ad copy testing, bid management, performance monitoring, and regular reporting. You'll have direct access to our team of Google Ads specialists for support and strategy discussions.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">Do you work with specific industries?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">We specialize in eCommerce, direct-to-consumer brands, local services, and B2B lead generation. Our strategies are tailored to each industry's unique challenges and opportunities. If you're unsure if we're a good fit, book a discovery call to discuss your specific needs.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">How do you track and report results?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">We use conversion tracking via Google Analytics 4 (GA4) and Google Ads, providing transparent ROI reporting. You'll receive regular performance reports showing key metrics like ROAS, conversion rates, cost per acquisition, and campaign insights. All data is accessible through your dashboard.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 6 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">Is there a minimum ad spend requirement?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">Yes, we require a minimum monthly ad spend of $5,000 to ensure we can deliver meaningful results and ROI. This allows us to properly test, optimize, and scale your campaigns effectively.</p>
+        </div>
+      </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 md:p-8 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-gray-900">What's the difference between monthly and yearly billing?</h3>
+              <i class="fas fa-chevron-down text-theme-blue transition-transform duration-200"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 md:px-8 pb-6 md:pb-8">
+            <p class="text-gray-600">Yearly billing offers significant savings compared to monthly billing—typically 20% or more. You pay upfront for the year, and all features and support remain the same. Monthly billing provides more flexibility if you prefer to pay as you go.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-14 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-3">Work With Me and See Results</h2>
+        <p class="text-gray-600 text-lg">Ready to scale your Google Ads performance? Let's discuss how we can drive growth for your business.</p>
+      </div>
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-gradient-to-r from-theme-blue to-blue-700 rounded-2xl shadow-soft p-8 md:p-10 text-white">
+          <p class="text-blue-100 mb-6 text-lg">Book a discovery call or reach out via email to get started.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://tidycal.com/zeldigital/discovery-call" class="bg-white text-theme-blue px-8 py-4 rounded-lg font-semibold hover:opacity-95 text-center text-lg">
+              <i class="fas fa-calendar-alt mr-2"></i> Book Discovery Call
+            </a>
+            <a href="mailto:contact@hanslacida.com" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-theme-blue text-center text-lg">
+              <i class="fas fa-envelope mr-2"></i> Email Us
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <!-- Brand Section -->
+        <div class="col-span-2 md:col-span-2 lg:col-span-2">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-lg">HL</span>
+            </div>
+            <span class="ml-3 text-xl font-bold">HansLacida</span>
+          </div>
+          <p class="text-gray-300 mb-1 max-w-md"><span class="opacity-80">a</span> <span class="font-semibold">ZELDIGITAL®</span> <span class="opacity-80">company</span></p>
+          <p class="text-gray-300 mb-6 max-w-md">Data‑driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.</p>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Navigation -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="/who-we-help/" class="hover:text-white transition-colors">Who We Help</a></li>
+            <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
+            <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <!-- Services -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4">Services</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
+            <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
+            <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
+            <li><a href="https://zeldigital.com/consulting" class="hover:text-white transition-colors">Marketing Consulting</a></li>
+          </ul>
+        </div>
+        <!-- Resources -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4">Resources</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
+            <li><a href="/testimonial-reviews/" class="hover:text-white transition-colors">Client Testimonials & Reviews</a></li>
+            <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4">Contact</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+            <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
+            <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
+            <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; <span id="year"></span> ZELDIGITAL Marketing Services OPC x KaizenStrategy Solutions LLC — Trusted Digital Advertising for U.S. Businesses. All Rights Reserved.</p>
+        <p class="mt-2 text-sm">ZELDIGITAL Marketing Services OPC x KaizenStrategy Solutions LLC</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Loader
+    function hideLoader(){
+      const l = document.getElementById('loader');
+      if(l) { l.classList.add('hidden'); }
+    }
+    document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 400));
+    window.addEventListener('load', hideLoader);
+
+    // Mobile menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('hidden');
+    });
+
+    // Smooth anchor scroll (only for same-page hashes)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t) {
+          e.preventDefault();
+          t.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      });
+    });
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ Toggle Functionality
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('i');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle content visibility
+        if (isExpanded) {
+          content.classList.add('hidden');
+          this.setAttribute('aria-expanded', 'false');
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.classList.remove('hidden');
+          this.setAttribute('aria-expanded', 'true');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
