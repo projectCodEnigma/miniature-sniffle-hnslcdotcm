@@ -849,13 +849,7 @@
         <priority>0.3</priority>
     </url>
 
-    <!-- Social Media and External Links -->
-    <url>
-        <loc>https://linktr.ee/hanslacida</loc>
-        <lastmod>2025-01-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
+
 
     <!-- Component System Pages -->
     <url>
