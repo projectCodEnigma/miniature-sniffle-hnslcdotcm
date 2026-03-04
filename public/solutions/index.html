@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PaidSearchPod Solutions Library | Kaizen Strategy</title>
+  <meta name="description" content="Browse the full PaidSearchPod solutions library. 100+ focused problem pages for paid search, Google Ads, Performance Max, in-house teams, and agencies — searchable and filterable." />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/ZzsQVC7x/ksslogo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom, minimal tweaks that complement Tailwind */
+    .solutions-scrollbar::-webkit-scrollbar {
+      height: 6px;
+    }
+    .solutions-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .solutions-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.7);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased leading-relaxed">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:shadow-lg">Skip to content</a>
+
+  <header class="bg-slate-900 text-white border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-3 text-white hover:text-slate-200 transition" aria-label="Back to main site">
+        <img src="https://i.ibb.co/ZzsQVC7x/ksslogo.png" alt="Kaizen Strategy" class="h-9 w-9 rounded-lg" />
+        <div class="flex flex-col">
+          <span class="font-semibold text-slate-50 text-sm md:text-base">PaidSearchPod Solutions Library</span>
+          <span class="text-[11px] md:text-xs text-slate-400">Kaizen Strategy · Hans Lacida</span>
+        </div>
+      </a>
+      <a href="../index.html" class="hidden sm:inline-flex items-center text-xs md:text-sm text-slate-300 hover:text-white transition">
+        ← Back to main site
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="max-w-6xl mx-auto px-6 py-10 md:py-14">
+    <!-- Page intro -->
+    <section class="mb-8 md:mb-10">
+      <p class="text-[11px] uppercase tracking-[0.28em] text-slate-500 mb-3">Solutions Library</p>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div class="max-w-2xl">
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-3">
+            100+ specific paid acquisition problems — indexed.
+          </h1>
+          <p class="text-sm md:text-base text-slate-600">
+            Use this library to jump straight into the precise problem page that matches your situation:
+            budget allocation, tracking, Performance Max, in-house teams, agency performance, and more.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+          <a href="../index.html#fit-call" class="inline-flex justify-center items-center rounded-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs md:text-sm font-semibold px-4 py-2.5 shadow-md shadow-indigo-500/30 transition">
+            Book a fit call
+          </a>
+          <p class="text-[11px] text-slate-500 max-w-xs">
+            Each solution page redirects into the main PaidSearchPod experience so you can see the full system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="mb-6 md:mb-8">
+      <div class="bg-white border border-slate-200 rounded-2xl px-4 py-4 md:px-5 md:py-5 shadow-sm">
+        <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
+          <div class="flex-1 flex flex-col md:flex-row gap-3">
+            <!-- Search -->
+            <label class="relative flex-1">
+              <span class="sr-only">Search solutions</span>
+              <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                <!-- Search icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8.5 3a5.5 5.5 0 103.473 9.71l3.659 3.658a.75.75 0 101.06-1.06l-3.658-3.66A5.5 5.5 0 008.5 3zm-4 5.5a4 4 0 118 0 4 4 0 01-8 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <input
+                id="searchInput"
+                type="text"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 pl-9 pr-3 py-2.5 text-xs md:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Search by problem, theme, or keyword (e.g. 'Performance Max', 'budget', 'in-house')"
+                aria-label="Search solutions by keyword"
+              />
+            </label>
+
+            <!-- Category filter -->
+            <label class="md:w-56">
+              <span class="sr-only">Filter by category</span>
+              <select
+                id="categoryFilter"
+                class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs md:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                aria-label="Filter solutions by category"
+              >
+                <option value="">All categories</option>
+              </select>
+            </label>
+          </div>
+
+          <!-- Sort -->
+          <label class="lg:w-56">
+            <span class="sr-only">Sort solutions</span>
+            <select
+              id="sortSelect"
+              class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs md:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              aria-label="Sort solutions"
+            >
+              <option value="recommended">Recommended grouping</option>
+              <option value="az">A–Z</option>
+              <option value="za">Z–A</option>
+              <option value="category">By category</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Quick themes -->
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2 overflow-x-auto solutions-scrollbar pb-1" aria-label="Quick filters">
+            <button type="button" data-theme-filter="" class="theme-chip active inline-flex items-center rounded-full border border-slate-300 bg-slate-100 px-3 py-1.5 text-[11px] font-medium text-slate-700 hover:bg-slate-200 transition">
+              All themes
+            </button>
+            <button type="button" data-theme-filter="Performance & ROAS" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              Performance &amp; ROAS
+            </button>
+            <button type="button" data-theme-filter="Budget & Scaling" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              Budget &amp; Scaling
+            </button>
+            <button type="button" data-theme-filter="Tracking & Measurement" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              Tracking &amp; Measurement
+            </button>
+            <button type="button" data-theme-filter="In-house Teams" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              In-house teams
+            </button>
+            <button type="button" data-theme-filter="Agencies" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              Agencies
+            </button>
+            <button type="button" data-theme-filter="Performance Max" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              Performance Max
+            </button>
+            <button type="button" data-theme-filter="Account Structure" class="theme-chip inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 hover:bg-slate-100 transition">
+              Account structure
+            </button>
+          </div>
+          <p id="solutionsCount" class="hidden md:block text-[11px] text-slate-500 whitespace-nowrap"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section aria-label="Solutions list">
+      <p id="solutionsCountMobile" class="md:hidden mb-3 text-[11px] text-slate-500"></p>
+      <div id="solutionsGrid" class="grid gap-3 sm:gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- JS renders cards here -->
+      </div>
+      <p id="noResultsMessage" class="hidden mt-8 text-sm text-slate-500 text-center">
+        No solutions match your filters yet. Try adjusting the category, theme, or search term.
+      </p>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:text-xs text-slate-500">
+      <p>PaidSearchPod problem library. Each page is indexable and redirects into the main operating system.</p>
+      <a href="../index.html" class="text-indigo-600 hover:text-indigo-700 font-medium">← Back to main site</a>
+    </div>
+  </footer>
+
+  <script>
+    // Core dataset: list of solution slugs.
+    // Titles and categories are derived in JS so you can add/remove slugs easily.
+    // To include any missing solution URLs, add their folder name here (without /solutions/ prefix).
+    const solutionSlugs = [
+      // Paid search / paid ads performance & scaling
+      "paid-search-performance-drop",
+      "paid-search-scaling-problem",
+      "paid-ads-strategy-gap",
+      "paid-ads-scaling-barrier",
+      "paid-ads-performance-instability",
+      "paid-ads-inefficiency",
+      "paid-ads-not-profitable",
+      "paid-ads-growth-stalled",
+      "acquisition-cost-increasing",
+      "scaling-paid-ads-problem",
+
+      // Leadership / operator needs
+      "google-ads-strategist-needed",
+      "ppc-strategy-lead-needed",
+      "outsourced-ppc-strategy",
+      "paid-ads-operator-needed",
+      "fractional-paid-ads-operator",
+      "ppc-manager-vs-agency",
+      "outsource-google-ads-management",
+      "when-to-hire-ppc-operator",
+      "fractional-ppc-manager-needed",
+      "hire-google-ads-expert-or-agency",
+
+      // Budget & scaling
+      "google-ads-acquisition-budget",
+      "google-ads-growth-budget",
+      "google-ads-budget-strategy",
+      "google-ads-scaling-budget",
+      "google-ads-budget-allocation-problem",
+      "google-ads-spend-efficiency",
+      "google-ads-budget-too-high",
+      "google-ads-budget-too-low",
+      "google-ads-budget-scaling",
+      "how-much-to-spend-google-ads",
+
+      // Tracking & measurement
+      "google-ads-reporting-inaccuracy",
+      "google-ads-data-confusion",
+      "google-ads-measurement-problems",
+      "google-ads-conversion-signal-loss",
+      "google-ads-ga4-attribution-problems",
+      "google-ads-tracking-broken",
+      "google-ads-missing-conversions",
+      "google-ads-data-inaccuracy",
+      "google-ads-attribution-problems",
+      "google-ads-conversion-tracking-issues",
+
+      // In-house teams
+      "inhouse-ads-no-scaling-system",
+      "inhouse-ads-campaign-chaos",
+      "inhouse-ads-team-burnout",
+      "inhouse-ads-experience-gap",
+      "inhouse-ads-strategy-gap",
+      "inhouse-ads-performance-drop",
+      "inhouse-ads-team-overwhelmed",
+      "inhouse-ppc-limited-growth",
+      "inhouse-google-ads-problems",
+      "inhouse-ppc-not-scaling",
+
+      // Agency performance
+      "ppc-agency-account-chaos",
+      "ppc-agency-low-roas",
+      "ppc-agency-reporting-but-not-growing",
+      "ppc-agency-over-optimizing",
+      "ppc-agency-lack-strategy",
+      "ppc-agency-poor-results",
+      "ppc-agency-wasting-budget",
+      "ppc-agency-not-scaling",
+      "ppc-agency-underperforming",
+      "ppc-agency-not-performing",
+
+      // Performance Max
+      "performance-max-campaign-control",
+      "performance-max-data-problem",
+      "performance-max-account-conflict",
+      "performance-max-signal-problems",
+      "performance-max-learning-phase-stuck",
+      "performance-max-traffic-quality",
+      "performance-max-budget-waste",
+      "performance-max-low-roas",
+      "performance-max-scaling-problem",
+      "performance-max-not-performing",
+
+      // Account structure & overlap
+      "google-ads-campaign-overlap",
+      "google-ads-structure-breaking",
+      "google-ads-account-chaos",
+      "google-ads-campaign-conflicts",
+      "google-ads-duplicate-keywords",
+      "google-ads-overlapping-campaigns",
+      "google-ads-account-fragmented",
+      "google-ads-account-messy",
+      "google-ads-campaign-structure-issues"
+
+      // NOTE: If you have additional solution URLs in /public/solutions/,
+      // add their folder names here to surface all ~100 problems.
+    ];
+
+    // Derive human-readable title from slug
+    function slugToTitle(slug) {
+      return slug
+        .replace(/-/g, " ")
+        .split(" ")
+        .map(function (word) {
+          if (!word) return "";
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(" ");
+    }
+
+    // Derive high-level category from slug
+    function getCategoryFromSlug(slug) {
+      if (slug.startsWith("paid-search-") || slug.startsWith("paid-ads-") || slug.includes("performance-drop")) {
+        return "Performance & ROAS";
+      }
+      if (
+        slug.includes("budget") ||
+        slug.includes("scaling") ||
+        slug.includes("growth") ||
+        slug.includes("acquisition-cost") ||
+        slug.includes("spend-efficiency")
+      ) {
+        return "Budget & Scaling";
+      }
+      if (
+        slug.includes("tracking") ||
+        slug.includes("measurement") ||
+        slug.includes("data-") ||
+        slug.includes("conversion-") ||
+        slug.includes("attribution") ||
+        slug.includes("ga4") ||
+        slug.includes("missing-conversions") ||
+        slug.includes("reporting")
+      ) {
+        return "Tracking & Measurement";
+      }
+      if (slug.startsWith("inhouse-") || slug.startsWith("in-house-")) {
+        return "In-house Teams";
+      }
+      if (slug.startsWith("ppc-agency-") || slug.includes("-agency-")) {
+        return "Agencies";
+      }
+      if (slug.startsWith("performance-max-")) {
+        return "Performance Max";
+      }
+      if (slug.includes("account-") || slug.includes("structure") || slug.includes("campaign-overlap") || slug.includes("campaign-conflicts") || slug.includes("duplicate-keywords")) {
+        return "Account Structure";
+      }
+      if (
+        slug.includes("strategist") ||
+        slug.includes("ppc-manager") ||
+        slug.includes("operator") ||
+        slug.includes("expert") ||
+        slug.includes("hire-") ||
+        slug.includes("outsource")
+      ) {
+        return "Leadership & Ownership";
+      }
+      return "Other";
+    }
+
+    // Derive theme tag for quick filters (overlaps with categories but keeps language clear)
+    function getThemeFromCategory(category) {
+      switch (category) {
+        case "Performance & ROAS":
+          return "Performance & ROAS";
+        case "Budget & Scaling":
+          return "Budget & Scaling";
+        case "Tracking & Measurement":
+          return "Tracking & Measurement";
+        case "In-house Teams":
+          return "In-house Teams";
+        case "Agencies":
+          return "Agencies";
+        case "Performance Max":
+          return "Performance Max";
+        case "Account Structure":
+          return "Account Structure";
+        default:
+          return "Other";
+      }
+    }
+
+    // Optional: short description hints per theme (used on cards)
+    function getHintFromCategory(category) {
+      switch (category) {
+        case "Performance & ROAS":
+          return "ROAS, CPA and performance stability problems in paid search.";
+        case "Budget & Scaling":
+          return "Allocating, scaling and protecting Google Ads budgets.";
+        case "Tracking & Measurement":
+          return "Tracking, conversion, GA4 and attribution breakdowns.";
+        case "In-house Teams":
+          return "In-house team structure, burnout and execution gaps.";
+        case "Agencies":
+          return "Agency performance, reporting vs growth, and accountability.";
+        case "Performance Max":
+          return "Performance Max control, signals, traffic quality and scaling.";
+        case "Account Structure":
+          return "Campaign overlap, structure conflicts and messy accounts.";
+        default:
+          return "Specific paid acquisition scenario inside the PaidSearchPod system.";
+      }
+    }
+
+    // Build full solution objects from slugs
+    const solutions = solutionSlugs.map(function (slug) {
+      const category = getCategoryFromSlug(slug);
+      const theme = getThemeFromCategory(category);
+      return {
+        slug: slug,
+        title: slugToTitle(slug),
+        category: category,
+        theme: theme,
+        description: getHintFromCategory(category),
+        url: "/solutions/" + slug + "/"
+      };
+    });
+
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const sortSelect = document.getElementById("sortSelect");
+    const solutionsGrid = document.getElementById("solutionsGrid");
+    const solutionsCount = document.getElementById("solutionsCount");
+    const solutionsCountMobile = document.getElementById("solutionsCountMobile");
+    const noResultsMessage = document.getElementById("noResultsMessage");
+    const themeChips = Array.prototype.slice.call(document.querySelectorAll(".theme-chip"));
+
+    let activeThemeFilter = "";
+
+    // Populate category dropdown from dataset
+    (function populateCategoryFilter() {
+      const categories = Array.from(new Set(solutions.map(function (s) { return s.category; }))).sort();
+      categories.forEach(function (cat) {
+        if (!cat || cat === "Other") return;
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        categoryFilter.appendChild(option);
+      });
+    })();
+
+    // Render solutions
+    function renderSolutions() {
+      const searchTerm = (searchInput.value || "").toLowerCase().trim();
+      const selectedCategory = categoryFilter.value;
+      const selectedSort = sortSelect.value;
+      const activeTheme = activeThemeFilter;
+
+      let filtered = solutions.slice();
+
+      if (searchTerm) {
+        filtered = filtered.filter(function (item) {
+          return (
+            item.title.toLowerCase().includes(searchTerm) ||
+            item.slug.toLowerCase().includes(searchTerm) ||
+            item.category.toLowerCase().includes(searchTerm) ||
+            item.theme.toLowerCase().includes(searchTerm) ||
+            item.description.toLowerCase().includes(searchTerm)
+          );
+        });
+      }
+
+      if (selectedCategory) {
+        filtered = filtered.filter(function (item) {
+          return item.category === selectedCategory;
+        });
+      }
+
+      if (activeTheme) {
+        filtered = filtered.filter(function (item) {
+          return item.theme === activeTheme;
+        });
+      }
+
+      // Sorting
+      filtered.sort(function (a, b) {
+        if (selectedSort === "az") {
+          return a.title.localeCompare(b.title);
+        }
+        if (selectedSort === "za") {
+          return b.title.localeCompare(a.title);
+        }
+        if (selectedSort === "category") {
+          if (a.category === b.category) {
+            return a.title.localeCompare(b.title);
+          }
+          return a.category.localeCompare(b.category);
+        }
+        // "recommended" – group by category priority, then title
+        const priorityOrder = [
+          "Performance & ROAS",
+          "Budget & Scaling",
+          "Tracking & Measurement",
+          "Performance Max",
+          "Account Structure",
+          "In-house Teams",
+          "Agencies",
+          "Leadership & Ownership",
+          "Other"
+        ];
+        const aIndex = priorityOrder.indexOf(a.category);
+        const bIndex = priorityOrder.indexOf(b.category);
+        if (aIndex === bIndex) {
+          return a.title.localeCompare(b.title);
+        }
+        return aIndex - bIndex;
+      });
+
+      // Update counts
+      const total = solutions.length;
+      const count = filtered.length;
+      const label = "Showing " + count + " of " + total + " solutions";
+      if (solutionsCount) solutionsCount.textContent = label;
+      if (solutionsCountMobile) solutionsCountMobile.textContent = label;
+
+      // Clear grid
+      while (solutionsGrid.firstChild) {
+        solutionsGrid.removeChild(solutionsGrid.firstChild);
+      }
+
+      if (count === 0) {
+        noResultsMessage.classList.remove("hidden");
+        return;
+      } else {
+        noResultsMessage.classList.add("hidden");
+      }
+
+      // Render cards
+      filtered.forEach(function (item) {
+        const card = document.createElement("article");
+        card.className =
+          "group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm hover:border-indigo-400 hover:shadow-md hover:shadow-indigo-100 transition";
+
+        const top = document.createElement("div");
+
+        const pillRow = document.createElement("div");
+        pillRow.className = "flex items-center justify-between gap-2 mb-2";
+
+        const categoryPill = document.createElement("span");
+        categoryPill.className =
+          "inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-medium text-slate-700";
+        categoryPill.textContent = item.category;
+
+        const themeLabel = document.createElement("span");
+        themeLabel.className =
+          "text-[10px] font-medium text-slate-400 uppercase tracking-[0.16em]";
+        themeLabel.textContent = item.theme;
+
+        pillRow.appendChild(categoryPill);
+        pillRow.appendChild(themeLabel);
+
+        const title = document.createElement("h2");
+        title.className =
+          "mt-1 text-sm md:text-[15px] font-semibold text-slate-900 leading-snug group-hover:text-indigo-700";
+        title.textContent = item.title;
+
+        const desc = document.createElement("p");
+        desc.className = "mt-2 text-[11px] md:text-xs text-slate-600";
+        desc.textContent = item.description;
+
+        top.appendChild(pillRow);
+        top.appendChild(title);
+        top.appendChild(desc);
+
+        const bottom = document.createElement("div");
+        bottom.className = "mt-4 flex items-center justify-between gap-2";
+
+        const urlText = document.createElement("p");
+        urlText.className =
+          "text-[10px] text-slate-400 truncate max-w-[60%] group-hover:text-slate-500";
+        urlText.textContent = item.url;
+
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.className =
+          "inline-flex items-center rounded-full bg-slate-900 text-white text-[11px] font-medium px-3 py-1.5 group-hover:bg-indigo-600 transition";
+        link.setAttribute("aria-label", "Open solution: " + item.title);
+        link.textContent = "Open";
+
+        bottom.appendChild(urlText);
+        bottom.appendChild(link);
+
+        card.appendChild(top);
+        card.appendChild(bottom);
+
+        solutionsGrid.appendChild(card);
+      });
+    }
+
+    // Theme chip handling
+    themeChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        const themeValue = chip.getAttribute("data-theme-filter") || "";
+        activeThemeFilter = themeValue;
+
+        themeChips.forEach(function (c) {
+          c.classList.remove("active");
+          c.classList.remove("bg-slate-100");
+          c.classList.remove("border-slate-300");
+          c.classList.add("bg-white");
+          c.classList.add("border-slate-200");
+        });
+
+        chip.classList.add("active");
+        chip.classList.remove("bg-white");
+        chip.classList.remove("border-slate-200");
+        chip.classList.add("bg-slate-100");
+        chip.classList.add("border-slate-300");
+
+        renderSolutions();
+      });
+    });
+
+    // Wire up listeners
+    searchInput.addEventListener("input", function () {
+      renderSolutions();
+    });
+
+    categoryFilter.addEventListener("change", function () {
+      renderSolutions();
+    });
+
+    sortSelect.addEventListener("change", function () {
+      renderSolutions();
+    });
+
+    // Initial render
+    renderSolutions();
+  </script>
+</body>
+</html>
+
