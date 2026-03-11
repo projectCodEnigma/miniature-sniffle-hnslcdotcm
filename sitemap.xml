@@ -850,7 +850,6 @@
     </url>
 
 
-
     <!-- Component System Pages -->
     <url>
         <loc>https://www.hanslacida.com/index-component.html</loc>
@@ -1041,5 +1040,47 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+
+<url>
+<loc>https://hanslacida.com/ppc-results</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://hanslacida.com/hire-google-ads-specialist</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://hanslacida.com/ecommerce-google-ads-specialist</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hanslacida.com/ecommerce-ppc-specialist</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hanslacida.com/ecommerce-ppc-specialist-manhattan</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hanslacida.com/ppc-management-pricing</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hanslacida.com/services/fractional-ppc-manager</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
 
 </urlset>
