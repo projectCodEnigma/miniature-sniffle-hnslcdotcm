@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PaidPod — A KaizenStrategy Brand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --white: #f8f7f2;
+  --black: #0c0c0a;
+  --lime: #c8ff00;
+  --lime-dim: #a8d800;
+  --mid: #5a5a54;
+  --border: #d4d0c4;
+  --card: #eeeae0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor-dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--lime);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform 0.1s;
+  mix-blend-mode: multiply;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--black);
+  color: var(--lime);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 28s linear infinite;
+}
+.ticker-inner span { margin: 0 48px; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 2px solid var(--black);
+  padding: 0 48px;
+  display: flex; align-items: stretch; justify-content: space-between;
+  height: 64px;
+}
+.nav-left {
+  display: flex; align-items: center; gap: 0;
+}
+.nav-parent {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-right: 20px;
+  border-right: 1px solid var(--border);
+  margin-right: 20px;
+  display: flex; align-items: center;
+}
+.nav-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  text-decoration: none;
+  display: flex; align-items: center;
+}
+.nav-brand .dot {
+  width: 8px; height: 8px;
+  background: var(--lime);
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-top: 2px;
+}
+.nav-right {
+  display: flex; align-items: stretch;
+}
+.nav-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  display: flex; align-items: center;
+  padding: 0 28px;
+  border-left: 1px solid var(--border);
+  transition: color 0.2s, background 0.2s;
+}
+.nav-link:hover { color: var(--black); }
+.nav-cta-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--lime);
+  text-decoration: none;
+  display: flex; align-items: center;
+  padding: 0 28px;
+  border-left: 2px solid var(--black);
+  transition: background 0.2s;
+  font-weight: 500;
+}
+.nav-cta-btn:hover { background: var(--lime-dim); }
+
+/* ── HERO ── */
+.hero {
+  min-height: calc(100vh - 96px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-bottom: 2px solid var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.hero-main {
+  padding: 80px 48px 60px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+}
+.hero-wordmark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(100px, 18vw, 240px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  opacity: 0;
+  animation: heroIn 1s 0.1s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.hero-wordmark .accent { color: var(--lime); -webkit-text-stroke: 0px; }
+/* outlined second word */
+.hero-wordmark .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--black);
+}
+
+.hero-right {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-bottom: 8px;
+  opacity: 0;
+  animation: fadeIn 0.8s 0.5s forwards;
+  max-width: 320px;
+}
+.hero-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.hero-desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--mid);
+  margin-bottom: 28px;
+}
+.hero-desc strong { color: var(--black); font-weight: 600; }
+.hero-url {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--mid);
+  background: var(--card);
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-url .url-label {
+  color: var(--lime-dim);
+  font-weight: 500;
+}
+
+.hero-bottom {
+  border-top: 2px solid var(--black);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  opacity: 0;
+  animation: fadeIn 0.8s 0.8s forwards;
+}
+.hero-stat {
+  padding: 28px 40px;
+  border-right: 1px solid var(--border);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--black);
+}
+.hero-stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-top: 4px;
+}
+
+/* ── BIG RULE ── */
+.rule { height: 2px; background: var(--black); }
+
+/* ── WHAT IS PAIDPOD ── */
+.what-section {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  border-bottom: 2px solid var(--black);
+}
+.what-left {
+  border-right: 2px solid var(--black);
+  padding: 72px 48px;
+  background: var(--black);
+  color: var(--white);
+}
+.what-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 32px;
+}
+.what-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.what-left h2 .accent { color: var(--lime); }
+.what-left p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(248,247,242,0.6);
+}
+.what-right {
+  padding: 72px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  align-content: start;
+}
+.what-card {
+  background: var(--card);
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+.what-card:hover { background: var(--white); }
+.what-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.what-card:hover::after { transform: scaleX(1); }
+.what-card-icon {
+  font-size: 24px;
+  margin-bottom: 16px;
+  display: block;
+}
+.what-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+.what-card p {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ── AUDIENCE ── */
+.audience-section {
+  padding: 96px 48px;
+  border-bottom: 2px solid var(--black);
+}
+.aud-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 64px;
+}
+.aud-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.aud-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--black);
+}
+.aud-sub {
+  max-width: 340px;
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.65;
+  text-align: right;
+}
+.aud-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 2px solid var(--black);
+}
+.aud-card {
+  padding: 48px 40px;
+  border-right: 2px solid var(--black);
+  position: relative;
+  transition: background 0.25s;
+}
+.aud-card:last-child { border-right: none; }
+.aud-card:hover { background: var(--black); color: var(--white); }
+.aud-card:hover .aud-card-label { color: var(--lime); }
+.aud-card:hover .aud-card-p { color: rgba(248,247,242,0.6); }
+.aud-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: rgba(12,12,10,0.06);
+  line-height: 1;
+  position: absolute;
+  top: 20px; right: 24px;
+  transition: color 0.25s;
+}
+.aud-card:hover .aud-num { color: rgba(200,255,0,0.08); }
+.aud-card-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 20px;
+  transition: color 0.25s;
+}
+.aud-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.aud-card-p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+  transition: color 0.25s;
+}
+
+/* ── SIGNAL STRIP ── */
+.signal-strip {
+  background: var(--lime);
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.signal-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
+  letter-spacing: 0.03em;
+  color: var(--black);
+  line-height: 1;
+}
+.signal-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--black);
+  padding: 16px 36px;
+  text-decoration: none;
+  border: 2px solid var(--black);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.signal-btn:hover { background: transparent; color: var(--black); }
+
+/* ── PLANS ── */
+.plans-section {
+  padding: 96px 48px;
+  border-bottom: 2px solid var(--black);
+}
+.plans-header {
+  margin-bottom: 64px;
+}
+.plans-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 12px;
+}
+.plans-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 8vw, 96px);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  color: var(--black);
+}
+.plans-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--black);
+}
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 2px solid var(--black);
+}
+.plan-card {
+  border-right: 2px solid var(--black);
+  padding: 52px 40px 48px;
+  position: relative;
+  background: var(--white);
+  transition: background 0.2s;
+}
+.plan-card:last-child { border-right: none; }
+.plan-card.featured {
+  background: var(--black);
+  color: var(--white);
+}
+.plan-tier {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+.plan-card.featured .plan-tier { color: var(--lime); }
+.plan-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.plan-tagline {
+  font-size: 13px;
+  color: var(--mid);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+.plan-card.featured .plan-tagline { color: rgba(248,247,242,0.5); }
+.plan-price-wrap {
+  padding: 28px 0;
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  margin-bottom: 32px;
+}
+.plan-card.featured .plan-price-wrap {
+  border-color: rgba(248,247,242,0.15);
+}
+.plan-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.plan-currency {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  vertical-align: top;
+  margin-top: 12px;
+  display: inline-block;
+  color: var(--mid);
+}
+.plan-card.featured .plan-currency { color: var(--lime); }
+.plan-period {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  margin-top: 4px;
+}
+.plan-card.featured .plan-period { color: rgba(248,247,242,0.4); }
+.plan-note {
+  font-size: 11px;
+  color: var(--mid);
+  font-style: italic;
+  margin-top: 4px;
+}
+.plan-card.featured .plan-note { color: rgba(248,247,242,0.35); }
+.plan-features {
+  list-style: none;
+  margin-bottom: 40px;
+}
+.plan-features li {
+  font-size: 13px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 12px;
+  line-height: 1.5;
+  color: var(--mid);
+}
+.plan-card.featured .plan-features li {
+  color: rgba(248,247,242,0.65);
+  border-color: rgba(248,247,242,0.1);
+}
+.plan-features li::before {
+  content: '→';
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--lime-dim);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.plan-card.featured .plan-features li::before { color: var(--lime); }
+.plan-features li.off {
+  color: rgba(90,90,84,0.35);
+}
+.plan-features li.off::before { content: '×'; color: rgba(90,90,84,0.3); }
+.plan-card.featured .plan-features li.off { color: rgba(248,247,242,0.2); }
+.plan-card.featured .plan-features li.off::before { color: rgba(248,247,242,0.15); }
+
+.plan-btn {
+  display: block;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 16px;
+  text-decoration: none;
+  border: 2px solid var(--black);
+  transition: all 0.2s;
+}
+.plan-btn-outline {
+  color: var(--black);
+  background: transparent;
+}
+.plan-btn-outline:hover { background: var(--black); color: var(--white); }
+.plan-btn-lime {
+  color: var(--black);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.plan-btn-lime:hover { background: var(--lime-dim); border-color: var(--lime-dim); }
+
+/* ── BRAND PARENT ── */
+.brand-parent-section {
+  background: var(--card);
+  border-bottom: 2px solid var(--black);
+  padding: 72px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.bp-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 12px;
+}
+.bp-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+}
+.bp-title .accent { color: var(--lime-dim); }
+.bp-text {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.bp-right {}
+.brand-box {
+  background: var(--white);
+  border: 2px solid var(--black);
+  padding: 40px;
+  display: flex; align-items: center; gap: 32px;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+.brand-box:hover { background: var(--lime); }
+.brand-box-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--black);
+  flex-shrink: 0;
+  display: flex; align-items: center; gap: 6px;
+}
+.brand-box-mark .dot { width: 10px; height: 10px; background: var(--lime); border-radius: 50%; }
+.brand-box:hover .brand-box-mark .dot { background: var(--black); }
+.brand-box-info {}
+.brand-box-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 4px;
+}
+.brand-box-desc {
+  font-size: 14px;
+  color: var(--black);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.brand-box-coming {
+  background: var(--card);
+  border: 2px dashed var(--border);
+  padding: 28px 40px;
+  display: flex; align-items: center; gap: 24px;
+}
+.brand-box-coming-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--border);
+  letter-spacing: 0.04em;
+}
+.brand-box-coming-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--border);
+}
+
+/* ── FAQ ── */
+.faq-section {
+  padding: 96px 48px;
+  border-bottom: 2px solid var(--black);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
+}
+.faq-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+.faq-left p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+.faq-right {}
+.faq-item {
+  border-top: 2px solid var(--black);
+  cursor: pointer;
+}
+.faq-item:last-child { border-bottom: 2px solid var(--black); }
+.faq-q {
+  padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 24px;
+}
+.faq-toggle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  color: var(--black);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  background: var(--lime);
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-a {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.7;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding-bottom: 24px;
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--black);
+  padding: 120px 48px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.cta-bg-word {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 280px;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(200,255,0,0.06);
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+}
+.cta-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 24px;
+  position: relative; z-index: 1;
+}
+.cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 9vw, 110px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  position: relative; z-index: 1;
+  margin-bottom: 24px;
+}
+.cta-title .accent { color: var(--lime); }
+.cta-sub {
+  font-size: 16px;
+  color: rgba(248,247,242,0.5);
+  max-width: 480px;
+  margin: 0 auto 56px;
+  line-height: 1.7;
+  position: relative; z-index: 1;
+}
+.cta-actions {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.cta-btn-lime {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--black);
+  background: var(--lime);
+  padding: 18px 40px;
+  text-decoration: none;
+  border: 2px solid var(--lime);
+  transition: all 0.2s;
+}
+.cta-btn-lime:hover { background: transparent; color: var(--lime); }
+.cta-btn-ghost {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(248,247,242,0.5);
+  border: 2px solid rgba(248,247,242,0.2);
+  padding: 18px 40px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cta-btn-ghost:hover { border-color: var(--white); color: var(--white); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  border-top: 2px solid rgba(200,255,0,0.2);
+  padding: 40px 48px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.footer-brand-wrap {
+  display: flex; align-items: center; gap: 20px;
+}
+.footer-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: var(--lime);
+  display: flex; align-items: center; gap: 4px;
+}
+.footer-mark .dot { width: 6px; height: 6px; background: var(--lime); border-radius: 50%; }
+.footer-sep { color: rgba(248,247,242,0.2); }
+.footer-parent {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(248,247,242,0.35);
+}
+.footer-links {
+  display: flex; gap: 28px;
+}
+.footer-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(248,247,242,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--lime); }
+.footer-copy {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: rgba(248,247,242,0.2);
+  letter-spacing: 0.06em;
+}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-link { display: none; }
+  .hero-main { grid-template-columns: 1fr; padding: 60px 24px 40px; }
+  .hero-right { max-width: 100%; }
+  .hero-bottom { grid-template-columns: 1fr 1fr; }
+  .what-section { grid-template-columns: 1fr; }
+  .what-left { border-right: none; border-bottom: 2px solid var(--black); }
+  .what-right { padding: 48px 24px; }
+  .audience-section { padding: 64px 24px; }
+  .aud-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .aud-sub { text-align: left; }
+  .aud-grid { grid-template-columns: 1fr; }
+  .aud-card { border-right: none; border-bottom: 2px solid var(--black); }
+  .plans-section { padding: 64px 24px; }
+  .plans-grid { grid-template-columns: 1fr; }
+  .plan-card { border-right: none; border-bottom: 2px solid var(--black); }
+  .brand-parent-section { grid-template-columns: 1fr; padding: 64px 24px; }
+  .faq-section { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
+  .cta-section { padding: 80px 24px; }
+  footer { padding: 32px 24px; }
+  .signal-strip { flex-direction: column; padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursor"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>GOOGLE ADS ADVISORY</span>
+    <span>·</span>
+    <span>PAID SEARCH POD</span>
+    <span>·</span>
+    <span>WHITE-LABEL READY</span>
+    <span>·</span>
+    <span>US CLIENTS ONLY</span>
+    <span>·</span>
+    <span>A KAIZENSTATEGY BRAND</span>
+    <span>·</span>
+    <span>NYC · LA · MIA · CHI · PHL</span>
+    <span>·</span>
+    <span>GOOGLE ADS ADVISORY</span>
+    <span>·</span>
+    <span>PAID SEARCH POD</span>
+    <span>·</span>
+    <span>WHITE-LABEL READY</span>
+    <span>·</span>
+    <span>US CLIENTS ONLY</span>
+    <span>·</span>
+    <span>A KAIZENSTATEGY BRAND</span>
+    <span>·</span>
+    <span>NYC · LA · MIA · CHI · PHL</span>
+    <span>·</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="https://kaizenStrategy.us/brands/" class="nav-parent">KaizenStrategy</a>
+    <a href="#" class="nav-brand">PaidPod<span class="dot"></span></a>
+  </div>
+  <div class="nav-right">
+    <a href="#what" class="nav-link">What It Is</a>
+    <a href="#plans" class="nav-link">Plans</a>
+    <a href="https://cal.com/kaizenstrategy" target="_blank" class="nav-cta-btn">Book a Call →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <div>
+      <div class="hero-wordmark">
+        PAID<br/><span class="outline">POD</span><span class="accent">.</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <span class="hero-tag">kaizenStrategy.us/brands/paidpod</span>
+      <p class="hero-desc">
+        <strong>Your Google Ads department.</strong> Without the full-time hire, the bloated agency, or the long contract. A plug-in paid search pod that works for founders, retail owners, and agencies.
+      </p>
+      <div class="hero-url">
+        <span class="url-label">BRAND →</span>
+        <span>kaizenStrategy.us/brands/paidpod</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-stat">
+      <div class="hero-stat-num">$2M+</div>
+      <div class="hero-stat-label">Ad Spend Managed</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">10+ YRS</div>
+      <div class="hero-stat-label">Paid Search</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">3</div>
+      <div class="hero-stat-label">Advisory Tiers</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">NO %</div>
+      <div class="hero-stat-label">Of Spend. Ever.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS PAIDPOD -->
+<div class="what-section" id="what">
+  <div class="what-left">
+    <p class="what-label">What Is PaidPod?</p>
+    <h2>A PAID<br/>SEARCH <span class="accent">POD</span><br/>YOU PLUG IN.</h2>
+    <p>Not a contractor. Not an employee. Not an agency. PaidPod is a branded advisory service under KaizenStrategy — senior Google Ads strategy delivered as a flexible monthly engagement.</p>
+  </div>
+  <div class="what-right reveal">
+    <div class="what-card">
+      <span class="what-card-icon">🎯</span>
+      <h3>Strategy-First</h3>
+      <p>Campaign structure, bidding logic, keyword architecture, audience targeting — built around your actual business goal, not a template.</p>
+    </div>
+    <div class="what-card">
+      <span class="what-card-icon">🏷️</span>
+      <h3>White-Label Ready</h3>
+      <p>Agencies: sell Google Ads under your own brand. All deliverables are unbranded. PaidPod stays invisible. You stay the expert.</p>
+    </div>
+    <div class="what-card">
+      <span class="what-card-icon">📞</span>
+      <h3>Not Permanent, Not On-Call</h3>
+      <p>Monthly advisory rhythm — calls, audits, async Q&A. Structured enough to be valuable, flexible enough to fit your operation.</p>
+    </div>
+    <div class="what-card">
+      <span class="what-card-icon">💰</span>
+      <h3>Flat Fee. No % of Spend.</h3>
+      <p>Your budget grows? Your advisory fee doesn't. Flat monthly pricing means incentives are aligned — efficiency over spend volume.</p>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIENCE -->
+<section class="audience-section" id="audience">
+  <div class="aud-header reveal">
+    <div class="aud-title">WHO<br/><span class="outline">IT'S FOR</span></div>
+    <p class="aud-sub">Three types of US operators who need senior Google Ads expertise without the overhead.</p>
+  </div>
+  <div class="aud-grid reveal">
+    <div class="aud-card">
+      <div class="aud-num">01</div>
+      <p class="aud-card-label">For Founders</p>
+      <h3>Retail &amp; Business Owners</h3>
+      <p class="aud-card-p">You're spending $3K–$100K/month on Google Ads and not sure if it's working. You want a trusted advisor who speaks plain English — not a vendor chasing your spend.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-num">02</div>
+      <p class="aud-card-label">For Agencies</p>
+      <h3>SEO &amp; Digital Agencies</h3>
+      <p class="aud-card-p">Expand into paid search without hiring. PaidPod becomes your invisible Google Ads department — white-label strategy, decks, and builds that look like yours.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-num">03</div>
+      <p class="aud-card-label">For Leadership</p>
+      <h3>Marketing Directors &amp; VPs</h3>
+      <p class="aud-card-p">You have a team but want a senior second opinion. PaidPod is your fractional Head of Paid Search — pressure-testing strategy and flagging what's being missed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAL STRIP -->
+<div class="signal-strip">
+  <div class="signal-text">NOT A RETAINER. NOT A CONTRACTOR.<br/>NOT ON YOUR PAYROLL.</div>
+  <a href="https://cal.com/kaizenstrategy" target="_blank" class="signal-btn">Book Discovery Call →</a>
+</div>
+
+<!-- PLANS -->
+<section class="plans-section" id="plans">
+  <div class="plans-header reveal">
+    <p class="plans-label">Advisory Plans</p>
+    <div class="plans-title">PICK<br/>YOUR <span class="outline">POD.</span></div>
+  </div>
+  <div class="plans-grid reveal">
+
+    <!-- SIGNAL -->
+    <div class="plan-card">
+      <p class="plan-tier">Tier 01</p>
+      <div class="plan-name">Signal</div>
+      <p class="plan-tagline">Clarity on demand</p>
+      <div class="plan-price-wrap">
+        <div><span class="plan-currency">$</span><span class="plan-amount">497</span></div>
+        <p class="plan-period">per month</p>
+        <p class="plan-note">~$125 per session</p>
+      </div>
+      <ul class="plan-features">
+        <li>2× 45-min strategy calls/month</li>
+        <li>Account audit on onboarding</li>
+        <li>Async Q&A — 2 Loom/voice/month</li>
+        <li>Campaign structure recommendations</li>
+        <li>Keyword &amp; audience feedback</li>
+        <li class="off">No white-label deliverables</li>
+        <li class="off">No campaign management</li>
+      </ul>
+      <a href="https://cal.com/kaizenstrategy" target="_blank" class="plan-btn plan-btn-outline">Get Signal →</a>
+    </div>
+
+    <!-- ADVISOR — FEATURED -->
+    <div class="plan-card featured">
+      <p class="plan-tier">Tier 02 · Most Popular</p>
+      <div class="plan-name">Advisor</div>
+      <p class="plan-tagline">Embedded expertise</p>
+      <div class="plan-price-wrap">
+        <div><span class="plan-currency">$</span><span class="plan-amount">1,197</span></div>
+        <p class="plan-period">per month</p>
+        <p class="plan-note">Agencies + growing businesses</p>
+      </div>
+      <ul class="plan-features">
+        <li>4× 60-min strategy sessions/month</li>
+        <li>Full audit + action roadmap</li>
+        <li>Unlimited async Q&A (Slack/Loom)</li>
+        <li>White-label strategy decks</li>
+        <li>Campaign structure + bidding builds</li>
+        <li>Monthly performance review</li>
+        <li>Priority 24hr response</li>
+      </ul>
+      <a href="https://cal.com/kaizenstrategy" target="_blank" class="plan-btn plan-btn-lime">Get Advisor →</a>
+    </div>
+
+    <!-- OPERATOR -->
+    <div class="plan-card">
+      <p class="plan-tier">Tier 03</p>
+      <div class="plan-name">Operator</div>
+      <p class="plan-tagline">Fractional Paid Search Lead</p>
+      <div class="plan-price-wrap">
+        <div><span class="plan-currency">$</span><span class="plan-amount">2,497</span></div>
+        <p class="plan-period">per month</p>
+        <p class="plan-note">Up to 3 accounts / 1 agency pod</p>
+      </div>
+      <ul class="plan-features">
+        <li>8× strategy + review calls/month</li>
+        <li>Hands-on campaign builds &amp; restructures</li>
+        <li>Full white-label service</li>
+        <li>Weekly performance reporting</li>
+        <li>A/B test design + landing page feedback</li>
+        <li>Slack access — same-day response</li>
+        <li>Quarterly growth strategy session</li>
+      </ul>
+      <a href="https://cal.com/kaizenstrategy" target="_blank" class="plan-btn plan-btn-outline">Get Operator →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- BRAND PARENT -->
+<section class="brand-parent-section">
+  <div class="reveal">
+    <p class="bp-label">Brand Holding</p>
+    <h2 class="bp-title">UNDER THE <span class="accent">KAIZEN</span> UMBRELLA.</h2>
+    <p class="bp-text">PaidPod is a specialist brand under KaizenStrategy — a brand holding built to deliver high-impact marketing services under focused, memorable names.</p>
+    <p class="bp-text">Each KaizenStrategy brand owns a specific discipline, audience, and positioning. PaidPod owns Google Ads advisory for US businesses and agencies.</p>
+  </div>
+  <div class="bp-right reveal">
+    <div class="brand-box">
+      <div class="brand-box-mark">PaidPod<span class="dot"></span></div>
+      <div class="brand-box-info">
+        <p class="brand-box-sub">Active · kaizenStrategy.us/brands/paidpod</p>
+        <p class="brand-box-desc">Google Ads Advisory — Founders, Agencies, Directors</p>
+      </div>
+    </div>
+    <div class="brand-box-coming">
+      <div class="brand-box-coming-mark">Brand 02</div>
+      <p class="brand-box-coming-label">Coming Soon · KaizenStrategy</p>
+    </div>
+    <div class="brand-box-coming">
+      <div class="brand-box-coming-mark">Brand 03</div>
+      <p class="brand-box-coming-label">Coming Soon · KaizenStrategy</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-left reveal">
+    <h2>QUICK ANSWERS.</h2>
+    <p>The most common questions before booking a discovery call.</p>
+  </div>
+  <div class="faq-right reveal">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Is PaidPod a managed service?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Advisory, not management. Signal and Advisor tiers provide strategy and direction — your team executes. Operator tier includes hands-on campaign builds and restructures.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Can agencies white-label PaidPod?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Yes — Advisor and Operator tiers include fully unbranded deliverables. No PaidPod or KaizenStrategy branding on client-facing documents. You stay the expert to your clients.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>What's the minimum ad spend?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">No hard minimum, but you'll extract the most value at $3,000+/month in Google Ads spend. If you're below that, we'll tell you honestly on the discovery call.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Is there a long-term contract?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. All plans are month-to-month. Cancel, pause, or upgrade with 14 days notice. No lock-in, no penalties.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Why is it called PaidPod?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Pod = a dedicated unit with a specific function. Paid = paid media. PaidPod is the paid search unit you plug into your business or agency — focused, contained, effective.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg-word">PAIDPOD</div>
+  <p class="cta-label">Ready to Plug In?</p>
+  <h2 class="cta-title">YOUR <span class="accent">PAID</span><br/>SEARCH POD<br/>IS READY.</h2>
+  <p class="cta-sub">30-minute discovery call. No pitch, no pressure. You'll leave with at least one actionable insight — guaranteed.</p>
+  <div class="cta-actions">
+    <a href="https://cal.com/kaizenstrategy" target="_blank" class="cta-btn-lime">Book Discovery Call →</a>
+    <a href="#plans" class="cta-btn-ghost">View Plans</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand-wrap">
+    <span class="footer-mark">PaidPod<span class="dot"></span></span>
+    <span class="footer-sep">|</span>
+    <span class="footer-parent">A KaizenStrategy Brand</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://cal.com/kaizenstrategy" target="_blank">Book a Call</a>
+    <a href="https://linkedin.com/in/hanslacida" target="_blank">LinkedIn</a>
+    <a href="https://kaizenStrategy.us/brands/" target="_blank">All Brands</a>
+  </div>
+  <span class="footer-copy">© 2026 KaizenStrategy.us · kaizenStrategy.us/brands/paidpod</span>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => io.observe(r));
+
+  // FAQ
+  function toggleFaq(el) {
+    const open = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) el.classList.add('open');
+  }
+</script>
+</body>
+</html>
