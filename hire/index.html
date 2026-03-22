@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Hans — Google Ads Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --ink:      #0e0e0e;
+  --ink2:     #1a1a1a;
+  --warm:     #f7f2ea;
+  --warm2:    #ede8df;
+  --warm3:    #e2dbd0;
+  --amber:    #c8861a;
+  --amber2:   #e09c2a;
+  --amber-bg: rgba(200,134,26,0.08);
+  --amber-bd: rgba(200,134,26,0.2);
+  --muted:    #6e6559;
+  --muted2:   #9a9080;
+  --border:   rgba(14,14,14,0.1);
+  --border2:  rgba(14,14,14,0.06);
+  --green:    #2d7a4a;
+  --green-bg: rgba(45,122,74,0.08);
+  --serif:    'Lora', Georgia, serif;
+  --sans:     'DM Sans', sans-serif;
+  --mono:     'DM Mono', monospace;
+  --r:        6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--warm);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+/* subtle paper texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ══════════════════════
+   TOP BAR
+══════════════════════ */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 3rem;
+  height: 56px;
+  background: rgba(247,242,234,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border2);
+}
+.topbar-name {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.topbar-status {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-bg);
+  border: 1px solid rgba(45,122,74,0.18);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+.status-dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.topbar-cta {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--warm);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--r);
+  transition: background 0.2s;
+}
+.topbar-cta:hover { background: var(--ink2); }
+
+/* ══════════════════════
+   HERO — LETTER STYLE
+══════════════════════ */
+.hero {
+  min-height: 100vh;
+  padding: 8rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2rem 6rem;
+}
+
+/* the "you're here because" opener */
+.hero-context {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.5s ease 0.1s both;
+}
+.hero-context::before {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+
+.hero-greeting {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+.hero-greeting em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--amber);
+}
+
+/* letter body */
+.hero-letter {
+  animation: fadeUp 0.6s ease 0.35s both;
+}
+.hero-letter p {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 400;
+  line-height: 1.85;
+  color: #2a2520;
+  margin-bottom: 1.4rem;
+}
+.hero-letter p strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.hero-letter p em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.hero-letter .inline-stat {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  background: var(--amber-bg);
+  color: var(--amber);
+  border: 1px solid var(--amber-bd);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin: 0 0.1rem;
+}
+
+/* signature */
+.hero-sig {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+.sig-name {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.sig-title {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  line-height: 1.8;
+}
+
+/* ══════════════════════
+   DIVIDER STRIP
+══════════════════════ */
+.divider-strip {
+  width: 100%;
+  background: var(--ink);
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.ds-item {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.2rem;
+}
+.ds-num {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--amber2);
+  line-height: 1;
+}
+.ds-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247,242,234,0.4);
+}
+
+/* ══════════════════════
+   PROOF BLOCK
+══════════════════════ */
+.proof-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.s-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: flex; align-items: center; gap: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+.s-label::before {
+  content: '';
+  width: 1.5rem; height: 1px;
+  background: var(--amber);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.proof-cell {
+  background: var(--warm);
+  padding: 1.8rem;
+  transition: background 0.2s;
+}
+.proof-cell:hover { background: var(--warm2); }
+.pc-num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.pc-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.3rem;
+}
+.pc-desc {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ══════════════════════
+   TESTIMONIAL PULL
+══════════════════════ */
+.testi-pull {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+.testi-featured {
+  background: var(--ink);
+  border-radius: var(--r);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.testi-featured::before {
+  content: '"';
+  position: absolute;
+  top: -1rem; left: 1.5rem;
+  font-family: var(--serif);
+  font-size: 10rem;
+  font-weight: 700;
+  color: rgba(200,134,26,0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+.testi-featured-text {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(247,242,234,0.9);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.testi-featured-author {
+  display: flex; align-items: center; gap: 1rem;
+}
+.tfa-av {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-bd);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--amber2);
+  flex-shrink: 0;
+}
+.tfa-info h4 {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--warm);
+}
+.tfa-info span {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: rgba(247,242,234,0.35);
+}
+.tfa-stars {
+  margin-left: auto;
+  display: flex; gap: 2px;
+  color: var(--amber2);
+  font-size: 0.85rem;
+}
+
+/* ══════════════════════
+   WHAT TO EXPECT
+══════════════════════ */
+.expect-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+.expect-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.expect-item {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1.2rem;
+  align-items: start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border2);
+}
+.expect-item:first-child { border-top: 1px solid var(--border2); }
+.ei-check {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-bd);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  color: var(--amber);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.ei-content h4 {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.ei-content p {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ══════════════════════
+   CTA BLOCK
+══════════════════════ */
+.cta-block {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+.cta-card {
+  background: var(--ink);
+  border-radius: var(--r);
+  padding: 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -40%; left: 50%;
+  transform: translateX(-50%);
+  width: 60%; height: 80%;
+  background: radial-gradient(ellipse, rgba(200,134,26,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-card-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+  display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+}
+.cta-card-label::before, .cta-card-label::after {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--amber-bd);
+}
+.cta-card h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--warm);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.cta-card h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--amber2);
+}
+.cta-card p {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(247,242,234,0.6);
+  line-height: 1.7;
+  max-width: 28rem;
+  margin: 0 auto 2.5rem;
+}
+.cta-main-btn {
+  display: inline-flex;
+  align-items: center; gap: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: var(--amber);
+  color: var(--ink);
+  padding: 1rem 2.5rem;
+  border-radius: var(--r);
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.02em;
+}
+.cta-main-btn:hover { background: var(--amber2); transform: translateY(-2px); }
+
+.cta-sub-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+}
+.cta-sub-link {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247,242,234,0.3);
+  transition: color 0.2s;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.cta-sub-link:hover { color: rgba(247,242,234,0.7); }
+
+/* ══════════════════════
+   FOOTER
+══════════════════════ */
+footer {
+  background: var(--warm2);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--muted2);
+}
+.footer-back {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  transition: color 0.2s;
+}
+.footer-back:hover { color: var(--amber); }
+
+/* ══════════════════════
+   RESPONSIVE
+══════════════════════ */
+@media (max-width: 640px) {
+  .topbar { padding: 0 1.2rem; }
+  .topbar-status { display: none; }
+  .hero-inner { padding: 0 1.2rem 4rem; }
+  .divider-strip { gap: 2rem; padding: 1.2rem; }
+  .proof-section, .testi-pull, .expect-section, .cta-block { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .cta-card { padding: 2.5rem 1.5rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-name">Hans Lacida</div>
+  <div class="topbar-status">
+    <span class="status-dot"></span>
+    Taking New Clients
+  </div>
+  <a href="https://cal.com/hanslacida" target="_blank" class="topbar-cta">Book a Call</a>
+</header>
+
+<!-- HERO — LETTER FORMAT -->
+<main class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-context">You're here from LinkedIn or a referral</div>
+
+    <h1 class="hero-greeting">
+      Hey — glad<br>you <em>made it here.</em>
+    </h1>
+
+    <div class="hero-letter">
+      <p>
+        You probably landed here because we connected on LinkedIn, someone mentioned my name, or you're vetting whether I'm the real deal before replying to my message. That's smart — and I respect it.
+      </p>
+      <p>
+        So let me be direct: <strong>I'm Hans, a Google Ads specialist with over a decade of hands-on experience</strong> managing paid search for US-based businesses. Not an agency with layers of account managers. Just me — directly in your account, accountable to your results.
+      </p>
+      <p>
+        I've managed <span class="inline-stat">$300K+/mo</span> in ad spend, hit <span class="inline-stat">70× ROAS</span> for an eCommerce client, and helped a US retailer go from zero revenue to <span class="inline-stat">$100K+</span> in sales. The numbers are real — I'll show you the screenshots on our call.
+      </p>
+      <p>
+        What I'm looking for right now is a <strong>founder or business owner who's serious about Google Ads</strong> — someone who wants a specialist they can actually talk to, not a ticket system. If that's you, a 30-minute call is all it takes to know if we're a fit.
+      </p>
+      <p>
+        <em>No pitch. No pressure. Just an honest look at your account and a few things you can fix immediately — whether we work together or not.</em>
+      </p>
+    </div>
+
+    <div class="hero-sig">
+      <div class="sig-name">Hans Lacida</div>
+      <div class="sig-title">
+        Google Ads Specialist · Paid Search Pod<br>
+        KaizenStrategy · cal.com/hanslacida
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUICK STATS STRIP -->
+  <div class="divider-strip">
+    <div class="ds-item">
+      <div class="ds-num">10+</div>
+      <div class="ds-label">Years Experience</div>
+    </div>
+    <div class="ds-item">
+      <div class="ds-num">70×</div>
+      <div class="ds-label">Peak ROAS</div>
+    </div>
+    <div class="ds-item">
+      <div class="ds-num">$300K</div>
+      <div class="ds-label">Monthly Ad Spend Managed</div>
+    </div>
+    <div class="ds-item">
+      <div class="ds-num">$1.56M</div>
+      <div class="ds-label">Conversion Value Generated</div>
+    </div>
+  </div>
+</main>
+
+<!-- PROOF -->
+<section class="proof-section reveal">
+  <div class="s-label">The Numbers</div>
+  <div class="proof-grid">
+    <div class="proof-cell">
+      <div class="pc-label">Peak ROAS · AU/NZ eCommerce</div>
+      <div class="pc-num">70×</div>
+      <div class="pc-desc">Sporting goods retailer — Shopping & Performance Max</div>
+    </div>
+    <div class="proof-cell">
+      <div class="pc-label">Peak ROAS · US Retail</div>
+      <div class="pc-num">20×</div>
+      <div class="pc-desc">US-based retailer, Google Shopping campaigns</div>
+    </div>
+    <div class="proof-cell">
+      <div class="pc-label">CPA Reduction · Healthcare PPC</div>
+      <div class="pc-num">−50%</div>
+      <div class="pc-desc">Behavioral health clients · OCSEO · A/B testing + bid refinement</div>
+    </div>
+    <div class="proof-cell">
+      <div class="pc-label">Revenue Built from Zero</div>
+      <div class="pc-num">$100K+</div>
+      <div class="pc-desc">US retail client — 2-year engagement, ground-up Google Ads build</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED TESTIMONIAL -->
+<section class="testi-pull reveal reveal-d1">
+  <div class="testi-featured">
+    <p class="testi-featured-text">
+      "He increased my sales from nothing to more than $100,000. I worked with Hans for almost two years and he was magnificent — detail-oriented, passionate about what he does. He knows what he's doing. If you're looking for a quality Google Ads manager with experience and passion, Hans is a great choice."
+    </p>
+    <div class="testi-featured-author">
+      <div class="tfa-av">O</div>
+      <div class="tfa-info">
+        <h4>Owner, Online Retail Company</h4>
+        <span>United States · 2-year engagement</span>
+      </div>
+      <div class="tfa-stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect-section reveal">
+  <div class="s-label">What Working With Me Looks Like</div>
+  <div class="expect-list">
+    <div class="expect-item">
+      <div class="ei-check">✓</div>
+      <div class="ei-content">
+        <h4>You talk directly to me — always</h4>
+        <p>No account managers, no support tickets, no relay. You message me, I respond. Your campaigns are managed by the person you hired.</p>
+      </div>
+    </div>
+    <div class="expect-item">
+      <div class="ei-check">✓</div>
+      <div class="ei-content">
+        <h4>Tracking set up before anything goes live</h4>
+        <p>GA4 + GTM conversion tracking locked in on day one. If we can't measure it properly, we don't spend on it. This is non-negotiable for me.</p>
+      </div>
+    </div>
+    <div class="expect-item">
+      <div class="ei-check">✓</div>
+      <div class="ei-content">
+        <h4>Weekly optimizations, monthly plain-English reports</h4>
+        <p>You'll know exactly where every dollar went and what it returned. Reports are written for founders — not for Google Ads nerds.</p>
+      </div>
+    </div>
+    <div class="expect-item">
+      <div class="ei-check">✓</div>
+      <div class="ei-content">
+        <h4>Free audit on our first call</h4>
+        <p>I'll look at your account live during our 30-minute call and tell you exactly what's wasting money and what's working. You keep the insights either way.</p>
+      </div>
+    </div>
+    <div class="expect-item">
+      <div class="ei-check">✓</div>
+      <div class="ei-content">
+        <h4>Structured for US clients</h4>
+        <p>Operating under KaizenStrategy with a US LLC entity. Clean contracts, proper invoicing — no friction on your end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block reveal reveal-d1">
+  <div class="cta-card">
+    <div class="cta-card-label">Next Step</div>
+    <h2>Let's look at<br>your account <em>together.</em></h2>
+    <p>
+      30 minutes. No pitch deck. Just an honest conversation about your Google Ads and whether I can make them perform better.
+    </p>
+    <a href="https://cal.com/hanslacida" target="_blank" class="cta-main-btn">
+      📅 Book a Free 30-Min Audit
+    </a>
+    <div class="cta-sub-links">
+      <a href="mailto:hanzel@hanslacida.com" class="cta-sub-link">✉ hanzel@hanslacida.com</a>
+      <a href="https://linktr.ee/hanslacida" target="_blank" class="cta-sub-link">↗ All My Links</a>
+      <a href="hanslacida.com/google-ads" class="cta-sub-link">→ Full Portfolio Page</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Hans Lacida</div>
+  <div class="footer-copy">© 2026 · Google Ads Specialist · hanslacida.com/hire</div>
+  <a href="hanslacida.com/google-ads" class="footer-back">← Full Portfolio</a>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
