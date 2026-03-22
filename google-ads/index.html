@@ -18,6 +18,8 @@ html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,180,160,0.012) 2px,rgba(0,180,160,0.012) 4px);}
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--black);}::-webkit-scrollbar-thumb{background:var(--teal-dim);border-radius:2px;}
+
+/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:52px;background:rgba(8,12,12,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(14px);}
 .nav-id{display:flex;align-items:center;gap:1rem;}
 .nav-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;animation:pulse 2.5s ease-in-out infinite;}
@@ -31,6 +33,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;b
 .nav-links a:hover{color:var(--teal);}
 .nav-btn{font-family:var(--mono);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:var(--teal);color:var(--black);padding:0.5rem 1.2rem;text-decoration:none;border-radius:2px;transition:background 0.18s;}
 .nav-btn:hover{background:#00cdb8;}
+
+/* HERO */
 .hero{min-height:100vh;padding-top:52px;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.35;}
 .hero::after{content:'';position:absolute;top:-20%;right:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(0,180,160,0.07) 0%,transparent 65%);pointer-events:none;}
@@ -81,6 +85,8 @@ h1.hero-name em{font-style:italic;color:var(--teal);font-weight:400;}
 .ticker-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
 .ticker-val{font-family:var(--mono);font-size:0.65rem;font-weight:500;color:var(--green);}
 .ticker-sep{width:1px;height:1rem;background:var(--border2);}
+
+/* SECTION SHARED */
 section{position:relative;}
 .section-header{padding:5rem 3rem 1.5rem;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--border);}
 .section-eyebrow{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
@@ -88,6 +94,7 @@ section{position:relative;}
 h2.section-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.01em;color:var(--white);}
 h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
 .section-num{font-family:var(--mono);font-size:4rem;font-weight:300;color:var(--border2);line-height:1;user-select:none;}
+
 /* ICP */
 .icp{background:var(--dark);border-top:1px solid var(--border);}
 .icp-body{display:grid;grid-template-columns:280px 1fr;}
@@ -107,6 +114,7 @@ h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
 .icp-num{font-family:var(--mono);font-size:0.58rem;color:var(--teal);letter-spacing:0.1em;margin-bottom:1.5rem;}
 .icp-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;line-height:1.2;}
 .icp-card p{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.75;}
+
 /* RESULTS */
 .results{background:var(--black);}
 .results-grid{display:grid;grid-template-columns:repeat(2,1fr);border-left:1px solid var(--border);}
@@ -119,14 +127,41 @@ h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
 .result-num sup{font-size:0.45em;vertical-align:super;font-weight:400;color:var(--teal);}
 .result-desc{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.6;max-width:28rem;}
 .result-tag{margin-top:1.2rem;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);}
-/* TESTIMONIALS */
-.testi-strip{background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-.testi{padding:0 2.5rem;border-right:1px solid var(--border);position:relative;}
-.testi:first-child{padding-left:0;}
-.testi:last-child{border-right:none;padding-right:0;}
-.testi-mark{font-family:var(--serif);font-size:3rem;color:var(--teal);line-height:1;margin-bottom:0.5rem;opacity:0.5;}
-.testi blockquote{font-family:var(--serif);font-size:1rem;font-weight:400;font-style:italic;color:rgba(240,244,244,0.78);line-height:1.7;margin-bottom:1.2rem;}
+
+/* ─────────────────────────────────────────────────
+   TESTIMONIALS — unified section
+───────────────────────────────────────────────── */
+.testimonials-section{background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* Section label bar */
+.testi-header{display:flex;align-items:center;justify-content:space-between;padding:2rem 3rem;border-bottom:1px solid var(--border);}
+.testi-eyebrow{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.6rem;}
+.testi-eyebrow::before{content:'▸';font-size:0.5rem;}
+.testi-verified{display:flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--green);}
+.testi-verified::before{content:'✓';font-size:0.65rem;}
+
+/* Pull quote cards row */
+.testi-strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border);}
+.testi{padding:2.5rem 2.5rem;border-right:1px solid var(--border);position:relative;transition:background 0.2s;}
+.testi:first-child{padding-left:3rem;}
+.testi:last-child{border-right:none;padding-right:3rem;}
+.testi:hover{background:rgba(0,180,160,0.025);}
+.testi-mark{font-family:var(--serif);font-size:2.8rem;color:var(--teal);line-height:1;margin-bottom:0.6rem;opacity:0.45;}
+.testi blockquote{font-family:var(--serif);font-size:0.95rem;font-weight:400;font-style:italic;color:rgba(240,244,244,0.75);line-height:1.75;margin-bottom:1.4rem;}
+.testi-meta{display:flex;flex-direction:column;gap:0.2rem;}
 .testi-from{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);}
+.testi-badge{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+
+/* Embed area */
+.testi-embed-wrap{padding:0 3rem 3rem;}
+.testi-embed-label{display:flex;align-items:center;justify-content:space-between;padding:2rem 0 1.2rem;}
+.testi-embed-label-left{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.testi-embed-label-right{font-family:var(--mono);font-size:0.58rem;color:var(--teal);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
+.testi-embed-label-right:hover{color:#00cdb8;}
+.testi-embed-frame{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--dark);}
+.testi-embed-frame iframe{display:block;width:100%;}
+.testi-embed-hint{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);padding-top:0.8rem;}
+
 /* SERVICES */
 .services{background:var(--dark);}
 .services-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
@@ -149,6 +184,7 @@ h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
 .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;}
 .tool-chip{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--muted);background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:0.4rem 0.6rem;border-radius:2px;text-align:center;transition:color 0.2s,border-color 0.2s;}
 .tool-chip:hover{color:var(--teal);border-color:rgba(0,180,160,0.3);}
+
 /* EXP */
 .exp{background:var(--black);}
 .exp-body{padding:4rem 3rem;}
@@ -161,6 +197,7 @@ h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
 .exp-desc{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.75;margin-bottom:0.8rem;}
 .exp-chips{display:flex;gap:0.5rem;flex-wrap:wrap;}
 .exp-chip{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);background:rgba(230,168,23,0.08);border:1px solid rgba(230,168,23,0.2);padding:0.2rem 0.6rem;border-radius:2px;}
+
 /* PROCESS */
 .process{background:var(--panel);border-top:1px solid var(--border);}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--border);}
@@ -170,6 +207,7 @@ h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
 .p-step:last-child .p-step-arrow{display:none;}
 .p-step h3{font-family:var(--sans);font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:0.6rem;}
 .p-step p{font-family:var(--sans);font-size:0.82rem;font-weight:300;color:rgba(240,244,244,0.5);line-height:1.65;}
+
 /* CTA */
 .cta-section{background:var(--dark);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;min-height:70vh;position:relative;overflow:hidden;}
 .cta-section::before{content:'';position:absolute;bottom:-20%;left:-5%;width:50%;height:100%;background:radial-gradient(ellipse,rgba(0,180,160,0.06) 0%,transparent 60%);pointer-events:none;}
@@ -190,10 +228,14 @@ h2.cta-headline em{font-style:italic;font-weight:400;color:var(--teal);}
 .sig-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);padding:1.2rem 2rem;}
 .sig-card p{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;color:var(--muted2);line-height:2;}
 .sig-card a{color:var(--teal);text-decoration:none;}
+
+/* FOOTER */
 footer{background:var(--black);border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
 .footer-left{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;color:var(--muted2);}
 .footer-left span{color:var(--teal);}
 .footer-right{font-family:var(--mono);font-size:0.58rem;color:var(--muted2);letter-spacing:0.08em;}
+
+/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
 .hero-tag{animation:fadeUp 0.6s ease 0.05s both;}
 h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
@@ -203,6 +245,8 @@ h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
 .hero-panel{animation:fadeUp 0.7s ease 0.3s both;}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:none;}
+
+/* RESPONSIVE */
 @media(max-width:960px){
   .nav-links{display:none;}
   .hero-main{grid-template-columns:1fr;gap:3rem;padding:2rem 1.5rem;}
@@ -213,9 +257,14 @@ h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
   .icp-cards{grid-template-columns:1fr;}
   .icp-card{border-right:none;}
   .results-grid{grid-template-columns:1fr;}
-  .testi-strip{grid-template-columns:1fr;padding:2rem 1.5rem;}
-  .testi{border-right:none;padding:1.5rem 0;border-bottom:1px solid var(--border);}
-  .testi:last-child{border-bottom:none;}
+  /* Testimonials responsive */
+  .testi-header{padding:1.5rem 1.5rem;}
+  .testi-strip{grid-template-columns:1fr;}
+  .testi{border-right:none;padding:2rem 1.5rem;border-bottom:1px solid var(--border);}
+  .testi:first-child{padding-left:1.5rem;}
+  .testi:last-child{border-right:none;border-bottom:none;padding-right:1.5rem;}
+  .testi-embed-wrap{padding:0 1.5rem 2rem;}
+  /* end testi responsive */
   .services-body{grid-template-columns:1fr;}
   .services-left{border-right:none;border-bottom:1px solid var(--border);padding:2rem 1.5rem;}
   .services-right{padding:2rem 1.5rem;}
@@ -232,6 +281,7 @@ h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
 </style>
 </head>
 <body>
+
 <nav class="nav">
   <div class="nav-id">
     <div class="nav-dot"></div>
@@ -326,35 +376,62 @@ h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
   </div>
 </section>
 
-<div class="testi-strip reveal">
-  <div class="testi"><div class="testi-mark">&ldquo;</div><blockquote>He increased my sales from nothing to more than $100,000. Magnificent, detail-oriented. He knows what he's doing. If you're looking for a quality Google Ads manager with experience and passion — Hans is a great choice.</blockquote><div class="testi-from">Owner · US Online Retail Company</div></div>
-  <div class="testi"><div class="testi-mark">&ldquo;</div><blockquote>Hanzel was thorough and detailed in all his work. Excellent communication — professional and goes the extra mile. Hands-on through the whole process, delivered great results. An asset to any team. I will continue to work with Hanzel.</blockquote><div class="testi-from">Massimo · Client</div></div>
-  <div class="testi"><div class="testi-mark">&ldquo;</div><blockquote>Meticulous attention to detail, deep digital marketing expertise, and proactive problem-solving stood out. Delivered everything on time with open communication. Increased revenue, click-through rates, visibility, and site traffic.</blockquote><div class="testi-from">Clutch Review · Retail Company (Verified)</div></div>
-</div>
+<!-- ── UNIFIED TESTIMONIALS SECTION ── -->
+<section class="testimonials-section reveal" id="testimonials">
 
-<!-- TESTIMONIALS EMBED -->
-<section class="embed-section reveal reveal-d1">
-  <div class="embed-header">
-    <div class="embed-label">All Client Reviews</div>
-    <div class="embed-verified">✓ Verified Reviews · Paid Search Pod</div>
+  <div class="testi-header">
+    <div class="testi-eyebrow">What Clients Say</div>
+    <div class="testi-verified">Verified Client Reviews · Paid Search Pod</div>
   </div>
 
-  <div class="embed-wrapper">
-    <iframe
-      height="800px"
-      id="testimonialto-zeldigital-testimonials-tag-all-dark-animated"
-      src="https://embed-v2.testimonial.to/w/zeldigital-testimonials?animated=on&theme=light&shadowColor=912f3c&speed=1&hideDate=on&hideSource&tag=all&disableHoverPause"
-      frameborder="0"
-      scrolling="no"
-      width="100%"
-      title="Paid Search Pod Client Testimonials">
-    </iframe>
+  <!-- Pull quotes -->
+  <div class="testi-strip">
+    <div class="testi">
+      <div class="testi-mark">&ldquo;</div>
+      <blockquote>He increased my sales from nothing to more than $100,000. Magnificent, detail-oriented. He knows what he's doing. If you're looking for a quality Google Ads manager with experience and passion — Hans is a great choice.</blockquote>
+      <div class="testi-meta">
+        <div class="testi-from">Owner · US Online Retail Company</div>
+        <div class="testi-badge">20× Peak ROAS · ~2 Years</div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="testi-mark">&ldquo;</div>
+      <blockquote>Hanzel was thorough and detailed in all his work. Excellent communication — professional and goes the extra mile. Hands-on through the whole process, delivered great results. An asset to any team. I will continue to work with Hanzel.</blockquote>
+      <div class="testi-meta">
+        <div class="testi-from">Massimo · Client</div>
+        <div class="testi-badge">Repeat Client</div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="testi-mark">&ldquo;</div>
+      <blockquote>Meticulous attention to detail, deep digital marketing expertise, and proactive problem-solving stood out. Delivered everything on time with open communication. Increased revenue, click-through rates, visibility, and site traffic.</blockquote>
+      <div class="testi-meta">
+        <div class="testi-from">Clutch Review · Retail Company</div>
+        <div class="testi-badge">✓ Platform Verified</div>
+      </div>
+    </div>
   </div>
 
-  <div class="embed-footer">
-    <div class="embed-footer-note">Scroll inside the widget to see all reviews</div>
-    <a href="https://testimonial.to/zeldigital-testimonials" target="_blank" class="embed-footer-link">View on Testimonial.to →</a>
+  <!-- Embed widget -->
+  <div class="testi-embed-wrap">
+    <div class="testi-embed-label">
+      <div class="testi-embed-label-left">All Client Reviews</div>
+      <a href="https://testimonial.to/zeldigital-testimonials" target="_blank" class="testi-embed-label-right">View on Testimonial.to →</a>
+    </div>
+    <div class="testi-embed-frame">
+      <iframe
+        height="720px"
+        id="testimonialto-zeldigital-testimonials-tag-all-dark-animated"
+        src="https://embed-v2.testimonial.to/w/zeldigital-testimonials?animated=on&theme=light&shadowColor=912f3c&speed=1&hideDate=on&hideSource&tag=all&disableHoverPause"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        title="Paid Search Pod Client Testimonials">
+      </iframe>
+    </div>
+    <div class="testi-embed-hint">Scroll inside the widget to see all reviews</div>
   </div>
+
 </section>
 
 <section class="services reveal" id="services">
@@ -392,7 +469,7 @@ h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
 <section class="process reveal" id="process">
   <div class="section-header"><div><div class="section-eyebrow">How We Work</div><h2 class="section-title">Clean Process.<br><em>No Surprises.</em></h2></div><div class="section-num">05</div></div>
   <div class="process-steps">
-    <div class="p-step"><div class="p-step-num">STEP 01</div><div class="p-step-arrow">→</div><h3>Free Audit Call</h3><p>30 minutes. I audit your existing account live and identify quick wins and structural problems. Useful regardless of what you decide next.</p></div>
+    <div class="p-step"><div class="p-step-num">STEP 01</div><div class="p-step-arrow">→</div><h3>Free Audit Call</h3><p>15 to 30 minutes. I audit your existing account live and identify quick wins and structural problems. Useful regardless of what you decide next.</p></div>
     <div class="p-step"><div class="p-step-num">STEP 02</div><div class="p-step-arrow">→</div><h3>Proposal & Scope</h3><p>Custom scope based on your goals, budget, and industry. Clear deliverables, clear pricing. No hidden retainer fees, no ambiguity.</p></div>
     <div class="p-step"><div class="p-step-num">STEP 03</div><div class="p-step-arrow">→</div><h3>Setup & Launch</h3><p>GA4 + GTM tracking locked in first — always. Campaigns built or restructured. Ads live within the agreed timeline.</p></div>
     <div class="p-step"><div class="p-step-num">STEP 04</div><h3>Optimize & Scale</h3><p>Weekly optimizations, monthly reports straight to you. Full transparency — what's working, what's next, what we're cutting.</p></div>
