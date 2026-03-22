@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hans Lacida — Google Ads & Paid Search Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#080c0c;--dark:#0e1515;--panel:#111a1a;--border:#1e2e2e;--border2:#243232;
+  --teal:#00b4a0;--teal-dim:#007a6e;--amber:#e6a817;--amber-d:#c4900f;
+  --red:#e05555;--green:#2ec97a;--white:#f0f4f4;--muted:#5a7070;--muted2:#3d5555;
+  --serif:'Playfair Display',Georgia,serif;--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,180,160,0.012) 2px,rgba(0,180,160,0.012) 4px);}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--black);}::-webkit-scrollbar-thumb{background:var(--teal-dim);border-radius:2px;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:52px;background:rgba(8,12,12,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(14px);}
+.nav-id{display:flex;align-items:center;gap:1rem;}
+.nav-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;animation:pulse 2.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,180,160,0.6);}50%{box-shadow:0 0 0 6px rgba(0,180,160,0);}}
+.nav-name{font-family:var(--mono);font-size:0.75rem;font-weight:500;letter-spacing:0.12em;color:var(--white);}
+.nav-name span{color:var(--teal);}
+.nav-ticker{font-family:var(--mono);font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;}
+.nav-right{display:flex;align-items:center;gap:2rem;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-btn{font-family:var(--mono);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:var(--teal);color:var(--black);padding:0.5rem 1.2rem;text-decoration:none;border-radius:2px;transition:background 0.18s;}
+.nav-btn:hover{background:#00cdb8;}
+.hero{min-height:100vh;padding-top:52px;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.35;}
+.hero::after{content:'';position:absolute;top:-20%;right:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(0,180,160,0.07) 0%,transparent 65%);pointer-events:none;}
+.hero-topbar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;border-bottom:1px solid var(--border);}
+.hero-status{display:flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);}
+.status-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
+.hero-meta{font-family:var(--mono);font-size:0.58rem;color:var(--muted);letter-spacing:0.1em;}
+.hero-main{position:relative;z-index:2;display:grid;grid-template-columns:1fr 420px;gap:0;align-items:center;padding:4rem 3rem;}
+.hero-tag{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:2rem;display:flex;align-items:center;gap:0.8rem;}
+.hero-tag::before{content:'//';color:var(--muted2);}
+h1.hero-name{font-family:var(--serif);font-size:clamp(4rem,7vw,7.5rem);font-weight:900;line-height:0.92;letter-spacing:-0.02em;color:var(--white);margin-bottom:1.2rem;}
+h1.hero-name em{font-style:italic;color:var(--teal);font-weight:400;}
+.hero-role{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;}
+.hero-role::after{content:'';flex:1;max-width:4rem;height:1px;background:var(--border2);}
+.hero-statement{font-family:var(--serif);font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:400;font-style:italic;line-height:1.55;color:rgba(240,244,244,0.72);max-width:36rem;margin-bottom:3rem;}
+.hero-statement strong{color:var(--white);font-style:normal;font-weight:700;}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.btn-primary{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:var(--teal);color:var(--black);padding:0.9rem 2rem;text-decoration:none;border-radius:2px;transition:background 0.18s,transform 0.15s;display:inline-block;}
+.btn-primary:hover{background:#00cdb8;transform:translateY(-2px);}
+.btn-ghost{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.9rem 0;border-bottom:1px solid var(--border2);transition:color 0.2s,border-color 0.2s;display:inline-block;}
+.btn-ghost:hover{color:var(--white);border-color:var(--muted);}
+.hero-panel{background:var(--panel);border:1px solid var(--border);border-radius:4px;overflow:hidden;align-self:stretch;display:flex;flex-direction:column;}
+.panel-header{padding:0.8rem 1.2rem;background:var(--dark);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.panel-title{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.panel-dots{display:flex;gap:5px;}
+.panel-dots span{width:8px;height:8px;border-radius:50%;}
+.panel-dots span:nth-child(1){background:#e05555;}
+.panel-dots span:nth-child(2){background:var(--amber);}
+.panel-dots span:nth-child(3){background:var(--green);}
+.kpi-list{flex:1;display:flex;flex-direction:column;}
+.kpi-item{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);transition:background 0.18s;}
+.kpi-item:hover{background:rgba(0,180,160,0.04);}
+.kpi-item:last-child{border-bottom:none;}
+.kpi-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;flex:1;}
+.kpi-val{font-family:var(--mono);font-size:1.1rem;font-weight:500;color:var(--white);text-align:right;}
+.kpi-val.up{color:var(--green);}
+.kpi-val.teal{color:var(--teal);}
+.kpi-val.amber{color:var(--amber);}
+.kpi-badge{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:2px;margin-left:0.8rem;white-space:nowrap;}
+.kpi-badge.green{background:rgba(46,201,122,0.15);color:var(--green);}
+.kpi-badge.teal{background:rgba(0,180,160,0.15);color:var(--teal);}
+.kpi-badge.amber{background:rgba(230,168,23,0.15);color:var(--amber);}
+.panel-footer{padding:1rem 1.4rem;background:var(--dark);border-top:1px solid var(--border);}
+.panel-footer p{font-family:var(--mono);font-size:0.58rem;color:var(--muted2);letter-spacing:0.08em;line-height:1.6;}
+.panel-footer a{color:var(--teal);text-decoration:none;}
+.hero-bottom{position:relative;z-index:2;border-top:1px solid var(--border);padding:1rem 3rem;display:flex;gap:3rem;overflow:hidden;flex-wrap:wrap;}
+.ticker-item{display:flex;align-items:center;gap:0.6rem;white-space:nowrap;flex-shrink:0;}
+.ticker-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.ticker-val{font-family:var(--mono);font-size:0.65rem;font-weight:500;color:var(--green);}
+.ticker-sep{width:1px;height:1rem;background:var(--border2);}
+section{position:relative;}
+.section-header{padding:5rem 3rem 1.5rem;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--border);}
+.section-eyebrow{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
+.section-eyebrow::before{content:'▸';font-size:0.5rem;}
+h2.section-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.01em;color:var(--white);}
+h2.section-title em{font-style:italic;font-weight:400;color:var(--teal);}
+.section-num{font-family:var(--mono);font-size:4rem;font-weight:300;color:var(--border2);line-height:1;user-select:none;}
+/* ICP */
+.icp{background:var(--dark);border-top:1px solid var(--border);}
+.icp-body{display:grid;grid-template-columns:280px 1fr;}
+.icp-sidebar{border-right:1px solid var(--border);padding:3rem;}
+.icp-sidebar p{font-family:var(--sans);font-size:0.9rem;font-weight:300;color:rgba(240,244,244,0.6);line-height:1.8;margin-bottom:2rem;}
+.icp-sidebar strong{color:var(--white);font-weight:500;}
+.flag-list{display:flex;flex-direction:column;gap:0.6rem;}
+.flag{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.8rem;border-radius:2px;display:inline-flex;align-items:center;gap:0.5rem;width:fit-content;}
+.flag.green{background:rgba(46,201,122,0.1);color:var(--green);border:1px solid rgba(46,201,122,0.2);}
+.flag.red{background:rgba(224,85,85,0.1);color:var(--red);border:1px solid rgba(224,85,85,0.2);}
+.icp-cards{display:grid;grid-template-columns:repeat(3,1fr);}
+.icp-card{padding:3rem 2.5rem;border-right:1px solid var(--border);border-top:1px solid var(--border);transition:background 0.2s;position:relative;overflow:hidden;}
+.icp-card:last-child{border-right:none;}
+.icp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--teal);transform:scaleX(0);transition:transform 0.3s ease;transform-origin:left;}
+.icp-card:hover{background:rgba(0,180,160,0.03);}
+.icp-card:hover::before{transform:scaleX(1);}
+.icp-num{font-family:var(--mono);font-size:0.58rem;color:var(--teal);letter-spacing:0.1em;margin-bottom:1.5rem;}
+.icp-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;line-height:1.2;}
+.icp-card p{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.75;}
+/* RESULTS */
+.results{background:var(--black);}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);border-left:1px solid var(--border);}
+.result-card{padding:3.5rem 3rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;transition:background 0.2s;}
+.result-card:hover{background:rgba(0,180,160,0.03);}
+.result-card::after{content:attr(data-bg);position:absolute;bottom:-1rem;right:1rem;font-family:var(--serif);font-size:8rem;font-weight:900;color:rgba(0,180,160,0.04);line-height:1;pointer-events:none;}
+.result-context{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.5rem;}
+.result-context::before{content:'›';}
+.result-num{font-family:var(--serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:900;color:var(--white);line-height:1;margin-bottom:0.5rem;letter-spacing:-0.02em;}
+.result-num sup{font-size:0.45em;vertical-align:super;font-weight:400;color:var(--teal);}
+.result-desc{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.6;max-width:28rem;}
+.result-tag{margin-top:1.2rem;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);}
+/* TESTIMONIALS */
+.testi-strip{background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.testi{padding:0 2.5rem;border-right:1px solid var(--border);position:relative;}
+.testi:first-child{padding-left:0;}
+.testi:last-child{border-right:none;padding-right:0;}
+.testi-mark{font-family:var(--serif);font-size:3rem;color:var(--teal);line-height:1;margin-bottom:0.5rem;opacity:0.5;}
+.testi blockquote{font-family:var(--serif);font-size:1rem;font-weight:400;font-style:italic;color:rgba(240,244,244,0.78);line-height:1.7;margin-bottom:1.2rem;}
+.testi-from{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);}
+/* SERVICES */
+.services{background:var(--dark);}
+.services-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.services-left{padding:4rem 3rem;border-right:1px solid var(--border);}
+.service-row{display:grid;grid-template-columns:3rem 1fr auto;gap:1.5rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid var(--border);}
+.service-row:first-child{padding-top:0;}
+.service-row:last-child{border-bottom:none;}
+.s-num{font-family:var(--mono);font-size:0.6rem;color:var(--muted2);padding-top:0.2rem;}
+.s-body h3{font-family:var(--sans);font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:0.3rem;}
+.s-body p{font-family:var(--sans);font-size:0.82rem;font-weight:300;color:rgba(240,244,244,0.5);line-height:1.6;}
+.s-pill{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:2px;white-space:nowrap;align-self:flex-start;margin-top:0.2rem;}
+.s-pill.core{background:rgba(0,180,160,0.12);color:var(--teal);border:1px solid rgba(0,180,160,0.2);}
+.s-pill.month{background:rgba(230,168,23,0.1);color:var(--amber);border:1px solid rgba(230,168,23,0.2);}
+.s-pill.free{background:rgba(46,201,122,0.1);color:var(--green);border:1px solid rgba(46,201,122,0.2);}
+.services-right{padding:4rem 3rem;}
+.services-right h3{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--white);line-height:1.25;margin-bottom:1.2rem;}
+.services-right p{font-family:var(--sans);font-size:0.88rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.8;margin-bottom:1.5rem;}
+.inline-cta{display:inline-block;font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:var(--teal);color:var(--black);padding:0.8rem 1.6rem;text-decoration:none;border-radius:2px;margin-top:1rem;margin-bottom:2.5rem;transition:background 0.18s;}
+.inline-cta:hover{background:#00cdb8;}
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;}
+.tool-chip{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--muted);background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:0.4rem 0.6rem;border-radius:2px;text-align:center;transition:color 0.2s,border-color 0.2s;}
+.tool-chip:hover{color:var(--teal);border-color:rgba(0,180,160,0.3);}
+/* EXP */
+.exp{background:var(--black);}
+.exp-body{padding:4rem 3rem;}
+.exp-row{display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--border);}
+.exp-row:first-child{padding-top:0;}
+.exp-row:last-child{border-bottom:none;padding-bottom:0;}
+.exp-period{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--muted);line-height:1.7;margin-bottom:0.5rem;}
+.exp-co{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);font-weight:500;}
+.exp-role{font-family:var(--sans);font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.6rem;}
+.exp-desc{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.75;margin-bottom:0.8rem;}
+.exp-chips{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.exp-chip{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);background:rgba(230,168,23,0.08);border:1px solid rgba(230,168,23,0.2);padding:0.2rem 0.6rem;border-radius:2px;}
+/* PROCESS */
+.process{background:var(--panel);border-top:1px solid var(--border);}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--border);}
+.p-step{padding:3rem 2.5rem;border-right:1px solid var(--border);border-top:1px solid var(--border);position:relative;}
+.p-step-num{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;color:var(--teal);margin-bottom:1.5rem;}
+.p-step-arrow{position:absolute;top:50%;right:-1.2rem;transform:translateY(-50%);font-family:var(--mono);font-size:0.7rem;color:var(--border2);z-index:1;}
+.p-step:last-child .p-step-arrow{display:none;}
+.p-step h3{font-family:var(--sans);font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:0.6rem;}
+.p-step p{font-family:var(--sans);font-size:0.82rem;font-weight:300;color:rgba(240,244,244,0.5);line-height:1.65;}
+/* CTA */
+.cta-section{background:var(--dark);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;min-height:70vh;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;bottom:-20%;left:-5%;width:50%;height:100%;background:radial-gradient(ellipse,rgba(0,180,160,0.06) 0%,transparent 60%);pointer-events:none;}
+.cta-left{padding:6rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border);position:relative;z-index:1;}
+.cta-eyebrow{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem;}
+.cta-eyebrow::before{content:'//';color:var(--muted2);}
+h2.cta-headline{font-family:var(--serif);font-size:clamp(2.5rem,4.5vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;color:var(--white);margin-bottom:1.5rem;}
+h2.cta-headline em{font-style:italic;font-weight:400;color:var(--teal);}
+.cta-sub{font-family:var(--sans);font-size:0.95rem;font-weight:300;color:rgba(240,244,244,0.55);line-height:1.8;max-width:32rem;margin-bottom:3rem;}
+.cta-right{padding:6rem 3rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;position:relative;z-index:1;}
+.contact-block{border:1px solid var(--border);padding:1.5rem 2rem;transition:border-color 0.2s,background 0.2s;}
+.contact-block:hover{border-color:rgba(0,180,160,0.4);background:rgba(0,180,160,0.03);}
+.contact-block-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;}
+.contact-block-val{font-family:var(--serif);font-size:1.1rem;color:var(--white);text-decoration:none;font-weight:400;display:block;}
+.contact-block-val:hover{color:var(--teal);}
+.cta-main-btn{display:block;text-align:center;font-family:var(--mono);font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;background:var(--teal);color:var(--black);padding:1.4rem 2rem;text-decoration:none;border-radius:2px;transition:background 0.18s,transform 0.15s;}
+.cta-main-btn:hover{background:#00cdb8;transform:translateY(-2px);}
+.sig-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);padding:1.2rem 2rem;}
+.sig-card p{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;color:var(--muted2);line-height:2;}
+.sig-card a{color:var(--teal);text-decoration:none;}
+footer{background:var(--black);border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-left{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;color:var(--muted2);}
+.footer-left span{color:var(--teal);}
+.footer-right{font-family:var(--mono);font-size:0.58rem;color:var(--muted2);letter-spacing:0.08em;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+.hero-tag{animation:fadeUp 0.6s ease 0.05s both;}
+h1.hero-name{animation:fadeUp 0.7s ease 0.15s both;}
+.hero-role{animation:fadeUp 0.7s ease 0.25s both;}
+.hero-statement{animation:fadeUp 0.7s ease 0.35s both;}
+.hero-actions{animation:fadeUp 0.7s ease 0.45s both;}
+.hero-panel{animation:fadeUp 0.7s ease 0.3s both;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .hero-main{grid-template-columns:1fr;gap:3rem;padding:2rem 1.5rem;}
+  .hero-topbar{padding:1rem 1.5rem;}
+  .hero-bottom{padding:1rem 1.5rem;gap:1rem;}
+  .icp-body{grid-template-columns:1fr;}
+  .icp-sidebar{border-right:none;border-bottom:1px solid var(--border);padding:2rem 1.5rem;}
+  .icp-cards{grid-template-columns:1fr;}
+  .icp-card{border-right:none;}
+  .results-grid{grid-template-columns:1fr;}
+  .testi-strip{grid-template-columns:1fr;padding:2rem 1.5rem;}
+  .testi{border-right:none;padding:1.5rem 0;border-bottom:1px solid var(--border);}
+  .testi:last-child{border-bottom:none;}
+  .services-body{grid-template-columns:1fr;}
+  .services-left{border-right:none;border-bottom:1px solid var(--border);padding:2rem 1.5rem;}
+  .services-right{padding:2rem 1.5rem;}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .cta-section{grid-template-columns:1fr;}
+  .cta-left{border-right:none;border-bottom:1px solid var(--border);padding:3rem 1.5rem;}
+  .cta-right{padding:2rem 1.5rem;}
+  .exp-row{grid-template-columns:1fr;gap:0.5rem;}
+  .exp-body{padding:2rem 1.5rem;}
+  .section-header{padding:3rem 1.5rem 1.5rem;flex-direction:column;align-items:flex-start;gap:0;}
+  .section-num{display:none;}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-id">
+    <div class="nav-dot"></div>
+    <div>
+      <div class="nav-name">HANS<span>·</span>LACIDA</div>
+      <div class="nav-ticker">PAID SEARCH · KAIZENSTRATEGY</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#icp">Who I Serve</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#exp">Experience</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://tidycal.com/hanslacida" target="_blank" class="nav-btn">Book Free Audit →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-topbar">
+    <div class="hero-status"><div class="status-dot"></div>Available for New Clients · US Timezone Overlap</div>
+    <div class="hero-meta">Updated March 2026 &nbsp;·&nbsp; US LLC Ready &nbsp;·&nbsp; 10+ Years Google Ads</div>
+  </div>
+  <div class="hero-main">
+    <div class="hero-left">
+      <div class="hero-tag">Google Ads &amp; Paid Search Specialist</div>
+      <h1 class="hero-name">Hans<br><em>Lacida</em></h1>
+      <div class="hero-role">KaizenStrategy · Freelance PPC Operator</div>
+      <p class="hero-statement">I run paid search for <strong>US founders and operators</strong> who need a specialist — not an agency middle layer — managing their Google Ads. I've handled <strong>$300K/month budgets</strong>, delivered <strong>70× ROAS</strong>, and built campaigns from zero to six figures.</p>
+      <div class="hero-actions">
+        <a href="https://tidycal.com/hanslacida" target="_blank" class="btn-primary">Book Free Audit →</a>
+        <a href="#results" class="btn-ghost">See proof of results ↓</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="panel-header">
+        <div class="panel-title">PERFORMANCE_RECORD.log</div>
+        <div class="panel-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="kpi-list">
+        <div class="kpi-item"><div class="kpi-label">Peak ROAS Achieved</div><div class="kpi-val up">70×<span class="kpi-badge green">AU/NZ Ecom</span></div></div>
+        <div class="kpi-item"><div class="kpi-label">Peak ROAS — USA</div><div class="kpi-val up">20×<span class="kpi-badge green">US Retail</span></div></div>
+        <div class="kpi-item"><div class="kpi-label">Monthly Spend Managed</div><div class="kpi-val teal">$300K<span class="kpi-badge teal">Single Acct</span></div></div>
+        <div class="kpi-item"><div class="kpi-label">CPA Reduction</div><div class="kpi-val up">−50%<span class="kpi-badge green">Healthcare</span></div></div>
+        <div class="kpi-item"><div class="kpi-label">Conv. Value Generated</div><div class="kpi-val amber">$1.56M<span class="kpi-badge amber">Verified</span></div></div>
+        <div class="kpi-item"><div class="kpi-label">Revenue Built from $0</div><div class="kpi-val up">$100K+<span class="kpi-badge green">US Client</span></div></div>
+        <div class="kpi-item"><div class="kpi-label">Years Active in PPC</div><div class="kpi-val teal">10+<span class="kpi-badge teal">Google Ads</span></div></div>
+      </div>
+      <div class="panel-footer"><p>All figures from real client accounts · Clutch-verified case study available<br><a href="https://tidycal.com/hanslacida" target="_blank">tidycal.com/hanslacida</a> · hanzel@hanslacida.com</p></div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="ticker-item"><span class="ticker-label">Industries</span><span class="ticker-val">Healthcare · eCommerce · Retail · SaaS · Hospitality</span></div>
+    <div class="ticker-sep"></div>
+    <div class="ticker-item"><span class="ticker-label">Platforms</span><span class="ticker-val">Google Ads · Microsoft Ads · Meta · TikTok Ads</span></div>
+    <div class="ticker-sep"></div>
+    <div class="ticker-item"><span class="ticker-label">Structure</span><span class="ticker-val">US LLC Ready · Direct to Founder · No Account Managers</span></div>
+  </div>
+</div>
+
+<section class="icp reveal" id="icp">
+  <div class="section-header"><div><div class="section-eyebrow">Who This Is For</div><h2 class="section-title">I Work With<br><em>Specific</em> People.</h2></div><div class="section-num">01</div></div>
+  <div class="icp-body">
+    <div class="icp-sidebar">
+      <p>I'm not for everyone — and that's intentional. <strong>The right fit produces better results, faster.</strong> If you see yourself below, we'll get along well.</p>
+      <p>I report directly to founders and owners. No layers. No account managers summarizing my work. You get the actual operator.</p>
+      <div class="flag-list">
+        <div class="flag green">✓ US-based founder or operator</div>
+        <div class="flag green">✓ $5K+ monthly ad spend</div>
+        <div class="flag green">✓ eCommerce or service business</div>
+        <div class="flag green">✓ Willing to share revenue data</div>
+        <div class="flag red">✗ Looking for cheapest option</div>
+        <div class="flag red">✗ Need "someone to just run ads"</div>
+      </div>
+    </div>
+    <div class="icp-cards">
+      <div class="icp-card"><div class="icp-num">ICP-01</div><h3>eCommerce Founders</h3><p>Shopify or WooCommerce stores with proven product-market fit, ready to scale revenue through Shopping Ads and Performance Max with real ROAS accountability — not vanity metrics.</p></div>
+      <div class="icp-card"><div class="icp-num">ICP-02</div><h3>Service Business Owners</h3><p>Healthcare, legal, home services, SaaS founders who need qualified leads. I've managed $300K/month in behavioral health PPC. I understand high-stakes, compliance-aware campaigns.</p></div>
+      <div class="icp-card"><div class="icp-num">ICP-03</div><h3>Operators Scaling Past $1M</h3><p>You've proven the model. Now you need a paid search operator who builds the system, optimizes relentlessly, and gives you a clean weekly read — not a 40-slide deck.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="results reveal" id="results">
+  <div class="section-header"><div><div class="section-eyebrow">Verified Track Record</div><h2 class="section-title">Numbers From<br><em>Real</em> Accounts.</h2></div><div class="section-num">02</div></div>
+  <div class="results-grid">
+    <div class="result-card" data-bg="70"><div class="result-context">Sporting Goods eCommerce · AU/NZ Market</div><div class="result-num">70<sup>×</sup></div><div class="result-desc">Peak ROAS on Shopping + Performance Max campaigns. Built and optimized from the ground up across AU and NZ markets. Sustained performance, not a one-day spike.</div><div class="result-tag">↑ Peak ROAS</div></div>
+    <div class="result-card" data-bg="1.5M"><div class="result-context">eCommerce Portfolio · 2020–2022</div><div class="result-num">$1.56<sup>M</sup></div><div class="result-desc">Conversion value generated across Shopping campaigns. 13,500 conversions at an average CPC of $1.24 on $225K total spend. Clutch-verified case study available.</div><div class="result-tag">↑ Total Conv. Value</div></div>
+    <div class="result-card" data-bg="50"><div class="result-context">OCSEO Healthcare Clients · USA</div><div class="result-num">−50<sup>%</sup></div><div class="result-desc">CPA reduction through structured A/B testing, bid strategy refinement, and search term optimization. $300K/month managed across 4 behavioral health treatment centers.</div><div class="result-tag">↓ Cost Per Acquisition</div></div>
+    <div class="result-card" data-bg="$"><div class="result-context">US Online Retail Client · ~2 Years</div><div class="result-num">$100<sup>K+</sup></div><div class="result-desc">Revenue built from zero over nearly two years of continuous management. Client: "Magnificent, detail-oriented. He knows what he's doing." Full testimonial below.</div><div class="result-tag">↑ Revenue from $0</div></div>
+  </div>
+</section>
+
+<div class="testi-strip reveal">
+  <div class="testi"><div class="testi-mark">&ldquo;</div><blockquote>He increased my sales from nothing to more than $100,000. Magnificent, detail-oriented. He knows what he's doing. If you're looking for a quality Google Ads manager with experience and passion — Hans is a great choice.</blockquote><div class="testi-from">Owner · US Online Retail Company</div></div>
+  <div class="testi"><div class="testi-mark">&ldquo;</div><blockquote>Hanzel was thorough and detailed in all his work. Excellent communication — professional and goes the extra mile. Hands-on through the whole process, delivered great results. An asset to any team. I will continue to work with Hanzel.</blockquote><div class="testi-from">Massimo · Client</div></div>
+  <div class="testi"><div class="testi-mark">&ldquo;</div><blockquote>Meticulous attention to detail, deep digital marketing expertise, and proactive problem-solving stood out. Delivered everything on time with open communication. Increased revenue, click-through rates, visibility, and site traffic.</blockquote><div class="testi-from">Clutch Review · Retail Company (Verified)</div></div>
+</div>
+
+<section class="services reveal" id="services">
+  <div class="section-header"><div><div class="section-eyebrow">What I Deliver</div><h2 class="section-title">One Operator.<br><em>Full Stack</em> Paid Search.</h2></div><div class="section-num">03</div></div>
+  <div class="services-body">
+    <div class="services-left">
+      <div class="service-row"><div class="s-num">01</div><div class="s-body"><h3>Campaign Architecture & Setup</h3><p>Search, Shopping, Performance Max, and Call campaigns built from scratch — correct structure, match types, and negative keyword frameworks from day one.</p></div><div class="s-pill core">Core</div></div>
+      <div class="service-row"><div class="s-num">02</div><div class="s-body"><h3>GA4 + GTM Conversion Tracking</h3><p>End-to-end setup of analytics and tag management, including call conversions and event attribution. You'll know exactly which campaigns are making money.</p></div><div class="s-pill core">Core</div></div>
+      <div class="service-row"><div class="s-num">03</div><div class="s-body"><h3>Ongoing Optimization & A/B Testing</h3><p>Weekly review of search terms, bids, ad copy, and landing page signals. Structured split tests — not gut-feel changes.</p></div><div class="s-pill month">Monthly</div></div>
+      <div class="service-row"><div class="s-num">04</div><div class="s-body"><h3>Executive Performance Reports</h3><p>Decision-ready reports delivered directly to you. Budget reallocation recommendations, ROAS breakdown, and next-step priorities. No fluff, no jargon.</p></div><div class="s-pill month">Monthly</div></div>
+      <div class="service-row"><div class="s-num">05</div><div class="s-body"><h3>Free Account Audit</h3><p>First call includes a live audit of your existing account. You leave with real findings — whether we work together or not.</p></div><div class="s-pill free">Free</div></div>
+    </div>
+    <div class="services-right">
+      <h3>No agency markups.<br>No account manager layers.<br>Just the specialist.</h3>
+      <p>When you hire me, you get me — not a junior account manager who took a Google Ads course last month. I've been in this field for over a decade, managing budgets from $5K to $300K a month across eCommerce, healthcare, retail, and SaaS.</p>
+      <p>Structured as a US LLC through KaizenStrategy — clean contracts, proper invoicing, zero friction for US-based clients.</p>
+      <a href="https://tidycal.com/hanslacida" target="_blank" class="inline-cta">Schedule Your Free Audit →</a>
+      <div><div class="section-eyebrow" style="margin-bottom:0.8rem;font-size:0.55rem;">Tools & Platforms</div><div class="tool-grid"><div class="tool-chip">Google Ads</div><div class="tool-chip">Microsoft Ads</div><div class="tool-chip">Meta Ads</div><div class="tool-chip">GA4</div><div class="tool-chip">GTM</div><div class="tool-chip">TikTok Ads</div><div class="tool-chip">Looker Studio</div><div class="tool-chip">Shopify</div><div class="tool-chip">WordPress</div><div class="tool-chip">Ads Editor</div><div class="tool-chip">ClickUp</div><div class="tool-chip">Notion</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="exp reveal" id="exp">
+  <div class="section-header"><div><div class="section-eyebrow">Work History</div><h2 class="section-title">10+ Years.<br><em>Every Major Industry.</em></h2></div><div class="section-num">04</div></div>
+  <div class="exp-body">
+    <div class="exp-row"><div class="exp-meta"><div class="exp-period">Sept 2025 → Present</div><div class="exp-co">KaizenStrategy</div></div><div class="exp-content"><div class="exp-role">PPC Specialist & Founder · Freelance</div><div class="exp-desc">Dedicated Paid Search Pod for US founders and global brand owners. US LLC structured for clean client engagements. Peak 70× ROAS for AU/NZ sporting goods eCommerce; peak 20× ROAS for US retail client.</div><div class="exp-chips"><span class="exp-chip">Currently Open</span><span class="exp-chip">US LLC</span><span class="exp-chip">70× Peak ROAS</span></div></div></div>
+    <div class="exp-row"><div class="exp-meta"><div class="exp-period">Oct 2024 → May 2025</div><div class="exp-co">OCSEO</div></div><div class="exp-content"><div class="exp-role">Paid Search Manager</div><div class="exp-desc">Dedicated Paid Search Manager for a US healthcare agency — Covenant Hills, Saddleback Recovery, Lighthouse Treatment Center, ZOE Recovery. $300K+/month managed. 15% conversion rate improvement. Up to 50% CPA reduction. Reported directly to CEO. Built scalable PPC SOPs for agency-wide deployment.</div><div class="exp-chips"><span class="exp-chip">$300K/mo</span><span class="exp-chip">Healthcare PPC</span><span class="exp-chip">−50% CPA</span></div></div></div>
+    <div class="exp-row"><div class="exp-meta"><div class="exp-period">Nov 2023 → Aug 2024</div><div class="exp-co">Ok SEO Pros</div></div><div class="exp-content"><div class="exp-role">Google Ads Specialist · Contract</div><div class="exp-desc">Managed $300K+ monthly ad spend across multiple accounts in Google Ad Manager. Keyword strategy, negative keyword management, A/B testing of all ad copy, and campaign optimization via Google Ads Editor.</div><div class="exp-chips"><span class="exp-chip">$300K/mo</span><span class="exp-chip">Multi-account</span></div></div></div>
+    <div class="exp-row"><div class="exp-meta"><div class="exp-period">Oct 2022 → Oct 2023</div><div class="exp-co">LightsOn USA</div></div><div class="exp-content"><div class="exp-role">Advertising Media Buyer · Contract</div><div class="exp-desc">Managed performance across Google Ads, Meta, Travel Ads, Expedia, Booking.com, Yelp, and Instagram Ads for a US-based portfolio. Monthly reporting via Google Data Studio.</div><div class="exp-chips"><span class="exp-chip">Multi-platform</span><span class="exp-chip">US Client Base</span></div></div></div>
+    <div class="exp-row"><div class="exp-meta"><div class="exp-period">Jan 2021 → Jan 2023</div><div class="exp-co">Alpine Safes</div></div><div class="exp-content"><div class="exp-role">Google Ads Manager · Contract</div><div class="exp-desc">End-to-end Google Ads management for a US retail company: campaign setup, keyword research, ad copy, landing page optimization, A/B testing, and regular stakeholder reporting.</div><div class="exp-chips"><span class="exp-chip">US Retail</span><span class="exp-chip">End-to-end PPC</span></div></div></div>
+    <div class="exp-row"><div class="exp-meta"><div class="exp-period">Jan 2022 → Dec 2022</div><div class="exp-co">Golden Lotus Media LLC</div></div><div class="exp-content"><div class="exp-role">Head of Google Ads Operations · Contract</div><div class="exp-desc">Led Google Shopping Ads operations for multiple eCommerce clients under a US agency LLC. Client-facing reports in Google Data Studio; agency-wide paid search strategy development.</div><div class="exp-chips"><span class="exp-chip">Agency Operations</span><span class="exp-chip">Shopping Ads</span></div></div></div>
+  </div>
+</section>
+
+<section class="process reveal" id="process">
+  <div class="section-header"><div><div class="section-eyebrow">How We Work</div><h2 class="section-title">Clean Process.<br><em>No Surprises.</em></h2></div><div class="section-num">05</div></div>
+  <div class="process-steps">
+    <div class="p-step"><div class="p-step-num">STEP 01</div><div class="p-step-arrow">→</div><h3>Free Audit Call</h3><p>30 minutes. I audit your existing account live and identify quick wins and structural problems. Useful regardless of what you decide next.</p></div>
+    <div class="p-step"><div class="p-step-num">STEP 02</div><div class="p-step-arrow">→</div><h3>Proposal & Scope</h3><p>Custom scope based on your goals, budget, and industry. Clear deliverables, clear pricing. No hidden retainer fees, no ambiguity.</p></div>
+    <div class="p-step"><div class="p-step-num">STEP 03</div><div class="p-step-arrow">→</div><h3>Setup & Launch</h3><p>GA4 + GTM tracking locked in first — always. Campaigns built or restructured. Ads live within the agreed timeline.</p></div>
+    <div class="p-step"><div class="p-step-num">STEP 04</div><h3>Optimize & Scale</h3><p>Weekly optimizations, monthly reports straight to you. Full transparency — what's working, what's next, what we're cutting.</p></div>
+  </div>
+</section>
+
+<section class="cta-section reveal" id="contact">
+  <div class="cta-left">
+    <div class="cta-eyebrow">Ready to Start</div>
+    <h2 class="cta-headline">Your Customers<br>Are Searching<br><em>Right Now.</em></h2>
+    <p class="cta-sub">Every day without a properly managed paid search campaign is revenue your competitors are collecting. Let's fix that — starting with a free 30-minute audit where you'll walk away with real findings, whether we work together or not.</p>
+    <div class="hero-actions">
+      <a href="https://tidycal.com/hanslacida" target="_blank" class="btn-primary">Book Free Audit Call →</a>
+      <a href="https://linktr.ee/hanslacida" target="_blank" class="btn-ghost">View all links ↗</a>
+    </div>
+  </div>
+  <div class="cta-right">
+    <a href="https://tidycal.com/hanslacida" target="_blank" class="cta-main-btn">→ Schedule at tidycal.com/hanslacida</a>
+    <div class="contact-block"><div class="contact-block-label">Email</div><a href="mailto:hanzel@hanslacida.com" class="contact-block-val">hanzel@hanslacida.com</a></div>
+    <div class="contact-block"><div class="contact-block-label">Bio &amp; Portfolio Links</div><a href="https://linktr.ee/hanslacida" target="_blank" class="contact-block-val">linktr.ee/hanslacida</a></div>
+    <div class="sig-card"><p>Hans Lacida &nbsp;·&nbsp; Paid Search Pod<br>KaizenStrategy &nbsp;·&nbsp; US LLC<br><a href="https://tidycal.com/hanslacida">tidycal.com/hanslacida</a></p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">HANS LACIDA &nbsp;<span>·</span>&nbsp; KAIZENSTRATEGY &nbsp;<span>·</span>&nbsp; PAID SEARCH SPECIALIST</div>
+  <div class="footer-right">© 2026 &nbsp;·&nbsp; Google Ads · US-Focused · 10+ Years</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
