@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Ads Systems Operator | Audit + Rebuild for 6–7 Figure Brands — Hans Lacida</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --emerald: #10b981;
+      --emerald-dim: #065f46;
+      --ink: #0a0f0d;
+      --surface: #0f1613;
+      --surface-mid: #141c19;
+      --surface-hi: #1a2622;
+      --border: rgba(255,255,255,0.07);
+      --border-hi: rgba(16,185,129,0.3);
+      --text: #e2e8e5;
+      --muted: #6b7c75;
+      --muted-hi: #94a89f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ink);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    .serif { font-family: 'DM Serif Display', serif; }
+    .mono { font-family: 'DM Mono', monospace; }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* Animated hero gradient */
+    .hero-mesh {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16,185,129,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 60%, rgba(16,185,129,0.06) 0%, transparent 60%),
+        var(--surface);
+    }
+
+    /* Glowing divider line */
+    .glow-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+      opacity: 0.4;
+    }
+
+    /* Stat card accent */
+    .stat-card {
+      background: var(--surface-hi);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .stat-card:hover { border-color: var(--border-hi); transform: translateY(-2px); }
+    .stat-card:hover::before { opacity: 1; }
+
+    /* Pillar card */
+    .pillar-card {
+      background: var(--surface-mid);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s, background 0.3s;
+      position: relative;
+    }
+    .pillar-card:hover {
+      border-color: var(--border-hi);
+      background: var(--surface-hi);
+    }
+    .pillar-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: rgba(16,185,129,0.12);
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      user-select: none;
+    }
+
+    /* Offer card */
+    .offer-card {
+      background: var(--surface-mid);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s;
+    }
+    .offer-card.featured {
+      border-color: rgba(16,185,129,0.25);
+      background: linear-gradient(160deg, rgba(16,185,129,0.05) 0%, var(--surface-mid) 50%);
+    }
+
+    /* CTA button */
+    .btn-primary {
+      background: var(--emerald);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0);
+    }
+    .btn-primary:hover {
+      background: #0ea472;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(16,185,129,0.25);
+    }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--muted-hi);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Nav */
+    .nav-blur {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(10,15,13,0.85);
+    }
+
+    /* Animate in */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .fade-up-1 { animation-delay: 0.1s; opacity: 0; }
+    .fade-up-2 { animation-delay: 0.22s; opacity: 0; }
+    .fade-up-3 { animation-delay: 0.36s; opacity: 0; }
+    .fade-up-4 { animation-delay: 0.5s; opacity: 0; }
+
+    /* Badge */
+    .badge {
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.25);
+      color: var(--emerald);
+    }
+
+    /* Horizontal rule with text */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Table-style results */
+    .result-row {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-row:last-child { border-bottom: none; }
+
+    /* Marquee-style trust bar */
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 20s linear infinite;
+      width: max-content;
+    }
+    .marquee-wrap { overflow: hidden; }
+
+    /* Big stat display */
+    .big-stat { font-family: 'DM Serif Display', serif; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav-blur border-b border-white/[0.06] sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="https://www.hanslacida.com" class="text-base font-semibold tracking-tight text-white/90 hover:text-white transition">
+        hanslacida<span class="text-emerald-500">.</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="#audit" class="text-sm text-[var(--muted-hi)] hover:text-white transition hidden sm:inline">Deep Audit</a>
+        <a href="https://calendly.com/hanslacida/fit-call" target="_blank"
+           class="btn-primary text-sm font-semibold px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+          Book Fit Call
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero-mesh relative pt-24 pb-28 overflow-hidden">
+    <!-- Decorative grid lines -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 80px 80px;"></div>
+    
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <div class="fade-up fade-up-1 inline-flex items-center gap-2 badge rounded-full px-4 py-1.5 text-xs mb-8">
+        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+        Former Google Account Strategist — VIA Program 2020–2023
+      </div>
+
+      <h1 class="serif fade-up fade-up-2 text-5xl md:text-[3.8rem] lg:text-[4.4rem] font-normal leading-[1.1] tracking-tight mb-7 max-w-3xl">
+        I build <em class="text-emerald-400 not-italic">profitable, compounding</em> Google Ads systems for 6–7 figure brands.
+      </h1>
+
+      <p class="fade-up fade-up-3 text-lg text-[var(--muted-hi)] max-w-2xl mb-10 leading-relaxed">
+        Clean tracking. Disciplined account structure. Revenue-focused optimization.<br>
+        <span class="text-[var(--muted)]">No vanity metrics. No guesswork. No junior handlers.</span>
+      </p>
+
+      <div class="fade-up fade-up-4 flex flex-col sm:flex-row gap-3 mb-14">
+        <a href="https://calendly.com/hanslacida/fit-call" target="_blank"
+           class="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-2xl text-base font-semibold">
+          Book a 15-min fit call
+        </a>
+        <a href="#audit"
+           class="btn-ghost inline-flex items-center justify-center px-8 py-4 rounded-2xl text-base font-semibold">
+          Apply for Deep Audit
+        </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="fade-up fade-up-4 flex flex-wrap gap-x-8 gap-y-3 text-sm text-[var(--muted)]">
+        <div class="flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          10+ Years Experience
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          $10M+ Ad Spend Managed
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Google Ads Search Certified
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          US LLC Registered
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- ─── STATS STRIP ─── -->
+  <section class="py-16 bg-[var(--surface)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="section-label text-center mb-10">Selected client results</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="stat-card rounded-2xl p-6 text-center">
+          <div class="big-stat text-4xl text-emerald-400 mb-1">70×</div>
+          <div class="text-xs text-[var(--muted)] leading-snug">Peak ROAS<br>Seasonal Ecommerce</div>
+        </div>
+        <div class="stat-card rounded-2xl p-6 text-center">
+          <div class="big-stat text-4xl text-emerald-400 mb-1">$4M+</div>
+          <div class="text-xs text-[var(--muted)] leading-snug">Revenue tracked<br>in 30 days</div>
+        </div>
+        <div class="stat-card rounded-2xl p-6 text-center">
+          <div class="big-stat text-4xl text-emerald-400 mb-1">3.1→5.4×</div>
+          <div class="text-xs text-[var(--muted)] leading-snug">ROAS lift in 90 days<br>$250k+/mo brand</div>
+        </div>
+        <div class="stat-card rounded-2xl p-6 text-center">
+          <div class="big-stat text-4xl text-emerald-400 mb-1">−53%</div>
+          <div class="text-xs text-[var(--muted)] leading-snug">CPA reduction<br>Healthcare CA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ─── -->
+  <section class="py-24 bg-[var(--ink)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-[1fr_1.4fr] gap-16 items-start">
+        <div>
+          <p class="section-label mb-5">About</p>
+          <h2 class="serif text-4xl font-normal leading-tight mb-8">
+            Hands-on operator.<br><em class="text-emerald-400">Not an account manager.</em>
+          </h2>
+          <p class="text-[var(--muted-hi)] leading-relaxed mb-5">
+            Over 10 years building paid acquisition infrastructure — plus time as a Google Account Strategist in the VIA Program (2020–2023) — working with ecommerce and high-intent lead gen brands across the US, AU, and NZ.
+          </p>
+          <p class="text-[var(--muted)] leading-relaxed">
+            I don't manage campaigns from a dashboard. I diagnose broken systems, rebuild them cleanly, and turn them into predictable revenue engines.
+          </p>
+        </div>
+
+        <div class="space-y-0 border border-[var(--border)] rounded-3xl overflow-hidden">
+          <div class="px-7 py-4 bg-[var(--surface-hi)] border-b border-[var(--border)]">
+            <p class="section-label">Performance record</p>
+          </div>
+          <div class="px-7 py-2 divide-y divide-[var(--border)]">
+            <div class="result-row">
+              <div class="big-stat text-2xl text-emerald-400">70×</div>
+              <div>
+                <div class="text-sm font-medium text-[var(--text)]">Peak ROAS — Seasonal Ecommerce</div>
+                <div class="text-xs text-[var(--muted)] mt-0.5">AU/NZ market, Google Shopping + Search</div>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="big-stat text-2xl text-emerald-400">$4M+</div>
+              <div>
+                <div class="text-sm font-medium text-[var(--text)]">Tracked revenue in 30 days</div>
+                <div class="text-xs text-[var(--muted)] mt-0.5">Mid-six-figure monthly spend</div>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="big-stat text-2xl text-emerald-400">3→5.4×</div>
+              <div>
+                <div class="text-sm font-medium text-[var(--text)]">ROAS lift in 90 days</div>
+                <div class="text-xs text-[var(--muted)] mt-0.5">$250k+/mo brand, full rebuild</div>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="big-stat text-2xl text-emerald-400">−53%</div>
+              <div>
+                <div class="text-sm font-medium text-[var(--text)]">CPA reduction</div>
+                <div class="text-xs text-[var(--muted)] mt-0.5">Healthcare lead gen, California</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PILLARS ─── -->
+  <section class="py-24 bg-[var(--surface)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-14">
+        <p class="section-label mb-4">Framework</p>
+        <h2 class="serif text-4xl font-normal">The three systems I build.</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="pillar-card rounded-3xl p-8 pt-10 relative">
+          <span class="pillar-num">1</span>
+          <div class="w-8 h-px bg-emerald-500 mb-6"></div>
+          <h3 class="text-xl font-semibold mb-3 tracking-tight">Systems</h3>
+          <p class="text-[var(--muted)] text-sm leading-relaxed">Bulletproof account architecture, naming conventions, layered negatives, scripts, and QA processes that eliminate waste at scale.</p>
+        </div>
+        <div class="pillar-card rounded-3xl p-8 pt-10 relative border-[var(--border-hi)]"
+             style="border-color: rgba(16,185,129,0.15)">
+          <span class="pillar-num">2</span>
+          <div class="w-8 h-px bg-emerald-500 mb-6"></div>
+          <h3 class="text-xl font-semibold mb-3 tracking-tight">Signal</h3>
+          <p class="text-[var(--muted)] text-sm leading-relaxed">Precision GA4 + GTM setup with accurate revenue, LTV, and payback tracking you can actually trust for every decision.</p>
+        </div>
+        <div class="pillar-card rounded-3xl p-8 pt-10 relative">
+          <span class="pillar-num">3</span>
+          <div class="w-8 h-px bg-emerald-500 mb-6"></div>
+          <h3 class="text-xl font-semibold mb-3 tracking-tight">Scale</h3>
+          <p class="text-[var(--muted)] text-sm leading-relaxed">Offer strategy, creative testing velocity, smart bidding, and budget governance that turns working campaigns into compounding growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── OFFERS ─── -->
+  <section id="audit" class="py-24 bg-[var(--ink)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-14">
+        <p class="section-label mb-4">Engagement options</p>
+        <h2 class="serif text-4xl font-normal mb-3">Simple, low-risk path to work together.</h2>
+        <p class="text-[var(--muted-hi)]">Start with clarity. Scale with confidence.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Deep Audit -->
+        <div class="offer-card featured rounded-3xl p-8 md:p-10 flex flex-col">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <h3 class="text-xl font-semibold mb-1">Google Ads Deep Audit + Rebuild</h3>
+              <p class="mono text-xs text-emerald-400">2–4 weeks • Fixed fee</p>
+            </div>
+            <span class="badge text-xs px-3 py-1 rounded-full font-medium">Start here</span>
+          </div>
+          
+          <ul class="space-y-3.5 mb-8 flex-1">
+            <li class="flex items-start gap-3 text-sm text-[var(--muted-hi)]">
+              <svg class="mt-0.5 shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Full account audit & root-cause diagnosis
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--muted-hi)]">
+              <svg class="mt-0.5 shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              New clean structure & naming convention
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--muted-hi)]">
+              <svg class="mt-0.5 shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Precision tracking fixes — GA4 + GTM
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--muted-hi)]">
+              <svg class="mt-0.5 shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              30–60 day scaling roadmap
+            </li>
+          </ul>
+
+          <a href="https://calendly.com/hanslacida/fit-call" target="_blank"
+             class="btn-primary block w-full text-center py-4 rounded-2xl font-semibold">
+            Apply for Deep Audit →
+          </a>
+        </div>
+
+        <!-- Retainer -->
+        <div class="offer-card rounded-3xl p-8 md:p-10 flex flex-col">
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-1">Acquisition Systems Operator</h3>
+            <p class="mono text-xs text-emerald-400">Monthly retainer • $5k+ ad spend min.</p>
+          </div>
+
+          <p class="text-[var(--muted)] text-sm leading-relaxed mb-8 flex-1">
+            I become your fractional systems operator — weekly optimization, testing, strategy, and full revenue accountability. Senior-led. No junior handlers. No account management theater.
+          </p>
+
+          <div class="border-t border-[var(--border)] pt-6">
+            <p class="section-label mb-4">Minimum requirements</p>
+            <ul class="space-y-2.5 text-sm text-[var(--muted)]">
+              <li class="flex items-center gap-2.5">
+                <span class="w-1 h-1 bg-[var(--muted)] rounded-full"></span>
+                $5,000+/month Google Ads spend
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-1 h-1 bg-[var(--muted)] rounded-full"></span>
+                Revenue tracking in place (no screenshot reporting)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-1 h-1 bg-[var(--muted)] rounded-full"></span>
+                US / AU / NZ brands preferred
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process bar -->
+      <div class="mt-10 flex items-center justify-center gap-3 flex-wrap text-sm text-[var(--muted)]">
+        <span class="mono text-xs">Process:</span>
+        <span class="text-xs px-3 py-1 bg-[var(--surface-hi)] rounded-full border border-[var(--border)]">15-min fit call</span>
+        <span class="text-[var(--muted)]">→</span>
+        <span class="text-xs px-3 py-1 bg-[var(--surface-hi)] rounded-full border border-[var(--border)]">Paid audit/rebuild</span>
+        <span class="text-[var(--muted)]">→</span>
+        <span class="text-xs px-3 py-1 bg-[var(--surface-hi)] rounded-full border border-[var(--border)]">Retainer (great fit only)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ─── -->
+  <section class="py-28 relative overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(16,185,129,0.08) 0%, transparent 70%);"></div>
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <p class="section-label mb-6">Ready?</p>
+      <h2 class="serif text-4xl md:text-5xl font-normal leading-tight mb-10">
+        Ready to build a Google Ads system<br class="hidden md:block">
+        <em class="text-emerald-400">that actually compounds?</em>
+      </h2>
+      <a href="https://calendly.com/hanslacida/fit-call" target="_blank"
+         class="btn-primary inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-lg font-semibold mb-8">
+        Book Your 15-Minute Fit Call
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="text-[var(--muted)] text-sm">
+        Or email directly: <a href="mailto:hello@hanslacida.com" class="text-[var(--muted-hi)] hover:text-white transition underline underline-offset-4">hello@hanslacida.com</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-[var(--ink)] py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--muted)]">
+      <div>
+        <span class="font-medium text-[var(--muted-hi)]">Hans Lacida</span> — Paid Acquisition Systems Operator
+      </div>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-1">
+        <span>Former Google Account Strategist (VIA Program)</span>
+        <span>·</span>
+        <span>Google Ads Search Certified</span>
+        <span>·</span>
+        <span>10+ Years</span>
+        <span>·</span>
+        <span>US LLC</span>
+      </div>
+      <div>© 2026 Hans Lacida</div>
+    </div>
+  </footer>
+
+</body>
+</html>
