@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero-Waste Google Ads Scale | Hans Lacida</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #22c55e;
+      --green-dim: #16a34a;
+      --ink: #0a0e17;
+      --surface: #0f1520;
+      --surface2: #141c2e;
+      --border: rgba(255,255,255,0.07);
+      --text-muted: #6b7280;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-family: 'DM Sans', sans-serif; }
+
+    body {
+      background: var(--ink);
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* Typography */
+    .font-display { font-family: 'Syne', sans-serif; }
+    .font-mono { font-family: 'DM Mono', monospace; }
+
+    /* Hero gradient */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(34,197,94,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(30,58,138,0.2) 0%, transparent 60%),
+        linear-gradient(180deg, #0a1020 0%, #080d18 100%);
+    }
+
+    /* Grid lines background */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Glowing green line accent */
+    .green-line {
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      height: 1px;
+      width: 100%;
+      opacity: 0.4;
+    }
+
+    /* Stat card */
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .stat-card:hover {
+      border-color: rgba(34,197,94,0.3);
+      transform: translateY(-2px);
+    }
+    .stat-card:hover::before { opacity: 1; }
+
+    /* Step number */
+    .step-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 6px;
+      padding: 4px 10px;
+    }
+
+    /* Tag pill */
+    .tag-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.18);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 3px 12px;
+    }
+
+    /* CTA button */
+    .btn-primary {
+      background: var(--green);
+      color: #000;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(34,197,94,0.35);
+    }
+    .btn-primary:hover::after { opacity: 1; }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.15);
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* Process connector line */
+    .connector {
+      width: 1px;
+      background: linear-gradient(180deg, rgba(34,197,94,0.4), transparent);
+      height: 40px;
+      margin-left: 20px;
+    }
+
+    /* Testimonial card */
+    .testimonial {
+      background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--border);
+    }
+
+    /* Pricing card */
+    .pricing-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.02) 100%);
+      border-color: rgba(34,197,94,0.3);
+    }
+    .pricing-card:hover {
+      border-color: rgba(34,197,94,0.25);
+      transform: translateY(-3px);
+    }
+
+    /* Pulse ring on availability dot */
+    @keyframes ping { 75%,100%{transform:scale(2);opacity:0} }
+    .ping { animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }
+
+    /* Fade in up animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fiu { animation: fadeInUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
+
+    /* Marquee */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-inner { animation: marquee 22s linear infinite; display: flex; gap: 0; }
+    .marquee-inner:hover { animation-play-state: paused; }
+
+    /* Number counter glow */
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      background: linear-gradient(135deg, #4ade80, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Checkmark list */
+    .check-item::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='rgba(34,197,94,0.15)'/%3E%3Cpath d='M4.5 8l2.5 2.5 4.5-5' stroke='%2322c55e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .check-item { display: flex; align-items: flex-start; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 backdrop-blur-xl" style="background: rgba(10,14,23,0.85);">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="font-display font-bold text-lg tracking-tight">
+        hans<span class="text-green-400">.</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-zinc-400 font-medium">
+        <a href="#proof" class="hover:text-white transition-colors">Results</a>
+        <a href="#process" class="hover:text-white transition-colors">Process</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+      <a href="https://cal.com/hanslacida/15min" target="_blank"
+         class="btn-primary text-sm px-5 py-2.5 rounded-lg">
+        Book Audit
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg grid-bg min-h-screen flex items-center relative overflow-hidden pt-16">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full"
+           style="background: radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%);"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 py-32 text-center relative z-10">
+
+      <!-- Availability badge -->
+      <div class="animate-fiu inline-flex items-center gap-2.5 mb-8"
+           style="background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: 999px; padding: 8px 18px;">
+        <span class="relative flex h-2 w-2">
+          <span class="ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+        </span>
+        <span class="font-mono text-green-400 text-xs tracking-wide">Currently accepting 2 clients for Q2 2026</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="animate-fiu delay-1 font-display text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+        I help US eCommerce &amp; SaaS<br>
+        brands scale to
+        <span class="stat-num"> $300K+/mo</span><br>
+        <span class="text-zinc-300 font-semibold" style="font-size: 0.85em;">profitably on Google Ads</span>
+      </h1>
+
+      <!-- Sub -->
+      <p class="animate-fiu delay-2 text-lg md:text-xl text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed font-light">
+        Senior-led. Zero junior hands on your account.<br>
+        No agency bloat. Just operator-grade execution.
+      </p>
+
+      <!-- Proof chips -->
+      <div class="animate-fiu delay-2 flex flex-wrap justify-center gap-2 mb-10">
+        <span class="tag-pill">20x+ ROAS</span>
+        <span class="tag-pill">$300K/mo Managed</span>
+        <span class="tag-pill">40–60% CAC Reduction</span>
+        <span class="tag-pill">10+ Years in Paid Search</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="animate-fiu delay-3 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://cal.com/hanslacida/15min" target="_blank"
+           class="btn-primary text-base px-8 py-4 rounded-xl inline-flex items-center justify-center gap-3">
+          Book Free 15-min ROAS Audit
+          <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+        <a href="#proof"
+           class="btn-ghost text-base px-7 py-4 rounded-xl inline-flex items-center justify-center gap-2">
+          See Real Results
+          <i class="fas fa-chart-line text-sm text-zinc-400"></i>
+        </a>
+      </div>
+
+      <p class="animate-fiu delay-4 text-zinc-600 text-sm mt-8 font-mono">
+        Trusted by brands spending $20K–$150K+/mo on Google Ads
+      </p>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-600">
+      <span class="text-xs font-mono tracking-widest">SCROLL</span>
+      <div class="w-px h-8" style="background: linear-gradient(180deg, rgba(255,255,255,0.2), transparent);"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE LOGOS / SOCIAL PROOF -->
+  <div class="border-y border-white/5 py-4 overflow-hidden" style="background: rgba(255,255,255,0.01);">
+    <div class="marquee-inner whitespace-nowrap text-zinc-600 font-mono text-xs tracking-widest">
+      <span class="inline-flex items-center gap-16 pr-16">
+        <span>GOOGLE ADS CERTIFIED</span>
+        <span class="text-green-800">✦</span>
+        <span>$300K+/MO MANAGED</span>
+        <span class="text-green-800">✦</span>
+        <span>US ECOMMERCE SPECIALIST</span>
+        <span class="text-green-800">✦</span>
+        <span>PERFORMANCE MAX EXPERT</span>
+        <span class="text-green-800">✦</span>
+        <span>LEAD GEN & SAAS</span>
+        <span class="text-green-800">✦</span>
+        <span>KAIZENSTRATEGY SOLUTIONS LLC</span>
+        <span class="text-green-800">✦</span>
+        <span>ZELDIGITAL</span>
+        <span class="text-green-800">✦</span>
+        <span>PAID SEARCH POD</span>
+        <span class="text-green-800">✦</span>
+      </span>
+      <span class="inline-flex items-center gap-16 pr-16">
+        <span>GOOGLE ADS CERTIFIED</span>
+        <span class="text-green-800">✦</span>
+        <span>$300K+/MO MANAGED</span>
+        <span class="text-green-800">✦</span>
+        <span>US ECOMMERCE SPECIALIST</span>
+        <span class="text-green-800">✦</span>
+        <span>PERFORMANCE MAX EXPERT</span>
+        <span class="text-green-800">✦</span>
+        <span>LEAD GEN & SAAS</span>
+        <span class="text-green-800">✦</span>
+        <span>KAIZENSTRATEGY SOLUTIONS LLC</span>
+        <span class="text-green-800">✦</span>
+        <span>ZELDIGITAL</span>
+        <span class="text-green-800">✦</span>
+        <span>PAID SEARCH POD</span>
+        <span class="text-green-800">✦</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- PROOF / RESULTS -->
+  <section id="proof" class="py-28" style="background: var(--surface);">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="mb-16">
+        <div class="section-label mb-3">Track Record</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Proven at Scale</h2>
+        <p class="text-zinc-400 text-lg">Numbers from real accounts. No inflated agency dashboards.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="stat-card rounded-2xl p-8 text-center">
+          <div class="stat-num text-6xl font-bold mb-2">$300K<span class="text-4xl">+</span></div>
+          <div class="text-zinc-500 text-sm font-mono uppercase tracking-wide mb-4">Monthly Ad Spend</div>
+          <p class="text-zinc-400 text-sm leading-relaxed">Scaled accounts from $50K to $300K+/mo while keeping margins healthy.</p>
+        </div>
+        <div class="stat-card rounded-2xl p-8 text-center">
+          <div class="stat-num text-6xl font-bold mb-2">70<span class="text-4xl">×</span></div>
+          <div class="text-zinc-500 text-sm font-mono uppercase tracking-wide mb-4">Peak ROAS (AU/NZ)</div>
+          <p class="text-zinc-400 text-sm leading-relaxed">Peak ROAS achieved on AU/NZ eCommerce. Average 20x+ across accounts.</p>
+        </div>
+        <div class="stat-card rounded-2xl p-8 text-center">
+          <div class="stat-num text-6xl font-bold mb-2">60<span class="text-4xl">%</span></div>
+          <div class="text-zinc-500 text-sm font-mono uppercase tracking-wide mb-4">CAC Reduction</div>
+          <p class="text-zinc-400 text-sm leading-relaxed">Typical efficiency gains most brands see in the first 60 days of working together.</p>
+        </div>
+      </div>
+
+      <!-- Horizontal rule -->
+      <div class="green-line mb-16"></div>
+
+      <!-- Mini case study callout -->
+      <div class="rounded-2xl p-8 md:p-10 relative overflow-hidden"
+           style="background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(14,20,35,0.6) 100%); border: 1px solid rgba(34,197,94,0.15);">
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+             style="background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);"></div>
+        <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+          <div>
+            <div class="tag-pill inline-block mb-4">Case Snapshot</div>
+            <h3 class="font-display text-2xl md:text-3xl font-bold mb-3">AU/NZ eCommerce Brand</h3>
+            <p class="text-zinc-400 leading-relaxed">Took over an underperforming Google Shopping setup, restructured the campaign architecture, layered smart bidding with custom audience signals, and delivered a sustained 70× ROAS across peak and off-peak seasons.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl p-5 text-center" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05);">
+              <div class="stat-num text-3xl font-bold">70×</div>
+              <div class="text-zinc-500 text-xs font-mono mt-1">Peak ROAS</div>
+            </div>
+            <div class="rounded-xl p-5 text-center" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05);">
+              <div class="stat-num text-3xl font-bold">−55%</div>
+              <div class="text-zinc-500 text-xs font-mono mt-1">CAC Drop</div>
+            </div>
+            <div class="rounded-xl p-5 text-center" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05);">
+              <div class="stat-num text-3xl font-bold">3.2×</div>
+              <div class="text-zinc-500 text-xs font-mono mt-1">Revenue Lift</div>
+            </div>
+            <div class="rounded-xl p-5 text-center" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05);">
+              <div class="stat-num text-3xl font-bold">60d</div>
+              <div class="text-zinc-500 text-xs font-mono mt-1">To Results</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-28" style="background: var(--ink);">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="mb-16">
+        <div class="section-label mb-3">How It Works</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">What Working Together Looks Like</h2>
+        <p class="text-zinc-400 text-lg max-w-xl">A structured engagement built for speed and sustainable scale. No fluff, no hand-holding theater.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+
+        <!-- Steps -->
+        <div class="space-y-0">
+
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-green-400 flex-shrink-0"
+                   style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+                <i class="fas fa-magnifying-glass text-sm"></i>
+              </div>
+              <div class="connector mt-2"></div>
+            </div>
+            <div class="pb-10">
+              <span class="step-num mb-2 inline-block">01 / Discovery</span>
+              <h3 class="font-display text-xl font-bold mb-2">30-Day Audit + Quick Wins</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Full account teardown. I'll pinpoint exactly where you're bleeding money and deliver immediate ROAS lifts before we even get into full restructuring.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-green-400 flex-shrink-0"
+                   style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+                <i class="fas fa-layer-group text-sm"></i>
+              </div>
+              <div class="connector mt-2"></div>
+            </div>
+            <div class="pb-10">
+              <span class="step-num mb-2 inline-block">02 / Build</span>
+              <h3 class="font-display text-xl font-bold mb-2">Campaign Overhaul</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Search, Performance Max, Shopping, YouTube, Remarketing — rebuilt from scratch with proper structure, audience layering, and bid strategy that actually scales.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-green-400 flex-shrink-0"
+                   style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+                <i class="fas fa-chart-line text-sm"></i>
+              </div>
+              <div class="connector mt-2"></div>
+            </div>
+            <div class="pb-10">
+              <span class="step-num mb-2 inline-block">03 / Scale</span>
+              <h3 class="font-display text-xl font-bold mb-2">Data-Driven Scaling</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Weekly optimizations, monthly strategy reviews, real-time budget reallocation. Spend scales only when ROAS targets are consistently hit.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center text-green-400 flex-shrink-0"
+                   style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+                <i class="fas fa-bolt text-sm"></i>
+              </div>
+            </div>
+            <div>
+              <span class="step-num mb-2 inline-block">04 / Operate</span>
+              <h3 class="font-display text-xl font-bold mb-2">Ongoing Execution</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">I run the account like a partner, not a vendor. You get direct access to me — not an account manager layer — with transparent reporting every week.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What you get -->
+        <div>
+          <div class="rounded-2xl p-8 h-full"
+               style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <h3 class="font-display text-xl font-bold mb-6">Everything That Comes With Engagement</h3>
+            <div class="space-y-4 text-sm text-zinc-300">
+              <div class="check-item gap-3">Full campaign architecture (Search, PMax, Shopping, YT)</div>
+              <div class="check-item gap-3">Conversion tracking audit + GA4 setup</div>
+              <div class="check-item gap-3">Keyword research + negative keyword framework</div>
+              <div class="check-item gap-3">Audience segmentation + RLSA strategy</div>
+              <div class="check-item gap-3">Ad copy testing system (RSA + DDA)</div>
+              <div class="check-item gap-3">Bid strategy selection + Smart bidding signals</div>
+              <div class="check-item gap-3">Weekly optimization reports (plain language)</div>
+              <div class="check-item gap-3">Monthly strategy call with Hans directly</div>
+              <div class="check-item gap-3">Landing page CRO feedback</div>
+              <div class="check-item gap-3">Slack access for async questions</div>
+            </div>
+
+            <div class="mt-8 pt-6" style="border-top: 1px solid rgba(255,255,255,0.05);">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-zinc-700 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-user text-zinc-400 text-xs"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold">Senior-led only</div>
+                  <div class="text-xs text-zinc-500">Your account is never touched by a junior. Ever.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-28" style="background: var(--surface);">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="text-center mb-16">
+        <div class="section-label mb-3">Engagement Options</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
+        <p class="text-zinc-400 text-lg">No retainer lock-in on day one. Start with an audit.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Tier 1 -->
+        <div class="pricing-card rounded-2xl p-8">
+          <div class="tag-pill inline-block mb-4">Starter</div>
+          <div class="font-display text-4xl font-bold mb-1">$497</div>
+          <div class="text-zinc-500 text-sm font-mono mb-6">one-time</div>
+          <div class="space-y-3 text-sm text-zinc-400 mb-8">
+            <div class="check-item gap-3">Full Google Ads account audit</div>
+            <div class="check-item gap-3">Written action plan (prioritized)</div>
+            <div class="check-item gap-3">30-min strategy call with Hans</div>
+            <div class="check-item gap-3">Ideal for: $5K–$20K/mo spend</div>
+          </div>
+          <a href="https://cal.com/hanslacida/15min" target="_blank"
+             class="btn-ghost w-full py-3 rounded-xl text-center text-sm block">
+            Book Discovery Call
+          </a>
+        </div>
+
+        <!-- Tier 2 - Featured -->
+        <div class="pricing-card featured rounded-2xl p-8 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-black text-xs font-mono font-bold px-4 py-1 rounded-full tracking-wide">MOST POPULAR</div>
+          <div class="tag-pill inline-block mb-4">Operator</div>
+          <div class="font-display text-4xl font-bold mb-1">$3,500<span class="text-xl text-zinc-400 font-normal">/mo</span></div>
+          <div class="text-zinc-500 text-sm font-mono mb-6">3-month min</div>
+          <div class="space-y-3 text-sm text-zinc-400 mb-8">
+            <div class="check-item gap-3">Full campaign management</div>
+            <div class="check-item gap-3">Weekly reports + Slack access</div>
+            <div class="check-item gap-3">Monthly strategy call</div>
+            <div class="check-item gap-3">CRO feedback included</div>
+            <div class="check-item gap-3">Ideal for: $20K–$80K/mo spend</div>
+          </div>
+          <a href="https://cal.com/hanslacida/15min" target="_blank"
+             class="btn-primary w-full py-3 rounded-xl text-center text-sm block">
+            Apply Now
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-card rounded-2xl p-8">
+          <div class="tag-pill inline-block mb-4">Scale</div>
+          <div class="font-display text-4xl font-bold mb-1">Custom</div>
+          <div class="text-zinc-500 text-sm font-mono mb-6">performance-based options</div>
+          <div class="space-y-3 text-sm text-zinc-400 mb-8">
+            <div class="check-item gap-3">Everything in Operator</div>
+            <div class="check-item gap-3">Fractional Head of Paid Acquisition</div>
+            <div class="check-item gap-3">Multi-channel expansion</div>
+            <div class="check-item gap-3">Equity/performance structures available</div>
+            <div class="check-item gap-3">Ideal for: $80K+/mo spend</div>
+          </div>
+          <a href="https://cal.com/hanslacida/15min" target="_blank"
+             class="btn-ghost w-full py-3 rounded-xl text-center text-sm block">
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / CREDIBILITY -->
+  <section class="py-28" style="background: var(--ink);">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <div>
+          <div class="section-label mb-3">Who I Am</div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">The Operator Behind the Numbers</h2>
+          <div class="space-y-4 text-zinc-400 leading-relaxed">
+            <p>I'm Hans Lacida — a paid acquisition specialist with 10+ years running Google Ads for US-based eCommerce and lead gen brands. I've managed up to $300K/month in ad spend, hit a peak 70× ROAS for an AU/NZ client, and built the systems to make those results repeatable.</p>
+            <p>I operate under KaizenStrategy Solutions LLC (Wyoming, US) — a structure that gives my international clients the compliance, accountability, and credibility of working with a US-registered entity.</p>
+            <p>No juniors. No account hand-offs. No dashboards that hide the truth. Just senior-led execution with complete transparency.</p>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-8">
+            <span class="tag-pill">Google Ads Certified</span>
+            <span class="tag-pill">10+ Years Experience</span>
+            <span class="tag-pill">US LLC Entity</span>
+            <span class="tag-pill">Research on Zenodo</span>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Credibility blocks -->
+          <div class="rounded-xl p-6 flex items-start gap-4"
+               style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-green-400"
+                 style="background: rgba(34,197,94,0.1);">
+              <i class="fas fa-building text-sm"></i>
+            </div>
+            <div>
+              <div class="font-semibold mb-1">KaizenStrategy Solutions LLC</div>
+              <div class="text-zinc-500 text-sm">Wyoming-registered. US entity for US clients. Fully accountable structure.</div>
+            </div>
+          </div>
+          <div class="rounded-xl p-6 flex items-start gap-4"
+               style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-green-400"
+                 style="background: rgba(34,197,94,0.1);">
+              <i class="fas fa-flask text-sm"></i>
+            </div>
+            <div>
+              <div class="font-semibold mb-1">Applied Marketing Data Scientist</div>
+              <div class="text-zinc-500 text-sm">Published research on AI-powered advertising and predictive modeling on Zenodo.</div>
+            </div>
+          </div>
+          <div class="rounded-xl p-6 flex items-start gap-4"
+               style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-green-400"
+                 style="background: rgba(34,197,94,0.1);">
+              <i class="fas fa-user-tie text-sm"></i>
+            </div>
+            <div>
+              <div class="font-semibold mb-1">Fractional PPC Operator Model</div>
+              <div class="text-zinc-500 text-sm">Senior expertise at a fraction of in-house cost. White-label delivery for agencies too.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-28" style="background: var(--surface);">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="section-label mb-3">FAQ</div>
+        <h2 class="font-display text-4xl font-bold mb-4">Common Questions</h2>
+      </div>
+
+      <div class="space-y-4" id="faq-list">
+
+        <details class="rounded-xl group" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Do you work with brands outside the US?
+            <i class="fas fa-plus text-green-400 text-sm group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed">
+            I primarily serve US-based eCommerce and SaaS brands, but I've managed campaigns for AU/NZ clients and have the infrastructure to work with any English-speaking market. Book a call and let's discuss.
+          </div>
+        </details>
+
+        <details class="rounded-xl group" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            What's your minimum ad spend requirement?
+            <i class="fas fa-plus text-green-400 text-sm group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed">
+            I work best with brands spending $20K/mo or more on Google Ads. Below that threshold, the returns on senior management don't justify the investment. If you're under $20K, start with the audit to get a prioritized action plan you can execute yourself.
+          </div>
+        </details>
+
+        <details class="rounded-xl group" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            How quickly do I see results?
+            <i class="fas fa-plus text-green-400 text-sm group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed">
+            Most clients see meaningful improvement in the first 30 days — quick wins from fixing obvious structural issues, negative keyword gaps, and bidding errors. Sustainable ROAS gains and CAC reductions typically materialize in the 45–90 day window as new campaign structures get data and machine learning stabilizes.
+          </div>
+        </details>
+
+        <details class="rounded-xl group" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Do you offer white-label services for agencies?
+            <i class="fas fa-plus text-green-400 text-sm group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed">
+            Yes. Through Paid Search Pod, I provide white-label PPC delivery for SEO and digital agencies that want to offer Google Ads without building an in-house team. Reach out directly for white-label pricing and delivery SLAs.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section id="audit" class="py-28 relative overflow-hidden" style="background: var(--ink);">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+           style="background: radial-gradient(circle, rgba(34,197,94,0.07) 0%, transparent 70%);"></div>
+    </div>
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div class="section-label mb-4">Ready to Scale?</div>
+      <h2 class="font-display text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Stop leaving revenue<br>on the table.
+      </h2>
+      <p class="text-zinc-400 text-lg mb-10 leading-relaxed">
+        Book a free 15-minute ROAS audit. I'll look at your account and tell you exactly what's wrong and what it's costing you. No pitch, no fluff.
+      </p>
+      <a href="https://cal.com/hanslacida/15min" target="_blank"
+         class="btn-primary text-lg px-10 py-5 rounded-xl inline-flex items-center justify-center gap-3">
+        Book Free ROAS Audit
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <p class="text-zinc-600 text-sm mt-6 font-mono">15 minutes. Free. No obligation.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t py-10" style="border-color: rgba(255,255,255,0.05); background: var(--ink);">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-display font-bold text-lg">hans<span class="text-green-400">.</span></div>
+      <div class="text-zinc-600 text-sm font-mono">
+        © 2026 KaizenStrategy Solutions LLC · All rights reserved
+      </div>
+      <div class="flex items-center gap-6 text-zinc-500 text-sm">
+        <a href="https://hanslacida.com" class="hover:text-white transition-colors">hanslacida.com</a>
+        <a href="https://cal.com/hanslacida/15min" class="hover:text-white transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
