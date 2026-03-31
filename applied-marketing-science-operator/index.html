@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hans Lacida – Applied Marketing Science Operator | hanslacida.com</title>
+  <meta name="description" content="Hans Lacida at hanslacida.com – Applied Marketing Science Operator and former Google Partner (VIA Program). Building high-performing paid acquisition systems using data, AI, web development & original research." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "ink": "#0d0d0d",
+            "ink-soft": "#1a1a1a",
+            "accent": "#1a3cd4",
+            "accent-hover": "#1530b0",
+            "surface": "#f7f7f5",
+            "muted": "#6b6b6b",
+          },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'serif'],
+            body: ['"DM Sans"', 'sans-serif'],
+          },
+          letterSpacing: {
+            tight2: '-0.03em',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    /* Fade-up animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Stagger delays */
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+    .delay-3 { transition-delay: 0.24s; }
+    .delay-4 { transition-delay: 0.32s; }
+
+    /* Hover link underline */
+    .link-line {
+      position: relative;
+      display: inline-block;
+    }
+    .link-line::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -1px;
+      width: 0; height: 1px;
+      background: #1a3cd4;
+      transition: width 0.25s ease;
+    }
+    .link-line:hover::after { width: 100%; }
+
+    /* Stat card subtle hover */
+    .stat-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    }
+
+    /* Nav active */
+    nav a { position: relative; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1.5px;
+      background: #1a3cd4;
+      transition: width 0.22s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* Horizontal rule */
+    hr.hairline { border: none; border-top: 1px solid #e5e5e3; }
+
+    /* Card link hover */
+    .nav-card { transition: border-color 0.2s, box-shadow 0.2s; }
+    .nav-card:hover { border-color: #1a3cd4; box-shadow: 0 4px 20px rgba(26,60,212,0.07); }
+  </style>
+</head>
+<body class="font-body bg-surface text-ink antialiased">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-black/8">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="https://hanslacida.com" class="flex items-center gap-2.5 group">
+      <img src="/images/hanslacida_favicon.jpg" alt="Hans Lacida" class="h-7 w-7 rounded object-cover opacity-90 group-hover:opacity-100 transition" />
+      <span class="font-display text-[15px] tracking-tight">hanslacida.com</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[13px] font-medium text-muted">
+      <a href="/results/" class="hover:text-ink transition-colors duration-150 link-line">Results</a>
+      <a href="/playbook/" class="hover:text-ink transition-colors duration-150 link-line">Playbook</a>
+      <a href="/insights/" class="hover:text-ink transition-colors duration-150 link-line">Insights</a>
+      <a href="/testimonials/" class="hover:text-ink transition-colors duration-150 link-line">Testimonials</a>
+      <a href="#contact" class="ml-2 bg-ink text-surface text-[12px] px-4 py-1.5 rounded-full font-medium hover:bg-accent transition-colors duration-200">Contact →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+  <div class="max-w-3xl">
+    <p class="reveal text-[11px] font-medium tracking-[0.12em] uppercase text-accent mb-5">
+      Operator Profile &nbsp;·&nbsp; Updated March 2026
+    </p>
+
+    <h1 class="reveal delay-1 font-display text-[2.6rem] sm:text-[3.4rem] leading-[1.08] tracking-tight2 text-ink mb-6">
+      Applied Marketing<br>
+      <span class="italic text-muted">Science</span> Operator.
+    </h1>
+
+    <p class="reveal delay-2 text-[15px] leading-relaxed text-muted max-w-xl mb-10">
+      I build high-performing paid acquisition systems that compound revenue for US founders — combining data systems, AI, technical execution, and original research.
+    </p>
+
+    <!-- Stats row -->
+    <div class="reveal delay-3 grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+      <div class="stat-card bg-white border border-black/8 rounded-xl px-4 py-4">
+        <div class="font-display text-[1.6rem] leading-none mb-1">$10M+</div>
+        <div class="text-[11px] text-muted leading-snug">Ad Spend Managed</div>
+      </div>
+      <div class="stat-card bg-white border border-black/8 rounded-xl px-4 py-4">
+        <div class="font-display text-[1.6rem] leading-none mb-1">$550M+</div>
+        <div class="text-[11px] text-muted leading-snug">Client Revenue</div>
+      </div>
+      <div class="stat-card bg-white border border-black/8 rounded-xl px-4 py-4">
+        <div class="font-display text-[1.6rem] leading-none mb-1">70×</div>
+        <div class="text-[11px] text-muted leading-snug">Peak ROAS</div>
+      </div>
+      <div class="stat-card bg-white border border-black/8 rounded-xl px-4 py-4">
+        <div class="font-display text-[1.6rem] leading-none mb-1">10+</div>
+        <div class="text-[11px] text-muted leading-snug">Years Experience</div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="reveal delay-4 flex flex-wrap gap-3">
+      <a href="/results/" class="inline-flex items-center gap-1.5 bg-ink text-surface text-[13px] font-medium px-5 py-2.5 rounded-full hover:bg-accent transition-colors duration-200">
+        View Case Studies →
+      </a>
+      <a href="/discovery-call/" class="inline-flex items-center gap-1.5 border border-black/15 text-ink text-[13px] font-medium px-5 py-2.5 rounded-full hover:border-accent hover:text-accent transition-colors duration-200">
+        Book Discovery Call
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="hairline max-w-5xl mx-auto px-6" style="margin-left:auto;margin-right:auto;max-width:64rem;margin-left:1.5rem;margin-right:1.5rem;">
+<hr class="hairline mx-6" />
+
+<!-- CREDENTIALS STRIP -->
+<section class="max-w-5xl mx-auto px-6 py-8">
+  <div class="reveal flex flex-wrap items-center gap-x-8 gap-y-3 text-[12px] text-muted">
+    <span class="flex items-center gap-2">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="text-accent shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      Former Google Partner · VIA Program 2020–2023
+    </span>
+    <span class="flex items-center gap-2">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="text-accent shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      18+ Research Papers on Zenodo
+    </span>
+    <span class="flex items-center gap-2">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="text-accent shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      Google Ads Search Certified
+    </span>
+    <span class="flex items-center gap-2">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="text-accent shrink-0"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg>
+      10+ Years Applied Marketing
+    </span>
+  </div>
+</section>
+
+<hr class="hairline mx-6" />
+
+<!-- MY APPROACH -->
+<section class="max-w-5xl mx-auto px-6 py-16">
+  <div class="grid md:grid-cols-[1fr,2fr] gap-12 items-start">
+    <div class="reveal">
+      <p class="text-[11px] font-medium tracking-[0.12em] uppercase text-accent mb-3">Method</p>
+      <h2 class="font-display text-[1.9rem] leading-tight tracking-tight2">Applied Marketing Science</h2>
+    </div>
+    <div class="reveal delay-1 space-y-8">
+      <p class="text-[14px] leading-relaxed text-muted">
+        I treat marketing as a science — combining rigorous testing, AI-powered iteration, and systems thinking with real business outcomes. Not guesswork. Not spray-and-pray. Systems.
+      </p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="border-t border-black/10 pt-4">
+          <h3 class="text-[13px] font-semibold mb-1.5">Technical Execution</h3>
+          <p class="text-[12px] text-muted leading-relaxed">Google Ads architectures, GA4 + GTM, HTML/Tailwind landing pages, GoHighLevel funnels.</p>
+        </div>
+        <div class="border-t border-black/10 pt-4">
+          <h3 class="text-[13px] font-semibold mb-1.5">AI-Driven Optimization</h3>
+          <p class="text-[12px] text-muted leading-relaxed">Daily use of Claude, Grok, Cursor & Perplexity. Author of The Paid Ads Failure Index and LTV models.</p>
+        </div>
+        <div class="border-t border-black/10 pt-4">
+          <h3 class="text-[13px] font-semibold mb-1.5">Systems Mindset</h3>
+          <p class="text-[12px] text-muted leading-relaxed">Connecting ad spend directly to revenue and long-term compounding growth for US founders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hairline mx-6" />
+
+<!-- QUICK LINKS -->
+<section class="max-w-5xl mx-auto px-6 py-16">
+  <div class="reveal mb-10">
+    <p class="text-[11px] font-medium tracking-[0.12em] uppercase text-accent mb-3">Explore</p>
+    <h2 class="font-display text-[1.9rem] leading-tight tracking-tight2">hanslacida.com</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <a href="/results/" class="reveal nav-card block p-5 bg-white border border-black/8 rounded-xl group">
+      <div class="flex items-start justify-between mb-3">
+        <span class="text-[11px] font-medium tracking-widest uppercase text-muted">01</span>
+        <span class="text-accent opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+      </div>
+      <h3 class="font-semibold text-[13px] mb-1">Case Studies & Results</h3>
+      <p class="text-[12px] text-muted">Real performance across ecommerce and healthcare verticals.</p>
+    </a>
+    <a href="/results/ecommerce-growth/" class="reveal delay-1 nav-card block p-5 bg-white border border-black/8 rounded-xl group">
+      <div class="flex items-start justify-between mb-3">
+        <span class="text-[11px] font-medium tracking-widest uppercase text-muted">02</span>
+        <span class="text-accent opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+      </div>
+      <h3 class="font-semibold text-[13px] mb-1">Ecommerce Growth Systems</h3>
+      <p class="text-[12px] text-muted">How I scale Shopify & WooCommerce stores profitably.</p>
+    </a>
+    <a href="/playbook/" class="reveal delay-2 nav-card block p-5 bg-white border border-black/8 rounded-xl group">
+      <div class="flex items-start justify-between mb-3">
+        <span class="text-[11px] font-medium tracking-widest uppercase text-muted">03</span>
+        <span class="text-accent opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+      </div>
+      <h3 class="font-semibold text-[13px] mb-1">Operator Playbook</h3>
+      <p class="text-[12px] text-muted">My frameworks, methodologies, and operating principles.</p>
+    </a>
+    <a href="/testimonials/" class="reveal delay-1 nav-card block p-5 bg-white border border-black/8 rounded-xl group">
+      <div class="flex items-start justify-between mb-3">
+        <span class="text-[11px] font-medium tracking-widest uppercase text-muted">04</span>
+        <span class="text-accent opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+      </div>
+      <h3 class="font-semibold text-[13px] mb-1">Client Testimonials</h3>
+      <p class="text-[12px] text-muted">What founders say about working with Hans.</p>
+    </a>
+    <a href="/insights/" class="reveal delay-2 nav-card block p-5 bg-white border border-black/8 rounded-xl group">
+      <div class="flex items-start justify-between mb-3">
+        <span class="text-[11px] font-medium tracking-widest uppercase text-muted">05</span>
+        <span class="text-accent opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+      </div>
+      <h3 class="font-semibold text-[13px] mb-1">Insights & Operator Thinking</h3>
+      <p class="text-[12px] text-muted">Deep dives into marketing systems that compound.</p>
+    </a>
+    <a href="/audit/" class="reveal delay-3 nav-card block p-5 bg-accent/5 border border-accent/20 rounded-xl group">
+      <div class="flex items-start justify-between mb-3">
+        <span class="text-[11px] font-medium tracking-widest uppercase text-accent/70">Free</span>
+        <span class="text-accent opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+      </div>
+      <h3 class="font-semibold text-[13px] mb-1 text-accent">Free Account Audit</h3>
+      <p class="text-[12px] text-muted">Actionable insights on your current paid ads setup.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-ink text-surface">
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-[3fr,2fr] gap-12 items-end">
+      <div>
+        <p class="text-[11px] font-medium tracking-[0.12em] uppercase text-accent mb-4">Let's Talk</p>
+        <h2 class="font-display text-[2rem] sm:text-[2.5rem] leading-tight tracking-tight2 mb-4">
+          Ready for an Applied<br>Marketing Science<br><span class="italic text-white/50">conversation?</span>
+        </h2>
+        <p class="text-[13px] leading-relaxed text-white/50 mb-8 max-w-md">
+          Book a 15-minute discovery call or request a free audit. Either way, you'll leave with clear, actionable insights.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/discovery-call/" class="inline-flex items-center gap-1.5 bg-accent text-white text-[13px] font-medium px-5 py-2.5 rounded-full hover:bg-accent-hover transition-colors duration-200">
+            Book Discovery Call →
+          </a>
+          <a href="/audit/" class="inline-flex items-center gap-1.5 border border-white/15 text-white text-[13px] font-medium px-5 py-2.5 rounded-full hover:border-white/40 transition-colors duration-200">
+            Request Free Audit
+          </a>
+        </div>
+      </div>
+      <div class="text-[12px] text-white/40 space-y-2">
+        <p>
+          <a href="mailto:hello@hanslacida.com" class="text-white/70 hover:text-white transition-colors duration-150">hello@hanslacida.com</a>
+        </p>
+        <p>hanslacida.com</p>
+        <p>US LLC ready · Direct operator access</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Intersection observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
