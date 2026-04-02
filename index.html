@@ -2,1071 +2,1181 @@
 <html lang="en">
 <head>
 
-<!-- Tally popup -->
+    <!-- Tally popup -->
 <script>
-window.TallyConfig = {
-  "formId": "D41GoR",
-  "popup": {
-    "emoji": { "text": "👋", "animation": "wave" },
-    "open": { "trigger": "scroll", "scrollPercent": 100 },
-    "overlay": true,
-    "autoClose": 5000,
-    "doNotShowAfterSubmit": true,
-    "formEventsForwarding": true,
-    "alignLeft": true
-  }
-};
-</script>
-<script async src="https://tally.so/widgets/embed.js"></script>
+    window.TallyConfig = {
+      "formId": "D41GoR",
+      "popup": {
+        "emoji": { "text": "👋", "animation": "wave" },
+        "open": { "trigger": "scroll", "scrollPercent": 100 },
+        "overlay": true,
+        "autoClose": 5000,
+        "doNotShowAfterSubmit": true,
+        "formEventsForwarding": true,
+        "alignLeft": true
+      }
+    };
+    </script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hans Lacida | Paid Acquisition Systems Operator</title>
-<meta name="description" content="Paid acquisition systems operator helping founders scale ecommerce and lead generation through structured demand capture using Google Ads and performance marketing infrastructure." />
-<meta name="robots" content="index, follow" />
-<meta property="og:title" content="Hans Lacida | Paid Acquisition Systems Operator" />
-<meta property="og:description" content="Structured demand capture systems. Google Ads. $10M+ managed. 70× peak ROAS." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hanslacida.com" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Hans Lacida | Paid Acquisition Systems Operator" />
-
-<link rel="icon" href="/images/hanslacida_favicon.webp" type="image/webp" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hans Lacida — Paid Acquisition Operator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@200;300;400;500&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --black: #0d0d0c;
-  --dark: #141413;
-  --dark-2: #1c1c1a;
-  --white: #f5f3ee;
-  --off: #edeae2;
-  --mist: #7a7670;
-  --mist-border: rgba(122,118,112,0.18);
-  --mist-border-light: rgba(122,118,112,0.1);
-  --blue: #1a3cd4;
-  --blue-dim: rgba(26,60,212,0.12);
-  --blue-line: rgba(26,60,212,0.3);
-
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 17px;
-  --text-md:   19px;
-  --text-lg:   22px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: 'Geist', sans-serif;
-  font-size: var(--text-base);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* grain overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9000;
-}
-
-/* ─── NAV ─── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: rgba(13,13,12,0.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--mist-border-light);
-  padding: 0 52px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  animation: slideDown 0.8s cubic-bezier(0.16,1,0.3,1) both;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-decoration: none;
-}
-
-.nav-avatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--mist-border);
-  filter: grayscale(20%);
-}
-
-.nav-brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.nav-brand-name {
-  font-family: 'Instrument Serif', serif;
-  font-size: 16px;
-  color: var(--white);
-  line-height: 1;
-}
-
-.nav-brand-sub {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.nav-link {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mist);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-
-.nav-link:hover { color: var(--white); }
-
-.nav-cta {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--black);
-  background: var(--white);
-  text-decoration: none;
-  padding: 11px 20px;
-  transition: background 0.25s, transform 0.2s;
-}
-
-.nav-cta:hover { background: var(--off); transform: translateY(-1px); }
-
-/* ─── HERO ─── */
-.hero {
-  min-height: 100vh;
-  padding: 140px 52px 96px;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 80px;
-  align-items: center;
-  max-width: 1240px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* vertical rule */
-.hero::after {
-  content: '';
-  position: fixed;
-  top: 0; right: 52px; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--mist-border-light) 30%, var(--mist-border-light) 70%, transparent);
-  pointer-events: none;
-}
-
-.hero-eyebrow {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  width: 28px; height: 1px;
-  background: var(--blue);
-  opacity: 0.6;
-}
-
-.hero-h1 {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(52px, 6vw, 88px);
-  font-weight: 400;
-  line-height: 0.97;
-  letter-spacing: -0.02em;
-  color: var(--white);
-  margin-bottom: 32px;
-  opacity: 0;
-  animation: fadeUp 1.1s 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-
-.hero-h1 em {
-  font-style: italic;
-  color: rgba(245,243,238,0.5);
-}
-
-.hero-sub {
-  font-size: var(--text-md);
-  color: var(--mist);
-  line-height: 1.75;
-  max-width: 520px;
-  margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-
-.hero-sub strong { color: var(--white); font-weight: 400; }
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-
-.btn-white {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-sm);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--black);
-  background: var(--white);
-  text-decoration: none;
-  padding: 15px 28px;
-  display: inline-block;
-  transition: background 0.25s, transform 0.2s;
-}
-
-.btn-white:hover { background: var(--off); transform: translateY(-2px); }
-
-.btn-ghost {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-sm);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--mist);
-  text-decoration: none;
-  border: 1px solid var(--mist-border);
-  padding: 15px 24px;
-  display: inline-block;
-  transition: border-color 0.25s, color 0.25s, transform 0.2s;
-}
-
-.btn-ghost:hover { border-color: var(--white); color: var(--white); transform: translateY(-2px); }
-
-/* ─── HERO METRICS CARD ─── */
-.hero-card {
-  border: 1px solid var(--mist-border);
-  padding: 40px 36px;
-  position: relative;
-  background: var(--dark);
-  opacity: 0;
-  animation: fadeUp 1s 0.55s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-
-.hero-card::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: 32px;
-  width: 48px; height: 2px;
-  background: var(--blue);
-}
-
-.card-tag {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 28px;
-  opacity: 0.8;
-}
-
-.metric-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--mist-border-light);
-  margin-bottom: 28px;
-}
-
-.metric-row {
-  background: var(--dark);
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  transition: background 0.25s;
-}
-
-.metric-row:hover { background: var(--dark-2); }
-
-.metric-val {
-  font-family: 'Instrument Serif', serif;
-  font-size: 28px;
-  color: var(--white);
-  line-height: 1;
-}
-
-.metric-label {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mist);
-  text-align: right;
-  line-height: 1.4;
-}
-
-.card-creds {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.card-cred {
-  font-size: var(--text-sm);
-  color: var(--mist);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.5;
-}
-
-.card-cred::before {
-  content: '—';
-  font-family: 'Geist Mono', monospace;
-  color: var(--blue);
-  opacity: 0.7;
-  flex-shrink: 0;
-}
-
-/* ─── FULL RULE ─── */
-.full-rule { width: 100%; height: 1px; background: var(--mist-border-light); }
-
-/* ─── SECTION WRAP ─── */
-.section-wrap {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 104px 52px;
-}
-
-.section-label {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 44px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.section-label::after {
-  content: '';
-  width: 28px; height: 1px;
-  background: var(--blue);
-  opacity: 0.5;
-}
-
-.section-h2 {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(36px, 4vw, 54px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--white);
-  margin-bottom: 20px;
-}
-
-.section-h2 em {
-  font-style: italic;
-  color: rgba(245,243,238,0.45);
-}
-
-/* ─── RESULTS PREVIEW ─── */
-.results-section { background: var(--dark); }
-
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--mist-border-light);
-  margin-top: 56px;
-}
-
-.result-card {
-  background: var(--dark);
-  padding: 40px 32px;
-  position: relative;
-  transition: background 0.3s;
-  text-decoration: none;
-  display: block;
-}
-
-.result-card:hover { background: var(--dark-2); }
-
-.result-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 2px;
-  background: var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-}
-
-.result-card:hover::before { transform: scaleX(1); }
-
-.result-val {
-  font-family: 'Instrument Serif', serif;
-  font-size: 40px;
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.result-desc {
-  font-size: var(--text-base);
-  color: var(--mist);
-  line-height: 1.65;
-}
-
-.results-cta {
-  margin-top: 44px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-/* ─── WHAT I DO ─── */
-.what-section { background: var(--black); }
-
-.what-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
-}
-
-.what-left-sub {
-  font-size: var(--text-md);
-  color: var(--mist);
-  line-height: 1.8;
-  max-width: 400px;
-  margin-bottom: 40px;
-}
-
-.what-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--mist-border-light);
-}
-
-.what-item {
-  background: var(--black);
-  padding: 28px 32px;
-  display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 18px;
-  align-items: start;
-  transition: background 0.3s;
-}
-
-.what-item:hover { background: var(--dark); }
-
-.what-num {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  color: var(--blue);
-  padding-top: 4px;
-  opacity: 0.7;
-}
-
-.what-title {
-  font-family: 'Instrument Serif', serif;
-  font-size: var(--text-lg);
-  color: var(--white);
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.what-desc {
-  font-size: var(--text-base);
-  color: var(--mist);
-  line-height: 1.75;
-}
-
-/* ─── PLAYBOOK ─── */
-.playbook-section { background: var(--dark); }
-
-.playbook-inner {
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 72px;
-  align-items: center;
-}
-
-.playbook-desc {
-  font-size: var(--text-md);
-  color: var(--mist);
-  line-height: 1.8;
-  margin-bottom: 40px;
-  max-width: 480px;
-}
-
-.playbook-box {
-  border: 1px solid var(--mist-border);
-  padding: 44px 40px;
-  position: relative;
-  background: var(--black);
-}
-
-.playbook-box::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: 32px;
-  width: 48px; height: 2px;
-  background: var(--blue);
-}
-
-.playbook-box-tag {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--blue);
-  opacity: 0.7;
-  margin-bottom: 20px;
-}
-
-.playbook-box-h3 {
-  font-family: 'Instrument Serif', serif;
-  font-size: 24px;
-  color: var(--white);
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.playbook-box-desc {
-  font-size: var(--text-base);
-  color: var(--mist);
-  line-height: 1.75;
-  margin-bottom: 28px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--mist-border-light);
-}
-
-.playbook-topics {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
-}
-
-.playbook-topic {
-  font-size: var(--text-base);
-  color: var(--mist);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.playbook-topic::before {
-  content: '→';
-  font-family: 'Geist Mono', monospace;
-  color: var(--blue);
-  opacity: 0.6;
-  flex-shrink: 0;
-  font-size: var(--text-sm);
-  margin-top: 2px;
-}
-
-/* ─── CONTACT ─── */
-.contact-section {
-  background: var(--black);
-  border-top: 1px solid var(--mist-border-light);
-}
-
-.contact-inner {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 112px 52px;
-}
-
-.contact-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  margin-bottom: 72px;
-}
-
-.contact-h2 {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(40px, 4.5vw, 62px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--white);
-  margin-bottom: 24px;
-}
-
-.contact-h2 em {
-  font-style: italic;
-  color: rgba(245,243,238,0.4);
-}
-
-.contact-sub {
-  font-size: var(--text-md);
-  color: var(--mist);
-  line-height: 1.8;
-  margin-bottom: 44px;
-  max-width: 460px;
-}
-
-.contact-disclaimers {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.contact-disclaimer {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  color: var(--mist);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.6;
-}
-
-.contact-disclaimer::before {
-  content: '';
-  width: 14px; height: 1px;
-  background: var(--mist);
-  flex-shrink: 0;
-}
-
-.contact-right-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0;
-}
-
-.contact-box-tag {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--blue);
-  opacity: 0.7;
-  margin-bottom: 20px;
-}
-
-.contact-box-h3 {
-  font-family: 'Instrument Serif', serif;
-  font-size: 24px;
-  color: var(--white);
-  margin-bottom: 14px;
-}
-
-.contact-box-desc {
-  font-size: var(--text-base);
-  color: var(--mist);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--mist-border-light);
-}
-
-.contact-box-items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-box-item {
-  font-size: var(--text-base);
-  color: var(--mist);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.55;
-}
-
-.contact-box-item::before {
-  content: '✓';
-  color: var(--blue);
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-sm);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* ─── CAL EMBED ─── */
-.cal-embed-wrapper {
-  border: 1px solid var(--mist-border);
-  background: var(--dark);
-  position: relative;
-  overflow: hidden;
-}
-
-.cal-embed-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: 36px;
-  width: 52px; height: 2px;
-  background: var(--blue);
-  z-index: 1;
-}
-
-.cal-embed-label {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--blue);
-  opacity: 0.7;
-  padding: 28px 36px 0;
-}
-
-.cal-embed-title {
-  font-family: 'Instrument Serif', serif;
-  font-size: 22px;
-  color: var(--white);
-  padding: 10px 36px 20px;
-  border-bottom: 1px solid var(--mist-border-light);
-}
-
-#my-cal-inline-15min {
-  width: 100%;
-  height: 660px;
-  overflow: scroll;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: var(--dark);
-  border-top: 1px solid var(--mist-border-light);
-}
-
-.footer-top {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 64px 52px 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 48px;
-  border-bottom: 1px solid var(--mist-border-light);
-}
-
-.footer-col-heading {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 20px;
-  opacity: 0.7;
-}
-
-.footer-col-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-col-link {
-  font-size: var(--text-base);
-  color: var(--mist);
-  text-decoration: none;
-  transition: color 0.25s;
-  line-height: 1.4;
-}
-
-.footer-col-link:hover { color: var(--white); }
-
-.footer-bottom {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 32px 52px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-
-.footer-copy {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mist);
-  opacity: 0.4;
-}
-
-.footer-tagline {
-  font-size: var(--text-sm);
-  color: var(--mist);
-  opacity: 0.5;
-  text-align: center;
-}
-
-.footer-proposal {
-  font-family: 'Geist Mono', monospace;
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mist);
-  text-decoration: none;
-  border: 1px solid var(--mist-border);
-  padding: 10px 18px;
-  transition: border-color 0.25s, color 0.25s;
-}
-
-.footer-proposal:hover { border-color: var(--white); color: var(--white); }
-
-/* ─── ANIMATIONS ─── */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.sr {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1);
-}
-.sr.in { opacity: 1; transform: none; }
-.sr-d1 { transition-delay: 0.08s; }
-.sr-d2 { transition-delay: 0.16s; }
-.sr-d3 { transition-delay: 0.24s; }
-.sr-d4 { transition-delay: 0.32s; }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; gap: 52px; padding: 120px 40px 80px; }
-  .hero::after { display: none; }
-  .hero-card { max-width: 440px; }
-  .results-grid { grid-template-columns: 1fr 1fr; }
-  .what-grid { grid-template-columns: 1fr; gap: 48px; }
-  .playbook-inner { grid-template-columns: 1fr; }
-  .playbook-box { display: none; }
-  .contact-top { grid-template-columns: 1fr; gap: 48px; }
-  .footer-top { grid-template-columns: 1fr; gap: 36px; }
-}
-
-@media (max-width: 768px) {
-  nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .hero { padding: 108px 24px 72px; }
-  .section-wrap { padding: 80px 24px; }
-  .results-grid { grid-template-columns: 1fr 1fr; }
-  .contact-inner { padding: 72px 24px; }
-  .footer-top { padding: 48px 24px 32px; }
-  .footer-bottom { padding: 24px; flex-direction: column; text-align: center; gap: 16px; }
-  #my-cal-inline-15min { height: 580px; }
-}
-
-@media (max-width: 480px) {
-  .results-grid { grid-template-columns: 1fr; }
-  #my-cal-inline-15min { height: 520px; }
-}
+  :root {
+    --bg: #0a0a0a;
+    --bg-2: #111111;
+    --bg-3: #161616;
+    --surface: #1a1a1a;
+    --border: #242424;
+    --border-light: #2e2e2e;
+    --text-primary: #f0ede8;
+    --text-secondary: #9a9690;
+    --text-muted: #5a5754;
+    --accent: #c8a96e;
+    --accent-dim: rgba(200, 169, 110, 0.12);
+    --accent-bright: #e2c48a;
+    --red: #c95b5b;
+    --green: #6ba88a;
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.35;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-logo span {
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text-primary); }
+
+  .nav-cta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent);
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--accent) !important;
+    color: var(--bg) !important;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(200, 169, 110, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow-line {
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-eyebrow span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.08;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subhead {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+
+  .hero-subhead span {
+    color: var(--text-secondary);
+  }
+
+  .hero-body {
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin-bottom: 20px;
+  }
+
+  .hero-body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .hero-pillars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 44px;
+  }
+
+  .pill {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+    padding: 6px 12px;
+    background: var(--bg-3);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .pill.accent {
+    border-color: rgba(200,169,110,0.4);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-bright);
+    border-color: var(--accent-bright);
+  }
+
+  .btn-ghost {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-light);
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+  }
+
+  /* ─── TRACK RECORD CARD ─── */
+  .track-record {
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    position: relative;
+  }
+
+  .track-record::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .tr-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .tr-stats {
+    display: grid;
+    gap: 0;
+  }
+
+  .tr-stat {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tr-stat:last-child { border-bottom: none; }
+
+  .tr-stat-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .tr-stat-num span {
+    color: var(--accent);
+  }
+
+  .tr-stat-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .tr-badges {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tr-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tr-badge::before {
+    content: '▸';
+    color: var(--accent);
+    font-size: 8px;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+
+  .section-eyebrow-line {
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-eyebrow span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .section-sub {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  hr.divider {
+    padding: 0;
+    margin: 0 40px;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── RESULTS SECTION ─── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 56px;
+    border: 1px solid var(--border);
+  }
+
+  .result-card {
+    background: var(--bg-2);
+    padding: 36px 32px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .result-card:hover {
+    background: var(--bg-3);
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+  }
+
+  .result-card:hover::before {
+    width: 100%;
+  }
+
+  .result-num {
+    font-family: var(--serif);
+    font-size: 44px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .result-desc {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .result-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .results-cta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .results-cta a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+
+  .results-cta a:hover { gap: 14px; }
+
+  /* ─── WHAT I DO ─── */
+  .services-section {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .services-section > section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+
+  .services-intro {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  .services-intro strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--bg-2);
+    padding: 44px 36px;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .service-card:hover {
+    background: var(--bg-3);
+  }
+
+  .service-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    opacity: 0.7;
+  }
+
+  .service-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--text-primary);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .service-body {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .service-list li {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .service-list li::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .service-alert {
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+    padding-left: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── PLAYBOOK ─── */
+  .playbook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 56px;
+  }
+
+  .playbook-body {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  .playbook-items {
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+  }
+
+  .playbook-item {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .playbook-item:last-child { border-bottom: none; }
+
+  .playbook-item:hover {
+    background: var(--surface);
+  }
+
+  .playbook-item-icon {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .playbook-item-text {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .playbook-item:hover .playbook-item-text {
+    color: var(--text-primary);
+  }
+
+  /* ─── CONTACT / FIT CALL ─── */
+  .contact-section {
+    background: var(--bg-3);
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-section > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-headline {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .contact-headline em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .contact-note {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .contact-body {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+
+  .contact-email {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-top: 24px;
+  }
+
+  .contact-email a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-items {
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+  }
+
+  .contact-item {
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+  }
+
+  .contact-item:last-child { border-bottom: none; }
+
+  .ci-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+    letter-spacing: 0.1em;
+  }
+
+  .ci-text {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 56px 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .footer-brand span { color: var(--accent); }
+
+  .footer-tagline {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .footer-col-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text-primary); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .footer-proposal {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    transition: all 0.2s;
+  }
+
+  .footer-proposal:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── HERO ENTRANCE ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow  { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-headline { animation: fadeUp 0.7s ease 0.2s both; }
+  .hero-subhead  { animation: fadeUp 0.6s ease 0.35s both; }
+  .hero-body     { animation: fadeUp 0.6s ease 0.45s both; }
+  .hero-pillars  { animation: fadeUp 0.6s ease 0.55s both; }
+  .hero-ctas     { animation: fadeUp 0.6s ease 0.65s both; }
+  .track-record  { animation: fadeUp 0.8s ease 0.3s both; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 100px 24px 60px;
+      gap: 48px;
+    }
+    .services-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr; }
+    .services-header { grid-template-columns: 1fr; gap: 24px; }
+    .contact-section > section { grid-template-columns: 1fr; gap: 40px; }
+    .playbook-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    nav { padding: 0 24px; }
+    section { padding: 72px 24px; }
+    .nav-links { display: none; }
+  }
+
+  /* ─── CURSOR DOT ─── */
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    mix-blend-mode: screen;
+  }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ─── NAV ─── -->
 <nav>
-  <a href="/" class="nav-brand">
-    <img src="/images/hanslacida_favicon.jpg" alt="Hans Lacida" class="nav-avatar" />
-    <div class="nav-brand-text">
-      <span class="nav-brand-name">Hans Lacida</span>
-      <span class="nav-brand-sub">Paid Acquisition Operator</span>
-    </div>
-  </a>
-  <div class="nav-links">
-    <a href="/brands/paid-acquisition-systems-operator/" class="nav-link">Operator</a>
-    <a href="/results/" class="nav-link">Results</a>
-    <a href="/playbook/" class="nav-link">Playbook</a>
-    <a href="/insights/" class="nav-link">Insights</a>
-    <a href="#contact" class="nav-link">Contact</a>
-  </div>
-  <a href="#contact" class="nav-cta">Book fit call</a>
+  <a href="#" class="nav-logo">Hans<span>.</span>Lacida</a>
+  <ul class="nav-links">
+    <li><a href="/results/">Results</a></li>
+    <li><a href="/playbook/">Playbook</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Book Fit Call</a></li>
+  </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <div class="hero-eyebrow">Paid Acquisition · Google Ads · Performance Systems</div>
-    <h1 class="hero-h1">
-      Demand capture.<br><em>Built to scale.</em>
+<!-- ─── HERO ─── -->
+<div style="max-width:1200px;margin:0 auto;padding:0 40px;position:relative;">
+  <div style="position:absolute;top:140px;right:0;font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);writing-mode:vertical-rl;opacity:0.4;">
+    Google Ads · Performance Max · Tracking Infrastructure
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Paid Acquisition Operator</span>
+    </div>
+    <h1 class="hero-headline">
+      Paid Acquisition<br>
+      <em>Systems</em>
     </h1>
-    <p class="hero-sub">
-      I build <strong>paid acquisition systems</strong> for founders scaling ecommerce and lead generation — through structured demand capture, performance infrastructure, and Google Ads architecture that compounds over time.
+    <p class="hero-subhead">
+      <span>Google Ads · Performance Max · Tracking Infrastructure</span>
     </p>
-    <div class="hero-actions">
-      <a href="/results/" class="btn-white">View case studies</a>
-      <a href="/brands/paid-acquisition-systems-operator/" class="btn-ghost">Operator profile</a>
+    <p class="hero-body">
+      I build <strong>high-ROAS acquisition systems</strong> for founders and operators scaling eCommerce, healthcare/medspa, B2B SaaS, and high-intent lead gen businesses.
+    </p>
+    <p class="hero-body">
+      Structured demand capture + <strong>bulletproof conversion tracking</strong> + first-party data strategies + Performance Max architecture that actually scales without waste.
+    </p>
+    <div class="hero-pillars">
+      <span class="pill accent">Performance Max</span>
+      <span class="pill accent">Server-Side Tracking</span>
+      <span class="pill accent">First-Party Data</span>
+      <span class="pill">eCommerce</span>
+      <span class="pill">Healthcare / Medspa</span>
+      <span class="pill">B2B SaaS</span>
+      <span class="pill">Lead Gen</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book 15-Min Fit Call</a>
+      <a href="/results/" class="btn-ghost">View Case Studies</a>
     </div>
   </div>
-  <div class="hero-card">
-    <div class="card-tag">Track record</div>
-    <div class="metric-stack">
-      <div class="metric-row">
-        <div class="metric-val">$10M+</div>
-        <div class="metric-label">Ad spend<br>managed</div>
+
+  <!-- Track Record Card -->
+  <div class="track-record">
+    <div class="tr-label">Track Record</div>
+    <div class="tr-stats">
+      <div class="tr-stat">
+        <div class="tr-stat-num">$10M<span>+</span></div>
+        <div class="tr-stat-label">Ad spend managed</div>
       </div>
-      <div class="metric-row">
-        <div class="metric-val">70×</div>
-        <div class="metric-label">Peak ROAS<br>achieved</div>
+      <div class="tr-stat">
+        <div class="tr-stat-num">70<span>×</span></div>
+        <div class="tr-stat-label">Peak ROAS achieved</div>
       </div>
-      <div class="metric-row">
-        <div class="metric-val">10+ yrs</div>
-        <div class="metric-label">Paid acquisition<br>experience</div>
+      <div class="tr-stat">
+        <div class="tr-stat-num">10<span>+</span></div>
+        <div class="tr-stat-label">Yrs paid acquisition</div>
       </div>
-      <div class="metric-row">
-        <div class="metric-val">$550M+</div>
-        <div class="metric-label">Client revenue<br>generated</div>
+      <div class="tr-stat">
+        <div class="tr-stat-num">$550M<span>+</span></div>
+        <div class="tr-stat-label">Client revenue generated</div>
       </div>
     </div>
-    <div class="card-creds">
-      <div class="card-cred">Former Google Account Strategist — VIA Program, 2020–2023</div>
-      <div class="card-cred">Google Ads Search Certified</div>
-      <div class="card-cred">Founder — KaizenStrategy & Zeldigital</div>
+    <div class="tr-badges">
+      <div class="tr-badge">Former Google Account Strategist — VIA Program, 2020–2023</div>
+      <div class="tr-badge">Google Ads Search Certified</div>
+      <div class="tr-badge">Founder — Zeldigital</div>
     </div>
+  </div>
+</div>
+
+<!-- ─── RESULTS ─── -->
+<hr style="border:none;border-top:1px solid var(--border);margin:0 40px;">
+
+<section id="results">
+  <div class="section-eyebrow">
+    <div class="section-eyebrow-line"></div>
+    <span>Selected Results</span>
+  </div>
+  <h2 class="section-title reveal">Real numbers.<br><em>Real engagements.</em></h2>
+
+  <div class="results-grid">
+    <div class="result-card reveal reveal-delay-1">
+      <div class="result-num">70×</div>
+      <div class="result-desc">Peak ROAS — eCommerce seasonal scaling campaign</div>
+      <div class="result-tag">AU/NZ · eCommerce</div>
+    </div>
+    <div class="result-card reveal reveal-delay-2">
+      <div class="result-num">$4M<span style="font-size:28px">+</span></div>
+      <div class="result-desc">Tracked eCommerce revenue in a single 30-day optimization window</div>
+      <div class="result-tag">eCommerce · Single Month</div>
+    </div>
+    <div class="result-card reveal reveal-delay-3">
+      <div class="result-num">3.1→5.4×</div>
+      <div class="result-desc">ROAS scaled in 90 days — $250K/mo eCommerce brand</div>
+      <div class="result-tag">eCommerce · 90-Day Optimization</div>
+    </div>
+    <div class="result-card reveal reveal-delay-4">
+      <div class="result-num">−53%</div>
+      <div class="result-desc">CPA reduction — healthcare lead generation, California treatment center</div>
+      <div class="result-tag">Healthcare · Lead Gen</div>
+    </div>
+  </div>
+
+  <div class="results-cta reveal">
+    <a href="/results/">Explore all case studies →</a>
   </div>
 </section>
 
-<div class="full-rule"></div>
-
-<!-- RESULTS PREVIEW -->
-<section class="results-section sr">
-  <div class="section-wrap">
-    <div class="section-label">Selected results</div>
-    <h2 class="section-h2">Numbers from <em>real engagements.</em></h2>
-    <div class="results-grid">
-      <a href="/results/" class="result-card sr sr-d1">
-        <div class="result-val">70×</div>
-        <p class="result-desc">Peak ROAS — ecommerce seasonal scaling campaign, AU/NZ market</p>
-      </a>
-      <a href="/results/" class="result-card sr sr-d2">
-        <div class="result-val">$4M+</div>
-        <p class="result-desc">Tracked ecommerce revenue in a single 30-day optimization window</p>
-      </a>
-      <a href="/results/" class="result-card sr sr-d3">
-        <div class="result-val">3.1→5.4×</div>
-        <p class="result-desc">ROAS scaled in 90 days — $250K monthly spend, ecommerce brand</p>
-      </a>
-      <a href="/results/" class="result-card sr sr-d4">
-        <div class="result-val">−53%</div>
-        <p class="result-desc">CPA reduction — healthcare lead generation, California treatment center</p>
-      </a>
-    </div>
-    <div class="results-cta">
-      <a href="/results/" class="btn-white">Explore all case studies →</a>
-    </div>
-  </div>
-</section>
-
-<div class="full-rule"></div>
-
-<!-- WHAT I DO -->
-<section class="what-section sr">
-  <div class="section-wrap">
-    <div class="what-grid">
+<!-- ─── WHAT I DO ─── -->
+<div class="services-section">
+  <section id="services">
+    <div class="services-header">
       <div>
-        <div class="section-label">What I do</div>
-        <h2 class="section-h2">Three systems.<br><em>One operator.</em></h2>
-        <p class="what-left-sub">I don't manage campaigns. I build acquisition infrastructure. The distinction matters — campaigns stop when you stop paying. Systems compound.</p>
-        <a href="/brands/paid-acquisition-systems-operator/" class="btn-ghost" style="margin-top:8px;">Full operator profile →</a>
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>What I Do</span>
+        </div>
+        <h2 class="section-title reveal">Three systems.<br><em>One operator.</em></h2>
       </div>
-      <div class="what-list sr sr-d2">
-        <div class="what-item">
-          <div class="what-num">01</div>
-          <div>
-            <div class="what-title">Demand Capture</div>
-            <div class="what-desc">Structured Google Ads campaign architecture that captures high-intent search demand at the moment buyers are ready. Built for efficiency and scale — not just clicks.</div>
-          </div>
-        </div>
-        <div class="what-item">
-          <div class="what-num">02</div>
-          <div>
-            <div class="what-title">Acquisition Systems</div>
-            <div class="what-desc">Scalable paid acquisition infrastructure with tracking, attribution, reporting, and optimization frameworks. The full stack — not just the ad account.</div>
-          </div>
-        </div>
-        <div class="what-item">
-          <div class="what-num">03</div>
-          <div>
-            <div class="what-title">Channel Expansion</div>
-            <div class="what-desc">Once Google is optimized, expand into Amazon Ads, TikTok Ads, and programmatic demand capture. Diversified acquisition, unified reporting.</div>
-          </div>
-        </div>
+      <div class="services-intro reveal">
+        I don't just manage campaigns — I engineer <strong>acquisition infrastructure that compounds</strong>. Campaigns end when the budget stops. <strong>Systems keep delivering.</strong>
       </div>
     </div>
-  </div>
-</section>
 
-<div class="full-rule"></div>
-
-<!-- PLAYBOOK -->
-<section class="playbook-section sr">
-  <div class="section-wrap">
-    <div class="playbook-inner">
-      <div>
-        <div class="section-label">Playbook</div>
-        <h2 class="section-h2">Operator thinking.<br><em>Made public.</em></h2>
-        <p class="playbook-desc">Practical insights on demand capture, campaign restructuring, and paid acquisition systems — written for founders and growth operators who want to understand what's actually happening in their accounts.</p>
-        <a href="/playbook/" class="btn-white">Read the playbook →</a>
-      </div>
-      <div class="playbook-box">
-        <div class="playbook-box-tag">What's inside</div>
-        <div class="playbook-box-h3">Google Ads Operator Playbook</div>
-        <p class="playbook-box-desc">Not a beginner's guide. Operator-level thinking on why campaigns break, how to fix them, and how to build systems that don't need constant intervention.</p>
-        <div class="playbook-topics">
-          <div class="playbook-topic">Why your ROAS drops after scaling</div>
-          <div class="playbook-topic">Campaign structure that survives algorithm changes</div>
-          <div class="playbook-topic">Tracking setup that actually tells the truth</div>
-          <div class="playbook-topic">When to use Performance Max — and when not to</div>
-          <div class="playbook-topic">Budget allocation frameworks for growth</div>
+    <div class="services-grid">
+      <!-- 01 -->
+      <div class="service-card reveal">
+        <div class="service-num">01 /</div>
+        <div class="service-title">Demand Capture</div>
+        <div class="service-body">
+          Precision Google Ads architecture that captures high-intent search demand the moment buyers are ready.
         </div>
-        <a href="/playbook/" class="btn-white" style="width:100%;text-align:center;display:block;">Read the playbook →</a>
+        <ul class="service-list">
+          <li>Clean structure & smart signals</li>
+          <li>eCommerce shopping architecture</li>
+          <li>Healthcare compliance campaigns</li>
+          <li>B2B pipeline generation</li>
+        </ul>
+      </div>
+
+      <!-- 02 -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02 /</div>
+        <div class="service-title">Acquisition Systems</div>
+        <div class="service-body">
+          Full-stack performance infrastructure built for accuracy and signal quality.
+        </div>
+        <ul class="service-list">
+          <li>Server-side tagging · GA4 · Enhanced conversions</li>
+          <li>Offline conversion import</li>
+          <li>Customer Match & CLV/profit signals</li>
+          <li>Performance Max audits & restructures</li>
+        </ul>
+        <div class="service-alert">
+          Most accounts leak 40–60% of budget due to broken tracking or poorly structured PMax. I fix the foundation so Google's AI works for you.
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03 /</div>
+        <div class="service-title">Channel Expansion</div>
+        <div class="service-body">
+          Once Google is optimized and data is clean, expand confidently into new channels.
+        </div>
+        <ul class="service-list">
+          <li>Microsoft/Bing ads copy pmax from Google Ads</li>
+          <li>Amazon Ads integration</li>
+          <li>TikTok paid acquisition</li>
+          <li>Programmatic display</li>
+          <li>Unified reporting & attribution</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;" class="reveal">
+      <a href="/brands/paid-acquisition-systems-operator/" class="btn-ghost">Full operator profile →</a>
+    </div>
+  </section>
+</div>
+
+<!-- ─── PLAYBOOK ─── -->
+<section id="systems">
+  <div class="section-eyebrow">
+    <div class="section-eyebrow-line"></div>
+    <span>Playbook</span>
+  </div>
+  <h2 class="section-title reveal">Operator thinking.<br><em>Made public.</em></h2>
+
+  <div class="playbook-grid">
+    <div>
+      <p class="playbook-body reveal">
+        Practical, no-fluff insights on demand capture, campaign restructuring, Performance Max optimization, tracking setups, and building systems that survive algorithm changes — written for founders who want to understand what's really happening in their accounts.
+      </p>
+      <a href="#" class="btn-primary reveal">Read the playbook →</a>
+    </div>
+
+    <div class="playbook-items reveal">
+      <div class="playbook-item">
+        <span class="playbook-item-icon">→</span>
+        <span class="playbook-item-text">Why your ROAS drops after scaling</span>
+      </div>
+      <div class="playbook-item">
+        <span class="playbook-item-icon">→</span>
+        <span class="playbook-item-text">Performance Max: when to use it, how to audit & restructure, how to avoid common waste</span>
+      </div>
+      <div class="playbook-item">
+        <span class="playbook-item-icon">→</span>
+        <span class="playbook-item-text">Tracking setups that actually tell the truth (server-side, enhanced conversions, offline)</span>
+      </div>
+      <div class="playbook-item">
+        <span class="playbook-item-icon">→</span>
+        <span class="playbook-item-text">First-party data as your new competitive moat</span>
+      </div>
+      <div class="playbook-item">
+        <span class="playbook-item-icon">→</span>
+        <span class="playbook-item-text">Campaign structure that survives AI changes</span>
+      </div>
+      <div class="playbook-item">
+        <span class="playbook-item-icon">→</span>
+        <span class="playbook-item-text">Budget allocation frameworks for sustainable growth</span>
       </div>
     </div>
   </div>
@@ -1074,96 +1184,134 @@ footer {
 
 <!-- CONTACT -->
 <section id="contact" class="contact-section sr">
-  <div class="contact-inner">
-
-    <!-- Top: copy left, what we cover right -->
-    <div class="contact-top">
-      <div>
-        <div class="section-label">Contact</div>
-        <h2 class="contact-h2">15 minutes to<br>determine <em>fit.</em></h2>
-        <p class="contact-sub">Not a sales call. An operator conversation — to determine whether there's a real match between what you need and what I build. If there isn't, I'll tell you.</p>
-        <div class="contact-disclaimers">
-          <div class="contact-disclaimer">15 minutes. No pitch deck.</div>
-          <div class="contact-disclaimer">US market founders and operators only.</div>
-          <div class="contact-disclaimer">Or email: <a href="mailto:hello@hanslacida.com" style="color:rgba(245,243,238,0.6);border-bottom:1px solid rgba(122,118,112,0.3);text-decoration:none;">hello@hanslacida.com</a></div>
+    <div class="contact-inner">
+  
+      <!-- Top: copy left, what we cover right -->
+      <div class="contact-top">
+        <div>
+          <div class="section-label">Contact</div>
+          <h2 class="contact-h2">15 minutes to<br>determine <em>fit.</em></h2>
+          <p class="contact-sub">Not a sales call. An operator conversation — to determine whether there's a real match between what you need and what I build. If there isn't, I'll tell you.</p>
+          <div class="contact-disclaimers">
+            <div class="contact-disclaimer">15 minutes. No pitch deck.</div>
+            <div class="contact-disclaimer">US market founders and operators only.</div>
+            <div class="contact-disclaimer">Or email: <a href="mailto:hello@hanslacida.com" style="color:rgba(245,243,238,0.6);border-bottom:1px solid rgba(122,118,112,0.3);text-decoration:none;">hello@hanslacida.com</a></div>
+          </div>
+        </div>
+        <div class="contact-right-info">
+          <div class="contact-box-tag">What we cover</div>
+          <div class="contact-box-h3">The fit call</div>
+          <p class="contact-box-desc">An honest 15-minute conversation. I need to understand your situation before I can tell you whether I can help — and whether it's worth your time to proceed.</p>
+          <div class="contact-box-items">
+            <div class="contact-box-item">Your current acquisition setup and what's broken</div>
+            <div class="contact-box-item">Monthly ad spend and revenue targets</div>
+            <div class="contact-box-item">Where the bottleneck is — tracking, structure, budget, or strategy</div>
+            <div class="contact-box-item">Whether an acquisition system is the right next move</div>
+          </div>
         </div>
       </div>
-      <div class="contact-right-info">
-        <div class="contact-box-tag">What we cover</div>
-        <div class="contact-box-h3">The fit call</div>
-        <p class="contact-box-desc">An honest 15-minute conversation. I need to understand your situation before I can tell you whether I can help — and whether it's worth your time to proceed.</p>
-        <div class="contact-box-items">
-          <div class="contact-box-item">Your current acquisition setup and what's broken</div>
-          <div class="contact-box-item">Monthly ad spend and revenue targets</div>
-          <div class="contact-box-item">Where the bottleneck is — tracking, structure, budget, or strategy</div>
-          <div class="contact-box-item">Whether an acquisition system is the right next move</div>
-        </div>
+  
+      <!-- Cal.com embed — full width below -->
+      <div class="cal-embed-wrapper sr sr-d2">
+        <div class="cal-embed-label">Book a time</div>
+        <div class="cal-embed-title">15-Minute Fit Call</div>
+        <div id="my-cal-inline-15min"></div>
       </div>
+  
     </div>
+  </section>
+  
+</div>
 
-    <!-- Cal.com embed — full width below -->
-    <div class="cal-embed-wrapper sr sr-d2">
-      <div class="cal-embed-label">Book a time</div>
-      <div class="cal-embed-title">15-Minute Fit Call</div>
-      <div id="my-cal-inline-15min"></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-top">
+  <div class="footer-grid">
     <div>
-      <div class="footer-col-heading">Operator</div>
-      <div class="footer-col-links">
-        <a href="/brands/paid-acquisition-systems-operator/" class="footer-col-link">Paid Acquisition Systems Operator</a>
-        <a href="/about/" class="footer-col-link">About</a>
-        <a href="/how-i-operate/" class="footer-col-link">How I Operate</a>
-      </div>
+      <div class="footer-brand">Hans<span>.</span>Lacida</div>
+      <div class="footer-tagline">Paid Acquisition Systems Operator<br>Google Ads execution infrastructure operated with<br>control, enforced standards, and accountability.</div>
     </div>
     <div>
-      <div class="footer-col-heading">Proof</div>
-      <div class="footer-col-links">
-        <a href="/results/" class="footer-col-link">All Case Studies</a>
-        <a href="/results/70x-roas-case-study/" class="footer-col-link">70× ROAS Case Study</a>
-        <a href="/results/ecommerce-growth/" class="footer-col-link">Ecommerce Growth</a>
-      </div>
+      <div class="footer-col-title">Operator</div>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/how-i-operate/">How I Operate</a></li>
+        <li><a href="/results/">Proof</a></li>
+        <li><a href="/results/">All Case Studies</a></li>
+        <li><a href="/results/70x-roas-case-study/">70× ROAS Case Study</a></li>
+      </ul>
     </div>
     <div>
-      <div class="footer-col-heading">Insights</div>
-      <div class="footer-col-links">
-        <a href="/insights/" class="footer-col-link">Growth Insights</a>
-        <a href="/playbook/" class="footer-col-link">Google Ads Playbook</a>
-        <a href="/insights/operator-thinking/" class="footer-col-link">Operator Thinking</a>
-      </div>
+      <div class="footer-col-title">Insights</div>
+      <ul class="footer-links">
+        <li><a href="/insights/">Growth Insights</a></li>
+        <li><a href="/playbook/">Google Ads Playbook</a></li>
+        <li><a href="/how-i-operate/">Operator Thinking</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@hanslacida.com">hello@hanslacida.com</a></li>
+        <li><a href="#contact">Book Fit Call</a></li>
+        <li><a href="https://tr.ee/yF6vkB">Submit a Proposal</a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Hans Lacida · All rights reserved</div>
-    <div class="footer-tagline">Google Ads execution infrastructure operated with control, enforced standards, and accountability.</div>
-    <a href="https://tr.ee/yF6vkB" target="_blank" rel="noopener noreferrer" class="footer-proposal">Submit a proposal ↗</a>
+    <span class="footer-copy">© 2026 Hans Lacida · All rights reserved</span>
+    <a href="https://tr.ee/yF6vkB" class="footer-proposal">Submit a proposal</a>
   </div>
 </footer>
 
 <!-- Cal.com embed script -->
 <script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "15min", {origin:"https://app.cal.com"});
-  Cal.ns["15min"]("inline", {
-    elementOrSelector:"#my-cal-inline-15min",
-    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-    calLink: "hanslacida/15min",
-  });
-  Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#f0e102"},"dark":{"cal-brand":"#7a9bff"}},"hideEventTypeDetails":false,"layout":"month_view"});
-</script>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "15min", {origin:"https://app.cal.com"});
+    Cal.ns["15min"]("inline", {
+      elementOrSelector:"#my-cal-inline-15min",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "hanslacida/15min",
+    });
+    Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#f0e102"},"dark":{"cal-brand":"#7a9bff"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+  </script>
+  
 
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.07 });
-document.querySelectorAll('.sr').forEach(el => observer.observe(el));
-</script>
+  // Cursor dot
+  const dot = document.getElementById('cursorDot');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+  });
 
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.borderBottomColor = 'rgba(200,169,110,0.12)';
+    } else {
+      nav.style.borderBottomColor = 'var(--border)';
+    }
+  });
+</script>
 </body>
 </html>
