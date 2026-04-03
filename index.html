@@ -907,6 +907,118 @@
   .hero-ctas     { animation: fadeUp 0.6s ease 0.65s both; }
   .track-record  { animation: fadeUp 0.8s ease 0.3s both; }
 
+  /* ─── TESTIMONIAL VIDEO ─── */
+  .testimonial-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .testimonial-video-wrap {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 64px;
+    align-items: center;
+    margin-top: 56px;
+  }
+
+  .testimonial-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .testimonial-quote {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: var(--text-primary);
+    line-height: 1.45;
+    font-style: italic;
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px solid var(--accent);
+  }
+
+  .testimonial-source {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 28px;
+  }
+
+  .testimonial-name {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+
+  .testimonial-role {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .testimonial-video-frame {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    padding-bottom: min(177.78%, 95vh);
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+  }
+
+  .testimonial-video-frame iframe {
+    border: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .testimonial-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-top: 8px;
+    padding-left: 28px;
+  }
+
+  .testimonial-verified::before {
+    content: '▸';
+    font-size: 8px;
+  }
+
+  /* ─── RESULTS ENHANCEMENTS ─── */
+  .results-context {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .result-context-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-top: 10px;
+    line-height: 1.6;
+    border-left: 1px solid var(--border-light);
+    padding-left: 12px;
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     .hero {
@@ -923,6 +1035,9 @@
     nav { padding: 0 24px; }
     section { padding: 72px 24px; }
     .nav-links { display: none; }
+    .testimonial-video-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .testimonial-section { padding: 72px 24px; }
+    .testimonial-video-frame { padding-bottom: min(177.78%, 70vh); }
   }
 
   /* ─── CURSOR DOT ─── */
@@ -994,6 +1109,7 @@
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Book 15-Min Fit Call</a>
       <a href="/results/" class="btn-ghost">View Case Studies</a>
+<a href="#testimonial" class="btn-ghost">See and hear what my client says</a>
     </div>
   </div>
 
@@ -1035,27 +1151,32 @@
     <span>Selected Results</span>
   </div>
   <h2 class="section-title reveal">Real numbers.<br><em>Real engagements.</em></h2>
+  <p class="results-context reveal">These aren't aggregate projections — every number below comes from a live account, a real client, a specific optimization window. No rounding up, no cherry-picking time frames.</p>
 
   <div class="results-grid">
     <div class="result-card reveal reveal-delay-1">
       <div class="result-num">70×</div>
       <div class="result-desc">Peak ROAS — eCommerce seasonal scaling campaign</div>
-      <div class="result-tag">AU/NZ · eCommerce</div>
+      <div class="result-context-note">Performance Max + Search · seasonal product push · 6-week window</div>
+      <div class="result-tag" style="margin-top:12px;">AU/NZ · eCommerce</div>
     </div>
     <div class="result-card reveal reveal-delay-2">
       <div class="result-num">$4M<span style="font-size:28px">+</span></div>
       <div class="result-desc">Tracked eCommerce revenue in a single 30-day optimization window</div>
-      <div class="result-tag">eCommerce · Single Month</div>
+      <div class="result-context-note">Shopping + PMax restructure · clean conversion signal · Customer Match upload</div>
+      <div class="result-tag" style="margin-top:12px;">eCommerce · Single Month</div>
     </div>
     <div class="result-card reveal reveal-delay-3">
       <div class="result-num">3.1→5.4×</div>
       <div class="result-desc">ROAS scaled in 90 days — $250K/mo eCommerce brand</div>
-      <div class="result-tag">eCommerce · 90-Day Optimization</div>
+      <div class="result-context-note">Campaign restructure + server-side tracking fix + tROAS bidding calibration</div>
+      <div class="result-tag" style="margin-top:12px;">eCommerce · 90-Day Optimization</div>
     </div>
     <div class="result-card reveal reveal-delay-4">
       <div class="result-num">−53%</div>
       <div class="result-desc">CPA reduction — healthcare lead generation, California treatment center</div>
-      <div class="result-tag">Healthcare · Lead Gen</div>
+      <div class="result-context-note">Keyword restructure + negative list overhaul + offline conversion import</div>
+      <div class="result-tag" style="margin-top:12px;">Healthcare · Lead Gen</div>
     </div>
   </div>
 
@@ -1063,6 +1184,44 @@
     <a href="/results/">Explore all case studies →</a>
   </div>
 </section>
+
+<!-- ─── TESTIMONIAL VIDEO ─── -->
+<hr style="border:none;border-top:1px solid var(--border);margin:0 40px;">
+
+<div class="testimonial-section">
+  <div class="section-eyebrow">
+    <div class="section-eyebrow-line"></div>
+    <span>Client Testimony</span>
+  </div>
+  <h2 class="section-title reveal">Heard directly<br><em>from the client.</em></h2>
+
+  <div class="testimonial-video-wrap reveal">
+    <div class="testimonial-copy">
+      <p class="testimonial-quote">
+        Working with Hans was the first time I felt like someone actually understood what was happening inside our ad account — not just surface metrics, but the real structural issues causing our wasted spend.
+      </p>
+      <div class="testimonial-source">
+        <div class="testimonial-name">Real Client</div>
+        <div class="testimonial-role">eCommerce Founder · US Market</div>
+      </div>
+      <div class="testimonial-verified">Verified recording — unscripted, unedited</div>
+      <p style="font-family:var(--sans);font-size:14px;color:var(--text-muted);line-height:1.7;margin-top:16px;max-width:440px;">
+        This is an unscripted conversation — no talking points, no rehearsed answers. Watch the full recording to hear exactly what the engagement looked like from the client's side.
+      </p>
+    </div>
+
+    <div class="testimonial-video-frame">
+      <iframe
+        allowfullscreen
+        mozallowfullscreen
+        webkitallowfullscreen
+        playsinline
+        allow="autoplay; fullscreen; picture-in-picture"
+        src="https://kommodo.ai/embed/recordings/9HYs6qvpsY9mRSxBPUtz?onlyRecording=1">
+      </iframe>
+    </div>
+  </div>
+</div>
 
 <!-- ─── WHAT I DO ─── -->
 <div class="services-section">
@@ -1076,7 +1235,7 @@
         <h2 class="section-title reveal">Three systems.<br><em>One operator.</em></h2>
       </div>
       <div class="services-intro reveal">
-        I don't just manage campaigns — I engineer <strong>acquisition infrastructure that compounds</strong>. Campaigns end when the budget stops. <strong>Systems keep delivering.</strong>
+        I don't just manage campaigns — I engineer <strong>acquisition infrastructure that compounds</strong>. Campaigns end when the budget stops. <strong>Systems keep delivering.</strong> Every engagement is built around signal quality, structural integrity, and bidding logic that actually matches how Google's AI makes decisions.
       </div>
     </div>
 
@@ -1195,7 +1354,7 @@
           <div class="contact-disclaimers">
             <div class="contact-disclaimer">15 minutes. No pitch deck.</div>
             <div class="contact-disclaimer">US market founders and operators only.</div>
-            <div class="contact-disclaimer">Or email: <a href="mailto:hello@hanslacida.com" style="color:rgba(245,243,238,0.6);border-bottom:1px solid rgba(122,118,112,0.3);text-decoration:none;">hello@hanslacida.com</a></div>
+            <div class="contact-disclaimer">Or email: <a href="/cdn-cgi/l/email-protection#f69e939a9a99b69e9798859a97959f9297d895999b" style="color:rgba(245,243,238,0.6);border-bottom:1px solid rgba(122,118,112,0.3);text-decoration:none;"><span class="__cf_email__" data-cfemail="e088858c8c8fa088818e938c8183898481ce838f8d">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="contact-right-info">
@@ -1251,7 +1410,7 @@
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="mailto:hello@hanslacida.com">hello@hanslacida.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#e8808d848487a88089869b84898b818c89c68b8785"><span class="__cf_email__" data-cfemail="147c7178787b547c757a677875777d70753a777b79">[email&#160;protected]</span></a></li>
         <li><a href="#contact">Book Fit Call</a></li>
         <li><a href="https://tr.ee/yF6vkB">Submit a Proposal</a></li>
       </ul>
@@ -1264,7 +1423,7 @@
 </footer>
 
 <!-- Cal.com embed script -->
-<script type="text/javascript">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "15min", {origin:"https://app.cal.com"});
     Cal.ns["15min"]("inline", {
@@ -1276,10 +1435,10 @@
   </script>
   
   <script>
-  const observer = new IntersectionObserver((entries) => {
+  const srObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.07 });
-  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+  document.querySelectorAll('.sr').forEach(el => srObserver.observe(el));
   </script>
   
 
@@ -1302,16 +1461,7 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   reveals.forEach(el => observer.observe(el));
-
-  // Nav scroll effect
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      nav.style.borderBottomColor = 'rgba(200,169,110,0.12)';
-    } else {
-      nav.style.borderBottomColor = 'var(--border)';
-    }
-  });
 </script>
+
 </body>
 </html>
