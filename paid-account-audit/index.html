@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Paid Audit — Hans Lacida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --border: #1e1e1e;
+    --border-soft: #2a2a2a;
+    --text: #e8e8e3;
+    --text-muted: #6b6b65;
+    --text-dim: #3d3d38;
+    --accent: #c8f55a;
+    --accent-dim: rgba(200,245,90,0.08);
+    --accent-border: rgba(200,245,90,0.2);
+    --red: #f55a5a;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .nav-logo-mark {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: #0a0a0a;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo-name {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    font-family: var(--mono);
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-size: 12px;
+    font-family: var(--mono);
+    background: var(--accent);
+    color: #0a0a0a !important;
+    padding: 8px 16px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* MAIN */
+  main { padding-top: 64px; }
+
+  section { padding: 80px 40px; max-width: 860px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--border);
+    max-width: 860px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-price-block {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 20px 28px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    border-radius: 6px;
+  }
+
+  .price-amount {
+    font-family: var(--serif);
+    font-size: 52px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .price-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .price-meta strong {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #0a0a0a;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-block;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--text); border-color: var(--text-muted); }
+
+  /* WHO SECTION */
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .who-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+  }
+
+  .who-card:first-child { border-radius: 6px 0 0 0; }
+  .who-card:nth-child(2) { border-radius: 0 6px 0 0; }
+  .who-card:nth-child(3) { border-radius: 0 0 0 6px; }
+  .who-card:last-child { border-radius: 0 0 6px 0; }
+
+  .who-card.is-red {
+    border-color: rgba(245,90,90,0.2);
+    background: rgba(245,90,90,0.04);
+  }
+
+  .who-card.is-green {
+    border-color: var(--accent-border);
+    background: var(--accent-dim);
+  }
+
+  .who-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .who-label.red { color: var(--red); }
+  .who-label.green { color: var(--accent); }
+
+  .who-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .who-list li {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .who-list li span.icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .section-title em { font-style: italic; color: var(--text-muted); }
+
+  /* WHAT YOU GET */
+  .deliverables {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .deliverable-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.2s;
+  }
+
+  .deliverable-item:hover { border-color: var(--border-soft); }
+
+  .deliverable-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+    padding-top: 3px;
+  }
+
+  .deliverable-content h3 {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .deliverable-content p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .deliverable-content .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  /* HOW IT WORKS */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .process-step:last-child { border-bottom: none; }
+
+  .step-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    padding-top: 8px;
+  }
+
+  .step-content h3 {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .step-content .timing {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  /* PRICING BOX */
+  .pricing-box {
+    margin-top: 40px;
+    border: 1px solid var(--accent-border);
+    background: var(--accent-dim);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .pricing-top {
+    padding: 40px;
+    border-bottom: 1px solid var(--accent-border);
+  }
+
+  .pricing-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .pricing-amount-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .big-price {
+    font-family: var(--serif);
+    font-size: 72px;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .big-price-label {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .pricing-tagline {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  .pricing-includes {
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .include-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .include-item .check {
+    color: var(--accent);
+    flex-shrink: 0;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+
+  .pricing-cta-area {
+    padding: 32px 40px;
+    border-top: 1px solid var(--accent-border);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .pricing-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* OBJECTIONS */
+  .faq-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 22px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: color 0.2s;
+    list-style: none;
+  }
+
+  .faq-q:hover { color: var(--accent); }
+
+  .faq-q::after {
+    content: '+';
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.25s;
+  }
+
+  details[open] .faq-q::after { transform: rotate(45deg); }
+
+  .faq-a {
+    padding: 0 28px 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+  }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    text-align: center;
+    padding: 100px 40px;
+    border-top: 1px solid var(--border);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .bottom-cta h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .bottom-cta h2 em { font-style: italic; color: var(--text-muted); }
+
+  .bottom-cta p {
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 440px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer a { color: var(--text-dim); text-decoration: none; }
+  footer a:hover { color: var(--text-muted); }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-label { animation: fadeUp 0.5s ease both; }
+  .hero h1 { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.5s 0.2s ease both; }
+  .hero-price-block { animation: fadeUp 0.5s 0.3s ease both; }
+  .hero-cta-row { animation: fadeUp 0.5s 0.4s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    section, .hero, .bottom-cta { padding-left: 20px; padding-right: 20px; }
+    .who-grid { grid-template-columns: 1fr; }
+    .pricing-includes { grid-template-columns: 1fr; }
+    .pricing-top, .pricing-cta-area, .pricing-includes { padding: 24px; }
+    footer { padding: 24px 20px; flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.hanslacida.com/" class="nav-logo">
+    <div class="nav-logo-mark">HL</div>
+    <span class="nav-logo-name">Hans Lacida</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://www.hanslacida.com/brands/paid-acquisition-systems-operator/">Operator</a></li>
+    <li><a href="https://www.hanslacida.com/results/">Results</a></li>
+    <li><a href="https://www.hanslacida.com/playbook/">Playbook</a></li>
+    <li><a href="https://buy.stripe.com/4gM4gzfy0dcO26O3ij4Rq0p" class="nav-cta">Pay the Audit — $397</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Paid Account Audit</div>
+    <h1>Find out exactly<br>where your ads are<br><em>bleeding money.</em></h1>
+    <p class="hero-sub">
+      I go inside your Google Ads account and tell you — in plain language — what's broken, what's wasted, and what to fix first. You get a recorded walkthrough and a written action plan. In 5–7 days.
+    </p>
+    <div class="hero-price-block">
+      <div class="price-amount">$397</div>
+      <div class="price-meta">
+        <strong>One-time · No retainer</strong>
+        Applied toward ongoing management if we work together
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="https://buy.stripe.com/4gM4gzfy0dcO26O3ij4Rq0p" class="btn-primary">Pay the Audit →</a>
+      <a href="https://www.hanslacida.com/results/" class="btn-ghost">See past results first</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHO THIS IS FOR -->
+  <section>
+    <div class="section-header">
+      <div class="section-label">Fit check</div>
+      <h2 class="section-title">This audit is for<br>a <em>specific</em> situation.</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card is-red">
+        <div class="who-label red">Not a fit if you are</div>
+        <ul class="who-list">
+          <li><span class="icon">✕</span> Spending less than $2K/month on ads</li>
+          <li><span class="icon">✕</span> Not yet running Google Ads at all</li>
+          <li><span class="icon">✕</span> Looking for a generic "tips" document</li>
+          <li><span class="icon">✕</span> Wanting someone to just "run ads" with no oversight</li>
+        </ul>
+      </div>
+      <div class="who-card is-green">
+        <div class="who-label green">Strong fit if you are</div>
+        <ul class="who-list">
+          <li><span class="icon">✓</span> Spending $2K–$50K/month and ROAS feels off</li>
+          <li><span class="icon">✓</span> Unsure if your agency or freelancer is doing the right things</li>
+          <li><span class="icon">✓</span> Scaling spend but CPA keeps climbing</li>
+          <li><span class="icon">✓</span> Running PMax with no visibility into what's actually working</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <div class="who-label red">Common symptoms</div>
+        <ul class="who-list">
+          <li><span class="icon">—</span> ROAS dropped after increasing budget</li>
+          <li><span class="icon">—</span> Tracking looks right but conversions feel wrong</li>
+          <li><span class="icon">—</span> Can't tell which campaigns are actually profitable</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <div class="who-label green">What you walk away with</div>
+        <ul class="who-list">
+          <li><span class="icon">→</span> A clear diagnosis — not a list of generic "tips"</li>
+          <li><span class="icon">→</span> Prioritized actions by impact, not complexity</li>
+          <li><span class="icon">→</span> An operator's honest read — even if it's uncomfortable</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- DELIVERABLES -->
+  <section>
+    <div class="section-header">
+      <div class="section-label">What you receive</div>
+      <h2 class="section-title">Four things.<br><em>All signal, no filler.</em></h2>
+    </div>
+    <div class="deliverables">
+      <div class="deliverable-item">
+        <div class="deliverable-num">01</div>
+        <div class="deliverable-content">
+          <h3>Full Account Diagnostic</h3>
+          <p>I go through your campaign structure, keyword match types, negative keyword gaps, bidding strategy, ad copy quality, and audience signals. Every layer, not just the surface.</p>
+          <span class="tag">Google Ads · Search · Shopping · PMax</span>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-num">02</div>
+        <div class="deliverable-content">
+          <h3>Conversion Tracking Audit</h3>
+          <p>I check whether GA4 and Google Ads are reporting the same thing, whether your conversion actions are firing correctly, and whether you're actually optimizing toward real revenue — or phantom events.</p>
+          <span class="tag">GA4 · GTM · Enhanced Conversions</span>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-num">03</div>
+        <div class="deliverable-content">
+          <h3>Recorded Loom Walkthrough (30–45 min)</h3>
+          <p>A screen-recorded walkthrough of everything I found, explained in plain English. No jargon. Shareable with your team or marketing lead. Yours to keep permanently.</p>
+          <span class="tag">Video · Delivered in 5–7 business days</span>
+        </div>
+      </div>
+      <div class="deliverable-item">
+        <div class="deliverable-num">04</div>
+        <div class="deliverable-content">
+          <h3>Written Action Plan</h3>
+          <p>A prioritized, written list of fixes ranked by expected impact. Not a 40-page PDF that sits in your Downloads folder. A clear, operator-grade action plan you can execute on immediately — with or without me.</p>
+          <span class="tag">Prioritized · Actionable · No fluff</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="section-header">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">How it works,<br><em>step by step.</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-dot">01</div>
+        <div class="step-content">
+          <h3>You pay and submit account access</h3>
+          <p>After payment, you'll receive a short intake form. You grant read-only access to your Google Ads account and GA4 property. No logins shared — standard Google access delegation.</p>
+          <span class="timing">Day 0</span>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">02</div>
+        <div class="step-content">
+          <h3>I audit the account</h3>
+          <p>I go through every layer of your account — structure, tracking, bidding, search terms, audiences, PMax settings, and attribution. This takes 3–5 days of actual operator time.</p>
+          <span class="timing">Days 1–5</span>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">03</div>
+        <div class="step-content">
+          <h3>You receive the Loom + written plan</h3>
+          <p>The recorded walkthrough and written action plan are delivered via email. Everything is self-contained — no call required to understand it.</p>
+          <span class="timing">Day 5–7</span>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">04</div>
+        <div class="step-content">
+          <h3>Optional: 30-min follow-up call</h3>
+          <p>If you have questions after reviewing the audit, you can book a 30-minute follow-up call to walk through any findings together. Included at no extra cost.</p>
+          <span class="timing">After delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PRICING -->
+  <section id="buy">
+    <div class="section-header">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">One price.<br><em>No surprises.</em></h2>
+    </div>
+    <div class="pricing-box">
+      <div class="pricing-top">
+        <div class="pricing-badge">Google Ads Paid Audit</div>
+        <div class="pricing-amount-row">
+          <div class="big-price">$397</div>
+          <div class="big-price-label">one-time</div>
+        </div>
+        <p class="pricing-tagline">
+          If you're spending $2K+/month on Google Ads, one wasted week of ad spend likely costs more than this audit. This pays for itself the first time you stop a budget leak.
+        </p>
+      </div>
+      <div class="pricing-includes">
+        <div class="include-item"><span class="check">✓</span> Full campaign structure audit</div>
+        <div class="include-item"><span class="check">✓</span> Conversion tracking review (GA4 + GTM)</div>
+        <div class="include-item"><span class="check">✓</span> Bidding strategy assessment</div>
+        <div class="include-item"><span class="check">✓</span> Search terms & negative keyword gaps</div>
+        <div class="include-item"><span class="check">✓</span> Performance Max / Shopping audit</div>
+        <div class="include-item"><span class="check">✓</span> 30–45 min recorded Loom walkthrough</div>
+        <div class="include-item"><span class="check">✓</span> Written prioritized action plan</div>
+        <div class="include-item"><span class="check">✓</span> Optional 30-min follow-up call</div>
+        <div class="include-item"><span class="check">✓</span> Delivered in 5–7 business days</div>
+        <div class="include-item"><span class="check">✓</span> $397 credited if you proceed to management</div>
+      </div>
+      <div class="pricing-cta-area">
+        <a href="https://buy.stripe.com/4gM4gzfy0dcO26O3ij4Rq0p">Pay the Audit — $397 →</a>
+        <span class="pricing-note">· Stripe / PayPal / Wise accepted</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-header">
+      <div class="section-label">Common questions</div>
+      <h2 class="section-title">Things people ask<br><em>before buying.</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to be spending a certain amount for this to be worth it?</summary>
+        <div class="faq-a">The minimum where this makes financial sense is around $2,000/month in ad spend. Below that, the audit fee is a disproportionately large percentage of your budget. Above $2K, a single fix — a wasted keyword category, a broken conversion action, a PMax campaign eating your brand budget — typically recovers the $397 within the first week.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What access do you need to my account?</summary>
+        <div class="faq-a">Read-only access to your Google Ads account and your GA4 property. You add me as a Standard User (read-only) in Google Ads and as a Viewer in GA4. I never need your login credentials, and you can remove access immediately after delivery.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What if I'm currently working with an agency or freelancer?</summary>
+        <div class="faq-a">This audit is actually most useful in that situation. It gives you an independent operator's read on what's actually happening in your account — without your current provider knowing. Many clients use it to decide whether to stay, renegotiate, or switch. I'll tell you honestly if the current setup is solid.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is the $397 applied toward ongoing management?</summary>
+        <div class="faq-a">Yes. If we work together after the audit, the $397 is credited in full against the first month of management. It's not a discount — it's credited as a deposit. The audit is a legitimate standalone product, not a bait-and-switch for upselling.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What if I disagree with the findings?</summary>
+        <div class="faq-a">Then we talk about it. I'm not delivering a one-size-fits-all template — I'm giving you my operator read based on what I actually see in your account. If you have context I don't, the follow-up call is the right place to work through it. I'd rather you push back and we get to the truth than have you nod along with something that doesn't fit your business.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How is this different from a free audit other agencies offer?</summary>
+        <div class="faq-a">Free audits are sales documents. They're designed to make your account look broken so you hire the agency. This audit is a paid deliverable — my incentive is to give you accurate findings, not to manufacture urgency. The Loom walkthrough and written action plan are usable whether you hire me or not. Most people who've received both know the difference immediately.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <h2>Your account is either<br>healthy or it isn't.<br><em>Let's find out.</em></h2>
+    <p>5–7 days from now, you'll have a clear picture of where your ad spend is going — and exactly what to do about it.</p>
+    <a href="https://buy.stripe.com/4gM4gzfy0dcO26O3ij4Rq0p" class="btn-primary">Pay the Audit — $397 →</a>
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2026 Hans Lacida · Paid Acquisition Systems Operator</span>
+  <div style="display:flex;gap:24px;">
+    <a href="https://www.hanslacida.com/">Home</a>
+    <a href="https://www.hanslacida.com/results/">Results</a>
+    <a href="https://www.hanslacida.com/playbook/">Playbook</a>
+    <a href="mailto:hello@hanslacida.com">hello@hanslacida.com</a>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
