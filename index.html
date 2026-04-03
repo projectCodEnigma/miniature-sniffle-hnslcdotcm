@@ -1023,29 +1023,6 @@
     padding-left: 12px;
   }
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 900px) {
-    .hero {
-      grid-template-columns: 1fr;
-      padding: 100px 24px 60px;
-      gap: 48px;
-    }
-    .services-grid { grid-template-columns: 1fr; }
-    .results-grid { grid-template-columns: 1fr; }
-    .services-header { grid-template-columns: 1fr; gap: 24px; }
-    .contact-section > section { grid-template-columns: 1fr; gap: 40px; }
-    .playbook-grid { grid-template-columns: 1fr; gap: 32px; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-    nav { padding: 0 24px; }
-    section { padding: 72px 24px; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .nav-cta-mobile-only { display: list-item; }
-    .testimonial-video-wrap { grid-template-columns: 1fr; gap: 40px; }
-    .testimonial-section { padding: 72px 24px; }
-    .testimonial-video-frame { padding-bottom: min(177.78%, 70vh); }
-  }
-
   /* ─── HAMBURGER BUTTON ─── */
   .nav-hamburger {
     display: none;
@@ -1071,23 +1048,14 @@
     transform-origin: center;
   }
 
-  .nav-hamburger.is-open span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-  .nav-hamburger.is-open span:nth-child(2) {
-    opacity: 0;
-    width: 0;
-  }
-  .nav-hamburger.is-open span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
+  .nav-hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+  .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
   /* ─── MOBILE DRAWER ─── */
   .mobile-nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; right: 0; bottom: 0;
     width: min(320px, 88vw);
     background: var(--bg-2);
     border-left: 1px solid var(--border);
@@ -1099,9 +1067,7 @@
     overflow-y: auto;
   }
 
-  .mobile-nav.is-open {
-    transform: translateX(0);
-  }
+  .mobile-nav.is-open { transform: translateX(0); }
 
   .mobile-nav-overlay {
     position: fixed;
@@ -1114,17 +1080,9 @@
     transition: opacity 0.3s ease;
   }
 
-  .mobile-nav-overlay.is-open {
-    opacity: 1;
-    pointer-events: all;
-  }
+  .mobile-nav-overlay.is-open { opacity: 1; pointer-events: all; }
 
-  .mobile-nav-inner {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 0;
-  }
+  .mobile-nav-inner { display: flex; flex-direction: column; height: 100%; padding: 0; }
 
   .mobile-nav-header {
     display: flex;
@@ -1140,8 +1098,7 @@
     background: transparent;
     border: 1px solid var(--border-light);
     color: var(--text-muted);
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     cursor: pointer;
     font-size: 14px;
     display: flex;
@@ -1150,16 +1107,9 @@
     transition: color 0.2s, border-color 0.2s;
   }
 
-  .mobile-nav-close:hover {
-    color: var(--text-primary);
-    border-color: var(--text-secondary);
-  }
+  .mobile-nav-close:hover { color: var(--text-primary); border-color: var(--text-secondary); }
 
-  .mobile-nav-links {
-    list-style: none;
-    padding: 8px 0;
-    flex-shrink: 0;
-  }
+  .mobile-nav-links { list-style: none; padding: 8px 0; flex-shrink: 0; }
 
   .mobile-nav-links li a {
     display: block;
@@ -1174,34 +1124,13 @@
     transition: color 0.2s, background 0.2s;
   }
 
-  .mobile-nav-links li:first-child a {
-    border-top: 1px solid var(--border);
-  }
+  .mobile-nav-links li:first-child a { border-top: 1px solid var(--border); }
+  .mobile-nav-links li a:hover { color: var(--text-primary); background: var(--bg-3); }
+  .mobile-nav-links li a::before { content: '→ '; color: var(--accent); opacity: 0.6; }
 
-  .mobile-nav-links li a:hover {
-    color: var(--text-primary);
-    background: var(--bg-3);
-  }
+  .mobile-nav-ctas { display: flex; flex-direction: column; gap: 12px; padding: 24px; flex-shrink: 0; }
 
-  .mobile-nav-links li a::before {
-    content: '→ ';
-    color: var(--accent);
-    opacity: 0.6;
-  }
-
-  .mobile-nav-ctas {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 24px;
-    flex-shrink: 0;
-  }
-
-  .mobile-nav-footer {
-    margin-top: auto;
-    padding: 20px 24px;
-    border-top: 1px solid var(--border);
-  }
+  .mobile-nav-footer { margin-top: auto; padding: 20px 24px; border-top: 1px solid var(--border); }
 
   .mobile-nav-footer span {
     font-family: var(--mono);
@@ -1210,6 +1139,29 @@
     text-transform: uppercase;
     color: var(--text-muted);
     line-height: 1.8;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 100px 24px 60px;
+      gap: 48px;
+    }
+    .services-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr; }
+    .services-header { grid-template-columns: 1fr; gap: 24px; }
+    .contact-section > section { grid-template-columns: 1fr; gap: 40px; }
+    .playbook-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    nav { padding: 0 24px; }
+    section { padding: 72px 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta-mobile-only { display: list-item; }
+    .testimonial-video-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .testimonial-section { padding: 72px 24px; }
+    .testimonial-video-frame { padding-bottom: min(177.78%, 70vh); }
   }
 
   /* ─── CURSOR DOT ─── */
@@ -1240,8 +1192,8 @@
     <li><a href="/insights/">Insights</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Book Fit Call</a></li>
-    <li class="nav-cta-mobile-only"><a href="https://wa.link/mzywie" class="nav-cta">Chat on WhatsApp</a></li>
-    <li class="nav-cta-mobile-only"><a href="/wechat/" class="nav-cta">Message on WeChat</a></li>
+    <li><a href="https://wa.link/mzywie" class="nav-cta">Chat on WhatsApp</a></li>
+    <li><a href="/wechat/" class="nav-cta">Message on WeChat</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
