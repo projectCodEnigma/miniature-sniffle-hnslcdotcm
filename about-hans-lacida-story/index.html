@@ -3,110 +3,631 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Hans Lacida – Google Ads Strategist for $100K+ Ad Spend</title>
-  <meta name="description" content="Meet Hans Lacida, also known as Hans Media Buyer and PPChans — a Google Ads strategist for $100K+ monthly ad spend. Discover his story, credentials, and proven PPC results."/>
-  <meta name="keywords" content="Hans Lacida, Hans Media Buyer, PPChans, Google Ads strategist for $100k ad spend, Enterprise PPC consultant USA, High-budget Google Ads management expert, Top Google Ads Experts for Enterprise Brands in 2025, Fractional Google Ads Consultant, Google Ads Philippines to USA, Hans Google Ads Expert"/>
+  <title>About Hans Lacida – Paid Acquisition Systems Operator</title>
+  <meta name="description" content="Meet Hans Lacida (aka Hans Media Buyer / PPChans) — a Paid Acquisition Systems Operator with 10+ years running Google Ads for US-based clients spending $5K–$300K+/month."/>
+  <meta name="keywords" content="Hans Lacida, Hans Media Buyer, PPChans, Google Ads strategist, Paid Acquisition Systems Operator, Performance Max, Google Ads Philippines to USA, Enterprise PPC consultant, Fractional Google Ads Consultant"/>
   <meta name="robots" content="index, follow"/>
 
-  <!-- Tailwind CSS CDN for styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0c0d;
+      --surface: #141416;
+      --surface-2: #1c1c1f;
+      --border: rgba(255,255,255,0.07);
+      --border-strong: rgba(255,255,255,0.12);
+      --text: #e8e6e1;
+      --text-muted: #7a7875;
+      --text-dim: #4a4845;
+      --accent: #d4a853;
+      --accent-dim: rgba(212,168,83,0.12);
+      --accent-glow: rgba(212,168,83,0.06);
+      --green: #5a8f6a;
+      --green-dim: rgba(90,143,106,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* Ambient glow */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse at center, rgba(212,168,83,0.04) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      margin-bottom: 72px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 48px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .header-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.04em;
+    }
+
+    .header-sub span {
+      margin: 0 8px;
+      color: var(--text-dim);
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .h2-icon {
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    p {
+      color: var(--text);
+      opacity: 0.85;
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong {
+      color: var(--text);
+      font-weight: 500;
+      opacity: 1;
+    }
+
+    /* ── Stat Cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 22px;
+      transition: border-color 0.2s ease;
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── Result Items ── */
+    .result-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .result-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14.5px;
+      color: var(--text);
+      opacity: 0.85;
+      transition: border-color 0.2s;
+    }
+
+    .result-list li:hover {
+      border-color: rgba(212,168,83,0.2);
+    }
+
+    .result-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Vertical grid list ── */
+    .two-col-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      list-style: none;
+    }
+
+    @media (max-width: 540px) {
+      .two-col-list { grid-template-columns: 1fr; }
+    }
+
+    .two-col-list li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--surface);
+    }
+
+    .two-col-list li strong {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+
+    /* ── Brands ── */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px;
+    }
+
+    .brand-card {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+    }
+
+    .brand-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .brand-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── Testimonials ── */
+    .testimonial {
+      border-left: 2px solid var(--accent);
+      padding: 20px 24px;
+      background: var(--accent-glow);
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .testimonial footer {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Verticals ── */
+    .vertical-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .vertical-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.8;
+    }
+
+    .vtag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-section h2 {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 8px;
+    }
+
+    .cta-lead {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+      .cta-grid { grid-template-columns: 1fr; }
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0c0c0d;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border-strong);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      opacity: 1;
+      margin: 0;
+    }
+
+    .footer-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ── Fade in on load ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-wrapper > * {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .page-wrapper > *:nth-child(1) { animation-delay: 0.05s; }
+    .page-wrapper > *:nth-child(2) { animation-delay: 0.12s; }
+    .page-wrapper > *:nth-child(3) { animation-delay: 0.18s; }
+    .page-wrapper > *:nth-child(4) { animation-delay: 0.22s; }
+    .page-wrapper > *:nth-child(5) { animation-delay: 0.26s; }
+    .page-wrapper > *:nth-child(6) { animation-delay: 0.30s; }
+    .page-wrapper > *:nth-child(7) { animation-delay: 0.34s; }
+    .page-wrapper > *:nth-child(8) { animation-delay: 0.38s; }
+    .page-wrapper > *:nth-child(9) { animation-delay: 0.42s; }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans leading-relaxed">
+<body>
 
-  <div class="max-w-4xl mx-auto px-4 py-10">
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold text-blue-800 mb-2">About Hans Lacida – Google Ads Strategist Behind $300K+/mo Campaigns</h1>
-      <p class="text-gray-600 italic">aka Hans Media Buyer · PPChans</p>
-    </header>
+<div class="page-wrapper">
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-2">🚀 Meet Hanzel Lacida (Hans Media Buyer, PPChans)</h2>
-      <p class="mb-2">I go by a few names online — <strong>Hans Lacida</strong>, <strong>Hans Media Buyer</strong>, and <strong>PPChans</strong>. Regardless of the name, my mission remains the same: help businesses maximize profits with Google Ads using data, not guesswork.</p>
-      <p>I’ve managed over <strong>$10 million in Google Ads spend</strong> and scaled brands and agencies in the U.S., Australia, and the Philippines — all through smart, profitable paid search strategy.</p>
-    </section>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="eyebrow">About</div>
+    <h1>Paid Acquisition<br>Systems <em>Operator</em></h1>
+    <p class="header-sub">
+      Hans Lacida
+      <span>·</span>
+      Hans Media Buyer
+      <span>·</span>
+      PPChans
+    </p>
+  </header>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-2">💼 Career Highlights & Million-Dollar Results</h2>
-      <ul class="list-disc ml-6 space-y-1">
-        <li>Reduced CPA by 50% on a $300K/month healthcare account</li>
-        <li>Generated $265K from A$35,600 ad spend for a Shopify brand (744% ROAS)</li>
-        <li>Managed $300K+/mo for Search, PMax, and Shopping campaigns</li>
-        <li>Set up Looker Studio dashboards and GA4 tracking for U.S. agencies</li>
-      </ul>
-    </section>
+  <!-- Intro -->
+  <section>
+    <h2><span class="h2-icon">01</span> Who I Am</h2>
+    <p>I'm <strong>Hanzel Lacida</strong> — a Google Ads specialist and paid acquisition systems operator based in the Philippines, building and running performance infrastructure for US-based clients. I've been inside Google Ads for over a decade, including time as a <strong>Google Account Strategist</strong> on the inside.</p>
+    <p>I don't just run ads. I architect the full acquisition system — campaign structure, conversion tracking, first-party data, and reporting — so that every dollar has a clear job and a measurable return. My operating entity is <strong>Zeldigital</strong>, and my primary web presence is at <strong>hanslacida.com</strong>.</p>
+    <p>I work best with founders and operators spending <strong>$5K–$300K+/month</strong> on Google Ads who need a senior operator — not an account manager who just adjusts bids.</p>
+  </section>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-2">🌐 Who I Help</h2>
-      <ul class="list-disc ml-6 space-y-1">
-        <li>U.S. and international digital agencies</li>
-        <li>eCommerce stores scaling past $50K/month</li>
-        <li>SaaS companies needing ROI-focused acquisition</li>
-        <li>Service businesses that need low-cost leads</li>
-      </ul>
-    </section>
+  <!-- Stats -->
+  <section>
+    <h2><span class="h2-icon">02</span> By the Numbers</h2>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years running Google Ads professionally</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$10M+</div>
+        <div class="stat-label">Total Google Ads spend managed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$300K</div>
+        <div class="stat-label">Largest monthly budget managed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">744%</div>
+        <div class="stat-label">ROAS — $265K from A$35.6K spend</div>
+      </div>
+    </div>
+  </section>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-2">📍 My Brands & Business Entities</h2>
-      <ul class="list-disc ml-6 space-y-1">
-        <li><strong>Zeldigital</strong> – Strategy consulting for Google Ads</li>
-        <li><strong>U.S. LLC (Anonymized)</strong> – For compliance and invoicing</li>
-        <li><strong>Hans Media Buyer</strong> – Blog and portfolio</li>
-        <li><strong>PPChans</strong> – Community & PPC-focused content</li>
-      </ul>
-    </section>
+  <!-- Results -->
+  <section>
+    <h2><span class="h2-icon">03</span> Proven Results</h2>
+    <ul class="result-list">
+      <li>Reduced CPA by 50% on a $300K/month healthcare account without sacrificing volume</li>
+      <li>Generated $265K revenue from A$35,600 ad spend for a Shopify brand — 744% ROAS</li>
+      <li>Built full tracking infrastructure (GA4, server-side GTM, enhanced conversions) for US agencies running $100K+/month</li>
+      <li>Structured and optimized Performance Max campaigns in eCommerce, healthcare, and B2B SaaS verticals</li>
+      <li>Created client-facing Looker Studio dashboards that replaced agency reporting calls entirely</li>
+      <li>Designed acquisition systems that convert audit clients into long-term retained accounts</li>
+    </ul>
+  </section>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-2">💬 What Clients Say</h2>
-      <blockquote class="border-l-4 border-blue-500 pl-4 italic mb-4">
-        “Hans made our $100K/month budget actually work. Real data, clean dashboards, and results.”
-        <footer class="text-sm text-gray-500 mt-1">– U.S. Agency Owner</footer>
-      </blockquote>
-      <blockquote class="border-l-4 border-blue-500 pl-4 italic">
-        “We’ve worked with big-name agencies — but Hans outperformed them. Transparent, strategic, sharp.”
-        <footer class="text-sm text-gray-500 mt-1">– eCommerce CEO</footer>
-      </blockquote>
-    </section>
+  <!-- Verticals -->
+  <section>
+    <h2><span class="h2-icon">04</span> Verticals I Operate In</h2>
+    <ul class="vertical-list">
+      <li><span class="vtag">eCommerce</span> Shopping, PMax asset groups, feed optimization, seasonal scaling</li>
+      <li><span class="vtag">Healthcare</span> HIPAA-compliant structure, lead quality tracking, compliance-safe targeting</li>
+      <li><span class="vtag">B2B SaaS</span> Pipeline attribution, long sales cycle tracking, CRM-to-Google Ads integration</li>
+      <li><span class="vtag">Legal / Finance</span> High-intent search, local service ads, aggressive CPA management</li>
+      <li><span class="vtag">Home Services</span> Local campaigns, call tracking, demand gen at scale</li>
+    </ul>
+  </section>
 
-    <section class="mb-12">
-  <h2 class="text-2xl font-semibold text-gray-900 mb-4">🤝 Ready to Work Together?</h2>
-  <p class="mb-4">If you're looking for a:</p>
-  <ul class="list-disc ml-6 space-y-1 mb-4">
-    <li>Google Ads strategist for $100K+ ad spend</li>
-    <li>Enterprise PPC consultant in the USA</li>
-    <li>High-budget Google Ads management expert</li>
-    <li>Top Google Ads expert for enterprise brands in 2025</li>
-  </ul>
-  <p class="mb-4">Curious about rates and deliverables? You can also explore <a href="https://paxhl.com/pricing" class="text-blue-600 underline hover:text-blue-800">my service pricing and subscription plans</a> to see what fits your team best.</p>
-  <div class="flex flex-col sm:flex-row flex-wrap gap-4">
-    <a href="https://tidycal.com/zeldigital/discovery-call" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-center font-medium">📅 Book a Discovery Call</a>
-    <a href="https://beacons.ai/hanslacida/portfolio" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg text-center font-medium">📖 View Portfolio</a>
-    <a href="https://zel.digital/#solutions" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg text-center font-medium">💼 See Services</a>
-    <a href="https://paxhl.com/pricing" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg text-center font-medium">💰 View My Pricing & Plans</a>
+  <!-- What I Build -->
+  <section>
+    <h2><span class="h2-icon">05</span> What I Build</h2>
+    <ul class="two-col-list">
+      <li><strong>Campaign Architecture</strong>Search, Shopping, PMax — structured to work with AI bidding</li>
+      <li><strong>Conversion Tracking</strong>Server-side GTM, GA4, enhanced conversions, OCI</li>
+      <li><strong>First-Party Data Systems</strong>Customer Match, audience layering, consent mode</li>
+      <li><strong>Client Reporting</strong>Looker Studio dashboards built for founders, not analysts</li>
+      <li><strong>Productized Audits</strong>Paid audit entry points that convert to retained management</li>
+      <li><strong>White-Label Fulfillment</strong>Agency back-end systems without the overhead</li>
+    </ul>
+  </section>
+
+  <!-- Brands -->
+  <section>
+    <h2><span class="h2-icon">06</span> Operating Under</h2>
+    <div class="brand-grid">
+      <div class="brand-card">
+        <div class="brand-name">Zeldigital</div>
+        <div class="brand-desc">Primary operating entity — Google Ads strategy consulting</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">Hans Media Buyer</div>
+        <div class="brand-desc">Portfolio, blog, and case study content</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">PPChans</div>
+        <div class="brand-desc">Community presence and PPC-focused content</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">US LLC</div>
+        <div class="brand-desc">Invoicing and compliance for US-based clients</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <h2><span class="h2-icon">07</span> What Clients Say</h2>
+    <div class="testimonial">
+      <p>"Hans made our $100K/month budget actually work. Real data, clean dashboards, and results we could see week over week."</p>
+      <footer>— US Agency Owner</footer>
+    </div>
+    <div class="testimonial">
+      <p>"We've worked with big-name agencies — but Hans outperformed all of them. Transparent, strategic, and technically sharp."</p>
+      <footer>— eCommerce CEO</footer>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2><span class="h2-icon">08</span> Work Together</h2>
+    <p class="cta-lead">If you're spending $5K+/month on Google Ads and not sure where it's going — start with an audit.</p>
+    <div class="cta-grid">
+      <a href="/#contact" target="_blank" class="btn btn-primary">Book a Audit Call</a>
+      <a href="/results" target="_blank" class="btn btn-secondary">Results</a>
+      <a href="/services" target="_blank" class="btn btn-secondary">See Services</a>
+      <a href="/pricing" target="_blank" class="btn btn-secondary">Pricing & Plans</a>
+    </div>
   </div>
-</section>
 
-  </div>
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p><span class="footer-dot"></span>Available for new engagements · 2026</p>
+    <p>hanslacida.com</p>
+  </footer>
 
-  <!-- SEO Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Hans Lacida",
-    "alternateName": ["Hanzel Lacida", "Hans Media Buyer", "PPChans"],
-    "url": "https://www.hanslacida.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/hanslacida",
-      "https://www.hansmediabuyer.com"
-    ],
-    "jobTitle": "Google Ads Strategist & Fractional PPC Consultant",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Zeldigital"
-    },
-    "description": "Hans Lacida (aka Hans Media Buyer / PPChans) is a Google Ads strategist managing $100K–$300K+ ad budgets for U.S. agencies and enterprise brands.",
-    "knowsAbout": ["Google Ads", "Performance Marketing", "PPC Strategy", "GA4", "Looker Studio", "Ecommerce Advertising", "SaaS Growth"]
-  }
-  </script>
+</div>
+
+<!-- SEO Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hans Lacida",
+  "alternateName": ["Hanzel Lacida", "Hans Media Buyer", "PPChans"],
+  "url": "https://www.hanslacida.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/hanslacida",
+    "https://www.hansmediabuyer.com"
+  ],
+  "jobTitle": "Paid Acquisition Systems Operator",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Zeldigital"
+  },
+  "description": "Hans Lacida (aka Hans Media Buyer / PPChans) is a Google Ads specialist and paid acquisition systems operator with 10+ years of experience managing $5K–$300K+/month budgets for US-based clients. Former Google Account Strategist.",
+  "knowsAbout": ["Google Ads", "Performance Max", "Conversion Tracking", "Server-Side Tagging", "GA4", "Looker Studio", "First-Party Data", "eCommerce Advertising", "B2B SaaS Growth", "Healthcare PPC"]
+}
+</script>
+
 </body>
 </html>
