@@ -5,14 +5,8 @@
     window.TallyConfig = {
       "formId": "D41GoR",
       "popup": {
-        "emoji": {
-          "text": "👋",
-          "animation": "wave"
-        },
-        "open": {
-          "trigger": "scroll",
-          "scrollPercent": 100
-        },
+        "emoji": { "text": "👋", "animation": "wave" },
+        "open": { "trigger": "scroll", "scrollPercent": 100 },
         "overlay": true,
         "autoClose": 5000,
         "doNotShowAfterSubmit": true,
@@ -21,183 +15,930 @@
     };
   </script>
   <script async src="https://tally.so/widgets/embed.js"></script>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hans Lacida – Paid Acquisition Systems Operator</title>
   <meta name="description" content="Paid Acquisition Systems Operator helping US founders scale ecommerce and lead generation through structured demand capture systems, Google Ads architecture, and full-stack technical infrastructure." />
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "theme-blue": "#1a3cd4"
-          }
-        }
-      }
-    }
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet">
-</head>
-<body class="font-[Lato] bg-gray-50 text-gray-900 antialiased">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-<!-- HEADER -->
-<header class="bg-white border-b">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/images/hanslacida_favicon.jpg" alt="HansLacida" class="h-9 w-9 rounded-lg object-cover" />
+  <style>
+    :root {
+      --blue: #1a3cd4;
+      --blue-dim: #132da0;
+      --ink: #0e0f14;
+      --slate: #1c1e2a;
+      --mist: #f5f5f2;
+      --rule: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand-name {
+      font-family: 'Syne', sans-serif;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245,245,242,0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--ink);
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.02em;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    nav a {
+      font-size: 12px;
+      font-weight: 500;
+      color: #555;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.18s;
+    }
+    nav a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--blue) !important;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      letter-spacing: 0.01em;
+      transition: opacity 0.18s !important;
+    }
+    .nav-cta:hover { opacity: 0.88 !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px 72px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 20px; }
+      nav { display: none; }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .hero-lead {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+      font-weight: 300;
+      max-width: 540px;
+      margin-bottom: 36px;
+    }
+
+    .hero-lead strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 600px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .stat-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 16px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover::after { transform: scaleX(1); }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #888;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+
+    /* CTA buttons */
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: #fff;
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary:hover { background: var(--blue-dim); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--ink);
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.15);
+      letter-spacing: 0.01em;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-secondary:hover { background: #fff; border-color: rgba(0,0,0,0.25); transform: translateY(-1px); }
+
+    /* ─── OPERATOR ASIDE ─── */
+    .operator-aside {
+      background: var(--slate);
+      border-radius: 20px;
+      padding: 28px;
+      color: #e0e2ea;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .operator-aside::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(26,60,212,0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .aside-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b7aaa;
+      margin-bottom: 14px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .aside-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .aside-body {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #a0a8c0;
+      font-weight: 300;
+    }
+
+    .aside-body strong {
+      color: #d8dbe8;
+      font-weight: 500;
+    }
+
+    .aside-body p + p { margin-top: 12px; }
+
+    .aside-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 11px;
+      color: #5a647a;
+      line-height: 1.6;
+    }
+
+    /* ─── OPERATOR EDGE ─── */
+    .section-edge {
+      background: #fff;
+      padding: 80px 0;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .section-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      opacity: 0.5;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+    }
+
+    .section-lead {
+      font-size: 15px;
+      color: #666;
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 40px;
+      margin-top: -20px;
+    }
+
+    /* Edge grid */
+    .edge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: rgba(0,0,0,0.06);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 700px) {
+      .edge-grid { grid-template-columns: 1fr; }
+    }
+
+    .edge-item {
+      background: #fff;
+      padding: 28px;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .edge-item:hover { background: #fafafa; }
+
+    .edge-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(26,60,212,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .edge-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--blue);
+    }
+
+    .edge-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .edge-desc {
+      font-size: 13px;
+      color: #666;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* ─── WHAT I BUILD ─── */
+    .section-build {
+      padding: 80px 0;
+      background: var(--mist);
+    }
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 800px) {
+      .build-grid { grid-template-columns: 1fr; }
+    }
+
+    .build-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 18px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+
+    .build-card:hover {
+      box-shadow: 0 12px 40px rgba(26,60,212,0.08);
+      transform: translateY(-3px);
+    }
+
+    .build-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+      opacity: 0.45;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .build-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 10px;
+      letter-spacing: -0.025em;
+    }
+
+    .build-desc {
+      font-size: 13.5px;
+      color: #666;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* ─── PROCESS STRIP ─── */
+    .process-strip {
+      background: var(--slate);
+      padding: 64px 0;
+    }
+
+    .process-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #5a6690;
+      margin-bottom: 32px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 700px) {
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .process-step {
+      background: var(--slate);
+      padding: 24px 20px;
+      position: relative;
+    }
+
+    .process-step-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: rgba(26,60,212,0.3);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .process-step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #c8cce0;
+      margin-bottom: 6px;
+    }
+
+    .process-step-desc {
+      font-size: 12px;
+      color: #6b7490;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ─── CONTACT ─── */
+    .section-contact {
+      background: var(--ink);
+      padding: 96px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-contact::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(26,60,212,0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media (max-width: 760px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    .contact-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .contact-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .contact-body {
+      font-size: 14px;
+      color: #6b7a9a;
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .contact-detail-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(26,60,212,0.18);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg {
+      width: 14px;
+      height: 14px;
+      color: #6b8aff;
+    }
+
+    .contact-detail-text {
+      font-size: 13px;
+      color: #8898c0;
+      font-weight: 300;
+    }
+
+    .contact-detail-text a {
+      color: #b8c4e8;
+      text-decoration: none;
+    }
+    .contact-detail-text a:hover { color: #fff; }
+
+    .contact-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.05);
+      color: #6b7a9a;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 5px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080a0f;
+      padding: 24px;
+      text-align: center;
+      font-size: 11px;
+      color: #2e3450;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+    .fade-up-d4 { animation-delay: 0.4s; }
+    .fade-up-d5 { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo-wrap">
+      <img src="/images/hanslacida_favicon.jpg" alt="Hans Lacida" class="logo-img" />
       <div>
-        <div class="text-base font-extrabold">Hans Lacida</div>
-        <div class="text-[11px] text-gray-500">Paid Acquisition Systems Operator</div>
+        <div class="brand-name">Hans Lacida</div>
+        <div class="brand-sub">Paid Acquisition Systems Operator</div>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-600">
-      <a href="/results/" class="hover:text-theme-blue">Results</a>
-      <a href="/playbook/" class="hover:text-theme-blue">Playbook</a>
-      <a href="/insights/" class="hover:text-theme-blue">Insights</a>
-      <a href="#contact" class="hover:text-theme-blue">Contact</a>
+    <nav style="display:flex; align-items:center; gap:24px;">
+      <a href="/results/">Results</a>
+      <a href="/playbook/">Playbook</a>
+      <a href="/insights/">Insights</a>
+      <a href="#contact" class="nav-cta">Book a Call</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO (slightly refined for flow) -->
-<section class="max-w-6xl mx-auto px-4 py-16">
-  <div class="grid lg:grid-cols-[3fr,2fr] gap-10 items-start">
+<!-- ─── HERO ─── -->
+<section style="background: var(--mist);">
+  <div class="hero">
     <div>
-      <p class="text-xs font-semibold tracking-wide uppercase text-theme-blue mb-2">Full Operator Profile</p>
-      <h1 class="text-3xl sm:text-4xl font-extrabold mb-3">Paid Acquisition Systems Operator</h1>
-      <p class="text-base text-gray-700 mb-6">
-        I build <strong>paid acquisition systems</strong> that compound over time for US founders scaling ecommerce and high-value lead generation. 
+      <div class="eyebrow fade-up">Full Operator Profile</div>
+      <h1 class="fade-up fade-up-d1">Paid Acquisition<br><em>Systems</em> Operator</h1>
+      <p class="hero-lead fade-up fade-up-d2">
+        I build <strong>paid acquisition systems</strong> that compound over time for US founders scaling ecommerce and high-value lead generation.
         Structured demand capture, clean Google Ads architecture, and end-to-end performance infrastructure — all managed by one operator.
       </p>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 text-sm">
-        <div class="bg-white p-4 rounded-xl shadow-sm border">
-          <div class="text-lg font-bold">$10M+</div>
-          <div class="text-[11px] text-gray-500">Ad Spend Managed</div>
+      <div class="stats-row fade-up fade-up-d3">
+        <div class="stat-card">
+          <div class="stat-num">$10M+</div>
+          <div class="stat-label">Ad Spend Managed</div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-sm border">
-          <div class="text-lg font-bold">$550M+</div>
-          <div class="text-[11px] text-gray-500">Client Revenue Generated</div>
+        <div class="stat-card">
+          <div class="stat-num">$550M+</div>
+          <div class="stat-label">Client Revenue Generated</div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-sm border">
-          <div class="text-lg font-bold">70×</div>
-          <div class="text-[11px] text-gray-500">Peak ROAS</div>
+        <div class="stat-card">
+          <div class="stat-num">70×</div>
+          <div class="stat-label">Peak ROAS Achieved</div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-sm border">
-          <div class="text-lg font-bold">10+ yrs</div>
-          <div class="text-[11px] text-gray-500">Experience</div>
+        <div class="stat-card">
+          <div class="stat-num">10+ yrs</div>
+          <div class="stat-label">Deep Experience</div>
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-3">
-        <a href="/results/" class="inline-flex bg-theme-blue text-white px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition">
+      <div class="cta-row fade-up fade-up-d4">
+        <a href="/results/" class="btn-primary">
           View Case Studies
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#contact" class="inline-flex border border-gray-300 text-gray-800 px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white transition">
+        <a href="#contact" class="btn-secondary">
           Book Fit Call
         </a>
       </div>
     </div>
 
-    <!-- UPDATED OPERATOR DIFFERENCE SECTION -->
-    <aside class="bg-white rounded-2xl border shadow-sm p-6 text-sm text-gray-700">
-      <h2 class="font-semibold mb-3">The Real Operator Difference</h2>
-      <p class="mb-4">
-        Most Google Ads specialists are good at running campaigns. 
-        <strong>I combine deep systems expertise with a strong business mindset</strong> — building acquisition infrastructure that actually compounds over time and connects directly to revenue and margins.
-      </p>
-      <p class="mb-4">
-        Think of me as your long-term guide in the paid acquisition journey. 
-        Instead of constantly rehiring and retraining the next specialist when things change, you get one operator who understands both the technical architecture and the business realities behind scaling profitably.
-      </p>
-      <p class="text-xs text-gray-500">
-        This approach means lower friction, fewer expensive mistakes, and better long-term results — without costing you more in the long run.
-      </p>
+    <!-- Operator Aside -->
+    <aside class="operator-aside fade-up fade-up-d2">
+      <div class="aside-label">The Operator Difference</div>
+      <div class="aside-title">One operator who owns the whole chain</div>
+      <div class="aside-body">
+        <p>Most Google Ads specialists are good at running campaigns. <strong>I combine deep systems expertise with a strong business mindset</strong> — building acquisition infrastructure that compounds over time and connects directly to revenue and margins.</p>
+        <p>Think of me as your long-term guide. Instead of constantly rehiring specialists when things change, you get one operator who understands both the technical architecture and the business realities behind scaling profitably.</p>
+      </div>
+      <div class="aside-note">
+        Lower friction, fewer expensive mistakes, better long-term results — without costing more in the long run.
+      </div>
     </aside>
   </div>
 </section>
 
-<!-- MY OPERATOR EDGE -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-3">My Full-Stack Operator Edge</h2>
-    <p class="text-gray-600 mb-8 max-w-2xl">
-      Beyond core Google Ads mastery, I bring technical depth that allows me to own the entire demand-to-conversion chain.
-    </p>
+<!-- ─── FULL-STACK OPERATOR EDGE ─── -->
+<section class="section-edge">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Full-Stack Operator Edge</h2>
+    </div>
+    <p class="section-lead">Beyond core Google Ads mastery, I bring technical depth that lets me own the entire demand-to-conversion chain.</p>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-semibold text-lg mb-1">Web Development & Infrastructure</h3>
-          <p class="text-sm text-gray-600">Hands-on creation of fast, conversion-focused landing pages using HTML, Tailwind CSS, and JavaScript. Proficient with Namecheap domain setup, DNS configuration, and GitHub hosting/navigation.</p>
+    <div class="edge-grid">
+      <div class="edge-item">
+        <div class="edge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg mb-1">AI & LLM Systems</h3>
-          <p class="text-sm text-gray-600">Daily operator with ChatGPT, Claude, Grok, Perplexity, Cursor, Bolt.new, and Meta AI for research, creative iteration, predictive modeling, and rapid optimization.</p>
+        <div class="edge-title">Web Dev & Infrastructure</div>
+        <div class="edge-desc">Hands-on creation of fast, conversion-focused landing pages using HTML, Tailwind CSS, and JavaScript. Proficient with Namecheap, DNS configuration, and GitHub hosting.</div>
+      </div>
+      <div class="edge-item">
+        <div class="edge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
         </div>
+        <div class="edge-title">AI & LLM Systems</div>
+        <div class="edge-desc">Daily operator with ChatGPT, Claude, Grok, Perplexity, Cursor, Bolt.new, and Meta AI for research, creative iteration, predictive modeling, and rapid optimization.</div>
+      </div>
+      <div class="edge-item">
+        <div class="edge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2 20h20M4 20V10l8-6 8 6v10"/>
+          </svg>
+        </div>
+        <div class="edge-title">Research & Analytical Depth</div>
+        <div class="edge-desc">Author of 18+ public working papers on Zenodo, including the Paid Ads Failure Index, e-commerce churn & LTV prediction models, and AI-driven campaign architecture research.</div>
+      </div>
+      <div class="edge-item">
+        <div class="edge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <div class="edge-title">Funnels & Automation</div>
+        <div class="edge-desc">Proficient with GoHighLevel (GHL) for drag-and-drop funnel and CRM setup, lead routing, and automation — connecting ads directly to follow-up systems.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT I BUILD ─── -->
+<section class="section-build">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>What I Build</h2>
+    </div>
+
+    <div class="build-grid">
+      <div class="build-card">
+        <div class="build-number">01</div>
+        <div class="build-title">Demand Capture Systems</div>
+        <div class="build-desc">Structured Google Ads architecture — Search, Shopping, Performance Max, YouTube, Local — designed to capture high-intent demand efficiently and at the right cost.</div>
+      </div>
+      <div class="build-card">
+        <div class="build-number">02</div>
+        <div class="build-title">Acquisition Infrastructure</div>
+        <div class="build-desc">End-to-end tracking via GA4 + GTM, attribution frameworks, optimization systems, and executive reporting that connect ad spend directly to actual revenue.</div>
+      </div>
+      <div class="build-card">
+        <div class="build-number">03</div>
+        <div class="build-title">Channel Expansion</div>
+        <div class="build-desc">Seamless scaling into Amazon Ads, TikTok Ads, and programmatic channels once core Google Ads systems are fully optimized and compounding.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS STRIP ─── -->
+<section class="process-strip">
+  <div class="section-inner">
+    <div class="process-label">How it works</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-num">1</div>
+        <div class="process-step-title">Fit Call</div>
+        <div class="process-step-desc">15-minute review of your current acquisition setup and goals. No fluff, just signal.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">2</div>
+        <div class="process-step-title">Audit & Architecture</div>
+        <div class="process-step-desc">Deep-dive into what's working, what's leaking, and what the system should look like.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">3</div>
+        <div class="process-step-title">Build & Deploy</div>
+        <div class="process-step-desc">Campaign architecture, tracking infrastructure, and landing pages — built right from the start.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">4</div>
+        <div class="process-step-title">Compound & Scale</div>
+        <div class="process-step-desc">Ongoing optimization across channels as the system matures and data accumulates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="section-contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-eyebrow">Ready to talk systems?</div>
+        <h2 class="contact-headline">Let's see if we're a strong match</h2>
+        <p class="contact-body">
+          15-minute fit call to review your current acquisition setup. You'll receive actionable insights regardless of next steps — no pitch, no pressure.
+        </p>
+        <a href="https://tidycal.com/hanslacida/google-ads-execution-fit-call" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Book 15-Min Fit Call
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-semibold text-lg mb-1">Research & Analytical Depth</h3>
-          <p class="text-sm text-gray-600">Author of 18+ public working papers on Zenodo, including The Paid Ads Failure Index, e-commerce churn & LTV prediction models, and AI-driven campaign architecture research.</p>
+      <div class="contact-card">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <a href="mailto:hello@hanslacida.com">hello@hanslacida.com</a>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg mb-1">Funnels & Automation</h3>
-          <p class="text-sm text-gray-600">Proficient with GoHighLevel (GHL) for drag-and-drop funnel and CRM setup, lead routing, and basic automation — connecting ads directly to follow-up systems.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <a href="https://hanslacida.com" target="_blank">hanslacida.com</a>
+          </div>
+        </div>
+        <div class="contact-tags">
+          <span class="tag">US LLC Ready</span>
+          <span class="tag">Direct Operator Access</span>
+          <span class="tag">$5K+ Monthly Ad Spend</span>
+          <span class="tag">Ecommerce & Lead Gen</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT I DO -->
-<section class="py-16">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6">What I Build</h2>
-    <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
-      <div class="p-6 border rounded-2xl bg-white">
-        <h3 class="font-semibold mb-2">Demand Capture Systems</h3>
-        <p>Structured Google Ads architecture (Search, Shopping, Performance Max, YouTube, Local) designed to capture high-intent demand efficiently.</p>
-      </div>
-      <div class="p-6 border rounded-2xl bg-white">
-        <h3 class="font-semibold mb-2">Acquisition Infrastructure</h3>
-        <p>End-to-end tracking (GA4 + GTM), attribution, optimization frameworks, and executive reporting that connect ad spend to actual revenue.</p>
-      </div>
-      <div class="p-6 border rounded-2xl bg-white">
-        <h3 class="font-semibold mb-2">Channel Expansion</h3>
-        <p>Seamless scaling into Amazon Ads, TikTok Ads, and programmatic once core Google Ads systems are optimized.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT CTA -->
-<section id="contact" class="bg-gray-900 text-gray-100 py-16">
-  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-[3fr,2fr] gap-10 items-center">
-    <div>
-      <h2 class="text-2xl font-bold mb-3">Ready for an Operator Conversation?</h2>
-      <p class="mb-5 text-sm text-gray-300">
-        15-minute fit call to review your current acquisition setup and determine if we’re a strong match. 
-        You’ll receive actionable insights regardless of next steps.
-      </p>
-      <a href="https://tidycal.com/hanslacida/google-ads-execution-fit-call" target="_blank" rel="noopener noreferrer" 
-         class="inline-flex bg-theme-blue text-white px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition">
-        Book 15-Min Fit Call
-      </a>
-    </div>
-    <div class="text-sm">
-      <p class="mb-2">Email: <a href="mailto:hello@hanslacida.com" class="text-gray-200 hover:underline">hello@hanslacida.com</a></p>
-      <p class="text-xs text-gray-400">US LLC ready • Direct operator access • Targeting US founders with $5K+ monthly ad spend</p>
-    </div>
-  </div>
-</section>
+<!-- ─── FOOTER ─── -->
+<footer>
+  © 2025 Hans Lacida · Paid Acquisition Systems Operator · All rights reserved
+</footer>
 
 </body>
 </html>
