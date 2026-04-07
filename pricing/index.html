@@ -1,0 +1,199 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.page { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 0.75rem; }
+.hero-title { font-size: 32px; font-weight: 500; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 0.75rem; }
+.hero-title em { font-style: italic; color: var(--color-text-secondary); }
+.hero-sub { font-size: 15px; color: var(--color-text-secondary); line-height: 1.7; max-width: 560px; }
+.divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 2rem 0; }
+.section-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1.25rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 16px; margin-bottom: 2rem; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem; position: relative; }
+.card.featured { border: 2px solid #378ADD; }
+.badge { display: inline-block; background: var(--color-background-info); color: var(--color-text-info); font-size: 11px; padding: 3px 10px; border-radius: var(--border-radius-md); margin-bottom: 1rem; }
+.tier-name { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 0.4rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.price-main { font-size: 28px; font-weight: 500; color: var(--color-text-primary); line-height: 1; }
+.price-sub { font-size: 13px; color: var(--color-text-secondary); margin-top: 4px; line-height: 1.5; }
+.or-rule { font-size: 11px; color: var(--color-text-tertiary); margin: 0.5rem 0; text-transform: uppercase; letter-spacing: 0.08em; }
+.price-alt { font-size: 18px; font-weight: 500; color: var(--color-text-primary); }
+.features { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 8px; }
+.feat { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: var(--color-border-secondary); flex-shrink: 0; margin-top: 7px; }
+.dot.included { background: #1D9E75; }
+.cta-btn { display: block; margin-top: 1.5rem; padding: 10px; text-align: center; font-size: 13px; font-weight: 500; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); color: var(--color-text-primary); background: transparent; cursor: pointer; transition: background 0.15s; }
+.cta-btn:hover { background: var(--color-background-secondary); }
+.cta-btn.primary { background: var(--color-text-primary); color: var(--color-background-primary); border-color: var(--color-text-primary); }
+.cta-btn.primary:hover { opacity: 0.88; }
+.calc-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.5rem; margin-bottom: 2rem; }
+.calc-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; }
+.calc-label { font-size: 13px; color: var(--color-text-secondary); min-width: 130px; }
+input[type=range] { flex: 1; }
+.calc-val { font-size: 14px; font-weight: 500; color: var(--color-text-primary); min-width: 80px; text-align: right; }
+.result-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
+.result-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem; }
+.result-lbl { font-size: 11px; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.result-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+.result-note { font-size: 12px; color: var(--color-text-tertiary); margin-top: 4px; }
+.faq { display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-top: 0.5px solid var(--color-border-tertiary); padding: 1rem 0; }
+.faq-q { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.5rem; }
+.faq-a { font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; }
+.bottom-cta { text-align: center; padding: 2rem 0 0.5rem; }
+.bottom-title { font-size: 20px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.5rem; }
+.bottom-sub { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+.btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.pill-tag { display: inline-block; font-size: 11px; color: var(--color-text-tertiary); background: var(--color-background-secondary); padding: 4px 10px; border-radius: 99px; margin-top: 1rem; }
+</style>
+
+<div class="page">
+
+  <p class="eyebrow">HansLacida · Zeldigital</p>
+  <h1 class="hero-title">Straightforward pricing.<br><em>No retainer surprises.</em></h1>
+  <p class="hero-sub">One operator. One fee model. Built for U.S. brands spending $5,000+/month on Google Ads who want outcomes — not hours.</p>
+
+  <hr class="divider">
+
+  <p class="section-label">Engagement tiers</p>
+
+  <div class="cards">
+
+    <div class="card">
+      <p class="tier-name">Core</p>
+      <p class="price-main">$1,500</p>
+      <p class="price-sub">/ month flat</p>
+      <p class="or-rule">— or —</p>
+      <p class="price-alt">10% of ad spend</p>
+      <p class="price-sub">Whichever is higher · $5K min spend</p>
+      <div class="features">
+        <div class="feat"><span class="dot included"></span>Campaign architecture & setup</div>
+        <div class="feat"><span class="dot included"></span>GA4 + GTM conversion tracking</div>
+        <div class="feat"><span class="dot included"></span>Weekly performance reviews</div>
+        <div class="feat"><span class="dot included"></span>Direct strategist access</div>
+        <div class="feat"><span class="dot included"></span>Ongoing A/B testing & optimization</div>
+        <div class="feat"><span class="dot"></span>Audience & competitor intelligence</div>
+        <div class="feat"><span class="dot"></span>Channel expansion (Amazon, TikTok)</div>
+      </div>
+      <button class="cta-btn" onclick="sendPrompt('Tell me more about the Core pricing tier on HansLacida.com ↗')">Book fit call ↗</button>
+    </div>
+
+    <div class="card featured">
+      <div class="badge">Most engaged</div>
+      <p class="tier-name">Growth</p>
+      <p class="price-main">10%</p>
+      <p class="price-sub">of monthly ad spend</p>
+      <p class="or-rule">— minimum —</p>
+      <p class="price-alt">$2,500 / mo</p>
+      <p class="price-sub">Recommended for $25K–$100K/mo spend</p>
+      <div class="features">
+        <div class="feat"><span class="dot included"></span>Everything in Core</div>
+        <div class="feat"><span class="dot included"></span>Audience & competitor intelligence</div>
+        <div class="feat"><span class="dot included"></span>Intent signals + conversion patterns</div>
+        <div class="feat"><span class="dot included"></span>Server-side events + call tracking</div>
+        <div class="feat"><span class="dot included"></span>Performance Max architecture</div>
+        <div class="feat"><span class="dot included"></span>Shopping + YouTube + Display</div>
+        <div class="feat"><span class="dot"></span>Channel expansion (Amazon, TikTok)</div>
+      </div>
+      <button class="cta-btn primary" onclick="sendPrompt('Tell me more about the Growth pricing tier on HansLacida.com ↗')">Book fit call ↗</button>
+    </div>
+
+    <div class="card">
+      <p class="tier-name">Scale</p>
+      <p class="price-main">Custom</p>
+      <p class="price-sub">By proposal</p>
+      <p class="or-rule">— for —</p>
+      <p class="price-alt">$100K+ spend</p>
+      <p class="price-sub">Full-stack acquisition system</p>
+      <div class="features">
+        <div class="feat"><span class="dot included"></span>Everything in Growth</div>
+        <div class="feat"><span class="dot included"></span>Amazon Ads management</div>
+        <div class="feat"><span class="dot included"></span>TikTok Ads expansion</div>
+        <div class="feat"><span class="dot included"></span>Programmatic demand capture</div>
+        <div class="feat"><span class="dot included"></span>Unified cross-channel reporting</div>
+        <div class="feat"><span class="dot included"></span>Fractional CMO advisory</div>
+        <div class="feat"><span class="dot included"></span>Custom SLA & dedicated support</div>
+      </div>
+      <button class="cta-btn" onclick="sendPrompt('Tell me more about the Scale tier / custom pricing on HansLacida.com ↗')">Submit proposal ↗</button>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+  <p class="section-label">Ad spend calculator</p>
+
+  <div class="calc-box">
+    <div class="calc-row">
+      <span class="calc-label">Monthly ad spend</span>
+      <input type="range" id="spend" min="5000" max="150000" step="1000" value="20000" oninput="calc()">
+      <span class="calc-val" id="spend-out">$20,000</span>
+    </div>
+    <div class="result-row">
+      <div class="result-card">
+        <p class="result-lbl">Management fee</p>
+        <p class="result-val" id="fee-val">$2,000</p>
+        <p class="result-note" id="fee-note">10% of spend</p>
+      </div>
+      <div class="result-card">
+        <p class="result-lbl">Your total monthly</p>
+        <p class="result-val" id="total-val">$22,000</p>
+        <p class="result-note">Ad spend + fee</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <p class="section-label">Common questions</p>
+
+  <div class="faq">
+    <div class="faq-item">
+      <p class="faq-q">Why is there a $5,000/month minimum ad spend?</p>
+      <p class="faq-a">Below $5K, the data volume is too thin to optimize meaningfully. This threshold ensures there's enough signal to make decisions that actually compound over time — and that the engagement is worthwhile for both sides.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do you track hours?</p>
+      <p class="faq-a">No. The fee is outcome-based, not hour-based. What matters is campaign performance, not how much time was logged in a tracker.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How fast is onboarding?</p>
+      <p class="faq-a">Most accounts are live within 7 days of the fit call. Conversion tracking, campaign structure, and reporting setup happen in the first week.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Who do you work with?</p>
+      <p class="faq-a">U.S.-based ecommerce brands, DTC operators, and B2B lead generation businesses. eCommerce, direct-to-consumer, and service businesses with proven product-market fit.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Is there a long-term contract?</p>
+      <p class="faq-a">Engagements are structured for 90-day minimum cycles — enough runway to build systems that produce results. After that, month-to-month.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="bottom-cta">
+    <p class="bottom-title">15 minutes to determine fit.</p>
+    <p class="bottom-sub">Not a sales call. An honest operator conversation — to see if there's a real match.</p>
+    <div class="btn-group">
+      <button class="cta-btn primary" style="min-width:160px;" onclick="openLink('https://www.hanslacida.com/#contact')">Book fit call ↗</button>
+      <button class="cta-btn" style="min-width:160px;" onclick="openLink('mailto:hello@hanslacida.com')">hello@hanslacida.com</button>
+    </div>
+    <p class="pill-tag">US market only · Direct operator access · No layers</p>
+  </div>
+
+</div>
+
+<script>
+function fmt(n) { return '$' + n.toLocaleString('en-US'); }
+function calc() {
+  var spend = parseInt(document.getElementById('spend').value);
+  document.getElementById('spend-out').textContent = fmt(spend);
+  var pct = Math.round(spend * 0.10);
+  var floor = spend <= 15000 ? 1500 : 2500;
+  var fee = Math.max(pct, floor);
+  var total = spend + fee;
+  document.getElementById('fee-val').textContent = fmt(fee);
+  document.getElementById('fee-note').textContent = fee === pct ? '10% of spend' : 'Minimum fee applies';
+  document.getElementById('total-val').textContent = fmt(total);
+}
+calc();
+</script>
