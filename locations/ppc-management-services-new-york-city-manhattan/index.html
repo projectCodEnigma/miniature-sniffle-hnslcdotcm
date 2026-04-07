@@ -6,14 +6,8 @@
     window.TallyConfig = {
       "formId": "D41GoR",
       "popup": {
-        "emoji": {
-          "text": "👋",
-          "animation": "wave"
-        },
-        "open": {
-          "trigger": "scroll",
-          "scrollPercent": 100
-        },
+        "emoji": { "text": "👋", "animation": "wave" },
+        "open": { "trigger": "scroll", "scrollPercent": 100 },
         "overlay": true,
         "autoClose": 5000,
         "doNotShowAfterSubmit": true,
@@ -25,7 +19,6 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>PPC Management Services in Manhattan (NYC) | Hans Lacida</title>
   <meta name="description" content="PPC management services for Manhattan (New York City). Structured demand capture with Google Ads, tracking checks, and performance marketing execution operated with standards." />
   <meta name="keywords" content="PPC management Manhattan, Google Ads Manhattan, PPC agency Manhattan NYC, paid search Manhattan, SEM Manhattan" />
@@ -36,7 +29,16 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { "theme-blue": "#1a3cd4" }
+          colors: {
+            "brand": "#1338D4",
+            "brand-dark": "#0e26a0",
+            "ink": "#0a0f1e",
+            "slate": "#64748b"
+          },
+          fontFamily: {
+            display: ["'Barlow Condensed'", "sans-serif"],
+            body: ["'DM Sans'", "sans-serif"],
+          }
         }
       }
     }
@@ -44,240 +46,496 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="/images/hanslacida_favicon.webp" type="image/webp" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fff;
+      color: #0a0f1e;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Fade-in on load --- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+    .delay-5 { animation-delay: 0.7s; }
+
+    /* --- Ticker --- */
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+
+    /* --- Metric card hover --- */
+    .metric-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(19,56,212,0.15);
+    }
+
+    /* --- Nav link underline --- */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 0; height: 2px;
+      background: #1338D4;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* --- Section rule accent --- */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1338D4;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: #1338D4;
+    }
+
+    /* --- Result card --- */
+    .result-card {
+      border-left: 3px solid #1338D4;
+      transition: background 0.2s ease;
+    }
+    .result-card:hover { background: #f0f4ff; }
+
+    /* --- Service card --- */
+    .service-card {
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(10,15,30,0.08);
+    }
+
+    /* --- CTA button pulse --- */
+    @keyframes pulseBorder {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(19,56,212,0.4); }
+      50%       { box-shadow: 0 0 0 8px rgba(19,56,212,0); }
+    }
+    .cta-primary {
+      animation: pulseBorder 2.4s ease infinite;
+    }
+  </style>
 </head>
 
-<body class="font-[Lato] text-gray-700 bg-white antialiased">
+<body>
 
-<!-- HEADER (March 13 homepage design) -->
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
 <header class="bg-white/95 backdrop-blur sticky top-0 z-40 border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-4">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/images/hanslacida_favicon.jpg" alt="HansLacida" class="h-10 w-10 rounded-lg object-cover" />
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between h-16">
+
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/images/hanslacida_favicon.jpg" alt="HansLacida"
+           class="h-9 w-9 rounded-md object-cover ring-1 ring-gray-200 group-hover:ring-brand transition" />
       <div>
-        <div class="text-lg font-extrabold">HansLacida</div>
-        <div class="text-[11px] text-gray-500">Paid Acquisition Systems Operator</div>
+        <div class="text-[15px] font-bold tracking-tight leading-none font-display uppercase">HansLacida</div>
+        <div class="text-[10px] text-slate tracking-wide mt-0.5">Paid Acquisition Systems Operator</div>
       </div>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium" aria-label="Primary navigation">
-      <a href="/brands/paid-acquisition-systems-operator/" class="hover:text-theme-blue">Operator</a>
-      <a href="/results/" class="hover:text-theme-blue">Results</a>
-      <a href="/playbook/" class="hover:text-theme-blue">Playbook</a>
-      <a href="/insights/" class="hover:text-theme-blue">Insights</a>
-      <a href="#contact" class="hover:text-theme-blue">Contact</a>
+    <nav class="hidden md:flex items-center gap-7 text-[13px] font-medium text-gray-600" aria-label="Primary navigation">
+      <a href="/brands/paid-acquisition-systems-operator/" class="nav-link hover:text-ink transition">Operator</a>
+      <a href="/results/" class="nav-link hover:text-ink transition">Results</a>
+      <a href="/playbook/" class="nav-link hover:text-ink transition">Playbook</a>
+      <a href="/insights/" class="nav-link hover:text-ink transition">Insights</a>
+      <a href="#contact"
+         class="ml-2 inline-flex items-center bg-brand text-white text-[13px] font-semibold px-4 py-2 rounded-md hover:bg-brand-dark transition">
+        Book a Call
+      </a>
     </nav>
+
+    <!-- Mobile hamburger placeholder -->
+    <button class="md:hidden p-2 rounded-md text-gray-500 hover:text-ink" aria-label="Open menu">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
   </div>
 </header>
 
-<!-- HERO -->
-<section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-28">
-  <div class="max-w-7xl mx-auto px-4">
-    <p class="text-sm text-blue-100 font-semibold tracking-wide">Location • Manhattan, New York City</p>
 
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight max-w-4xl mt-3">
-      PPC Management Services<br />Manhattan (NYC)
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="relative overflow-hidden bg-ink text-white">
+
+  <!-- Background grid texture -->
+  <div class="absolute inset-0 opacity-[0.04]"
+       style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+              background-size: 48px 48px;">
+  </div>
+
+  <!-- Accent glow -->
+  <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-20"
+       style="background: radial-gradient(circle, #1338D4 0%, transparent 70%);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 pt-24 pb-28">
+
+    <div class="fade-up delay-1">
+      <span class="section-label" style="color:#93c5fd;">
+        <span style="background:#93c5fd;"></span>
+        Manhattan · New York City
+      </span>
+    </div>
+
+    <h1 class="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight mt-4 fade-up delay-2"
+        style="line-height:0.95;">
+      PPC Management<br />
+      <span class="text-transparent" style="-webkit-text-stroke: 1.5px rgba(255,255,255,0.35);">Services</span>
+      <span class="text-brand" style="color:#4f83ff;"> Manhattan</span>
     </h1>
 
-    <p class="mt-6 text-lg max-w-2xl text-blue-100">
+    <p class="mt-7 text-[17px] max-w-xl text-gray-400 leading-relaxed fade-up delay-3">
       Structured demand capture through Google Ads execution—built as an operating system, enforced with standards, and overseen for delivery.
     </p>
 
-    <!-- METRICS (design match) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl">
-      <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-        <div class="text-2xl font-bold">$10M+</div>
-        <div class="text-sm opacity-80">Ad Spend Managed</div>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-        <div class="text-2xl font-bold">$10M+</div>
-        <div class="text-sm opacity-80">Revenue Generated</div>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-        <div class="text-2xl font-bold">70x</div>
-        <div class="text-sm opacity-80">Peak ROAS</div>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-        <div class="text-2xl font-bold">10+ yrs</div>
-        <div class="text-sm opacity-80">Paid Acquisition</div>
-      </div>
-    </div>
-
-    <!-- CTA (design match) -->
-    <div class="mt-10 flex flex-wrap gap-4">
-      <a href="/results/" class="inline-flex items-center bg-white text-theme-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+    <!-- CTAs -->
+    <div class="mt-10 flex flex-wrap gap-3 fade-up delay-4">
+      <a href="/results/"
+         class="cta-primary inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-md text-[14px] font-semibold hover:bg-brand-dark transition">
         View Case Studies
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
       </a>
-      <a href="/brands/paid-acquisition-systems-operator/" class="inline-flex items-center border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-theme-blue transition">
+      <a href="/brands/paid-acquisition-systems-operator/"
+         class="inline-flex items-center gap-2 border border-white/20 text-white px-6 py-3 rounded-md text-[14px] font-semibold hover:bg-white/10 transition">
         Operator Profile
       </a>
     </div>
+
+    <!-- Metrics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-16 max-w-3xl fade-up delay-5">
+      <div class="metric-card bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="font-display text-3xl font-black text-white">$10M+</div>
+        <div class="text-[12px] text-gray-400 mt-1 leading-snug">Ad Spend Managed</div>
+      </div>
+      <div class="metric-card bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="font-display text-3xl font-black text-white">$10M+</div>
+        <div class="text-[12px] text-gray-400 mt-1 leading-snug">Revenue Generated</div>
+      </div>
+      <div class="metric-card bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="font-display text-3xl font-black" style="color:#4f83ff;">70x</div>
+        <div class="text-[12px] text-gray-400 mt-1 leading-snug">Peak ROAS</div>
+      </div>
+      <div class="metric-card bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="font-display text-3xl font-black text-white">10+</div>
+        <div class="text-[12px] text-gray-400 mt-1 leading-snug">Years Paid Acquisition</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- RESULTS PREVIEW -->
-<section class="py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-12 text-center">
-      Selected Growth Results
-    </h2>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-6 bg-white border rounded-xl hover:shadow transition">
-        <div class="text-2xl font-bold">70x ROAS</div>
-        <p class="text-sm mt-2">Ecommerce seasonal scaling campaign</p>
+<!-- ═══════════════════════════════════════════
+     TICKER STRIP
+═══════════════════════════════════════════ -->
+<div class="bg-brand overflow-hidden py-3 select-none">
+  <div class="ticker-track text-white text-[12px] font-semibold tracking-widest uppercase whitespace-nowrap">
+    <span class="px-10">Google Ads Management</span><span class="opacity-40">✦</span>
+    <span class="px-10">Performance Max</span><span class="opacity-40">✦</span>
+    <span class="px-10">Demand Capture Systems</span><span class="opacity-40">✦</span>
+    <span class="px-10">Search Campaign Architecture</span><span class="opacity-40">✦</span>
+    <span class="px-10">Conversion Tracking</span><span class="opacity-40">✦</span>
+    <span class="px-10">ROAS Optimization</span><span class="opacity-40">✦</span>
+    <span class="px-10">Manhattan · NYC</span><span class="opacity-40">✦</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="px-10">Google Ads Management</span><span class="opacity-40">✦</span>
+    <span class="px-10">Performance Max</span><span class="opacity-40">✦</span>
+    <span class="px-10">Demand Capture Systems</span><span class="opacity-40">✦</span>
+    <span class="px-10">Search Campaign Architecture</span><span class="opacity-40">✦</span>
+    <span class="px-10">Conversion Tracking</span><span class="opacity-40">✦</span>
+    <span class="px-10">ROAS Optimization</span><span class="opacity-40">✦</span>
+    <span class="px-10">Manhattan · NYC</span><span class="opacity-40">✦</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     RESULTS
+═══════════════════════════════════════════ -->
+<section class="py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+      <div>
+        <span class="section-label">Proof of Work</span>
+        <h2 class="font-display font-black text-4xl md:text-5xl text-ink mt-3 leading-tight">
+          Selected Growth Results
+        </h2>
       </div>
-
-      <div class="p-6 bg-white border rounded-xl hover:shadow transition">
-        <div class="text-2xl font-bold">$4M+</div>
-        <p class="text-sm mt-2">Tracked ecommerce revenue growth</p>
-      </div>
-
-      <div class="p-6 bg-white border rounded-xl hover:shadow transition">
-        <div class="text-2xl font-bold">2x → 5x</div>
-        <p class="text-sm mt-2">ROAS improvement in 90 days</p>
-      </div>
-
-      <div class="p-6 bg-white border rounded-xl hover:shadow transition">
-        <div class="text-2xl font-bold">50% CPA</div>
-        <p class="text-sm mt-2">Healthcare lead generation reduction</p>
-      </div>
-    </div>
-
-    <div class="text-center mt-12">
-      <a href="/results/" class="inline-flex bg-theme-blue text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-        Explore Case Studies
+      <a href="/results/"
+         class="inline-flex items-center gap-2 text-brand text-[14px] font-semibold hover:gap-3 transition-all">
+        All Case Studies
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
       </a>
     </div>
-  </div>
-</section>
 
-<!-- WHAT I DO -->
-<section class="py-24">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-12 text-center">What I Do</h2>
-
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div class="p-6 border rounded-xl hover:shadow transition">
-        <h3 class="font-bold mb-3">Demand Capture</h3>
-        <p class="text-sm">Capture high-intent search demand through structured Google Ads campaign architecture.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-gray-100 rounded-2xl overflow-hidden">
+      <div class="result-card p-8 border-b md:border-b-0 md:border-r border-gray-100">
+        <div class="font-display text-5xl font-black text-ink">70x</div>
+        <div class="text-brand font-semibold text-[13px] mt-1 uppercase tracking-wider">ROAS</div>
+        <p class="text-gray-500 text-[13px] mt-3 leading-relaxed">Ecommerce seasonal scaling campaign</p>
       </div>
-
-      <div class="p-6 border rounded-xl hover:shadow transition">
-        <h3 class="font-bold mb-3">Acquisition Systems</h3>
-        <p class="text-sm">Build scalable paid acquisition infrastructure with tracking, reporting, and optimization frameworks.</p>
+      <div class="result-card p-8 border-b md:border-b-0 md:border-r border-gray-100">
+        <div class="font-display text-5xl font-black text-ink">$4M+</div>
+        <div class="text-brand font-semibold text-[13px] mt-1 uppercase tracking-wider">Revenue</div>
+        <p class="text-gray-500 text-[13px] mt-3 leading-relaxed">Tracked ecommerce revenue growth</p>
       </div>
-
-      <div class="p-6 border rounded-xl hover:shadow transition">
-        <h3 class="font-bold mb-3">Channel Expansion</h3>
-        <p class="text-sm">Expand growth channels into Amazon Ads, TikTok Ads, and programmatic demand capture.</p>
+      <div class="result-card p-8 border-b lg:border-b-0 border-r border-gray-100">
+        <div class="font-display text-5xl font-black text-ink">2x→5x</div>
+        <div class="text-brand font-semibold text-[13px] mt-1 uppercase tracking-wider">ROAS Lift</div>
+        <p class="text-gray-500 text-[13px] mt-3 leading-relaxed">ROAS improvement in 90 days</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PLAYBOOK -->
-<section class="py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-4">
-      Google Ads Operator Playbook
-    </h2>
-
-    <p class="max-w-2xl mx-auto mb-10 text-gray-600">
-      Practical insights on demand capture, campaign restructuring, and paid acquisition systems for founders and growth teams.
-    </p>
-
-    <a href="/playbook/" class="inline-flex bg-theme-blue text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-      Read the Playbook
-    </a>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="py-24">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-4">Operator Conversation</h2>
-
-    <p class="mb-8 text-gray-600">
-      15-minute call to determine whether there is a fit for PPC management support in Manhattan (NYC).
-    </p>
-
-    <a href="https://tidycal.com/hanslacida/google-ads-execution-fit-call" target="_blank" rel="noopener noreferrer" class="inline-flex bg-theme-blue text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-      Book Fit Call
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER (March 13 homepage design) -->
-<footer class="bg-gray-900 text-gray-300 py-12">
-  <div class="max-w-7xl mx-auto px-6">
-    <!-- QUICK LINKS -->
-    <div class="grid md:grid-cols-3 gap-8 mb-10 text-sm">
-      <div>
-        <h4 class="font-semibold text-white mb-3">Operator</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/brands/paid-acquisition-systems-operator/" class="hover:text-white">Paid Acquisition Systems Operator</a></li>
-          <li><a href="/about/" class="hover:text-white">About</a></li>
-          <li><a href="/how-i-operate" class="hover:text-white">How I Operate</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold text-white mb-3">Proof</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/results/" class="hover:text-white">Case Studies</a></li>
-          <li><a href="/results/70x-roas-case-study/" class="hover:text-white">70x ROAS Case Study</a></li>
-          <li><a href="/results/ecommerce-growth/" class="hover:text-white">Ecommerce Growth</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold text-white mb-3">Insights</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/insights/" class="hover:text-white">Growth Insights</a></li>
-          <li><a href="/playbook/" class="hover:text-white">Google Ads Playbook</a></li>
-          <li><a href="/insights/operator-thinking/" class="hover:text-white">Operator Thinking</a></li>
-        </ul>
+      <div class="result-card p-8">
+        <div class="font-display text-5xl font-black text-ink">−50%</div>
+        <div class="text-brand font-semibold text-[13px] mt-1 uppercase tracking-wider">CPA</div>
+        <p class="text-gray-500 text-[13px] mt-3 leading-relaxed">Healthcare lead generation reduction</p>
       </div>
     </div>
 
-    <div class="text-center mb-8">
-      <p class="text-base">
-        Google Ads execution infrastructure operated with control, enforced standards, and accountability.
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     WHAT I DO
+═══════════════════════════════════════════ -->
+<section class="py-28 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-5">
+
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="section-label justify-center" style="justify-content:center;">
+        <span></span>Services<span></span>
+      </span>
+      <h2 class="font-display font-black text-4xl md:text-5xl text-ink mt-3">What I Do</h2>
+      <p class="text-gray-500 mt-4 text-[15px] leading-relaxed">
+        Execution-first paid acquisition across the full stack — from architecture to optimization.
       </p>
     </div>
 
-    <!-- FOOTER NAV -->
-    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:text-sm">
-      <a href="/brands/paid-acquisition-systems-operator/" class="text-gray-500 hover:text-white hover:underline">
-        Paid Acquisition Systems Operator
-      </a>
-      <span>•</span>
-      <a href="/results/" class="text-gray-500 hover:text-white hover:underline">
-        Case Studies
-      </a>
-      <span>•</span>
-      <a href="/playbook/" class="text-gray-500 hover:text-white hover:underline">
-        Google Ads Operator Playbook
-      </a>
-      <span>•</span>
-      <a href="/insights/" class="text-gray-500 hover:text-white hover:underline">
-        Growth Insights
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <div class="service-card bg-white rounded-2xl p-8 border border-gray-100">
+        <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-5">
+          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold text-xl text-ink mb-2">Demand Capture</h3>
+        <p class="text-gray-500 text-[14px] leading-relaxed">
+          Capture high-intent search demand through structured Google Ads campaign architecture built for precision and scale.
+        </p>
+      </div>
+
+      <div class="service-card bg-ink rounded-2xl p-8 border border-transparent">
+        <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+          <svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white mb-2">Acquisition Systems</h3>
+        <p class="text-blue-300/70 text-[14px] leading-relaxed">
+          Build scalable paid acquisition infrastructure with tracking, reporting, and optimization frameworks enforced at every level.
+        </p>
+      </div>
+
+      <div class="service-card bg-white rounded-2xl p-8 border border-gray-100">
+        <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-5">
+          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold text-xl text-ink mb-2">Channel Expansion</h3>
+        <p class="text-gray-500 text-[14px] leading-relaxed">
+          Expand growth channels into Amazon Ads, TikTok Ads, and programmatic demand capture beyond Google.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     PLAYBOOK BANNER
+═══════════════════════════════════════════ -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="relative overflow-hidden rounded-2xl bg-ink px-10 py-14 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8">
+      <!-- Grid texture -->
+      <div class="absolute inset-0 opacity-[0.04]"
+           style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+                  background-size: 36px 36px;"></div>
+      <!-- Blue accent -->
+      <div class="absolute right-0 top-0 w-72 h-72 rounded-full opacity-20 translate-x-1/2 -translate-y-1/2"
+           style="background: radial-gradient(circle, #1338D4, transparent 70%);"></div>
+
+      <div class="relative">
+        <span class="section-label" style="color:#93c5fd;"><span style="background:#93c5fd;"></span>Free Resource</span>
+        <h2 class="font-display font-black text-3xl md:text-4xl text-white mt-3 leading-tight">
+          Google Ads Operator Playbook
+        </h2>
+        <p class="text-gray-400 text-[14px] mt-3 max-w-md leading-relaxed">
+          Practical insights on demand capture, campaign restructuring, and paid acquisition systems for founders and growth teams.
+        </p>
+      </div>
+
+      <div class="relative flex-shrink-0">
+        <a href="/playbook/"
+           class="inline-flex items-center gap-2 bg-brand text-white px-7 py-3.5 rounded-md font-semibold text-[14px] hover:bg-brand-dark transition whitespace-nowrap">
+          Read the Playbook
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section id="contact" class="py-28 bg-gray-50">
+  <div class="max-w-2xl mx-auto px-5 text-center">
+    <span class="section-label justify-center" style="justify-content:center;">
+      <span></span>Get in Touch<span></span>
+    </span>
+    <h2 class="font-display font-black text-4xl md:text-5xl text-ink mt-4 leading-tight">
+      Operator Conversation
+    </h2>
+    <p class="text-gray-500 text-[15px] mt-5 leading-relaxed max-w-md mx-auto">
+      A 15-minute call to determine whether there's a fit for PPC management support in Manhattan (NYC).
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://tidycal.com/hanslacida/google-ads-execution-fit-call"
+         target="_blank" rel="noopener noreferrer"
+         class="cta-primary inline-flex items-center justify-center gap-2 bg-brand text-white px-8 py-4 rounded-md font-semibold text-[15px] hover:bg-brand-dark transition">
+        Book Fit Call
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/>
+        </svg>
       </a>
     </div>
 
-    <!-- CTA -->
-    <div class="mt-10 flex justify-center">
-      <a href="https://tr.ee/yF6vkB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white hover:text-gray-900">
-        Submit a Business Proposal
-      </a>
+    <p class="text-gray-400 text-[12px] mt-5">No commitment · 15 minutes · Manhattan-based execution</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="bg-ink text-gray-400">
+
+  <!-- Top footer -->
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-10">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand col -->
+      <div class="md:col-span-1">
+        <a href="/" class="flex items-center gap-2 mb-4">
+          <img src="/images/hanslacida_favicon.jpg" alt="HansLacida"
+               class="h-8 w-8 rounded-md object-cover opacity-90" />
+          <span class="font-display font-black text-white text-lg uppercase tracking-tight">HansLacida</span>
+        </a>
+        <p class="text-[13px] text-gray-500 leading-relaxed">
+          Google Ads execution infrastructure operated with control, enforced standards, and accountability.
+        </p>
+        <a href="https://tr.ee/yF6vkB" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 border border-white/15 text-white text-[12px] font-medium px-4 py-2 rounded-md mt-5 hover:bg-white/10 transition">
+          Submit a Business Proposal
+        </a>
+      </div>
+
+      <!-- Links cols -->
+      <div>
+        <h4 class="font-semibold text-white text-[13px] mb-4 uppercase tracking-wider">Operator</h4>
+        <ul class="space-y-2.5 text-[13px]">
+          <li><a href="/brands/paid-acquisition-systems-operator/" class="hover:text-white transition">Paid Acquisition Systems Operator</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About</a></li>
+          <li><a href="/how-i-operate" class="hover:text-white transition">How I Operate</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white text-[13px] mb-4 uppercase tracking-wider">Proof</h4>
+        <ul class="space-y-2.5 text-[13px]">
+          <li><a href="/results/" class="hover:text-white transition">Case Studies</a></li>
+          <li><a href="/results/70x-roas-case-study/" class="hover:text-white transition">70x ROAS Case Study</a></li>
+          <li><a href="/results/ecommerce-growth/" class="hover:text-white transition">Ecommerce Growth</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white text-[13px] mb-4 uppercase tracking-wider">Insights</h4>
+        <ul class="space-y-2.5 text-[13px]">
+          <li><a href="/insights/" class="hover:text-white transition">Growth Insights</a></li>
+          <li><a href="/playbook/" class="hover:text-white transition">Google Ads Playbook</a></li>
+          <li><a href="/insights/operator-thinking/" class="hover:text-white transition">Operator Thinking</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-gray-600">
+      <span>© 2025 HansLacida. All rights reserved.</span>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-center">
+        <a href="/brands/paid-acquisition-systems-operator/" class="hover:text-white transition">Paid Acquisition Systems Operator</a>
+        <span>·</span>
+        <a href="/results/" class="hover:text-white transition">Case Studies</a>
+        <span>·</span>
+        <a href="/playbook/" class="hover:text-white transition">Google Ads Playbook</a>
+        <span>·</span>
+        <a href="/insights/" class="hover:text-white transition">Growth Insights</a>
+      </div>
     </div>
   </div>
 </footer>
+
 </body>
 </html>
