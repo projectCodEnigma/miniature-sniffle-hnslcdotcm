@@ -1,192 +1,1035 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — HansLacida · Zeldigital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-sans); }
-.page { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
-.eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 0.75rem; }
-.hero-title { font-size: 32px; font-weight: 500; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 0.75rem; }
-.hero-title em { font-style: italic; color: var(--color-text-secondary); }
-.hero-sub { font-size: 15px; color: var(--color-text-secondary); line-height: 1.7; max-width: 560px; }
-.divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 2rem 0; }
-.section-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1.25rem; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 16px; margin-bottom: 2rem; }
-.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem; position: relative; }
-.card.featured { border: 2px solid #378ADD; }
-.badge { display: inline-block; background: var(--color-background-info); color: var(--color-text-info); font-size: 11px; padding: 3px 10px; border-radius: var(--border-radius-md); margin-bottom: 1rem; }
-.tier-name { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 0.4rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.price-main { font-size: 28px; font-weight: 500; color: var(--color-text-primary); line-height: 1; }
-.price-sub { font-size: 13px; color: var(--color-text-secondary); margin-top: 4px; line-height: 1.5; }
-.or-rule { font-size: 11px; color: var(--color-text-tertiary); margin: 0.5rem 0; text-transform: uppercase; letter-spacing: 0.08em; }
-.price-alt { font-size: 18px; font-weight: 500; color: var(--color-text-primary); }
-.features { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 8px; }
-.feat { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
-.dot { width: 5px; height: 5px; border-radius: 50%; background: var(--color-border-secondary); flex-shrink: 0; margin-top: 7px; }
-.dot.included { background: #1D9E75; }
-.cta-btn { display: block; margin-top: 1.5rem; padding: 10px; text-align: center; font-size: 13px; font-weight: 500; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); color: var(--color-text-primary); background: transparent; cursor: pointer; transition: background 0.15s; }
-.cta-btn:hover { background: var(--color-background-secondary); }
-.cta-btn.primary { background: var(--color-text-primary); color: var(--color-background-primary); border-color: var(--color-text-primary); }
-.cta-btn.primary:hover { opacity: 0.88; }
-.calc-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.5rem; margin-bottom: 2rem; }
-.calc-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; }
-.calc-label { font-size: 13px; color: var(--color-text-secondary); min-width: 130px; }
-input[type=range] { flex: 1; }
-.calc-val { font-size: 14px; font-weight: 500; color: var(--color-text-primary); min-width: 80px; text-align: right; }
-.result-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
-.result-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem; }
-.result-lbl { font-size: 11px; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-.result-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
-.result-note { font-size: 12px; color: var(--color-text-tertiary); margin-top: 4px; }
-.faq { display: flex; flex-direction: column; gap: 0; }
-.faq-item { border-top: 0.5px solid var(--color-border-tertiary); padding: 1rem 0; }
-.faq-q { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.5rem; }
-.faq-a { font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; }
-.bottom-cta { text-align: center; padding: 2rem 0 0.5rem; }
-.bottom-title { font-size: 20px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.5rem; }
-.bottom-sub { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
-.btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.pill-tag { display: inline-block; font-size: 11px; color: var(--color-text-tertiary); background: var(--color-background-secondary); padding: 4px 10px; border-radius: 99px; margin-top: 1rem; }
+:root {
+  --ink: #0f0f0d;
+  --ink-2: #3a3a35;
+  --ink-3: #8a8a80;
+  --ink-4: #b8b8b0;
+  --paper: #f5f4ef;
+  --paper-2: #eceae3;
+  --paper-3: #e2dfd6;
+  --accent: #1a4fd6;
+  --accent-light: #e8eeff;
+  --green: #1d8c5e;
+  --green-light: #e3f5ed;
+  --rule: rgba(15,15,13,0.1);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Instrument Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-mark {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.nav-mark svg { width: 14px; height: 14px; }
+
+.nav-name {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+.nav-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--paper) !important;
+  background: var(--ink);
+  padding: 7px 16px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  transition: opacity 0.15s !important;
+}
+
+.nav-cta:hover { opacity: 0.8; color: var(--paper) !important; }
+
+/* ── HERO ── */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+
+.hero-kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ink-3);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+.hero-body {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.75;
+  max-width: 420px;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 0.5rem;
+}
+
+.hero-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hero-stat {
+  background: var(--paper);
+  padding: 1.5rem;
+}
+
+.hero-stat-val {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-lbl {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+
+/* ── DIVIDER ── */
+.full-rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+
+/* ── SECTION ── */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.section-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-4);
+}
+
+/* ── CARDS ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--paper);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.card:hover { background: var(--paper-2); }
+
+.card.featured {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.card.featured:hover { background: #1c1c18; }
+
+.card-tier {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 1.5rem;
+}
+
+.card.featured .card-tier { color: rgba(245,244,239,0.45); }
+
+.card-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.price-main {
+  font-family: var(--serif);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.card.featured .price-main { color: var(--paper); }
+
+.price-sub {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.card.featured .price-sub { color: rgba(245,244,239,0.5); }
+
+.or-divider {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-4);
+  letter-spacing: 0.1em;
+  margin: 8px 0;
+}
+
+.card.featured .or-divider { color: rgba(245,244,239,0.3); }
+
+.price-alt {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.card.featured .price-alt { color: var(--paper); }
+
+.feats {
+  margin-top: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+
+.card.featured .feats { border-top-color: rgba(245,244,239,0.12); }
+
+.feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.card.featured .feat { color: rgba(245,244,239,0.65); }
+
+.feat-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--paper-3);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.feat-dot.on { background: var(--green); }
+.card.featured .feat-dot.on { background: #5dd9a4; }
+.card.featured .feat-dot { background: rgba(245,244,239,0.2); }
+
+.card-btn {
+  margin-top: 2rem;
+  display: block;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ink);
+  transition: all 0.15s;
+  font-family: var(--sans);
+}
+
+.card-btn:hover { background: var(--paper-3); }
+
+.card.featured .card-btn {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: transparent;
+}
+
+.card.featured .card-btn:hover { background: var(--paper-2); }
+
+/* ── FOOTNOTE BOX ── */
+.footnote-box {
+  background: var(--accent-light);
+  border: 1px solid rgba(26,79,214,0.15);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.fn-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(26,79,214,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fn-icon svg { width: 14px; height: 14px; }
+
+.fn-head {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.fn-body {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.75;
+}
+
+.fn-body strong { font-weight: 600; color: var(--ink); }
+
+.fn-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+.fn-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: rgba(26,79,214,0.08);
+  border: 1px solid rgba(26,79,214,0.15);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* ── CALCULATOR ── */
+.calc-wrap {
+  background: var(--paper-2);
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.calc-head {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.calc-note {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-4);
+  letter-spacing: 0.06em;
+}
+
+.calc-body {
+  padding: 2rem;
+}
+
+.slider-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.slider-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.slider-label {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.slider-val {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--ink);
+}
+
+input[type=range] {
+  width: 100%;
+  height: 2px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--paper-3);
+  border-radius: 99px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--ink);
+  cursor: pointer;
+}
+
+.calc-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.res-cell {
+  background: var(--paper);
+  padding: 1.25rem 1.5rem;
+}
+
+.res-lbl {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 6px;
+}
+
+.res-val {
+  font-family: var(--serif);
+  font-size: 26px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.res-note {
+  font-size: 11px;
+  color: var(--ink-4);
+  margin-top: 4px;
+}
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; }
+
+.faq-item {
+  border-top: 1px solid var(--rule);
+  padding: 1.25rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.faq-q {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+  padding-top: 1px;
+}
+
+.faq-a {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.75;
+}
+
+/* ── BOTTOM CTA ── */
+.cta-strip {
+  background: var(--ink);
+  margin: 0;
+  padding: 5rem 2.5rem;
+}
+
+.cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.5vw, 40px);
+  color: var(--paper);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.cta-title em { font-style: italic; color: rgba(245,244,239,0.45); }
+
+.cta-sub {
+  font-size: 14px;
+  color: rgba(245,244,239,0.5);
+  line-height: 1.7;
+  max-width: 440px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.btn-pri {
+  display: block;
+  padding: 13px 24px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--paper);
+  color: var(--ink);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s;
+  text-decoration: none;
+}
+
+.btn-pri:hover { opacity: 0.88; }
+
+.btn-sec {
+  display: block;
+  padding: 12px 24px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(245,244,239,0.55);
+  border: 1px solid rgba(245,244,239,0.15);
+  border-radius: 5px;
+  cursor: pointer;
+  background: transparent;
+  letter-spacing: 0.02em;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.btn-sec:hover {
+  color: var(--paper);
+  border-color: rgba(245,244,239,0.35);
+}
+
+.cta-pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(245,244,239,0.3);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1.5rem 2.5rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-brand {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(245,244,239,0.3);
+  letter-spacing: 0.08em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(245,244,239,0.3);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover { color: rgba(245,244,239,0.6); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.55s ease forwards;
+}
+
+.fade-up:nth-child(1) { animation-delay: 0.05s; }
+.fade-up:nth-child(2) { animation-delay: 0.12s; }
+.fade-up:nth-child(3) { animation-delay: 0.19s; }
+.fade-up:nth-child(4) { animation-delay: 0.26s; }
+.fade-up:nth-child(5) { animation-delay: 0.33s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 800px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links { display: none; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem 2.5rem;
+    gap: 2.5rem;
+  }
+  .section { padding: 3rem 1.25rem; }
+  .cards { grid-template-columns: 1fr; }
+  .faq-item { grid-template-columns: 1fr; gap: 0.75rem; }
+  .calc-results { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .cta-actions { flex-direction: row; flex-wrap: wrap; }
+  .footnote-box { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+  .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+}
 </style>
+</head>
+<body>
 
-<div class="page">
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-mark">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="4" height="4" rx="1" fill="#f5f4ef"/>
+        <rect x="8" y="2" width="4" height="4" rx="1" fill="#f5f4ef" opacity="0.4"/>
+        <rect x="2" y="8" width="4" height="4" rx="1" fill="#f5f4ef" opacity="0.4"/>
+        <rect x="8" y="8" width="4" height="4" rx="1" fill="#f5f4ef"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-name">HansLacida</div>
+      <div class="nav-sub">Zeldigital · Paid Acquisition</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Work</a></li>
+    <li><a href="#">Process</a></li>
+    <li><a href="#" style="font-weight:500;color:var(--ink)">Pricing</a></li>
+    <li><a href="#" class="nav-cta">Book fit call ↗</a></li>
+  </ul>
+</nav>
 
-  <p class="eyebrow">HansLacida · Zeldigital</p>
-  <h1 class="hero-title">Straightforward pricing.<br><em>No retainer surprises.</em></h1>
-  <p class="hero-sub">One operator. One fee model. Built for U.S. brands spending $5,000+/month on Google Ads who want outcomes — not hours.</p>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p class="hero-kicker fade-up">Pricing · Zeldigital</p>
+    <h1 class="hero-title fade-up">
+      Straightforward pricing.<br>
+      <em>No retainer surprises.</em>
+    </h1>
+    <p class="hero-body fade-up">
+      One operator. One fee model. Built for U.S. brands spending $5,000+/month on Google Ads who want outcomes — not hours logged in a tracker.
+    </p>
+  </div>
+  <div class="hero-right fade-up">
+    <div class="hero-stat-grid">
+      <div class="hero-stat">
+        <div class="hero-stat-val">7</div>
+        <div class="hero-stat-lbl">Days to go live from fit call</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">90</div>
+        <div class="hero-stat-lbl">Day minimum engagement</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">$5K</div>
+        <div class="hero-stat-lbl">Minimum monthly ad spend</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">1</div>
+        <div class="hero-stat-lbl">Direct operator — no account teams</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <hr class="divider">
+<hr class="full-rule">
 
-  <p class="section-label">Engagement tiers</p>
+<!-- TIERS -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-label">Engagement tiers</span>
+    <span class="section-count">03 options</span>
+  </div>
 
   <div class="cards">
 
+    <!-- CORE -->
     <div class="card">
-      <p class="tier-name">Core</p>
+      <p class="card-tier">Core</p>
       <p class="price-main">$1,500</p>
       <p class="price-sub">/ month flat</p>
-      <p class="or-rule">— or —</p>
-      <p class="price-alt">10% of ad spend</p>
+      <p class="or-divider">— or —</p>
+      <p class="price-alt">10% of spend</p>
       <p class="price-sub">Whichever is higher · $5K min spend</p>
-      <div class="features">
-        <div class="feat"><span class="dot included"></span>Campaign architecture & setup</div>
-        <div class="feat"><span class="dot included"></span>GA4 + GTM conversion tracking</div>
-        <div class="feat"><span class="dot included"></span>Weekly performance reviews</div>
-        <div class="feat"><span class="dot included"></span>Direct strategist access</div>
-        <div class="feat"><span class="dot included"></span>Ongoing A/B testing & optimization</div>
-        <div class="feat"><span class="dot"></span>Audience & competitor intelligence</div>
-        <div class="feat"><span class="dot"></span>Channel expansion (Amazon, TikTok)</div>
+      <div class="feats">
+        <div class="feat"><span class="feat-dot on"></span>Campaign architecture & setup</div>
+        <div class="feat"><span class="feat-dot on"></span>GA4 + GTM conversion tracking</div>
+        <div class="feat"><span class="feat-dot on"></span>Weekly performance reviews</div>
+        <div class="feat"><span class="feat-dot on"></span>Direct strategist access</div>
+        <div class="feat"><span class="feat-dot on"></span>Ongoing A/B testing & optimization</div>
+        <div class="feat"><span class="feat-dot"></span>Audience & competitor intelligence</div>
+        <div class="feat"><span class="feat-dot"></span>Channel expansion (Amazon, TikTok)</div>
       </div>
-      <button class="cta-btn" onclick="sendPrompt('Tell me more about the Core pricing tier on HansLacida.com ↗')">Book fit call ↗</button>
+      <button class="card-btn" onclick="window.open('https://www.hanslacida.com/#contact','_blank')">Book fit call ↗</button>
     </div>
 
+    <!-- GROWTH (featured) -->
     <div class="card featured">
-      <div class="badge">Most engaged</div>
-      <p class="tier-name">Growth</p>
+      <div class="card-badge">Most engaged</div>
+      <p class="card-tier">Growth</p>
       <p class="price-main">10%</p>
       <p class="price-sub">of monthly ad spend</p>
-      <p class="or-rule">— minimum —</p>
+      <p class="or-divider">— minimum —</p>
       <p class="price-alt">$2,500 / mo</p>
-      <p class="price-sub">Recommended for $25K–$100K/mo spend</p>
-      <div class="features">
-        <div class="feat"><span class="dot included"></span>Everything in Core</div>
-        <div class="feat"><span class="dot included"></span>Audience & competitor intelligence</div>
-        <div class="feat"><span class="dot included"></span>Intent signals + conversion patterns</div>
-        <div class="feat"><span class="dot included"></span>Server-side events + call tracking</div>
-        <div class="feat"><span class="dot included"></span>Performance Max architecture</div>
-        <div class="feat"><span class="dot included"></span>Shopping + YouTube + Display</div>
-        <div class="feat"><span class="dot"></span>Channel expansion (Amazon, TikTok)</div>
+      <p class="price-sub">Recommended for $25K–$100K/mo</p>
+      <div class="feats">
+        <div class="feat"><span class="feat-dot on"></span>Everything in Core</div>
+        <div class="feat"><span class="feat-dot on"></span>Audience & competitor intelligence</div>
+        <div class="feat"><span class="feat-dot on"></span>Intent signals + conversion patterns</div>
+        <div class="feat"><span class="feat-dot on"></span>Server-side events + call tracking</div>
+        <div class="feat"><span class="feat-dot on"></span>Performance Max architecture</div>
+        <div class="feat"><span class="feat-dot on"></span>Shopping + YouTube + Display</div>
+        <div class="feat"><span class="feat-dot"></span>Channel expansion (Amazon, TikTok)</div>
       </div>
-      <button class="cta-btn primary" onclick="sendPrompt('Tell me more about the Growth pricing tier on HansLacida.com ↗')">Book fit call ↗</button>
+      <button class="card-btn" onclick="window.open('https://www.hanslacida.com/#contact','_blank')">Book fit call ↗</button>
     </div>
 
+    <!-- SCALE -->
     <div class="card">
-      <p class="tier-name">Scale</p>
+      <p class="card-tier">Scale</p>
       <p class="price-main">Custom</p>
       <p class="price-sub">By proposal</p>
-      <p class="or-rule">— for —</p>
+      <p class="or-divider">— for —</p>
       <p class="price-alt">$100K+ spend</p>
       <p class="price-sub">Full-stack acquisition system</p>
-      <div class="features">
-        <div class="feat"><span class="dot included"></span>Everything in Growth</div>
-        <div class="feat"><span class="dot included"></span>Amazon Ads management</div>
-        <div class="feat"><span class="dot included"></span>TikTok Ads expansion</div>
-        <div class="feat"><span class="dot included"></span>Programmatic demand capture</div>
-        <div class="feat"><span class="dot included"></span>Unified cross-channel reporting</div>
-        <div class="feat"><span class="dot included"></span>Fractional CMO advisory</div>
-        <div class="feat"><span class="dot included"></span>Custom SLA & dedicated support</div>
+      <div class="feats">
+        <div class="feat"><span class="feat-dot on"></span>Everything in Growth</div>
+        <div class="feat"><span class="feat-dot on"></span>Amazon Ads management</div>
+        <div class="feat"><span class="feat-dot on"></span>TikTok Ads expansion</div>
+        <div class="feat"><span class="feat-dot on"></span>Programmatic demand capture</div>
+        <div class="feat"><span class="feat-dot on"></span>Unified cross-channel reporting</div>
+        <div class="feat"><span class="feat-dot on"></span>Fractional CMO advisory</div>
+        <div class="feat"><span class="feat-dot on"></span>Custom SLA & dedicated support</div>
       </div>
-      <button class="cta-btn" onclick="sendPrompt('Tell me more about the Scale tier / custom pricing on HansLacida.com ↗')">Submit proposal ↗</button>
+      <button class="card-btn" onclick="window.open('https://www.hanslacida.com/#contact','_blank')">Submit proposal ↗</button>
     </div>
 
   </div>
 
-  <hr class="divider">
-  <p class="section-label">Ad spend calculator</p>
-
-  <div class="calc-box">
-    <div class="calc-row">
-      <span class="calc-label">Monthly ad spend</span>
-      <input type="range" id="spend" min="5000" max="150000" step="1000" value="20000" oninput="calc()">
-      <span class="calc-val" id="spend-out">$20,000</span>
+  <!-- FOOTNOTE -->
+  <div class="footnote-box">
+    <div class="fn-icon">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="7" cy="7" r="6" stroke="#1a4fd6" stroke-width="1.25"/>
+        <path d="M7 6v4" stroke="#1a4fd6" stroke-width="1.25" stroke-linecap="round"/>
+        <circle cx="7" cy="4" r=".7" fill="#1a4fd6"/>
+      </svg>
     </div>
-    <div class="result-row">
-      <div class="result-card">
-        <p class="result-lbl">Management fee</p>
-        <p class="result-val" id="fee-val">$2,000</p>
-        <p class="result-note" id="fee-note">10% of spend</p>
-      </div>
-      <div class="result-card">
-        <p class="result-lbl">Your total monthly</p>
-        <p class="result-val" id="total-val">$22,000</p>
-        <p class="result-note">Ad spend + fee</p>
+    <div>
+      <p class="fn-head">Flexible fee structures available on request</p>
+      <p class="fn-body">
+        The tiers above are a starting point — not a fixed menu. Not every client fits the same structure, and I build engagements around what actually makes sense.
+        A <strong>flat monthly retainer</strong> works well when you need cost predictability and a defined scope.
+        A <strong>retainer + % of ad spend hybrid</strong> is available when both floor stability and upside alignment matter.
+        Bring your situation to the fit call — we'll land on what's right for both sides.
+      </p>
+      <div class="fn-tags">
+        <span class="fn-tag">Flat retainer available</span>
+        <span class="fn-tag">Retainer + % hybrid available</span>
+        <span class="fn-tag">Custom by proposal</span>
+        <span class="fn-tag">No fixed menu</span>
       </div>
     </div>
   </div>
 
-  <hr class="divider">
-  <p class="section-label">Common questions</p>
+</section>
 
-  <div class="faq">
+<hr class="full-rule">
+
+<!-- CALCULATOR -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-label">Ad spend calculator</span>
+    <span class="section-count">Estimate only</span>
+  </div>
+
+  <div class="calc-wrap">
+    <div class="calc-head">
+      <span class="calc-title">What will I pay?</span>
+      <span class="calc-note">Drag to adjust spend →</span>
+    </div>
+    <div class="calc-body">
+      <div class="slider-wrap">
+        <div class="slider-top">
+          <span class="slider-label">Monthly ad spend</span>
+          <span class="slider-val" id="spend-out">$20,000</span>
+        </div>
+        <input type="range" id="spend" min="5000" max="150000" step="1000" value="20000" oninput="calc()">
+      </div>
+      <div class="calc-results">
+        <div class="res-cell">
+          <p class="res-lbl">Ad spend</p>
+          <p class="res-val" id="spend-display">$20,000</p>
+          <p class="res-note">Your media budget</p>
+        </div>
+        <div class="res-cell">
+          <p class="res-lbl">Management fee</p>
+          <p class="res-val" id="fee-val">$2,000</p>
+          <p class="res-note" id="fee-note">10% of spend</p>
+        </div>
+        <div class="res-cell">
+          <p class="res-lbl">Total monthly</p>
+          <p class="res-val" id="total-val">$22,000</p>
+          <p class="res-note">Spend + fee combined</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-label">Common questions</span>
+    <span class="section-count">06 items</span>
+  </div>
+
+  <div class="faq-list">
     <div class="faq-item">
       <p class="faq-q">Why is there a $5,000/month minimum ad spend?</p>
-      <p class="faq-a">Below $5K, the data volume is too thin to optimize meaningfully. This threshold ensures there's enough signal to make decisions that actually compound over time — and that the engagement is worthwhile for both sides.</p>
+      <p class="faq-a">Below $5K, data volume is too thin to optimize meaningfully. This threshold ensures there's enough signal to make decisions that actually compound over time — and that the engagement is worthwhile for both sides.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Do you track hours?</p>
       <p class="faq-a">No. The fee is outcome-based, not hour-based. What matters is campaign performance, not how much time was logged in a tracker.</p>
     </div>
     <div class="faq-item">
+      <p class="faq-q">Can we structure this as a flat retainer or a hybrid?</p>
+      <p class="faq-a">Yes — and this comes up often. A flat monthly retainer works well for brands that need cost predictability and a defined scope. A retainer + % of ad spend hybrid is available when both floor stability and scale alignment matter. No client situation is identical, and the fee structure should reflect that. Raise it on the fit call.</p>
+    </div>
+    <div class="faq-item">
       <p class="faq-q">How fast is onboarding?</p>
-      <p class="faq-a">Most accounts are live within 7 days of the fit call. Conversion tracking, campaign structure, and reporting setup happen in the first week.</p>
+      <p class="faq-a">Most accounts are live within 7 days of the fit call. Conversion tracking, campaign structure, and reporting setup happen in the first week — not strung across a month of kickoffs.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Who do you work with?</p>
-      <p class="faq-a">U.S.-based ecommerce brands, DTC operators, and B2B lead generation businesses. eCommerce, direct-to-consumer, and service businesses with proven product-market fit.</p>
+      <p class="faq-a">U.S.-based ecommerce brands, DTC operators, and B2B lead generation businesses. The common thread: proven product-market fit and a willingness to treat paid acquisition as infrastructure, not an experiment.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Is there a long-term contract?</p>
-      <p class="faq-a">Engagements are structured for 90-day minimum cycles — enough runway to build systems that produce results. After that, month-to-month.</p>
+      <p class="faq-a">Engagements are structured for 90-day minimum cycles — enough runway to build systems that produce compounding results. After that, month-to-month. No year-long lock-ins.</p>
     </div>
   </div>
+</section>
 
-  <hr class="divider">
-
-  <div class="bottom-cta">
-    <p class="bottom-title">15 minutes to determine fit.</p>
-    <p class="bottom-sub">Not a sales call. An honest operator conversation — to see if there's a real match.</p>
-    <div class="btn-group">
-      <button class="cta-btn primary" style="min-width:160px;" onclick="openLink('https://www.hanslacida.com/#contact')">Book fit call ↗</button>
-      <button class="cta-btn" style="min-width:160px;" onclick="openLink('mailto:hello@hanslacida.com')">hello@hanslacida.com</button>
+<!-- BOTTOM CTA -->
+<div class="cta-strip">
+  <div class="cta-inner">
+    <div>
+      <h2 class="cta-title">15 minutes to determine fit.<br><em>Not a pitch. A real conversation.</em></h2>
+      <p class="cta-sub">One operator, direct access. If there's a match, we move fast. If there isn't, I'll say so honestly.</p>
     </div>
-    <p class="pill-tag">US market only · Direct operator access · No layers</p>
+    <div class="cta-actions">
+      <a href="https://www.hanslacida.com/#contact" target="_blank" class="btn-pri">Book fit call ↗</a>
+      <a href="mailto:hello@hanslacida.com" class="btn-sec">hello@hanslacida.com</a>
+      <p class="cta-pill">US market · No layers</p>
+    </div>
   </div>
-
 </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">© 2025 HansLacida · Zeldigital</span>
+    <ul class="footer-links">
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Process</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="mailto:hello@hanslacida.com">Contact</a></li>
+    </ul>
+  </div>
+</footer>
 
 <script>
 function fmt(n) { return '$' + n.toLocaleString('en-US'); }
 function calc() {
   var spend = parseInt(document.getElementById('spend').value);
   document.getElementById('spend-out').textContent = fmt(spend);
+  document.getElementById('spend-display').textContent = fmt(spend);
   var pct = Math.round(spend * 0.10);
   var floor = spend <= 15000 ? 1500 : 2500;
   var fee = Math.max(pct, floor);
@@ -197,3 +1040,6 @@ function calc() {
 }
 calc();
 </script>
+
+</body>
+</html>
