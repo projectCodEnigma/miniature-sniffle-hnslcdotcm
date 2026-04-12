@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hans Lacida — Paid Acquisition System Operator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C87A;
+      --off-white: #F2EDE6;
+      --dark: #0A0A0A;
+      --dark-2: #111111;
+      --dark-3: #1A1A1A;
+      --muted: #5A5A5A;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--dark);
+      color: var(--off-white);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+    .font-mono { font-family: 'DM Mono', monospace; }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    .gold-text {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gold-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .gold-line-left {
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .cta-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #0A0A0A;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      padding: 1rem 2.5rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cta-btn:hover::before { opacity: 1; }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.35); }
+    .cta-btn span { position: relative; z-index: 1; }
+
+    .vertical-card {
+      border: 1px solid rgba(201,168,76,0.15);
+      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(10,10,10,0) 100%);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vertical-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 2px;
+      height: 0;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      transition: height 0.4s ease;
+    }
+
+    .vertical-card:hover::before { height: 100%; }
+    .vertical-card:hover {
+      border-color: rgba(201,168,76,0.35);
+      background: linear-gradient(135deg, rgba(201,168,76,0.07) 0%, rgba(10,10,10,0) 100%);
+    }
+
+    .pillar-card {
+      border-top: 1px solid rgba(201,168,76,0.3);
+      padding-top: 1.5rem;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse-gold {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .animate-fade-up { animation: fadeUp 0.8s ease forwards; }
+    .animate-fade-up-2 { animation: fadeUp 0.8s 0.15s ease both; }
+    .animate-fade-up-3 { animation: fadeUp 0.8s 0.3s ease both; }
+    .animate-fade-up-4 { animation: fadeUp 0.8s 0.45s ease both; }
+    .animate-fade-in { animation: fadeIn 1.2s ease forwards; }
+
+    .live-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse-gold 2s infinite;
+      display: inline-block;
+    }
+
+    .diagonal-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.2) 30%, rgba(201,168,76,0.2) 70%, transparent 100%);
+      margin: 0 auto;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    .bg-pattern {
+      background-image: radial-gradient(rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style="background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, transparent 100%); backdrop-filter: blur(10px);">
+    <div class="font-mono text-xs tracking-widest" style="color: var(--gold);">HL / PASO</div>
+    <a href="https://cal.com/hanslacida" target="_blank" class="cta-btn text-xs"><span>Book a Call</span></a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-24 pb-16 bg-pattern">
+    <div class="hero-glow"></div>
+
+    <div class="max-w-5xl mx-auto w-full">
+
+      <div class="animate-fade-up mb-6 flex items-center gap-3">
+        <div class="live-dot"></div>
+        <span class="font-mono text-xs tracking-widest" style="color: var(--muted);">ACCEPTING US CLIENTS — 2025</span>
+      </div>
+
+      <h1 class="font-display animate-fade-up-2 leading-none mb-6" style="font-size: clamp(3rem, 8vw, 7rem); font-weight: 300; color: var(--off-white);">
+        Your ads are running.<br/>
+        <span class="gold-text" style="font-weight: 600;">Your system is broken.</span>
+      </h1>
+
+      <p class="animate-fade-up-3 max-w-2xl leading-relaxed mb-10" style="font-size: 1.1rem; color: rgba(242,237,230,0.65); font-weight: 300;">
+        Most US businesses have someone managing Google Ads. Almost none have someone who can diagnose <em>why</em> performance drops, fix the tracking infrastructure causing it, and prove the fix worked — with data. That's the gap Hans fills.
+      </p>
+
+      <div class="animate-fade-up-4 flex flex-col sm:flex-row gap-4 items-start">
+        <a href="https://cal.com/hanslacida" target="_blank" class="cta-btn">
+          <span>→ Claim Your Strategy Session</span>
+        </a>
+        <a href="https://hanslacida.com/results" target="_blank" class="font-mono text-xs tracking-widest self-center" style="color: var(--gold); text-decoration: underline; text-underline-offset: 4px;">
+          View Results →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="diagonal-divider w-full"></div>
+
+  <!-- PROBLEM SECTION -->
+  <section class="px-8 md:px-16 lg:px-24 py-24" style="background-color: var(--dark-2);">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="font-mono text-xs tracking-widest mb-12" style="color: var(--gold);">// THE REAL PROBLEM</div>
+
+      <div class="grid md:grid-cols-3 gap-0 md:gap-px" style="border: 1px solid rgba(201,168,76,0.12);">
+        <div class="p-8" style="border-right: 1px solid rgba(201,168,76,0.12);">
+          <div class="font-display text-5xl mb-4" style="color: rgba(201,168,76,0.3); font-weight: 300;">01</div>
+          <h3 class="font-display text-xl mb-3" style="color: var(--off-white);">You're flying blind</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--muted);">Your conversion data is broken, inflated, or misattributed. You're optimizing toward numbers that don't reflect reality.</p>
+        </div>
+        <div class="p-8" style="border-right: 1px solid rgba(201,168,76,0.12);">
+          <div class="font-display text-5xl mb-4" style="color: rgba(201,168,76,0.3); font-weight: 300;">02</div>
+          <h3 class="font-display text-xl mb-3" style="color: var(--off-white);">Your agency can't explain it</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--muted);">They manage the account. They don't own the measurement layer. When numbers go wrong, you get a slide deck — not a diagnosis.</p>
+        </div>
+        <div class="p-8">
+          <div class="font-display text-5xl mb-4" style="color: rgba(201,168,76,0.3); font-weight: 300;">03</div>
+          <h3 class="font-display text-xl mb-3" style="color: var(--off-white);">You're scaling the wrong thing</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--muted);">Budget increases without infrastructure confidence is just burning money faster. The system needs to be right before you scale it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="diagonal-divider w-full"></div>
+
+  <!-- WHO IS HANS -->
+  <section class="px-8 md:px-16 lg:px-24 py-24" style="background-color: var(--dark);">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <div class="font-mono text-xs tracking-widest mb-8" style="color: var(--gold);">// WHO OPERATES THE SYSTEM</div>
+        <h2 class="font-display mb-6 leading-tight" style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; color: var(--off-white);">
+          Former Google. Independent by choice.
+        </h2>
+        <p class="text-sm leading-relaxed mb-6" style="color: rgba(242,237,230,0.6);">
+          Hans Lacida is a former Google Senior Account Strategist turned independent operator. Over 10 years, he's built and managed paid acquisition systems for US and Australian businesses — directly, without agency layers.
+        </p>
+        <p class="text-sm leading-relaxed mb-8" style="color: rgba(242,237,230,0.6);">
+          He doesn't just run campaigns. He architects the full stack: from ad strategy through tracking integrity, data pipelines, and executive-grade dashboards. You get one operator who sees the entire system.
+        </p>
+        <div class="gold-line-left w-full mb-8"></div>
+        <a href="https://hanslacida.com/results" target="_blank" class="font-mono text-xs tracking-widest" style="color: var(--gold); text-decoration: underline; text-underline-offset: 4px;">
+          Full results at hanslacida.com/results →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="p-6" style="border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+          <div class="stat-number text-5xl mb-2">10+</div>
+          <div class="font-mono text-xs tracking-widest" style="color: var(--muted);">Years operating</div>
+        </div>
+        <div class="p-6" style="border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+          <div class="stat-number text-5xl mb-2">Top<br/>1%</div>
+          <div class="font-mono text-xs tracking-widest" style="color: var(--muted);">Google Ads specialist PH</div>
+        </div>
+        <div class="p-6" style="border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+          <div class="stat-number text-5xl mb-2">US</div>
+          <div class="font-mono text-xs tracking-widest" style="color: var(--muted);">LLC — KaizenStrategy</div>
+        </div>
+        <div class="p-6" style="border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+          <div class="stat-number text-5xl mb-2">D2F</div>
+          <div class="font-mono text-xs tracking-widest" style="color: var(--muted);">Direct-to-founder only</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="diagonal-divider w-full"></div>
+
+  <!-- CAPABILITIES -->
+  <section class="px-8 md:px-16 lg:px-24 py-24" style="background-color: var(--dark-2);">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="font-mono text-xs tracking-widest mb-12" style="color: var(--gold);">// WHAT GETS OPERATED</div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="pillar-card">
+          <div class="font-mono text-xs tracking-widest mb-4" style="color: var(--gold);">ACQUISITION</div>
+          <h3 class="font-display text-2xl mb-4" style="color: var(--off-white); font-weight: 400;">Google Ads Strategy & Execution</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--muted);">Search, Performance Max, Shopping. Budget architecture, bidding strategy, audience segmentation. Built for profitable growth — not vanity metrics.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="font-mono text-xs tracking-widest mb-4" style="color: var(--gold);">INFRASTRUCTURE</div>
+          <h3 class="font-display text-2xl mb-4" style="color: var(--off-white); font-weight: 400;">Tracking & Measurement Integrity</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--muted);">GA4 implementation, server-side tracking, conversion audits, BigQuery pipelines. Your data needs to be trustworthy before it's useful.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="font-mono text-xs tracking-widest mb-4" style="color: var(--gold);">INTELLIGENCE</div>
+          <h3 class="font-display text-2xl mb-4" style="color: var(--off-white); font-weight: 400;">Performance Dashboards & Attribution</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--muted);">Looker Studio and Power BI dashboards built for decisions. Attribution modeling that shows where revenue actually originates.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="diagonal-divider w-full"></div>
+
+  <!-- VERTICALS -->
+  <section class="px-8 md:px-16 lg:px-24 py-24" style="background-color: var(--dark);">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="font-mono text-xs tracking-widest mb-4" style="color: var(--gold);">// US MARKET VERTICALS</div>
+      <h2 class="font-display mb-12 leading-tight" style="font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; color: var(--off-white);">
+        Industries where this system pays for itself fast.
+      </h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">HOME SERVICES</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">HVAC, roofing, plumbing, electrical. High-intent search volume, competitive CPCs, tracking gaps are common. High ROI when fixed.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">LEGAL</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Personal injury, family law, immigration. Highest CPCs in Google Ads. Every misattributed conversion is an expensive mistake.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">HEALTHCARE & MEDSPA</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Elective procedures, dental, aesthetics. Complex compliance + high-value conversions. Needs a precise measurement layer.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">E-COMMERCE & DTC</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Shopify brands scaling with PMax. Server-side tracking is the difference between profitable and bleeding. Attribution is everything.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">SAAS & B2B TECH</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Long sales cycles, pipeline attribution, MQL/SQL tracking. Most SaaS companies have no idea which campaigns generate closed revenue.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">REAL ESTATE & MORTGAGE</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Lead gen with high close values. When a single closed deal is worth $10K+, tracking accuracy and lead quality become the priority.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">FINANCIAL SERVICES</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Insurance, wealth management, lending. Compliance-aware campaigns with full attribution visibility from click to funded account.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">EDUCATION & COACHING</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Online courses, bootcamps, high-ticket coaching. Funnel tracking from ad click to enrollment — with data that proves what converts.</p>
+        </div>
+
+        <div class="vertical-card p-6">
+          <div class="font-mono text-xs tracking-widest mb-3" style="color: var(--gold);">FRANCHISES & MULTI-LOCATION</div>
+          <p class="text-sm" style="color: rgba(242,237,230,0.6);">Centralized ad management with location-level reporting. One system. Full visibility. No more guessing which location drives results.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="diagonal-divider w-full"></div>
+
+  <!-- CTA SECTION -->
+  <section class="px-8 md:px-16 lg:px-24 py-32 text-center relative" style="background-color: var(--dark-2);">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none;"></div>
+
+    <div class="max-w-3xl mx-auto relative">
+      <div class="font-mono text-xs tracking-widest mb-8" style="color: var(--gold);">// NEXT STEP</div>
+
+      <h2 class="font-display mb-6 leading-tight" style="font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; color: var(--off-white);">
+        If your paid acquisition<br/>
+        <span class="gold-text" style="font-weight: 600;">system isn't airtight —</span><br/>
+        let's fix it.
+      </h2>
+
+      <p class="mb-12 leading-relaxed" style="color: rgba(242,237,230,0.5); font-size: 1rem; font-weight: 300;">
+        One call. No pitch deck. Just a direct conversation about what's broken in your system and whether Hans is the right operator to fix it.
+      </p>
+
+      <a href="https://cal.com/hanslacida" target="_blank" class="cta-btn text-sm">
+        <span>→ Schedule Your Strategy Session</span>
+      </a>
+
+      <div class="mt-8 font-mono text-xs tracking-widest" style="color: var(--muted);">
+        US businesses only &nbsp;·&nbsp; Direct-to-founder &nbsp;·&nbsp; Limited availability
+      </div>
+
+      <div class="mt-12 gold-line w-32 mx-auto"></div>
+
+      <div class="mt-8">
+        <a href="https://hanslacida.com/results" target="_blank" class="font-mono text-xs tracking-widest" style="color: rgba(201,168,76,0.6); text-decoration: underline; text-underline-offset: 4px;">
+          hanslacida.com/results
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-8 md:px-16 lg:px-24 py-8 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-top: 1px solid rgba(201,168,76,0.1);">
+    <div class="font-mono text-xs tracking-widest" style="color: var(--muted);">© 2025 Hans Lacida / KaizenStrategy LLC</div>
+    <div class="font-mono text-xs tracking-widest" style="color: var(--muted);">Paid Acquisition System Operator</div>
+  </footer>
+
+</body>
+</html>
