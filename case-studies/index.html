@@ -1,248 +1,1300 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        window.TallyConfig = {
-          "formId": "D41GoR",
-          "popup": {
-            "emoji": {
-              "text": "👋",
-              "animation": "wave"
-            },
-            "open": {
-              "trigger": "scroll",
-              "scrollPercent": 100
-            },
-            "overlay": true,
-            "autoClose": 5000,
-            "doNotShowAfterSubmit": true,
-            "formEventsForwarding": true
-          }
-        };
-        </script>
-        
-        <script async src="https://tally.so/widgets/embed.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore tailored PPC management packages designed for your business needs.">
-    <meta name="keywords" content="PPC Management, Google Ads, Digital Marketing">
-    <meta name="author" content="Hans Lacida">
-    <title>PPC Case Studies - HansLacida.com</title>
-    <!-- Tailwind for shared site styles -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>html{scroll-behavior:smooth;}</style>
-    <!-- E-E-A-T / Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "PPC Case Studies",
-      "description": "Real Google Ads case studies and results managed by Hans Lacida, a performance-driven Google Ads specialist.",
-      "url": "https://www.hanslacida.com/case-studies/",
-      "author": {
-        "@type": "Person",
-        "name": "Hans Lacida",
-        "jobTitle": "Google Ads Specialist",
-        "url": "https://www.hanslacida.com/",
-        "sameAs": [
-          "https://www.linkedin.com/in/hanslacida",
-          "https://twitter.com/hanslacida"
-        ],
-        "knowsAbout": [
-          "Google Ads Management",
-          "PPC Campaign Optimization",
-          "Performance Max",
-          "Conversion Rate Optimization",
-          "Analytics & Tracking"
-        ],
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "Google Ads Certified"
-          }
-        ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "ZELDIGITAL®"
-        }
-      },
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "HansLacida.com",
-        "url": "https://www.hanslacida.com/"
-      }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Hans Lacida | Paid Acquisition Systems Operator</title>
+<meta name="description" content="Real Google Ads results across ecommerce, healthcare, B2B, and local services. Data anonymized for client privacy. Full details available on live walkthrough call only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-hover: #161616;
+    --border: rgba(255,255,255,0.08);
+    --border-accent: rgba(255,255,255,0.15);
+    --accent: #c8f135;
+    --accent-dim: rgba(200,241,53,0.12);
+    --accent-dim2: rgba(200,241,53,0.06);
+    --text-primary: #f0f0ee;
+    --text-secondary: #888882;
+    --text-muted: #555550;
+    --warn-bg: rgba(239,154,39,0.08);
+    --warn-border: rgba(239,154,39,0.3);
+    --warn-text: #ef9a27;
+    --danger-bg: rgba(226,75,74,0.07);
+    --danger-border: rgba(226,75,74,0.2);
+    --danger-text: #e24b4a;
+    --success-bg: rgba(99,153,34,0.08);
+    --success-border: rgba(99,153,34,0.2);
+    --success-text: #7cbc30;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+    --radius: 6px;
+    --radius-lg: 10px;
+    --transition: 0.2s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+
+  .nav-links a:hover { color: var(--text-primary); }
+
+  /* HERO */
+  .hero {
+    padding: 6rem 2rem 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    max-width: 720px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 540px;
+    line-height: 1.75;
+  }
+
+  /* PRIVACY BANNER */
+  .privacy-banner {
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+  }
+
+  .privacy-card {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .privacy-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(239,154,39,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .privacy-icon svg { width: 18px; height: 18px; }
+
+  .privacy-content h3 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--warn-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .privacy-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .privacy-content p:last-child { margin-bottom: 0; }
+
+  .privacy-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--warn-text);
+    background: rgba(239,154,39,0.1);
+    border: 0.5px solid var(--warn-border);
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .stat-cell {
+    background: var(--bg-card);
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* SECTION */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  /* CASE STUDY CARDS */
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border-accent);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .case-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    transition: background var(--transition);
+    position: relative;
+  }
+
+  .case-card:hover { background: var(--bg-card-hover); }
+
+  .case-card.featured {
+    grid-column: 1 / -1;
+    background: var(--accent-dim2);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .case-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    margin-right: 0.4rem;
+  }
+
+  .tag-ecom { background: rgba(200,241,53,0.1); color: var(--accent); border: 0.5px solid rgba(200,241,53,0.25); }
+  .tag-health { background: rgba(93,202,165,0.08); color: #5dcaa5; border: 0.5px solid rgba(93,202,165,0.2); }
+  .tag-b2b { background: rgba(55,138,221,0.08); color: #378add; border: 0.5px solid rgba(55,138,221,0.2); }
+  .tag-local { background: rgba(239,154,39,0.08); color: var(--warn-text); border: 0.5px solid rgba(239,154,39,0.2); }
+  .tag-pmax { background: rgba(127,119,221,0.08); color: #9d95e8; border: 0.5px solid rgba(127,119,221,0.2); }
+
+  .case-industry {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  .case-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .case-metrics {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .metric-val {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .metric-val.neutral { color: var(--text-primary); }
+  .metric-val.down { color: var(--success-text); }
+
+  .metric-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .case-before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .before-col, .after-col {
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-size: 13px;
+  }
+
+  .before-col {
+    background: var(--danger-bg);
+    border: 0.5px solid var(--danger-border);
+  }
+
+  .after-col {
+    background: var(--success-bg);
+    border: 0.5px solid var(--success-border);
+  }
+
+  .col-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .before-col .col-label { color: var(--danger-text); }
+  .after-col .col-label { color: var(--success-text); }
+
+  .ba-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .ba-list li {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 0.4rem;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .ba-list li span.dot {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .after-col .ba-list li span.dot { color: var(--success-text); }
+
+  .case-impact {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-top: 1rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .case-impact strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  /* LOCK OVERLAY HINT */
+  .details-lock {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 0.5px dashed var(--border-accent);
+  }
+
+  .details-lock svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  /* ROAS SUMMARY */
+  .roas-table {
+    background: var(--bg-card);
+    border: 0.5px solid var(--border-accent);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .roas-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    padding: 0.875rem 1.5rem;
+    border-bottom: 0.5px solid var(--border);
+    align-items: center;
+    transition: background var(--transition);
+  }
+
+  .roas-row:last-child { border-bottom: none; }
+  .roas-row:hover { background: var(--bg-card-hover); }
+
+  .roas-row.header {
+    background: rgba(255,255,255,0.03);
+    padding: 0.6rem 1.5rem;
+  }
+
+  .roas-row.header span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .roas-industry {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .roas-period {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  .roas-val {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: right;
+    min-width: 80px;
+  }
+
+  /* SCAM SHIELD */
+  .shield-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+
+  .shield-card {
+    background: var(--bg-card);
+    border: 0.5px solid var(--border-accent);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .shield-text h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .shield-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .shield-text p:last-child { margin-bottom: 0; }
+
+  .shield-text em {
+    font-style: normal;
+    color: var(--warn-text);
+    font-weight: 500;
+  }
+
+  .shield-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .shield-point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .shield-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 0.5px solid rgba(200,241,53,0.2);
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .shield-point-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .shield-point-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+
+  /* CTA */
+  .cta-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 7rem;
+  }
+
+  .cta-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(200,241,53,0.2);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+  }
+
+  .cta-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .cta-card h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .cta-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #0a0a0a;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius);
+    transition: all var(--transition);
+  }
+
+  .btn-primary:hover {
+    background: #d5f54a;
+    border-color: #d5f54a;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 0.5px solid var(--border-accent);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius);
+    transition: all var(--transition);
+  }
+
+  .btn-secondary:hover {
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .cta-disclaimer {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 1.25rem;
+  }
+
+  /* DISCLAIMER */
+  .legal-footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    border-top: 0.5px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  .legal-footer p {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  .legal-footer p + p { margin-top: 0.5rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1.25rem; }
+    .hero, .privacy-banner, .stats-bar, .section, .shield-section, .cta-section, .legal-footer {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
     }
-    </script>
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-card.featured { grid-column: 1; }
+    .case-before-after { grid-template-columns: 1fr; }
+    .shield-card { grid-template-columns: 1fr; gap: 2rem; }
+    .roas-row { grid-template-columns: 1fr auto; }
+    .roas-period { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { gap: 0.75rem; }
+    .nav-links a { font-size: 11px; }
+  }
+</style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between py-4">
-                <a href="/" class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white font-bold">HL</div>
-                    <span class="text-lg font-semibold text-gray-900">HansLacida</span>
-                </a>
-                <nav class="hidden md:flex items-center gap-6 text-sm">
-                    <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="/#about" class="text-gray-700 hover:text-blue-600">About</a>
-                    <a href="/services/" class="text-gray-700 hover:text-blue-600">Services</a>
-                    <a href="/case-studies/" class="text-blue-600 font-semibold">Case Studies</a>
-                    <a href="/#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
-                </nav>
-                <a href="/discovery-call/" class="hidden md:inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium">Book Call</a>
-            </div>
-        </div>
-    </header>
+<body>
 
-    <!-- Hero -->
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-14">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Explore Proven PPC Case Studies</h1>
-            <p class="text-blue-100 text-lg max-w-3xl mx-auto">Learn how focused strategy, clean tracking, and disciplined execution compound results.</p>
-            <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/discovery-call/" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50">Book a Discovery Call</a>
-                <a href="/case-studies/20x-roas/" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700">See 20x ROAS</a>
-            </div>
-        </div>
-    </section>
+<nav>
+  <a href="https://www.hanslacida.com/" class="nav-logo">HL</a>
+  <ul class="nav-links">
+    <li><a href="https://www.hanslacida.com/">Home</a></li>
+    <li><a href="https://www.hanslacida.com/results/">Results</a></li>
+    <li><a href="https://www.hanslacida.com/services/">Services</a></li>
+    <li><a href="https://www.hanslacida.com/#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- Before We Work (Requirements) -->
-    <section style="padding: 32px 20px;">
-        <div style="max-width: 900px; margin: 0 auto; text-align: left; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px;">
-            <h2 style="margin: 0 0 12px; font-size: 1.6em; color: #111827;">Before We Work Together</h2>
-            <p style="margin: 8px 0; color: #374151;">
-                I’m a Google Ads expert (not an agency) — a performance-driven specialist with over a decade of hands-on experience.
-            </p>
-            <p style="margin: 12px 0; color: #374151;">
-                If you’re a US-based brand spending $5,000/month or more on Google Ads (in one account) and you believe:
-            </p>
-            <ul style="margin: 0 0 12px 0; padding-left: 20px; color: #111827;">
-                <li>✅ Growth comes before launch</li>
-                <li>✅ Results take time and testing</li>
-                <li>✅ Accounts need strategy, not shortcuts</li>
-            </ul>
-            <p style="margin: 12px 0; color: #374151;">Then we speak the same language.</p>
-            <p style="margin: 0; color: #111827; font-weight: 600;">DM me if you’re looking for a long-term Google Ads partner, not just another media buyer.</p>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Paid Acquisition · Google Ads · Performance Results</p>
+  <h1>Real numbers.<br>Real accounts.<br><em>Zero fluff.</em></h1>
+  <p class="hero-sub">Across ecommerce, healthcare, B2B, and local services — here's what disciplined acquisition infrastructure actually produces.</p>
+</section>
 
-    <!-- Case Studies Grid -->
-    <section class="py-14">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Selected Wins</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
-                    <h3 class="text-lg font-bold text-gray-900">eCommerce — Peak 20x ROAS</h3>
-                    <p class="text-sm text-gray-600 mt-2">$35,600 spend → $265,000 revenue</p>
-                    <p class="text-sm text-gray-700 mt-2">Segmentation, feed clean‑up, PMax assets, disciplined negatives.</p>
-                    <a class="inline-block mt-3 text-blue-600 font-semibold hover:text-blue-800" href="/case-studies/20x-roas/">Open Case Study →</a>
-                </article>
-                <article class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
-                    <h3 class="text-lg font-bold text-gray-900">Local Services — Lead Scale</h3>
-                    <p class="text-sm text-gray-600 mt-2">788 qualified calls @ $16.95 CPL</p>
-                    <p class="text-sm text-gray-700 mt-2">Geo/time bidding, call‑only structure, intent sculpting.</p>
-                </article>
-                <article class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
-                    <h3 class="text-lg font-bold text-gray-900">Manufacturing — CPA Down 50%</h3>
-                    <p class="text-sm text-gray-600 mt-2">$23 → $14 per qualified lead</p>
-                    <p class="text-sm text-gray-700 mt-2">Query controls, LP overhaul, offer clarity.</p>
-                </article>
-                <article class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
-                    <h3 class="text-lg font-bold text-gray-900">Multi‑Brand Portfolio</h3>
-                    <p class="text-sm text-gray-600 mt-2">$250k–$300k/mo managed under efficiency guardrails</p>
-                    <p class="text-sm text-gray-700 mt-2">Playbooks, governance, cross‑brand signal lift.</p>
-                </article>
-                <article class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
-                    <h3 class="text-lg font-bold text-gray-900">Merchant Center Recovery</h3>
-                    <p class="text-sm text-gray-600 mt-2">Misrepresentation issues fixed, profitable relaunch</p>
-                    <a class="inline-block mt-3 text-blue-600 font-semibold hover:text-blue-800" href="/misrepresentation-fix/">See Service →</a>
-                </article>
+<!-- PRIVACY BANNER -->
+<div class="privacy-banner">
+  <div class="privacy-card">
+    <div class="privacy-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ef9a27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+    </div>
+    <div class="privacy-content">
+      <h3>Why all data is anonymized — and why full details are only available on a live call</h3>
+      <p>Every result on this page is real. Every number came from an actual Google Ads account I managed. But client names, industries, and identifying details are intentionally stripped for public display.</p>
+      <p><em>Here's the honest reason:</em> I've been burned before — prospects who scheduled "discovery calls" just to extract specific strategy inputs, account structures, and optimization frameworks, then disappeared without engaging. Free consulting sessions dressed up as discovery. I'm done with that.</p>
+      <p>Full case study walk-throughs — with screenshots, account structure details, keyword strategies, and bid logic — are only shared on a <strong>live 15-minute audit call</strong> with qualified leads. If you're serious about improving your ROAS or ACOS, that call is where we start.</p>
+      <span class="privacy-note">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Data anonymized · Full details by live walkthrough only
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-cell">
+      <div class="stat-val">11+</div>
+      <div class="stat-label">Case Studies</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">$550M+</div>
+      <div class="stat-label">Revenue Generated</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">50%+</div>
+      <div class="stat-label">Avg CPA Reduction</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">~38x</div>
+      <div class="stat-label">Avg ROAS (reported)</div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-label">Selected results</span>
+    <div class="section-line"></div>
+    <span class="section-label">All anonymized</span>
+  </div>
+
+  <div class="cases-grid">
+
+    <!-- FEATURED: Ebike -->
+    <div class="case-card featured">
+      <span class="case-tag tag-ecom">Ecommerce</span>
+      <span class="case-tag tag-pmax">PMax</span>
+      <div class="case-industry">Ebike & Sporting Goods Retailer</div>
+      <div class="case-meta">Paid Search Manager · Australia & New Zealand · 90 Days (Sep–Nov 2025)</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val">60x</span>
+          <span class="metric-label">Peak ROAS</span>
         </div>
+        <div class="metric">
+          <span class="metric-val neutral">AU/NZ</span>
+          <span class="metric-label">Markets</span>
         </div>
-    </section>
-    
-    <!-- Footer (from homepage) -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                <!-- Brand Section -->
-                <div class="col-span-2 md:col-span-2 lg:col-span-2">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">HL</span>
-                        </div>
-                        <span class="ml-3 text-xl font-bold">Hans Lacida</span>
-                    </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="sr-only">LinkedIn</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="sr-only">Twitter</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Navigation -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="/work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
-                        <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="/services/" class="hover:text-white transition-colors">All Services</a></li>
-                        <li><a href="/ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
-                        <li><a href="/google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
-                        <li><a href="/leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Resources -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="/case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
-                        <li><a href="/client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
-                        <li><a href="/our-process/" class="hover:text-white transition-colors">Our Process</a></li>
-                        <li><a href="https://hanslacida.beehiiv.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Newsletter</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="/#contact" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
-                        <li><a href="/free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
-                        <li><a href="/request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> - Trusted Digital Advertising for U.S. Businesses. All Rights Reserved.</p>
-            </div>
+        <div class="metric">
+          <span class="metric-val neutral">BFCM</span>
+          <span class="metric-label">Strong seasonal lift</span>
         </div>
-    </footer>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> Fragmented campaign structure</li>
+            <li><span class="dot">✕</span> Weak AU/NZ geo targeting</li>
+            <li><span class="dot">✕</span> High waste from broad terms</li>
+            <li><span class="dot">✕</span> No audience/avatar alignment</li>
+            <li><span class="dot">✕</span> Inconsistent daily optimisation</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> Rebuilt PMax + Search campaigns</li>
+            <li><span class="dot">✓</span> Negatives applied, terms cleaned</li>
+            <li><span class="dot">✓</span> Geo focused on AU East Coast high-intent</li>
+            <li><span class="dot">✓</span> Audience targeting aligned to buyer profiles</li>
+            <li><span class="dot">✓</span> Daily monitoring, controlled BFCM scaling</li>
+          </ul>
+        </div>
+      </div>
+      <div class="case-impact">
+        <strong>Impact:</strong> Strong lift in high-intent traffic · Improved ROAS stability · Lower wasted spend · Clear structure ready for scaling across AU & NZ
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Full account structure, asset group breakdown & screenshot walk-through available on live audit call
+      </div>
+    </div>
+
+    <!-- California Treatment Center -->
+    <div class="case-card">
+      <span class="case-tag tag-health">Healthcare</span>
+      <div class="case-industry">California Treatment Center</div>
+      <div class="case-meta">Paid Search Manager · 90 Days</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val down">53%</span>
+          <span class="metric-label">CPA Reduction</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">47</span>
+          <span class="metric-label">Leads Month 1</span>
+        </div>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> CPL: ~$115</li>
+            <li><span class="dot">✕</span> Budget: $0–$1,200</li>
+            <li><span class="dot">✕</span> No call tracking</li>
+            <li><span class="dot">✕</span> Fragmented attribution</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> CPL: $54 (53% drop)</li>
+            <li><span class="dot">✓</span> Budget scaled to $4,000+</li>
+            <li><span class="dot">✓</span> Full call tracking live</li>
+            <li><span class="dot">✓</span> CTM integration complete</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Bid strategy, landing page changes & keyword architecture on live call only
+      </div>
+    </div>
+
+    <!-- Behavioral Healthcare -->
+    <div class="case-card">
+      <span class="case-tag tag-health">Healthcare</span>
+      <div class="case-industry">Behavioral Healthcare</div>
+      <div class="case-meta">Orange County · 60 Days</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val down">30%</span>
+          <span class="metric-label">CPA Reduction</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">+40%</span>
+          <span class="metric-label">Phone Calls</span>
+        </div>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> High CPA baseline</li>
+            <li><span class="dot">✕</span> Low phone call volume</li>
+            <li><span class="dot">✕</span> Poor impression share</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> CPA down 25–30%</li>
+            <li><span class="dot">✓</span> Phone calls +40%</li>
+            <li><span class="dot">✓</span> Improved Quality Score</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Hyperlocal targeting setup & TCPA bid logic shared on live call only
+      </div>
+    </div>
+
+    <!-- Engine Manufacturing -->
+    <div class="case-card">
+      <span class="case-tag tag-b2b">B2B</span>
+      <div class="case-industry">Engine Manufacturing</div>
+      <div class="case-meta">B2B Scale · Nov 2023 – Jul 2024</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val down">-39%</span>
+          <span class="metric-label">CPA ($23 → $14)</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">115x</span>
+          <span class="metric-label">ROAS</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val neutral">$551M</span>
+          <span class="metric-label">Sales attributed</span>
+        </div>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> CPA: $23</li>
+            <li><span class="dot">✕</span> Spend: $300k/mo</li>
+            <li><span class="dot">✕</span> Low conversion rates</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> CPA: $14 (–39%)</li>
+            <li><span class="dot">✓</span> Conversions +50%</li>
+            <li><span class="dot">✓</span> Spend: $150k (more efficient)</li>
+            <li><span class="dot">✓</span> $138M net profit contribution</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        CRM integration, query control framework & bid architecture on live call only
+      </div>
+    </div>
+
+    <!-- Travel Ads by Expedia -->
+    <div class="case-card">
+      <span class="case-tag tag-b2b">Hospitality</span>
+      <div class="case-industry">Travel Ads Platform (Expedia)</div>
+      <div class="case-meta">50+ Hotel Brands · 2022–2023</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val">5x</span>
+          <span class="metric-label">Peak ROAS</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val down">-28%</span>
+          <span class="metric-label">CAC</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val neutral">100%</span>
+          <span class="metric-label">Reporting on-time</span>
+        </div>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> Inconsistent reporting</li>
+            <li><span class="dot">✕</span> High CAC across brands</li>
+            <li><span class="dot">✕</span> Manual processes</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> ROAS: 3.2x–5x across portfolio</li>
+            <li><span class="dot">✓</span> CAC down 28%</li>
+            <li><span class="dot">✓</span> Unified Looker Studio dashboards</li>
+            <li><span class="dot">✓</span> Automated team reporting framework</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Multi-brand portfolio structure & dashboard setup shared on live call only
+      </div>
+    </div>
+
+    <!-- Security Equipment -->
+    <div class="case-card">
+      <span class="case-tag tag-ecom">Ecommerce</span>
+      <div class="case-industry">Security Equipment Retailer</div>
+      <div class="case-meta">E-commerce · Apr 2022 – Apr 2023</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val">21.55x</span>
+          <span class="metric-label">Peak ROAS</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val neutral">10,117%</span>
+          <span class="metric-label">Conv. Value Lift</span>
+        </div>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> Conv. Value: $139</li>
+            <li><span class="dot">✕</span> ROAS: 0.17x</li>
+            <li><span class="dot">✕</span> Account underperforming</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> Conv. Value: $14,201</li>
+            <li><span class="dot">✓</span> ROAS: 9.06x aggregate</li>
+            <li><span class="dot">✓</span> Peak: 21.55x</li>
+            <li><span class="dot">✓</span> $129.5K total revenue</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Feed structure, shopping campaign segmentation & scaling timeline on live call only
+      </div>
+    </div>
+
+    <!-- Furniture Brand -->
+    <div class="case-card">
+      <span class="case-tag tag-ecom">Ecommerce</span>
+      <div class="case-industry">Furniture Brand</div>
+      <div class="case-meta">E-commerce · Mar–Apr 2022</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val">+260%</span>
+          <span class="metric-label">Conv. Value</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val neutral">$3.9M</span>
+          <span class="metric-label">Monthly Revenue</span>
+        </div>
+      </div>
+      <div class="case-before-after">
+        <div class="before-col">
+          <span class="col-label">Before (Mar)</span>
+          <ul class="ba-list">
+            <li><span class="dot">✕</span> Conversions: 1.89k</li>
+            <li><span class="dot">✕</span> Conv. Value: $1.5M</li>
+            <li><span class="dot">✕</span> ROAS at baseline</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <span class="col-label">After (Apr)</span>
+          <ul class="ba-list">
+            <li><span class="dot">✓</span> Conversions: 2.10k</li>
+            <li><span class="dot">✓</span> Conv. Value: $3.9M</li>
+            <li><span class="dot">✓</span> ROAS 2.6x (+260%)</li>
+            <li><span class="dot">✓</span> 1.32M impressions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Targeting changes & campaign restructure detail on live call only
+      </div>
+    </div>
+
+    <!-- Local Services -->
+    <div class="case-card">
+      <span class="case-tag tag-local">Local Services</span>
+      <div class="case-industry">Plumbing (Local Services)</div>
+      <div class="case-meta">Google Display · Perth, AU · Nov 2020 – Nov 2021</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val">10M+</span>
+          <span class="metric-label">Impressions</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val neutral">$34.24</span>
+          <span class="metric-label">CPA</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">1.2K</span>
+          <span class="metric-label">Conversions</span>
+        </div>
+      </div>
+      <div class="case-impact" style="border-top: none; padding-top: 0;">
+        Geo-targeted Display campaign across Perth. Peak Jan 2021. CPC: $3.40. AOV: A$180–$250. Consistent local lead flow throughout the year.
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Geo bidding logic, display creative approach & audience layering on live call only
+      </div>
+    </div>
+
+    <!-- SEO Agency -->
+    <div class="case-card">
+      <span class="case-tag tag-b2b">Agency / Multi-client</span>
+      <div class="case-industry">SEO Agency (USA)</div>
+      <div class="case-meta">PPC Lead · 2024 – May 2025 · 6+ Active Campaigns</div>
+      <div class="case-metrics">
+        <div class="metric">
+          <span class="metric-val down">↓</span>
+          <span class="metric-label">CPA across all</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">+CTR</span>
+          <span class="metric-label">Quality Score up</span>
+        </div>
+      </div>
+      <div class="case-impact" style="border-top: none; padding-top: 0;">
+        Managed multiple client accounts across addiction recovery, wellness, and construction sectors. GA4/GTM integration, call volume uplift, consistent Quality Score improvements.
+      </div>
+      <div class="details-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Multi-account management framework & tracking setup on live call only
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROAS SUMMARY TABLE -->
+<section class="section" style="padding-top: 0;">
+  <div class="section-header">
+    <span class="section-label">ROAS by project (where reported)</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="roas-table">
+    <div class="roas-row header">
+      <span>Account</span>
+      <span>Period</span>
+      <span>ROAS</span>
+    </div>
+    <div class="roas-row">
+      <span class="roas-industry">Ebike & Sporting Goods</span>
+      <span class="roas-period">Sep–Nov 2025</span>
+      <span class="roas-val">Peak 60x</span>
+    </div>
+    <div class="roas-row">
+      <span class="roas-industry">Engine Manufacturing</span>
+      <span class="roas-period">Nov 2023–Jul 2024</span>
+      <span class="roas-val">115x</span>
+    </div>
+    <div class="roas-row">
+      <span class="roas-industry">Security Equipment Retailer</span>
+      <span class="roas-period">Apr 2022–Apr 2023</span>
+      <span class="roas-val">Peak 21.55x</span>
+    </div>
+    <div class="roas-row">
+      <span class="roas-industry">Travel Ads by Expedia</span>
+      <span class="roas-period">2022–2023</span>
+      <span class="roas-val">3.2x–5x</span>
+    </div>
+    <div class="roas-row">
+      <span class="roas-industry">Furniture Brand</span>
+      <span class="roas-period">Mar–Apr 2022</span>
+      <span class="roas-val">2.6x</span>
+    </div>
+    <div class="roas-row" style="background: rgba(200,241,53,0.04); border-top: 0.5px solid rgba(200,241,53,0.15);">
+      <span class="roas-industry" style="font-weight:500; color: var(--text-primary);">Average (reported accounts only)</span>
+      <span class="roas-period">—</span>
+      <span class="roas-val">≈ 38x</span>
+    </div>
+  </div>
+  <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.7;">Average calculated from available ROAS figures only. Actual performance varies by industry, budget, offer quality, landing pages, and market conditions.</p>
+</section>
+
+<!-- SCAM SHIELD / WHY ANONYMIZED DEEPER -->
+<section class="shield-section">
+  <div class="shield-card">
+    <div class="shield-text">
+      <h2>Why you won't see screenshots here — and why that protects you too</h2>
+      <p>I started showing full account screenshots publicly. Within weeks I had three "prospects" who used the session to reverse-engineer my exact campaign structures and bid strategies, then ghosted after getting what they needed. <em>No retainer. No engagement. Just free consulting dressed up as due diligence.</em></p>
+      <p>The boundary I've set is simple: real numbers are here. The system behind them is discussed only when there's mutual skin in the game — a 15-minute audit call where I look at your actual account, and you can verify I know what I'm talking about.</p>
+      <p>That's a fair trade. Anything else is just me subsidizing your competitors.</p>
+    </div>
+    <div class="shield-points">
+      <div class="shield-point">
+        <div class="shield-num">1</div>
+        <div class="shield-point-text">
+          <strong>Full data is available on the call</strong>
+          Actual screenshots, account structures, keyword lists, bid strategies — all shown live during your free 15-minute ROAS/ACOS audit.
+        </div>
+      </div>
+      <div class="shield-point">
+        <div class="shield-num">2</div>
+        <div class="shield-point-text">
+          <strong>The call is about your account</strong>
+          Not a pitch deck. I look at your live data and tell you exactly what's bleeding budget and what to fix first.
+        </div>
+      </div>
+      <div class="shield-point">
+        <div class="shield-num">3</div>
+        <div class="shield-point-text">
+          <strong>No obligation to continue</strong>
+          If the audit surfaces nothing actionable, I'll tell you. But it usually does.
+        </div>
+      </div>
+      <div class="shield-point">
+        <div class="shield-num">4</div>
+        <div class="shield-point-text">
+          <strong>Advisory retainer is how we go deeper</strong>
+          Ongoing strategy, campaign architecture, and execution support is behind a paid engagement. No free consulting extraction.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-card">
+    <p class="cta-eyebrow">Free 15-Minute Audit</p>
+    <h2>Get a live ROAS / ACOS audit<br>on your Google Ads account</h2>
+    <p>I'll look at your actual campaign data, identify what's wasting budget, and tell you what I'd change first. No pitch. No fluff. Just a straight read on your account.</p>
+    <div class="cta-btns">
+      <a href="https://www.hanslacida.com/#contact" class="btn-primary">
+        Book Free Audit Call →
+      </a>
+      <a href="https://www.hanslacida.com/results/" class="btn-secondary">
+        Full Results Page
+      </a>
+    </div>
+    <p class="cta-disclaimer">15 minutes · No obligation · Qualified accounts spending $5k+/mo on Google Ads</p>
+  </div>
+</section>
+
+<!-- LEGAL FOOTER -->
+<div class="legal-footer">
+  <p>All case studies use anonymized client data. No proprietary, personally identifiable, or sensitive information is disclosed. All performance figures (ROAS, CPA, revenue, leads) are specific to the individual accounts and timeframes shown.</p>
+  <p>Before/After results and peak ROAS numbers are not guarantees of future performance and may not be typical. Results vary by industry, budget, seasonality, offer quality, landing pages, and market conditions. All performance data is sourced from internal Google Ads and analytics reports at the time of management.</p>
+  <p style="margin-top: 1rem;">© 2025 Hans Lacida · ZELDIGITAL® · <a href="https://www.hanslacida.com/" style="color: var(--text-muted); text-decoration: none;">hanslacida.com</a></p>
+</div>
+
 </body>
 </html>
