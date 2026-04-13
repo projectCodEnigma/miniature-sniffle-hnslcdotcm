@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junk Removal Growth System — Hans Lacida | Zeldigital</title>
+<meta name="description" content="Google Ads + CRM automation system built specifically for junk removal businesses in the US. Real results. Real leads. Book a free 15-min call.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gold: '#D4A017',
+          'gold-light': '#F0C040',
+          'gold-dim': '#9A7010',
+          'black-1': '#0a0a0a',
+          'black-2': '#111111',
+          'black-3': '#1a1a1a',
+          'black-4': '#222222',
+          cream: '#f0ece0',
+          muted: '#8a8070',
+          dim: '#5a5448',
+        },
+        fontFamily: {
+          serif: ['DM Serif Display', 'serif'],
+          sans: ['Syne', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { background: #0a0a0a; }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
+  }
+
+  .glow-top {
+    position: fixed; width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+    top: -200px; right: -200px; pointer-events: none; z-index: 0;
+  }
+
+  .glow-mid {
+    position: fixed; width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,160,23,0.04) 0%, transparent 70%);
+    top: 60%; left: -150px; pointer-events: none; z-index: 0;
+  }
+
+  .gold-line {
+    background: linear-gradient(90deg, transparent, #D4A017, transparent);
+    height: 1px;
+  }
+
+  .gold-line-v {
+    background: linear-gradient(180deg, transparent, rgba(212,160,23,0.4), transparent);
+    width: 1px;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+
+  .pulse-dot {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+
+  .card-hover {
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .card-hover:hover {
+    border-color: rgba(212,160,23,0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-gold {
+    background: #D4A017;
+    color: #0a0a0a;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 16px 36px;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-gold:hover {
+    background: #F0C040;
+    transform: translateY(-1px);
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    color: #D4A017;
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9A7010;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+  }
+
+  .before-after-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(212,160,23,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .before-col {
+    background: #111111;
+    padding: 20px 24px;
+  }
+
+  .after-col {
+    background: rgba(212,160,23,0.06);
+    padding: 20px 24px;
+  }
+
+  @media (max-width: 600px) {
+    .before-after-row { grid-template-columns: 1fr; }
+    .stat-num { font-size: 2rem; }
+  }
+
+  .sticky-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    box-shadow: 0 0 40px rgba(212,160,23,0.2);
+  }
+
+  @media (max-width: 480px) {
+    .sticky-cta { bottom: 16px; right: 16px; left: 16px; }
+    .sticky-cta a { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body class="font-sans text-cream min-h-screen overflow-x-hidden">
+
+<div class="grain"></div>
+<div class="glow-top"></div>
+<div class="glow-mid"></div>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <a href="https://www.hanslacida.com/q2-scale-up-junk-removal/" class="btn-gold text-xs">
+    Book Free 15-Min Call
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="relative z-10 border-b border-gold/10">
+  <div class="max-w-3xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="https://www.hanslacida.com" class="font-sans font-bold text-gold tracking-widest text-sm uppercase">Zeldigital</a>
+    <span class="text-dim text-xs tracking-widest uppercase hidden sm:block">Junk Removal Growth</span>
+    <a href="https://www.hanslacida.com/q2-scale-up-junk-removal/" class="text-gold text-xs font-semibold tracking-wider uppercase border border-gold/30 px-4 py-2 rounded-sm hover:border-gold/70 transition-colors">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 pt-20 pb-16">
+  <div class="fade-up delay-1 mb-8">
+    <span class="inline-flex items-center gap-2 bg-gold/8 border border-gold/25 rounded-full px-4 py-2">
+      <span class="pulse-dot w-2 h-2 rounded-full bg-gold block"></span>
+      <span class="text-gold text-xs tracking-widest uppercase font-semibold">Case Studies · Junk Removal Growth</span>
+    </span>
+  </div>
+
+  <h1 class="fade-up delay-2 font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 text-cream">
+    The gap in junk removal<br>is <em class="text-gold">exactly</em> what I fill.
+  </h1>
+
+  <p class="fade-up delay-3 text-muted text-lg leading-relaxed max-w-xl mb-4">
+    Most junk removal business owners don't want to do marketing. They want <strong class="text-cream font-medium">consistent leads</strong> that turn into booked jobs — without chasing, without guessing, without the income rollercoaster.
+  </p>
+
+  <p class="fade-up delay-4 text-muted text-base leading-relaxed max-w-xl mb-10">
+    I built this system for healthcare. For home services. For B2B at $300,000/month in ad spend. The results below are real. Junk removal is the next vertical — and the demand is already there.
+  </p>
+
+  <div class="fade-up delay-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+    <a href="https://www.hanslacida.com/q2-scale-up-junk-removal/" class="btn-gold">
+      Book Free 15-Min Call
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <span class="text-dim text-xs tracking-wide">No pitch. No pressure. Just a discovery conversation.</span>
+  </div>
+</section>
+
+<div class="gold-line max-w-3xl mx-auto mx-6"></div>
+
+<!-- STATS STRIP -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-12">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
+    <div class="text-center">
+      <div class="stat-num">11+</div>
+      <div class="text-muted text-xs mt-1 tracking-wide">Case Studies</div>
+    </div>
+    <div class="text-center">
+      <div class="stat-num">$550M+</div>
+      <div class="text-muted text-xs mt-1 tracking-wide">Revenue Generated</div>
+    </div>
+    <div class="text-center">
+      <div class="stat-num">50%+</div>
+      <div class="text-muted text-xs mt-1 tracking-wide">Avg CPA Reduction</div>
+    </div>
+    <div class="text-center">
+      <div class="stat-num">10yr</div>
+      <div class="text-muted text-xs mt-1 tracking-wide">Google Ads Experience</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line max-w-3xl mx-auto mx-6"></div>
+
+<!-- THE GAP SECTION -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-16">
+  <div class="section-tag mb-4">The Problem I Solve</div>
+  <h2 class="font-serif text-3xl sm:text-4xl text-cream mb-6 leading-tight">Inconsistent leads.<br>Unstable income. <em class="text-gold">Fixable.</em></h2>
+
+  <p class="text-muted text-base leading-relaxed mb-6">
+    I looked at the junk removal industry and saw the same pattern I've seen in healthcare and home services — businesses with real demand, real trucks, real crews, but no reliable system turning that demand into predictable monthly revenue.
+  </p>
+
+  <div class="grid sm:grid-cols-3 gap-4 mb-8">
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-lg mb-3 font-serif">01</div>
+      <div class="text-cream text-sm font-semibold mb-2">Broken Tracking</div>
+      <div class="text-muted text-xs leading-relaxed">Google is optimizing for nothing. Calls not counted. Forms not firing. Budget burning on guesswork.</div>
+    </div>
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-lg mb-3 font-serif">02</div>
+      <div class="text-cream text-sm font-semibold mb-2">No Follow-Up System</div>
+      <div class="text-muted text-xs leading-relaxed">Lead comes in. Nobody calls back fast enough. They've already booked the next guy on Google.</div>
+    </div>
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-lg mb-3 font-serif">03</div>
+      <div class="text-cream text-sm font-semibold mb-2">No Visibility</div>
+      <div class="text-muted text-xs leading-relaxed">No dashboard. No data. No way to know what's working or what to scale. Just a monthly bill and a prayer.</div>
+    </div>
+  </div>
+
+  <div class="bg-gold/6 border border-gold/25 rounded p-6 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-px gold-line"></div>
+    <p class="text-cream text-sm leading-relaxed">
+      <strong class="text-gold font-semibold">I automate the entire customer journey.</strong> Google Ads generates the call. Tracking confirms it. The CRM captures the lead and follows up via SMS and email automatically — within 60 seconds of a missed call. Your own dashboard shows leads, booked jobs, cost per acquisition, and pipeline in real time. You run the trucks. The system runs the leads.
+    </p>
+  </div>
+</section>
+
+<div class="gold-line max-w-3xl mx-auto mx-6 opacity-40"></div>
+
+<!-- CASE STUDIES -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-16">
+  <div class="section-tag mb-4">Real Results · Relevant Proof</div>
+  <h2 class="font-serif text-3xl sm:text-4xl text-cream mb-3 leading-tight">The case studies that<br>translate to <em class="text-gold">junk removal.</em></h2>
+  <p class="text-muted text-sm mb-12 leading-relaxed max-w-lg">All data anonymized for public showcase. These are the four most relevant to what a scaling junk removal business needs.</p>
+
+  <!-- CASE 1 -->
+  <div class="mb-12 bg-black-2 border border-gold/15 rounded-sm overflow-hidden card-hover">
+    <div class="px-6 pt-6 pb-4 border-b border-gold/10">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div class="section-tag mb-2">Case Study 01 · Most Relevant</div>
+          <h3 class="font-serif text-2xl text-cream">California Treatment Center</h3>
+          <p class="text-muted text-xs mt-1 tracking-wide">Lead Gen · Call Tracking · CPA Reduction · 90 Days</p>
+        </div>
+        <div class="bg-gold/10 border border-gold/30 rounded px-3 py-1">
+          <span class="text-gold text-xs font-semibold tracking-wide">53% CPA Drop</span>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-muted text-sm leading-relaxed mb-5">Service business. Local intent. Phone calls are the primary conversion. Budget was being spent with no real measurement — nobody knew which ads were producing leads and which were burning cash.</p>
+      <div class="before-after-row mb-5">
+        <div class="before-col">
+          <div class="text-xs text-dim tracking-widest uppercase mb-3 font-semibold">Before</div>
+          <ul class="space-y-2">
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Cost per lead: $115</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>No call tracking</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Fragmented attribution</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Ad spend under $1,200/mo</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <div class="text-xs text-gold/70 tracking-widest uppercase mb-3 font-semibold">After 90 Days</div>
+          <ul class="space-y-2">
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Cost per lead: <strong class="text-gold">$54</strong></li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>47 leads in month one</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Full call tracking live</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Budget scaled to $4,000+</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-black-3 border-l-2 border-gold/50 pl-4 py-2">
+        <p class="text-muted text-xs leading-relaxed"><strong class="text-cream font-medium">Why this matters for junk removal:</strong> Junk removal is a phone call business. When someone needs a haul, they call. If you can't tie that call to the exact ad that generated it, you can't scale what's working. Fixing measurement alone — before touching a keyword — cut CPL by 53% in 90 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2 -->
+  <div class="mb-12 bg-black-2 border border-gold/15 rounded-sm overflow-hidden card-hover">
+    <div class="px-6 pt-6 pb-4 border-b border-gold/10">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div class="section-tag mb-2">Case Study 02</div>
+          <h3 class="font-serif text-2xl text-cream">Behavioral Healthcare</h3>
+          <p class="text-muted text-xs mt-1 tracking-wide">Phone Call Volume · Hyperlocal Targeting · 60 Days</p>
+        </div>
+        <div class="bg-gold/10 border border-gold/30 rounded px-3 py-1">
+          <span class="text-gold text-xs font-semibold tracking-wide">+40% More Calls</span>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-muted text-sm leading-relaxed mb-5">High competition local market. Business driven by inbound phone calls. Needed more calls, not just more traffic. Sound familiar?</p>
+      <div class="before-after-row mb-5">
+        <div class="before-col">
+          <div class="text-xs text-dim tracking-widest uppercase mb-3 font-semibold">Before</div>
+          <ul class="space-y-2">
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>High CPA baseline</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Low phone call volume</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Poor impression share</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Losing auction to competitors</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <div class="text-xs text-gold/70 tracking-widest uppercase mb-3 font-semibold">After 60 Days</div>
+          <ul class="space-y-2">
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>CPA down <strong class="text-gold">25–30%</strong></li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Phone calls <strong class="text-gold">+40%</strong></li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Quality Score improved</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Hyperlocal geo locked in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-black-3 border-l-2 border-gold/50 pl-4 py-2">
+        <p class="text-muted text-xs leading-relaxed"><strong class="text-cream font-medium">Why this matters for junk removal:</strong> Competitor targeting. Hyperlocal geo to the real truck radius. Bid strategy built for calls not clicks. This is the exact playbook for dominating a US metro in junk removal — 40% more calls from the same market in 60 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 3 -->
+  <div class="mb-12 bg-black-2 border border-gold/15 rounded-sm overflow-hidden card-hover">
+    <div class="px-6 pt-6 pb-4 border-b border-gold/10">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div class="section-tag mb-2">Case Study 03</div>
+          <h3 class="font-serif text-2xl text-cream">Plumbing Business</h3>
+          <p class="text-muted text-xs mt-1 tracking-wide">Home Services · Local Lead Gen · 12 Months</p>
+        </div>
+        <div class="bg-gold/10 border border-gold/30 rounded px-3 py-1">
+          <span class="text-gold text-xs font-semibold tracking-wide">$34 CPA · Home Services</span>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-muted text-sm leading-relaxed mb-5">Home services. Local market. Call conversions. Structurally identical to what junk removal campaigns need to produce — and the CPA math lines up clearly.</p>
+      <div class="before-after-row mb-5">
+        <div class="before-col">
+          <div class="text-xs text-dim tracking-widest uppercase mb-3 font-semibold">Campaign</div>
+          <ul class="space-y-2">
+            <li class="text-muted text-xs flex gap-2"><span class="text-gold/50 mt-0.5">·</span>10M+ impressions</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-gold/50 mt-0.5">·</span>5,933 clicks</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-gold/50 mt-0.5">·</span>Avg CPC: $3.40</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-gold/50 mt-0.5">·</span>12-month campaign</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <div class="text-xs text-gold/70 tracking-widest uppercase mb-3 font-semibold">Results</div>
+          <ul class="space-y-2">
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>1,200 conversions</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>CPA: <strong class="text-gold">$34.24</strong></li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>AOV: $180–$250/job</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Peak in Jan (seasonal prep)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-black-3 border-l-2 border-gold/50 pl-4 py-2">
+        <p class="text-muted text-xs leading-relaxed"><strong class="text-cream font-medium">Why this matters for junk removal:</strong> Junk removal average job value is $150–$600+. At a $34 CPA from a comparable home services vertical, the unit economics are strong. This is what a structured local campaign produces when geo, tracking, and bids are aligned.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 4 -->
+  <div class="mb-4 bg-black-2 border border-gold/15 rounded-sm overflow-hidden card-hover">
+    <div class="px-6 pt-6 pb-4 border-b border-gold/10">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div class="section-tag mb-2">Case Study 04</div>
+          <h3 class="font-serif text-2xl text-cream">SEO Agency USA — Multi-Client</h3>
+          <p class="text-muted text-xs mt-1 tracking-wide">Tracking Infrastructure · GTM/GA4 · Call Volume · 2024–2025</p>
+        </div>
+        <div class="bg-gold/10 border border-gold/30 rounded px-3 py-1">
+          <span class="text-gold text-xs font-semibold tracking-wide">Tracking + CRM Layer</span>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-muted text-sm leading-relaxed mb-5">Multiple service businesses across addiction recovery, wellness, and construction. The challenge: inconsistent tracking, high CPA, no unified measurement. This case demonstrates the infrastructure that makes everything else work.</p>
+      <div class="before-after-row mb-5">
+        <div class="before-col">
+          <div class="text-xs text-dim tracking-widest uppercase mb-3 font-semibold">Before</div>
+          <ul class="space-y-2">
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Inconsistent tracking</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>High CPA across accounts</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>Calls not attributed</li>
+            <li class="text-muted text-xs flex gap-2"><span class="text-red-400 mt-0.5">✗</span>No GA4/GTM integration</li>
+          </ul>
+        </div>
+        <div class="after-col">
+          <div class="text-xs text-gold/70 tracking-widest uppercase mb-3 font-semibold">After</div>
+          <ul class="space-y-2">
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>CPA improved across all</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>Call volume increased</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>CTR and Quality Score up</li>
+            <li class="text-cream text-xs flex gap-2"><span class="text-gold mt-0.5">✓</span>GA4 + GTM fully integrated</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-black-3 border-l-2 border-gold/50 pl-4 py-2">
+        <p class="text-muted text-xs leading-relaxed"><strong class="text-cream font-medium">Why this matters for junk removal:</strong> Most junk removal accounts have broken tracking right now. This case proves that fixing the foundation before scaling spend is what produces reliable, repeatable lead flow — across multiple businesses simultaneously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line max-w-3xl mx-auto mx-6"></div>
+
+<!-- THE SYSTEM -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-16">
+  <div class="section-tag mb-4">What I Build for You</div>
+  <h2 class="font-serif text-3xl sm:text-4xl text-cream mb-6 leading-tight">The full lead system.<br><em class="text-gold">Built for junk removal.</em></h2>
+
+  <p class="text-muted text-sm leading-relaxed mb-10 max-w-lg">Every case above shares the same root — fix measurement, fix the campaign, then automate the follow-up so no lead goes cold. Here's exactly what that looks like for your business.</p>
+
+  <div class="grid sm:grid-cols-2 gap-4 mb-10">
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-xs tracking-widest uppercase font-semibold mb-3">Google Ads</div>
+      <ul class="space-y-2">
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Search + PMax structured correctly</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Geo locked to your real truck radius</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Bid strategy optimized for calls</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Competitor targeting active</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Weekly search term cleanup</li>
+      </ul>
+    </div>
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-xs tracking-widest uppercase font-semibold mb-3">Tracking & Measurement</div>
+      <ul class="space-y-2">
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Every call tied to exact ad</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Form submissions firing correctly</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>GA4 + GTM fully integrated</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Booked jobs tracked as conversions</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>No more guesswork on what works</li>
+      </ul>
+    </div>
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-xs tracking-widest uppercase font-semibold mb-3">CRM Automation</div>
+      <ul class="space-y-2">
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Missed call text-back in 60 sec</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Instant SMS + email follow-up</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>48hr nurture for cold leads</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Job confirmation automation</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Post-job Google review request</li>
+      </ul>
+    </div>
+    <div class="bg-black-2 border border-gold/12 rounded p-5 card-hover">
+      <div class="text-gold text-xs tracking-widest uppercase font-semibold mb-3">Your Dashboard</div>
+      <ul class="space-y-2">
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Leads by source in real time</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Calls answered vs missed</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Pipeline: lead → booked → done</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Cost per booked job</li>
+        <li class="text-muted text-xs flex gap-2"><span class="text-gold">—</span>Reviews collected this month</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line max-w-3xl mx-auto mx-6 opacity-40"></div>
+
+<!-- ABOUT -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-14">
+  <div class="flex gap-5 items-start">
+    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center font-serif text-2xl text-gold">H</div>
+    <div>
+      <div class="text-cream font-semibold text-base mb-0.5">Hans Lacida</div>
+      <div class="text-gold/60 text-xs tracking-widest uppercase mb-3 font-semibold">Google Ads Specialist · Zeldigital · Former Google Account Strategist</div>
+      <p class="text-muted text-sm leading-relaxed max-w-xl">10+ years inside Google Ads. I've seen the inside of the platform — how it's designed to spend your budget, and how to make it work the other way. I work with a small number of clients at a time. Every audit, every account, every optimization is done by me personally. No junior staff. No VA handoffs. No account managers reading from a playbook.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line max-w-3xl mx-auto mx-6"></div>
+
+<!-- BOTTOM CTA -->
+<section class="relative z-10 max-w-3xl mx-auto px-6 py-20 text-center">
+  <div class="section-tag mb-5 block">Ready to Fill the Gap</div>
+  <h2 class="font-serif text-4xl sm:text-5xl text-cream mb-4 leading-tight">
+    Let's find out if your<br>market is <em class="text-gold">ready to win.</em>
+  </h2>
+  <p class="text-muted text-base leading-relaxed mb-3 max-w-md mx-auto">
+    15 minutes. No pitch. We talk about your business, your current ads situation, and whether this system is the right fit for where you want to go.
+  </p>
+  <p class="text-muted text-sm leading-relaxed mb-10 max-w-md mx-auto">
+    I built this for healthcare from scratch and produced real leads. Junk removal is the same demand equation — and the gap is even bigger. Let's talk.
+  </p>
+
+  <div class="flex flex-col items-center gap-4">
+    <a href="https://www.hanslacida.com/q2-scale-up-junk-removal/" class="btn-gold text-sm">
+      Book Your Free 15-Min Discovery Call
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <span class="text-dim text-xs tracking-wide">US-based junk removal businesses only · Spots limited</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative z-10 border-t border-gold/10 max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+  <div class="font-bold text-gold tracking-widest text-sm uppercase">Zeldigital</div>
+  <div class="text-dim text-xs text-center">© 2025 Hans Lacida · Google Ads Specialist · All data anonymized</div>
+  <a href="https://www.hanslacida.com/results/" class="text-gold/50 text-xs hover:text-gold transition-colors tracking-wide">View All Case Studies →</a>
+</footer>
+
+<!-- Scroll reveal -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card-hover').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
