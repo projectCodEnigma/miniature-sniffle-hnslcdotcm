@@ -1,294 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    window.TallyConfig = {
-      "formId": "D41GoR",
-      "popup": {
-        "emoji": {
-          "text": "👋",
-          "animation": "wave"
-        },
-        "open": {
-          "trigger": "scroll",
-          "scrollPercent": 100
-        },
-        "overlay": true,
-        "autoClose": 5000,
-        "doNotShowAfterSubmit": true,
-        "formEventsForwarding": true
-      }
-    };
-    </script>
-    
-    <script async src="https://tally.so/widgets/embed.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Ads Operator Playbook | Hans Lacida</title>
-  <meta name="description" content="Google Ads Operator Playbook for founders and acquisition teams who want structured demand capture, campaign architecture, and performance management systems." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Operator Playbook | Hans Lacida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "theme-blue": "#1a3cd4"
-          }
-        }
-      }
-    }
-  </script>
+  :root {
+    --ink: #0d0d0b;
+    --ink-muted: #5a5a52;
+    --ink-faint: #9a9a8e;
+    --surface: #faf9f6;
+    --surface-2: #f2f0eb;
+    --surface-card: #ffffff;
+    --accent: #c8421a;
+    --accent-light: #f5ede8;
+    --accent-dark: #8f2c0e;
+    --border: rgba(13,13,11,0.10);
+    --border-strong: rgba(13,13,11,0.20);
+    --gold: #b08430;
+    --gold-light: #f7f0df;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet">
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink);
+  }
+  .nav-logo img {
+    width: 28px; height: 28px; border-radius: 50%;
+    object-fit: cover;
+  }
+  .nav-logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 15px; letter-spacing: -0.02em;
+  }
+  .nav-logo-sub {
+    font-size: 11px; color: var(--ink-muted); font-weight: 300;
+    display: block; line-height: 1.2;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; font-size: 13.5px;
+    color: var(--ink-muted); font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .nav-links a.active { font-weight: 500; }
+
+  /* HERO */
+  .hero {
+    max-width: 1100px; margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
+    color: var(--ink); margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--accent);
+  }
+  .hero-lead {
+    font-size: 17px; line-height: 1.7; color: var(--ink-muted);
+    font-weight: 300; max-width: 520px; margin-bottom: 2.5rem;
+  }
+  .hero-stats {
+    display: flex; gap: 2rem;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 2px; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem; font-weight: 800; color: var(--ink); line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .stat-label { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.02em; }
+
+  /* HERO ASIDE */
+  .hero-aside {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .aside-header {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink-faint); margin-bottom: 1rem;
+  }
+  .aside-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .aside-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px; color: var(--ink-muted);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .aside-list li:last-child { border-bottom: none; }
+  .aside-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0;
+  }
+  .aside-cta {
+    margin-top: 1.2rem;
+    display: block; text-align: center;
+    background: var(--ink); color: #fff;
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    padding: 0.65rem 1rem; border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+  .aside-cta:hover { background: var(--accent); }
+
+  /* DIVIDER */
+  .divider {
+    max-width: 1100px; margin: 0 auto;
+    border: none; border-top: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+
+  /* SECTION */
+  .section { max-width: 1100px; margin: 0 auto; padding: 3.5rem 2rem; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 800; letter-spacing: -0.025em;
+    color: var(--ink); margin-bottom: 1rem;
+  }
+  .section-body {
+    font-size: 16px; line-height: 1.75; color: var(--ink-muted);
+    max-width: 620px; font-weight: 300;
+  }
+
+  /* AUDIENCE GRID */
+  .audience-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem;
+  }
+  .audience-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: relative; overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .audience-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+  .audience-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--accent);
+  }
+  .audience-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.6rem; display: block;
+  }
+  .audience-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .audience-card p { font-size: 14px; color: var(--ink-muted); line-height: 1.65; font-weight: 300; }
+
+  /* PLAYBOOK CARDS */
+  .playbook-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem;
+  }
+  .playbook-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.5rem;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: 0;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .playbook-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+  .pc-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .pc-tag::before {
+    content: ''; display: inline-block; width: 16px; height: 1px;
+    background: var(--ink-faint);
+  }
+  .playbook-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    line-height: 1.2; margin-bottom: 0.75rem; letter-spacing: -0.02em;
+  }
+  .playbook-card p {
+    font-size: 13.5px; color: var(--ink-muted); line-height: 1.6;
+    font-weight: 300; flex: 1; margin-bottom: 1.5rem;
+  }
+  .pc-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500; color: var(--accent);
+    letter-spacing: 0.01em;
+  }
+  .pc-arrow { transition: transform 0.2s; }
+  .playbook-card:hover .pc-arrow { transform: translateX(4px); }
+
+  /* NUMBERS accent strip */
+  .numbers-strip {
+    background: var(--ink);
+    margin: 0;
+    padding: 3rem 2rem;
+  }
+  .numbers-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .num-block {
+    background: var(--ink);
+    padding: 2rem;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .num-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem; font-weight: 800;
+    color: #fff; letter-spacing: -0.04em; line-height: 1;
+  }
+  .num-val span { color: var(--accent); }
+  .num-label { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; }
+
+  /* PDF SECTION */
+  .pdf-section {
+    background: var(--gold-light);
+    border-top: 1px solid rgba(176,132,48,0.2);
+    border-bottom: 1px solid rgba(176,132,48,0.2);
+    padding: 3.5rem 2rem;
+  }
+  .pdf-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+  }
+  .pdf-section .section-label { color: var(--gold); }
+  .pdf-section .section-title { color: var(--ink); margin-bottom: 0.75rem; }
+  .pdf-section .section-body { color: var(--ink-muted); }
+  .pdf-btns { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 0.65rem 1.25rem; border-radius: var(--radius);
+    font-size: 13.5px; font-weight: 500;
+    text-decoration: none; transition: all 0.2s;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline { border-color: var(--ink); color: var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: #fff; }
+  .pdf-visual {
+    width: 160px; height: 210px;
+    background: var(--surface-card);
+    border: 1px solid rgba(176,132,48,0.3);
+    border-radius: 6px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; color: var(--gold);
+    box-shadow: 4px 6px 0 rgba(176,132,48,0.12);
+    flex-shrink: 0;
+  }
+  .pdf-icon { font-size: 2rem; }
+  .pdf-visual-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* CTA SECTION */
+  .cta-section {
+    max-width: 1100px; margin: 0 auto; padding: 4rem 2rem;
+    display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+  }
+  .cta-section .section-title { margin-bottom: 0.75rem; }
+  .cta-section .section-body { max-width: 520px; }
+  .cta-btns { display: flex; gap: 0.75rem; margin-top: 1.75rem; flex-wrap: wrap; }
+  .cta-badge {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--accent-light); border: 2px solid var(--accent);
+    flex-shrink: 0;
+    text-align: center; padding: 1rem;
+  }
+  .cta-badge-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1;
+  }
+  .cta-badge-label { font-size: 11px; color: var(--accent-dark); line-height: 1.3; margin-top: 4px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.55);
+    padding: 3rem 2rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem;
+    padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 0.5rem;
+  }
+  .footer-tagline { font-size: 13px; line-height: 1.6; font-weight: 300; }
+  .footer-col-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 1rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links a {
+    text-decoration: none; font-size: 13.5px; color: rgba(255,255,255,0.5);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #fff; }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 1.5rem; font-size: 12px;
+  }
+  .footer-cta-link {
+    color: #fff; text-decoration: none; font-size: 13px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .footer-cta-link:hover { color: var(--accent); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-aside { max-width: 400px; }
+    .playbook-grid { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .numbers-inner { grid-template-columns: 1fr; }
+    .pdf-inner { grid-template-columns: 1fr; }
+    .pdf-visual { display: none; }
+    .cta-section { grid-template-columns: 1fr; }
+    .cta-badge { display: none; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
 </head>
-<body class="font-[Lato] text-gray-700 bg-white antialiased">
+<body>
 
-<!-- HEADER -->
-<header class="bg-white/95 backdrop-blur sticky top-0 z-40 border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-4">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/images/hanslacida_favicon.jpg" alt="HansLacida" class="h-10 w-10 rounded-lg object-cover" />
-      <div>
-        <div class="text-lg font-extrabold">HansLacida</div>
-        <div class="text-[11px] text-gray-500">Paid Acquisition Systems Operator</div>
-      </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://www.hanslacida.com/" class="nav-logo">
+      <img src="https://www.hanslacida.com/images/hanslacida_favicon.jpg" alt="Hans Lacida">
+      <span>
+        <span class="nav-logo-text">HansLacida</span>
+        <span class="nav-logo-sub">Paid Acquisition Systems Operator</span>
+      </span>
     </a>
-
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-      <a href="/brands/paid-acquisition-systems-operator/" class="hover:text-theme-blue">Operator</a>
-      <a href="/results/" class="hover:text-theme-blue">Results</a>
-      <a href="/playbook/" class="hover:text-theme-blue text-theme-blue font-semibold">Playbook</a>
-      <a href="/insights/" class="hover:text-theme-blue">Insights</a>
-      <a href="/#contact" class="hover:text-theme-blue">Contact</a>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="https://www.hanslacida.com/brands/paid-acquisition-systems-operator/">Operator</a></li>
+      <li><a href="https://www.hanslacida.com/results/">Results</a></li>
+      <li><a href="https://www.hanslacida.com/playbook/" class="active">Playbook</a></li>
+      <li><a href="https://www.hanslacida.com/insights/">Insights</a></li>
+      <li><a href="https://www.hanslacida.com/#contact">Contact</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
 <!-- HERO -->
-<section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-24">
-  <div class="max-w-5xl mx-auto px-4">
-    <p class="text-sm font-semibold tracking-wide uppercase text-blue-100 mb-3">Google Ads Operator Playbook</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
-      Structured Demand Capture for Founders and Acquisition Teams
-    </h1>
-    <p class="mt-6 text-lg max-w-3xl text-blue-100">
-      Practical operating guidance for building Google Ads systems that scale—rooted in the same thinking behind the
-      homepage results: multi‑million revenue contribution, 70x ROAS peaks, and controlled acquisition costs.
-    </p>
-  </div>
-</section>
-
-<!-- PLAYBOOK OVERVIEW -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-[3fr,2fr] gap-12 items-start">
-
-    <div class="space-y-8">
-      <h2 class="text-2xl font-bold">What this playbook is for</h2>
-      <p class="text-gray-700">
-        This is not a list of “hacks”. It is a set of operating documents that help you move from isolated wins to a durable
-        paid acquisition system. Each section is built to be used by founders, marketing leads, and in‑house or external operators.
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="border rounded-xl p-5">
-          <h3 class="font-semibold mb-2">For founders</h3>
-          <p class="text-sm text-gray-700">
-            Understand what “good” Google Ads operations look like, how to evaluate partners, and how to decide when to scale.
-          </p>
-        </div>
-        <div class="border rounded-xl p-5">
-          <h3 class="font-semibold mb-2">For operators</h3>
-          <p class="text-sm text-gray-700">
-            Translate strategy into repeatable campaign architecture, measurement, and weekly operating cadence.
-          </p>
-        </div>
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">Google Ads Operator Playbook</div>
+    <h1>Structured <em>Demand Capture</em> for Founders &amp; Acquisition Teams</h1>
+    <p class="hero-lead">Practical operating guidance for building Google Ads systems that scale — rooted in the same thinking behind multi-million revenue contribution, 70x ROAS peaks, and controlled acquisition costs.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">70x</span>
+        <span class="stat-label">ROAS peak</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$M+</span>
+        <span class="stat-label">Revenue contribution</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Playbook modules</span>
       </div>
     </div>
-
-    <aside class="bg-gray-50 border rounded-xl p-6 space-y-4">
-      <h2 class="text-lg font-semibold mb-2">What’s inside</h2>
-      <ul class="space-y-2 text-sm text-gray-700">
-        <li>Google Ads for Founders – decision frameworks and expectations</li>
-        <li>PMax Scaling Guide – operating PMax as part of a system</li>
-        <li>Demand Capture Strategy – structuring search to capture intent</li>
-      </ul>
-      <p class="text-xs text-gray-500">
-        Each section below links to a focused playbook page that you can share with your team or use as an internal standard.
-      </p>
-    </aside>
-
   </div>
-</section>
+  <div class="hero-aside">
+    <div class="aside-header">What's inside</div>
+    <ul class="aside-list">
+      <li><span class="aside-dot"></span>Google Ads for Founders</li>
+      <li><span class="aside-dot"></span>PMax Scaling Guide</li>
+      <li><span class="aside-dot"></span>Demand Capture Strategy</li>
+      <li><span class="aside-dot"></span>Full Operator PDF</li>
+    </ul>
+    <a href="https://www.hanslacida.com/playbook/Google-Ads-for-Founders-Operator-Playbook.pdf" target="_blank" class="aside-cta">Open full PDF ↗</a>
+  </div>
+</div>
 
-<!-- PLAYBOOK SECTIONS GRID -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-10 text-center">Operator Playbook Sections</h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <a href="/playbook/google-ads-for-founders/" class="bg-white p-6 border rounded-xl hover:shadow-md transition flex flex-col">
-        <div class="text-xs font-semibold uppercase tracking-wide text-theme-blue mb-2">Founders</div>
-        <h3 class="font-bold text-lg mb-3">Google Ads for Founders</h3>
-        <p class="text-sm text-gray-600 mb-4">
-          How to evaluate your current account, decide where Google Ads fits in your growth plan, and know when it’s safe to scale.
-        </p>
-        <span class="mt-auto text-sm font-semibold text-theme-blue">Open playbook →</span>
-      </a>
-
-      <a href="/playbook/pmax-scaling-guide/" class="bg-white p-6 border rounded-xl hover:shadow-md transition flex flex-col">
-        <div class="text-xs font-semibold uppercase tracking-wide text-theme-blue mb-2">Performance Max</div>
-        <h3 class="font-bold text-lg mb-3">PMax Scaling Guide</h3>
-        <p class="text-sm text-gray-600 mb-4">
-          Turning Performance Max from a black box into a controlled growth lever with clear guardrails and expectations.
-        </p>
-        <span class="mt-auto text-sm font-semibold text-theme-blue">Open playbook →</span>
-      </a>
-
-      <a href="/playbook/demand-capture-strategy/" class="bg-white p-6 border rounded-xl hover:shadow-md transition flex flex-col">
-        <div class="text-xs font-semibold uppercase tracking-wide text-theme-blue mb-2">Search</div>
-        <h3 class="font-bold text-lg mb-3">Demand Capture Strategy</h3>
-        <p class="text-sm text-gray-600 mb-4">
-          Structuring search campaigns to capture high‑intent demand with clarity, control, and less internal competition.
-        </p>
-        <span class="mt-auto text-sm font-semibold text-theme-blue">Open playbook →</span>
-      </a>
-
+<!-- NUMBERS STRIP -->
+<div class="numbers-strip">
+  <div class="numbers-inner">
+    <div class="num-block">
+      <div class="num-val">70<span>x</span></div>
+      <div class="num-label">ROAS peak achieved for a single ecommerce account</div>
+    </div>
+    <div class="num-block">
+      <div class="num-val"><span>$</span>M+</div>
+      <div class="num-label">Multi-million revenue contribution across accounts</div>
+    </div>
+    <div class="num-block">
+      <div class="num-val"><span>&darr;</span>CPA</div>
+      <div class="num-label">Controlled acquisition costs with enforced guardrails</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- INLINE PDF VIEWER -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="grid lg:grid-cols-[2.2fr,1.2fr] gap-10 items-start">
+<!-- WHAT THIS PLAYBOOK IS FOR -->
+<div class="section">
+  <div class="section-label">Purpose</div>
+  <div class="section-title">Not hacks. Operating documents.</div>
+  <p class="section-body">This is a set of documents that help you move from isolated wins to a durable paid acquisition system. Each section is built to be used by founders, marketing leads, and in-house or external operators.</p>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <span class="audience-tag">For founders</span>
+      <h3>Evaluate, decide, and scale with confidence</h3>
+      <p>Understand what good Google Ads operations look like, how to evaluate partners, and how to decide when it's safe to scale.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-tag">For operators</span>
+      <h3>Translate strategy into repeatable architecture</h3>
+      <p>Turn strategy into repeatable campaign architecture, measurement systems, and a weekly operating cadence that compounds.</p>
+    </div>
+  </div>
+</div>
 
-      <div>
-        <h2 class="text-3xl font-bold mb-4">View the full Operator Playbook (PDF)</h2>
-        <p class="text-gray-700 mb-6">
-          You can read the complete <span class="font-semibold">Google Ads for Founders – Operator Playbook</span> directly on this page
-          or open it in a new tab to share with your team.
-        </p>
+<hr class="divider">
 
-        <!-- Embedded PDF viewer -->
-        <div class="w-full h-[600px] rounded-xl border border-gray-200 overflow-hidden bg-gray-50">
-          <!-- If the browser doesn’t support inline PDF viewing, the link below is the fallback. -->
-          <iframe
-            src="/playbook/Google-Ads-for-Founders-Operator-Playbook.pdf"
-            title="Google Ads for Founders – Operator Playbook PDF"
-            class="w-full h-full"
-          >
-          </iframe>
-        </div>
+<!-- PLAYBOOK SECTIONS -->
+<div class="section">
+  <div class="section-label">Operator Playbook Sections</div>
+  <div class="section-title">Three focused modules.</div>
+  <div class="playbook-grid">
+
+    <a href="https://www.hanslacida.com/playbook/google-ads-for-founders/" class="playbook-card">
+      <span class="pc-tag">Founders</span>
+      <h3>Google Ads for Founders</h3>
+      <p>How to evaluate your current account, decide where Google Ads fits in your growth plan, and know when it's safe to scale.</p>
+      <span class="pc-link">Open playbook <span class="pc-arrow">→</span></span>
+    </a>
+
+    <a href="https://www.hanslacida.com/playbook/pmax-scaling-guide/" class="playbook-card">
+      <span class="pc-tag">Performance Max</span>
+      <h3>PMax Scaling Guide</h3>
+      <p>Turning Performance Max from a black box into a controlled growth lever with clear guardrails and expectations.</p>
+      <span class="pc-link">Open playbook <span class="pc-arrow">→</span></span>
+    </a>
+
+    <a href="https://www.hanslacida.com/playbook/demand-capture-strategy/" class="playbook-card">
+      <span class="pc-tag">Search</span>
+      <h3>Demand Capture Strategy</h3>
+      <p>Structuring search campaigns to capture high-intent demand with clarity, control, and less internal competition.</p>
+      <span class="pc-link">Open playbook <span class="pc-arrow">→</span></span>
+    </a>
+
+  </div>
+</div>
+
+<!-- PDF SECTION -->
+<div class="pdf-section">
+  <div class="pdf-inner">
+    <div>
+      <div class="section-label">Full PDF</div>
+      <div class="section-title">View the complete Operator Playbook</div>
+      <p class="section-body">Read the full Google Ads for Founders Operator Playbook directly in your browser or download it to review with your acquisition team, finance, or leadership. Covers every operating principle with more depth and examples.</p>
+      <div class="pdf-btns">
+        <a href="https://www.hanslacida.com/playbook/Google-Ads-for-Founders-Operator-Playbook.pdf" target="_blank" class="btn btn-primary">Open full PDF ↗</a>
+        <a href="https://www.hanslacida.com/playbook/Google-Ads-for-Founders-Operator-Playbook.pdf" download class="btn btn-outline">Download PDF</a>
       </div>
-
-      <aside class="bg-gray-50 border rounded-xl p-6 space-y-4">
-        <h3 class="text-lg font-semibold">Download or open in a new tab</h3>
-        <p class="text-sm text-gray-700">
-          Keep a copy of the full PDF to review with your acquisition team, finance, or leadership.
-        </p>
-        <a
-          href="/playbook/Google-Ads-for-Founders-Operator-Playbook.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex bg-theme-blue text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition"
-        >
-          Open full PDF in new tab
-        </a>
-        <p class="text-xs text-gray-500">
-          The PDF covers the same operating principles reflected in the sections above, with more depth and examples.
-        </p>
-      </aside>
-
+    </div>
+    <div class="pdf-visual">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-visual-label">Operator<br>Playbook</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- CTA TO RESULTS / CONVERSATION -->
-<section class="py-20 bg-white">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-4">From playbook to operating partnership</h2>
-    <p class="mb-8 text-gray-600">
-      If you’d rather not own every detail of execution, the same operating principles in this playbook are what I bring as
-      a paid acquisition systems operator. The goal is simple: install a system that leadership can trust when scaling spend.
-      Not ready for ongoing management? Start with a paid audit.
-    </p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="/results/" class="inline-flex bg-theme-blue text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-        View Case Studies
-      </a>
-      <a href="/paid-account-audit" target="_blank" rel="noopener noreferrer" class="inline-flex border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition">
-        Start with a Paid Audit
-      </a>
+<!-- CTA SECTION -->
+<div class="cta-section">
+  <div>
+    <div class="section-label">From playbook to partnership</div>
+    <div class="section-title">Ready to install a system leadership can trust?</div>
+    <p class="section-body">If you'd rather not own every detail of execution, the same operating principles in this playbook are what I bring as a paid acquisition systems operator. Not ready for ongoing management? Start with a paid audit.</p>
+    <div class="cta-btns">
+      <a href="https://www.hanslacida.com/results/" class="btn btn-outline">View Case Studies</a>
+      <a href="https://www.hanslacida.com/paid-account-audit" class="btn btn-primary">Start with a Paid Audit →</a>
     </div>
   </div>
-</section>
+  <div class="cta-badge">
+    <div class="cta-badge-num">70x</div>
+    <div class="cta-badge-label">peak ROAS achieved</div>
+  </div>
+</div>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 py-12">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-3 gap-8 mb-10 text-sm">
-      <div>
-        <h4 class="font-semibold text-white mb-3">Operator</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/brands/paid-acquisition-systems-operator/" class="hover:text-white">Paid Acquisition Systems Operator</a></li>
-          <li><a href="/about/" class="hover:text-white">About</a></li>
-          <li><a href="/how-i-operate" class="hover:text-white">How I Operate</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold text-white mb-3">Proof</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/results/" class="hover:text-white">Case Studies</a></li>
-          <li><a href="/results/70x-roas-case-study/" class="hover:text-white">70x ROAS Case Study</a></li>
-          <li><a href="/results/ecommerce-growth/" class="hover:text-white">Ecommerce Growth</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold text-white mb-3">Insights</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/insights/" class="hover:text-white">Growth Insights</a></li>
-          <li><a href="/playbook/" class="hover:text-white">Google Ads Playbook</a></li>
-          <li><a href="/insights/operator-thinking/" class="hover:text-white">Operator Thinking</a></li>
-        </ul>
-      </div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">HansLacida</div>
+      <p class="footer-tagline">Google Ads execution infrastructure operated with control, enforced standards, and accountability.</p>
     </div>
-
-    <div class="text-center mb-8">
-      <p class="text-base">
-        Google Ads execution infrastructure operated with control, enforced standards, and accountability.
-      </p>
+    <div>
+      <div class="footer-col-title">Operator</div>
+      <ul class="footer-links">
+        <li><a href="https://www.hanslacida.com/brands/paid-acquisition-systems-operator/">Paid Acquisition Systems Operator</a></li>
+        <li><a href="https://www.hanslacida.com/about/">About</a></li>
+        <li><a href="https://www.hanslacida.com/how-i-operate">How I Operate</a></li>
+      </ul>
     </div>
-
-    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:text-sm">
-      <a href="/brands/paid-acquisition-systems-operator/" class="text-gray-500 hover:text-white hover:underline">
-        Paid Acquisition Systems Operator
-      </a>
-      <span>•</span>
-      <a href="/results/" class="text-gray-500 hover:text-white hover:underline">
-        Case Studies
-      </a>
-      <span>•</span>
-      <a href="/playbook/" class="text-gray-500 hover:text-white hover:underline">
-        Google Ads Operator Playbook
-      </a>
-      <span>•</span>
-      <a href="/insights/" class="text-gray-500 hover:text-white hover:underline">
-        Growth Insights
-      </a>
+    <div>
+      <div class="footer-col-title">Proof</div>
+      <ul class="footer-links">
+        <li><a href="https://www.hanslacida.com/results/">Case Studies</a></li>
+        <li><a href="https://www.hanslacida.com/results/70x-roas-case-study/">70x ROAS Case Study</a></li>
+        <li><a href="https://www.hanslacida.com/results/ecommerce-growth/">Ecommerce Growth</a></li>
+      </ul>
     </div>
-
-    <div class="mt-10 flex justify-center">
-      <a href="https://tr.ee/yF6vkB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white hover:text-gray-900">
-        Submit a Business Proposal
-      </a>
+    <div>
+      <div class="footer-col-title">Insights</div>
+      <ul class="footer-links">
+        <li><a href="https://www.hanslacida.com/insights/">Growth Insights</a></li>
+        <li><a href="https://www.hanslacida.com/playbook/">Google Ads Playbook</a></li>
+        <li><a href="https://www.hanslacida.com/insights/operator-thinking/">Operator Thinking</a></li>
+      </ul>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HansLacida. All rights reserved.</span>
+    <a href="https://tr.ee/yF6vkB" class="footer-cta-link" target="_blank">Submit a Business Proposal ↗</a>
   </div>
 </footer>
 
 </body>
 </html>
-
