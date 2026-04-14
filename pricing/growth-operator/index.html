@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hans Lacida — Paid Acquisition System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0b0f1a;
+    --navy-mid: #131929;
+    --navy-card: #1a2236;
+    --navy-border: #2a3650;
+    --accent: #00e5a0;
+    --accent-dim: rgba(0,229,160,0.12);
+    --accent-mid: rgba(0,229,160,0.25);
+    --gold: #f5c542;
+    --gold-dim: rgba(245,197,66,0.12);
+    --text: #e8edf5;
+    --text-muted: #7a8ba8;
+    --text-dim: #4a5870;
+    --red: #ff5b5b;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 64px;
+    background: rgba(11,15,26,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--navy-border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    background: var(--accent);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 2.5rem 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(0,229,160,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(245,197,66,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--navy);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--text-muted);
+    padding: 13px 32px;
+    border: 1px solid var(--navy-border);
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--navy-border);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 4px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 2.5rem; }
+
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+  }
+
+  /* ── SERVICES GRID ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+    background: var(--navy-border);
+    border: 1.5px solid var(--navy-border);
+  }
+
+  .service-card {
+    background: var(--navy-card);
+    padding: 2.5rem;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .service-card:hover { background: #1f2d45; }
+
+  .service-card.featured {
+    background: rgba(0,229,160,0.05);
+    border: 1px solid var(--accent);
+  }
+  .service-card.featured::before {
+    content: 'Most Requested';
+    position: absolute; top: -1px; right: 2rem;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--navy);
+    background: var(--accent);
+    padding: 4px 10px;
+  }
+
+  .service-icon {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent-dim);
+    margin-bottom: 1.5rem;
+  }
+  .service-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+
+  .service-card h3 {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    background: var(--navy);
+    border: 1px solid var(--navy-border);
+    padding: 3px 8px;
+  }
+
+  /* ── PRICING ── */
+  #pricing { background: var(--navy-mid); }
+
+  .pricing-toggle {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 3rem;
+  }
+  .pricing-toggle span {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+  .toggle-pill {
+    width: 44px; height: 24px;
+    background: var(--navy-border);
+    border-radius: 12px;
+    position: relative; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .toggle-pill.active { background: var(--accent); }
+  .toggle-pill::after {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: white;
+    transition: transform 0.2s;
+  }
+  .toggle-pill.active::after { transform: translateX(20px); }
+  .save-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 3px 8px;
+    border-radius: 1px;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .pricing-card {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    padding: 2.5rem;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+
+  .pricing-card.highlighted {
+    border-color: var(--accent);
+    background: rgba(0,229,160,0.04);
+  }
+
+  .plan-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .plan-name {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    min-height: 56px;
+  }
+
+  .plan-price {
+    display: flex; align-items: baseline; gap: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .price-currency {
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .price-amount {
+    font-family: var(--serif);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--text);
+  }
+  .price-amount.accent { color: var(--accent); }
+  .price-period {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+  }
+
+  .plan-note {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    margin-bottom: 2rem;
+    min-height: 16px;
+  }
+
+  .plan-divider {
+    height: 1px;
+    background: var(--navy-border);
+    margin-bottom: 1.75rem;
+  }
+
+  .plan-features { list-style: none; flex: 1; margin-bottom: 2rem; }
+  .plan-features li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(42,54,80,0.5);
+  }
+  .plan-features li:last-child { border-bottom: none; }
+  .plan-features li::before {
+    content: '—';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .plan-features li.dimmed { color: var(--text-dim); }
+  .plan-features li.dimmed::before { color: var(--text-dim); content: '×'; }
+
+  .plan-cta {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 13px;
+    border: 1px solid var(--navy-border);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .plan-cta:hover { border-color: var(--accent); color: var(--accent); }
+  .plan-cta.primary {
+    background: var(--accent);
+    color: var(--navy);
+    border-color: var(--accent);
+  }
+  .plan-cta.primary:hover { opacity: 0.88; }
+
+  /* ── AUDIT TABLE ── */
+  #audit { background: var(--navy); }
+
+  .audit-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--navy-border);
+  }
+
+  table.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .audit-table thead tr {
+    background: var(--navy-card);
+  }
+  .audit-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--navy-border);
+    font-weight: 500;
+  }
+  .audit-table td {
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(42,54,80,0.4);
+    vertical-align: top;
+  }
+  .audit-table tr:last-child td { border-bottom: none; }
+  .audit-table tr:hover td { background: rgba(26,34,54,0.7); }
+  .audit-table td:first-child { color: var(--text); font-weight: 500; }
+  .audit-table td:last-child {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .check { color: var(--accent); font-size: 15px; }
+  .cross { color: var(--text-dim); font-size: 13px; }
+
+  /* ── VERTICALS ── */
+  #verticals { background: var(--navy-mid); }
+
+  .verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5px;
+    background: var(--navy-border);
+    border: 1.5px solid var(--navy-border);
+  }
+
+  .vertical-card {
+    background: var(--navy-card);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .vertical-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .vertical-card:hover::after { transform: scaleX(1); }
+
+  .vertical-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+  .vertical-card h3 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .vertical-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* ── PROCESS ── */
+  #process { background: var(--navy); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    position: relative;
+  }
+
+  .process-step {
+    padding: 2.5rem 2rem;
+    border-left: 1px solid var(--navy-border);
+    position: relative;
+  }
+  .process-step:first-child { border-left: none; }
+
+  .step-num {
+    font-family: var(--mono);
+    font-size: 3rem;
+    color: var(--navy-border);
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+  .process-step h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+  .process-step p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* ── GUARANTEE ── */
+  #guarantee {
+    background: var(--navy-mid);
+    text-align: center;
+  }
+
+  .guarantee-box {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+    border: 1px solid var(--navy-border);
+    position: relative;
+    background: var(--navy-card);
+  }
+  .guarantee-box::before {
+    content: '30';
+    position: absolute;
+    top: -30px; left: 50%; transform: translateX(-50%);
+    font-family: var(--serif);
+    font-size: 5rem;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .guarantee-icon {
+    width: 60px; height: 60px;
+    border: 1.5px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 2rem;
+  }
+  .guarantee-icon svg { width: 26px; height: 26px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+
+  #guarantee h2 { margin-bottom: 1rem; }
+  #guarantee p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  /* ── FAQ ── */
+  #faq { background: var(--navy); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--navy-border);
+    border: 1.5px solid var(--navy-border);
+  }
+
+  .faq-item {
+    background: var(--navy-card);
+    padding: 2rem;
+  }
+
+  .faq-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .faq-item p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ── CTA FOOTER ── */
+  .cta-section {
+    background: var(--navy-mid);
+    padding: 100px 2.5rem;
+    text-align: center;
+  }
+
+  .cta-section h2 { margin-bottom: 1rem; }
+  .cta-section p {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .contact-row {
+    margin-top: 3rem;
+    display: flex; justify-content: center; gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .contact-item {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+  .contact-item a { color: var(--text-muted); text-decoration: none; }
+  .contact-item a:hover { color: var(--accent); }
+
+  footer {
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--navy-border);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+  }
+  .footer-note {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 1.5rem 60px; }
+    section { padding: 70px 1.5rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step { border-left: none; border-top: 1px solid var(--navy-border); }
+    .process-step:first-child { border-top: none; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-stats { animation: fadeUp 0.6s 0.45s ease both; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">HL / Paid Acquisition Systems</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#audit">Audit</a></li>
+    <li><a href="#verticals">Verticals</a></li>
+    <li><a href="/results">Results</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Cebu City, Philippines · Available Worldwide</div>
+  <h1>Paid acquisition that <em>compounds.</em></h1>
+  <p class="hero-sub">
+    Google Ads infrastructure built for sustainable growth — not vanity metrics.
+    PMax, tracking, first-party data, and conversion architecture designed to work
+    with AI bidding, not against it.
+  </p>
+  <div class="hero-actions">
+    <a href="#pricing" class="btn-primary">View Packages</a>
+    <a href="#audit" class="btn-ghost">What's in an Audit →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">4<span>+</span></div>
+      <div class="stat-label">Verticals Served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Server-Side Capable</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">30<span>d</span></div>
+      <div class="stat-label">Audit Turnaround</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Vanity Reports</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-tag">What I Do</div>
+  <h2>Acquisition Infrastructure</h2>
+  <p class="section-intro">
+    Not campaign management theatre. Real systems that create compounding advantages —
+    tracking that doesn't leak, audiences that actually convert, and reporting founders can act on.
+  </p>
+
+  <div class="services-grid reveal">
+
+    <div class="service-card featured">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>PMax Campaign Architecture</h3>
+      <p>Full Performance Max buildout or restructure — asset group segmentation,
+         audience signal strategy, feed optimization, and bid configuration aligned with your margins.</p>
+      <div class="service-tags">
+        <span class="tag">Asset Groups</span>
+        <span class="tag">Signal Stacking</span>
+        <span class="tag">Feed Ops</span>
+        <span class="tag">Bid Strategy</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Conversion Tracking Setup</h3>
+      <p>Build or fix your measurement foundation — GA4, Google Ads conversion actions,
+         enhanced conversions, and consent mode. Know what's actually working.</p>
+      <div class="service-tags">
+        <span class="tag">GA4</span>
+        <span class="tag">Enhanced Conv.</span>
+        <span class="tag">Consent Mode v2</span>
+        <span class="tag">GTM</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <h3>Server-Side Tagging</h3>
+      <p>Deploy server-side GTM via Stape or custom endpoints. Send cleaner signals,
+         survive browser restrictions, and future-proof your data pipeline.</p>
+      <div class="service-tags">
+        <span class="tag">sGTM</span>
+        <span class="tag">Stape</span>
+        <span class="tag">First-Party Data</span>
+        <span class="tag">Custom Endpoints</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Demand Gen & YouTube</h3>
+      <p>Awareness-to-conversion YouTube funnels and Demand Gen campaigns with
+         creative sequencing, audience targeting, and performance benchmarking.</p>
+      <div class="service-tags">
+        <span class="tag">YouTube Ads</span>
+        <span class="tag">Demand Gen</span>
+        <span class="tag">Video Action</span>
+        <span class="tag">Sequencing</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+      </div>
+      <h3>CRM & Offline Conversion</h3>
+      <p>Connect your CRM to Google Ads via offline conversion imports.
+         Train Smart Bidding on revenue, not just form fills.</p>
+      <div class="service-tags">
+        <span class="tag">OCI</span>
+        <span class="tag">HubSpot</span>
+        <span class="tag">Salesforce</span>
+        <span class="tag">Customer Match</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <h3>Reporting & Dashboards</h3>
+      <p>Clean, founder-facing dashboards in Looker Studio or Power BI.
+         No fluff — just the metrics that drive decisions.</p>
+      <div class="service-tags">
+        <span class="tag">Looker Studio</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">BigQuery</span>
+        <span class="tag">SQL</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-tag">Investment</div>
+  <h2>Transparent Pricing</h2>
+  <p class="section-intro">
+    Three engagement models. No retainer surprises, no scope creep.
+    Each package is scoped to produce a specific outcome.
+  </p>
+
+  <div class="pricing-toggle reveal">
+    <span>Monthly</span>
+    <div class="toggle-pill" id="billingToggle" onclick="toggleBilling()"></div>
+    <span>Annual</span>
+    <span class="save-badge">Save 15%</span>
+  </div>
+
+  <div class="pricing-grid reveal">
+
+    <!-- Audit -->
+    <div class="pricing-card">
+      <div class="plan-badge">One-Time</div>
+      <div class="plan-name">Audit + Roadmap</div>
+      <div class="plan-desc">Deep-dive account review with a prioritized action plan. Best for accounts spending $5K–$100K/mo with unclear results.</div>
+      <div class="plan-price">
+        <span class="price-currency">$</span>
+        <span class="price-amount" id="p1">997</span>
+      </div>
+      <div class="plan-note" id="n1">flat fee · delivered in 5–7 business days</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Full campaign architecture review</li>
+        <li>Conversion tracking audit</li>
+        <li>Wasted spend analysis</li>
+        <li>Audience signal gap assessment</li>
+        <li>Prioritized action plan (30/60/90)</li>
+        <li>60-min walkthrough call</li>
+        <li class="dimmed">Ongoing management</li>
+        <li class="dimmed">Implementation support</li>
+      </ul>
+      <a href="#contact" class="plan-cta">Get the Audit</a>
+    </div>
+
+    <!-- Growth -->
+    <div class="pricing-card highlighted">
+      <div class="plan-badge">Monthly Retainer</div>
+      <div class="plan-name">Growth Operator</div>
+      <div class="plan-desc">Full account management — strategy, execution, and reporting. For businesses scaling $10K–$150K/mo in ad spend.</div>
+      <div class="plan-price">
+        <span class="price-currency">$</span>
+        <span class="price-amount accent" id="p2">3,500</span>
+        <span class="price-period">/mo</span>
+      </div>
+      <div class="plan-note" id="n2">billed monthly · 3-month minimum</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Google Ads full account management</li>
+        <li>PMax + Search + Demand Gen</li>
+        <li>Monthly strategy calls</li>
+        <li>Conversion tracking maintenance</li>
+        <li>Weekly performance reports</li>
+        <li>Budget pacing and alerts</li>
+        <li>Audience refresh and signal tuning</li>
+        <li>Looker Studio dashboard</li>
+      </ul>
+      <a href="#contact" class="plan-cta primary">Start Here</a>
+    </div>
+
+    <!-- Infrastructure -->
+    <div class="pricing-card">
+      <div class="plan-badge">Project</div>
+      <div class="plan-name">Tracking Build</div>
+      <div class="plan-desc">One-time infrastructure project — server-side tagging, GA4 configuration, conversion setup, and first-party data pipeline.</div>
+      <div class="plan-price">
+        <span class="price-currency">$</span>
+        <span class="price-amount" id="p3">2,500</span>
+      </div>
+      <div class="plan-note" id="n3">starting price · scoped per account complexity</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Server-side GTM deployment</li>
+        <li>GA4 full configuration</li>
+        <li>Google Ads conversion actions</li>
+        <li>Enhanced conversions</li>
+        <li>Consent Mode v2</li>
+        <li>1st-party data layer setup</li>
+        <li>QA and verification documentation</li>
+        <li class="dimmed">Ongoing management</li>
+      </ul>
+      <a href="#contact" class="plan-cta">Scope My Project</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- AUDIT TABLE -->
+<section id="audit">
+  <div class="section-tag">What Gets Reviewed</div>
+  <h2>The Audit Checklist</h2>
+  <p class="section-intro">
+    Every audit covers these 20 areas across your account.
+    You get a score, a severity rating, and a fix for each one.
+  </p>
+
+  <div class="audit-wrap reveal">
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th style="width:30%">Area</th>
+          <th style="width:40%">What's Checked</th>
+          <th style="width:15%">In Audit</th>
+          <th style="width:15%">Est. Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Campaign Structure</td>
+          <td>Goal-to-campaign alignment, naming conventions, bid strategy coherence</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>PMax Asset Groups</td>
+          <td>Segmentation logic, asset coverage, signal quality</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Conversion Actions</td>
+          <td>Primary vs secondary, deduplication, value rules</td>
+          <td><span class="check">✓</span></td>
+          <td>Critical</td>
+        </tr>
+        <tr>
+          <td>Enhanced Conversions</td>
+          <td>Implementation status, match rate, data freshness</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Audience Signals</td>
+          <td>Customer lists, remarketing, intent audiences, exclusions</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Keyword Strategy</td>
+          <td>Match type mix, search term reports, negatives, cannibalization</td>
+          <td><span class="check">✓</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Ad Copy & Extensions</td>
+          <td>RSA pinning, asset performance, extension coverage</td>
+          <td><span class="check">✓</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Landing Page Alignment</td>
+          <td>Message match, load speed, CTA clarity</td>
+          <td><span class="check">✓</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Budget Allocation</td>
+          <td>Budget distribution vs performance, impression share leakage</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Bidding Configuration</td>
+          <td>tCPA / tROAS calibration, learning periods, portfolio strategies</td>
+          <td><span class="check">✓</span></td>
+          <td>Critical</td>
+        </tr>
+        <tr>
+          <td>Tag Implementation</td>
+          <td>GTM container audit, tag firing rules, ghost traffic</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>GA4 Configuration</td>
+          <td>Events, parameters, key events, cross-domain tracking</td>
+          <td><span class="check">✓</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Consent Mode</td>
+          <td>v2 deployment, modeled conversions, signal recovery</td>
+          <td><span class="check">✓</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Geographic Targeting</td>
+          <td>Location settings, bid adjustments, exclusions</td>
+          <td><span class="check">✓</span></td>
+          <td>Low–Med</td>
+        </tr>
+        <tr>
+          <td>Device & Schedule Bids</td>
+          <td>Device performance parity, dayparting alignment</td>
+          <td><span class="check">✓</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Competitor Landscape</td>
+          <td>Auction insights, top-of-page rate, share loss</td>
+          <td><span class="check">✓</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Shopping / Feed</td>
+          <td>Feed health, disapprovals, attribute completeness</td>
+          <td><span class="check">✓</span></td>
+          <td>High (ecomm)</td>
+        </tr>
+        <tr>
+          <td>Quality Score Factors</td>
+          <td>Expected CTR, ad relevance, landing page experience</td>
+          <td><span class="check">✓</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Account History & Changes</td>
+          <td>Change log analysis, policy violations, disapprovals</td>
+          <td><span class="check">✓</span></td>
+          <td>Low–Med</td>
+        </tr>
+        <tr>
+          <td>90-Day Action Plan</td>
+          <td>Prioritized fixes by estimated impact and effort</td>
+          <td><span class="check">✓</span></td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- VERTICALS -->
+<section id="verticals">
+  <div class="section-tag">Who I Work With</div>
+  <h2>Vertical Expertise</h2>
+  <p class="section-intro">
+    Every industry has different conversion economics, compliance needs,
+    and audience behavior. These are the verticals I know cold.
+  </p>
+
+  <div class="verticals-grid reveal">
+
+    <div class="vertical-card">
+      <div class="vertical-num">01</div>
+      <h3>Ecommerce & Shopping</h3>
+      <p>Google Shopping, PMax asset groups, Merchant Center feed optimization,
+         ROAS-focused bidding, and seasonal scaling playbooks.</p>
+    </div>
+
+    <div class="vertical-card">
+      <div class="vertical-num">02</div>
+      <h3>Healthcare & MedSpa</h3>
+      <p>HIPAA-aware campaign structures, sensitive category workarounds,
+         lead quality tracking, and compliant audience targeting.</p>
+    </div>
+
+    <div class="vertical-card">
+      <div class="vertical-num">03</div>
+      <h3>B2B SaaS & Mid-Market</h3>
+      <p>Pipeline attribution for long sales cycles, CRM integration,
+         account-based signals, and multi-touch conversion modeling.</p>
+    </div>
+
+    <div class="vertical-card">
+      <div class="vertical-num">04</div>
+      <h3>Legal, Finance & Home Services</h3>
+      <p>High-intent search campaigns, Local Service Ads integration,
+         aggressive CPA management, and lead quality scoring.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-tag">How It Works</div>
+  <h2>The Engagement Flow</h2>
+  <p class="section-intro">
+    Every project follows the same disciplined process.
+    No handoffs, no surprises, no black-box "optimizations."
+  </p>
+
+  <div class="process-steps reveal">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <h3>Discovery Call</h3>
+      <p>30 minutes. I learn your goals, current setup, spend level,
+         and what "good" looks like for your business.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <h3>Access & Audit</h3>
+      <p>Read-only access granted. I run a full account review and
+         map every leak, gap, and opportunity in the current setup.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <h3>Recommendations</h3>
+      <p>Prioritized action list delivered with effort estimates, risk flags,
+         and projected impact ranges — not a list of "best practices."</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <h3>Build or Handoff</h3>
+      <p>I either implement directly or hand off a clean implementation spec
+         your team can execute — depending on your engagement type.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">05</div>
+      <h3>Monitor & Iterate</h3>
+      <p>Ongoing retainer clients get weekly pacing checks, monthly strategy
+         reviews, and quarterly account restructures as needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section id="guarantee">
+  <div class="guarantee-box reveal">
+    <div class="guarantee-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </div>
+    <div class="section-tag" style="text-align:center">Risk Reversal</div>
+    <h2>30-Day Honest Review</h2>
+    <p>
+      If the audit doesn't surface at least 3 actionable findings that would
+      materially improve your account performance, I'll refund it in full.
+      No fine print. I don't take on accounts where I can't add clear value.
+    </p>
+    <a href="#contact" class="btn-primary">Schedule a Call First</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-tag">Common Questions</div>
+  <h2>Frequently Asked</h2>
+  <p class="section-intro">
+    Things people ask before we start working together.
+  </p>
+
+  <div class="faq-grid reveal">
+    <div class="faq-item">
+      <h4>What ad spend level makes sense for working together?</h4>
+      <p>The audit works for any spend level $3K+/mo. The retainer is most impactful
+         for accounts spending $10K–$500K/mo where the cost of bad decisions is real.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you work with agencies or only direct clients?</h4>
+      <p>Both. I offer white-label fulfillment for agencies that need senior-level
+         Google Ads execution without hiring full-time. Fully confidential.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can you manage Facebook or LinkedIn Ads too?</h4>
+      <p>No. I specialize in Google Ads ecosystem only — Search, PMax, Shopping,
+         YouTube, Demand Gen. Deep beats wide in paid acquisition.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What if my tracking is completely broken?</h4>
+      <p>That's actually a common starting point. The Tracking Build package is
+         designed exactly for that — we establish clean measurement before
+         optimizing spend.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you require a long-term contract?</h4>
+      <p>Retainer engagements have a 3-month minimum. After that, month-to-month.
+         Projects and audits are one-time with no ongoing commitment.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do you report results?</h4>
+      <p>Weekly async reports via a shared Looker Studio dashboard, plus monthly
+         video walkthroughs. No vanity metrics — just the numbers that drive
+         decisions.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What's your timezone and availability?</h4>
+      <p>Cebu City (PHT, UTC+8). I work with clients across APAC, Australia,
+         UK, and the US. Async-first with scheduled calls in your timezone.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I start with the audit and move to a retainer?</h4>
+      <p>Yes — and that's the recommended path. The audit gives us both a clear
+         picture of the account before committing to an ongoing engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-tag">Let's Work</div>
+  <h2>Ready to fix your account?</h2>
+  <p>
+    Start with a 30-minute no-commitment call.
+    I'll tell you honestly if I can move the needle for your business.
+  </p>
+  <div class="cta-actions">
+    <a href="/#contact" class="btn-primary">Book a Call</a>
+    <a href="#audit" class="btn-ghost">See What's in an Audit</a>
+  </div>
+  <div class="contact-row">
+    <div class="contact-item">Email: <a href="mailto:hans@hanslacida.com">hans@hanslacida.com</a></div>
+    <div class="contact-item">Based in: Cebu City, PH</div>
+    <div class="contact-item">Timezone: UTC+8</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Hans Lacida — Paid Acquisition Systems</div>
+  <div class="footer-note">© 2026 · Google Ads · PMax · Tracking · First-Party Data</div>
+</footer>
+
+<script>
+  let annual = false;
+  const prices = { monthly: [997, 3500, 2500], annual: [997, 2975, 2500] };
+  const notes = {
+    monthly: ['flat fee · delivered in 5–7 business days','billed monthly · 3-month minimum','starting price · scoped per account complexity'],
+    annual:  ['flat fee · delivered in 5–7 business days','billed annually · save $6,300/yr','starting price · scoped per account complexity']
+  };
+
+  function toggleBilling() {
+    annual = !annual;
+    const toggle = document.getElementById('billingToggle');
+    toggle.classList.toggle('active', annual);
+    const mode = annual ? 'annual' : 'monthly';
+    [1,2,3].forEach((i) => {
+      document.getElementById('p' + i).textContent = prices[mode][i-1].toLocaleString();
+      document.getElementById('n' + i).textContent = notes[mode][i-1];
+    });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
