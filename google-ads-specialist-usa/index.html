@@ -9,728 +9,977 @@
         gtag('js', new Date());
         gtag('config', 'G-K1E3588F4M');
     </script>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'rajdhani': ['Rajdhani', 'sans-serif'],
-                        'poppins': ['Poppins', 'sans-serif'],
-                        'baloo': ['Baloo Chettan', 'cursive'],
-                        'lato': ['Lato', 'sans-serif']
+                        'display': ['Syne', 'sans-serif'],
+                        'body': ['DM Sans', 'sans-serif'],
                     },
                     colors: {
-                        'theme-blue': '#1a3cd4',
-                        'theme-dark': '#111111',
-                        'theme-gray': '#666666',
-                        'theme-light': '#f8f9fa'
+                        'ink': '#0a0a0f',
+                        'ink-2': '#16161f',
+                        'ink-3': '#22222e',
+                        'pulse': '#0057ff',
+                        'pulse-light': '#3378ff',
+                        'signal': '#ff3c3c',
+                        'mist': '#f2f4f8',
+                        'mist-2': '#e5e9f0',
+                        'ghost': '#8891a4',
                     }
                 }
             }
         }
     </script>
-    
-    <!-- basic -->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- site metas -->
     <title>Google Ads Growth Partner for U.S. Businesses | Hanzel Lacida - Certified Google Ads Specialist</title>
     <meta name="keywords" content="Google Ads Specialist USA, Google Ads Management, PPC Management, Google Ads Growth Partner, US Google Ads Expert, Hanzel Lacida">
     <meta name="description" content="Google Ads Growth Partner for U.S. Businesses Spending $5K+/Month. Work directly with a certified specialist — 10+ years, $300K+/mo managed, proven 20x ROAS campaigns.">
     <meta name="author" content="Hanzel Lacida">
     <meta name="google-adsense-account" content="ca-pub-2137593406454250">
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- favicon -->
     <link rel="icon" href="../images/hanslacida_favicon.webp" type="image/webp" />
-    
-    <!-- Custom Styles -->
+
     <style>
-        html {
-            scroll-behavior: smooth;
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f2f4f8;
+            color: #0a0a0f;
         }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        /* ── NOISE TEXTURE OVERLAY ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: .4;
         }
-        
-        .hover-scale {
-            transition: transform 0.3s ease-in-out;
+
+        /* ── TYPOGRAPHY ── */
+        h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+
+        /* ── ANIMATED GRADIENT BADGE ── */
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
-        
-        .hover-scale:hover {
-            transform: scale(1.05);
+        .shimmer-badge {
+            background: linear-gradient(90deg, #0057ff, #3378ff, #0057ff);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        /* Landing Page Specific Styles */
-        .lp-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 32px;
-            align-items: start;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        /* ── PULSE BUTTON ── */
+        @keyframes pulse-ring {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,87,255,0.4); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 14px rgba(0,87,255,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,87,255,0); }
         }
-        
-        .lp-main {
-            max-width: 860px;
+        .btn-primary {
+            animation: pulse-ring 2.5s ease infinite;
         }
-        
-        .lp-sticky {
-            position: sticky;
-            top: 100px;
+        .btn-primary:hover {
+            animation: none;
+            transform: translateY(-2px);
         }
-        
-        .sticky-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 24px;
+
+        /* ── STAT COUNTER CARDS ── */
+        .stat-card {
             background: #fff;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e9f0;
+            border-radius: 16px;
+            padding: 28px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        
-        .mini-badges {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-bottom: 12px;
-            color: #6b7280;
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
         }
-        
-        .sticky-card h3 {
-            margin: 8px 0 12px;
-            font-size: 1.25rem;
-            font-weight: 700;
+        .stat-card.blue::before { background: #0057ff; }
+        .stat-card.red::before { background: #ff3c3c; }
+        .stat-card.green::before { background: #00c48c; }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
         }
-        
-        .sticky-card h3 span {
-            color: #dc2626;
-            font-weight: 800;
-        }
-        
-        .sticky-card hr {
-            margin: 16px 0;
-            border: none;
-            border-top: 1px solid #e5e7eb;
-        }
-        
-        .micro-proof p {
-            font-size: 0.9rem;
-            margin: 8px 0;
-            font-style: italic;
-            color: #6b7280;
-        }
-        
-        .gated {
-            opacity: 0.7;
-        }
-        
-        .proof-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-        
+
+        /* ── PROOF CARDS ── */
         .proof-card {
-            background: white;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            background: #fff;
+            border: 1px solid #e5e9f0;
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        
         .proof-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
         }
-        
-        .trust-strip ul {
-            display: flex;
-            gap: 24px;
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
-            flex-wrap: wrap;
-        }
-        
-        .trust-strip li {
-            background: #f3f4f6;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: #374151;
-        }
-        
-        .fit-section {
-            background: #f8fafc;
-            padding: 32px;
-            border-radius: 12px;
-            margin: 32px 0;
-        }
-        
-        .fit-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 20px;
-        }
-        
-        .fit-yes li, .fit-no li {
-            margin: 12px 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .fit-yes li::before {
-            content: "✅";
-            margin-right: 12px;
-        }
-        
-        .fit-no li::before {
-            content: "❌";
-            margin-right: 12px;
-        }
-        
-        .lead-form {
-            display: grid;
-            gap: 20px;
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .lead-form input, .lead-form select {
-            padding: 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-        
-        .lead-form input:focus, .lead-form select:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
-        .process-steps {
-            counter-reset: step-counter;
-        }
-        
-        .process-step {
-            counter-increment: step-counter;
-            padding: 24px;
-            margin: 20px 0;
-            background: white;
-            border-radius: 12px;
-            border-left: 4px solid #3b82f6;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+        /* ── PROCESS TIMELINE ── */
+        .process-item {
             position: relative;
+            padding-left: 60px;
         }
-        
-        .process-step::before {
-            content: counter(step-counter);
+        .process-item + .process-item { margin-top: 32px; }
+        .process-item::before {
+            content: attr(data-step);
             position: absolute;
-            left: -20px;
-            top: 20px;
-            background: #3b82f6;
-            color: white;
+            left: 0;
+            top: 0;
             width: 40px;
             height: 40px;
+            background: #0057ff;
+            color: #fff;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
         }
-        
-        @media (max-width: 992px) {
-            .lp-wrapper {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .lp-sticky {
-                position: static;
-                order: -1;
-            }
-            
-            .fit-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .proof-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .trust-strip ul {
-                justify-content: center;
-            }
+        .process-item::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% + 32px - 40px);
+            background: #e5e9f0;
         }
+        .process-item:last-child::after { display: none; }
+
+        /* ── STICKY SIDEBAR ── */
+        .sidebar-sticky {
+            position: sticky;
+            top: 90px;
+        }
+
+        /* ── FIT COLUMNS ── */
+        .fit-col { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid #e5e9f0; }
+        .fit-col.yes { border-top: 3px solid #00c48c; }
+        .fit-col.no { border-top: 3px solid #ff3c3c; }
+
+        /* ── FORM STYLES ── */
+        .form-field {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #e5e9f0;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: #0a0a0f;
+            background: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .form-field:focus {
+            border-color: #0057ff;
+            box-shadow: 0 0 0 3px rgba(0,87,255,0.12);
+        }
+        .form-field::placeholder { color: #8891a4; }
+        select.form-field { cursor: pointer; }
+        textarea.form-field { resize: vertical; min-height: 100px; }
+
+        /* ── TRUST LOGOS ROW ── */
+        .trust-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #e5e9f0;
+            border-radius: 100px;
+            padding: 8px 18px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            color: #16161f;
+        }
+
+        /* ── TESTIMONIAL ── */
+        .testimonial-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 28px;
+            border: 1px solid #e5e9f0;
+            border-left: 4px solid #0057ff;
+            font-style: italic;
+            color: #22222e;
+        }
+
+        /* ── URGENCY BAR ── */
+        @keyframes blink-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .live-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #ff3c3c;
+            display: inline-block;
+            animation: blink-dot 1.4s ease infinite;
+        }
+
+        /* ── RESPONSIVE LAYOUT ── */
+        .lp-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+            align-items: start;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        @media (max-width: 1024px) {
+            .lp-grid { grid-template-columns: 1fr; gap: 32px; }
+            .sidebar-sticky { position: static; order: -1; }
+        }
+
+        /* ── FADE-IN ANIMATIONS ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+        .fade-up-1 { animation-delay: 0.05s; }
+        .fade-up-2 { animation-delay: 0.15s; }
+        .fade-up-3 { animation-delay: 0.25s; }
+        .fade-up-4 { animation-delay: 0.35s; }
+        .fade-up-5 { animation-delay: 0.45s; }
+
+        /* ── SECTION DIVIDER ── */
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #0057ff;
+            margin-bottom: 10px;
+        }
+
+        /* ── HERO BG DECORATION ── */
+        .hero-bg {
+            background: linear-gradient(160deg, #0a0a0f 0%, #16161f 55%, #1a2540 100%);
+        }
+        .hero-grid-overlay {
+            background-image:
+                linear-gradient(rgba(0,87,255,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,87,255,0.06) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f2f4f8; }
+        ::-webkit-scrollbar-thumb { background: #c5ccd8; border-radius: 3px; }
     </style>
-    
-    <!-- Google Ads -->
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
 </head>
+<body>
 
-<body class="font-lato text-gray-700 bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-4">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="../index.html" class="flex items-center">
-                        <img src="../images/hanslacida_favicon.jpg" alt="HansLacida.com" class="h-12 w-auto" />
-                    </a>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                    <a href="../about/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
-                    <a href="../services/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
-                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
-                    <a href="../case-studies/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Case Studies</a>
-                    <a href="#book" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">Book Call</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-blue-600" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+<!-- ══════════════════════════════════════════
+     STICKY HEADER
+══════════════════════════════════════════ -->
+<header style="background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #e5e9f0;" class="sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 flex items-center justify-between" style="height:68px;">
+        <a href="../index.html" class="flex items-center gap-3">
+            <div style="width:36px;height:36px;background:#0057ff;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                <span style="color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;">HL</span>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                    <a href="../about/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
-                    <a href="../services/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
-                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
-                    <a href="../case-studies/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Case Studies</a>
-                    <a href="#book" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">Book Call</a>
-                </div>
-            </div>
+            <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:#0a0a0f;">Hans Lacida</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6">
+            <a href="../index.html" class="text-sm font-medium text-ghost hover:text-ink transition-colors">Home</a>
+            <a href="../about/" class="text-sm font-medium text-ghost hover:text-ink transition-colors">About</a>
+            <a href="../services/" class="text-sm font-medium text-ghost hover:text-ink transition-colors">Services</a>
+            <a href="https://pricing.hanslacida.com" class="text-sm font-medium text-ghost hover:text-ink transition-colors">Pricing</a>
+            <a href="../case-studies/" class="text-sm font-medium text-ghost hover:text-ink transition-colors">Case Studies</a>
+            <a href="#book" style="background:#0057ff;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#003ed4'" onmouseout="this.style.background='#0057ff'">
+                <i class="fas fa-calendar-check" style="margin-right:6px;"></i>Book Call
+            </a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="md:hidden text-ink">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-mist-2 bg-white">
+        <div class="px-5 py-4 flex flex-col gap-4">
+            <a href="../index.html" class="text-sm font-medium text-ghost">Home</a>
+            <a href="../about/" class="text-sm font-medium text-ghost">About</a>
+            <a href="../services/" class="text-sm font-medium text-ghost">Services</a>
+            <a href="https://pricing.hanslacida.com" class="text-sm font-medium text-ghost">Pricing</a>
+            <a href="../case-studies/" class="text-sm font-medium text-ghost">Case Studies</a>
+            <a href="#book" style="background:#0057ff;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;text-align:center;">Book a Call</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Main Landing Page Content -->
-    <main class="py-8">
-        <section class="lp-wrapper">
-            <div class="lp-main">
-                <!-- Hero Section -->
-                <header class="hero mb-12">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-baloo font-bold leading-tight mb-6 text-gray-900">
-                        Google Ads Growth Partner for U.S. Businesses Spending $5K+/Month
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                        Work directly with a certified Google Ads specialist — not an agency. 10+ years of hands-on management, $300K+/mo in ad spend overseen, and proven campaigns up to <strong class="text-red-600">20x ROAS</strong>.
-                    </p>
-                    <a href="#book" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300 hover-scale">
-                        <i class="fas fa-calendar-check mr-2"></i>
-                        Book Your Free 10‑Min Strategy Call
+
+<!-- ══════════════════════════════════════════
+     URGENCY BAR
+══════════════════════════════════════════ -->
+<div style="background:#0a0a0f;padding:10px 20px;text-align:center;">
+    <span class="live-dot" style="margin-right:8px;"></span>
+    <span style="color:#e5e9f0;font-size:13px;font-weight:500;">Only <strong style="color:#ff3c3c;">2 client spots</strong> available this quarter — <a href="#book" style="color:#3378ff;text-decoration:underline;font-weight:600;">Book your free call now →</a></span>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero-bg hero-grid-overlay">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 24px 80px;">
+        <div class="lp-grid" style="padding:0;padding-top:0;padding-bottom:0;">
+            <!-- LEFT CONTENT -->
+            <div>
+                <div class="fade-up fade-up-1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,87,255,0.15);border:1px solid rgba(0,87,255,0.3);border-radius:100px;padding:6px 16px;margin-bottom:24px;">
+                    <i class="fas fa-certificate" style="color:#3378ff;font-size:12px;"></i>
+                    <span style="color:#3378ff;font-size:13px;font-weight:600;letter-spacing:0.05em;">CERTIFIED GOOGLE ADS SPECIALIST</span>
+                </div>
+
+                <h1 class="fade-up fade-up-2" style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:24px;">
+                    Google Ads Growth Partner<br>
+                    for U.S. Businesses<br>
+                    <span style="color:#3378ff;">Spending $5K+/Month</span>
+                </h1>
+
+                <p class="fade-up fade-up-3" style="color:#8891a4;font-size:1.1rem;line-height:1.7;margin-bottom:32px;max-width:560px;">
+                    Work directly with a certified specialist — not an agency. 10+ years of hands-on management, $300K+/mo in ad spend overseen, and proven campaigns delivering up to <strong style="color:#fff;">20x ROAS</strong>.
+                </p>
+
+                <!-- STATS ROW -->
+                <div class="fade-up fade-up-4" style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;">
+                    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px 22px;text-align:center;min-width:130px;">
+                        <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;">10+</div>
+                        <div style="font-size:12px;color:#8891a4;margin-top:2px;">Years Experience</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px 22px;text-align:center;min-width:130px;">
+                        <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;">$300K+</div>
+                        <div style="font-size:12px;color:#8891a4;margin-top:2px;">Monthly Ad Spend</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px 22px;text-align:center;min-width:130px;">
+                        <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#ff3c3c;">20x</div>
+                        <div style="font-size:12px;color:#8891a4;margin-top:2px;">Peak ROAS Achieved</div>
+                    </div>
+                </div>
+
+                <!-- PRIMARY CTA -->
+                <div class="fade-up fade-up-5" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
+                    <a href="#book" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;background:#0057ff;color:#fff;padding:16px 32px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;text-decoration:none;border:none;">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Your Free 10-Min Strategy Call
                     </a>
-                </header>
+                    <a href="../case-studies/20x-roas/" style="display:inline-flex;align-items:center;gap:8px;color:#8891a4;font-size:14px;font-weight:500;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">
+                        See 20x ROAS case study <i class="fas fa-arrow-right" style="font-size:11px;"></i>
+                    </a>
+                </div>
 
-                <!-- Trust Strip -->
-                <section class="trust-strip">
-                    <ul>
-                        <li><i class="fas fa-certificate mr-2 text-blue-600"></i>Google Partner</li>
-                        <li><i class="fas fa-clock mr-2 text-green-600"></i>10+ Years</li>
-                        <li><i class="fas fa-dollar-sign mr-2 text-purple-600"></i>$300K+/mo Managed</li>
-                        <li><i class="fas fa-flag-usa mr-2 text-red-600"></i>U.S. Focused</li>
-                    </ul>
-                </section>
+                <!-- TRUST CHIPS -->
+                <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;" class="fade-up fade-up-5">
+                    <span class="trust-chip"><i class="fas fa-shield-alt" style="color:#0057ff;font-size:12px;"></i>Google Partner</span>
+                    <span class="trust-chip"><i class="fas fa-flag-usa" style="color:#ff3c3c;font-size:12px;"></i>U.S. Focused</span>
+                    <span class="trust-chip"><i class="fas fa-lock" style="color:#00c48c;font-size:12px;"></i>Flat-Rate Pricing</span>
+                    <span class="trust-chip"><i class="fas fa-user-check" style="color:#f59e0b;font-size:12px;"></i>Direct Access</span>
+                </div>
+            </div>
 
-                <!-- Why Specialist vs Agency -->
-                <section class="vs-agency mb-16">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-6">Why a Specialist Beats an Agency</h2>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-white p-6 rounded-lg border border-gray-200 hover-scale">
-                            <div class="text-blue-600 mb-4">
-                                <i class="fas fa-user-tie text-2xl"></i>
-                            </div>
-                            <h3 class="font-semibold text-lg mb-3">Direct Access</h3>
-                            <p class="text-gray-600">Direct access to the strategist running your account</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border border-gray-200 hover-scale">
-                            <div class="text-green-600 mb-4">
-                                <i class="fas fa-tachometer-alt text-2xl"></i>
-                            </div>
-                            <h3 class="font-semibold text-lg mb-3">Faster Optimization</h3>
-                            <p class="text-gray-600">Faster optimization cycles — no layers, no lag</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border border-gray-200 hover-scale">
-                            <div class="text-purple-600 mb-4">
-                                <i class="fas fa-hand-holding-usd text-2xl"></i>
-                            </div>
-                            <h3 class="font-semibold text-lg mb-3">Transparent Pricing</h3>
-                            <p class="text-gray-600">Transparent flat‑rate pricing (no % of spend surprises)</p>
-                        </div>
+            <!-- RIGHT: HERO SIDEBAR FORM -->
+            <div class="fade-up fade-up-3">
+                <div style="background:#fff;border-radius:20px;padding:32px;box-shadow:0 24px 60px rgba(0,0,0,0.25);border:1px solid #e5e9f0;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                        <span class="live-dot"></span>
+                        <span style="font-size:12px;font-weight:600;color:#ff3c3c;text-transform:uppercase;letter-spacing:0.08em;">Limited Spots Open</span>
                     </div>
-                </section>
+                    <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:#0a0a0f;margin-bottom:6px;">Book Your Free Strategy Call</h3>
+                    <p style="font-size:13px;color:#8891a4;margin-bottom:24px;">10 minutes. No pitch. Just clarity on your ads.</p>
 
-                <!-- Who I Work With -->
-                <section class="fit-section">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-4 text-center">Who I Work With</h2>
-                    <p class="text-lg text-gray-600 text-center mb-6">
-                        This is for U.S. teams investing $5K–$50K+/mo in Google Ads, who value strategy, testing, and ROI.<br>
-                        Not a fit if you're under $2K/mo or shopping for the cheapest option.
-                    </p>
-                    <div class="fit-grid">
-                        <div>
-                            <h3 class="font-semibold text-lg mb-4 text-green-700">Perfect Fit:</h3>
-                            <ul class="fit-yes">
-                                <li>$5K–$50K+ monthly ad spend</li>
-                                <li>ROI-first, testing mindset</li>
-                                <li>Long-term growth partner</li>
-                                <li>U.S.-based business</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg mb-4 text-red-700">Not a Fit:</h3>
-                            <ul class="fit-no">
-                                <li>Under $2K/month ad spend</li>
-                                <li>"Cheap clicks" over profit mindset</li>
-                                <li>Looking for the cheapest option</li>
-                                <li>Expecting overnight miracles</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Proof / Case Studies -->
-                <section class="proof mb-16">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-8 text-center">Results That Compound</h2>
-                    <div class="proof-cards">
-                        <article class="proof-card">
-                            <div class="text-red-600 mb-4">
-                                <i class="fas fa-chart-line text-3xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">20x ROAS (DTC)</h3>
-                            <p class="text-gray-600 mb-4">$35,600 spend → $265,000 revenue</p>
-                            <a href="../case-studies/20x-roas/" class="text-blue-600 hover:text-blue-800 font-semibold">
-                                Open case study →
-                            </a>
-                        </article>
-                        <article class="proof-card">
-                            <div class="text-green-600 mb-4">
-                                <i class="fas fa-arrow-down text-3xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">50% Lower CPA</h3>
-                            <p class="text-gray-600 mb-4">$23 → $14 for an industrial account</p>
-                            <span class="text-gray-500">Manufacturing case study</span>
-                        </article>
-                        <article class="proof-card">
-                            <div class="text-blue-600 mb-4">
-                                <i class="fas fa-users text-3xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">788 Qualified Leads</h3>
-                            <p class="text-gray-600 mb-4">$16.95 CPL for local services</p>
-                            <span class="text-gray-500">Local services case study</span>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- Process -->
-                <section id="process" class="process mb-16">
-                    <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-8 text-center">How I Scale Your Ads</h2>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <h3 class="text-lg font-semibold mb-2">Audit & Strategy</h3>
-                            <p class="text-gray-600">Uncover waste and quick wins in your current setup</p>
-                        </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-semibold mb-2">Precision Targeting</h3>
-                            <p class="text-gray-600">Exact/phrase match keywords plus aggressive negative lists</p>
-                        </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-semibold mb-2">Conversion Ops</h3>
-                            <p class="text-gray-600">Ad copy, landing pages, and tracking built for ROI</p>
-                        </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-semibold mb-2">Weekly Scaling</h3>
-                            <p class="text-gray-600">Iterative testing, budget allocation, and transparent reporting</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Final CTA / Form -->
-                <section id="book" class="cta mb-16">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-baloo font-bold text-gray-900 mb-4">Book Your Free 10‑Min Strategy Call</h2>
-                        <p class="text-lg text-gray-600">Let's discuss your Google Ads goals and see if we're a good fit.</p>
-                    </div>
-                    
-                    <form action="https://formsubmit.co/googleads@hanslacida.com" method="post" class="lead-form max-w-2xl mx-auto">
-                        <input type="hidden" name="form_source" value="usa_landing_page">
+                    <form action="https://formsubmit.co/googleads@hanslacida.com" method="post" id="hero-form">
+                        <input type="hidden" name="form_source" value="usa_landing_page_hero">
                         <input type="hidden" name="utm_source" value="usa_landing_page">
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <input name="firstName" placeholder="First Name" required class="form-input">
-                            <input name="lastName" placeholder="Last Name" required class="form-input">
+
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+                            <div>
+                                <label style="font-size:12px;font-weight:600;color:#22222e;display:block;margin-bottom:5px;">First Name *</label>
+                                <input name="firstName" placeholder="John" required class="form-field">
+                            </div>
+                            <div>
+                                <label style="font-size:12px;font-weight:600;color:#22222e;display:block;margin-bottom:5px;">Last Name *</label>
+                                <input name="lastName" placeholder="Smith" required class="form-field">
+                            </div>
                         </div>
-                        
-                        <input name="email" type="email" placeholder="Work Email Address" required class="form-input">
-                        <input name="website" placeholder="Website URL (optional)" class="form-input">
-                        
-                        <select name="industry" class="form-input">
-                            <option value="">Select Industry</option>
-                            <option value="ecommerce">E-commerce</option>
-                            <option value="saas">SaaS/Software</option>
-                            <option value="local-services">Local Services</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="education">Education</option>
-                            <option value="other">Other</option>
-                        </select>
-                        
-                        <select name="ad_spend" required class="form-input">
-                            <option value="">Monthly Ad Spend Budget</option>
-                            <option value="5000-10000">$5,000–$10,000</option>
-                            <option value="10001-25000">$10,001–$25,000</option>
-                            <option value="25001-50000">$25,001–$50,000</option>
-                            <option value="50000+">$50,000+</option>
-                        </select>
-                        
-                        <textarea name="goals" rows="4" placeholder="What are your main Google Ads goals or challenges? (optional)" class="form-input"></textarea>
-                        
-                        <button type="submit" class="w-full bg-blue-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300">
-                            <i class="fas fa-calendar-check mr-2"></i>
+
+                        <div style="margin-bottom:12px;">
+                            <label style="font-size:12px;font-weight:600;color:#22222e;display:block;margin-bottom:5px;">Work Email *</label>
+                            <input name="email" type="email" placeholder="you@company.com" required class="form-field">
+                        </div>
+
+                        <div style="margin-bottom:12px;">
+                            <label style="font-size:12px;font-weight:600;color:#22222e;display:block;margin-bottom:5px;">Monthly Ad Spend *</label>
+                            <select name="ad_spend" required class="form-field">
+                                <option value="">Select your budget →</option>
+                                <option value="5000-10000">$5,000–$10,000/mo</option>
+                                <option value="10001-25000">$10,001–$25,000/mo</option>
+                                <option value="25001-50000">$25,001–$50,000/mo</option>
+                                <option value="50000+">$50,000+/mo</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom:20px;">
+                            <label style="font-size:12px;font-weight:600;color:#22222e;display:block;margin-bottom:5px;">Website URL</label>
+                            <input name="website" placeholder="https://yoursite.com" class="form-field">
+                        </div>
+
+                        <button type="submit" id="hero-submit-btn" style="width:100%;background:#0057ff;color:#fff;padding:15px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;display:flex;align-items:center;justify-content:center;gap:10px;" onmouseover="this.style.background='#003ed4';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0057ff';this.style.transform='translateY(0)'">
+                            <i class="fas fa-calendar-check"></i>
                             Book My Free Strategy Call
                         </button>
-                        
-                        <p class="text-sm text-gray-500 text-center mt-4">
-                            After submitting, you'll be redirected to view pricing and book your call.
+
+                        <p style="text-align:center;font-size:12px;color:#8891a4;margin-top:12px;">
+                            <i class="fas fa-lock" style="margin-right:4px;"></i>
+                            No spam. No obligation. 100% confidential.
                         </p>
                     </form>
-                </section>
-            </div>
 
-            <!-- Sticky Sidebar -->
-            <aside class="lp-sticky">
-                <div class="sticky-card">
-                    <div class="mini-badges">
-                        Google Partner • 10+ Years • $300K+/mo Managed
-                    </div>
-                    
-                    <h3>Peak <span>20x ROAS</span> Case Study</h3>
-                    <p class="text-gray-600 mb-4">
-                        How a DTC brand turned $35,600 in ad spend into $265,000 in revenue using disciplined targeting, PMax tuning, and CRO.
-                    </p>
-                    
-                    <a href="../case-studies/20x-roas/?utm_source=sidebar&utm_campaign=20x-case-study" 
-                       class="inline-block w-full text-center bg-white border-2 border-blue-600 text-blue-600 py-3 px-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300 mb-4">
-                        View the 20x ROAS Case Study →
-                    </a>
+                    <hr style="border:none;border-top:1px solid #e5e9f0;margin:20px 0;">
 
-                    <hr>
-                    
-                    <div class="micro-proof">
-                        <p>"CPA fell by half within 60 days." — Founder, Manufacturing</p>
-                        <p>"Scaled profitably with transparent reporting." — Marketing Director</p>
-                    </div>
-
-                    <div class="secondary mt-4">
-                        <a href="../pricing/?utm_source=sidebar" 
-                           class="text-blue-600 hover:text-blue-800 font-semibold gated" 
-                           id="pricing-link">
-                           View Pricing (after form) →
-                        </a>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <p style="font-size:13px;color:#8891a4;font-style:italic;">"CPA fell by half within 60 days."</p>
+                        <p style="font-size:12px;font-weight:600;color:#22222e;">— Founder, Manufacturing Co.</p>
                     </div>
                 </div>
-            </aside>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                <!-- Brand Section -->
-                <div class="col-span-2 md:col-span-2 lg:col-span-2">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">HL</span>
-                        </div>
-                        <span class="ml-3 text-xl font-bold">Hans Lacida</span>
-                    </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Google Ads Growth Partner helping U.S. businesses maximize ROI through strategic PPC management and proven scaling methodologies.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="sr-only">LinkedIn</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="sr-only">Twitter</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Navigation -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="../index.html" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="../about/" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="../work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
-                        <li><a href="../blog/" class="hover:text-white transition-colors">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="../services/" class="hover:text-white transition-colors">All Services</a></li>
-                        <li><a href="../ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
-                        <li><a href="../google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
-                        <li><a href="../leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Resources -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="../case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
-                        <li><a href="../client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
-                        <li><a href="../our-process/" class="hover:text-white transition-colors">Our Process</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="../contact/" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
-                        <li><a href="../free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
-                        <li><a href="../request-call-back/" class="hover:text-white transition-colors">Request Callback</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> - Trusted Google Ads Partner for U.S. Businesses. All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- Google Ads -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2137593406454250"
-         data-ad-slot="3363549025"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+<!-- ══════════════════════════════════════════
+     MAIN BODY + SIDEBAR
+══════════════════════════════════════════ -->
+<main>
+    <div class="lp-grid" style="padding-top:60px;">
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        <!-- ── MAIN COLUMN ── -->
+        <div>
+
+            <!-- SPECIALIST VS AGENCY -->
+            <section style="margin-bottom:64px;">
+                <p class="section-label">Why It Works</p>
+                <h2 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#0a0a0f;margin-bottom:8px;">Specialist Beats Agency — Every Time</h2>
+                <p style="color:#8891a4;margin-bottom:32px;">No account managers. No juniors. You work directly with the person building and scaling your campaigns.</p>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+                    <div class="stat-card blue">
+                        <div style="width:44px;height:44px;background:#eff4ff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                            <i class="fas fa-user-tie" style="color:#0057ff;font-size:18px;"></i>
+                        </div>
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:8px;">Direct Access</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.6;">The strategist managing your account is also your point of contact — always.</p>
+                    </div>
+                    <div class="stat-card green">
+                        <div style="width:44px;height:44px;background:#effff8;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                            <i class="fas fa-bolt" style="color:#00c48c;font-size:18px;"></i>
+                        </div>
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:8px;">Faster Optimization</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.6;">No layers, no lag. Weekly iteration cycles that actually move the needle.</p>
+                    </div>
+                    <div class="stat-card red">
+                        <div style="width:44px;height:44px;background:#fff1f1;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                            <i class="fas fa-tags" style="color:#ff3c3c;font-size:18px;"></i>
+                        </div>
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:8px;">Flat-Rate Pricing</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.6;">No percentage-of-spend surprises. Know exactly what you pay, every month.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHO I WORK WITH -->
+            <section style="margin-bottom:64px;">
+                <p class="section-label">Client Fit</p>
+                <h2 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#0a0a0f;margin-bottom:8px;">Who I Work With</h2>
+                <p style="color:#8891a4;margin-bottom:28px;">U.S. teams investing $5K–$50K+/mo who value strategy, testing, and real ROI over vanity metrics.</p>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div class="fit-col yes">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                            <div style="width:36px;height:36px;background:#effff8;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-check" style="color:#00c48c;font-size:14px;"></i>
+                            </div>
+                            <h3 style="font-family:'Syne',sans-serif;font-weight:700;color:#00c48c;">Perfect Fit</h3>
+                        </div>
+                        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-check" style="color:#00c48c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                $5K–$50K+ monthly ad spend
+                            </li>
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-check" style="color:#00c48c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                ROI-first, testing mindset
+                            </li>
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-check" style="color:#00c48c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                Long-term growth partner needed
+                            </li>
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-check" style="color:#00c48c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                U.S.-based business
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fit-col no">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                            <div style="width:36px;height:36px;background:#fff1f1;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-times" style="color:#ff3c3c;font-size:14px;"></i>
+                            </div>
+                            <h3 style="font-family:'Syne',sans-serif;font-weight:700;color:#ff3c3c;">Not a Fit</h3>
+                        </div>
+                        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-xmark" style="color:#ff3c3c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                Under $2K/month ad spend
+                            </li>
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-xmark" style="color:#ff3c3c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                "Cheap clicks" over profit mindset
+                            </li>
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-xmark" style="color:#ff3c3c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                Shopping for the cheapest option
+                            </li>
+                            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#22222e;">
+                                <i class="fas fa-circle-xmark" style="color:#ff3c3c;margin-top:2px;font-size:13px;flex-shrink:0;"></i>
+                                Expecting overnight miracles
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESULTS / PROOF -->
+            <section style="margin-bottom:64px;">
+                <p class="section-label">Proven Results</p>
+                <h2 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#0a0a0f;margin-bottom:8px;">Results That Compound</h2>
+                <p style="color:#8891a4;margin-bottom:32px;">Real campaigns. Real numbers. No cherry-picking.</p>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+                    <div class="proof-card">
+                        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+                            <span style="background:#fff1f1;color:#ff3c3c;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">DTC E-commerce</span>
+                            <i class="fas fa-chart-line" style="color:#ff3c3c;font-size:20px;"></i>
+                        </div>
+                        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#0a0a0f;margin-bottom:4px;">20x ROAS</div>
+                        <p style="font-size:14px;color:#8891a4;margin-bottom:16px;line-height:1.6;">$35,600 spend turned into $265,000 in revenue through disciplined targeting and PMax tuning.</p>
+                        <a href="../case-studies/20x-roas/" style="font-size:14px;font-weight:600;color:#0057ff;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                            Read full case study <i class="fas fa-arrow-right" style="font-size:11px;margin-left:4px;"></i>
+                        </a>
+                    </div>
+
+                    <div class="proof-card">
+                        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+                            <span style="background:#effff8;color:#00c48c;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">Manufacturing</span>
+                            <i class="fas fa-arrow-trend-down" style="color:#00c48c;font-size:20px;"></i>
+                        </div>
+                        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#0a0a0f;margin-bottom:4px;">50% Lower CPA</div>
+                        <p style="font-size:14px;color:#8891a4;margin-bottom:16px;line-height:1.6;">CPA dropped from $23 → $14 for an industrial account within 60 days of restructuring.</p>
+                        <span style="font-size:14px;font-weight:500;color:#8891a4;">Manufacturing case study</span>
+                    </div>
+
+                    <div class="proof-card">
+                        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+                            <span style="background:#eff4ff;color:#0057ff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">Local Services</span>
+                            <i class="fas fa-users" style="color:#0057ff;font-size:20px;"></i>
+                        </div>
+                        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#0a0a0f;margin-bottom:4px;">788 Leads</div>
+                        <p style="font-size:14px;color:#8891a4;margin-bottom:16px;line-height:1.6;">788 qualified leads at $16.95 CPL for a local services company — below industry average.</p>
+                        <span style="font-size:14px;font-weight:500;color:#8891a4;">Local services case study</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOW I SCALE YOUR ADS -->
+            <section style="margin-bottom:64px;">
+                <p class="section-label">The Process</p>
+                <h2 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#0a0a0f;margin-bottom:8px;">How I Scale Your Ads</h2>
+                <p style="color:#8891a4;margin-bottom:40px;">A repeatable system built from 10+ years of iteration.</p>
+
+                <div class="process-steps">
+                    <div class="process-item" data-step="1">
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;color:#0a0a0f;">Audit & Strategy</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.7;max-width:500px;">Deep-dive into your current setup to uncover waste, quick wins, and structural issues holding back growth.</p>
+                    </div>
+                    <div class="process-item" data-step="2">
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;color:#0a0a0f;">Precision Targeting</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.7;max-width:500px;">Exact/phrase match keywords paired with aggressive negative lists so your budget reaches buyers, not browsers.</p>
+                    </div>
+                    <div class="process-item" data-step="3">
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;color:#0a0a0f;">Conversion Operations</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.7;max-width:500px;">Ad copy, landing page recommendations, and conversion tracking all aligned to drive measurable ROI.</p>
+                    </div>
+                    <div class="process-item" data-step="4">
+                        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;color:#0a0a0f;">Weekly Scaling</h3>
+                        <p style="font-size:14px;color:#8891a4;line-height:1.7;max-width:500px;">Iterative testing, smart budget allocation, and transparent reporting — every week, no exceptions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TESTIMONIALS -->
+            <section style="margin-bottom:64px;">
+                <p class="section-label">Social Proof</p>
+                <h2 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#0a0a0f;margin-bottom:28px;">What Clients Say</h2>
+                <div style="display:flex;flex-direction:column;gap:16px;">
+                    <div class="testimonial-card">
+                        <p style="margin-bottom:14px;line-height:1.7;">"CPA fell by half within 60 days. Hands-down the best ROI we've seen from any marketing investment."</p>
+                        <span style="font-size:13px;font-weight:600;color:#0a0a0f;font-style:normal;">— Founder, Manufacturing Company</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p style="margin-bottom:14px;line-height:1.7;">"Scaled profitably with fully transparent reporting. Finally an expert who explains what's actually happening in the account."</p>
+                        <span style="font-size:13px;font-weight:600;color:#0a0a0f;font-style:normal;">— Marketing Director, SaaS Company</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ── FULL FORM SECTION ── -->
+            <section id="book" style="margin-bottom:80px;">
+                <div style="background:#0a0a0f;border-radius:24px;padding:48px;position:relative;overflow:hidden;">
+                    <!-- Background grid -->
+                    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,87,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,87,255,0.06) 1px,transparent 1px);background-size:40px 40px;border-radius:24px;"></div>
+
+                    <div style="position:relative;z-index:1;">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                            <span class="live-dot"></span>
+                            <span style="font-size:12px;font-weight:600;color:#ff3c3c;text-transform:uppercase;letter-spacing:0.1em;">2 Spots Remaining</span>
+                        </div>
+                        <h2 style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:10px;">Book Your Free 10‑Min Strategy Call</h2>
+                        <p style="color:#8891a4;font-size:1rem;margin-bottom:36px;">Let's review your current Google Ads setup and identify exactly where you're leaving money on the table.</p>
+
+                        <form action="https://formsubmit.co/googleads@hanslacida.com" method="post" id="main-form" style="display:grid;gap:16px;">
+                            <input type="hidden" name="form_source" value="usa_landing_page_main">
+                            <input type="hidden" name="utm_source" value="usa_landing_page">
+
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                                <div>
+                                    <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">First Name *</label>
+                                    <input name="firstName" placeholder="John" required class="form-field">
+                                </div>
+                                <div>
+                                    <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Last Name *</label>
+                                    <input name="lastName" placeholder="Smith" required class="form-field">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Work Email *</label>
+                                <input name="email" type="email" placeholder="you@company.com" required class="form-field">
+                            </div>
+
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                                <div>
+                                    <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Monthly Ad Spend *</label>
+                                    <select name="ad_spend" required class="form-field">
+                                        <option value="">Select budget →</option>
+                                        <option value="5000-10000">$5K – $10K/mo</option>
+                                        <option value="10001-25000">$10K – $25K/mo</option>
+                                        <option value="25001-50000">$25K – $50K/mo</option>
+                                        <option value="50000+">$50K+/mo</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Industry</label>
+                                    <select name="industry" class="form-field">
+                                        <option value="">Select industry</option>
+                                        <option value="ecommerce">E-commerce</option>
+                                        <option value="saas">SaaS / Software</option>
+                                        <option value="local-services">Local Services</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="education">Education</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Website URL</label>
+                                <input name="website" placeholder="https://yoursite.com" class="form-field">
+                            </div>
+
+                            <div>
+                                <label style="font-size:12px;font-weight:600;color:#8891a4;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Biggest Google Ads Challenge</label>
+                                <textarea name="goals" rows="3" placeholder="e.g. High CPA, poor ROAS, wasted spend on irrelevant traffic..." class="form-field"></textarea>
+                            </div>
+
+                            <button type="submit" id="main-submit-btn" style="width:100%;background:#0057ff;color:#fff;padding:17px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background 0.2s,transform 0.15s;" onmouseover="this.style.background='#003ed4';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0057ff';this.style.transform='translateY(0)'">
+                                <i class="fas fa-calendar-check"></i>
+                                Book My Free Strategy Call — It's Free
+                            </button>
+
+                            <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:4px;">
+                                <span style="font-size:12px;color:#8891a4;display:flex;align-items:center;gap:5px;"><i class="fas fa-lock" style="color:#0057ff;"></i>No spam, ever</span>
+                                <span style="font-size:12px;color:#8891a4;display:flex;align-items:center;gap:5px;"><i class="fas fa-clock" style="color:#0057ff;"></i>10 min, no pitch</span>
+                                <span style="font-size:12px;color:#8891a4;display:flex;align-items:center;gap:5px;"><i class="fas fa-shield-alt" style="color:#0057ff;"></i>100% confidential</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- end main column -->
+
+
+        <!-- ── SIDEBAR ── -->
+        <aside>
+            <div class="sidebar-sticky">
+
+                <!-- SIDEBAR CARD: MINI FORM / CALL LINK -->
+                <div style="background:#fff;border-radius:20px;padding:28px;border:1px solid #e5e9f0;box-shadow:0 8px 30px rgba(0,0,0,0.07);margin-bottom:20px;">
+                    <div style="background:#eff4ff;border-radius:12px;padding:16px;margin-bottom:20px;text-align:center;">
+                        <p style="font-size:12px;font-weight:600;color:#0057ff;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Peak Result</p>
+                        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:#0a0a0f;line-height:1;">20x ROAS</div>
+                        <p style="font-size:13px;color:#8891a4;margin-top:4px;">$35,600 → $265,000 revenue</p>
+                    </div>
+
+                    <p style="font-size:14px;color:#8891a4;line-height:1.7;margin-bottom:16px;">How a DTC brand used disciplined targeting, PMax tuning, and CRO to achieve this result in under 90 days.</p>
+
+                    <a href="../case-studies/20x-roas/?utm_source=sidebar&utm_campaign=20x-case-study"
+                       style="display:block;text-align:center;background:#0a0a0f;color:#fff;padding:12px;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;text-decoration:none;margin-bottom:12px;transition:background 0.2s;" onmouseover="this.style.background='#22222e'" onmouseout="this.style.background='#0a0a0f'">
+                        Read the 20x ROAS Case Study →
+                    </a>
+
+                    <a href="#book"
+                       style="display:block;text-align:center;background:#0057ff;color:#fff;padding:12px;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#003ed4'" onmouseout="this.style.background='#0057ff'">
+                        <i class="fas fa-calendar-check" style="margin-right:6px;"></i>Book Free Strategy Call
+                    </a>
+                </div>
+
+                <!-- SIDEBAR: TESTIMONIALS -->
+                <div style="background:#fff;border-radius:20px;padding:24px;border:1px solid #e5e9f0;box-shadow:0 8px 30px rgba(0,0,0,0.07);margin-bottom:20px;">
+                    <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8891a4;margin-bottom:16px;">Client Proof</p>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="border-left:3px solid #00c48c;padding-left:14px;">
+                            <p style="font-size:13px;color:#22222e;font-style:italic;line-height:1.6;margin-bottom:6px;">"CPA fell by half within 60 days."</p>
+                            <span style="font-size:12px;font-weight:600;color:#8891a4;">Founder, Manufacturing</span>
+                        </div>
+                        <div style="border-left:3px solid #0057ff;padding-left:14px;">
+                            <p style="font-size:13px;color:#22222e;font-style:italic;line-height:1.6;margin-bottom:6px;">"Scaled profitably with transparent reporting."</p>
+                            <span style="font-size:12px;font-weight:600;color:#8891a4;">Marketing Director</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIDEBAR: PRICING TEASER -->
+                <div style="background:#f8faff;border-radius:20px;padding:24px;border:1px solid #dbe4ff;">
+                    <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#0057ff;margin-bottom:10px;">Flat-Rate Pricing</p>
+                    <p style="font-size:14px;color:#8891a4;line-height:1.6;margin-bottom:14px;">No percentage of spend. Transparent monthly retainers starting at a fixed rate. Submit the form to unlock full pricing.</p>
+                    <a href="https://pricing.hanslacida.com" id="pricing-link" class="gated" style="font-size:14px;font-weight:600;color:#0057ff;text-decoration:none;opacity:0.5;pointer-events:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        View Full Pricing →
+                    </a>
+                    <p id="pricing-hint" style="font-size:12px;color:#8891a4;margin-top:6px;"><i class="fas fa-lock" style="margin-right:4px;font-size:11px;"></i>Submit the form to unlock</p>
+                </div>
+
+            </div>
+        </aside>
+
+    </div><!-- end lp-grid -->
+</main>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer style="background:#0a0a0f;color:#fff;padding:64px 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
+            <div>
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="width:36px;height:36px;background:#0057ff;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                        <span style="color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;">HL</span>
+                    </div>
+                    <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:17px;">Hans Lacida</span>
+                </div>
+                <p style="color:#8891a4;font-size:14px;line-height:1.7;margin-bottom:20px;max-width:280px;">Google Ads Growth Partner helping U.S. businesses maximize ROI through strategic PPC management.</p>
+                <div style="display:flex;gap:12px;">
+                    <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;background:#22222e;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='#0057ff'" onmouseout="this.style.background='#22222e'">
+                        <svg width="16" height="16" fill="white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:16px;color:#fff;">Navigation</h4>
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+                    <li><a href="../index.html" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Home</a></li>
+                    <li><a href="../about/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">About</a></li>
+                    <li><a href="../work-with-me/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Work With Me</a></li>
+                    <li><a href="../blog/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Blog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:16px;color:#fff;">Services</h4>
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+                    <li><a href="../services/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">All Services</a></li>
+                    <li><a href="../ppc-management/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">PPC Management</a></li>
+                    <li><a href="../google-ads-specialist/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Google Ads</a></li>
+                    <li><a href="../leading-marketing-firm/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Marketing Consulting</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:16px;color:#fff;">Resources</h4>
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+                    <li><a href="https://pricing.hanslacida.com" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Pricing</a></li>
+                    <li><a href="../case-studies/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Case Studies</a></li>
+                    <li><a href="../client-success-stories/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Success Stories</a></li>
+                    <li><a href="../our-process/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Our Process</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:16px;color:#fff;">Contact</h4>
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+                    <li><a href="../contact/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Contact</a></li>
+                    <li><a href="https://tidycal.com/zeldigital/discovery-call" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Book Discovery Call</a></li>
+                    <li><a href="../free-marketing-audit-call/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Free Audit</a></li>
+                    <li><a href="../request-call-back/" style="font-size:14px;color:#8891a4;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8891a4'">Request Callback</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="border-top:1px solid #22222e;padding-top:24px;text-align:center;">
+            <p style="font-size:13px;color:#8891a4;">&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> — Trusted Google Ads Partner for U.S. Businesses. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Google Ads -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2137593406454250" data-ad-slot="3363549025" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+    // Mobile menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
+    });
 
-        // Form tracking and validation
-        document.querySelector('.lead-form').addEventListener('submit', function(e) {
-            // Track form submission
+    // Form tracking + unlock pricing
+    function onFormSubmit(formId) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+        form.addEventListener('submit', function() {
+            // GA4 event
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'form_submit', {
-                    'event_category': 'lead_generation',
-                    'event_label': 'usa_landing_page',
-                    'value': 1
+                    event_category: 'lead_generation',
+                    event_label: 'usa_landing_page',
+                    value: 1
                 });
             }
-            
-            // Set cookie for pricing access
-            document.cookie = "form_submitted=true; path=/; max-age=86400"; // 24 hours
-            
-            // You can add additional form validation here if needed
+            // Set cookie
+            document.cookie = "form_submitted=true; path=/; max-age=86400";
+            unlockPricing();
         });
+    }
+    onFormSubmit('hero-form');
+    onFormSubmit('main-form');
 
-        // Check if user has submitted form and reveal pricing link
-        function checkFormSubmission() {
-            if (document.cookie.includes('form_submitted=true')) {
-                const pricingLink = document.getElementById('pricing-link');
-                if (pricingLink) {
-                    pricingLink.classList.remove('gated');
-                    pricingLink.textContent = 'View Pricing →';
-                }
-            }
+    function unlockPricing() {
+        const link = document.getElementById('pricing-link');
+        const hint = document.getElementById('pricing-hint');
+        if (link) {
+            link.style.opacity = '1';
+            link.style.pointerEvents = 'auto';
+            link.textContent = 'View Full Pricing →';
         }
-        
-        // Check on page load
-        checkFormSubmission();
-        
-        // Track sidebar case study clicks
-        document.querySelector('[href*="case-studies/20x-roas"]').addEventListener('click', function() {
+        if (hint) hint.style.display = 'none';
+    }
+
+    // Check cookie on load
+    if (document.cookie.includes('form_submitted=true')) unlockPricing();
+
+    // Track sidebar clicks
+    const sidebarLink = document.querySelector('[href*="case-studies/20x-roas"]');
+    if (sidebarLink) {
+        sidebarLink.addEventListener('click', function() {
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'click', {
-                    'event_category': 'sidebar',
-                    'event_label': '20x_roas_case_study',
-                    'value': 1
-                });
+                gtag('event', 'click', { event_category: 'sidebar', event_label: '20x_roas_case_study' });
             }
         });
+    }
 
-        // Track CTA clicks
-        document.querySelectorAll('[href="#book"]').forEach(button => {
-            button.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        'event_category': 'cta',
-                        'event_label': 'book_call_button',
-                        'value': 1
-                    });
-                }
-            });
+    // Track all CTA clicks
+    document.querySelectorAll('[href="#book"]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', { event_category: 'cta', event_label: 'book_call_button' });
+            }
         });
-    </script>
+    });
+
+    // Intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.proof-card, .stat-card, .testimonial-card, .fit-col, .process-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
+</script>
+
 </body>
 </html>
