@@ -1,1239 +1,1286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1E3588F4M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-K1E3588F4M');
-    </script>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'rajdhani': ['Rajdhani', 'sans-serif'],
-                        'poppins': ['Poppins', 'sans-serif'],
-                        'baloo': ['Baloo Chettan', 'cursive'],
-                        'lato': ['Lato', 'sans-serif']
-                    },
-                    colors: {
-                        'theme-blue': '#1a3cd4',
-                        'theme-dark': '#111111',
-                        'theme-gray': '#666666',
-                        'theme-light': '#f8f9fa',
-                        'premium-gold': '#d4af37',
-                        'slate-950': '#0f172a'
-                    }
-                }
-            }
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Tracking & Business Analytics Specialist | Hans Lacida</title>
+    <meta name="description" content="Hire a Google Ads specialist with deep conversion tracking expertise, GA4, GTM, server-side tracking, and business analytics. Perfect for data-driven scaling and complex acquisition systems.">
     
-    <!-- basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- site metas -->
-    <title>Hire a Google Ads Specialist: Conversion Tracking & Business Analytics Expert | Hanzel Lacida</title>
-    <meta name="keywords" content="Google Ads Specialist, Conversion Tracking Specialist, Business Analyst Google Ads, Hire PPC Expert, Server-Side Tracking, GA4 Expert">
-    <meta name="description" content="Hire a specialized Google Ads strategist with deep conversion tracking expertise and business analytics background. Perfect for data-driven scaling with GA4, GTM, and first-party data systems.">
-    <meta name="author" content="Hanzel Lacida">
-    <meta name="google-adsense-account" content="ca-pub-2137593406454250">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- favicon -->
-    <link rel="icon" href="../images/hanslacida_favicon.webp" type="image/webp" />
-    
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --bg: #0a0a0a;
+            --bg-2: #111111;
+            --bg-3: #161616;
+            --surface: #1a1a1a;
+            --border: #242424;
+            --border-light: #2e2e2e;
+            --text-primary: #f0ede8;
+            --text-secondary: #9a9690;
+            --text-muted: #5a5754;
+            --accent: #c8a96e;
+            --accent-dim: rgba(200, 169, 110, 0.12);
+            --accent-bright: #e2c48a;
+            --red: #c95b5b;
+            --green: #6ba88a;
+            --mono: 'JetBrains Mono', monospace;
+            --serif: 'DM Serif Display', serif;
+            --sans: 'Syne', sans-serif;
         }
-        
-        .gradient-premium {
-            background: linear-gradient(135deg, #1a3cd4 0%, #0f172a 100%);
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        .gradient-accent {
-            background: linear-gradient(135deg, #d4af37 0%, #a58d1f 100%);
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.35;
         }
-        
-        .hover-scale {
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-        
-        .feature-icon {
-            width: 64px;
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            padding: 0 40px;
             height: 64px;
-            border-radius: 12px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a3cd4 0%, #667eea 100%);
-            color: white;
-            font-size: 28px;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            border-color: #d4af37;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #d4af37;
-            margin-bottom: 8px;
-        }
-        
-        .expertise-badge {
-            display: inline-block;
-            background: #f0f4ff;
-            border: 2px solid #1a3cd4;
-            color: #1a3cd4;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin: 6px;
-            transition: all 0.3s ease;
-        }
-        
-        .expertise-badge:hover {
-            background: #1a3cd4;
-            color: white;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .comparison-table th {
-            background: linear-gradient(135deg, #1a3cd4 0%, #667eea 100%);
-            color: white;
-            padding: 20px;
-            text-align: left;
-            font-weight: 700;
-        }
-        
-        .comparison-table td {
-            padding: 16px 20px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .comparison-table tbody tr:nth-child(even) {
-            background: #f9fafb;
-        }
-        
-        .check-mark {
-            color: #10b981;
-            font-weight: bold;
-        }
-        
-        .cross-mark {
-            color: #ef4444;
-            font-weight: bold;
-        }
-        
-        .process-flow {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
             justify-content: space-between;
+            background: rgba(10, 10, 10, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
-        
-        .process-node {
-            background: white;
-            padding: 24px;
-            border-radius: 12px;
-            border: 2px solid #e5e7eb;
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .process-node:hover {
-            border-color: #1a3cd4;
-            box-shadow: 0 8px 16px rgba(26, 60, 212, 0.15);
-        }
-        
-        .process-node .node-number {
-            background: linear-gradient(135deg, #1a3cd4 0%, #667eea 100%);
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin: 0 auto 16px;
-        }
-        
-        .process-node.current {
-            border-color: #d4af37;
-            background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 5%);
-        }
-        
-        .process-node.current .node-number {
-            background: linear-gradient(135deg, #d4af37 0%, #a58d1f 100%);
-        }
-        
-        .arrow {
-            color: #d1d5db;
-            font-size: 24px;
-            margin: 0 -10px;
-        }
-        
-        @media (max-width: 768px) {
-            .process-flow {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .arrow {
-                transform: rotate(90deg);
-                margin: -10px 0;
-            }
-        }
-        
-        .pricing-tier {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .pricing-tier.premium {
-            border-color: #d4af37;
-            background: linear-gradient(135deg, #fffbf0 0%, #ffffff 100%);
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
-        }
-        
-        .pricing-tier.premium::before {
-            content: "RECOMMENDED";
-            position: absolute;
-            top: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #d4af37 0%, #a58d1f 100%);
-            color: white;
-            padding: 8px 24px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-        
-        .pricing-number {
-            font-size: 3rem;
-            font-weight: 900;
-            margin: 20px 0;
-        }
-        
-        .pricing-tier h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .features-list {
-            text-align: left;
-            margin: 24px 0;
-        }
-        
-        .features-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-        }
-        
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .features-list i {
-            color: #10b981;
-            margin-right: 12px;
-            font-size: 1.25rem;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #1a3cd4 0%, #667eea 100%);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 8px;
-            font-weight: 600;
+
+        .nav-logo {
+            font-family: var(--serif);
+            font-size: 18px;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            letter-spacing: 0.01em;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(26, 60, 212, 0.3);
+
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
         }
-        
-        .cta-button.secondary {
-            background: white;
-            color: #1a3cd4;
-            border: 2px solid #1a3cd4;
+
+        .nav-links a {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        
-        .cta-button.secondary:hover {
-            background: #f0f4ff;
+
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .nav-cta {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent) !important;
+            border: 1px solid var(--accent);
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s !important;
         }
-        
-        .testimonial-card {
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin: 20px 0;
+
+        .nav-cta:hover {
+            background: var(--accent) !important;
+            color: var(--bg) !important;
         }
-        
-        .testimonial-text {
-            font-size: 1.1rem;
+
+        .hero {
+            min-height: 100vh;
+            padding: 120px 40px 80px;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(200, 169, 110, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .hero-eyebrow-line {
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .hero-eyebrow span {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .hero-headline {
+            font-family: var(--serif);
+            font-size: clamp(42px, 5.5vw, 72px);
+            line-height: 1.08;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-headline em {
             font-style: italic;
-            margin-bottom: 16px;
-            color: #374151;
+            color: var(--accent);
         }
-        
-        .testimonial-author {
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 4px;
+
+        .hero-subhead {
+            font-family: var(--mono);
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            text-transform: uppercase;
         }
-        
-        .testimonial-role {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-        
-        .hero-gradient-text {
-            background: linear-gradient(135deg, #1a3cd4 0%, #667eea 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .form-group {
+
+        .hero-body {
+            font-family: var(--sans);
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 560px;
             margin-bottom: 20px;
         }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+
+        .hero-body strong {
+            color: var(--text-primary);
             font-weight: 600;
-            color: #111827;
         }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
+
+        .hero-pillars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 44px;
         }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #1a3cd4;
-            box-shadow: 0 0 0 3px rgba(26, 60, 212, 0.1);
+
+        .pill {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+            padding: 6px 12px;
+            background: var(--bg-3);
+            transition: border-color 0.2s, color 0.2s;
         }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 100%);
-            border-left: 4px solid #d4af37;
-            padding: 24px;
-            border-radius: 8px;
-            margin: 24px 0;
+
+        .pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
-        
-        .highlight-box h3 {
-            margin-top: 0;
-            color: #92400e;
+
+        .pill.accent {
+            border-color: rgba(200,169,110,0.4);
+            color: var(--accent);
+            background: var(--accent-dim);
         }
-        
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bg);
+            background: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-bright);
+            border-color: var(--accent-bright);
+        }
+
+        .btn-ghost {
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border-light);
+            padding: 14px 28px;
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        .track-record {
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            padding: 36px 32px;
+            position: relative;
+        }
+
+        .track-record::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        .tr-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .tr-stats {
+            display: grid;
+            gap: 0;
+        }
+
+        .tr-stat {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tr-stat:last-child { border-bottom: none; }
+
+        .tr-stat-num {
+            font-family: var(--serif);
+            font-size: 32px;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .tr-stat-num span { color: var(--accent); }
+
+        .tr-stat-label {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 56px;
+        }
+
+        .section-eyebrow-line {
+            width: 24px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .section-eyebrow span {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(32px, 4vw, 52px);
+            color: var(--text-primary);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .section-sub {
+            font-family: var(--sans);
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-top: 56px;
+            border: 1px solid var(--border);
         }
-        
-        .expertise-item {
-            background: white;
-            padding: 24px;
-            border-radius: 12px;
-            border: 2px solid #e5e7eb;
-            transition: all 0.3s ease;
+
+        .expertise-card {
+            background: var(--bg-2);
+            padding: 44px 36px;
+            position: relative;
+            transition: background 0.2s;
         }
-        
-        .expertise-item:hover {
-            border-color: #1a3cd4;
-            box-shadow: 0 8px 16px rgba(26, 60, 212, 0.1);
+
+        .expertise-card:hover {
+            background: var(--bg-3);
         }
-        
-        .expertise-item h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.4s ease;
+        }
+
+        .expertise-card:hover::before {
+            width: 100%;
+        }
+
+        .expertise-icon {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .expertise-title {
+            font-family: var(--serif);
+            font-size: 26px;
+            color: var(--text-primary);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .expertise-body {
+            font-family: var(--sans);
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .expertise-tag {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+            padding: 4px 8px;
+            background: var(--bg-3);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 56px;
+        }
+
+        .comparison-card {
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            padding: 36px 32px;
+            position: relative;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        .comparison-title {
+            font-family: var(--serif);
+            font-size: 24px;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .comparison-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .comparison-list li {
+            font-family: var(--sans);
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .comparison-list li::before {
+            content: '✓';
+            color: var(--green);
+            flex-shrink: 0;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .comparison-card.not-fit li::before {
+            content: '✕';
+            color: var(--red);
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-top: 56px;
+            border: 1px solid var(--border);
+        }
+
+        .process-node {
+            background: var(--bg-2);
+            padding: 36px 28px;
+            position: relative;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .process-node:hover {
+            background: var(--bg-3);
+        }
+
+        .process-num {
+            font-family: var(--serif);
+            font-size: 44px;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .process-title {
+            font-family: var(--serif);
+            font-size: 20px;
+            color: var(--text-primary);
             margin-bottom: 12px;
-            color: #111827;
         }
-        
-        .expertise-item p {
-            color: #6b7280;
-            margin: 0;
+
+        .process-desc {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-        
-        .stack-icon {
-            display: inline-block;
-            background: #f0f4ff;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: #1a3cd4;
-            font-weight: 600;
-            margin-right: 8px;
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+
+        .pricing-card {
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            padding: 44px 36px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--accent);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, rgba(200, 169, 110, 0.08), transparent);
+            transform: scale(1.04);
+        }
+
+        .pricing-card.featured::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 6px 16px;
+        }
+
+        .pricing-label {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .pricing-title {
+            font-family: var(--serif);
+            font-size: 24px;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
+
+        .pricing-price {
+            font-family: var(--serif);
+            font-size: 36px;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .pricing-desc {
+            font-family: var(--sans);
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .pricing-features li {
+            font-family: var(--sans);
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .pricing-features li::before {
+            content: '▸';
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .faq-container {
+            max-width: 720px;
+            margin-top: 56px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-family: var(--serif);
+            font-size: 18px;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-toggle {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            font-family: var(--sans);
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-top: 16px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .contact-section {
+            background: var(--bg-3);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-headline {
+            font-family: var(--serif);
+            font-size: clamp(28px, 3.5vw, 44px);
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-headline em {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .contact-body {
+            font-family: var(--sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .contact-items {
+            border: 1px solid var(--border);
+            background: var(--bg-2);
+        }
+
+        .contact-item {
+            padding: 22px 28px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 16px;
+        }
+
+        .contact-item:last-child { border-bottom: none; }
+
+        .ci-num {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+            letter-spacing: 0.1em;
+        }
+
+        .ci-text {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: var(--bg);
+            padding: 56px 40px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            font-family: var(--serif);
+            font-size: 22px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .footer-brand span { color: var(--accent); }
+
+        .footer-tagline {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .footer-col-title {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            font-family: var(--sans);
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--text-primary); }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-eyebrow  { animation: fadeUp 0.6s ease 0.1s both; }
+        .hero-headline { animation: fadeUp 0.7s ease 0.2s both; }
+        .hero-subhead  { animation: fadeUp 0.6s ease 0.35s both; }
+        .hero-body     { animation: fadeUp 0.6s ease 0.45s both; }
+        .hero-pillars  { animation: fadeUp 0.6s ease 0.55s both; }
+        .hero-ctas     { animation: fadeUp 0.6s ease 0.65s both; }
+        .track-record  { animation: fadeUp 0.8s ease 0.3s both; }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 100px 24px 60px;
+                gap: 48px;
+            }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .process-flow { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            section { padding: 72px 24px; }
+            nav { padding: 0 24px; }
+        }
     </style>
-    
-    <!-- Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
 </head>
-<body class="font-lato text-gray-700 bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-4">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="../index.html" class="flex items-center">
-                        <img src="../images/hanslacida_favicon.jpg" alt="HansLacida.com" class="h-12 w-auto" />
-                    </a>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                    <a href="../about/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
-                    <a href="../services/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
-                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
-                    <a href="#book" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">Get Started</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-blue-600" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+<body>
+
+    <nav>
+        <a href="#" class="nav-logo">Hans<span>.</span>Lacida</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Book Call</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="hero-eyebrow-line"></div>
+                <span>Conversion Tracking Specialist</span>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                    <a href="../about/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
-                    <a href="../services/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
-                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
-                    <a href="#book" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300">Get Started</a>
+            <h1 class="hero-headline">
+                Measurement<br>
+                <em>Infrastructure</em>
+            </h1>
+            <p class="hero-subhead">
+                <span>GA4 · Server-Side Tracking · First-Party Data</span>
+            </p>
+            <p class="hero-body">
+                I build <strong>bulletproof conversion tracking systems</strong> for scaling acquisition teams. GA4 architecture, server-side tagging, enhanced conversions, offline data integration — everything that makes your bidding algorithm work correctly.
+            </p>
+            <p class="hero-body">
+                When your tracking is broken, you're flying blind. When it's right, everything changes.
+            </p>
+            <div class="hero-pillars">
+                <span class="pill accent">GA4 Setup & Migration</span>
+                <span class="pill accent">Server-Side Tracking</span>
+                <span class="pill accent">Enhanced Conversions</span>
+                <span class="pill">First-Party Data</span>
+                <span class="pill">Offline Conversions</span>
+                <span class="pill">Data Validation</span>
+            </div>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-primary">Schedule 20-Min Call</a>
+                <a href="#expertise" class="btn-ghost">View Expertise</a>
+            </div>
+        </div>
+
+        <div class="track-record">
+            <div class="tr-label">Specialist Profile</div>
+            <div class="tr-stats">
+                <div class="tr-stat">
+                    <div class="tr-stat-num">50<span>+</span></div>
+                    <div class="tr-stat-label">Tracking Projects</div>
+                </div>
+                <div class="tr-stat">
+                    <div class="tr-stat-num">$10M<span>+</span></div>
+                    <div class="tr-stat-label">Ad spend audited</div>
+                </div>
+                <div class="tr-stat">
+                    <div class="tr-stat-num">10<span>+</span></div>
+                    <div class="tr-stat-label">Years experience</div>
+                </div>
+            </div>
+            <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);">
+                <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:12px;">Expertise</div>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                    <span style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">▸ GA4 event architecture</span>
+                    <span style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">▸ Google Tag Manager</span>
+                    <span style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">▸ Enhanced conversions</span>
+                    <span style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">▸ Offline conversion import</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="gradient-premium py-20 md:py-32 text-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="inline-block mb-6">
-                            <span class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                                <i class="fas fa-star mr-2"></i>Premium Specialist Available
-                            </span>
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                            Hire a <span style="color: #d4af37;">Conversion Tracking</span> & Analytics Specialist
-                        </h1>
-                        <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-                            Get hands-on access to a Google Ads expert fluent in GA4, GTM, server-side tracking, and first-party data architecture. Stop losing revenue to measurement gaps.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#book" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-300 text-center hover-scale">
-                                <i class="fas fa-phone mr-2"></i>Schedule Call
-                            </a>
-                            <a href="#expertise" class="inline-block bg-white bg-opacity-20 text-white border-2 border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:bg-opacity-30 transition-colors duration-300 text-center hover-scale">
-                                <i class="fas fa-arrow-down mr-2"></i>View Expertise
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="stat-card bg-white bg-opacity-10 border-white border-opacity-20">
-                                <div class="stat-number">10+</div>
-                                <p class="text-gray-200">Years Experience</p>
-                            </div>
-                            <div class="stat-card bg-white bg-opacity-10 border-white border-opacity-20">
-                                <div class="stat-number">$300K+</div>
-                                <p class="text-gray-200">/mo Managed</p>
-                            </div>
-                            <div class="stat-card bg-white bg-opacity-10 border-white border-opacity-20">
-                                <div class="stat-number">50+</div>
-                                <p class="text-gray-200">Tracking Projects</p>
-                            </div>
-                            <div class="stat-card bg-white bg-opacity-10 border-white border-opacity-20">
-                                <div class="stat-number">20x</div>
-                                <p class="text-gray-200">Peak ROAS</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <hr style="border:none;border-top:1px solid var(--border);margin:0 40px;">
 
-        <!-- Expertise Section -->
-        <section id="expertise" class="py-16 md:py-24 bg-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-4">Deep Technical Expertise</h2>
-                <p class="text-xl text-gray-600 text-center mb-12">The full stack of conversion intelligence for modern paid acquisition</p>
-                
-                <div class="expertise-grid">
-                    <div class="expertise-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4 class="mt-4">GA4 & Analytics Infrastructure</h4>
-                        <p>Full GA4 implementation, event tracking, data validation, and custom reporting dashboards for paid channels.</p>
-                        <div style="margin-top: 12px;">
-                            <span class="stack-icon">GA4 Events</span>
-                            <span class="stack-icon">Data Studio</span>
-                            <span class="stack-icon">BigQuery</span>
-                        </div>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4 class="mt-4">Server-Side Tracking & GTM</h4>
-                        <p>Server-side Google Tag Manager setup, Conversions API integration, and first-party data collection architecture.</p>
-                        <div style="margin-top: 12px;">
-                            <span class="stack-icon">GTM Server</span>
-                            <span class="stack-icon">Conversions API</span>
-                            <span class="stack-icon">First-Party Data</span>
-                        </div>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4 class="mt-4">Conversion Tracking & Attribution</h4>
-                        <p>Google Ads conversion tracking, enhanced conversions, cross-domain measurement, and attribution modeling.</p>
-                        <div style="margin-top: 12px;">
-                            <span class="stack-icon">Enhanced Conv</span>
-                            <span class="stack-icon">Cross-Domain</span>
-                            <span class="stack-icon">Attribution</span>
-                        </div>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h4 class="mt-4">Performance Max & Automation</h4>
-                        <p>PMax asset optimization, automated bidding strategies, and conversion event optimization for AI-driven campaigns.</p>
-                        <div style="margin-top: 12px;">
-                            <span class="stack-icon">PMax Assets</span>
-                            <span class="stack-icon">Conv Tracking</span>
-                            <span class="stack-icon">Smart Bidding</span>
-                        </div>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                            <i class="fas fa-sliders-h"></i>
-                        </div>
-                        <h4 class="mt-4">Data Quality & Auditing</h4>
-                        <p>Conversion data validation, measurement audit protocols, and QA frameworks to ensure accurate reporting.</p>
-                        <div style="margin-top: 12px;">
-                            <span class="stack-icon">Data Audit</span>
-                            <span class="stack-icon">QA Protocols</span>
-                            <span class="stack-icon">Validation</span>
-                        </div>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
-                            <i class="fas fa-balance-scale"></i>
-                        </div>
-                        <h4 class="mt-4">ROI Analysis & Reporting</h4>
-                        <p>Cost per acquisition optimization, margin-aware bidding, financial analytics, and business KPI alignment.</p>
-                        <div style="margin-top: 12px;">
-                            <span class="stack-icon">CPA Optimization</span>
-                            <span class="stack-icon">Financial KPIs</span>
-                            <span class="stack-icon">Margin Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="expertise">
+        <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>Deep Expertise</span>
+        </div>
+        <h2 class="section-title">Full-Stack<br><em>Measurement</em></h2>
+        <p class="section-sub">Everything required for accurate conversion tracking and data-driven optimization.</p>
 
-        <!-- Why Choose This Specialist Section -->
-        <section class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Why Most Ads Teams Fail at Conversion Tracking</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-red-600">The Problem:</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <span class="text-red-600 font-bold mr-4 text-xl">✕</span>
-                                <span><strong>Incomplete tracking</strong> — Missing offline conversions, CRM data, or post-click events</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-600 font-bold mr-4 text-xl">✕</span>
-                                <span><strong>GA4 chaos</strong> — Misconfigured events, poor data quality, untrustworthy reports</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-600 font-bold mr-4 text-xl">✕</span>
-                                <span><strong>Blind scaling</strong> — Can't tell which channels are actually profitable</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-600 font-bold mr-4 text-xl">✕</span>
-                                <span><strong>Wrong optimization</strong> — Optimizing for clicks, not for revenue or margin</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-600 font-bold mr-4 text-xl">✕</span>
-                                <span><strong>No insight</strong> — Agency doesn't understand your business metrics</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-green-600">The Solution:</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <span class="text-green-600 font-bold mr-4 text-xl">✓</span>
-                                <span><strong>Full-funnel tracking</strong> — Every conversion path captured and measured</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-600 font-bold mr-4 text-xl">✓</span>
-                                <span><strong>Clean GA4 foundation</strong> — Properly configured, validated, and audited</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-600 font-bold mr-4 text-xl">✓</span>
-                                <span><strong>Margin-aware optimization</strong> — Bidding based on actual profitability</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-600 font-bold mr-4 text-xl">✓</span>
-                                <span><strong>Business alignment</strong> — Data flows into your CRM and dashboards</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-600 font-bold mr-4 text-xl">✓</span>
-                                <span><strong>Scalable infrastructure</strong> — Built for growth and future-proof</span>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="expertise-icon">📊</div>
+                <div class="expertise-title">GA4 Architecture</div>
+                <div class="expertise-body">Complete GA4 implementation, event configuration, data validation, and custom reporting dashboards.</div>
+                <div class="expertise-tags">
+                    <span class="expertise-tag">Event Setup</span>
+                    <span class="expertise-tag">Data Validation</span>
+                    <span class="expertise-tag">BigQuery</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Process Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">The Engagement Process</h2>
-                
-                <div class="process-flow">
-                    <div class="process-node current">
-                        <div class="node-number">1</div>
-                        <h4 class="font-bold">Discovery & Audit</h4>
-                        <p class="text-gray-600 mt-2">Analyze current tracking, identify gaps and waste</p>
-                    </div>
-                    <div class="arrow hidden md:block"><i class="fas fa-arrow-right"></i></div>
-                    
-                    <div class="process-node">
-                        <div class="node-number">2</div>
-                        <h4 class="font-bold">Architecture Design</h4>
-                        <p class="text-gray-600 mt-2">Plan full-funnel tracking and data infrastructure</p>
-                    </div>
-                    <div class="arrow hidden md:block"><i class="fas fa-arrow-right"></i></div>
-                    
-                    <div class="process-node">
-                        <div class="node-number">3</div>
-                        <h4 class="font-bold">Implementation</h4>
-                        <p class="text-gray-600 mt-2">Deploy GA4, GTM, server-side tracking, and integrations</p>
-                    </div>
-                </div>
-                
-                <div class="process-flow" style="margin-top: 40px;">
-                    <div class="process-node">
-                        <div class="node-number">4</div>
-                        <h4 class="font-bold">Validation & QA</h4>
-                        <p class="text-gray-600 mt-2">Test all tracking paths and verify data accuracy</p>
-                    </div>
-                    <div class="arrow hidden md:block"><i class="fas fa-arrow-right"></i></div>
-                    
-                    <div class="process-node">
-                        <div class="node-number">5</div>
-                        <h4 class="font-bold">Optimization</h4>
-                        <p class="text-gray-600 mt-2">Reconfigure Google Ads campaigns for true profitability</p>
-                    </div>
-                    <div class="arrow hidden md:block"><i class="fas fa-arrow-right"></i></div>
-                    
-                    <div class="process-node">
-                        <div class="node-number">6</div>
-                        <h4 class="font-bold">Ongoing Scaling</h4>
-                        <p class="text-gray-600 mt-2">Weekly optimization and reporting based on clean data</p>
-                    </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">⚙️</div>
+                <div class="expertise-title">Server-Side Tracking</div>
+                <div class="expertise-body">Server GTM setup, API integration, first-party data collection, and cross-domain measurement.</div>
+                <div class="expertise-tags">
+                    <span class="expertise-tag">GTM Server</span>
+                    <span class="expertise-tag">APIs</span>
+                    <span class="expertise-tag">Cross-Domain</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Specialist vs Agency Table -->
-        <section class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-4">Specialist vs. Agency</h2>
-                <p class="text-lg text-gray-600 text-center mb-12">Why working directly with a specialist changes everything</p>
-                
-                <div class="overflow-x-auto">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 35%;">Factor</th>
-                                <th style="width: 32%;">Traditional Agency</th>
-                                <th style="width: 33%;">Direct Specialist</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-semibold">Direct Access</td>
-                                <td>Account manager (not the strategist)</td>
-                                <td><span class="check-mark">✓</span> Direct access to expert</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">Tracking Knowledge</td>
-                                <td>One-size-fits-all templates</td>
-                                <td><span class="check-mark">✓</span> Custom architecture</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">Optimization Speed</td>
-                                <td>Weeks (approval layers)</td>
-                                <td><span class="check-mark">✓</span> Days (direct decisions)</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">GA4 Expertise</td>
-                                <td>General knowledge</td>
-                                <td><span class="check-mark">✓</span> Deep specialization</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">Custom Integration</td>
-                                <td>Extra fees & delays</td>
-                                <td><span class="check-mark">✓</span> Included</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">Pricing Transparency</td>
-                                <td><span class="cross-mark">✕</span> % of spend (hidden costs)</td>
-                                <td><span class="check-mark">✓</span> Flat monthly rate</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">Business Understanding</td>
-                                <td><span class="cross-mark">✕</span> Generic approach</td>
-                                <td><span class="check-mark">✓</span> Margin & KPI focused</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold">Long-term Partnership</td>
-                                <td><span class="cross-mark">✕</span> Transactional</td>
-                                <td><span class="check-mark">✓</span> Strategic ally</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="expertise-card">
+                <div class="expertise-icon">🎯</div>
+                <div class="expertise-title">Conversion Tracking</div>
+                <div class="expertise-body">Google Ads conversion tagging, enhanced conversions, offline data import, attribution modeling.</div>
+                <div class="expertise-tags">
+                    <span class="expertise-tag">Conv Tracking</span>
+                    <span class="expertise-tag">Attribution</span>
+                    <span class="expertise-tag">CRM Sync</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Results Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Results from Proper Measurement</h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="stat-card">
-                        <div class="stat-number">20x</div>
-                        <h3 class="text-xl font-bold mb-4">Peak ROAS</h3>
-                        <p class="text-gray-600">DTC brand scaled with full-funnel tracking and margin-aware optimization</p>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-number">50%</div>
-                        <h3 class="text-xl font-bold mb-4">CPA Reduction</h3>
-                        <p class="text-gray-600">Manufacturing company optimized based on actual cost per qualified lead</p>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-number">788</div>
-                        <h3 class="text-xl font-bold mb-4">Qualified Leads</h3>
-                        <p class="text-gray-600">Local services tracked and optimized with offline conversion data</p>
-                    </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">📈</div>
+                <div class="expertise-title">Business Analytics</div>
+                <div class="expertise-body">CPA optimization, margin-aware bidding, financial KPIs, ROI-focused campaign restructuring.</div>
+                <div class="expertise-tags">
+                    <span class="expertise-tag">CPA Analysis</span>
+                    <span class="expertise-tag">Margins</span>
+                    <span class="expertise-tag">ROI</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Who I Work With -->
-        <section class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Who Should Hire Me</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="highlight-box">
-                        <h3 class="text-2xl font-bold text-yellow-900 mb-6">✓ Perfect Fit</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-700 mr-3 mt-1"></i>
-                                <span><strong>$5K–$100K+</strong> monthly ad spend (scale matters)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-700 mr-3 mt-1"></i>
-                                <span><strong>Complex conversion journeys</strong> (not simple e-commerce)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-700 mr-3 mt-1"></i>
-                                <span><strong>Data-driven decision makers</strong> who want accuracy over guesses</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-700 mr-3 mt-1"></i>
-                                <span><strong>Long-term mindset</strong> (6+ months commitment)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-700 mr-3 mt-1"></i>
-                                <span><strong>CRM or backend system</strong> where conversions live</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-700 mr-3 mt-1"></i>
-                                <span><strong>Open to innovation</strong> (server-side tracking, GA4, etc.)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div style="background: #f3f4f6; border-left: 4px solid #ef4444; padding: 24px; border-radius: 8px;">
-                        <h3 class="text-2xl font-bold text-red-900 mb-6">✕ Not a Fit</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-times text-red-700 mr-3 mt-1" style="font-weight: bold;"></i>
-                                <span>Under <strong>$3K/month</strong> ad spend</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-times text-red-700 mr-3 mt-1" style="font-weight: bold;"></i>
-                                <span>Looking for the <strong>cheapest option</strong> (not ROI-first)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-times text-red-700 mr-3 mt-1" style="font-weight: bold;"></i>
-                                <span><strong>No conversion data</strong> available in systems</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-times text-red-700 mr-3 mt-1" style="font-weight: bold;"></i>
-                                <span>Want a <strong>quick fix</strong> (measurement takes time)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-times text-red-700 mr-3 mt-1" style="font-weight: bold;"></i>
-                                <span><strong>Non-U.S. business</strong> (currently U.S.-focused)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-times text-red-700 mr-3 mt-1" style="font-weight: bold;"></i>
-                                <span><strong>Don't trust analytics</strong> (skeptical of data)</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section>
+        <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>The Problem</span>
+        </div>
+        <h2 class="section-title">Why measurement<br><em>breaks at scale</em></h2>
 
-        <!-- Testimonials -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">What Clients Say</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="testimonial-card">
-                        <div class="flex mb-4">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <p class="testimonial-text">"Finally understand where our conversions actually come from. The server-side tracking setup revealed $40K in monthly revenue we were blind to. Game-changing."</p>
-                        <div class="testimonial-author">Marketing Director, SaaS</div>
-                        <div class="testimonial-role">$30K/mo ad spend</div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="flex mb-4">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <p class="testimonial-text">"We went from guessing to knowing. The GA4 overhaul + conversion tracking fix cut our CPA by half. Direct access to the expert matters."</p>
-                        <div class="testimonial-author">E-commerce Founder</div>
-                        <div class="testimonial-role">$15K–$50K/mo scaling</div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="flex mb-4">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <p class="testimonial-text">"Hands down the best decision we made. The conversion tracking audit exposed critical gaps. Now our entire team trusts the data."</p>
-                        <div class="testimonial-author">VP Marketing, Manufacturing</div>
-                        <div class="testimonial-role">$50K+/mo spend</div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="flex mb-4">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <p class="testimonial-text">"Not just an ads person—understands business analytics. We now optimize based on margin, not just CPA. The difference is massive."</p>
-                        <div class="testimonial-author">Operations Manager, Lead Gen</div>
-                        <div class="testimonial-role">Local services provider</div>
-                    </div>
-                </div>
+        <div class="comparison-grid" style="margin-top:56px;">
+            <div class="comparison-card">
+                <h3 class="comparison-title">The Reality</h3>
+                <ul class="comparison-list">
+                    <li>Offline conversions never sync back</li>
+                    <li>GA4 events are misconfigured</li>
+                    <li>CRM data stays isolated</li>
+                    <li>You optimize for wrong metrics</li>
+                    <li>Budget is wasted chasing clicks</li>
+                    <li>Attribution is unreliable</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- Pricing Section -->
-        <section class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-4">Pricing Options</h2>
-                <p class="text-lg text-gray-600 text-center mb-12">Flat-rate pricing. No surprises. No % of spend.</p>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="pricing-tier">
-                        <h3>Tracking Audit</h3>
-                        <div class="pricing-number">$2,500</div>
-                        <p class="text-gray-600 mb-6">One-time engagement</p>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>Full tracking audit</li>
-                            <li><i class="fas fa-check"></i>GA4 health check</li>
-                            <li><i class="fas fa-check"></i>Conversion path analysis</li>
-                            <li><i class="fas fa-check"></i>Gap identification</li>
-                            <li><i class="fas fa-check"></i>Recommendation report</li>
-                        </ul>
-                        <button class="cta-button w-full mt-6" onclick="document.getElementById('book').scrollIntoView({behavior: 'smooth'})">
-                            Get Audit Quote
-                        </button>
-                    </div>
-                    
-                    <div class="pricing-tier premium">
-                        <h3>Implementation</h3>
-                        <div class="pricing-number">$8,000</div>
-                        <p class="text-gray-600 mb-6">Project-based</p>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>All audit items</li>
-                            <li><i class="fas fa-check"></i>GA4 setup & migration</li>
-                            <li><i class="fas fa-check"></i>GTM server setup</li>
-                            <li><i class="fas fa-check"></i>Conversion tracking</li>
-                            <li><i class="fas fa-check"></i>Testing & QA</li>
-                        </ul>
-                        <button class="cta-button w-full mt-6" onclick="document.getElementById('book').scrollIntoView({behavior: 'smooth'})">
-                            Start Implementation
-                        </button>
-                    </div>
-                    
-                    <div class="pricing-tier">
-                        <h3>Ongoing Management</h3>
-                        <div class="pricing-number">$4,000–$7,000</div>
-                        <p class="text-gray-600 mb-6">Per month</p>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>Weekly optimization</li>
-                            <li><i class="fas fa-check"></i>Campaign management</li>
-                            <li><i class="fas fa-check"></i>Data maintenance</li>
-                            <li><i class="fas fa-check"></i>Monthly reporting</li>
-                            <li><i class="fas fa-check"></i>Direct access</li>
-                        </ul>
-                        <button class="cta-button w-full mt-6" onclick="document.getElementById('book').scrollIntoView({behavior: 'smooth'})">
-                            Schedule Discovery
-                        </button>
-                    </div>
-                </div>
+            <div class="comparison-card not-fit">
+                <h3 class="comparison-title">The Fix</h3>
+                <ul class="comparison-list">
+                    <li>Complete tracking infrastructure</li>
+                    <li>Validated GA4 setup</li>
+                    <li>CRM + Ads integration</li>
+                    <li>Margin-aware optimization</li>
+                    <li>Profitable scaling</li>
+                    <li>Trustworthy data</li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section id="book" class="py-16 md:py-24 gradient-premium text-white">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Ready to Fix Your Conversion Tracking?</h2>
-                <p class="text-xl text-gray-200 text-center mb-12">Schedule a 20-minute discovery call. We'll diagnose your measurement gaps and discuss solutions.</p>
-                
-                <form id="booking-form" class="bg-white text-gray-800 p-8 rounded-lg shadow-2xl">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Work Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company Name *</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="adSpend">Monthly Google Ads Spend *</label>
-                        <select id="adSpend" name="adSpend" required>
-                            <option value="">Select spending range</option>
-                            <option value="5k-10k">$5,000–$10,000</option>
-                            <option value="10k-25k">$10,000–$25,000</option>
-                            <option value="25k-50k">$25,000–$50,000</option>
-                            <option value="50k-100k">$50,000–$100,000</option>
-                            <option value="100k+">$100,000+</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="challenge">What's your biggest conversion tracking challenge? *</label>
-                        <textarea id="challenge" name="challenge" rows="4" required placeholder="E.g., CRM conversions not syncing, GA4 events misconfigured, offline conversions missing..."></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number (optional)</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <button type="submit" class="w-full cta-button text-lg py-4 hover:shadow-xl">
-                        <i class="fas fa-calendar mr-2"></i>Book Your Discovery Call
-                    </button>
-                    
-                    <p class="text-sm text-gray-600 text-center mt-4">
-                        After submitting, you'll receive a confirmation and calendar link to schedule your call.
-                    </p>
-                </form>
-            </div>
-        </section>
+    <section>
+        <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>Process</span>
+        </div>
+        <h2 class="section-title">How Implementation<br><em>Works</em></h2>
 
-        <!-- FAQ Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-                
-                <div class="space-y-6">
-                    <details class="group">
-                        <summary class="cursor-pointer bg-gray-50 p-6 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                            How long does a tracking implementation typically take?
-                            <span class="float-right">+</span>
-                        </summary>
-                        <p class="mt-4 text-gray-600 p-6 bg-gray-50 rounded-lg">
-                            For a basic GA4 + GTM setup: 3–4 weeks. Complex implementations with server-side tracking and CRM integrations: 6–8 weeks. Each project is custom scoped during discovery.
-                        </p>
-                    </details>
-                    
-                    <details class="group">
-                        <summary class="cursor-pointer bg-gray-50 p-6 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                            Do you manage the actual Google Ads campaigns, or just tracking?
-                            <span class="float-right">+</span>
-                        </summary>
-                        <p class="mt-4 text-gray-600 p-6 bg-gray-50 rounded-lg">
-                            Both. Tracking is the foundation, but I also manage campaign optimization, bidding, and scaling based on clean conversion data. The two work together to maximize ROI.
-                        </p>
-                    </details>
-                    
-                    <details class="group">
-                        <summary class="cursor-pointer bg-gray-50 p-6 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                            What if we're currently using [Agency/Tool]?
-                            <span class="float-right">+</span>
-                        </summary>
-                        <p class="mt-4 text-gray-600 p-6 bg-gray-50 rounded-lg">
-                            No problem. I can work alongside your current setup or take over completely. We'll audit what's working and what isn't, then move forward from there.
-                        </p>
-                    </details>
-                    
-                    <details class="group">
-                        <summary class="cursor-pointer bg-gray-50 p-6 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                            Is this for SaaS, e-commerce, B2B, or all industries?
-                            <span class="float-right">+</span>
-                        </summary>
-                        <p class="mt-4 text-gray-600 p-6 bg-gray-50 rounded-lg">
-                            All, with special expertise in SaaS, e-commerce, B2B/manufacturing, local services, and lead gen. Complex funnel businesses see the most value from proper tracking.
-                        </p>
-                    </details>
-                    
-                    <details class="group">
-                        <summary class="cursor-pointer bg-gray-50 p-6 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                            What if we don't have a CRM or backend system?
-                            <span class="float-right">+</span>
-                        </summary>
-                        <p class="mt-4 text-gray-600 p-6 bg-gray-50 rounded-lg">
-                            We can still set up front-end conversion tracking, but the ROI is limited. I'd recommend establishing a basic CRM or data system first—it's fundamental to profitability.
-                        </p>
-                    </details>
-                </div>
+        <div class="process-flow">
+            <div class="process-node">
+                <div class="process-num">1</div>
+                <div class="process-title">Audit & Discovery</div>
+                <div class="process-desc">Analyze current tracking gaps and broken points</div>
             </div>
-        </section>
-    </main>
+            <div class="process-node">
+                <div class="process-num">2</div>
+                <div class="process-title">Architecture Design</div>
+                <div class="process-desc">Plan full-stack measurement system</div>
+            </div>
+            <div class="process-node">
+                <div class="process-num">3</div>
+                <div class="process-title">Implementation & Testing</div>
+                <div class="process-desc">Deploy GA4, GTM, conversions, validation</div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <h4 class="font-bold mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../" class="hover:text-white transition">Home</a></li>
-                        <li><a href="../about/" class="hover:text-white transition">About</a></li>
-                        <li><a href="../blog/" class="hover:text-white transition">Blog</a></li>
-                    </ul>
+    <section id="pricing">
+        <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>Pricing</span>
+        </div>
+        <h2 class="section-title">Three paths<br><em>to clean data</em></h2>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-label">Diagnostic</div>
+                <div class="pricing-title">Measurement Audit</div>
+                <div class="pricing-price">$3,500</div>
+                <div class="pricing-desc">One-time analysis of your tracking setup</div>
+                <ul class="pricing-features">
+                    <li>Full tracking audit</li>
+                    <li>GA4 health check</li>
+                    <li>Conversion path analysis</li>
+                    <li>Gap identification</li>
+                    <li>Written recommendations</li>
+                </ul>
+                <a href="#contact" class="btn-ghost" style="display:block;text-align:center;">Get Audit Quote</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-label">Implementation</div>
+                <div class="pricing-title">Full Tracking Setup</div>
+                <div class="pricing-price">$12K</div>
+                <div class="pricing-desc">Complete measurement infrastructure</div>
+                <ul class="pricing-features">
+                    <li>GA4 setup & migration</li>
+                    <li>Server-side GTM</li>
+                    <li>Enhanced conversions</li>
+                    <li>Offline data integration</li>
+                    <li>Full testing & validation</li>
+                </ul>
+                <a href="#contact" class="btn-primary" style="display:block;text-align:center;">Start Implementation</a>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-label">Ongoing</div>
+                <div class="pricing-title">Managed Tracking</div>
+                <div class="pricing-price">$3K-5K</div>
+                <div class="pricing-desc">Monthly optimization & maintenance</div>
+                <ul class="pricing-features">
+                    <li>Data quality monitoring</li>
+                    <li>Monthly reporting</li>
+                    <li>System optimization</li>
+                    <li>Troubleshooting</li>
+                    <li>Direct support</li>
+                </ul>
+                <a href="#contact" class="btn-ghost" style="display:block;text-align:center;">Schedule Call</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>FAQ</span>
+        </div>
+        <h2 class="section-title">Questions about<br><em>Measurement</em></h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does a full tracking implementation take?</span>
+                    <span class="faq-toggle">+</span>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../services/" class="hover:text-white transition">All Services</a></li>
-                        <li><a href="../services/google-ads/" class="hover:text-white transition">Google Ads</a></li>
-                        <li><a href="../services/conversion-tracking/" class="hover:text-white transition">Tracking</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition">Pricing</a></li>
-                        <li><a href="../case-studies/" class="hover:text-white transition">Case Studies</a></li>
-                        <li><a href="../contact/" class="hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Connect</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://linkedin.com/in/hanslacida" class="hover:text-white transition">LinkedIn</a></li>
-                        <li><a href="https://twitter.com/hanslacida" class="hover:text-white transition">Twitter</a></li>
-                        <li><a href="mailto:hello@hanslacida.com" class="hover:text-white transition">Email</a></li>
-                    </ul>
+                <div class="faq-answer">
+                    Typical implementations take 4–6 weeks from audit to full deployment. This includes GA4 setup, server-side GTM configuration, conversion tagging, offline data integration, and comprehensive testing. The timeline depends on your system complexity and internal resource availability.
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Hanzel Lacida | Google Ads & Conversion Tracking Specialist. All Rights Reserved.</p>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What happens if I already have GA4 set up?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    I'll audit your existing setup, identify misconfigurations, and either optimize or rebuild it. Most GA4 implementations I audit have 30–50% event tracking issues. We fix those, validate the data, and integrate with your acquisition systems.
+                </div>
             </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can you integrate tracking with our existing CRM?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. Whether it's Salesforce, HubSpot, Pipedrive, or a custom system, I can set up bidirectional sync so Google Ads sees your actual conversions (with margin data if available) and you see performance metrics in your CRM.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's the difference between server-side and client-side tracking?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Client-side tracking (pixels) is blocked by ad blockers and user privacy settings, losing 20–40% of conversion data. Server-side tracking is more reliable because it doesn't rely on browser pixels — data flows directly from your server to Google's servers, bypassing privacy restrictions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you manage campaigns after implementation?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    I can if you want. My main focus is building clean measurement infrastructure. But once tracking is solid, I can optimize your campaigns using the accurate data — restructuring for profitability, adjusting bids, refining audiences.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-inner">
+            <div>
+                <div class="section-eyebrow">
+                    <div class="section-eyebrow-line"></div>
+                    <span>Get Started</span>
+                </div>
+                <h2 class="contact-headline">Measurement<br><em>fit call.</em></h2>
+                <p class="contact-body">20 minutes. No sales pitch. Just a straightforward conversation about whether your tracking is salvageable, what needs to be rebuilt, and whether working together makes sense.</p>
+                <p class="contact-body">If we're not a fit, I'll tell you directly.</p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <span class="ci-num">1.</span>
+                        <span class="ci-text">Discuss your current tracking setup and main gaps</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-num">2.</span>
+                        <span class="ci-text">Identify what needs to be fixed vs rebuilt</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-num">3.</span>
+                        <span class="ci-text">Decide if implementation makes sense for your business</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div style="background:var(--bg-3);border:1px solid var(--border);padding:36px 32px;">
+                    <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;">For Founders & Operators</div>
+                    <h3 style="font-family:var(--serif);font-size:26px;color:var(--text-primary);margin-bottom:16px;">Ready for clean data?</h3>
+                    <p style="font-family:var(--sans);font-size:14.5px;color:var(--text-secondary);line-height:1.7;margin-bottom:28px;">Most scaling teams discover their tracking is broken after wasting significant budget. Let's audit yours.</p>
+                    <a href="mailto:hanzel@hanslacida.com?subject=Measurement%20Fit%20Call" class="btn-primary" style="display:block;text-align:center;width:100%;">Email Me Directly</a>
+                    <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:var(--text-muted);text-align:center;margin-top:16px;">Or use the form below to book a time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Hans<span>.</span>Lacida</div>
+                <div class="footer-tagline">Conversion Tracking<br>& Measurement Specialist<br>Building systems that tell the truth.</div>
+            </div>
+            <div>
+                <div class="footer-col-title">Specialist</div>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Insights</div>
+                <ul class="footer-links">
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/playbook/">Playbook</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Contact</div>
+                <ul class="footer-links">
+                    <li><a href="mailto:hanzel@hanslacida.com">Email</a></li>
+                    <li><a href="#contact">Book Call</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 Hans Lacida · All rights reserved</span>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-        
-        document.getElementById('booking-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submission', {
-                    'event_category': 'lead_generation',
-                    'event_label': 'conversion_tracking_specialist',
-                    'form_name': 'booking_form'
-                });
-            }
-            
-            const mailtoLink = `mailto:googleads@hanslacida.com?subject=Discovery%20Call%20Request%20from%20${encodeURIComponent(data.firstName)}%20${encodeURIComponent(data.lastName)}&body=${encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\nMonthly Ad Spend: ${data.adSpend}\nChallenge: ${data.challenge}`)}`;
-            
-            window.location.href = mailtoLink;
-            
-            this.reset();
-        });
-        
-        document.querySelectorAll('details').forEach(detail => {
-            detail.addEventListener('toggle', function() {
-                document.querySelectorAll('details').forEach(d => {
-                    if (d !== this && d.open) d.open = false;
-                });
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
             });
         });
-        
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Track analytics
+        document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'engagement', {
+                        'event_category': 'cta',
+                        'event_label': btn.textContent.trim()
+                    });
                 }
             });
         });
