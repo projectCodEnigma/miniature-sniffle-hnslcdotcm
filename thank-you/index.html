@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Hans Lacida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-2: #111111;
+    --bg-3: #161616;
+    --surface: #1a1a1a;
+    --border: #242424;
+    --border-light: #2e2e2e;
+    --text-primary: #f0ede8;
+    --text-secondary: #9a9690;
+    --text-muted: #5a5754;
+    --accent: #c8a96e;
+    --accent-dim: rgba(200, 169, 110, 0.12);
+    --accent-bright: #e2c48a;
+    --red: #c95b5b;
+    --green: #6ba88a;
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Syne', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.35;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-cta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent);
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover {
+    background: var(--accent) !important;
+    color: var(--bg) !important;
+  }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--text-secondary);
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+  .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* ─── MOBILE DRAWER ─── */
+  .mobile-nav {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(320px, 88vw);
+    background: var(--bg-2);
+    border-left: 1px solid var(--border);
+    z-index: 950;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .mobile-nav.is-open { transform: translateX(0); }
+  .mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(2px);
+    z-index: 940;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .mobile-nav-overlay.is-open { opacity: 1; pointer-events: all; }
+  .mobile-nav-inner { display: flex; flex-direction: column; height: 100%; padding: 0; }
+  .mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 64px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .mobile-nav-close {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    width: 36px; height: 36px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .mobile-nav-close:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+  .mobile-nav-links { list-style: none; padding: 8px 0; flex-shrink: 0; }
+  .mobile-nav-links li a {
+    display: block;
+    padding: 16px 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, background 0.2s;
+  }
+  .mobile-nav-links li:first-child a { border-top: 1px solid var(--border); }
+  .mobile-nav-links li a:hover { color: var(--text-primary); background: var(--bg-3); }
+  .mobile-nav-links li a::before { content: '→ '; color: var(--accent); opacity: 0.6; }
+  .mobile-nav-ctas { display: flex; flex-direction: column; gap: 12px; padding: 24px; flex-shrink: 0; }
+  .mobile-nav-footer { margin-top: auto; padding: 20px 24px; border-top: 1px solid var(--border); }
+  .mobile-nav-footer span {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--accent-bright);
+    border-color: var(--accent-bright);
+  }
+  .btn-ghost {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-light);
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-ghost:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+  }
+
+  /* ─── MAIN THANK YOU SECTION ─── */
+  .thank-you-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Ambient glow */
+  .thank-you-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(200, 169, 110, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .thank-you-inner {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 80px;
+    align-items: start;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── LEFT COLUMN ─── */
+  .ty-left {}
+
+  .ty-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .ty-eyebrow-line {
+    width: 32px;
+    height: 1px;
+    background: var(--green);
+  }
+  .ty-eyebrow span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  .ty-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--green);
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ty-check::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(107, 168, 138, 0.08);
+  }
+  .ty-check svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--green);
+    stroke-width: 2;
+    fill: none;
+    position: relative;
+    z-index: 1;
+  }
+  .ty-check svg polyline {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: drawCheck 0.6s ease 0.4s forwards;
+  }
+  @keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .ty-headline {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.06;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .ty-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .ty-subhead {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+
+  .ty-body {
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+  .ty-body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .ty-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  /* Timeline / What happens next */
+  .ty-timeline {
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+    position: relative;
+  }
+  .ty-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), transparent);
+  }
+  .ty-timeline-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ty-step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .ty-step:last-child { border-bottom: none; }
+  .ty-step:hover { background: var(--surface); }
+  .ty-step-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.8;
+  }
+  .ty-step-content {}
+  .ty-step-title {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .ty-step-desc {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* ─── RIGHT COLUMN: Confirmation card ─── */
+  .ty-card {
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    position: relative;
+  }
+  .ty-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .ty-card-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .ty-card-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding: 14px 16px;
+    background: rgba(107, 168, 138, 0.07);
+    border: 1px solid rgba(107, 168, 138, 0.2);
+  }
+  .ty-card-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .ty-card-status-text {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  .ty-card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+  .ty-card-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .ty-card-item:last-child { border-bottom: none; }
+  .ty-card-item-label {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .ty-card-item-value {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .ty-card-note {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    line-height: 1.65;
+    border-left: 2px solid var(--border-light);
+    padding-left: 14px;
+    margin-bottom: 28px;
+  }
+  .ty-card-note strong {
+    color: var(--text-secondary);
+  }
+
+  .ty-card-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .ty-card-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .ty-card-link:last-child { border-bottom: none; }
+  .ty-card-link:hover {
+    background: var(--surface);
+    color: var(--text-primary);
+  }
+  .ty-card-link-arrow {
+    color: var(--accent);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+  .ty-card-link:hover .ty-card-link-arrow {
+    transform: translateX(4px);
+  }
+
+  /* ─── WHILE YOU WAIT ─── */
+  .while-wait {
+    border-top: 1px solid var(--border);
+    background: var(--bg-2);
+  }
+  .while-wait-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .while-wait-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .while-wait-eyebrow-line {
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .while-wait-eyebrow span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .while-wait-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 44px);
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 48px;
+  }
+  .while-wait-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .while-wait-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .ww-card {
+    background: var(--bg-2);
+    padding: 36px 32px;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+  .ww-card:hover { background: var(--bg-3); }
+  .ww-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+  }
+  .ww-card:hover::before { width: 100%; }
+  .ww-card-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+  .ww-card-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .ww-card-desc {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .ww-card-arrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    display: block;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .ww-card:hover .ww-card-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 56px 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 48px;
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .footer-brand span { color: var(--accent); }
+  .footer-tagline {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .footer-col-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-links a {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text-primary); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+  .footer-proposal {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    transition: all 0.2s;
+  }
+  .footer-proposal:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .ty-eyebrow     { animation: fadeUp 0.6s ease 0.05s both; }
+  .ty-check       { animation: fadeUp 0.5s ease 0.15s both; }
+  .ty-headline    { animation: fadeUp 0.7s ease 0.25s both; }
+  .ty-subhead     { animation: fadeUp 0.6s ease 0.35s both; }
+  .ty-body        { animation: fadeUp 0.6s ease 0.45s both; }
+  .ty-ctas        { animation: fadeUp 0.6s ease 0.55s both; }
+  .ty-timeline    { animation: fadeUp 0.7s ease 0.45s both; }
+  .ty-card        { animation: fadeUp 0.8s ease 0.2s both; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ─── CURSOR DOT ─── */
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .thank-you-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .while-wait-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .thank-you-wrapper { padding: 100px 24px 60px; }
+    .while-wait-inner { padding: 60px 24px; }
+    footer { padding: 48px 24px 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .ty-card { order: -1; }
+  }
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
+  <ul class="nav-links">
+    <li><a href="/results/">Results</a></li>
+    <li><a href="/playbook/">Playbook</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/#contact" class="nav-cta">Book Fit Call</a></li>
+    <li><a href="https://wa.link/mzywie" class="nav-cta">Chat on WhatsApp</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <div class="mobile-nav-header">
+      <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/results/">Results</a></li>
+      <li><a href="/playbook/">Playbook</a></li>
+      <li><a href="/insights/">Insights</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-ctas">
+      <a href="/#contact" class="btn-primary" style="text-align:center;">Book 15-Min Fit Call</a>
+      <a href="https://wa.link/mzywie" class="btn-ghost" style="text-align:center;">Chat on WhatsApp</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <span>Google Ads · Performance Max · Tracking Infrastructure</span>
+    </div>
+  </div>
+</div>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- ─── MAIN THANK YOU ─── -->
+<div class="thank-you-wrapper">
+  <div class="thank-you-inner">
+
+    <!-- LEFT: Message -->
+    <div class="ty-left">
+      <div class="ty-eyebrow">
+        <div class="ty-eyebrow-line"></div>
+        <span>Request Received</span>
+      </div>
+
+      <div class="ty-check">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="4 13 9 18 20 7"></polyline>
+        </svg>
+      </div>
+
+      <h1 class="ty-headline">
+        You're on<br>
+        the <em>list.</em>
+      </h1>
+      <p class="ty-subhead">Fit Call Request · Confirmed</p>
+      <p class="ty-body">
+        Your request is in. I'll review it personally and reach out <strong>within one business day</strong> to confirm your 15-minute fit call. No automations. No form-letter replies. A real operator response.
+      </p>
+      <p class="ty-body">
+        If there's a <strong>genuine match</strong> between what you need and what I build — I'll tell you. If there isn't, I'll tell you that too, and point you in a better direction.
+      </p>
+
+      <div class="ty-ctas">
+        <a href="/results/" class="btn-primary">Read Case Studies</a>
+        <a href="/playbook/" class="btn-ghost">Browse the Playbook</a>
+      </div>
+
+      <!-- What happens next -->
+      <div class="ty-timeline">
+        <div class="ty-timeline-label">What happens next</div>
+        <div class="ty-step">
+          <div class="ty-step-num">01 /</div>
+          <div class="ty-step-content">
+            <div class="ty-step-title">Review (within 24h)</div>
+            <div class="ty-step-desc">I personally read every submission. No team, no junior filter.</div>
+          </div>
+        </div>
+        <div class="ty-step">
+          <div class="ty-step-num">02 /</div>
+          <div class="ty-step-content">
+            <div class="ty-step-title">Calendar confirmation</div>
+            <div class="ty-step-desc">If it looks like a fit, you'll get a booking link to lock in your 15-minute window.</div>
+          </div>
+        </div>
+        <div class="ty-step">
+          <div class="ty-step-num">03 /</div>
+          <div class="ty-step-content">
+            <div class="ty-step-title">The call</div>
+            <div class="ty-step-desc">Honest operator conversation. I ask about your setup, you ask about mine. No pitch deck.</div>
+          </div>
+        </div>
+        <div class="ty-step">
+          <div class="ty-step-num">04 /</div>
+          <div class="ty-step-content">
+            <div class="ty-step-title">Decision</div>
+            <div class="ty-step-desc">We either move forward with a scoped proposal — or I tell you exactly why it doesn't make sense yet.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Confirmation card -->
+    <div class="ty-card">
+      <div class="ty-card-label">Submission Status</div>
+
+      <div class="ty-card-status">
+        <div class="ty-card-status-dot"></div>
+        <div class="ty-card-status-text">Received &amp; Queued for Review</div>
+      </div>
+
+      <div class="ty-card-items">
+        <div class="ty-card-item">
+          <div class="ty-card-item-label">Call type</div>
+          <div class="ty-card-item-value">15-Minute Fit Call</div>
+        </div>
+        <div class="ty-card-item">
+          <div class="ty-card-item-label">Response window</div>
+          <div class="ty-card-item-value">Within 1 business day</div>
+        </div>
+        <div class="ty-card-item">
+          <div class="ty-card-item-label">Operator</div>
+          <div class="ty-card-item-value">Hans Lacida — Zeldigital.com</div>
+        </div>
+        <div class="ty-card-item">
+          <div class="ty-card-item-label">Markets</div>
+          <div class="ty-card-item-value">US, AU/NZ, select international</div>
+        </div>
+      </div>
+
+      <div class="ty-card-note">
+        <strong>Need it sooner?</strong> Email directly at hanzel@hanslacida.com or jump on WhatsApp below — I do check both.
+      </div>
+
+      <div class="ty-card-links">
+        <a href="https://wa.link/mzywie" class="ty-card-link">
+          <span>Chat on WhatsApp</span>
+          <span class="ty-card-link-arrow">→</span>
+        </a>
+        <a href="mailto:hanzel@hanslacida.com" class="ty-card-link">
+          <span>Email directly</span>
+          <span class="ty-card-link-arrow">→</span>
+        </a>
+        <a href="/results/" class="ty-card-link">
+          <span>View all case studies</span>
+          <span class="ty-card-link-arrow">→</span>
+        </a>
+        <a href="https://tr.ee/yF6vkB" class="ty-card-link">
+          <span>Submit a proposal instead</span>
+          <span class="ty-card-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── WHILE YOU WAIT ─── -->
+<div class="while-wait">
+  <div class="while-wait-inner">
+    <div class="while-wait-eyebrow">
+      <div class="while-wait-eyebrow-line"></div>
+      <span>While You Wait</span>
+    </div>
+    <h2 class="while-wait-title reveal">No fluff. Just<br><em>operator thinking.</em></h2>
+    <div class="while-wait-grid">
+      <a href="/results/" class="ww-card reveal">
+        <div class="ww-card-tag">Case Studies</div>
+        <div class="ww-card-title">Real numbers from live accounts</div>
+        <div class="ww-card-desc">70× ROAS, $4M in a single month, 53% CPA reduction — every figure comes from a specific account, a real client, a defined window.</div>
+        <span class="ww-card-arrow">→ Read case studies</span>
+      </a>
+      <a href="/playbook/" class="ww-card reveal reveal-delay-1">
+        <div class="ww-card-tag">Playbook</div>
+        <div class="ww-card-title">Operator thinking, made public</div>
+        <div class="ww-card-desc">Why your ROAS drops at scale, how to audit Performance Max, what broken tracking actually costs you. No-fluff breakdowns for founders.</div>
+        <span class="ww-card-arrow">→ Read the playbook</span>
+      </a>
+      <a href="/brands/paid-acquisition-systems-operator/" class="ww-card reveal reveal-delay-2">
+        <div class="ww-card-tag">Operator Profile</div>
+        <div class="ww-card-title">How I work &amp; what I build</div>
+        <div class="ww-card-desc">$10M+ in ad spend managed, 10+ years in paid acquisition, Google Ads Search certified. Full breakdown of the systems, standards, and engagement model.</div>
+        <span class="ww-card-arrow">→ Full operator profile</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Hans<span>.</span>Lacida</div>
+      <div class="footer-tagline">Paid Acquisition Systems Operator<br>Google Ads execution infrastructure operated with<br>control, enforced standards, and accountability.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Operator</div>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/how-i-operate/">How I Operate</a></li>
+        <li><a href="/results/">Proof</a></li>
+        <li><a href="/results/">All Case Studies</a></li>
+        <li><a href="/results/70x-roas-case-study/">70× ROAS Case Study</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Insights</div>
+      <ul class="footer-links">
+        <li><a href="/insights/">Growth Insights</a></li>
+        <li><a href="/playbook/">Google Ads Playbook</a></li>
+        <li><a href="/insights/operator-thinking/">Operator Thinking</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:hanzel@hanslacida.com">Email Me Directly</a></li>
+        <li><a href="/#contact">Book Fit Call</a></li>
+        <li><a href="https://tr.ee/yF6vkB">Submit a Proposal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Hans Lacida · All rights reserved</span>
+    <a href="https://tr.ee/yF6vkB" class="footer-proposal">Submit a proposal</a>
+  </div>
+</footer>
+
+<script>
+  // Cursor dot
+  const dot = document.getElementById('cursorDot');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile nav
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  function openMobileNav() {
+    hamburger.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileNav.classList.add('is-open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    mobileNavOverlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    hamburger.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileNav.classList.remove('is-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    mobileNavOverlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', openMobileNav);
+  mobileNavClose.addEventListener('click', closeMobileNav);
+  mobileNavOverlay.addEventListener('click', closeMobileNav);
+  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
+</script>
+</body>
+</html>
