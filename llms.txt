@@ -1,0 +1,148 @@
+AI Visibility with LLMs.txt
+The llms.txt feature is a powerful new way to make your platform more accessible to AI models like ChatGPT, Claude, and Perplexity. Think of it as a "Sitemap for AI". This will help AI agents understand exactly what your platform is about and where to find the most relevant information.
+
+
+
+
+What is it & why you need it
+
+
+The llms.txt file is a proposed web standard designed to provide a markdown-formatted overview of your website specifically for AI models. While search engines use sitemaps to index your pages, AI models use llms.txt to:
+
+
+• Understand your platform's core purpose without having to crawl every single page.
+
+
+• Quickly find important links to your courses, community, or blog.
+
+
+• Process information more efficiently by using a clean markdown format instead of complex HTML.
+
+
+As AI takes centerstage, having this feature will give you a big advantage to:
+
+
+• Get discovered in AI answers
+
+
+• Control how your brand is represented
+
+
+• Highlight your most valuable content for AI
+
+
+• Drive high-intent traffic because AI-driven users are often closer to taking action
+
+
+• Keep outdated content out of AI responses
+
+
+
+How to get started using it
+
+
+You can access the llms.txt file editor directly from your admin dashboard. To do that, go to Site Settings -> General Settings. From there, go to the LLMs.txt tab.
+
+
+
+
+image
+
+
+You can basically write in plain English. Here’s the format you should follow:
+
+
+1. The Title (Required)
+
+
+Start with a single # followed by the name of your platform or project.
+
+
+Example: # My EzyCourse Academy
+
+
+2. The Summary (Optional)
+
+
+Add a brief summary of what your platform is about inside a blockquote (>).
+
+
+Example: > A comprehensive online learning platform specializing in digital marketing and web development courses.
+
+
+3. Sections
+
+
+Use ## headers to create sections for different types of content, such as Courses, Resources, etc.
+
+
+Example: ## Featured Courses
+
+
+4. Link Lists (Recommended)
+
+
+Under each section, provide links to your pages using the markdown format: - [Name](url): Description.
+
+
+Example: - [Mastering SEO](https://yourdomain.com/courses/seo ): A deep dive into modern search engine optimization.
+
+
+Once done, make sure you save to keep the changes.
+
+
+
+
+image
+
+
+You can view the file from any browser. Just visit the URL: https:://yourdomain.com/llms.txt
+
+
+
+
+image
+
+
+
+Example Template
+
+
+# My EzyCourse Academy
+
+
+> A comprehensive online learning platform specializing in digital marketing and web development courses.
+
+
+## Featured Courses
+
+
+- [Mastering SEO](https://yourdomain.com/courses/seo): A deep dive into modern search engine optimization.
+
+- [JavaScript Basics](https://yourdomain.com/courses/js-basics): An introduction to JavaScript programming language and how to get started as a beginner.
+
+
+## Community & Resources
+
+
+- [Community Forum](https://yourdomain.com/community): Connect with other students and experts.
+
+- [Blog](https://yourdomain.com/blog): Read our latest articles and updates.
+
+
+
+
+Best Practices
+
+
+• Be Concise: AI models have limited "context windows", so keep your descriptions brief and high-level.
+
+
+• Curate Content: Don't list every single page. Focus on the most important ones that an AI would need to know about to help a user.
+
+
+• Use Absolute URLs: Always use full URLs (including https:// ) so the AI can navigate directly to the pages.
+
+
+• Update Regularly: If you launch a new flagship course, make sure to add it to your llms.txt file. Also, remove any section or URL that is no longer in use.
+
