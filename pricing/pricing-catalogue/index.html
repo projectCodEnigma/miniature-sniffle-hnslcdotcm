@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETDSDDFTB5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ETDSDDFTB5');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — H.A.N.S Framework | Hans Lacida</title>
+    <meta name="description" content="Investment tiers for the H.A.N.S Google Ads Framework. Transparent pricing for founders and operators who need acquisition systems that scale.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://ppchans.com/pricing/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --bg-2: #111111;
+        --bg-3: #161616;
+        --surface: #1a1a1a;
+        --border: #242424;
+        --border-light: #2e2e2e;
+        --text-primary: #f0ede8;
+        --text-secondary: #9a9690;
+        --text-muted: #5a5754;
+        --accent: #c8a96e;
+        --accent-dim: rgba(200, 169, 110, 0.12);
+        --accent-bright: #e2c48a;
+        --red: #c95b5b;
+        --green: #6ba88a;
+        --mono: 'JetBrains Mono', monospace;
+        --serif: 'DM Serif Display', serif;
+        --sans: 'Syne', sans-serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        background: var(--bg);
+        color: var(--text-primary);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ─── NOISE OVERLAY ─── */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 1000;
+        opacity: 0.35;
+      }
+
+      /* ─── NAV ─── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        padding: 0 40px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(10, 10, 10, 0.88);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-logo {
+        font-family: var(--serif);
+        font-size: 18px;
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+      }
+
+      .nav-logo span { color: var(--accent); }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover { color: var(--text-primary); }
+
+      .nav-cta {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent) !important;
+        border: 1px solid var(--accent);
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s !important;
+      }
+
+      .nav-cta:hover {
+        background: var(--accent) !important;
+        color: var(--bg) !important;
+      }
+
+      /* ─── HERO ─── */
+      .pricing-hero {
+        min-height: 60vh;
+        padding: 140px 40px 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+      }
+
+      .pricing-hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 400px;
+        background: radial-gradient(ellipse, rgba(200, 169, 110, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .pricing-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .pricing-eyebrow-line {
+        width: 24px;
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .pricing-eyebrow span {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .pricing-headline {
+        font-family: var(--serif);
+        font-size: clamp(42px, 6vw, 64px);
+        line-height: 1.08;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+
+      .pricing-headline em {
+        font-style: italic;
+        color: var(--accent);
+      }
+
+      .pricing-subhead {
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--text-secondary);
+        max-width: 680px;
+        margin: 0 auto 48px;
+      }
+
+      /* ─── PRICING GRID ─── */
+      .pricing-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 40px 100px;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 60px;
+      }
+
+      .pricing-card {
+        background: var(--bg-2);
+        padding: 48px 36px 44px;
+        position: relative;
+        transition: background 0.3s, transform 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pricing-card:hover {
+        background: var(--bg-3);
+      }
+
+      .pricing-card.featured {
+        background: var(--bg-3);
+        transform: scale(1.02);
+        border: 2px solid var(--accent);
+        z-index: 10;
+      }
+
+      .pricing-card.featured::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        padding: 8px;
+        background: var(--accent);
+        color: var(--bg);
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .pricing-tier-name {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        margin-top: 24px;
+      }
+
+      .pricing-card.featured .pricing-tier-name {
+        margin-top: 0;
+      }
+
+      .pricing-tier-title {
+        font-family: var(--serif);
+        font-size: 32px;
+        color: var(--text-primary);
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
+
+      .pricing-tier-desc {
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        margin-bottom: 28px;
+        min-height: 60px;
+      }
+
+      .pricing-amount {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+
+      .pricing-currency {
+        font-family: var(--mono);
+        font-size: 20px;
+        color: var(--text-secondary);
+      }
+
+      .pricing-price {
+        font-family: var(--serif);
+        font-size: 52px;
+        color: var(--text-primary);
+        line-height: 1;
+      }
+
+      .pricing-unit {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--text-muted);
+        letter-spacing: 0.04em;
+      }
+
+      .pricing-note {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-bottom: 32px;
+        line-height: 1.5;
+      }
+
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 36px;
+        flex-grow: 1;
+      }
+
+      .pricing-features li {
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--text-secondary);
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        line-height: 1.5;
+      }
+
+      .pricing-features li::before {
+        content: '✓';
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-cta {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--bg);
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 16px 32px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s, transform 0.1s;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+      }
+
+      .pricing-cta:hover {
+        background: var(--accent-bright);
+        border-color: var(--accent-bright);
+        transform: translateY(-2px);
+      }
+
+      .pricing-cta.ghost {
+        background: transparent;
+        color: var(--text-secondary);
+        border: 1px solid var(--border-light);
+      }
+
+      .pricing-cta.ghost:hover {
+        background: transparent;
+        color: var(--text-primary);
+        border-color: var(--text-secondary);
+        transform: translateY(-2px);
+      }
+
+      /* ─── FAQ SECTION ─── */
+      .faq-section {
+        max-width: 800px;
+        margin: 80px auto;
+        padding: 0 40px;
+      }
+
+      .faq-title {
+        font-family: var(--serif);
+        font-size: clamp(32px, 4vw, 44px);
+        color: var(--text-primary);
+        line-height: 1.1;
+        margin-bottom: 48px;
+        text-align: center;
+      }
+
+      .faq-title em {
+        font-style: italic;
+        color: var(--accent);
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+        padding: 28px 0;
+      }
+
+      .faq-question {
+        font-family: var(--sans);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 14px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .faq-question::after {
+        content: '+';
+        font-family: var(--mono);
+        font-size: 24px;
+        color: var(--accent);
+        transition: transform 0.3s;
+      }
+
+      .faq-item.open .faq-question::after {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        font-family: var(--sans);
+        font-size: 15px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .faq-item.open .faq-answer {
+        max-height: 500px;
+        padding-top: 8px;
+      }
+
+      /* ─── GUARANTEES ─── */
+      .guarantees-section {
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 0 40px;
+      }
+
+      .guarantees-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+      }
+
+      .guarantee-card {
+        background: var(--bg-2);
+        padding: 36px 32px;
+        text-align: center;
+        transition: background 0.2s;
+      }
+
+      .guarantee-card:hover {
+        background: var(--bg-3);
+      }
+
+      .guarantee-icon {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .guarantee-title {
+        font-family: var(--serif);
+        font-size: 22px;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+      }
+
+      .guarantee-desc {
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* ─── CTA SECTION ─── */
+      .cta-section {
+        background: var(--bg-3);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 80px 40px;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .cta-title {
+        font-family: var(--serif);
+        font-size: clamp(32px, 4.5vw, 48px);
+        line-height: 1.15;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+      }
+
+      .cta-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .cta-desc {
+        font-family: var(--sans);
+        font-size: 16px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 36px;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        border-top: 1px solid var(--border);
+        background: var(--bg);
+        padding: 56px 40px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr auto auto auto;
+        gap: 60px;
+        align-items: start;
+        margin-bottom: 48px;
+      }
+
+      .footer-brand {
+        font-family: var(--serif);
+        font-size: 22px;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+      }
+
+      .footer-brand span { color: var(--accent); }
+
+      .footer-tagline {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .footer-col-title {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-links a {
+        font-family: var(--sans);
+        font-size: 13.5px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover { color: var(--text-primary); }
+
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-copy {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+
+      /* ─── ANIMATIONS ─── */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pricing-eyebrow  { animation: fadeUp 0.6s ease 0.1s both; }
+      .pricing-headline { animation: fadeUp 0.7s ease 0.2s both; }
+      .pricing-subhead  { animation: fadeUp 0.6s ease 0.35s both; }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 900px) {
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing-card.featured {
+          transform: none;
+          border-left: 3px solid var(--accent);
+          border-right: 3px solid var(--accent);
+        }
+
+        .guarantees-grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav { padding: 0 24px; }
+        
+        .pricing-hero,
+        .pricing-section,
+        .faq-section,
+        .guarantees-section {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
+  <ul class="nav-links">
+    <li><a href="/results/">Results</a></li>
+    <li><a href="/playbook/">Playbook</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Book Fit Call</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<div class="pricing-hero">
+  <div class="pricing-eyebrow">
+    <div class="pricing-eyebrow-line"></div>
+    <span>Investment Tiers</span>
+    <div class="pricing-eyebrow-line"></div>
+  </div>
+  <h1 class="pricing-headline">
+    Clear pricing.<br>
+    <em>No surprises.</em>
+  </h1>
+  <p class="pricing-subhead">
+    Three engagement models built for different stages of growth. Every tier includes the H.A.N.S Framework — structured demand capture, server-side tracking infrastructure, and Performance Max optimization. The difference is scope, speed, and strategic depth.
+  </p>
+</div>
+
+<!-- ─── PRICING CARDS ─── -->
+<div class="pricing-section">
+  <div class="pricing-grid">
+    
+    <!-- TIER 1: AUDIT + OPTIMIZATION -->
+    <div class="pricing-card reveal">
+      <div class="pricing-tier-name">01 / Foundation</div>
+      <h2 class="pricing-tier-title">Audit + Optimization</h2>
+      <p class="pricing-tier-desc">
+        For accounts that need structural fixes before scaling. Get clear diagnostics and a 30-day execution plan.
+      </p>
+      
+      <div class="pricing-amount">
+        <span class="pricing-currency">$</span>
+        <span class="pricing-price">2,500</span>
+      </div>
+      <p class="pricing-note">One-time engagement · 30-day delivery</p>
+      
+      <ul class="pricing-features">
+        <li>Full account audit (structure, tracking, bidding)</li>
+        <li>Conversion tracking validation & fix roadmap</li>
+        <li>Campaign restructure recommendations</li>
+        <li>Performance Max efficiency analysis</li>
+        <li>30-day optimization execution</li>
+        <li>Documentation + handoff report</li>
+      </ul>
+      
+      <a href="#contact" class="pricing-cta ghost">Start Audit</a>
+    </div>
+
+    <!-- TIER 2: ONGOING MANAGEMENT (FEATURED) -->
+    <div class="pricing-card featured reveal">
+      <div class="pricing-tier-name">02 / Growth</div>
+      <h2 class="pricing-tier-title">Ongoing Management</h2>
+      <p class="pricing-tier-desc">
+        Full-service acquisition system operation. Continuous optimization, tracking maintenance, and strategic execution.
+      </p>
+      
+      <div class="pricing-amount">
+        <span class="pricing-currency">$</span>
+        <span class="pricing-price">4,500</span>
+        <span class="pricing-unit">/mo</span>
+      </div>
+      <p class="pricing-note">15% of ad spend · minimum $4,500/mo</p>
+      
+      <ul class="pricing-features">
+        <li>Dedicated operator — direct access, no account managers</li>
+        <li>Weekly optimization cycles (structure, bids, negatives, creative)</li>
+        <li>Server-side tracking setup & maintenance</li>
+        <li>Performance Max architecture & asset refresh</li>
+        <li>Conversion signal optimization (enhanced conversions, offline imports)</li>
+        <li>Monthly performance reports + strategic planning calls</li>
+        <li>Priority Slack/email support</li>
+      </ul>
+      
+      <a href="#contact" class="pricing-cta">Book Fit Call</a>
+    </div>
+
+    <!-- TIER 3: FRACTIONAL DIRECTOR -->
+    <div class="pricing-card reveal">
+      <div class="pricing-tier-name">03 / Strategic</div>
+      <h2 class="pricing-tier-title">Fractional Director</h2>
+      <p class="pricing-tier-desc">
+        Full acquisition infrastructure ownership. Multi-channel strategy, team integration, and executive-level planning.
+      </p>
+      
+      <div class="pricing-amount">
+        <span class="pricing-currency">$</span>
+        <span class="pricing-price">8,500</span>
+        <span class="pricing-unit">/mo</span>
+      </div>
+      <p class="pricing-note">Retainer + performance incentives</p>
+      
+      <ul class="pricing-features">
+        <li>Everything in Growth tier</li>
+        <li>Cross-channel strategy (Google + Microsoft + Amazon + TikTok)</li>
+        <li>First-party data architecture & customer match buildout</li>
+        <li>Internal team training & process documentation</li>
+        <li>Quarterly business reviews with C-suite</li>
+        <li>Agency/vendor oversight & RFP support</li>
+        <li>Custom attribution modeling & reporting dashboards</li>
+      </ul>
+      
+      <a href="#contact" class="pricing-cta ghost">Discuss Custom Scope</a>
+    </div>
+
+  </div>
+
+  <!-- Additional Note -->
+  <div style="text-align:center;margin-top:48px;">
+    <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text-muted);line-height:1.8;max-width:680px;margin:0 auto;">
+      All engagements begin with a 15-minute fit call. No commitments until we've confirmed alignment on goals, timeline, and current account state. US market founders and operators only.
+    </p>
+  </div>
+</div>
+
+<!-- ─── GUARANTEES ─── -->
+<div class="guarantees-section">
+  <div class="guarantees-grid">
+    <div class="guarantee-card reveal">
+      <div class="guarantee-icon">🔒</div>
+      <h3 class="guarantee-title">No Lock-In</h3>
+      <p class="guarantee-desc">
+        30-day cancellation notice. If it's not working, you're not stuck. Every engagement is earned monthly.
+      </p>
+    </div>
+    <div class="guarantee-card reveal">
+      <div class="guarantee-icon">📊</div>
+      <h3 class="guarantee-title">Full Transparency</h3>
+      <p class="guarantee-desc">
+        Direct account access, weekly updates, and clear reporting. No black boxes. You see every change, every test, every result.
+      </p>
+    </div>
+    <div class="guarantee-card reveal">
+      <div class="guarantee-icon">⚡</div>
+      <h3 class="guarantee-title">Direct Operator Access</h3>
+      <p class="guarantee-desc">
+        You work with me — not a junior team member, not an account manager. Every strategy, every decision, every execution.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FAQ ─── -->
+<div class="faq-section">
+  <h2 class="faq-title reveal">Common <em>questions.</em></h2>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">What's included in the initial audit?</div>
+    <div class="faq-answer">
+      Full account teardown: campaign structure analysis, conversion tracking validation (GA4, GTM, server-side setup), Performance Max asset review, search term waste audit, bidding strategy assessment, and a prioritized fix roadmap with 30 days of hands-on execution to implement the highest-impact changes.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">How do you calculate the 15% management fee?</div>
+    <div class="faq-answer">
+      It's 15% of total monthly ad spend across all managed platforms (Google Ads, Microsoft Ads, etc.), with a floor of $4,500/month. So if you're spending $30K/month, the fee is $4,500. If you're spending $50K/month, it's $7,500. The retainer scales with spend because the optimization workload scales with budget.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">What's the difference between Growth and Fractional Director?</div>
+    <div class="faq-answer">
+      Growth tier is pure execution — I own your Google Ads account and optimize it continuously. Fractional Director is strategic leadership: multi-channel planning, team integration, vendor oversight, custom reporting infrastructure, and quarterly business planning. It's for companies that need acquisition infrastructure ownership at the executive level.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">Do you work with agencies or only direct clients?</div>
+    <div class="faq-answer">
+      I work with both. For agencies, I typically come in as a white-label specialist or fractional Google Ads director to handle technical execution, tracking fixes, or Performance Max buildouts. For direct clients, I operate as your dedicated acquisition system owner.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">What industries do you not work with?</div>
+    <div class="faq-answer">
+      I don't work with: crypto, gambling, adult content, MLM/network marketing, or political campaigns. My expertise is in eCommerce, healthcare/medspa, B2B SaaS, and high-intent lead generation for service businesses.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">How quickly can we start?</div>
+    <div class="faq-answer">
+      After the fit call and agreement, onboarding takes 3–5 business days (account access, tracking audit, initial setup). Week 1 is diagnostic and planning. Active optimization starts Week 2. For audits, you'll have the full report and execution plan within 10 business days.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question">What if I'm already working with an agency?</div>
+    <div class="faq-answer">
+      Common scenario. I can either: (1) take over completely if you're looking to transition, (2) work alongside your agency as a specialist for tracking/Performance Max/technical optimization, or (3) conduct an independent audit to give you clarity on what's actually happening in your account. The fit call will determine the right structure.
+    </div>
+  </div>
+</div>
+
+<!-- ─── CTA SECTION ─── -->
+<div class="cta-section">
+  <div class="cta-content reveal">
+    <h2 class="cta-title">
+      Ready to <em>scale smart?</em>
+    </h2>
+    <p class="cta-desc">
+      Book a 15-minute fit call. No pitch deck, no sales pressure. Just an honest conversation about whether the H.A.N.S Framework is the right system for your business.
+    </p>
+    <a href="#contact" class="pricing-cta" style="display:inline-block;margin-bottom:16px;">Book 15-Min Fit Call</a>
+    <br>
+    <a href="mailto:hanzel@hanslacida.com" style="font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--border-light);">
+      Or email: hanzel@hanslacida.com
+    </a>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Hans<span>.</span>Lacida</div>
+      <div class="footer-tagline">Paid Acquisition Systems Operator<br>Google Ads · Performance Max · Tracking Infrastructure</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Operator</div>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/how-i-operate/">How I Operate</a></li>
+        <li><a href="/results/">Case Studies</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <ul class="footer-links">
+        <li><a href="/playbook/">Google Ads Playbook</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:hanzel@hanslacida.com">Email</a></li>
+        <li><a href="#contact">Book Fit Call</a></li>
+        <li><a href="https://wa.link/mzywie">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Hans Lacida · All rights reserved</span>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      const wasOpen = item.classList.contains('open');
+      
+      // Close all items
+      document.querySelectorAll('.faq-item').forEach(faqItem => {
+        faqItem.classList.remove('open');
+      });
+      
+      // Open clicked item if it wasn't open
+      if (!wasOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
