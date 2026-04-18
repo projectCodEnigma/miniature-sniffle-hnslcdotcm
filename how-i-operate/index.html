@@ -5,112 +5,580 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>How I Operate | Hans Lacida</title>
   <meta name="description" content="How I build and operate paid acquisition systems with technical precision in tracking, first-party data, and Performance Max architecture." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-2: #111111;
+      --bg-3: #161616;
+      --surface: #1a1a1a;
+      --border: #242424;
+      --border-light: #2e2e2e;
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-muted: #5a5754;
+      --accent: #c8a96e;
+      --accent-dim: rgba(200, 169, 110, 0.12);
+      --accent-bright: #e2c48a;
+      --mono: 'JetBrains Mono', monospace;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'Syne', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.35;
+    }
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent) !important;
+      border: 1px solid var(--accent);
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--accent) !important;
+      color: var(--bg) !important;
+    }
+    .nav-cta-mobile-only {
+      display: none;
+    }
+    /* ─── HAMBURGER BUTTON ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--text-secondary);
+      transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    /* ─── MOBILE DRAWER ─── */
+    .mobile-nav {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: min(320px, 88vw);
+      background: var(--bg-2);
+      border-left: 1px solid var(--border);
+      z-index: 950;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .mobile-nav.is-open { transform: translateX(0); }
+    .mobile-nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(2px);
+      z-index: 940;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-nav-overlay.is-open { opacity: 1; pointer-events: all; }
+    .mobile-nav-inner { display: flex; flex-direction: column; height: 100%; padding: 0; }
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 64px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .mobile-nav-close {
+      background: transparent;
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      width: 36px; height: 36px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-nav-close:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+    .mobile-nav-links { list-style: none; padding: 8px 0; flex-shrink: 0; }
+    .mobile-nav-links li a {
+      display: block;
+      padding: 16px 24px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, background 0.2s;
+    }
+    .mobile-nav-links li:first-child a { border-top: 1px solid var(--border); }
+    .mobile-nav-links li a:hover { color: var(--text-primary); background: var(--bg-3); }
+    .mobile-nav-links li a::before { content: '→ '; color: var(--accent); opacity: 0.6; }
+    .mobile-nav-ctas { display: flex; flex-direction: column; gap: 12px; padding: 24px; flex-shrink: 0; }
+    .mobile-nav-footer { margin-top: auto; padding: 20px 24px; border-top: 1px solid var(--border); }
+    .mobile-nav-footer span {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    /* ─── MAIN CONTENT ─── */
+    main {
+      margin-top: 64px;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .section-eyebrow-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-eyebrow span {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 56px);
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    p {
+      font-family: var(--sans);
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    ul li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .accent-box {
+      background: var(--bg-3);
+      border-left: 4px solid var(--border);
+      padding: 16px 24px;
+      margin: 24px 0;
+    }
+    .accent-box p {
+      margin-bottom: 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    .btn-primary {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: var(--accent-bright);
+      border-color: var(--accent-bright);
+    }
+    .btn-ghost {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid var(--border-light);
+      padding: 14px 28px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-ghost:hover {
+      border-color: var(--text-secondary);
+      color: var(--text-primary);
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      section { padding: 48px 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-cta-mobile-only { display: list-item; }
+    }
+  </style>
 </head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
+    <ul class="nav-links">
+      <li><a href="/results/">Results</a></li>
+      <li><a href="/playbook/">Playbook</a></li>
+      <li><a href="/insights/">Insights</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book Fit Call</a></li>
+      <li><a href="https://wa.link/mzywie" class="nav-cta">Chat on WhatsApp</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<body class="bg-white text-slate-900 antialiased">
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-inner">
+      <div class="mobile-nav-header">
+        <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="/results/">Results</a></li>
+        <li><a href="/playbook/">Playbook</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-ctas">
+        <a href="#contact" class="btn-primary" style="text-align:center;">Book Fit Call</a>
+        <a href="https://wa.link/mzywie" class="btn-ghost" style="text-align:center;">Chat on WhatsApp</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <span>Google Ads · Performance Max · Tracking Infrastructure</span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- Wrapper -->
-  <main class="max-w-4xl mx-auto px-6 py-20">
-
+  <main>
     <!-- Header -->
-    <section class="mb-20">
-      <p class="text-sm uppercase tracking-widest text-slate-500 mb-4">
-        Operating Principles
+    <section>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Operating Principles</span>
+      </div>
+      <h1>How I Operate</h1>
+      <p style="max-width: 680px;">
+        I build acquisition infrastructure for founders scaling eCommerce, healthcare/medspa, B2B SaaS, and high-intent lead gen. 
+        Not as a vendor. Not as a campaign manager. You get predictable, compounding ROAS — because I fix tracking, audit Performance Max, and build first-party data systems <em>before</em> scaling spend.
       </p>
-      <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">
-        How I Operate
-      </h1>
-      <p class="text-lg text-slate-600 max-w-2xl">
-        This page explains how I think, how I work, and who I am not a fit for. 
-        If this resonates, we’ll build systems that compound together.
-      </p>
+      <div class="accent-box">
+        <p><strong>10+ years. $550M+ attributed revenue. 50%+ average CPA reduction across verticals.</strong></p>
+      </div>
     </section>
 
-    <!-- Philosophy -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-4">My Role</h2>
-      <p class="text-slate-700 leading-relaxed max-w-3xl">
-        I operate paid acquisition systems for founders scaling eCommerce, healthcare/medspa, B2B SaaS, and high-intent lead generation businesses.
-        Not as a vendor. Not as a campaign manager.  
-        I take ownership of the full infrastructure — so you don’t have to wrestle with broken tracking, confusing Performance Max campaigns, or unreliable data signals.
-      </p>
-    </section>
+    <!-- What I Own -->
+    <section>
+      <h2>What I Own</h2>
+      
+      <!-- Tracking & Measurement -->
+      <div style="margin-bottom: 40px;">
+        <h3>Tracking & Measurement (The Foundation)</h3>
+        <p>
+          Your campaigns are only as good as your data. I set up conversion tracking that actually works: server-side implementation, offline import, enhanced conversions, and GA4 validation. This isn't optional — it's the floor. Without it, you're flying blind.
+        </p>
+      </div>
 
-    <!-- What I Take Ownership Of -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-6">What I Take Ownership Of</h2>
-      <ul class="space-y-4 text-slate-700">
-        <li>• Full acquisition infrastructure: campaign architecture, Performance Max setup & auditing, and channel-level signals</li>
-        <li>• Bulletproof conversion tracking and measurement (server-side tagging, enhanced conversions, offline import, GA4 accuracy)</li>
-        <li>• First-party data strategy as your new competitive moat (Customer Match, consent-based audiences, CLV/profit signals)</li>
-        <li>• Budget discipline, downside protection, and clear scaling decisions</li>
-        <li>• Systems that deliver predictable ROAS even as Google’s AI handles execution</li>
-        <li>• Vertical-specific frameworks for eCommerce, healthcare compliance, B2B pipeline attribution, and high-CPC verticals</li>
-      </ul>
+      <!-- Performance Max -->
+      <div style="margin-bottom: 40px;">
+        <h3>Performance Max Architecture</h3>
+        <p>
+          PMax is Google's future, but "set and forget" kills budgets. I structure focused asset groups with strong audience signals, build downside protection into every campaign, and audit for redundancy that bleeds money. The goal: predictable baseline ROAS with explosive upside once systems lock in.
+        </p>
+      </div>
+
+      <!-- First-Party Data -->
+      <div style="margin-bottom: 40px;">
+        <h3>First-Party Data as Your Moat</h3>
+        <p>
+          Platform deprecations, algorithm changes, iOS updates — they're coming. I build your shield: Customer Match audiences, consent-based customer data, CLV/profit signals, and offline CRM integration. This data stays yours and compounds over time.
+        </p>
+      </div>
+
+      <!-- Budget Discipline -->
+      <div style="margin-bottom: 40px;">
+        <h3>Budget Discipline & Scaling Logic</h3>
+        <p>
+          I don't burn your money testing random things. Every dollar has a reason. I scale what works, pause what doesn't, protect downside before chasing upside, and give you clear signals for when to double down. Your ROAS trend matters more than your peak ROAS.
+        </p>
+      </div>
+
+      <!-- Reporting -->
+      <div>
+        <h3>Founder-Focused Reporting</h3>
+        <p>
+          You get: actual spend, tracked revenue/pipeline, true ROAS/CPA, data quality health score, and month-over-month trajectory. No inflated dashboards. No vanity metrics. Just what matters — so you know exactly where budget is flowing and whether systems are compounding.
+        </p>
+      </div>
     </section>
 
     <!-- What I Do Not Do -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-6">What I Do Not Do</h2>
-      <ul class="space-y-4 text-slate-700">
-        <li>• I do not push buttons in automated campaigns without fixing the underlying structure and data foundation</li>
-        <li>• I do not run Performance Max “set and forget” campaigns that leak budget through redundancy or weak signals</li>
-        <li>• I do not chase vanity metrics or deliver pretty dashboards instead of real business outcomes</li>
-        <li>• I do not attend weekly status calls for reassurance — results are reported clearly and early</li>
-        <li>• I do not work with teams that avoid hard conversations about broken tracking or poor data quality</li>
+    <section>
+      <h2>What I Do Not Do</h2>
+      <ul>
+        <li><strong>Push buttons without fixing structure.</strong> I don't run campaigns on broken tracking or weak signals. Foundation first, scaling second.</li>
+        <li><strong>"Set and forget" Performance Max.</strong> These campaigns leak budget through redundancy, weak audiences, and misaligned asset groups. If it's on, it's monitored and audited.</li>
+        <li><strong>Chase vanity metrics.</strong> Pretty dashboards, impressions, reach, engagement — these are distractions. Real metrics: ROAS, CPA, pipeline velocity, data quality.</li>
+        <li><strong>Weekly reassurance calls.</strong> I report clearly and early. If something is broken, you hear about it immediately. If results are tracking, you see the trend.</li>
+        <li><strong>Work with teams avoiding hard conversations.</strong> If your tracking is incomplete, your data is messy, or your first-party audience strategy is weak — we address it head-on. No lip service.</li>
       </ul>
     </section>
 
     <!-- How Decisions Are Made -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-4">How Decisions Are Made</h2>
-      <p class="text-slate-700 leading-relaxed max-w-3xl">
-        Every decision starts with clean data. I prioritize fixing tracking and first-party signals first, then architect Performance Max campaigns with focused asset groups and strong audience signals. 
-        Downside protection comes before upside expansion. If something is broken — whether it’s PMax redundancy, incomplete offline conversions, or weak consent modeling — it is addressed directly and early.
+    <section>
+      <h2>How Decisions Are Made</h2>
+      <p>
+        Every decision starts with data. If the data is bad, we fix it first. If it's clean, we use it to architect systems that compound.
+      </p>
+      <div class="accent-box">
+        <p style="margin-bottom: 8px; font-weight: 600;">The sequence:</p>
+        <ol style="list-style: decimal; padding-left: 20px; margin-bottom: 0;">
+          <li style="padding-left: 8px; margin-bottom: 8px;">Audit and fix conversion tracking and first-party data readiness</li>
+          <li style="padding-left: 8px; margin-bottom: 8px;">Architect Performance Max with focused asset groups and strong audience signals</li>
+          <li style="padding-left: 8px; margin-bottom: 8px;">Build downside protection into budget allocation</li>
+          <li style="padding-left: 8px; margin-bottom: 8px;">Scale upside once systems are proven stable</li>
+          <li style="padding-left: 8px; margin-bottom: 0;">Report clearly on whether the infrastructure is compounding</li>
+        </ol>
+      </div>
+      <p>
+        If something is broken — PMax redundancy, incomplete offline conversions, weak consent modeling, GA4 misconfiguration — it gets fixed directly and early. No technical debt. No workarounds.
       </p>
     </section>
 
-    <!-- Reporting -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-4">Reporting for Owners</h2>
-      <p class="text-slate-700 leading-relaxed max-w-3xl">
-        You receive clear, founder-focused reporting: actual spend, tracked revenue/pipeline, true ROAS/CPA, data quality health, and trajectory. 
-        No inflated dashboards. You see exactly where budget is flowing and whether the systems (tracking + PMax + first-party data) are compounding.
-      </p>
+    <!-- Who This Is For -->
+    <section>
+      <h2>Who This Is For</h2>
+      
+      <div style="margin-bottom: 48px;">
+        <h3>You're a good fit if:</h3>
+        <ul>
+          <li>You're a founder or owner who wants predictable, high-ROAS acquisition systems — not constant campaign tweaks and heroics</li>
+          <li>Your business spends $10K+/month on paid acquisition and needs clean tracking + first-party data to scale profitably</li>
+          <li>You're in eCommerce, healthcare/medspa, B2B SaaS, legal, finance, or home services and value technical depth + vertical expertise</li>
+          <li>You understand that systems (not heroics, not tactics, not vanity) create sustainable, compounding growth</li>
+          <li>You're willing to invest in proper tracking infrastructure because you know it directly impacts cash flow</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>You're not a fit if:</h3>
+        <ul>
+          <li>You want tactical execution or low-level campaign management (that's vendor work)</li>
+          <li>You're unwilling to invest in proper tracking infrastructure and first-party data strategy</li>
+          <li>You need constant hand-holding or prefer hype over honest performance reviews</li>
+          <li>You're optimizing for optics or short-term vanity metrics instead of long-term compounding systems</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Fit -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-6">Who This Is a Fit For</h2>
-      <ul class="space-y-4 text-slate-700">
-        <li>• Founders and owners who want predictable, high-ROAS acquisition systems — not constant campaign tweaks</li>
-        <li>• Businesses spending $10K+/month where clean tracking and first-party data directly impact cash flow and scaling</li>
-        <li>• Teams in eCommerce, healthcare/medspa, B2B SaaS, legal, finance, or home services that value technical depth and vertical expertise</li>
-        <li>• Operators who understand that systems (not heroics) create sustainable growth</li>
-      </ul>
-    </section>
-
-    <!-- Not a Fit -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-semibold mb-6">Who This Is Not a Fit For</h2>
-      <ul class="space-y-4 text-slate-700">
-        <li>• Marketing teams looking only for tactical execution or low-level campaign management</li>
-        <li>• Businesses unwilling to invest in proper tracking infrastructure and first-party data</li>
-        <li>• Teams that need constant hand-holding or prefer hype over honest performance reviews</li>
-        <li>• Anyone optimizing for optics or short-term vanity metrics instead of long-term compounding systems</li>
+    <!-- Vertical Depth -->
+    <section>
+      <h2>Vertical Depth</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="padding-left: 0; margin-bottom: 16px;"><strong>eCommerce & Retail:</strong> Ebike/sporting goods (60x peak ROAS), furniture (260% conversion lift), security equipment (21.55x peak), computer parts (8-year relationship, $2.67M–$4M annual revenue), home goods</li>
+        <li style="padding-left: 0; margin-bottom: 16px;"><strong>Healthcare & Behavioral Health:</strong> Addiction recovery (53% CPA reduction), behavioral health (25–30% CPA improvement, 40% call volume lift), wellness centers</li>
+        <li style="padding-left: 0; margin-bottom: 16px;"><strong>B2B & Industrial:</strong> Engine manufacturing ($300K/mo accounts, 115x ROAS, $551.9M tracked), construction trades, legal services</li>
+        <li style="padding-left: 0; margin-bottom: 16px;"><strong>Hospitality & Travel:</strong> 50+ hotel brands (3.2x–5x ROAS, 28% CAC reduction)</li>
+        <li style="padding-left: 0;"><strong>Home Services & Local:</strong> Plumbing, SEO agencies, lead gen</li>
       </ul>
     </section>
 
     <!-- Closing -->
-    <section class="border-t pt-12">
-      <p class="text-slate-600 max-w-2xl">
-        If you’re an owner and this page feels calm, clear, and systems-oriented rather than exciting or salesy — that’s intentional.  
-        That’s exactly how I operate.
-      </p>
+    <section>
+      <div style="border-top: 1px solid var(--border); padding-top: 40px;">
+        <h2>Next Step</h2>
+        <p>
+          If this resonates — if you're thinking about how broken tracking or weak first-party data is holding you back — let's start there.
+        </p>
+        <p>
+          The conversation: <em>"What does your tracking infrastructure actually look like, and where are the gaps?"</em>
+        </p>
+        <p>
+          That question changes everything.
+        </p>
+        <div style="margin-top: 32px;">
+          <a href="#contact" class="btn-primary">Book a 15-Min Fit Call</a>
+        </div>
+      </div>
     </section>
-
   </main>
 
+  <!-- JavaScript -->
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('navHamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    
+    function openMobileNav() {
+      hamburger.classList.add('is-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileNav.classList.add('is-open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      mobileNavOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMobileNav() {
+      hamburger.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('is-open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileNavOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+    
+    hamburger.addEventListener('click', openMobileNav);
+    mobileNavClose.addEventListener('click', closeMobileNav);
+    mobileNavOverlay.addEventListener('click', closeMobileNav);
+    
+    // Close on nav link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+  </script>
 </body>
 </html>
