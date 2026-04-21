@@ -9,7 +9,6 @@
         gtag('js', new Date());
         gtag('config', 'G-K1E3588F4M');
     </script>
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,198 +26,580 @@
                         'theme-dark': '#111111',
                         'theme-gray': '#666666',
                         'theme-light': '#f8f9fa'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(24px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
                     }
                 }
             }
         }
     </script>
-    
+
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- site metas -->
-    <title>Simplify Your Google Ads Management | Hanzel Lacida - Google Ads Specialist</title>
-    <meta name="keywords" content="Google Ads Specialist, Google Ads Management, Boost ROI, Reduce CPA, Hanzel Lacida, PPC Management, SEM Expert">
-    <meta name="description" content="Simplify your Google Ads management with Hanzel Lacida, a specialist with over 10 years of experience helping businesses maximize ROI and reduce CPA.">
+    <title>Paid Acquisition Systems for Serious Growth | Hanzel Lacida — Google Ads & PMax Operator</title>
+    <meta name="keywords" content="Google Ads Operator, Performance Max Specialist, Paid Acquisition, Google Ads Management, Boost ROI, Reduce CPA, Hanzel Lacida, PPC Management, First-Party Data, Conversion Tracking">
+    <meta name="description" content="Hanzel Lacida builds paid acquisition infrastructure that compounds — Google Ads, Performance Max, server-side tracking, and first-party data systems for ecommerce, healthcare, B2B SaaS, and high-ticket verticals.">
     <meta name="author" content="Hanzel Lacida">
     <meta name="google-adsense-account" content="ca-pub-2137593406454250">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Baloo+Chettan&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- favicon -->
     <link rel="icon" href="../images/hanslacida_favicon.webp" type="image/webp" />
-    
+
     <!-- Custom Styles -->
     <style>
-        html {
-            scroll-behavior: smooth;
+        html { scroll-behavior: smooth; }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1d4ed8 100%);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(59,130,246,0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(99,102,241,0.1) 0%, transparent 40%),
+                              radial-gradient(circle at 60% 80%, rgba(16,185,129,0.08) 0%, transparent 40%);
         }
-        
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: #93c5fd;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 999px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
         .hover-scale {
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .hover-scale:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
+
+        .problem-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            border-top: 3px solid #ef4444;
+            border-radius: 12px;
+            padding: 28px 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+
+        .solution-card {
+            background: white;
+            border: 1px solid #e0f2fe;
+            border-top: 3px solid #2563eb;
+            border-radius: 12px;
+            padding: 28px 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .solution-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(37,99,235,0.08);
+        }
+
+        .vertical-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+        }
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37,99,235,0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .focus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 18px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 3px solid #2563eb;
+            transition: background 0.2s;
+        }
+        .focus-item:hover { background: #eff6ff; }
+
+        .trust-bar {
+            background: #0f172a;
+            padding: 18px 0;
+            overflow: hidden;
+        }
+        .trust-items {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            white-space: nowrap;
+            animation: scrollLeft 20s linear infinite;
+        }
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .trust-item i { color: #3b82f6; }
     </style>
-    
+
     <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137593406454250" crossorigin="anonymous"></script>
 </head>
-
 <body class="font-lato text-gray-600 bg-white">
+
     <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
+    <header class="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-100">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
-                <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="../index.html" class="flex items-center">
-                        <img src="../images/hanslacida_favicon.jpg" alt="HansLacida.com" class="h-12 w-auto" />
+                    <a href="../index.html" class="flex items-center gap-3">
+                        <img src="../images/hanslacida_favicon.jpg" alt="HansLacida.com" class="h-10 w-auto rounded-lg" />
+                        <span class="font-rajdhani font-bold text-gray-900 text-lg hidden sm:block">Hans Lacida</span>
                     </a>
                 </div>
-                
-                <!-- Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                    <a href="../about/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
-                    <a href="../services/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
-                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
-                    <a href="../case-studies/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Case Studies</a>
-                    <a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
+
+                <nav class="hidden md:flex items-center space-x-7">
+                    <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Home</a>
+                    <a href="../about/" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">About</a>
+                    <a href="../services/" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Services</a>
+                    <a href="https://pricing.hanslacida.com" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Pricing</a>
+                    <a href="../case-studies/" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Case Studies</a>
+                    <a href="#contact" class="cta-primary !py-2 !px-5 !text-sm">
+                        <i class="fas fa-calendar-check text-xs"></i> Book a Call
+                    </a>
                 </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-blue-600" aria-label="Toggle mobile menu">
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-blue-600" aria-label="Toggle mobile menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                    <a href="../about/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
-                    <a href="../services/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
-                    <a href="https://pricing.hanslacida.com" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Pricing</a>
-                    <a href="../case-studies/" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Case Studies</a>
-                    <a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
+
+            <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-gray-100 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="../index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="../about/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">About</a>
+                    <a href="../services/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Services</a>
+                    <a href="https://pricing.hanslacida.com" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Pricing</a>
+                    <a href="../case-studies/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Case Studies</a>
+                    <a href="#contact" class="text-blue-600 font-semibold">Contact / Book a Call</a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-4xl mx-auto">
+    <section class="hero-bg text-white py-16 md:py-28 relative">
+        <div class="hero-grid"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center mb-6">
+                    <span class="badge-pill">
+                        <i class="fas fa-circle text-green-400" style="font-size:7px"></i>
+                        Paid Acquisition Systems Operator · Cebu City, PH
+                    </span>
+                </div>
+
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-baloo font-bold leading-tight mb-6">
-                    Simplify Your Google Ads Management and Boost Your ROI
+                    Stop Guessing. Build Paid Acquisition<br class="hidden md:block">
+                    <span class="text-blue-300">Infrastructure That Compounds.</span>
                 </h1>
-                <p class="text-lg sm:text-xl text-blue-100 leading-relaxed mb-8 max-w-3xl mx-auto">
-                    Hi, I'm Hanzel Lacida, a Google Ads Specialist with Over 10 Years of Experience Delivering Results.
+
+                <p class="text-lg sm:text-xl text-blue-100 leading-relaxed mb-4 max-w-3xl mx-auto">
+                    I'm Hanzel Lacida — I architect Google Ads and Performance Max systems, fix broken tracking, and turn first-party data into a real competitive moat for U.S. businesses.
                 </p>
+                <p class="text-base text-blue-200 mb-10 max-w-2xl mx-auto">
+                    Ecommerce · Healthcare & MedSpa · B2B SaaS · Legal, Finance & Home Services
+                </p>
+
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-center hover-scale">
-                        <i class="fas fa-calendar-check mr-2"></i>
+                    <a href="#contact" class="cta-primary">
+                        <i class="fas fa-calendar-check"></i>
                         Book a Free Strategy Call
                     </a>
-                    <a href="https://tidycal.com/hanslacida/discovery-call" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 text-center hover-scale">
-                        <i class="fas fa-phone mr-2"></i>
-                        Book a Discovery Call
+                    <a href="https://tidycal.com/hanslacida/discovery-call" class="cta-secondary">
+                        <i class="fas fa-phone"></i>
+                        Discovery Call
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Problem Section -->
-    <section class="py-12 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-800 mb-6">
-                    Struggling to Keep Up with Your Google Ads?
-                </h2>
-                <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                    Managing Google Ads is time-consuming and complex. Staying glued to your screen for campaign monitoring and client calls drains your energy. The strategic "why" behind ad behavior is overwhelming.
-                </p>
-                
-                <div class="grid md:grid-cols-3 gap-6 mt-12">
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover-scale">
-                        <div class="text-red-500 mb-4">
-                            <i class="fas fa-clock text-3xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Endless Hours</h3>
-                        <p class="text-gray-600">Spent optimizing campaigns with diminishing returns</p>
+                <!-- Stats row -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 max-w-3xl mx-auto">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-white font-rajdhani">10+</div>
+                        <div class="text-xs text-blue-300 mt-1">Years in Paid Search</div>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover-scale">
-                        <div class="text-red-500 mb-4">
-                            <i class="fas fa-chart-line text-3xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Strategy Overwhelm</h3>
-                        <p class="text-gray-600">Difficulty creating actionable strategies that work</p>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-white font-rajdhani">4</div>
+                        <div class="text-xs text-blue-300 mt-1">Vertical Specializations</div>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover-scale">
-                        <div class="text-red-500 mb-4">
-                            <i class="fas fa-phone text-3xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Client Stress</h3>
-                        <p class="text-gray-600">Stress from client calls and unexpected changes</p>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-white font-rajdhani">PMax</div>
+                        <div class="text-xs text-blue-300 mt-1">Architecture Expert</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-white font-rajdhani">SST</div>
+                        <div class="text-xs text-blue-300 mt-1">Server-Side Tracking</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Your Role Section -->
-    <section class="py-12 md:py-20">
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-items">
+            <span class="trust-item"><i class="fas fa-check-circle"></i> Google Ads Full-Funnel Architecture</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> Performance Max Structuring & Audits</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> Server-Side Tagging (Stape / GTM SS)</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> First-Party Data & Customer Match</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> GA4 & Enhanced Conversions</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> CRM-to-Google Ads Integration</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> White-Label Agency Fulfillment</span>
+            <!-- Repeat for seamless loop -->
+            <span class="trust-item"><i class="fas fa-check-circle"></i> Google Ads Full-Funnel Architecture</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> Performance Max Structuring & Audits</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> Server-Side Tagging (Stape / GTM SS)</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> First-Party Data & Customer Match</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> GA4 & Enhanced Conversions</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> CRM-to-Google Ads Integration</span>
+            <span class="trust-item"><i class="fas fa-check-circle"></i> White-Label Agency Fulfillment</span>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="py-14 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-800 mb-6">
-                    Focus on Scaling Your Business
+                <p class="section-label">The Real Problem</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-900 mb-5">
+                    Your Campaigns Run. But Are They Built to Scale?
                 </h2>
-                <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                    Let me handle the technical work so you can focus on your clients and business growth.
+                <p class="text-lg text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    Most Google Ads accounts are held together with duct tape — broken tracking, Performance Max running blind, no first-party data strategy, and zero visibility into what's actually driving revenue.
                 </p>
-                
-                <div class="grid md:grid-cols-3 gap-6 mt-12">
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 hover-scale">
-                        <div class="text-blue-600 mb-4">
-                            <i class="fas fa-handshake text-3xl"></i>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="problem-card text-left">
+                        <div class="text-red-500 mb-4">
+                            <i class="fas fa-bug text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Nurture Relationships</h3>
-                        <p class="text-gray-600">Focus on building and maintaining client relationships</p>
+                        <h3 class="text-base font-bold text-gray-800 mb-2">Broken Tracking & Measurement</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Conversion data is unreliable, GA4 is misconfigured, and your bidding algorithms are optimizing toward ghost signals.</p>
                     </div>
-                    
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 hover-scale">
-                        <div class="text-blue-600 mb-4">
-                            <i class="fas fa-rocket text-3xl"></i>
+
+                    <div class="problem-card text-left">
+                        <div class="text-red-500 mb-4">
+                            <i class="fas fa-robot text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Expand Operations</h3>
-                        <p class="text-gray-600">Scale your business operations and reach new markets</p>
+                        <h3 class="text-base font-bold text-gray-800 mb-2">Performance Max Running Blind</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">PMax campaigns burning budget with weak signals, no audience strategy, and asset groups that confuse Google's AI instead of guiding it.</p>
                     </div>
-                    
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 hover-scale">
-                        <div class="text-blue-600 mb-4">
-                            <i class="fas fa-shield-alt text-3xl"></i>
+
+                    <div class="problem-card text-left">
+                        <div class="text-red-500 mb-4">
+                            <i class="fas fa-database text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Peace of Mind</h3>
-                        <p class="text-gray-600">Know your Google Ads are in expert hands</p>
+                        <h3 class="text-base font-bold text-gray-800 mb-2">No First-Party Data Advantage</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">You're competing on a level playing field when you could be using Customer Match, enhanced conversions, and offline data to outbid rivals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verticals Section -->
+    <section class="py-14 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <p class="section-label">Vertical Expertise</p>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-900 mb-4">
+                        Built for High-Stakes, High-CPC Verticals
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Deep hands-on experience running profitable paid acquisition in the verticals where every dollar has to count.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="solution-card">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shopping-cart text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <h3 class="font-bold text-gray-900">Ecommerce & Shopping</h3>
+                                    <span class="vertical-tag">PMax</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed">Google Shopping, PMax asset groups, feed optimization, and seasonal scaling strategies that drive ROAS without sacrificing volume.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heartbeat text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <h3 class="font-bold text-gray-900">Healthcare & MedSpa</h3>
+                                    <span class="vertical-tag">HIPAA</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed">Compliance-safe campaign structures, lead quality tracking, and conversion systems built around patient privacy and regulatory guardrails.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-briefcase text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <h3 class="font-bold text-gray-900">B2B SaaS & Mid-Market</h3>
+                                    <span class="vertical-tag">CRM</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed">Pipeline attribution, long sales cycle tracking, and CRM-to-Google Ads integration that connects ad spend to closed revenue — not just form fills.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-balance-scale text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <h3 class="font-bold text-gray-900">Legal, Finance & Home Services</h3>
+                                    <span class="vertical-tag">High-CPC</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed">High-intent search campaigns, local service ads, and aggressive CPA management in the most competitive and expensive ad environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Build Section -->
+    <section class="py-14 md:py-20 bg-slate-950 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <p class="section-label !text-blue-400">What I Actually Build</p>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-white mb-4">
+                        Acquisition Infrastructure, Not Just Ad Campaigns
+                    </h2>
+                    <p class="text-blue-200 max-w-2xl mx-auto">
+                        The work I do compounds over time — clean data, sharper signals, and systems that get smarter as they run.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="focus-item !bg-slate-800 !border-blue-500">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-layer-group text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">PMax Architecture That Works With AI Bidding</h3>
+                            <p class="text-slate-400 text-sm">Structured asset groups, proper audience signals, and creative sequencing — so Google's AI bids intelligently instead of guessing.</p>
+                        </div>
+                    </div>
+
+                    <div class="focus-item !bg-slate-800 !border-blue-500">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-server text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">Broken Tracking & Measurement Fixes</h3>
+                            <p class="text-slate-400 text-sm">Server-side tagging via Stape or GTM SS, GA4 configuration, enhanced conversions, and offline conversion imports (OCI) that restore data integrity.</p>
+                        </div>
+                    </div>
+
+                    <div class="focus-item !bg-slate-800 !border-blue-500">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-fingerprint text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">First-Party Data as a Competitive Moat</h3>
+                            <p class="text-slate-400 text-sm">Customer Match activation, consent mode v2, and CRM pipeline integration that gives your campaigns signal advantages your competitors don't have.</p>
+                        </div>
+                    </div>
+
+                    <div class="focus-item !bg-slate-800 !border-blue-500">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-chart-bar text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">Clean, Actionable Reporting for Founders</h3>
+                            <p class="text-slate-400 text-sm">Looker Studio and BigQuery dashboards that surface what matters — spend, pipeline, ROAS, CPA — without the fluff.</p>
+                        </div>
+                    </div>
+
+                    <div class="focus-item !bg-slate-800 !border-blue-500">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-building text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">White-Label Fulfillment for Agencies</h3>
+                            <p class="text-slate-400 text-sm">Productized audit and restructure services, white-label delivery systems, and AI-assisted workflows that let agencies scale without headcount.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus on Scaling Section -->
+    <section class="py-14 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="section-label">How We Work Together</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-900 mb-5">
+                    You Focus on Your Business. I Handle the Complexity.
+                </h2>
+                <p class="text-lg text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto">
+                    Whether you're a founder, in-house marketer, or agency owner — I operate as your behind-the-scenes paid acquisition expert.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover-scale text-left">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-handshake text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">For Founders & In-House Teams</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Audit, restructure, and manage your Google Ads so you stop relying on guesswork and start making data-driven scaling decisions.</p>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover-scale text-left">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-network-wired text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">For Agencies</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">White-label fulfillment, productized audits, and AI-assisted reporting that lets your team deliver expert-level Google Ads results at scale.</p>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover-scale text-left">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Ongoing Peace of Mind</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Continuous optimization, monthly reporting, and a direct line to someone who understands both the technical and strategic sides of paid acquisition.</p>
                     </div>
                 </div>
             </div>
@@ -226,99 +607,102 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 md:py-20 bg-gray-50">
+    <section id="contact" class="py-14 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-800 mb-4">
-                    Ready to Scale Your Business?
+            <div class="text-center mb-12">
+                <p class="section-label">Get in Touch</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-baloo font-bold text-gray-900 mb-4">
+                    Ready to Build a Smarter Acquisition System?
                 </h2>
-                <p class="text-base sm:text-lg text-gray-600 mb-2">
-                    Have questions? Get in touch with us today!
+                <p class="text-base text-gray-600 mb-2">
+                    Tell me about your business and where your paid acquisition is breaking down.
                 </p>
-                <p class="text-base sm:text-lg text-gray-600 mb-6 md:mb-8">
-                    Or direct email me at <a href="mailto:contact@hanslacida.com" class="text-blue-600 hover:text-blue-800">contact@hanslacida.com</a>
+                <p class="text-base text-gray-600">
+                    Or email directly: <a href="mailto:contact@hanslacida.com" class="text-blue-600 hover:text-blue-800 font-semibold">contact@hanslacida.com</a>
                 </p>
             </div>
-            
+
             <div class="max-w-2xl mx-auto">
-                <form action="https://formsubmit.co/f4f41cf84678378bbb885b85457a004f" method="POST" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <form action="https://formsubmit.co/f4f41cf84678378bbb885b85457a004f" method="POST" class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                         <div>
-                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required 
-                                class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                            <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                         </div>
                         <div>
-                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required 
-                                class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                            <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                         </div>
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                        <input type="email" id="email" name="email" required 
-                            class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" 
-                            class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                        <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone"
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                        <input type="text" id="company" name="company" 
-                            class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                        <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">Company Name</label>
+                        <input type="text" id="company" name="company"
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interest *</label>
-                        <select id="service" name="service" required 
-                            class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                        <label for="service" class="block text-sm font-semibold text-gray-700 mb-2">Service Interest *</label>
+                        <select id="service" name="service" required
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                             <option value="">Select a service</option>
-                            <option value="ppc-management">PPC Management</option>
-                            <option value="sem-strategies">SEM Strategies</option>
-                            <option value="business-consulting">Business Consulting</option>
+                            <option value="pmax-audit">Performance Max Audit & Restructure</option>
+                            <option value="tracking-fix">Tracking & Measurement Fix</option>
+                            <option value="ppc-management">Full PPC Management</option>
+                            <option value="first-party-data">First-Party Data Strategy</option>
+                            <option value="white-label">White-Label Agency Fulfillment</option>
                             <option value="fractional-cmo">Fractional CMO Services</option>
                             <option value="marketing-audit">Marketing Audit</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">Monthly Ad Spend Budget</label>
-                        <select id="budget" name="budget" 
-                            class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 text-sm md:text-base">
+                        <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">Monthly Ad Spend Budget</label>
+                        <select id="budget" name="budget"
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm bg-gray-50 focus:bg-white">
                             <option value="">Select budget range</option>
                             <option value="under-1k">Under $1,000</option>
-                            <option value="1k-5k">$1,000 - $5,000</option>
-                            <option value="5k-10k">$5,000 - $10,000</option>
-                            <option value="10k-25k">$10,000 - $25,000</option>
-                            <option value="25k-50k">$25,000 - $50,000</option>
+                            <option value="1k-5k">$1,000 – $5,000</option>
+                            <option value="5k-10k">$5,000 – $10,000</option>
+                            <option value="10k-25k">$10,000 – $25,000</option>
+                            <option value="25k-50k">$25,000 – $50,000</option>
                             <option value="over-50k">Over $50,000</option>
                         </select>
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                        <textarea id="message" name="message" rows="4" required 
-                            placeholder="Tell us about your business goals and how we can help..."
-                            class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 resize-none text-sm md:text-base"></textarea>
+                        <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
+                        <textarea id="message" name="message" rows="4" required
+                            placeholder="Tell me about your current Google Ads setup, what's not working, and what success looks like for you..."
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none text-sm bg-gray-50 focus:bg-white"></textarea>
                     </div>
-                    
+
                     <div class="mb-6">
-                        <label class="flex items-start">
-                            <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 mr-3 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                            <span class="text-sm text-gray-600">Subscribe to our newsletter for marketing tips and industry insights</span>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-gray-600">Subscribe for Google Ads tips, PMax updates, and tracking insights from the trenches.</span>
                         </label>
                     </div>
-                    
+
                     <div class="text-center">
-                        <button type="submit" 
-                            class="bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full md:w-auto text-sm md:text-base">
-                            <i class="fas fa-paper-plane mr-2"></i>
+                        <button type="submit"
+                            class="cta-primary w-full md:w-auto justify-center">
+                            <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
                     </div>
@@ -331,7 +715,6 @@
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                <!-- Brand Section -->
                 <div class="col-span-2 md:col-span-2 lg:col-span-2">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
@@ -339,62 +722,59 @@
                         </div>
                         <span class="ml-3 text-xl font-bold">Hans Lacida</span>
                     </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Data-driven digital marketing expert helping businesses maximize ROI and drive sustainable growth through strategic PPC, SEO, and analytics.
+                    <p class="text-gray-400 text-sm mb-2 font-medium">Paid Acquisition Systems Operator</p>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                        Building Google Ads and Performance Max infrastructure that compounds — for ecommerce, healthcare, B2B SaaS, and high-ticket verticals.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://www.linkedin.com/in/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors">
                             <span class="sr-only">LinkedIn</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
                             </svg>
                         </a>
-                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://twitter.com/hanslacida" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors">
                             <span class="sr-only">Twitter</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
                             </svg>
                         </a>
                     </div>
                 </div>
-                
-                <!-- Navigation -->
+
                 <div>
-                    <h3 class="font-semibold text-lg mb-4">Navigation</h3>
-                    <ul class="space-y-2 text-gray-300">
+                    <h3 class="font-semibold text-sm mb-4 text-gray-300 uppercase tracking-wider">Navigation</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="../index.html" class="hover:text-white transition-colors">Home</a></li>
                         <li><a href="../about/" class="hover:text-white transition-colors">About</a></li>
                         <li><a href="../work-with-me/" class="hover:text-white transition-colors">Work With Me</a></li>
                         <li><a href="../blog/" class="hover:text-white transition-colors">Blog</a></li>
                     </ul>
                 </div>
-                
-                <!-- Services -->
+
                 <div>
-                    <h3 class="font-semibold text-lg mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-300">
+                    <h3 class="font-semibold text-sm mb-4 text-gray-300 uppercase tracking-wider">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="../services/" class="hover:text-white transition-colors">All Services</a></li>
                         <li><a href="../ppc-management/" class="hover:text-white transition-colors">PPC Management</a></li>
                         <li><a href="../google-ads-specialist/" class="hover:text-white transition-colors">Google Ads</a></li>
                         <li><a href="../leading-marketing-firm/" class="hover:text-white transition-colors">Marketing Consulting</a></li>
                     </ul>
                 </div>
-                
-                <!-- Resources -->
+
                 <div>
-                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-300">
+                    <h3 class="font-semibold text-sm mb-4 text-gray-300 uppercase tracking-wider">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="https://pricing.hanslacida.com" class="hover:text-white transition-colors">Pricing</a></li>
                         <li><a href="../case-studies/" class="hover:text-white transition-colors">Case Studies</a></li>
                         <li><a href="../client-success-stories/" class="hover:text-white transition-colors">Success Stories</a></li>
                         <li><a href="../our-process/" class="hover:text-white transition-colors">Our Process</a></li>
                     </ul>
                 </div>
-                
-                <!-- Contact -->
+
                 <div>
-                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
-                    <ul class="space-y-2 text-gray-300">
+                    <h3 class="font-semibold text-sm mb-4 text-gray-300 uppercase tracking-wider">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="../contact/" class="hover:text-white transition-colors">Contact</a></li>
                         <li><a href="https://tidycal.com/zeldigital/discovery-call" class="hover:text-white transition-colors">Book Discovery Call</a></li>
                         <li><a href="../free-marketing-audit-call/" class="hover:text-white transition-colors">Free Marketing Audit</a></li>
@@ -402,9 +782,9 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 HansLacida | <sup>ZELDIGITAL®</sup> - Trusted Digital Advertising for U.S. Businesses. All Rights Reserved.</p>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2026 HansLacida | <sup>ZELDIGITAL®</sup> — Trusted Paid Acquisition for U.S. Businesses. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -423,7 +803,7 @@
     <!-- JavaScript -->
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
@@ -434,23 +814,17 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Newsletter checkbox redirect functionality
-        document.getElementById('newsletter').addEventListener('change', function() {
+        // Newsletter checkbox redirect
+        document.getElementById('newsletter').addEventListener('change', function () {
             if (this.checked) {
-                // Show a confirmation dialog
-                if (confirm('Great! You\'ll be redirected to our blog to subscribe to our newsletter. Click OK to continue.')) {
-                    // Redirect to the blog
+                if (confirm('Great! You\'ll be redirected to the blog to subscribe. Click OK to continue.')) {
                     window.open('https://blog.hanslacida.com/', '_blank');
                 } else {
-                    // If user cancels, uncheck the checkbox
                     this.checked = false;
                 }
             }
