@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hans Lacida | Paid Acquisition Systems Operator | 70x ROAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0a0a0a',
+                        'brand-darker': '#060606',
+                        'brand-surface': '#111111',
+                        'brand-surface-2': '#161616',
+                        'brand-border': '#242424',
+                        'brand-border-light': '#2e2e2e',
+                        'brand-text': '#f0ede8',
+                        'brand-muted': '#9a9690',
+                        'brand-faint': '#5a5754',
+                        'brand-accent': '#c8a96e',
+                        'brand-accent-bright': '#e2c48a',
+                        'brand-green': '#6ba88a',
+                    },
+                    fontFamily: {
+                        'serif': ['DM Serif Display', 'Georgia', 'serif'],
+                        'sans': ['Syne', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.7s ease forwards',
+                        'ticker': 'ticker 30s linear infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        ticker: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Noise overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.3;
+        }
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .rd1 { transition-delay: 0.1s; }
+        .rd2 { transition-delay: 0.2s; }
+        .rd3 { transition-delay: 0.3s; }
+        .rd4 { transition-delay: 0.4s; }
+        .hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
+        .hero-h1 { animation: fadeUp 0.8s ease 0.25s both; }
+        .hero-p { animation: fadeUp 0.6s ease 0.45s both; }
+        .hero-ctas { animation: fadeUp 0.6s ease 0.6s both; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stat-bar::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c8a96e, transparent);
+        }
+        .case-card-hover { transition: background 0.3s; }
+        .case-card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0; height: 2px;
+            background: #c8a96e;
+            transition: width 0.4s ease;
+        }
+        .case-card-hover:hover::before { width: 100%; }
+        .ticker-wrap { overflow: hidden; white-space: nowrap; }
+        .ticker-inner { display: inline-flex; animation: ticker 32s linear infinite; }
+        @keyframes ticker {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .accent-glow {
+            text-shadow: 0 0 60px rgba(200, 169, 110, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased">
+
+    <!-- ─── TICKER ─── -->
+    <div class="ticker-wrap bg-brand-surface border-b border-brand-border py-2.5">
+        <div class="ticker-inner">
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">Paid Acquisition Systems Operator <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">70× Peak ROAS <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">$550M+ Client Revenue <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">Google Ads · Performance Max · Tracking Infrastructure <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">10+ Years · U.S. & Philippines Clients <span class="text-brand-accent mx-4">◆</span></span>
+            <!-- duplicate for seamless loop -->
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">Paid Acquisition Systems Operator <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">70× Peak ROAS <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">$550M+ Client Revenue <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">Google Ads · Performance Max · Tracking Infrastructure <span class="text-brand-accent mx-4">◆</span></span>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-faint px-10">10+ Years · U.S. & Philippines Clients <span class="text-brand-accent mx-4">◆</span></span>
+        </div>
+    </div>
+
+    <!-- ─── HEADER ─── -->
+    <header class="border-b border-brand-border bg-brand-dark/90 backdrop-blur-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-0 h-16 flex items-center justify-between">
+            <a href="#" class="font-serif text-xl text-brand-text tracking-tight">Hans<span class="text-brand-accent">.</span>Lacida</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#operator" class="font-mono text-[11px] tracking-[0.12em] uppercase text-brand-muted hover:text-brand-text transition-colors">Operator</a>
+                <a href="#results" class="font-mono text-[11px] tracking-[0.12em] uppercase text-brand-muted hover:text-brand-text transition-colors">Results</a>
+                <a href="#contact" class="font-mono text-[11px] tracking-[0.12em] uppercase text-brand-muted hover:text-brand-text transition-colors">Contact</a>
+                <a href="#contact" class="font-mono text-[11px] tracking-[0.1em] uppercase text-brand-accent border border-brand-accent px-4 py-2 hover:bg-brand-accent hover:text-brand-dark transition-all">
+                    Book Fit Call
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ─── HERO ─── -->
+    <section class="max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden">
+        <!-- BG glow -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(ellipse, rgba(200,169,110,0.06) 0%, transparent 70%);"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style="background: radial-gradient(ellipse, rgba(200,169,110,0.04) 0%, transparent 70%);"></div>
+
+        <div class="max-w-4xl relative z-10">
+            <div class="hero-eyebrow flex items-center gap-3 mb-8">
+                <div class="w-8 h-px bg-brand-accent"></div>
+                <span class="font-mono text-[11px] tracking-[0.2em] uppercase text-brand-accent">Paid Acquisition Systems Operator</span>
+            </div>
+
+            <h1 class="hero-h1 font-serif text-[clamp(48px,8vw,96px)] leading-[0.92] tracking-tight mb-6 text-brand-text">
+                70× ROAS.<br/>
+                <em class="text-brand-accent accent-glow">No guesswork.</em><br/>
+                Pure execution.
+            </h1>
+
+            <p class="hero-p text-lg text-brand-muted leading-relaxed mb-10 max-w-xl">
+                Performance-driven Google Ads infrastructure for brands scaling spend with confidence. Over <strong class="text-brand-text font-semibold">$550M in attributed revenue</strong> across healthcare, e-commerce, hospitality, and B2B.
+            </p>
+
+            <div class="hero-ctas flex flex-wrap gap-4">
+                <a href="#results" class="font-mono text-[12px] tracking-[0.1em] uppercase bg-brand-accent text-brand-dark px-7 py-4 font-medium hover:bg-brand-accent-bright transition-colors">
+                    View Case Studies
+                </a>
+                <a href="#contact" class="font-mono text-[12px] tracking-[0.1em] uppercase border border-brand-border-light text-brand-muted px-7 py-4 hover:border-brand-muted hover:text-brand-text transition-all">
+                    Start with Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PEAK PERFORMANCE STATS ─── -->
+    <section class="border-y border-brand-border bg-brand-surface">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="font-mono text-[10px] tracking-[0.22em] uppercase text-brand-faint mb-10 flex items-center gap-3">
+                <div class="w-5 h-px bg-brand-accent"></div>
+                Track Record
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-border">
+                <div class="stat-bar relative bg-brand-surface-2 p-8 reveal">
+                    <div class="font-serif text-5xl md:text-6xl text-brand-accent mb-3">70×</div>
+                    <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-brand-faint leading-relaxed">Peak ROAS<br/>AU/NZ Retailer</div>
+                </div>
+                <div class="stat-bar relative bg-brand-surface-2 p-8 reveal rd1">
+                    <div class="font-serif text-5xl md:text-6xl text-brand-accent mb-3">21×</div>
+                    <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-brand-faint leading-relaxed">Peak ROAS<br/>Security Retailer</div>
+                </div>
+                <div class="stat-bar relative bg-brand-surface-2 p-8 reveal rd2">
+                    <div class="font-serif text-5xl md:text-6xl text-brand-accent mb-3">$550M+</div>
+                    <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-brand-faint leading-relaxed">Total Revenue<br/>Generated</div>
+                </div>
+                <div class="stat-bar relative bg-brand-surface-2 p-8 reveal rd3">
+                    <div class="font-serif text-5xl md:text-6xl text-brand-accent mb-3">50%+</div>
+                    <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-brand-faint leading-relaxed">Average CPA<br/>Reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FEATURED CASE STUDIES ─── -->
+    <section id="results" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex items-center gap-3 mb-4 reveal">
+            <div class="w-6 h-px bg-brand-accent"></div>
+            <span class="font-mono text-[10.5px] tracking-[0.22em] uppercase text-brand-accent">Selected Results</span>
+        </div>
+        <div class="mb-16 reveal">
+            <h2 class="font-serif text-[clamp(32px,4vw,56px)] text-brand-text leading-tight mb-4">Real numbers.<br/><em class="text-brand-accent">Real engagements.</em></h2>
+            <p class="text-brand-muted text-base font-mono tracking-wide">Real accounts. Real data. Anonymized for public showcase.</p>
+        </div>
+
+        <!-- 70x ROAS Case -->
+        <div class="mb-8 border border-brand-border bg-brand-surface-2 relative case-card-hover overflow-hidden reveal">
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+                    <div>
+                        <span class="inline-block font-mono text-[9.5px] tracking-[0.18em] uppercase text-brand-accent border border-brand-accent/30 bg-brand-accent/10 px-3 py-1 mb-4">Australia & New Zealand</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-brand-text mb-2">Ebike & Sporting Goods Retailer</h3>
+                        <p class="font-mono text-[11px] tracking-[0.08em] text-brand-faint">Paid Search Manager · 90 Days (Sep–Nov 2025)</p>
+                    </div>
+                    <div class="text-left md:text-right flex-shrink-0">
+                        <div class="font-serif text-6xl text-brand-accent leading-none mb-1 accent-glow">70×</div>
+                        <div class="font-mono text-[9px] tracking-[0.18em] uppercase text-brand-faint">Peak ROAS</div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-px bg-brand-border mb-6">
+                    <div class="bg-brand-surface p-6">
+                        <div class="font-mono text-[9px] tracking-[0.22em] uppercase text-brand-faint mb-5">Before</div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>Fragmented Google Ads structure</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>Weak geo targeting for AU and NZ</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>Limited keyword control</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>High waste from broad search terms</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>No audience alignment</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>Inconsistent daily optimization</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-surface p-6 border-l-2 border-brand-green/40">
+                        <div class="font-mono text-[9px] tracking-[0.22em] uppercase text-brand-green mb-5">After</div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span><strong>Peak ROAS over 70×</strong></li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Rebuilt PMax and Search campaigns</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Search terms cleaned, negatives applied</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Geo targeting focused on high-intent AU East Coast</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Audience targeting aligned to buyer profiles</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Daily monitoring improved spend efficiency</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Strong BFCM results with controlled scaling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-l-2 border-brand-accent pl-5">
+                    <p class="text-sm text-brand-muted leading-relaxed"><span class="text-brand-accent font-semibold">Impact:</span> Strong lift in high-intent traffic · Improved ROAS stability · Lower wasted spend · Clear structure ready for scaling across AU & NZ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 21x ROAS Case -->
+        <div class="mb-8 border border-brand-border bg-brand-surface-2 relative case-card-hover overflow-hidden reveal">
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+                    <div>
+                        <span class="inline-block font-mono text-[9.5px] tracking-[0.18em] uppercase text-brand-accent border border-brand-accent/30 bg-brand-accent/10 px-3 py-1 mb-4">E-Commerce</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-brand-text mb-2">Security Equipment Retailer</h3>
+                        <p class="font-mono text-[11px] tracking-[0.08em] text-brand-faint">E-commerce · Apr 2022 – Apr 2023</p>
+                    </div>
+                    <div class="text-left md:text-right flex-shrink-0">
+                        <div class="font-serif text-6xl text-brand-accent leading-none mb-1 accent-glow">21×</div>
+                        <div class="font-mono text-[9px] tracking-[0.18em] uppercase text-brand-faint">Peak ROAS</div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-px bg-brand-border mb-6">
+                    <div class="bg-brand-surface p-6">
+                        <div class="font-mono text-[9px] tracking-[0.22em] uppercase text-brand-faint mb-5">Before (Apr 2022)</div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>Conversion Value: $139</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>ROAS: 0.17×</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>Account underperforming</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-muted"><span class="text-brand-faint mt-0.5 flex-shrink-0">—</span>No clear campaign structure</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-surface p-6 border-l-2 border-brand-green/40">
+                        <div class="font-mono text-[9px] tracking-[0.22em] uppercase text-brand-green mb-5">After (Apr 2023)</div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Conversion Value: <strong>$14,201</strong></li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>ROAS: <strong>9.06× aggregate</strong></li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>Peak ROAS: <strong>21.55×</strong></li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>$129.5K total revenue</li>
+                            <li class="flex items-start gap-3 text-sm text-brand-text"><span class="text-brand-green mt-0.5 flex-shrink-0">✓</span>10,117% conversion lift</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-l-2 border-brand-accent pl-5">
+                    <p class="text-sm text-brand-muted leading-relaxed"><span class="text-brand-accent font-semibold">Impact:</span> 7.22× aggregate ROAS over 12 months · 10,117% conversion value increase · Rebuilt campaign infrastructure from ground up</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Highlights Grid -->
+        <div class="grid md:grid-cols-2 gap-px bg-brand-border border border-brand-border">
+            <!-- Healthcare -->
+            <div class="bg-brand-surface-2 p-8 relative case-card-hover reveal">
+                <span class="inline-block font-mono text-[9.5px] tracking-[0.18em] uppercase text-brand-faint border border-brand-border px-3 py-1 mb-6">Healthcare</span>
+                <h4 class="font-serif text-2xl text-brand-text mb-6">California Treatment Center</h4>
+                <div class="space-y-3 mb-6 border-t border-brand-border pt-6">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[10px] tracking-[0.06em] uppercase text-brand-faint">Cost per Lead</span>
+                        <span class="font-mono text-sm text-brand-text">$115 → <strong class="text-brand-green">$54</strong></span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[10px] tracking-[0.06em] uppercase text-brand-faint">CPA Reduction</span>
+                        <span class="font-serif text-2xl text-brand-green">53%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[10px] tracking-[0.06em] uppercase text-brand-faint">Budget Scaled</span>
+                        <span class="font-mono text-sm text-brand-text">$0–$1.2K → <strong>$4K+</strong></span>
+                    </div>
+                </div>
+                <p class="font-mono text-[10.5px] leading-relaxed text-brand-faint tracking-wide">Full call tracking integration · Account rebuild · CallTrackingMetrics setup</p>
+            </div>
+            <!-- B2B Manufacturing -->
+            <div class="bg-brand-surface-2 p-8 relative case-card-hover reveal rd1">
+                <span class="inline-block font-mono text-[9.5px] tracking-[0.18em] uppercase text-brand-faint border border-brand-border px-3 py-1 mb-6">B2B Manufacturing</span>
+                <h4 class="font-serif text-2xl text-brand-text mb-6">Engine Manufacturing</h4>
+                <div class="space-y-3 mb-6 border-t border-brand-border pt-6">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[10px] tracking-[0.06em] uppercase text-brand-faint">ROAS</span>
+                        <span class="font-serif text-2xl text-brand-accent">115×</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[10px] tracking-[0.06em] uppercase text-brand-faint">CPA Reduction</span>
+                        <span class="font-serif text-2xl text-brand-green">39%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[10px] tracking-[0.06em] uppercase text-brand-faint">Total Revenue</span>
+                        <span class="font-mono text-sm text-brand-text font-bold">$551.9M</span>
+                    </div>
+                </div>
+                <p class="font-mono text-[10.5px] leading-relaxed text-brand-faint tracking-wide">$138M net profit · 50% conversion increase · Nov 2023 – Jul 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── HOW I OPERATE ─── -->
+    <section id="operator" class="bg-brand-surface border-y border-brand-border py-24 relative overflow-hidden">
+        <!-- Large bg text -->
+        <div class="absolute bottom-0 left-0 font-serif text-[clamp(80px,18vw,200px)] text-brand-border/40 leading-none pointer-events-none select-none whitespace-nowrap -mb-6 -ml-4">OPERATOR</div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <div class="flex items-center gap-3 mb-8 reveal">
+                    <div class="w-6 h-px bg-brand-accent"></div>
+                    <span class="font-mono text-[10.5px] tracking-[0.22em] uppercase text-brand-accent">How I Operate</span>
+                </div>
+                <h2 class="font-serif text-[clamp(32px,4.5vw,60px)] text-brand-text leading-tight mb-8 reveal">
+                    From playbook to<br/><em class="text-brand-accent">operating partnership.</em>
+                </h2>
+                <p class="text-lg text-brand-muted leading-relaxed mb-6 reveal max-w-2xl">
+                    If you'd rather not own every detail of execution, the same operating principles are what I bring as a paid acquisition systems operator. The goal is simple: <strong class="text-brand-text">install a system that leadership can trust</strong> when scaling spend.
+                </p>
+                <p class="font-mono text-[12px] tracking-[0.08em] text-brand-faint mb-10 reveal">
+                    Not ready for ongoing management? Start with a paid audit.
+                </p>
+                <a href="#contact" class="inline-block font-mono text-[12px] tracking-[0.1em] uppercase bg-brand-accent text-brand-dark px-8 py-4 font-medium hover:bg-brand-accent-bright transition-colors reveal">
+                    Start with a Paid Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="flex items-center gap-3 mb-8 reveal">
+                    <div class="w-6 h-px bg-brand-accent"></div>
+                    <span class="font-mono text-[10.5px] tracking-[0.22em] uppercase text-brand-accent">Contact</span>
+                </div>
+                <h2 class="font-serif text-[clamp(32px,4vw,56px)] text-brand-text leading-tight mb-6 reveal">
+                    Let's <em class="text-brand-accent">talk.</em>
+                </h2>
+                <p class="text-brand-muted leading-relaxed mb-10 reveal max-w-md">
+                    Ready to scale your paid acquisition with a systems operator who's built infrastructure for <strong class="text-brand-text">$550M+ in revenue?</strong>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 reveal">
+                    <a href="https://hanslacida.com" target="_blank" class="font-mono text-[12px] tracking-[0.1em] uppercase bg-brand-accent text-brand-dark px-7 py-4 font-medium hover:bg-brand-accent-bright transition-colors text-center">
+                        Visit hanslacida.com
+                    </a>
+                    <a href="https://zeldigital.com" target="_blank" class="font-mono text-[12px] tracking-[0.1em] uppercase border border-brand-border-light text-brand-muted px-7 py-4 hover:border-brand-muted hover:text-brand-text transition-all text-center">
+                        Visit zeldigital.com
+                    </a>
+                </div>
+            </div>
+            <!-- Contact info panel -->
+            <div class="border border-brand-border bg-brand-surface-2 relative reveal rd2">
+                <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-accent to-transparent"></div>
+                <div class="p-8">
+                    <div class="font-mono text-[9px] tracking-[0.22em] uppercase text-brand-faint mb-6">What We Cover</div>
+                    <div class="font-serif text-2xl text-brand-text mb-4">15-Min Fit Call</div>
+                    <p class="text-sm text-brand-muted leading-relaxed mb-8">An honest 15-minute conversation. I need to understand your situation before I can tell you whether I can help.</p>
+                    <div class="space-y-0 border-t border-brand-border">
+                        <div class="flex items-start gap-4 py-4 border-b border-brand-border">
+                            <span class="font-mono text-[10px] text-brand-accent mt-0.5 flex-shrink-0">01</span>
+                            <span class="text-sm text-brand-muted">Your current acquisition setup and what's broken</span>
+                        </div>
+                        <div class="flex items-start gap-4 py-4 border-b border-brand-border">
+                            <span class="font-mono text-[10px] text-brand-accent mt-0.5 flex-shrink-0">02</span>
+                            <span class="text-sm text-brand-muted">Monthly ad spend and revenue targets</span>
+                        </div>
+                        <div class="flex items-start gap-4 py-4 border-b border-brand-border">
+                            <span class="font-mono text-[10px] text-brand-accent mt-0.5 flex-shrink-0">03</span>
+                            <span class="text-sm text-brand-muted">Where the bottleneck is — tracking, structure, budget, or strategy</span>
+                        </div>
+                        <div class="flex items-start gap-4 py-4">
+                            <span class="font-mono text-[10px] text-brand-accent mt-0.5 flex-shrink-0">04</span>
+                            <span class="text-sm text-brand-muted">Whether an acquisition system is the right next move</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── DISCLAIMERS ─── -->
+    <section class="border-t border-brand-border bg-brand-surface">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <h3 class="font-mono text-[9px] tracking-[0.22em] uppercase text-brand-faint mb-6">Important Notes & Disclaimers</h3>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-3 max-w-5xl">
+                <p class="font-mono text-[10px] leading-relaxed text-brand-faint tracking-wide">All case studies use anonymized client data for public showcase. No proprietary, personally identifiable, or sensitive information is disclosed.</p>
+                <p class="font-mono text-[10px] leading-relaxed text-brand-faint tracking-wide">All performance figures (ROAS, CPA, revenue, leads, etc.) are specific to the individual accounts and timeframes shown.</p>
+                <p class="font-mono text-[10px] leading-relaxed text-brand-faint tracking-wide">Before/After results, including peak ROAS numbers (70×, 21×), are not guarantees of future performance and may not be typical.</p>
+                <p class="font-mono text-[10px] leading-relaxed text-brand-faint tracking-wide">Results vary by industry, budget, seasonality, offer, landing pages, and broader market conditions.</p>
+                <p class="font-mono text-[10px] leading-relaxed text-brand-faint tracking-wide">ROAS and revenue figures are rounded for readability; currency values are approximate where ranges are shown.</p>
+                <p class="font-mono text-[10px] leading-relaxed text-brand-faint tracking-wide">All performance data is sourced from internal Google Ads and analytics reports available at the time of management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="border-t border-brand-border bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+                <div class="font-serif text-xl text-brand-text">Hans<span class="text-brand-accent">.</span>Lacida</div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#operator" class="font-mono text-[10px] tracking-[0.14em] uppercase text-brand-faint hover:text-brand-muted transition-colors">Operator</a>
+                    <a href="#results" class="font-mono text-[10px] tracking-[0.14em] uppercase text-brand-faint hover:text-brand-muted transition-colors">Results</a>
+                    <a href="#contact" class="font-mono text-[10px] tracking-[0.14em] uppercase text-brand-faint hover:text-brand-muted transition-colors">Contact</a>
+                    <a href="https://zeldigital.com" target="_blank" class="font-mono text-[10px] tracking-[0.14em] uppercase text-brand-faint hover:text-brand-muted transition-colors">ZELDIGITAL</a>
+                </div>
+            </div>
+            <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div class="font-mono text-[10.5px] tracking-[0.06em] text-brand-faint">
+                    © 2025 Hans Lacida · Google Ads Strategist and Growth Partner
+                </div>
+                <div class="font-mono text-[10px] tracking-[0.06em] text-brand-faint">
+                    ZELDIGITAL<sup>®</sup> Marketing Services OPC × KaizenStrategys Solutions LLC
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
