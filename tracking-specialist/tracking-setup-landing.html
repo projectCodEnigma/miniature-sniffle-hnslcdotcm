@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server-Side Tracking & Conversion Setup Specialist | Fix Google Ads Tracking Issues</title>
+    <meta name="description" content="Expert server-side tracking implementation for Shopify & eCommerce. Fix broken Google Ads conversion tracking, iOS 14 issues, GA4 setup, and attribution problems. Get tracking working in 48 hours.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #151b2e;
+            --accent-green: #00ff88;
+            --accent-cyan: #00d4ff;
+            --text-primary: #ffffff;
+            --text-secondary: #8b92a7;
+            --border-color: #1f2937;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-box {
+            position: relative;
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+        }
+        
+        .glow-box::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: -1;
+        }
+        
+        .glow-box:hover::before {
+            opacity: 0.1;
+        }
+        
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .pulse-dot {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .terminal-window {
+            background: #1a1f2e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .terminal-header {
+            background: #0d1117;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="grid-bg">
+    
+    <!-- Header -->
+    <header class="border-b border-gray-800 bg-opacity-90 backdrop-blur-sm sticky top-0 z-50" style="background: rgba(10, 14, 26, 0.95);">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-cyan-400 rounded-lg flex items-center justify-center">
+                    <span class="text-black font-bold text-xl">HL</span>
+                </div>
+                <span class="font-bold text-xl">Hans Lacida</span>
+                <span class="text-xs mono text-gray-500 hidden sm:inline">/ TRACKING SPECIALIST</span>
+            </div>
+            <a href="#book-call" class="text-sm font-semibold px-6 py-2 rounded-lg border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all">
+                Book Emergency Call
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 pt-20 pb-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-400/30 bg-green-400/5 mb-6 slide-up">
+                    <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
+                    <span class="text-sm mono text-green-400">TRACKING EMERGENCY RESPONSE</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight slide-up delay-1">
+                    Your Google Ads Tracking Is <span class="gradient-text">Broken.</span><br>
+                    I'll Fix It in 48 Hours.
+                </h1>
+                
+                <p class="text-xl text-gray-400 mb-8 slide-up delay-2">
+                    Server-side tracking specialist for Shopify & eCommerce brands losing revenue to iOS 14, broken conversions, and attribution chaos. <span class="text-white font-semibold">Former Google Account Strategist</span> with 10+ years fixing what others can't.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-12 slide-up delay-3">
+                    <a href="#book-call" class="cta-button text-black font-bold px-8 py-4 rounded-lg text-center">
+                        Get Tracking Fixed Now →
+                    </a>
+                    <a href="#how-it-works" class="border border-gray-700 font-semibold px-8 py-4 rounded-lg hover:border-gray-500 transition-all text-center">
+                        See How It Works
+                    </a>
+                </div>
+                
+                <div class="flex gap-8 slide-up delay-4">
+                    <div>
+                        <div class="stat-number gradient-text">48hr</div>
+                        <div class="text-sm text-gray-500 mono">TURNAROUND</div>
+                    </div>
+                    <div>
+                        <div class="stat-number gradient-text">10+</div>
+                        <div class="text-sm text-gray-500 mono">YEARS EXPERIENCE</div>
+                    </div>
+                    <div>
+                        <div class="stat-number gradient-text">$550M+</div>
+                        <div class="text-sm text-gray-500 mono">AD SPEND MANAGED</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide-up delay-2">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dot bg-red-500"></div>
+                        <div class="terminal-dot bg-yellow-500"></div>
+                        <div class="terminal-dot bg-green-500"></div>
+                        <span class="text-xs text-gray-500 ml-2 mono">tracking-diagnostic.js</span>
+                    </div>
+                    <div class="p-6 mono text-sm space-y-3">
+                        <div class="text-red-400">⚠️ CRITICAL ISSUES DETECTED</div>
+                        <div class="text-gray-400">├─ <span class="text-red-400">[ERROR]</span> Server-side container: NOT CONFIGURED</div>
+                        <div class="text-gray-400">├─ <span class="text-red-400">[ERROR]</span> Enhanced Conversions: MISSING</div>
+                        <div class="text-gray-400">├─ <span class="text-yellow-400">[WARN]</span> iOS 14 attribution: <span class="text-yellow-400">62% data loss</span></div>
+                        <div class="text-gray-400">├─ <span class="text-red-400">[ERROR]</span> GA4 eCommerce events: BROKEN</div>
+                        <div class="text-gray-400">├─ <span class="text-yellow-400">[WARN]</span> Consent Mode v2: NOT IMPLEMENTED</div>
+                        <div class="text-gray-400">└─ <span class="text-red-400">[ERROR]</span> First-party data: UNUSED</div>
+                        <div class="mt-4 text-green-400">✓ Solution: Server-side migration + enhanced setup</div>
+                        <div class="text-green-400">✓ Expected recovery: 40-60% conversion visibility</div>
+                        <div class="text-gray-600 mt-4">// This is what I fix every day...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Sound Familiar?</h2>
+            <p class="text-xl text-gray-400">These are the tracking disasters I fix daily</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glow-box p-6 rounded-lg">
+                <div class="text-3xl mb-4">🔥</div>
+                <h3 class="text-xl font-bold mb-3">"My conversions disappeared after iOS 14"</h3>
+                <p class="text-gray-400 mb-4">Your ROAS tanked. Attribution is broken. You're flying blind because client-side tracking can't survive Apple's privacy updates.</p>
+                <div class="text-sm mono text-green-400">→ Server-side tracking fix</div>
+            </div>
+            
+            <div class="glow-box p-6 rounded-lg">
+                <div class="text-3xl mb-4">⚠️</div>
+                <h3 class="text-xl font-bold mb-3">"Google Ads shows 0 conversions but I'm getting sales"</h3>
+                <p class="text-gray-400 mb-4">Shopify shows orders. Google Ads shows nothing. Your conversion tag is firing into the void and you can't optimize anything.</p>
+                <div class="text-sm mono text-green-400">→ Conversion tracking audit</div>
+            </div>
+            
+            <div class="glow-box p-6 rounded-lg">
+                <div class="text-3xl mb-4">📉</div>
+                <h3 class="text-xl font-bold mb-3">"GA4 eCommerce events aren't working"</h3>
+                <p class="text-gray-400 mb-4">You migrated to GA4 but purchase events never fire correctly. Revenue data is garbage. Reporting is useless.</p>
+                <div class="text-sm mono text-green-400">→ GA4 setup specialist</div>
+            </div>
+            
+            <div class="glow-box p-6 rounded-lg">
+                <div class="text-3xl mb-4">🎯</div>
+                <h3 class="text-xl font-bold mb-3">"I need Enhanced Conversions but don't know how"</h3>
+                <p class="text-gray-400 mb-4">Google keeps telling you to set it up. You've tried. It's still not working. You need someone who actually knows GTM server-side.</p>
+                <div class="text-sm mono text-green-400">→ Enhanced conversions setup</div>
+            </div>
+            
+            <div class="glow-box p-6 rounded-lg">
+                <div class="text-3xl mb-4">🔀</div>
+                <h3 class="text-xl font-bold mb-3">"Attribution is completely wrong"</h3>
+                <p class="text-gray-400 mb-4">Last-click shows Facebook winning. Google claims credit. Nothing matches Shopify. You can't make budget decisions.</p>
+                <div class="text-sm mono text-green-400">→ Attribution modeling fix</div>
+            </div>
+            
+            <div class="glow-box p-6 rounded-lg">
+                <div class="text-3xl mb-4">🚨</div>
+                <h3 class="text-xl font-bold mb-3">"Consent Mode v2 deadline passed and I'm not compliant"</h3>
+                <p class="text-gray-400 mb-4">March 2024 came and went. You're losing European traffic data. Your tracking is broken for 30% of visitors.</p>
+                <div class="text-sm mono text-green-400">→ Consent Mode v2 implementation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="how-it-works" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <div class="inline-block mono text-sm text-green-400 border border-green-400/30 px-4 py-2 rounded-full mb-4">
+                SERVICES
+            </div>
+            <h2 class="text-4xl font-bold mb-4">What I Actually Fix</h2>
+            <p class="text-xl text-gray-400">Specialized tracking infrastructure for Shopify & eCommerce</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Server-Side Tracking -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 hover:border-green-400/30 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-2xl font-bold">Server-Side Tracking</h3>
+                    <span class="text-xs mono text-green-400 bg-green-400/10 px-3 py-1 rounded-full">TIER 1</span>
+                </div>
+                <p class="text-gray-400 mb-6">Complete GTM server-side container setup with Stape implementation. Recover 40-60% of lost iOS 14 conversion data.</p>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Server-side GTM container configuration</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Stape.io or Google Cloud setup</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Enhanced Conversions implementation</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">First-party data enrichment</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Consent Mode v2 compliance</div>
+                    </div>
+                </div>
+                
+                <div class="text-sm text-gray-500 mb-4">Deliverable: 48hr</div>
+            </div>
+            
+            <!-- Conversion Tracking Fix -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 hover:border-green-400/30 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-2xl font-bold">Conversion Tracking Audit & Fix</h3>
+                    <span class="text-xs mono text-green-400 bg-green-400/10 px-3 py-1 rounded-full">TIER 1</span>
+                </div>
+                <p class="text-gray-400 mb-6">Deep-dive diagnostic + implementation fix for broken Google Ads and GA4 conversion tracking on Shopify stores.</p>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Complete tracking audit (Ads + GA4)</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">GTM container cleanup & rebuild</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">GA4 eCommerce events setup</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Test purchase validation</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Documentation & handoff</div>
+                    </div>
+                </div>
+                
+                <div class="text-sm text-gray-500 mb-4">Deliverable: 24-48hr</div>
+            </div>
+            
+            <!-- Attribution & Measurement -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 hover:border-green-400/30 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-2xl font-bold">Attribution & Data Infrastructure</h3>
+                    <span class="text-xs mono text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">ADVANCED</span>
+                </div>
+                <p class="text-gray-400 mb-6">Multi-touch attribution modeling, CRM integration, offline conversion import, and Customer Match implementation.</p>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Data-driven attribution setup</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">CRM → Google Ads integration</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Offline conversion import (phone/stores)</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">Customer Match audience building</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-green-400 mt-1">✓</div>
+                        <div class="text-sm">First-party data strategy</div>
+                    </div>
+                </div>
+                
+                <div class="text-sm text-gray-500 mb-4">Deliverable: 3-5 days</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Me Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="bg-gradient-to-br from-green-400/10 to-cyan-400/10 border border-green-400/20 rounded-2xl p-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Why I'm Different</h2>
+                    <p class="text-xl text-gray-300 mb-8">I'm not a generalist who "does tracking too." I'm a former Google Account Strategist who spent 10+ years living inside Google Ads and GTM infrastructure.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="text-green-400 text-2xl">→</div>
+                            <div>
+                                <div class="font-bold mb-1">Former Google Account Strategist</div>
+                                <div class="text-gray-400 text-sm">I trained advertisers on Google's own products. I know the platform from the inside.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="text-green-400 text-2xl">→</div>
+                            <div>
+                                <div class="font-bold mb-1">10+ Years Google Ads Specialist</div>
+                                <div class="text-gray-400 text-sm">Not a marketer who runs ads. A specialist who builds tracking systems that actually work.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="text-green-400 text-2xl">→</div>
+                            <div>
+                                <div class="font-bold mb-1">$550M+ Ad Spend Managed</div>
+                                <div class="text-gray-400 text-sm">Across eCommerce, healthcare, B2B SaaS, legal, and home services verticals.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="text-green-400 text-2xl">→</div>
+                            <div>
+                                <div class="font-bold mb-1">Server-Side Specialist Since 2021</div>
+                                <div class="text-gray-400 text-sm">Been setting up sGTM before most people knew it existed. Deep Stape.io and GCP expertise.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">Recent Results</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-green-400 pl-4">
+                            <div class="text-sm text-gray-500 mb-1">Shopify Home Decor Brand</div>
+                            <div class="font-bold text-lg mb-1">Recovered 58% of lost iOS conversions</div>
+                            <div class="text-sm text-gray-400">Server-side migration + Enhanced Conversions → went from 23% to 81% conversion visibility</div>
+                        </div>
+                        
+                        <div class="border-l-2 border-cyan-400 pl-4">
+                            <div class="text-sm text-gray-500 mb-1">B2B SaaS ($15K ACV)</div>
+                            <div class="font-bold text-lg mb-1">Fixed broken lead tracking in 36 hours</div>
+                            <div class="text-sm text-gray-400">CRM integration + offline conversion import → proper attribution for sales pipeline</div>
+                        </div>
+                        
+                        <div class="border-l-2 border-green-400 pl-4">
+                            <div class="text-sm text-gray-500 mb-1">Health Supplement eComm</div>
+                            <div class="font-bold text-lg mb-1">GA4 eCommerce setup from scratch</div>
+                            <div class="text-sm text-gray-400">Full event tracking + purchase validation → 100% revenue tracking accuracy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">How It Works</h2>
+            <p class="text-xl text-gray-400">From broken tracking to working infrastructure in 48 hours</p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-2xl">1</div>
+                <h3 class="font-bold text-xl mb-2">Emergency Audit</h3>
+                <p class="text-gray-400 text-sm">I diagnose your exact tracking issues. You get a Loom walkthrough showing what's broken and why.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-2xl">2</div>
+                <h3 class="font-bold text-xl mb-2">Implementation</h3>
+                <p class="text-gray-400 text-sm">I build server-side tracking, fix broken tags, set up Enhanced Conversions, and get GA4 working properly.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-2xl">3</div>
+                <h3 class="font-bold text-xl mb-2">Testing & Validation</h3>
+                <p class="text-gray-400 text-sm">Test purchases, conversion validation, QA checks. Nothing goes live until it's bulletproof.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-black font-bold text-2xl">4</div>
+                <h3 class="font-bold text-xl mb-2">Handoff & Support</h3>
+                <p class="text-gray-400 text-sm">Full documentation, walkthrough video, and 14 days of monitoring. You're never left hanging.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="book-call" class="max-w-4xl mx-auto px-6 py-20">
+        <div class="bg-gradient-to-br from-green-400/20 to-cyan-400/20 border-2 border-green-400 rounded-2xl p-12 text-center">
+            <h2 class="text-4xl font-bold mb-4">Stop Losing Revenue to Broken Tracking</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Every day without proper tracking is money left on the table. Book a 30-minute emergency diagnostic and I'll show you exactly what's broken and how to fix it.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://cal.com/hanslacida" target="_blank" class="cta-button text-black font-bold px-10 py-5 rounded-lg text-lg">
+                    Book Emergency Call (30 min) →
+                </a>
+                <a href="mailto:hans@zeldigital.com" class="border-2 border-white font-semibold px-10 py-5 rounded-lg hover:bg-white hover:text-black transition-all text-lg">
+                    Email: hans@zeldigital.com
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center gap-8 text-sm text-gray-400">
+                <div class="flex items-center gap-2">
+                    <span class="text-green-400">✓</span>
+                    <span>48hr turnaround</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-green-400">✓</span>
+                    <span>No retainers</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-green-400">✓</span>
+                    <span>14-day support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold mb-12 text-center">Common Questions</h2>
+        
+        <div class="space-y-6">
+            <details class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 cursor-pointer hover:border-gray-700">
+                <summary class="font-bold text-lg">How long does server-side tracking setup take?</summary>
+                <p class="text-gray-400 mt-4">Typical turnaround is 48 hours from the moment I get access to your GTM and Shopify. I'll have you up and running before the weekend.</p>
+            </details>
+            
+            <details class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 cursor-pointer hover:border-gray-700">
+                <summary class="font-bold text-lg">Do you work with platforms other than Shopify?</summary>
+                <p class="text-gray-400 mt-4">Yes. I specialize in Shopify but also work with WooCommerce, BigCommerce, custom builds, and lead-gen funnels. If it runs Google Ads, I can fix the tracking.</p>
+            </details>
+            
+            <details class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 cursor-pointer hover:border-gray-700">
+                <summary class="font-bold text-lg">What's included in the conversion tracking audit?</summary>
+                <p class="text-gray-400 mt-4">Full diagnostic of your Google Ads conversion tracking, GA4 setup, GTM container, and data layer implementation. You get a Loom walkthrough showing exactly what's broken and a prioritized fix list.</p>
+            </details>
+            
+            <details class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 cursor-pointer hover:border-gray-700">
+                <summary class="font-bold text-lg">Will this work for iOS 14 issues?</summary>
+                <p class="text-gray-400 mt-4">Server-side tracking is the ONLY real solution to iOS 14 tracking loss. You'll typically recover 40-60% of lost conversion visibility. It's not perfect, but it's as good as it gets right now.</p>
+            </details>
+            
+            <details class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 cursor-pointer hover:border-gray-700">
+                <summary class="font-bold text-lg">What if I need ongoing support after setup?</summary>
+                <p class="text-gray-400 mt-4">All setups include 14 days of monitoring and bug fixes. After that, you can book me on a retainer for monthly maintenance, or just ping me when you need help. No forced contracts.</p>
+            </details>
+            
+            <details class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 cursor-pointer hover:border-gray-700">
+                <summary class="font-bold text-lg">How much does this cost?</summary>
+                <p class="text-gray-400 mt-4">Server-side setup starts at $2,500. Conversion tracking audits are $750. Attribution infrastructure projects are quoted based on scope. Book a call and I'll give you exact pricing based on your situation.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="font-bold text-xl mb-4">Hans Lacida</div>
+                    <p class="text-gray-400 text-sm">Server-Side Tracking & Conversion Setup Specialist for Shopify & eCommerce brands.</p>
+                </div>
+                
+                <div>
+                    <div class="font-bold mb-4">Services</div>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <div>Server-Side Tracking Setup</div>
+                        <div>Conversion Tracking Audit</div>
+                        <div>GA4 eCommerce Setup</div>
+                        <div>Enhanced Conversions</div>
+                        <div>Attribution Modeling</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="font-bold mb-4">Contact</div>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <div>Email: hans@zeldigital.com</div>
+                        <div>Website: hanslacida.com</div>
+                        <div>Agency: zeldigital.com</div>
+                        <div>LinkedIn: /in/hanslacida</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2024 Zeldigital. All rights reserved. | Former Google Account Strategist | 10+ Years Google Ads Specialist</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
