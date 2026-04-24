@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taikun Digital vs ZELDIGITAL — NYC Agency vs Fractional Google Ads Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0a0a;--bg-2:#111111;--bg-3:#161616;--surface:#1a1a1a;
+    --border:#242424;--border-light:#2e2e2e;
+    --text-primary:#f0ede8;--text-secondary:#9a9690;--text-muted:#5a5754;
+    --accent:#c8a96e;--accent-dim:rgba(200,169,110,0.12);--accent-bright:#e2c48a;
+    --green:#6ba88a;
+    --mono:'JetBrains Mono',monospace;--serif:'DM Serif Display',serif;--sans:'Syne',sans-serif;
+    --taikun:#6366f1;--zel:#E8390E;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text-primary);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.35;}
+
+  /* ─── NAV ─── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:var(--serif);font-size:18px;color:var(--text-primary);text-decoration:none;letter-spacing:.01em;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+  .nav-links a{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color .2s;}
+  .nav-links a:hover{color:var(--text-primary);}
+  .nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)!important;border:1px solid var(--accent);padding:8px 16px;text-decoration:none;transition:background .2s,color .2s!important;}
+  .nav-cta:hover{background:var(--accent)!important;color:var(--bg)!important;}
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1px solid var(--border-light);cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-hamburger span{display:block;width:18px;height:1px;background:var(--text-secondary);transition:transform .3s ease,opacity .3s ease,width .3s ease;transform-origin:center;}
+  .nav-hamburger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .nav-hamburger.is-open span:nth-child(2){opacity:0;width:0;}
+  .nav-hamburger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  /* MOBILE DRAWER */
+  .mobile-nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,88vw);background:var(--bg-2);border-left:1px solid var(--border);z-index:950;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow-y:auto;}
+  .mobile-nav.is-open{transform:translateX(0);}
+  .mobile-nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(2px);z-index:940;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .mobile-nav-overlay.is-open{opacity:1;pointer-events:all;}
+  .mobile-nav-inner{display:flex;flex-direction:column;height:100%;}
+  .mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:64px;border-bottom:1px solid var(--border);flex-shrink:0;}
+  .mobile-nav-close{background:transparent;border:1px solid var(--border-light);color:var(--text-muted);width:36px;height:36px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:color .2s,border-color .2s;}
+  .mobile-nav-close:hover{color:var(--text-primary);border-color:var(--text-secondary);}
+  .mobile-nav-links{list-style:none;padding:8px 0;flex-shrink:0;}
+  .mobile-nav-links li a{display:block;padding:16px 24px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,background .2s;}
+  .mobile-nav-links li:first-child a{border-top:1px solid var(--border);}
+  .mobile-nav-links li a:hover{color:var(--text-primary);background:var(--bg-3);}
+  .mobile-nav-links li a::before{content:'→ ';color:var(--accent);opacity:.6;}
+  .mobile-nav-ctas{display:flex;flex-direction:column;gap:12px;padding:24px;flex-shrink:0;}
+  .mobile-nav-footer{margin-top:auto;padding:20px 24px;border-top:1px solid var(--border);}
+  .mobile-nav-footer span{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);line-height:1.8;}
+
+  /* BUTTONS */
+  .btn-primary{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bg);background:var(--accent);border:1px solid var(--accent);padding:14px 28px;text-decoration:none;font-weight:500;transition:background .2s,color .2s;cursor:pointer;display:inline-block;}
+  .btn-primary:hover{background:var(--accent-bright);border-color:var(--accent-bright);}
+  .btn-ghost{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);background:transparent;border:1px solid var(--border-light);padding:14px 28px;text-decoration:none;transition:border-color .2s,color .2s;cursor:pointer;display:inline-block;}
+  .btn-ghost:hover{border-color:var(--text-secondary);color:var(--text-primary);}
+
+  /* ─── TICKER ─── */
+  .ticker{background:var(--bg-2);border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap;margin-top:64px;}
+  .ticker-inner{display:inline-flex;animation:ticker 30s linear infinite;}
+  .ticker-item{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:.65rem 2.5rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:1.5rem;}
+  .ticker-sep{color:var(--accent);}
+  @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ─── HERO ─── */
+  .page-hero{padding:72px 40px 80px;max-width:1200px;margin:0 auto;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:0;left:-100px;width:500px;height:600px;background:radial-gradient(ellipse,rgba(99,102,241,.08) 0%,transparent 70%);pointer-events:none;}
+  .page-hero::after{content:'';position:absolute;top:0;right:-100px;width:500px;height:600px;background:radial-gradient(ellipse,rgba(232,57,14,.07) 0%,transparent 70%);pointer-events:none;}
+
+  .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:32px;animation:fadeUp .6s ease .1s both;}
+  .hero-eyebrow-line{width:32px;height:1px;background:var(--accent);}
+  .hero-eyebrow span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);}
+
+  .hero-vs-row{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:center;margin-bottom:32px;animation:fadeUp .7s ease .2s both;}
+  .hero-brand-block{position:relative;}
+  .hero-brand-block.left{text-align:left;}
+  .hero-brand-block.right{text-align:right;}
+  .hero-brand-name{font-family:var(--serif);font-size:clamp(36px,5.5vw,72px);line-height:.95;letter-spacing:-.02em;}
+  .hero-brand-name.taikun{color:var(--taikun);}
+  .hero-brand-name.zel{color:var(--zel);}
+  .hero-brand-type{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;}
+  .hero-brand-type.taikun{color:rgba(99,102,241,.6);}
+  .hero-brand-type.zel{color:rgba(232,57,14,.6);}
+  .vs-divider{display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 32px;}
+  .vs-word{font-family:var(--mono);font-size:10px;letter-spacing:.25em;color:var(--text-muted);text-transform:uppercase;}
+  .vs-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--border),transparent);}
+
+  .hero-sub{font-family:var(--sans);font-size:16px;color:var(--text-secondary);max-width:680px;line-height:1.75;margin-bottom:48px;animation:fadeUp .6s ease .35s both;}
+  .hero-sub strong{color:var(--text-primary);}
+
+  /* STAT COMPARE ROW */
+  .stat-compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);animation:fadeUp .8s ease .45s both;}
+  .stat-half{background:var(--bg-3);padding:28px 32px;position:relative;}
+  .stat-half::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+  .stat-half.taikun::before{background:var(--taikun);}
+  .stat-half.zel::before{background:var(--zel);}
+  .sh-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+  .sh-stats{display:flex;gap:28px;flex-wrap:wrap;}
+  .sh-stat{display:flex;flex-direction:column;gap:3px;}
+  .sh-num{font-family:var(--serif);font-size:26px;line-height:1;}
+  .sh-num.taikun{color:var(--taikun);}
+  .sh-num.zel{color:var(--zel);}
+  .sh-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--text-muted);text-transform:uppercase;}
+
+  /* ─── OVERVIEW CARDS ─── */
+  .brand-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+  .brand-card{background:var(--bg-3);padding:36px 32px;position:relative;transition:background .2s;}
+  .brand-card:hover{background:var(--surface);}
+  .bc-tag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;margin-bottom:16px;display:inline-block;border-radius:100px;}
+  .bc-tag.taikun{color:var(--taikun);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);}
+  .bc-tag.zel{color:var(--zel);background:rgba(232,57,14,.1);border:1px solid rgba(232,57,14,.2);}
+  .bc-name{font-family:var(--serif);font-size:28px;line-height:1;margin-bottom:10px;}
+  .bc-name.taikun{color:var(--taikun);}
+  .bc-name.zel{color:var(--zel);}
+  .bc-loc{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--text-muted);text-transform:uppercase;margin-bottom:14px;}
+  .bc-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.72;}
+  .bc-desc strong{color:var(--text-primary);}
+
+  /* ─── SECTIONS ─── */
+  .content-section{max-width:1200px;margin:0 auto;padding:80px 40px;}
+  .section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:48px;}
+  .section-eyebrow-line{width:24px;height:1px;background:var(--accent);}
+  .section-eyebrow span{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .section-title{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);color:var(--text-primary);line-height:1.1;margin-bottom:16px;}
+  .section-title em{font-style:italic;color:var(--accent);}
+  hr.div{border:none;border-top:1px solid var(--border);margin:0 40px;}
+
+  /* ─── TABLE ─── */
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);background:var(--bg-2);}
+  table{width:100%;border-collapse:collapse;min-width:700px;}
+  thead{background:var(--bg-3);border-bottom:1px solid var(--border);}
+  thead th{padding:20px 24px;text-align:left;font-weight:400;}
+  thead th:first-child{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;width:18%;}
+  .th-brand{font-family:var(--serif);font-size:22px;display:block;line-height:1;}
+  .th-brand.taikun{color:var(--taikun);}
+  .th-brand.zel{color:var(--zel);}
+  .th-sub{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-muted);text-transform:uppercase;display:block;margin-top:4px;}
+  tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+  tbody tr:last-child{border-bottom:none;}
+  tbody tr:hover{background:var(--bg-3);}
+  tbody td{padding:18px 24px;vertical-align:top;font-size:13.5px;color:var(--text-secondary);line-height:1.65;}
+  tbody td:first-child{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--text-primary);letter-spacing:.06em;text-transform:uppercase;}
+  tbody td strong{color:var(--text-primary);}
+  .sbadge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;margin-top:6px;border-radius:2px;margin-right:4px;}
+  .sbadge.taikun{background:rgba(99,102,241,.1);color:var(--taikun);border:1px solid rgba(99,102,241,.2);}
+  .sbadge.zel{background:rgba(232,57,14,.1);color:var(--zel);border:1px solid rgba(232,57,14,.2);}
+  .sbadge.gold{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(200,169,110,.25);}
+
+  /* ─── CHOOSE ─── */
+  .choose-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:40px;}
+  .choose-card{background:var(--bg-2);padding:44px 36px;position:relative;transition:background .2s;}
+  .choose-card:hover{background:var(--bg-3);}
+  .choose-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;transition:width .4s ease;}
+  .choose-card:hover::before{width:100%;}
+  .choose-card.taikun::before{background:var(--taikun);}
+  .choose-card.zel::before{background:var(--zel);}
+  .choose-brand{font-family:var(--serif);font-size:28px;line-height:1;margin-bottom:6px;}
+  .choose-brand.taikun{color:var(--taikun);}
+  .choose-brand.zel{color:var(--zel);}
+  .choose-type{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--text-muted);text-transform:uppercase;margin-bottom:24px;}
+  .choose-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .choose-list li{font-size:14px;color:var(--text-secondary);padding-left:20px;position:relative;line-height:1.6;}
+  .choose-list li::before{content:'→';position:absolute;left:0;font-size:11px;}
+  .choose-card.taikun .choose-list li::before{color:var(--taikun);}
+  .choose-card.zel .choose-list li::before{color:var(--zel);}
+  .choose-list li strong{color:var(--text-primary);}
+
+  /* ─── VERDICT ─── */
+  .verdict-bg{background:var(--bg-3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:40px;}
+  .verdict-card{padding:44px 36px;background:var(--bg-2);}
+  .verdict-card.taikun{border-left:3px solid var(--taikun);}
+  .verdict-card.zel{border-left:3px solid var(--zel);}
+  .verdict-if{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;margin-bottom:12px;}
+  .verdict-cond{font-size:14.5px;color:var(--text-secondary);line-height:1.65;margin-bottom:24px;}
+  .verdict-then{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;}
+  .verdict-winner{font-family:var(--serif);font-size:32px;line-height:1;display:block;margin-bottom:20px;}
+  .verdict-winner.taikun{color:var(--taikun);}
+  .verdict-winner.zel{color:var(--zel);}
+  .verdict-link{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:gap .2s;}
+  .verdict-link:hover{gap:14px;}
+  .combo-tip{margin-top:48px;padding:28px 36px;border:1px solid rgba(200,169,110,.2);background:rgba(200,169,110,.05);display:flex;gap:16px;}
+  .combo-tip-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+  .combo-tip p{font-size:14px;color:var(--text-secondary);line-height:1.7;}
+  .combo-tip strong{color:var(--accent);}
+  .cta-strip{display:flex;gap:16px;flex-wrap:wrap;margin-top:48px;}
+
+  /* ─── FOOTER ─── */
+  footer{border-top:1px solid var(--border);background:var(--bg);padding:56px 40px 40px;max-width:1200px;margin:0 auto;}
+  .footer-grid{display:grid;grid-template-columns:1fr auto auto auto;gap:60px;align-items:start;margin-bottom:48px;}
+  .footer-brand{font-family:var(--serif);font-size:22px;color:var(--text-primary);margin-bottom:10px;}
+  .footer-brand span{color:var(--accent);}
+  .footer-tagline{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);line-height:1.6;}
+  .footer-col-title{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-family:var(--sans);font-size:13.5px;color:var(--text-secondary);text-decoration:none;transition:color .2s;}
+  .footer-links a:hover{color:var(--text-primary);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:28px;display:flex;justify-content:space-between;align-items:center;}
+  .footer-copy{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--text-muted);}
+  .footer-proposal{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border:1px solid var(--border);padding:8px 14px;transition:all .2s;}
+  .footer-proposal:hover{color:var(--accent);border-color:var(--accent);}
+
+  /* ─── UTIL ─── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}
+  .cursor-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;}
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:900px){
+    nav{padding:0 24px;}
+    .nav-links{display:none;}
+    .nav-hamburger{display:flex;}
+    .page-hero,.content-section{padding-left:24px;padding-right:24px;}
+    .hero-vs-row{grid-template-columns:1fr auto 1fr;}
+    .hero-brand-name{font-size:clamp(28px,7vw,48px);}
+    .stat-compare,.brand-cards,.choose-grid,.verdict-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+    hr.div{margin:0 24px;}
+  }
+  @media(max-width:540px){
+    .hero-vs-row{grid-template-columns:1fr;text-align:center;}
+    .hero-brand-block.right{text-align:center;}
+    .vs-divider{flex-direction:row;padding:16px 0;justify-content:center;}
+    .vs-line{width:40px;height:1px;}
+    footer{padding:40px 24px 32px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="https://zeldigital.com" class="nav-logo">Hans<span>.</span>Lacida</a>
+  <ul class="nav-links">
+    <li><a href="https://zeldigital.com/results/">Results</a></li>
+    <li><a href="https://zeldigital.com/playbook/">Playbook</a></li>
+    <li><a href="https://zeldigital.com/insights/">Insights</a></li>
+    <li><a href="https://zeldigital.com/#contact">Contact</a></li>
+    <li><a href="https://zeldigital.com/#contact" class="nav-cta">Book Fit Call</a></li>
+    <li><a href="https://wa.link/mzywie" class="nav-cta">Chat on WhatsApp</a></li>
+    <li><a href="https://zeldigital.com/wechat/" class="nav-cta">Message on WeChat</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <div class="mobile-nav-header">
+      <a href="https://zeldigital.com" class="nav-logo">Hans<span>.</span>Lacida</a>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="https://zeldigital.com/results/">Results</a></li>
+      <li><a href="https://zeldigital.com/playbook/">Playbook</a></li>
+      <li><a href="https://zeldigital.com/insights/">Insights</a></li>
+      <li><a href="https://zeldigital.com/#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-ctas">
+      <a href="https://zeldigital.com/#contact" class="btn-primary" style="text-align:center;">Book 15-Min Fit Call</a>
+      <a href="https://wa.link/mzywie" class="btn-ghost" style="text-align:center;">Chat on WhatsApp</a>
+    </div>
+    <div class="mobile-nav-footer"><span>Google Ads · Performance Max · Tracking Infrastructure</span></div>
+  </div>
+</div>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- ─── TICKER ─── -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Google Ads Comparison 2026 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Taikun Digital vs ZELDIGITAL <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NYC Full-Service Agency vs Solo Expert <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Manhattan Office vs Fractional Remote <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Which PPC Model Fits Your Business? <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Google Premier Partner vs Independent Specialist <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Multi-Channel vs Google Ads Focus <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Google Ads Comparison 2026 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Taikun Digital vs ZELDIGITAL <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NYC Full-Service Agency vs Solo Expert <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Manhattan Office vs Fractional Remote <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Which PPC Model Fits Your Business? <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Google Premier Partner vs Independent Specialist <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Multi-Channel vs Google Ads Focus <span class="ticker-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<div class="page-hero">
+  <div class="hero-eyebrow">
+    <div class="hero-eyebrow-line"></div>
+    <span>Google Ads Partner Comparison · 2026</span>
+  </div>
+
+  <div class="hero-vs-row">
+    <div class="hero-brand-block left">
+      <div class="hero-brand-name taikun">Taikun<br>Digital</div>
+      <div class="hero-brand-type taikun">Full-Service Agency · Manhattan, NYC</div>
+    </div>
+    <div class="vs-divider">
+      <div class="vs-line"></div>
+      <div class="vs-word">vs</div>
+      <div class="vs-line"></div>
+    </div>
+    <div class="hero-brand-block right">
+      <div class="hero-brand-name zel">ZEL<br>DIGITAL</div>
+      <div class="hero-brand-type zel">Solo Expert · Fractional</div>
+    </div>
+  </div>
+
+  <p class="hero-sub">
+    Both deliver <strong>high-performance Google Ads management</strong> — but they operate in completely different models. One is an established NYC agency with a full team and office. The other is a senior solo expert with direct, hands-on execution. Here's the full breakdown.
+  </p>
+
+  <!-- Stat compare -->
+  <div class="stat-compare">
+    <div class="stat-half taikun">
+      <div class="sh-label">Taikun Digital — Key Stats</div>
+      <div class="sh-stats">
+        <div class="sh-stat"><div class="sh-num taikun">11–20</div><div class="sh-lbl">Team size</div></div>
+        <div class="sh-stat"><div class="sh-num taikun">NYC</div><div class="sh-lbl">Manhattan office</div></div>
+        <div class="sh-stat"><div class="sh-num taikun">Premier</div><div class="sh-lbl">Google Partner</div></div>
+        <div class="sh-stat"><div class="sh-num taikun">Multi</div><div class="sh-lbl">Channel coverage</div></div>
+      </div>
+    </div>
+    <div class="stat-half zel">
+      <div class="sh-label">ZELDIGITAL — Key Stats</div>
+      <div class="sh-stats">
+        <div class="sh-stat"><div class="sh-num zel">10+</div><div class="sh-lbl">Founders trusted</div></div>
+        <div class="sh-stat"><div class="sh-num zel">70×</div><div class="sh-lbl">Peak ROAS</div></div>
+        <div class="sh-stat"><div class="sh-num zel">$300K</div><div class="sh-lbl">/mo budget managed</div></div>
+        <div class="sh-stat"><div class="sh-num zel">10+</div><div class="sh-lbl">Years expertise</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── OVERVIEW ─── -->
+<hr class="div">
+<div class="content-section">
+  <div class="section-eyebrow reveal"><div class="section-eyebrow-line"></div><span>Quick Overview</span></div>
+  <h2 class="section-title reveal">Two Different <em>Approaches.</em></h2>
+
+  <div class="brand-cards reveal" style="margin-top:40px;">
+    <div class="brand-card">
+      <span class="bc-tag taikun">Full-Service Agency</span>
+      <div class="bc-name taikun">Taikun Digital</div>
+      <div class="bc-loc">📍 21 W 46th St, Manhattan, New York</div>
+      <p class="bc-desc">Established NYC digital agency with <strong>11–20 employees</strong> including creative specialists, media buyers, analysts, and account managers. Offers full-funnel PPC management across Google Ads, Meta/Facebook, plus landing page design, creative production, CRO, and SEO. <strong>Google Premier Partner & Meta Business Partner.</strong> Ideal for scaling eCommerce brands (7–8 figures) that want comprehensive multi-channel support and an established agency relationship.</p>
+    </div>
+    <div class="brand-card">
+      <span class="bc-tag zel">Solo Expert · Fractional</span>
+      <div class="bc-name zel">ZELDIGITAL</div>
+      <div class="bc-loc">📍 Philippines-based · U.S. LLC · Since 2022</div>
+      <p class="bc-desc">Run by <strong>Hans "Dexter" Lacida (Hanzel Lacida)</strong> — a senior Google Ads specialist with 10+ years managing up to $300K/month. Offers fractional direct expert management focused on <strong>profit-first Google Ads strategy</strong> (Search, Performance Max, Shopping) with advanced tracking and full-funnel optimization. No layers, no handoffs, no agency overhead. Trusted by 10+ U.S. founders. U.S. LLC ensures seamless client onboarding.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TABLE ─── -->
+<hr class="div">
+<div class="content-section">
+  <div class="section-eyebrow reveal"><div class="section-eyebrow-line"></div><span>Side-by-Side Breakdown</span></div>
+  <h2 class="section-title reveal">The Full <em>Comparison.</em></h2>
+
+  <div class="table-wrap reveal" style="margin-top:40px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th><span class="th-brand taikun">Taikun Digital</span><span class="th-sub">NYC Agency · Full-Service</span></th>
+          <th><span class="th-brand zel">ZELDIGITAL</span><span class="th-sub">Solo Expert · Direct Access</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Business Model</td>
+          <td><strong>Full-service traditional digital agency</strong> with physical Manhattan office and multi-specialist team</td>
+          <td><strong>Solo / fractional specialist</strong> — one expert, not an agency. Personal brand backed by U.S. LLC</td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td>Physical office at <strong>21 W 46th St, Manhattan, New York</strong></td>
+          <td><strong>Philippines-based (Cebu)</strong> with U.S. LLC for seamless U.S. client handling and strong timezone overlap</td>
+        </tr>
+        <tr>
+          <td>Team Size</td>
+          <td><strong>11–20 employees</strong> — creative, media buyers, analysts, account managers</td>
+          <td><strong>Solo operator</strong> with limited support. Direct access to the expert, no junior handlers</td>
+        </tr>
+        <tr>
+          <td>Core Specialty</td>
+          <td>PPC (Google Ads) + <strong>Paid Social (Meta/Facebook)</strong> + Landing Pages + Creative + CRO + SEO</td>
+          <td><strong>Google Ads focused (90%+)</strong> — Strategy, management, optimization, advanced tracking, Performance Max, Shopping</td>
+        </tr>
+        <tr>
+          <td>Target Clients</td>
+          <td>Small to mid-sized businesses, <strong>scaling eCommerce (7–8 figure brands)</strong>, brands needing full-funnel support</td>
+          <td>Growth-minded <strong>U.S. founders, eCommerce, lead gen, retailers</strong>, agencies (white-label/fractional), healthcare, SMEs</td>
+        </tr>
+        <tr>
+          <td>Key Value Prop</td>
+          <td>"Lean, profitable & strategic advertising" with <strong>ruthless testing, clean data, converting creative</strong>
+            <div><span class="sbadge taikun">Google Premier Partner</span><span class="sbadge taikun">Meta Business Partner</span></div>
+          </td>
+          <td><strong>Profit-first Google Ads</strong> (ROAS-focused). No agency bloat, no junior handlers, direct senior execution, lower overhead
+            <div><span class="sbadge zel">Up to 70× ROAS peaks</span><span class="sbadge gold">$300K/mo managed</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Pricing Structure</td>
+          <td>Typical <strong>agency retainers + management fees</strong> (higher due to team overhead, Manhattan office, multiple roles)</td>
+          <td><strong>Fractional / lower-cost model.</strong> More affordable than full agency retainers while delivering senior-level strategy</td>
+        </tr>
+        <tr>
+          <td>Accountability</td>
+          <td><strong>Dedicated account manager + team</strong> (potential for hand-offs between specialists)</td>
+          <td><strong>One accountable specialist (Hans).</strong> Direct access, no layers, personal ownership of results</td>
+        </tr>
+        <tr>
+          <td>Strengths</td>
+          <td>
+            <strong>Full-service capability</strong> — creative production, landing pages, multi-channel (Google + Meta), established NYC presence, partner badges, team bandwidth
+          </td>
+          <td>
+            <strong>Speed, cost-efficiency, deep Google Ads expertise,</strong> transparency, results-oriented (profit over vanity metrics), flexible fractional engagement
+          </td>
+        </tr>
+        <tr>
+          <td>Potential Drawbacks</td>
+          <td><strong>Higher costs,</strong> possible junior staff involvement, slower decision-making due to agency structure</td>
+          <td>Primarily <strong>Google Ads-focused</strong> (less broad paid social/creative unless coordinated), solo bandwidth limits very large enterprise volume</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td>Brands that want a <strong>complete done-for-you agency experience</strong> with creative + multi-platform support in a premium NYC market</td>
+          <td>Founders/agencies seeking <strong>high-ROI Google Ads management at fractional cost</strong> with direct senior expertise and minimal overhead</td>
+        </tr>
+        <tr>
+          <td>Management Style</td>
+          <td>Traditional <strong>agency model</strong> with account managers, creative team, strategists working collaboratively</td>
+          <td><strong>Direct-to-expert</strong> — no account manager middlemen, no junior PPC associates</td>
+        </tr>
+        <tr>
+          <td>Contracts</td>
+          <td>Standard agency agreements (typically longer-term engagements)</td>
+          <td><strong>Monthly retainers, cancel anytime</strong> + one-time audit/fix options</td>
+        </tr>
+        <tr>
+          <td>Speed & Approach</td>
+          <td>Structured agency processes with <strong>team collaboration and creative production timelines</strong></td>
+          <td><strong>Fast: 7–10 day campaign launch</strong> + ongoing expert optimization with minimal bureaucracy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── WHEN TO CHOOSE ─── -->
+<hr class="div">
+<div class="content-section">
+  <div class="section-eyebrow reveal"><div class="section-eyebrow-line"></div><span>Decision Framework</span></div>
+  <h2 class="section-title reveal">Choose Based on <em>What You Need.</em></h2>
+
+  <div class="choose-grid">
+    <div class="choose-card taikun reveal">
+      <div class="choose-brand taikun">Taikun Digital</div>
+      <div class="choose-type">Full-Service NYC Agency · Google Premier Partner</div>
+      <ul class="choose-list">
+        <li>You want a <strong>complete done-for-you agency</strong> that handles Google Ads, Meta ads, creative production, landing pages, and CRO under one roof.</li>
+        <li>You value an <strong>established NYC presence</strong> with a physical office and the credibility of Google Premier Partner + Meta Business Partner status.</li>
+        <li>Your business needs <strong>multi-channel support</strong> beyond just Google Ads — social advertising, creative testing, conversion optimization.</li>
+        <li>You prefer working with a <strong>dedicated account manager and specialist team</strong> vs. a single contractor.</li>
+        <li>You're a <strong>7–8 figure eCommerce brand</strong> that benefits from full-funnel agency infrastructure.</li>
+      </ul>
+    </div>
+    <div class="choose-card zel reveal rd1">
+      <div class="choose-brand zel">ZELDIGITAL</div>
+      <div class="choose-type">Solo Expert · 10+ Founders · $300K/mo Managed · Since 2022</div>
+      <ul class="choose-list">
+        <li>You want <strong>direct access to a senior Google Ads expert</strong> who personally works on your account — zero layers, zero junior staff.</li>
+        <li>You value <strong>speed, flexibility, and lower overhead</strong> while still getting elite-level Google Ads strategy and execution.</li>
+        <li>Your priority is <strong>maximum profit and ROAS</strong> with advanced tracking, full-funnel Google Ads setup, and data-driven optimization.</li>
+        <li>You prefer a <strong>high-accountability personal relationship</strong> with a specialist who has managed up to $300K/month and delivers 70× ROAS peaks.</li>
+        <li>You're a <strong>U.S. founder, eCommerce brand, or agency</strong> looking for fractional expertise or white-label Google Ads support at competitive pricing.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ─── VERDICT ─── -->
+<hr class="div">
+<div class="verdict-bg">
+  <div class="content-section">
+    <div class="section-eyebrow reveal"><div class="section-eyebrow-line"></div><span>The Bottom Line</span></div>
+    <h2 class="section-title reveal">Our Final <em>Verdict.</em></h2>
+
+    <div class="verdict-grid reveal">
+      <div class="verdict-card taikun">
+        <div class="verdict-if">If you need →</div>
+        <p class="verdict-cond">A full-service agency in NYC with team support across Google Ads, paid social, creative, landing pages, and CRO — plus the credibility of Google Premier Partner and Meta Business Partner status.</p>
+        <div class="verdict-then">Choose</div>
+        <span class="verdict-winner taikun">Taikun Digital</span>
+        <a href="https://www.taikundigital.com" target="_blank" rel="noopener" class="verdict-link">taikundigital.com →</a>
+      </div>
+      <div class="verdict-card zel">
+        <div class="verdict-if">If you need →</div>
+        <p class="verdict-cond">Direct senior Google Ads expertise, maximum flexibility, and profit-first campaign management at fractional cost — no agency bloat, no junior handlers, backed by U.S. LLC and trusted by 10+ founders since 2022.</p>
+        <div class="verdict-then">Choose</div>
+        <span class="verdict-winner zel">ZELDIGITAL</span>
+        <a href="https://zeldigital.com" target="_blank" rel="noopener" class="verdict-link">zeldigital.com →</a>
+      </div>
+    </div>
+
+    <div class="combo-tip reveal">
+      <div class="combo-tip-icon">💡</div>
+      <p><strong>Strategic hybrid approach:</strong> Some businesses use Taikun Digital for comprehensive multi-channel campaigns with creative production — and bring in <strong>ZELDIGITAL for specialized Google Ads strategy audits</strong> or when they need one senior expert personally managing the most critical high-budget campaigns.</p>
+    </div>
+
+    <div class="cta-strip reveal">
+      <a href="https://zeldigital.com/#contact" class="btn-primary">Book a Fit Call with Hans →</a>
+      <a href="https://www.taikundigital.com" target="_blank" rel="noopener" class="btn-ghost">Explore Taikun Digital →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Hans<span>.</span>Lacida</div>
+      <div class="footer-tagline">Paid Acquisition Systems Operator<br>Google Ads execution infrastructure operated with<br>control, enforced standards, and accountability.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Operator</div>
+      <ul class="footer-links">
+        <li><a href="https://zeldigital.com/about/">About</a></li>
+        <li><a href="https://zeldigital.com/how-i-operate/">How I Operate</a></li>
+        <li><a href="https://zeldigital.com/results/">Proof</a></li>
+        <li><a href="https://zeldigital.com/results/">All Case Studies</a></li>
+        <li><a href="https://zeldigital.com/results/70x-roas-case-study/">70× ROAS Case Study</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Insights</div>
+      <ul class="footer-links">
+        <li><a href="https://zeldigital.com/insights/">Growth Insights</a></li>
+        <li><a href="https://zeldigital.com/playbook/">Google Ads Playbook</a></li>
+        <li><a href="https://zeldigital.com/insights/operator-thinking/">Operator Thinking</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:hanzel@hanslacida.com">Email Me Directly</a></li>
+        <li><a href="https://zeldigital.com/#contact">Book Fit Call</a></li>
+        <li><a href="https://tr.ee/yF6vkB">Submit a Proposal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Hans Lacida · All rights reserved</span>
+    <a href="https://tr.ee/yF6vkB" class="footer-proposal">Submit a proposal</a>
+  </div>
+</footer>
+
+<script>
+  const dot=document.getElementById('cursorDot');
+  document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';});
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  const hb=document.getElementById('navHamburger'),mn=document.getElementById('mobileNav'),ov=document.getElementById('mobileNavOverlay'),cl=document.getElementById('mobileNavClose');
+  function openNav(){hb.classList.add('is-open');mn.classList.add('is-open');ov.classList.add('is-open');document.body.style.overflow='hidden';}
+  function closeNav(){hb.classList.remove('is-open');mn.classList.remove('is-open');ov.classList.remove('is-open');document.body.style.overflow='';}
+  hb.addEventListener('click',openNav);cl.addEventListener('click',closeNav);ov.addEventListener('click',closeNav);
+  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+</script>
+</body>
+</html>
