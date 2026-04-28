@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix My Google Ads — Hans Lacida | Google Ads Systems Operator</title>
+<meta name="description" content="Stop wasting budget on generalist PPC teams. Hans Lacida rebuilds broken Google Ads accounts into high-ROAS acquisition systems. Free account audit for US founders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-2: #111111;
+    --bg-3: #161616;
+    --surface: #1a1a1a;
+    --border: #242424;
+    --border-light: #2e2e2e;
+    --text-primary: #f0ede8;
+    --text-secondary: #9a9690;
+    --text-muted: #5a5754;
+    --accent: #c8a96e;
+    --accent-dim: rgba(200,169,110,0.12);
+    --accent-bright: #e2c48a;
+    --red: #c95b5b;
+    --green: #6ba88a;
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.35;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-back {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--text-secondary); }
+
+  .nav-cta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: var(--bg); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 40px 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(200,169,110,0.05) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-content { max-width: 760px; position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+  .hero-eyebrow-line { width: 32px; height: 1px; background: var(--accent); }
+  .hero-eyebrow span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 1.06;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+  .hero-headline em { font-style: italic; color: var(--accent); }
+
+  .hero-body {
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s ease 0.35s both;
+  }
+  .hero-body strong { color: var(--text-primary); font-weight: 600; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 44px;
+    animation: fadeUp 0.6s ease 0.5s both;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
+
+  .btn-ghost {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-light);
+    padding: 16px 32px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+  .hero-proof {
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    animation: fadeUp 0.6s ease 0.6s both;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-proof-item::before { content: '▸ '; color: var(--accent); }
+
+  /* ── DIAGNOSTIC STRIP ── */
+  .diagnostic-strip {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .diagnostic-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .strip-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .strip-title {
+    font-family: var(--serif);
+    font-size: 36px;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+  .strip-title em { font-style: italic; color: var(--accent); }
+
+  .strip-symptoms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .symptom {
+    background: var(--bg-2);
+    padding: 22px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: background 0.2s;
+  }
+  .symptom:hover { background: var(--bg-3); }
+  .symptom-icon {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--red);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .symptom-text {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+  .section-eyebrow-line { width: 24px; height: 1px; background: var(--accent); }
+  .section-eyebrow span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .section-sub {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  /* ── CONTRAST SECTION ── */
+  .contrast-section {
+    background: var(--bg-3);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contrast-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .contrast-col { background: var(--bg-2); padding: 44px 40px; }
+  .contrast-col-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contrast-col-label.bad { color: var(--red); }
+  .contrast-col-label.good { color: var(--green); }
+  .contrast-col-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    margin-bottom: 32px;
+    line-height: 1.2;
+  }
+  .contrast-items { display: flex; flex-direction: column; gap: 16px; }
+  .contrast-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+  }
+  .contrast-item-marker {
+    font-family: var(--mono);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .contrast-item-marker.bad { color: var(--red); }
+  .contrast-item-marker.good { color: var(--green); }
+  .contrast-item-text {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── RESULTS ── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .result-card {
+    background: var(--bg-2);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .result-card:hover { background: var(--bg-3); }
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+  }
+  .result-card:hover::before { width: 100%; }
+
+  .result-num {
+    font-family: var(--serif);
+    font-size: 52px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .result-desc {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .result-context {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    border-left: 1px solid var(--border-light);
+    padding-left: 12px;
+    line-height: 1.6;
+  }
+  .result-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .process-section {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .process-step {
+    background: var(--bg-2);
+    padding: 44px 36px;
+    position: relative;
+  }
+  .process-step::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .step-num {
+    font-family: var(--serif);
+    font-size: 56px;
+    color: var(--accent);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .step-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .step-body {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .step-deliverable {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+    padding-left: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── WHO IT'S FOR ── */
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .fit-list { display: flex; flex-direction: column; gap: 0; }
+  .fit-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .fit-item:first-child { border-top: 1px solid var(--border); }
+  .fit-item-marker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .fit-item-text {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .not-fit-list { display: flex; flex-direction: column; gap: 0; }
+  .not-fit-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .not-fit-item:first-child { border-top: 1px solid var(--border); }
+  .not-fit-marker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .not-fit-text {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--bg-3);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .cta-headline {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.5vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+
+  .cta-body {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+
+  .cta-note {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+
+  .cta-box {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+  }
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .cta-box-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .cta-box-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+  .cta-box-items { display: flex; flex-direction: column; gap: 0; margin-bottom: 32px; }
+  .cta-box-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .cta-box-item:first-child { border-top: 1px solid var(--border); }
+  .cta-box-item::before { content: '→'; color: var(--accent); flex-shrink: 0; font-family: var(--mono); }
+
+  /* ── OPERATOR PROOF ── */
+  .operator-bar {
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 56px;
+  }
+
+  .op-stat {
+    background: var(--bg-3);
+    padding: 28px 24px;
+  }
+  .op-stat-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .op-stat-num span { color: var(--accent); }
+  .op-stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── DIVIDER ── */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 48px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand { font-family: var(--serif); font-size: 18px; color: var(--text-primary); text-decoration: none; }
+  .footer-brand span { color: var(--accent); }
+
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text-secondary); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ── CURSOR DOT ── */
+  .cursor-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .diagnostic-strip-inner { grid-template-columns: 1fr; gap: 40px; }
+    .strip-symptoms { grid-template-columns: 1fr; }
+    .contrast-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .fit-grid { grid-template-columns: 1fr; gap: 40px; }
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .operator-bar { grid-template-columns: 1fr 1fr; }
+    section { padding: 72px 24px; }
+    footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://hanslacida.com" class="nav-logo">Hans<span>.</span>Lacida</a>
+  <div class="nav-right">
+    <a href="https://hanslacida.com" class="nav-back">← Back to main site</a>
+    <a href="#audit" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto;position:relative;">
+  <div style="position:absolute;top:150px;right:40px;font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);writing-mode:vertical-rl;opacity:0.4;">
+    Google Ads · Performance Max · Tracking Infrastructure
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Account Rescue & Systems Build</span>
+    </div>
+
+    <h1 class="hero-headline">
+      Your Google Ads<br>
+      account is<br>
+      <em>bleeding money.</em>
+    </h1>
+
+    <p class="hero-body">
+      Not because paid search doesn't work. Because <strong>your current operator isn't one.</strong> I diagnose and rebuild broken Google Ads accounts into acquisition infrastructure that actually compounds.
+    </p>
+
+    <p class="hero-body" style="margin-top: -4px;">
+      <strong>10+ years. $10M+ ad spend managed. $550M+ client revenue generated.</strong> I've seen every flavour of broken account — I know exactly where yours is leaking.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#audit" class="btn-primary">Book Free Account Audit →</a>
+      <a href="#results" class="btn-ghost">See the numbers</a>
+    </div>
+
+    <div class="hero-proof">
+      <span class="hero-proof-item">No long contracts</span>
+      <span class="hero-proof-item">US market founders only</span>
+      <span class="hero-proof-item">Limited slots per week</span>
+    </div>
+  </div>
+</div>
+
+<!-- DIAGNOSTIC STRIP -->
+<div class="diagnostic-strip">
+  <div class="diagnostic-strip-inner">
+    <div>
+      <div class="strip-label reveal">Diagnostic</div>
+      <h2 class="section-title reveal" style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 0;">Does this sound like <em>your account?</em></h2>
+    </div>
+    <div class="strip-symptoms reveal">
+      <div class="symptom">
+        <span class="symptom-icon">×</span>
+        <span class="symptom-text">ROAS is flat or declining despite increasing budget</span>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">×</span>
+        <span class="symptom-text">Performance Max is eating spend with no visibility</span>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">×</span>
+        <span class="symptom-text">Your "specialist" also handles social, content, and email</span>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">×</span>
+        <span class="symptom-text">Conversion tracking is unreliable or broken entirely</span>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">×</span>
+        <span class="symptom-text">CPA keeps rising as you push to scale</span>
+      </div>
+      <div class="symptom">
+        <span class="symptom-icon">×</span>
+        <span class="symptom-text">You have to explain the basics to whoever runs your account</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTRAST: THE OFFSHORE TRAP vs THE FIX -->
+<div class="contrast-section">
+  <section>
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>The Problem</span>
+    </div>
+    <h2 class="section-title reveal">The offshore trap.<br><em>Why it keeps failing.</em></h2>
+    <p class="section-sub reveal">Generalist "PPC specialists" hired for cost — not capability. Here's the structural difference.</p>
+
+    <div class="contrast-grid reveal">
+      <div class="contrast-col">
+        <div class="contrast-col-label bad">
+          <span style="font-size:10px;">✕</span>
+          What you're getting
+        </div>
+        <div class="contrast-col-title">The generalist<br>hired to tick boxes.</div>
+        <div class="contrast-items">
+          <div class="contrast-item">
+            <span class="contrast-item-marker bad">×</span>
+            <span class="contrast-item-text">Handles content, social, email, <em>and</em> Google Ads — none of them deeply</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker bad">×</span>
+            <span class="contrast-item-text">Manages structure without understanding auction mechanics or bidding logic</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker bad">×</span>
+            <span class="contrast-item-text">Has never run campaigns at $100k–$300k+ monthly spend</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker bad">×</span>
+            <span class="contrast-item-text">Tracking "setup" that leaks 40–60% of real conversion data</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker bad">×</span>
+            <span class="contrast-item-text">Sends reports but can't explain why the numbers are what they are</span>
+          </div>
+        </div>
+      </div>
+      <div class="contrast-col">
+        <div class="contrast-col-label good">
+          <span style="font-size:10px;">✓</span>
+          What you actually need
+        </div>
+        <div class="contrast-col-title">The operator who<br>builds the system.</div>
+        <div class="contrast-items">
+          <div class="contrast-item">
+            <span class="contrast-item-marker good">▸</span>
+            <span class="contrast-item-text">100% dedicated to paid acquisition — no split attention, no task lists</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker good">▸</span>
+            <span class="contrast-item-text">Architects campaign structure, bidding strategy, and data signals as a unified system</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker good">▸</span>
+            <span class="contrast-item-text">Deep Performance Max expertise — including how to contain it, audit it, and when to kill it</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker good">▸</span>
+            <span class="contrast-item-text">Server-side tracking, enhanced conversions, offline import — real signal quality</span>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-item-marker good">▸</span>
+            <span class="contrast-item-text">Accountable for outcomes. Not tasks.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="operator-bar reveal">
+      <div class="op-stat">
+        <div class="op-stat-num">$10M<span>+</span></div>
+        <div class="op-stat-label">Ad spend managed</div>
+      </div>
+      <div class="op-stat">
+        <div class="op-stat-num">70<span>×</span></div>
+        <div class="op-stat-label">Peak ROAS achieved</div>
+      </div>
+      <div class="op-stat">
+        <div class="op-stat-num">10<span>+</span></div>
+        <div class="op-stat-label">Years paid acquisition</div>
+      </div>
+      <div class="op-stat">
+        <div class="op-stat-num">$550M<span>+</span></div>
+        <div class="op-stat-label">Client revenue generated</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="section-eyebrow reveal">
+    <div class="section-eyebrow-line"></div>
+    <span>Selected Results</span>
+  </div>
+  <h2 class="section-title reveal">Real numbers.<br><em>Real accounts.</em></h2>
+  <p class="section-sub reveal">Every number below is from a live account, real engagement, specific optimization window. No rounding up, no cherry-picked time frames.</p>
+
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <div class="result-num">70×</div>
+      <div class="result-desc">Peak ROAS — seasonal eCommerce scaling campaign</div>
+      <div class="result-context">PMax + Search · seasonal push · 6-week window</div>
+      <div class="result-tag">AU/NZ · eCommerce</div>
+    </div>
+    <div class="result-card reveal reveal-delay-1">
+      <div class="result-num">−53%</div>
+      <div class="result-desc">CPA reduction — healthcare lead gen, California treatment center</div>
+      <div class="result-context">Keyword restructure + negative overhaul + offline conversion import</div>
+      <div class="result-tag">Healthcare · Lead Gen</div>
+    </div>
+    <div class="result-card reveal reveal-delay-2">
+      <div class="result-num">3.1→5.4×</div>
+      <div class="result-desc">ROAS scaled in 90 days — $250K/mo eCommerce brand</div>
+      <div class="result-context">Restructure + server-side tracking fix + tROAS calibration</div>
+      <div class="result-tag">eCommerce · 90-Day</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px;" class="reveal">
+    <a href="https://hanslacida.com/results/" class="btn-ghost">Explore all case studies →</a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="process-section">
+  <section>
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>The Fix</span>
+    </div>
+    <h2 class="section-title reveal">Three phases.<br><em>One operator.</em></h2>
+    <p class="section-sub reveal">Not a discovery call that leads to a proposal that leads to a kickoff. A direct diagnostic-to-execution path.</p>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <div class="step-title">Free Account Audit</div>
+        <div class="step-body">
+          I go inside your account and produce a structural diagnosis: where budget is leaking, what the tracking is actually telling Google, why ROAS is where it is, and what the real ceiling looks like. No vague observations — specific findings.
+        </div>
+        <div class="step-deliverable">Written audit report + 15-min walkthrough call</div>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <div class="step-title">Infrastructure Rebuild</div>
+        <div class="step-body">
+          Campaign restructure, conversion tracking overhaul, Performance Max architecture, bidding logic calibration, first-party data integration. Built around signal quality — not vanity metrics.
+        </div>
+        <div class="step-deliverable">Full rebuild completed within 2–3 weeks</div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <div class="step-title">Managed Scaling</div>
+        <div class="step-body">
+          Ongoing optimization: bid adjustments, asset testing, query pruning, budget allocation, monthly reporting with real insights. Or a clean handover with documentation and training. Your choice.
+        </div>
+        <div class="step-deliverable">Ongoing retainer or documented handover</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- WHO IT'S FOR / NOT FOR -->
+<section>
+  <div class="section-eyebrow reveal">
+    <div class="section-eyebrow-line"></div>
+    <span>Fit</span>
+  </div>
+  <h2 class="section-title reveal">Right client.<br><em>Right engagement.</em></h2>
+  <p class="section-sub reveal">I'm selective. This only works when the situation is right — for both of us.</p>
+
+  <div class="fit-grid">
+    <div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;" class="reveal">Good fit</div>
+      <div class="fit-list reveal">
+        <div class="fit-item">
+          <span class="fit-item-marker">▸</span>
+          <span class="fit-item-text">US-market eCommerce brands spending $10k–$300k+/month on Google Ads</span>
+        </div>
+        <div class="fit-item">
+          <span class="fit-item-marker">▸</span>
+          <span class="fit-item-text">Founders and operators who understand their numbers and want a real peer</span>
+        </div>
+        <div class="fit-item">
+          <span class="fit-item-marker">▸</span>
+          <span class="fit-item-text">Healthcare / medspa, B2B SaaS, or high-intent lead gen businesses</span>
+        </div>
+        <div class="fit-item">
+          <span class="fit-item-marker">▸</span>
+          <span class="fit-item-text">Existing campaigns with history and data — rescue situations welcome</span>
+        </div>
+        <div class="fit-item">
+          <span class="fit-item-marker">▸</span>
+          <span class="fit-item-text">Companies ready to fix tracking before demanding ROAS improvement</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;" class="reveal">Not a fit</div>
+      <div class="not-fit-list reveal">
+        <div class="not-fit-item">
+          <span class="not-fit-marker">—</span>
+          <span class="not-fit-text">Businesses with under $5k/month ad spend who need a jack-of-all-trades</span>
+        </div>
+        <div class="not-fit-item">
+          <span class="not-fit-marker">—</span>
+          <span class="not-fit-text">Founders who want cheap execution, not a strategic operator</span>
+        </div>
+        <div class="not-fit-item">
+          <span class="not-fit-marker">—</span>
+          <span class="not-fit-text">Companies that can't or won't give proper account access and data</span>
+        </div>
+        <div class="not-fit-item">
+          <span class="not-fit-marker">—</span>
+          <span class="not-fit-text">Anyone expecting 30-day miracles without foundational work first</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="audit" class="cta-section">
+  <div class="cta-inner">
+    <div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;" class="reveal">Free audit</div>
+      <h2 class="cta-headline reveal">15 minutes to<br>diagnose <em>the leak.</em></h2>
+      <p class="cta-body reveal">
+        Not a sales call. I'll look at your actual account before we get on a call. If I don't see a clear path to improvement, I'll tell you — and point you somewhere that can actually help.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:12px;" class="reveal">
+        <a href="https://hanslacida.com/#contact" class="btn-primary" style="text-align:center;display:block;">Book 15-Min Fit Call →</a>
+        <a href="https://wa.link/mzywie" class="btn-ghost" style="text-align:center;display:block;">Chat on WhatsApp</a>
+      </div>
+      <div class="cta-note reveal">
+        Limited to 3 new engagements per month<br>
+        US market founders and operators only<br>
+        Or email: <a href="mailto:hanzel@hanslacida.com" style="color:var(--accent);text-decoration:none;">hanzel@hanslacida.com</a>
+      </div>
+    </div>
+
+    <div class="cta-box reveal">
+      <div class="cta-box-label">What the free audit covers</div>
+      <div class="cta-box-title">Account Diagnostic</div>
+      <div class="cta-box-items">
+        <div class="cta-box-item">Campaign structure and keyword architecture review</div>
+        <div class="cta-box-item">Conversion tracking health check — what Google is actually learning from</div>
+        <div class="cta-box-item">Performance Max configuration and asset group audit</div>
+        <div class="cta-box-item">Budget allocation and bidding logic assessment</div>
+        <div class="cta-box-item">Top 3 specific findings with expected impact</div>
+      </div>
+      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;color:var(--text-muted);line-height:1.7;border-left:2px solid var(--accent);padding-left:14px;">
+        No obligation. No pitch deck. If we're not a fit, you walk away with a clear picture of what's broken and why.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://hanslacida.com" class="footer-brand">Hans<span>.</span>Lacida</a>
+  <span class="footer-copy">© 2026 Hans Lacida · All rights reserved · Cebu, Philippines · Serving US, AU, NZ markets</span>
+  <ul class="footer-links">
+    <li><a href="https://hanslacida.com/results/">Results</a></li>
+    <li><a href="https://hanslacida.com/playbook/">Playbook</a></li>
+    <li><a href="https://hanslacida.com/#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  const dot = document.getElementById('cursorDot');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
