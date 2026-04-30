@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Jerome Esperanza iBuild.PH vs Hans Lacida Zeldigital | Google Ads Philippines</title>
+<meta name="description" content="Jerome Esperanza vs Hans Lacida – Comparison of Google Ads services in the Philippines. Full-service agency vs US-focused high-ROAS specialist."/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0c0c0c;--white:#f5f3ee;--accent:#d4a853;--accent-dim:#a07830;
+  --muted:#7a7570;--surface:#161614;--border:rgba(212,168,83,0.18);
+  --border-strong:rgba(212,168,83,0.45);
+}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Syne',sans-serif;letter-spacing:-0.025em;line-height:1.1}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:var(--accent);text-decoration:none}
+
+/* ─── NAV ─── */
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.25rem 2.5rem;border-bottom:0.5px solid var(--border);
+  background:rgba(12,12,12,0.96);backdrop-filter:blur(8px);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em;color:var(--white)}
+.nav-logo span{color:var(--accent)}
+.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border:0.5px solid var(--border-strong);padding:0.45rem 1rem;transition:background 0.2s,color 0.2s}
+.nav-cta:hover{background:var(--accent);color:var(--black)}
+
+/* ─── HERO ─── */
+.hero{
+  padding:5rem 2.5rem 4rem;border-bottom:0.5px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--border) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:72px 72px;pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:900px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.75rem;
+  font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:2rem;
+}
+.hero-eyebrow::before{content:'';width:2rem;height:0.5px;background:var(--accent)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;color:var(--white);margin-bottom:1.5rem;max-width:20ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:0.98rem;color:var(--muted);font-weight:300;max-width:52ch;line-height:1.8;margin-bottom:2.5rem}
+.hero-pills{display:flex;gap:0.75rem;flex-wrap:wrap}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border:0.5px solid var(--border-strong);color:var(--accent-dim)}
+
+/* ─── SHARED BANNER ─── */
+.shared-banner{
+  background:rgba(212,168,83,0.06);border-bottom:0.5px solid var(--border);
+  padding:0.85rem 2.5rem;display:flex;align-items:center;justify-content:center;
+  gap:2.5rem;flex-wrap:wrap;
+}
+.sh-item{display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;color:var(--accent-dim)}
+.sh-dot{width:5px;height:5px;border-radius:50%;background:var(--accent-dim);flex-shrink:0}
+
+/* ─── HEADER ROW ─── */
+.vs-header{
+  display:grid;grid-template-columns:1fr 72px 1fr;
+  border-bottom:0.5px solid var(--border-strong);
+}
+.vh-left{background:#0d100e;padding:2rem 2.5rem;border-right:0.5px solid var(--border)}
+.vh-right{background:#181408;padding:2rem 2.5rem;border-left:0.5px solid var(--border)}
+.vh-mid{display:flex;align-items:center;justify-content:center;background:var(--surface)}
+.vs-txt{font-family:'Syne',sans-serif;font-weight:800;font-size:0.85rem;color:var(--accent-dim);letter-spacing:0.1em}
+.vh-tag{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px;display:block}
+.vh-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:4px}
+.vh-name.wh{color:var(--white)}
+.vh-name.gld{color:var(--accent)}
+.vh-sub{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:0.04em;margin-bottom:10px}
+.vh-loc{display:inline-flex;align-items:center;gap:6px}
+.loc-dot{width:5px;height:5px;border-radius:50%;background:var(--accent-dim);flex-shrink:0}
+.loc-txt{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--accent-dim);letter-spacing:0.06em}
+
+/* ─── TABLE ─── */
+.vs-table{border-bottom:0.5px solid var(--border)}
+.vs-row{display:grid;grid-template-columns:1fr 72px 1fr;border-top:0.5px solid var(--border)}
+.vs-row:hover .vr-left,.vs-row:hover .vr-right{background:rgba(212,168,83,0.025)}
+.vr-left{padding:1.4rem 2.5rem;background:var(--black)}
+.vr-right{padding:1.4rem 2.5rem;background:var(--surface)}
+.vr-mid{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--black);border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);
+}
+.vr-axis{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;text-align:center}
+.vr-stat{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-0.02em;margin-bottom:4px}
+.vr-stat.wh{color:var(--white)}
+.vr-stat.gld{color:var(--accent)}
+.vr-body{font-size:0.8rem;color:var(--muted);line-height:1.65;font-weight:300;margin-bottom:0}
+.badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border:0.5px solid var(--border-strong);color:var(--accent);margin-top:10px}
+.badge.neutral{border-color:rgba(255,255,255,0.14);color:rgba(255,255,255,0.35)}
+
+/* ─── DEEP DIVE ─── */
+.deep-dive{padding:4rem 2.5rem;border-bottom:0.5px solid var(--border)}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:block}
+.section-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--white);letter-spacing:-0.025em;margin-bottom:0.75rem}
+.section-p{font-size:0.92rem;color:var(--muted);font-weight:300;max-width:52ch;line-height:1.8;margin-bottom:3rem}
+.choose-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:680px){.choose-grid{grid-template-columns:1fr}}
+.choose-card{border:0.5px solid var(--border);padding:2rem}
+.choose-card.jerome{background:#0d100e}
+.choose-card.hans{background:var(--surface);border-color:var(--border-strong)}
+.cc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:1rem;display:block}
+.cc-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em;margin-bottom:1rem}
+.cc-name.wh{color:var(--white)}
+.cc-name.gld{color:var(--accent)}
+.cc-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+.cc-list li{font-size:0.83rem;color:var(--muted);line-height:1.65;padding-left:1.25rem;position:relative;font-weight:300}
+.cc-list li::before{content:'—';position:absolute;left:0;color:var(--accent-dim);font-family:'IBM Plex Mono',monospace;font-size:0.75rem}
+.cc-list.bright li{color:var(--white);font-weight:400}
+.cc-list.bright li::before{content:'→';color:var(--accent)}
+
+/* ─── STATS BAND ─── */
+.stats-band{background:var(--surface);border-bottom:0.5px solid var(--border);padding:3rem 2.5rem}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:0.5px solid var(--border-strong);margin-top:2rem}
+@media(max-width:600px){.stats-grid{grid-template-columns:1fr 1fr}}
+.stat-cell{padding:1.5rem;border-right:0.5px solid var(--border);text-align:center}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--accent);letter-spacing:-0.04em;display:block;line-height:1;margin-bottom:0.4rem}
+.stat-label{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+
+/* ─── BOTTOM LINE ─── */
+.bottom-line{padding:3rem 2.5rem;border-bottom:0.5px solid var(--border);background:var(--surface)}
+.bl-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+@media(max-width:680px){.bl-grid{grid-template-columns:1fr}}
+.bl-card{border:0.5px solid var(--border);padding:1.5rem 1.75rem}
+.bl-card.jerome{background:var(--black)}
+.bl-card.hans{background:var(--black);border-color:var(--border-strong)}
+.bl-who{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:0.75rem;display:block}
+.bl-headline{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--white);letter-spacing:-0.01em;margin-bottom:0.5rem}
+.bl-body{font-size:0.82rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* ─── CTA ─── */
+.cta-section{padding:5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.cta-grid-bg{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(90deg,transparent,transparent 71px,var(--border) 71px,var(--border) 72px),
+    repeating-linear-gradient(0deg,transparent,transparent 71px,var(--border) 71px,var(--border) 72px);
+  pointer-events:none;opacity:0.5;
+}
+.cta-inner{position:relative;z-index:1}
+.cta-label{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:0.75rem}
+.cta-label::before,.cta-label::after{content:'';width:2rem;height:0.5px;background:var(--accent)}
+.cta-section h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-0.03em;color:var(--white);margin-bottom:1rem}
+.cta-section h2 em{font-style:normal;color:var(--accent)}
+.cta-section p{font-size:0.92rem;color:var(--muted);font-weight:300;max-width:44ch;margin:0 auto 2.5rem;line-height:1.8}
+.btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--accent);color:var(--black);padding:0.9rem 2.25rem;font-weight:500;display:inline-block;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:var(--white);padding:0.9rem 2.25rem;border:0.5px solid rgba(245,243,238,0.2);display:inline-block;transition:border-color 0.2s}
+.btn-ghost:hover{border-color:var(--white)}
+.cta-note{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--muted);margin-top:1.75rem;letter-spacing:0.06em}
+
+/* ─── FOOTER ─── */
+footer{padding:1.75rem 2.5rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--muted);letter-spacing:0.05em}
+footer a{color:var(--accent-dim)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:720px){
+  .vs-header,.vs-row{grid-template-columns:1fr}
+  .vh-mid,.vr-mid{display:none}
+  .vr-left{border-bottom:0.5px solid var(--border)}
+  .hero{padding:3rem 1.5rem}
+  .deep-dive,.bottom-line,.cta-section,.stats-band{padding:3rem 1.5rem}
+  nav{padding:1rem 1.5rem}
+  .shared-banner{padding:0.75rem 1.5rem;gap:1rem}
+  footer{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://hanslacida.com">Hans<span>.</span></a>
+  <a class="nav-cta" href="#contact">Book a fit call →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Google Ads Philippines — Honest Comparison</div>
+    <h1>Jerome Esperanza<br/><em>vs</em> Hans Lacida</h1>
+    <p class="hero-sub">Both are Filipino Google Ads professionals operating from the Philippines and serving international clients — but with very different strengths, models, and ideal clients. Here's the full breakdown.</p>
+    <div class="hero-pills">
+      <span class="pill">Philippines-based</span>
+      <span class="pill">Google Ads specialists</span>
+      <span class="pill">International clients</span>
+      <span class="pill">10+ years each</span>
+    </div>
+  </div>
+</div>
+
+<!-- SHARED BANNER -->
+<div class="shared-banner">
+  <div class="sh-item"><div class="sh-dot"></div>Both Philippines-based professionals</div>
+  <div class="sh-item"><div class="sh-dot"></div>Both serving international clients</div>
+  <div class="sh-item"><div class="sh-dot"></div>Both offer Google Ads services</div>
+  <div class="sh-item"><div class="sh-dot"></div>Both with 10+ years experience</div>
+</div>
+
+<!-- VS HEADER -->
+<div class="vs-header">
+  <div class="vh-left">
+    <span class="vh-tag">// full-service agency owner</span>
+    <p class="vh-name wh">Jerome Esperanza</p>
+    <p class="vh-sub">iBuild.PH · Web Design + SEO + Google Ads + Training</p>
+    <div class="vh-loc"><div class="loc-dot"></div><span class="loc-txt">Metro Manila, Philippines</span></div>
+  </div>
+  <div class="vh-mid"><span class="vs-txt">VS</span></div>
+  <div class="vh-right">
+    <span class="vh-tag">// independent paid acquisition operator</span>
+    <p class="vh-name gld">Hans Lacida</p>
+    <p class="vh-sub">Zeldigital · hanslacida.com</p>
+    <div class="vh-loc"><div class="loc-dot"></div><span class="loc-txt">Cebu City, Philippines</span></div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="vs-table">
+
+  <div class="vs-row">
+    <div class="vr-left">
+      <p class="vr-stat wh">Full-service agency owner</p>
+      <p class="vr-body">Web design, technical SEO, Google Ads management, training programs, and hosting — all under one roof. Integrated solutions for SMEs needing everything handled together.</p>
+      <span class="badge neutral">→ integrated solutions</span>
+    </div>
+    <div class="vr-mid"><span class="vr-axis">Primary role</span></div>
+    <div class="vr-right">
+      <p class="vr-stat gld">Paid acquisition systems operator</p>
+      <p class="vr-body">Pure focus: Google Ads and Performance Max architecture, server-side tracking, first-party data pipelines, and ROAS optimization. No web design, no SEO retainers. One lane, maximum depth.</p>
+      <span class="badge">→ wins: paid ads focus</span>
+    </div>
+  </div>
+
+  <div class="vs-row">
+    <div class="vr-left">
+      <p class="vr-stat wh">Web + SEO + Ads + Training</p>
+      <p class="vr-body">Core strength is the full-service bundle — Google Ads sits alongside website development, technical SEO, and training workshops. Strong for Philippine businesses needing an all-in-one partner and educational support.</p>
+      <span class="badge neutral">→ wins: bundled value</span>
+    </div>
+    <div class="vr-mid"><span class="vr-axis">Core strength</span></div>
+    <div class="vr-right">
+      <p class="vr-stat gld">PMax architecture &amp; tracking depth</p>
+      <p class="vr-body">PMax asset group engineering, server-side tagging (Stape/GTM SS), enhanced conversions, GA4, BigQuery, CRM integration. The infrastructure layer most agencies skip — and most accounts desperately need.</p>
+      <span class="badge">→ wins: technical depth</span>
+    </div>
+  </div>
+
+  <div class="vs-row">
+    <div class="vr-left">
+      <p class="vr-stat wh">SMEs · PH &amp; international</p>
+      <p class="vr-body">Small to mid-sized businesses in the Philippines and internationally who need cost-effective bundled digital services. Excellent for local brands building their online presence alongside ads.</p>
+    </div>
+    <div class="vr-mid"><span class="vr-axis">Target clients</span></div>
+    <div class="vr-right">
+      <p class="vr-stat gld">US founders · $5K–$300K+/mo</p>
+      <p class="vr-body">US-based founders scaling eCom, medspa/healthcare, B2B SaaS, and high-intent lead gen. Primary US experience — globally available. Specifically built for competitive markets with serious budgets.</p>
+      <span class="badge">→ wins: US market depth</span>
+    </div>
+  </div>
+
+  <div class="vs-row">
+    <div class="vr-left">
+      <p class="vr-stat wh">Smaller to mid-range budgets</p>
+      <p class="vr-body">Accessible pricing suited to local Philippine businesses and international SMEs. Strong value when bundled with web and SEO services where the cost is distributed across deliverables.</p>
+      <span class="badge neutral">→ wins: accessible pricing</span>
+    </div>
+    <div class="vr-mid"><span class="vr-axis">Budget fit</span></div>
+    <div class="vr-right">
+      <p class="vr-stat gld">$5,000 – $300,000+ per month</p>
+      <p class="vr-body">Built for founders where ad spend is serious and infrastructure-level work — not campaign-level tweaks — is what determines whether that spend returns revenue or just cost.</p>
+      <span class="badge">→ wins: high-budget scaling</span>
+    </div>
+  </div>
+
+  <div class="vs-row">
+    <div class="vr-left">
+      <p class="vr-stat wh">Not publicly specified</p>
+      <p class="vr-body">Peak ROAS and total managed spend benchmarks not publicly disclosed. Emphasis is on reliable campaign execution and the breadth of bundled digital services offered.</p>
+    </div>
+    <div class="vr-mid"><span class="vr-axis">Peak ROAS</span></div>
+    <div class="vr-right">
+      <p class="vr-stat gld">20x US market · 70x AU/NZ</p>
+      <p class="vr-body">Documented benchmarks from live accounts. $10M+ total ad spend managed. US market peak: 20x ROAS. AU/NZ e-commerce peak: 70x ROAS — driven by PMax signal architecture and first-party data strategy.</p>
+      <span class="badge">→ wins: proven benchmarks</span>
+    </div>
+  </div>
+
+  <div class="vs-row">
+    <div class="vr-left">
+      <p class="vr-stat wh">Full-service agency + training</p>
+      <p class="vr-body">Team of specialists handles accounts alongside web, SEO, and training programs. Structured agency model with broader support — suited for clients who want education alongside execution.</p>
+      <span class="badge neutral">→ wins: training &amp; support breadth</span>
+    </div>
+    <div class="vr-mid"><span class="vr-axis">Service model</span></div>
+    <div class="vr-right">
+      <p class="vr-stat gld">Direct-to-founder operator</p>
+      <p class="vr-body">No account managers. No juniors. Former Google Account Strategist — the operator who audits your account is the same one optimizing it six months later. Zero handoffs, full accountability.</p>
+      <span class="badge">→ wins: senior direct access</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- HANS STATS BAND -->
+<div class="stats-band">
+  <span class="section-label">// Hans Lacida — operator benchmarks</span>
+  <div class="stats-grid">
+    <div class="stat-cell">
+      <span class="stat-num">$550M+</span>
+      <span class="stat-label">Revenue attributed</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">$10M+</span>
+      <span class="stat-label">Ad spend managed</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">70x</span>
+      <span class="stat-label">Peak ROAS (AU/NZ)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">20x</span>
+      <span class="stat-label">Peak ROAS (US)</span>
+    </div>
+  </div>
+</div>
+
+<!-- DEEP DIVE: WHO IS IT FOR -->
+<div class="deep-dive">
+  <span class="section-label">// 02 — Who should choose whom?</span>
+  <h2 class="section-h">The right fit depends on<br/>what you actually need.</h2>
+  <p class="section-p">These aren't interchangeable services. The choice comes down to where you are in business — and what problem you're actually trying to solve.</p>
+  <div class="choose-grid">
+    <div class="choose-card jerome">
+      <span class="cc-tag">// choose jerome esperanza / ibuild.ph if</span>
+      <p class="cc-name wh">You need full-service digital support</p>
+      <ul class="cc-list">
+        <li>You need web design, development, SEO, hosting, and Google Ads under one roof</li>
+        <li>You want training programs or workshops on Google Ads and digital marketing</li>
+        <li>You're a smaller business or local Philippine company needing bundled, cost-effective solutions</li>
+        <li>You want an established agency team with structured support across multiple disciplines</li>
+        <li>Your priority is building an integrated online presence — not just maximizing paid ROAS</li>
+      </ul>
+    </div>
+    <div class="choose-card hans">
+      <span class="cc-tag">// choose hans lacida (zeldigital) if</span>
+      <p class="cc-name gld">You need systems built to scale</p>
+      <ul class="cc-list bright">
+        <li>You're a US-based founder scaling paid acquisition with budgets of $5K–$300K+/month</li>
+        <li>You want a senior operator focused purely on PMax architecture, server-side tracking, first-party data, and aggressive ROAS optimization</li>
+        <li>You prefer direct senior-level access — no account managers, no juniors touching your account</li>
+        <li>You need proven high-ROAS results in competitive US markets (documented 20x US, 70x AU/NZ)</li>
+        <li>Your tracking is broken, PMax is underperforming, or ROAS has stalled and nobody can explain why</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM LINE -->
+<div class="bottom-line">
+  <span class="section-label">// 03 — Bottom line</span>
+  <h2 class="section-h">Two different operators.<br/>Two different jobs.</h2>
+  <div class="bl-grid">
+    <div class="bl-card jerome">
+      <span class="bl-who">Jerome Esperanza / iBuild.PH</span>
+      <p class="bl-headline">Strong all-rounder for integrated digital services</p>
+      <p class="bl-body">Reliable, cost-effective agency for businesses that need websites, technical SEO, training programs, and Google Ads under one roof. Great fit for Philippine businesses and international SMEs building their digital presence.</p>
+    </div>
+    <div class="bl-card hans">
+      <span class="bl-who">Hans Lacida / Zeldigital</span>
+      <p class="bl-headline">Specialized operator for high-performance Google Ads systems</p>
+      <p class="bl-body">The specialist choice for founders who want deep technical Google Ads infrastructure — PMax architecture, bulletproof tracking, first-party data strategy — and maximum return on serious ad spend. US-focused, globally available, direct access guaranteed.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section" id="contact">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-label">US founders — start here</div>
+    <h2>Ready to find out what's<br/><em>actually broken?</em></h2>
+    <p>Start with a diagnostic audit. You'll see exactly where the budget is leaking and what to fix — whether you work with me or not.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://hanslacida.com/#contact" target="_blank">Book a 15-min fit call</a>
+      <a class="btn-ghost" href="https://hanslacida.com/results" target="_blank">See case studies</a>
+    </div>
+    <p class="cta-note">$5K–$300K+/mo budgets · No agency layers · Cebu City, PH — serving US clients globally</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Hans Lacida — Paid Acquisition Systems Operator · Zeldigital</p>
+  <p><a href="https://hanslacida.com">hanslacida.com</a> &nbsp;·&nbsp; Cebu City, Philippines &nbsp;·&nbsp; US clients · Global reach</p>
+</footer>
+
+</body>
+</html>
