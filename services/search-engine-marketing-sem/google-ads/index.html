@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Google Ads Management — Hans Lacida</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0c0c0c;--white:#f5f3ee;--accent:#d4a853;--accent-dim:#a07830;
+  --muted:#7a7570;--surface:#161614;--border:rgba(212,168,83,0.18);
+  --border-strong:rgba(212,168,83,0.45);--green:#2d6a3f;--green-light:#e8f5ec;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+/* SERP SNIPPET BAR */
+.serp-bar{background:#f8f9fa;padding:0.85rem 2.5rem;border-bottom:1px solid #dadce0;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.serp-favicon{width:16px;height:16px;background:#14a800;border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.serp-favicon svg{width:10px;height:10px}
+.serp-meta{flex:1;min-width:200px}
+.serp-source{font-family:'DM Sans',sans-serif;font-size:0.78rem;color:#202124;font-weight:500;line-height:1.3}
+.serp-source span{color:#5f6368;font-weight:400}
+.serp-url{font-size:0.72rem;color:#1a0dab;font-family:monospace;margin-top:1px}
+.serp-snippet{font-size:0.82rem;color:#4d5156;line-height:1.5;max-width:520px}
+.serp-snippet strong{color:#202124;font-weight:500}
+.serp-cta-wrap{flex-shrink:0}
+.serp-cta{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;background:#0c0c0c;color:#f5f3ee;padding:0.5rem 1.1rem;text-decoration:none;display:inline-block;transition:background 0.2s}
+.serp-cta:hover{background:#333}
+.stars-wrap{display:flex;align-items:center;gap:6px;margin-top:4px}
+.stars{display:flex;gap:2px}
+.star{width:12px;height:12px;background:#fbbc04;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.star-half{width:12px;height:12px;position:relative;overflow:hidden}
+.star-half::before{content:'';position:absolute;left:0;top:0;width:50%;height:100%;background:#fbbc04;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.star-half::after{content:'';position:absolute;right:0;top:0;width:50%;height:100%;background:#dadce0;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.rating-text{font-size:0.75rem;color:#5f6368;font-family:'DM Sans',sans-serif}
+.rating-text strong{color:#202124}
+
+/* REVIEWS STRIP */
+.reviews-strip{background:var(--surface);border-bottom:0.5px solid var(--border);padding:1.5rem 2.5rem;display:flex;align-items:stretch;gap:1.5rem;overflow-x:auto}
+.reviews-strip::-webkit-scrollbar{height:3px}
+.reviews-strip::-webkit-scrollbar-thumb{background:var(--border-strong)}
+.review-card{background:var(--black);border:0.5px solid var(--border);padding:1.1rem 1.25rem;min-width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:0.5rem}
+.review-stars{display:flex;gap:3px}
+.review-star{width:10px;height:10px;background:var(--accent);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.review-text{font-size:0.82rem;color:var(--muted);line-height:1.6;font-weight:300;font-style:italic}
+.review-author{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-dim)}
+.reviews-summary{display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:130px;padding:1rem;border:0.5px solid var(--border-strong);flex-shrink:0;text-align:center;gap:0.35rem}
+.summary-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2.4rem;color:var(--accent);letter-spacing:-0.04em;line-height:1}
+.summary-label{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+.summary-stars{display:flex;gap:2px;margin-top:4px}
+.s-star{width:9px;height:9px;background:var(--accent);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2.5rem;border-bottom:0.5px solid var(--border);background:rgba(12,12,12,0.96);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border:0.5px solid var(--border-strong);padding:0.5rem 1.2rem;text-decoration:none;transition:background 0.2s,color 0.2s}
+.nav-cta:hover{background:var(--accent);color:var(--black)}
+
+/* HERO */
+.hero{padding:5rem 2.5rem 4rem;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
+@media(max-width:720px){.hero{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}}
+.hero-tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:block}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;letter-spacing:-0.03em;color:var(--white)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:1rem;color:var(--muted);font-weight:300;margin-top:1.5rem;max-width:38ch;line-height:1.75}
+.hero-right{display:flex;flex-direction:column;gap:1rem}
+.hero-stat{border:0.5px solid var(--border);padding:1.25rem 1.5rem;background:var(--surface)}
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--accent);letter-spacing:-0.03em;display:block}
+.stat-label{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;display:block}
+.hero-stats-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* SECTIONS */
+section{padding:4rem 2.5rem;border-bottom:0.5px solid var(--border)}
+@media(max-width:720px){section{padding:3rem 1.5rem}}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:block}
+.section-title{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem;color:var(--white)}
+.section-body{font-size:0.95rem;color:var(--muted);font-weight:300;max-width:58ch;line-height:1.8}
+.section-body strong{color:var(--white);font-weight:500}
+
+/* WHAT GRID */
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem}
+@media(max-width:720px){.what-grid{grid-template-columns:1fr}}
+.def-block{border-left:2px solid var(--accent);padding-left:1.5rem}
+.def-block h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.75rem;color:var(--white);letter-spacing:-0.01em}
+.def-block p{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.75}
+
+/* WHY CARDS */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3rem}
+.why-card{background:var(--surface);border:0.5px solid var(--border);padding:1.5rem;transition:border-color 0.2s}
+.why-card:hover{border-color:var(--border-strong)}
+.why-num{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--accent-dim);letter-spacing:0.1em;display:block;margin-bottom:1rem}
+.why-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:var(--white);letter-spacing:-0.01em}
+.why-card p{font-size:0.87rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* PROCESS */
+.process-list{margin-top:3rem;display:flex;flex-direction:column}
+.process-step{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;padding:1.75rem 0;border-top:0.5px solid var(--border);align-items:start}
+.process-step:last-child{border-bottom:0.5px solid var(--border)}
+.step-num{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--accent);padding-top:0.15rem;letter-spacing:0.05em}
+.step-content h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.4rem;color:var(--white);letter-spacing:-0.01em}
+.step-content p{font-size:0.875rem;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* CAMPAIGN TYPES */
+.types-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border);margin-top:3rem;border:0.5px solid var(--border)}
+.type-cell{background:var(--black);padding:1.5rem 1.25rem;text-align:center;transition:background 0.2s}
+.type-cell:hover{background:var(--surface)}
+.type-icon{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:0.6rem}
+.type-cell h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--white);letter-spacing:-0.01em;margin-bottom:0.4rem}
+.type-cell p{font-size:0.78rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* DIFF */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
+@media(max-width:720px){.diff-grid{grid-template-columns:1fr;gap:2rem}}
+.diff-col h3{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:1.25rem}
+.diff-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+.diff-list li{font-size:0.9rem;color:var(--muted);line-height:1.6;padding-left:1.25rem;position:relative;font-weight:300}
+.diff-list li::before{content:'—';position:absolute;left:0;color:var(--accent);font-family:'IBM Plex Mono',monospace}
+.diff-list.accent-list li{color:var(--white);font-weight:400}
+
+/* SECTION WRAPPER */
+.hybrid-section{padding:5rem 2.5rem;border-bottom:0.5px solid var(--border)}
+@media(max-width:720px){.hybrid-section{padding:3rem 1.5rem}}
+
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:block}
+
+/* HEADLINE BLOCK */
+.headline-block{max-width:700px;margin-bottom:3.5rem}
+.headline-block h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.03em;line-height:1.08;color:var(--white);margin-bottom:1.25rem}
+.headline-block h2 em{font-style:normal;color:var(--accent)}
+.headline-block p{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.8;max-width:54ch}
+
+/* HYBRID BADGE */
+.hybrid-badge{display:inline-flex;align-items:center;gap:0.6rem;border:0.5px solid var(--border-strong);padding:0.5rem 1rem;margin-bottom:1.75rem}
+.badge-dot{width:7px;height:7px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.badge-text{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent)}
+
+/* STACK GRID — disciplines */
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);margin-bottom:3rem}
+.stack-cell{background:var(--black);padding:1.5rem 1.25rem;transition:background 0.2s;position:relative}
+.stack-cell:hover{background:var(--surface)}
+.stack-tag{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dim);display:block;margin-bottom:0.6rem}
+.stack-cell h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.92rem;color:var(--white);letter-spacing:-0.01em;margin-bottom:0.4rem}
+.stack-cell p{font-size:0.8rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* OWNERSHIP MANIFESTO */
+.manifesto{background:var(--surface);border:0.5px solid var(--border-strong);padding:2.5rem 3rem;margin-bottom:3rem;position:relative}
+@media(max-width:600px){.manifesto{padding:1.75rem 1.5rem}}
+.manifesto-label{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:1.25rem;display:block}
+.manifesto-lines{display:flex;flex-direction:column;gap:0.75rem}
+.manifesto-line{display:grid;grid-template-columns:1.8rem 1fr;gap:1rem;align-items:baseline}
+.m-arrow{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--accent)}
+.m-text{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1rem,2vw,1.2rem);color:var(--white);letter-spacing:-0.02em;line-height:1.3}
+.m-text span{color:var(--accent)}
+
+/* CONTRAST ROW — typical vs Hans */
+.contrast-row{display:grid;grid-template-columns:1fr 0.08fr 1fr;gap:0;align-items:stretch}
+@media(max-width:620px){.contrast-row{grid-template-columns:1fr;gap:1px;background:var(--border)}}
+.contrast-col{padding:2rem 1.75rem;border:0.5px solid var(--border)}
+.contrast-col.dark{background:var(--surface)}
+.contrast-col.lit{background:var(--black)}
+.contrast-divider{display:flex;align-items:center;justify-content:center;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);background:var(--black)}
+@media(max-width:620px){.contrast-divider{display:none}}
+.divider-vs{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--accent-dim);letter-spacing:0.1em;writing-mode:vertical-rl;text-transform:uppercase}
+.contrast-col h4{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:1.25rem}
+.contrast-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.contrast-list li{font-size:0.87rem;color:var(--muted);line-height:1.6;padding-left:1.2rem;position:relative;font-weight:300}
+.contrast-list li::before{content:'—';position:absolute;left:0;color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:0.75rem}
+.contrast-list.bright li{color:var(--white);font-weight:400}
+.contrast-list.bright li::before{content:'→'}
+
+
+/* CTA */
+.cta-section{padding:5rem 2.5rem;text-align:center}
+.cta-section h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.03em;margin-bottom:1rem;color:var(--white)}
+.cta-section h2 em{font-style:normal;color:var(--accent)}
+.cta-section p{font-size:0.95rem;color:var(--muted);font-weight:300;max-width:42ch;margin:0 auto 2.5rem;line-height:1.8}
+.cta-btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--accent);color:var(--black);padding:0.85rem 2rem;text-decoration:none;font-weight:500;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:var(--white);padding:0.85rem 2rem;text-decoration:none;border:0.5px solid rgba(245,243,238,0.25);transition:border-color 0.2s}
+.btn-ghost:hover{border-color:var(--white)}
+
+/* FOOTER */
+footer{padding:2rem 2.5rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em}
+</style>
+</head>
+<body>
+
+<!-- SERP SNIPPET (social proof bar, light bg) -->
+<div class="serp-bar">
+  <div class="serp-favicon">
+    <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="10" height="10" rx="1" fill="#14a800"/>
+      <path d="M2 5.5l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="serp-meta">
+    <div class="serp-source">Verified Google Ads Expert &nbsp;<span>· Philippines · hanslacida.com</span></div>
+    <div class="serp-url">hanslacida.com › google-ads-management</div>
+    <div class="stars-wrap">
+      <div class="stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star-half"></div>
+      </div>
+      <span class="rating-text"><strong>4.5</strong> · 749 engagements · Top Rated</span>
+    </div>
+    <p class="serp-snippet">Need a Google Ads expert who's been inside the machine? <strong>Contact Hans today</strong> and get matched with a specialist who built campaigns from the Google side — not just managed them.</p>
+  </div>
+  <div class="serp-cta-wrap">
+    <a class="serp-cta" href="https://hanslacida.com" target="_blank">Contact Hans today →</a>
+  </div>
+</div>
+
+<!-- REVIEWS STRIP -->
+<div class="reviews-strip">
+  <div class="reviews-summary">
+    <span class="summary-num">4.5</span>
+    <div class="summary-stars">
+      <div class="s-star"></div><div class="s-star"></div><div class="s-star"></div>
+      <div class="s-star"></div><div class="s-star"></div>
+    </div>
+    <span class="summary-label">749 reviews</span>
+    <span class="summary-label" style="color:var(--accent);margin-top:6px">Top Rated</span>
+  </div>
+  <div class="review-card">
+    <div class="review-stars"><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div></div>
+    <p class="review-text">"Hans completely rebuilt our tracking from scratch. Within 60 days our CPA dropped 40%. Best hire we've made for paid media."</p>
+    <span class="review-author">E-commerce founder · AU</span>
+  </div>
+  <div class="review-card">
+    <div class="review-stars"><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div></div>
+    <p class="review-text">"He doesn't just run ads. He actually understands the business and optimizes for revenue, not just clicks. Night and day from our previous agency."</p>
+    <span class="review-author">B2B client · USA</span>
+  </div>
+  <div class="review-card">
+    <div class="review-stars"><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div></div>
+    <p class="review-text">"The audit alone was worth it. We found $8K/month in wasted spend in the first week. Tracking was a mess — Hans fixed it in days."</p>
+    <span class="review-author">Retail brand · NZ</span>
+  </div>
+  <div class="review-card">
+    <div class="review-stars"><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div></div>
+    <p class="review-text">"Former Google insider experience shows. He knows what the algorithm actually wants — not what the blog posts say it wants."</p>
+    <span class="review-author">Agency partner · USA</span>
+  </div>
+  <div class="review-card">
+    <div class="review-stars"><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div></div>
+    <p class="review-text">"Our hotel group saw ROAS go from 2x to 4.8x over six months. Hans built the dashboards too — finally reporting we can act on."</p>
+    <span class="review-author">Hospitality group · Travel</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Hans<span>.</span></a>
+  <a class="nav-cta" href="#contact">Request Audit →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <span class="hero-tag">// Google Ads Management</span>
+    <h1>Paid acquisition<br/>systems that <em>actually convert.</em></h1>
+    <p class="hero-sub">Not an agency. Not a freelancer taking orders. A former Google Account Strategist who builds acquisition infrastructure — and stays accountable to the number that matters: revenue.</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats-row">
+      <div class="hero-stat"><span class="stat-num">$550M+</span><span class="stat-label">Revenue attributed</span></div>
+      <div class="hero-stat"><span class="stat-num">50%+</span><span class="stat-label">Avg. CPA reduction</span></div>
+    </div>
+    <div class="hero-stats-row">
+      <div class="hero-stat"><span class="stat-num">60x</span><span class="stat-label">Peak ROAS achieved</span></div>
+      <div class="hero-stat"><span class="stat-num">10+ yrs</span><span class="stat-label">Operator experience</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS IT -->
+<section>
+  <span class="section-label">// 01 — What this is</span>
+  <h2 class="section-title">Google Ads is infrastructure.<br/>Treat it like one.</h2>
+  <p class="section-body">Most businesses treat Google Ads like a faucet — turn it on, hope leads come out. The accounts that compound over time are built differently: clean structure, airtight tracking, and strategy tied to actual business economics.</p>
+  <div class="what-grid">
+    <div class="def-block">
+      <h3>Search Engine Marketing (SEM)</h3>
+      <p>SEM is paid placement inside Google's results — you bid to appear when someone is actively searching for what you offer. Done right, it's the highest-intent traffic channel available. Done wrong, it's just expensive noise.</p>
+    </div>
+    <div class="def-block">
+      <h3>Google Ads — the platform</h3>
+      <p>A pay-per-click system spanning Search, Shopping, Display, YouTube, Performance Max, and Demand Gen. Each campaign type has a different job. The operator's job is knowing which one to deploy, when, at what spend level — then letting the data drive what happens next.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <span class="section-label">// 02 — Why it compounds</span>
+  <h2 class="section-title">Six reasons this channel<br/>outperforms the alternatives.</h2>
+  <div class="why-grid">
+    <div class="why-card"><span class="why-num">01 —</span><h3>Intent-first targeting</h3><p>You're reaching people at the exact moment they're searching for a solution — not interrupting a social scroll. That intent gap is the entire moat.</p></div>
+    <div class="why-card"><span class="why-num">02 —</span><h3>Day-one visibility</h3><p>SEO builds over months. A well-structured campaign can generate leads within 48 hours of going live. For businesses that need pipeline now, that matters.</p></div>
+    <div class="why-card"><span class="why-num">03 —</span><h3>Measurable to the dollar</h3><p>Every click, call, purchase, and form fill is traceable — if your tracking is built correctly. That's where most accounts fall apart. It's also where I start.</p></div>
+    <div class="why-card"><span class="why-num">04 —</span><h3>Budget that scales both ways</h3><p>You're never locked in. When performance is there, you scale. When it's not, you pull back. No long-term retainer traps — just spend tied to output.</p></div>
+    <div class="why-card"><span class="why-num">05 —</span><h3>Competitive displacement</h3><p>Appearing above competitors in paid results at the exact moment a buyer is deciding — that's not just visibility. That's market position.</p></div>
+    <div class="why-card"><span class="why-num">06 —</span><h3>First-party data moat</h3><p>Over time, your customer match lists, enhanced conversion signals, and remarketing audiences become a compounding asset competitors can't replicate.</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <span class="section-label">// 03 — How I work</span>
+  <h2 class="section-title">No black boxes.<br/>Here's the exact process.</h2>
+  <div class="process-list">
+    <div class="process-step"><span class="step-num">01</span><div class="step-content"><h3>Diagnostic audit first</h3><p>Before anything is built, I tear down what's already running. Wasted spend, broken tracking, misaligned bid strategies, account structure debt — all of it surfaces in the first audit. You get a clear picture of where the money is going and why results are lagging.</p></div></div>
+    <div class="process-step"><span class="step-num">02</span><div class="step-content"><h3>Tracking and measurement foundation</h3><p>If the data going into Google Ads is wrong, everything downstream is wrong. I build or rebuild the tracking layer first — GA4, GTM, server-side tagging, enhanced conversions, and CRM integration — before optimizing a single bid.</p></div></div>
+    <div class="process-step"><span class="step-num">03</span><div class="step-content"><h3>Campaign architecture and launch</h3><p>Keyword research, match type strategy, ad group structure, RSA copy, bidding framework, budget allocation — built around your unit economics, not a generic template. Then we launch with tight controls and a defined ramp period.</p></div></div>
+    <div class="process-step"><span class="step-num">04</span><div class="step-content"><h3>Systematic optimization</h3><p>Weekly search term analysis, negative keyword pruning, bid adjustments, Quality Score improvement, A/B testing on ad copy, and landing page recommendations. This is ongoing work — not a set-it-and-hope-it-holds approach.</p></div></div>
+    <div class="process-step"><span class="step-num">05</span><div class="step-content"><h3>Reporting you'll actually read</h3><p>Looker Studio dashboards built for founders, not media buyers. You see the metrics that connect to business outcomes — leads, revenue, cost per acquisition — without the vanity impressions fluff that agencies use to fill slides.</p></div></div>
+  </div>
+</section>
+
+<!-- CAMPAIGN TYPES -->
+<section>
+  <span class="section-label">// 04 — Campaign types</span>
+  <h2 class="section-title">Every format serves<br/>a different job.</h2>
+  <p class="section-body">Throwing everything into one campaign type is how you waste budget. Here's what each format is actually built for.</p>
+  <div class="types-grid">
+    <div class="type-cell"><span class="type-icon">→ search</span><h4>Search Ads</h4><p>High-intent queries. Best for lead gen and direct response. Your floor.</p></div>
+    <div class="type-cell"><span class="type-icon">→ pmax</span><h4>Performance Max</h4><p>AI-driven full-funnel. Powerful when signals are clean. Dangerous when they're not.</p></div>
+    <div class="type-cell"><span class="type-icon">→ shopping</span><h4>Shopping Ads</h4><p>E-commerce native. Feed quality and bid strategy determine everything.</p></div>
+    <div class="type-cell"><span class="type-icon">→ display</span><h4>Display Ads</h4><p>Brand awareness and remarketing. Volume channel, not a conversion driver.</p></div>
+    <div class="type-cell"><span class="type-icon">→ video</span><h4>YouTube / Video</h4><p>Demand creation at scale. Skippable, non-skippable, and video action formats.</p></div>
+    <div class="type-cell"><span class="type-icon">→ retargeting</span><h4>Remarketing</h4><p>Bring back warm visitors. Highest-efficiency spend when audiences are built right.</p></div>
+  </div>
+</section>
+
+<!-- DIFF -->
+<section>
+  <span class="section-label">// 05 — What's different here</span>
+  <h2 class="section-title">Not an agency model.<br/>An operator model.</h2>
+  <p class="section-body">The difference isn't just positioning. It changes how decisions get made, who's accountable, and what you actually get at the end of the month.</p>
+  <div class="diff-grid">
+    <div class="diff-col">
+      <h3>Typical agency</h3>
+      <ul class="diff-list">
+        <li>Junior account manager rotating every 6 months</li>
+        <li>Reporting built to look busy, not transparent</li>
+        <li>Strategy disconnected from your business economics</li>
+        <li>Retainer survives whether results are there or not</li>
+        <li>One point of contact, ten people touching the account</li>
+      </ul>
+    </div>
+    <div class="diff-col">
+      <h3>Working with Hans</h3>
+      <ul class="diff-list accent-list">
+        <li>Former Google Account Strategist — insider knowledge, applied directly</li>
+        <li>One operator, full accountability, zero handoffs</li>
+        <li>Tracking built before a dollar is optimized</li>
+        <li>Reporting tied to revenue, not vanity metrics</li>
+        <li>Equity and performance arrangements available for the right partners</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="hybrid-section">
+  <span class="section-label">// 06 — Why I'm different</span>
+
+  <div class="headline-block">
+    <div class="hybrid-badge">
+      <div class="badge-dot"></div>
+      <span class="badge-text">The Hybrid Operator</span>
+    </div>
+    <h2>I'm not just your<br/>ordinary <em>Google Ads guy.</em></h2>
+    <p>Most paid media specialists live in one lane. They know the platform, they know the buttons. What they don't know is the code running under the page, the AI prompt that extracts the insight, the SEO signal that changes the intent, or the analyst's eye that separates a trend from a coincidence. I do all of it — and I think like a business owner, not a vendor.</p>
+  </div>
+
+  <!-- DISCIPLINE STACK -->
+  <div class="stack-grid">
+    <div class="stack-cell">
+      <span class="stack-tag">layer 01</span>
+      <h4>Google Ads operator</h4>
+      <p>Full-funnel campaign architecture, bid strategy, PMax signals, and account structure — built to compound, not just run.</p>
+    </div>
+    <div class="stack-cell">
+      <span class="stack-tag">layer 02</span>
+      <h4>Coder & systems builder</h4>
+      <p>GTM, server-side tagging, GA4, BigQuery, custom scripts. I don't wait for a developer — I build the tracking infrastructure myself.</p>
+    </div>
+    <div class="stack-cell">
+      <span class="stack-tag">layer 03</span>
+      <h4>AI-native prompter</h4>
+      <p>Not just using AI tools — engineering workflows with Claude, Groq, and OpenRouter to automate audits, surface insights, and cut analysis time from days to minutes.</p>
+    </div>
+    <div class="stack-cell">
+      <span class="stack-tag">layer 04</span>
+      <h4>SEO / GEO / AEO aware</h4>
+      <p>Understanding organic intent, generative search placement, and answer engine signals means my paid strategy never works against your organic presence — it amplifies it.</p>
+    </div>
+    <div class="stack-cell">
+      <span class="stack-tag">layer 05</span>
+      <h4>Marketing analyst</h4>
+      <p>Looker Studio, BigQuery, cohort analysis, attribution modeling. I read the data the way a CFO reads a P&L — looking for what's real, not what looks good in a screenshot.</p>
+    </div>
+    <div class="stack-cell">
+      <span class="stack-tag">layer 06</span>
+      <h4>Business operator</h4>
+      <p>I run my own ventures. I know what it feels like when CAC is too high, when a campaign is eating budget without moving revenue, and when the real problem isn't the ads.</p>
+    </div>
+  </div>
+
+  <!-- OWNERSHIP MANIFESTO -->
+  <div class="manifesto">
+    <span class="manifesto-label">// The ownership mindset — what this means for your account</span>
+    <div class="manifesto-lines">
+      <div class="manifesto-line">
+        <span class="m-arrow">→</span>
+        <span class="m-text">I manage your account like I <span>own</span> it.</span>
+      </div>
+      <div class="manifesto-line">
+        <span class="m-arrow">→</span>
+        <span class="m-text">Your tracking is a <span>system</span>, not an afterthought.</span>
+      </div>
+      <div class="manifesto-line">
+        <span class="m-arrow">→</span>
+        <span class="m-text">Your campaigns are <span>infrastructure</span>, not a monthly service.</span>
+      </div>
+      <div class="manifesto-line">
+        <span class="m-arrow">→</span>
+        <span class="m-text">Every decision connects to <span>your revenue</span>, not your ad spend.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTRAST -->
+  <div class="contrast-row">
+    <div class="contrast-col dark">
+      <h4>The single-skill specialist</h4>
+      <ul class="contrast-list">
+        <li>Knows the platform, doesn't understand the system behind it</li>
+        <li>Waits for the dev team to fix tracking before optimizing</li>
+        <li>Uses AI tools but doesn't build with them</li>
+        <li>Treats SEO and paid as completely separate channels</li>
+        <li>Reports on metrics, doesn't diagnose the business problem</li>
+        <li>Thinks like a vendor — delivers a service, exits at month-end</li>
+      </ul>
+    </div>
+    <div class="contrast-divider"><span class="divider-vs">vs</span></div>
+    <div class="contrast-col lit">
+      <h4>The hybrid operator</h4>
+      <ul class="contrast-list bright">
+        <li>Builds the whole stack — ads, tracking, reporting, automation</li>
+        <li>Fixes tracking himself, same week, no ticket required</li>
+        <li>Engineers AI workflows that surface insights at speed</li>
+        <li>Connects organic intent data to paid targeting decisions</li>
+        <li>Reads data like a business analyst, acts like an operator</li>
+        <li>Thinks like an owner — accountable to outcomes, not deliverables</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to find out what's<br/><em>actually broken?</em></h2>
+  <p>Start with a diagnostic audit. You'll know exactly where the budget is leaking and what to fix — whether you work with me or not.</p>
+  <div class="cta-btn-row">
+    <a class="btn-primary" href="https://hanslacida.com" target="_blank">Contact Hans today</a>
+    <a class="btn-ghost" href="https://zeldigital.com" target="_blank">See Case Studies</a>
+  </div>
+</section>
+
+<footer>
+  <p>Hans Lacida — Paid Acquisition Systems Operator</p>
+  <p class="mono">Cebu, PH · zeldigital.com</p>
+</footer>
+
+</body>
+</html>
