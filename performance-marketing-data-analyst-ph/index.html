@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hans Lacida — Performance Marketing Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080b10;
+    --surface: #0d1117;
+    --card: #111820;
+    --border: #1e2d3d;
+    --accent: #00e5ff;
+    --accent2: #ff6b35;
+    --accent3: #7fff6e;
+    --muted: #4a6278;
+    --text: #d6e8f5;
+    --text-dim: #6b8a9e;
+    --glow: rgba(0,229,255,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── SCANLINE ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  section, header, footer { position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(80px, 18vw, 280px);
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0,229,255,0.07);
+    white-space: nowrap;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,255,0.06);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 2px;
+    padding: 5px 14px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    animation: fadeSlide 0.6s ease both;
+  }
+
+  .badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(40px, 7vw, 88px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    animation: fadeSlide 0.6s ease 0.1s both;
+  }
+
+  h1 span.accent { color: var(--accent); }
+  h1 span.dim { color: var(--muted); }
+
+  .hero-role {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 600;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    animation: fadeSlide 0.6s ease 0.2s both;
+  }
+
+  .hero-role em {
+    color: var(--accent2);
+    font-style: normal;
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    color: var(--text-dim);
+    font-size: 13.5px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+    animation: fadeSlide 0.6s ease 0.3s both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    animation: fadeSlide 0.6s ease 0.4s both;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .location-tag {
+    position: absolute;
+    top: 36px;
+    right: 60px;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeSlide 0.6s ease 0.5s both;
+  }
+
+  .location-tag::before {
+    content: '◈';
+    color: var(--accent);
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION SHELL ── */
+  .section {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 52px;
+  }
+
+  .section-num {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 3.5vw, 38px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── SKILLS GRID ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-card {
+    background: var(--card);
+    padding: 28px 32px;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--card-accent, var(--accent));
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-card:hover { background: #141d27; }
+  .skill-card:hover::before { transform: scaleY(1); }
+
+  .skill-icon {
+    font-size: 22px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .skill-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .skill-desc {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(0,229,255,0.06);
+    color: var(--accent);
+    border: 1px solid rgba(0,229,255,0.15);
+  }
+
+  .tag.orange {
+    background: rgba(255,107,53,0.06);
+    color: var(--accent2);
+    border-color: rgba(255,107,53,0.2);
+  }
+
+  .tag.green {
+    background: rgba(127,255,110,0.06);
+    color: var(--accent3);
+    border-color: rgba(127,255,110,0.2);
+  }
+
+  /* ── TECH STACK ── */
+  .tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .tech-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .tech-item:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .tech-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tech-name {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .tech-cat {
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── DATA PIPELINE VISUAL ── */
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 40px;
+  }
+
+  .pipe-stage {
+    flex: 1;
+    min-width: 160px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .pipe-stage + .pipe-stage {
+    border-left: none;
+  }
+
+  .pipe-stage::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 18px;
+    z-index: 2;
+  }
+
+  .pipe-stage:last-child::after { display: none; }
+
+  .pipe-stage-num {
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .pipe-stage-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .pipe-stage-items {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.9;
+  }
+
+  .pipe-stage.highlight {
+    border-color: rgba(0,229,255,0.3);
+    background: rgba(0,229,255,0.04);
+  }
+
+  .pipe-stage.highlight .pipe-stage-num { color: var(--accent3); }
+
+  /* ── VERTICAL EXPERTISE ── */
+  .verticals {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .vertical-card {
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--v-color, var(--accent));
+    transition: transform 0.2s;
+  }
+
+  .vertical-card:hover { transform: translateY(-4px); }
+
+  .vertical-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .vertical-items {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 2;
+  }
+
+  .vertical-items li { list-style: none; }
+  .vertical-items li::before { content: '— '; color: var(--v-color, var(--accent)); }
+
+  /* ── METRICS HIGHLIGHT BAR ── */
+  .metrics-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 60px;
+  }
+
+  .metric-cell {
+    background: var(--card);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .metric-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .metric-val.orange { color: var(--accent2); }
+  .metric-val.green  { color: var(--accent3); }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── BUSINESS OWNER LENS ── */
+  #profit-lens .section-num { color: var(--accent3); }
+
+  .biz-intro {
+    max-width: 620px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-dim);
+  }
+
+  .biz-intro p { margin-bottom: 8px; }
+  .biz-intro em { color: var(--text); font-style: normal; font-weight: 600; }
+
+  .profit-question {
+    margin-bottom: 52px;
+    border-left: 3px solid var(--accent3);
+    padding-left: 28px;
+  }
+
+  .profit-q-inner { max-width: 680px; }
+
+  .profit-q-label {
+    display: block;
+    font-size: 10px;
+    color: var(--accent3);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .profit-q-text {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(18px, 2.8vw, 28px);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .profit-q-text em {
+    color: var(--accent3);
+    font-style: normal;
+  }
+
+  .metrics-explainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .metric-explain-card {
+    background: var(--card);
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background 0.2s;
+  }
+
+  .metric-explain-card:hover { background: #141d27; }
+
+  .metric-explain-card.highlight-card {
+    background: rgba(127,255,110,0.04);
+    border: 1px solid rgba(127,255,110,0.15);
+  }
+
+  .me-top {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .me-term {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  .me-plain {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  .me-what {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .me-why {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.75;
+    flex: 1;
+  }
+
+  .me-verdict {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    display: inline-block;
+    align-self: flex-start;
+    border-radius: 2px;
+  }
+
+  .verdict-warn   { color: var(--accent2); background: rgba(255,107,53,0.08); border: 1px solid rgba(255,107,53,0.2); }
+  .verdict-key    { color: var(--accent);  background: rgba(0,229,255,0.06);  border: 1px solid rgba(0,229,255,0.2); }
+  .verdict-profit { color: var(--accent3); background: rgba(127,255,110,0.06); border: 1px solid rgba(127,255,110,0.2); }
+
+  /* ── CTA / FOOTER ── */
+  .cta-section {
+    padding: 100px 60px;
+    text-align: center;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(0,229,255,0.06) 0%, transparent 70%);
+  }
+
+  .cta-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    line-height: 1.05;
+  }
+
+  .cta-sub {
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    font-size: 13.5px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  footer {
+    padding: 24px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  footer span { letter-spacing: 0.06em; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    header, .section, footer, .cta-section { padding-left: 24px; padding-right: 24px; }
+    .location-tag { right: 24px; }
+    .hero-stats { gap: 24px; }
+    .pipe-stage { min-width: 130px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<header>
+  <div class="hero-bg-text">DATA</div>
+  <div class="location-tag">United States of America, Philippines — PH</div>
+
+  <div class="badge">Available for engagements · 2026</div>
+
+  <h1>
+    Hans<br>
+    <span class="accent">Lacida</span>
+  </h1>
+
+  <p class="hero-role">
+    Performance Marketing <em>Data Analyst</em>
+  </p>
+
+  <p class="hero-desc">
+    Bridging the gap between paid acquisition and data intelligence. 
+    I turn raw campaign signals — clicks, conversions, CRM events, 
+    server-side telemetry — into actionable growth infrastructure that 
+    compounds over time.
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">4+</span>
+      <span class="stat-label">Verticals</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">SQL</span>
+      <span class="stat-label">+ BigQuery</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">PMax</span>
+      <span class="stat-label">Architect</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">AI</span>
+      <span class="stat-label">Augmented</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ METRICS BAR ══ -->
+<section class="section" style="padding-top: 60px; padding-bottom: 0; border-bottom: none;">
+  <div class="metrics-bar">
+    <div class="metric-cell">
+      <span class="metric-val">SS</span>
+      <div class="metric-label">Server-Side Tracking</div>
+    </div>
+    <div class="metric-cell">
+      <span class="metric-val orange">OCI</span>
+      <div class="metric-label">Offline Conversion Import</div>
+    </div>
+    <div class="metric-cell">
+      <span class="metric-val green">1PD</span>
+      <div class="metric-label">First-Party Data Strategy</div>
+    </div>
+    <div class="metric-cell">
+      <span class="metric-val">GA4</span>
+      <div class="metric-label">Analytics Configuration</div>
+    </div>
+    <div class="metric-cell">
+      <span class="metric-val orange">BQ</span>
+      <div class="metric-label">BigQuery Reporting</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DATA PIPELINE ══ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">01 //</span>
+    <h2 class="section-title">Analytics Pipeline Architecture</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="pipeline">
+    <div class="pipe-stage">
+      <div class="pipe-stage-num">LAYER 01</div>
+      <div class="pipe-stage-name">Raw Signal Capture</div>
+      <div class="pipe-stage-items">
+        GTM Server-Side<br>
+        Stape Endpoints<br>
+        First-Party Events<br>
+        CRM Webhooks
+      </div>
+    </div>
+    <div class="pipe-stage highlight">
+      <div class="pipe-stage-num">LAYER 02</div>
+      <div class="pipe-stage-name">Data Cleaning</div>
+      <div class="pipe-stage-items">
+        Dedup Logic<br>
+        Enhanced Conv.<br>
+        Consent Mode<br>
+        Schema Validation
+      </div>
+    </div>
+    <div class="pipe-stage">
+      <div class="pipe-stage-num">LAYER 03</div>
+      <div class="pipe-stage-name">Storage & Query</div>
+      <div class="pipe-stage-items">
+        BigQuery<br>
+        SQL Pipelines<br>
+        GA4 Exports<br>
+        CRM Integration
+      </div>
+    </div>
+    <div class="pipe-stage highlight">
+      <div class="pipe-stage-num">LAYER 04</div>
+      <div class="pipe-stage-name">Visualization</div>
+      <div class="pipe-stage-items">
+        Looker Studio<br>
+        Power BI<br>
+        Tableau<br>
+        Custom Dashboards
+      </div>
+    </div>
+    <div class="pipe-stage">
+      <div class="pipe-stage-num">LAYER 05</div>
+      <div class="pipe-stage-name">AI Analysis</div>
+      <div class="pipe-stage-items">
+        Claude + Groq<br>
+        Audit Automation<br>
+        Anomaly Detection<br>
+        Report Narrative
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:12.5px; color: var(--text-dim); max-width:640px;">
+    Every engagement begins with a clean data foundation. I audit what's broken, 
+    rebuild measurement infrastructure from the signal layer up, and ensure 
+    Google Ads receives the highest-quality conversion data to train its bidding models.
+  </p>
+</section>
+
+<!-- ══ CORE SKILLS ══ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">02 //</span>
+    <h2 class="section-title">Core Competencies</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="skills-grid">
+
+    <div class="skill-card" style="--card-accent: var(--accent);">
+      <span class="skill-icon">◈</span>
+      <div class="skill-name">Campaign Data Architecture</div>
+      <div class="skill-desc">Full-funnel Google Ads structure with PMax, Demand Gen, and YouTube — designed so the data flows cleanly into bidding models and reporting dashboards.</div>
+      <div class="skill-tags">
+        <span class="tag">PMax</span>
+        <span class="tag">Demand Gen</span>
+        <span class="tag">YouTube Ads</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent2);">
+      <span class="skill-icon">◎</span>
+      <div class="skill-name">Conversion Tracking & Measurement</div>
+      <div class="skill-desc">Advanced setup and troubleshooting of conversion events — server-side, enhanced conversions, consent mode v2, and offline import pipelines from CRM to Google Ads.</div>
+      <div class="skill-tags">
+        <span class="tag orange">SS Tracking</span>
+        <span class="tag orange">Enhanced Conv</span>
+        <span class="tag orange">OCI</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent3);">
+      <span class="skill-icon">⬡</span>
+      <div class="skill-name">SQL & BigQuery Analytics</div>
+      <div class="skill-desc">Custom reporting pipelines, campaign data extraction, attribution modeling, and performance analysis using SQL against GA4 and Google Ads data exports in BigQuery.</div>
+      <div class="skill-tags">
+        <span class="tag green">SQL</span>
+        <span class="tag green">BigQuery</span>
+        <span class="tag green">GA4 Export</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent);">
+      <span class="skill-icon">▣</span>
+      <div class="skill-name">Data Visualization & Reporting</div>
+      <div class="skill-desc">Founder-ready dashboards in Looker Studio, Power BI, and Tableau. Clean, actionable client reporting that surfaces decisions — not just numbers.</div>
+      <div class="skill-tags">
+        <span class="tag">Looker Studio</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Tableau</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent2);">
+      <span class="skill-icon">⬢</span>
+      <div class="skill-name">First-Party Data Strategy</div>
+      <div class="skill-desc">Turning owned data into a competitive moat — Customer Match audiences, CRM-to-ads activation, consent-compliant pipelines, and HIPAA-aware structures for regulated verticals.</div>
+      <div class="skill-tags">
+        <span class="tag orange">Customer Match</span>
+        <span class="tag orange">CRM Sync</span>
+        <span class="tag orange">Consent Mode</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent3);">
+      <span class="skill-icon">◉</span>
+      <div class="skill-name">AI-Augmented Analysis</div>
+      <div class="skill-desc">Prompt engineering with Claude, ChatGPT, and Groq/Qwen via OpenRouter for automated audit workflows, anomaly detection, and AI-assisted campaign recommendation reporting.</div>
+      <div class="skill-tags">
+        <span class="tag green">Claude</span>
+        <span class="tag green">Groq</span>
+        <span class="tag green">OpenRouter</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent);">
+      <span class="skill-icon">◫</span>
+      <div class="skill-name">Budget Allocation & ROAS Modeling</div>
+      <div class="skill-desc">Frameworks for budget distribution across campaigns with downside protection, CPA targets by vertical, and ROAS optimization strategies in high-CPC environments.</div>
+      <div class="skill-tags">
+        <span class="tag">ROAS</span>
+        <span class="tag">CPA Modeling</span>
+        <span class="tag">Budget Ops</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: var(--accent2);">
+      <span class="skill-icon">⬟</span>
+      <div class="skill-name">Acquisition Infrastructure</div>
+      <div class="skill-desc">Building systems that compound — not just campaigns. Productized audit services, white-label fulfillment, micro-tools that deliver immediate value, and repeatable operator frameworks.</div>
+      <div class="skill-tags">
+        <span class="tag orange">Systems</span>
+        <span class="tag orange">Audits</span>
+        <span class="tag orange">White-Label</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: #ff3d6b;">
+      <span class="skill-icon">⬡</span>
+      <div class="skill-name">Behavior Analytics & UX Signals</div>
+      <div class="skill-desc">Hotjar heatmaps, session recordings, and funnel analysis layered onto campaign data — connecting where users drop off on-site to which ad creatives and audiences drove them there. Ads get people to the door; behavior data tells you why they left.</div>
+      <div class="skill-tags">
+        <span class="tag" style="color:#ff3d6b; border-color:rgba(255,61,107,0.3); background:rgba(255,61,107,0.06);">Hotjar</span>
+        <span class="tag" style="color:#ff3d6b; border-color:rgba(255,61,107,0.3); background:rgba(255,61,107,0.06);">Heatmaps</span>
+        <span class="tag" style="color:#ff3d6b; border-color:rgba(255,61,107,0.3); background:rgba(255,61,107,0.06);">Funnel Analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-card" style="--card-accent: #f5c842;">
+      <span class="skill-icon">◎</span>
+      <div class="skill-name">Triple Whale & Ecommerce Attribution</div>
+      <div class="skill-desc">Understanding the full ecommerce data infrastructure — Triple Whale's pixel, blended ROAS, MER (Marketing Efficiency Ratio), and cohort-level attribution across paid channels. Knowing which number to trust when platform data lies.</div>
+      <div class="skill-tags">
+        <span class="tag" style="color:#f5c842; border-color:rgba(245,200,66,0.3); background:rgba(245,200,66,0.06);">Triple Whale</span>
+        <span class="tag" style="color:#f5c842; border-color:rgba(245,200,66,0.3); background:rgba(245,200,66,0.06);">MER</span>
+        <span class="tag" style="color:#f5c842; border-color:rgba(245,200,66,0.3); background:rgba(245,200,66,0.06);">Cohort Attribution</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ BUSINESS OWNER LENS ══ -->
+<section class="section" id="profit-lens">
+  <div class="section-header">
+    <span class="section-num">★ //</span>
+    <h2 class="section-title">The Business Owner Lens</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="biz-intro">
+    <p>I run a business myself. That changes everything about how I look at data.</p>
+    <p>Most analysts report metrics. I report <em>one thing</em> that actually matters to an owner:</p>
+  </div>
+
+  <div class="profit-question">
+    <div class="profit-q-inner">
+      <span class="profit-q-label">The Only Question That Matters</span>
+      <div class="profit-q-text">After every expense — fulfillment, staff, tools, overhead — and <em>after</em> the ad spend… are we actually making money?</div>
+    </div>
+  </div>
+
+  <div class="metrics-explainer">
+
+    <div class="metric-explain-card">
+      <div class="me-top">
+        <span class="me-term">ROAS</span>
+        <span class="me-plain">Revenue ÷ Ad Spend</span>
+      </div>
+      <div class="me-what">What platforms report. Looks great. Means nothing alone.</div>
+      <div class="me-why">A 4x ROAS on a product with 20% margins after COGS, shipping, and refunds is a money-losing campaign. Platforms don't tell you that.</div>
+      <div class="me-verdict verdict-warn">⚠ Starting point only</div>
+    </div>
+
+    <div class="metric-explain-card">
+      <div class="me-top">
+        <span class="me-term">CAC</span>
+        <span class="me-plain">Total Ad Spend ÷ New Customers</span>
+      </div>
+      <div class="me-what">How much you actually paid to acquire one customer — including all wasted spend.</div>
+      <div class="me-why">Compare this against LTV (lifetime value). If CAC > LTV, the business bleeds with every new customer. If CAC &lt; LTV, you have a machine.</div>
+      <div class="me-verdict verdict-key">◈ Core health metric</div>
+    </div>
+
+    <div class="metric-explain-card">
+      <div class="me-top">
+        <span class="me-term">ROI</span>
+        <span class="me-plain">(Revenue − Total Costs) ÷ Total Costs</span>
+      </div>
+      <div class="me-what">The full picture: revenue minus <strong>everything</strong> — product cost, fulfillment, staff, tools, AND ad spend.</div>
+      <div class="me-why">This is the number I care about. Not gross revenue. Not attributed conversions. Net profit after every dollar out the door.</div>
+      <div class="me-verdict verdict-profit">✓ The real number</div>
+    </div>
+
+    <div class="metric-explain-card">
+      <div class="me-top">
+        <span class="me-term">Incremental ROI</span>
+        <span class="me-plain">What ads actually caused vs. would have happened anyway</span>
+      </div>
+      <div class="me-what">Isolating the true lift from paid ads — removing organic sales, brand searches, and returning customers that would have converted regardless.</div>
+      <div class="me-why">Most brands are over-crediting their ads. Incrementality tests reveal if cutting budget loses revenue or just cleans up the reporting.</div>
+      <div class="me-verdict verdict-key">◈ Incrementality testing</div>
+    </div>
+
+    <div class="metric-explain-card">
+      <div class="me-top">
+        <span class="me-term">MER</span>
+        <span class="me-plain">Total Revenue ÷ Total Ad Spend (all channels)</span>
+      </div>
+      <div class="me-what">Marketing Efficiency Ratio — the blended view across every paid channel at once.</div>
+      <div class="me-why">Used with Triple Whale. When platform ROAS doesn't match business reality, MER is the north star that cuts through attribution noise and tells you if marketing is working as a whole.</div>
+      <div class="me-verdict verdict-profit">✓ North star for scaling</div>
+    </div>
+
+    <div class="metric-explain-card highlight-card">
+      <div class="me-top">
+        <span class="me-term" style="color: var(--accent3);">Bottom Line</span>
+        <span class="me-plain" style="color: var(--accent3);">Do we profit?</span>
+      </div>
+      <div class="me-what">Revenue − COGS − Fulfillment − Staff − Tools − Overhead − Ad Spend = <strong>Actual Profit</strong></div>
+      <div class="me-why">I build reporting that shows this number clearly — not buried in a dashboard, not hidden behind a 6x ROAS headline. The owner should be able to open a report and see: <em>"We made $X this month after everything."</em></div>
+      <div class="me-verdict verdict-profit">✓ How I report to owners</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ TECH STACK ══ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">03 //</span>
+    <h2 class="section-title">Tools & Technology Stack</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="tech-list">
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#00e5ff;"></div>
+      <div>
+        <div class="tech-name">Google Ads</div>
+        <div class="tech-cat">Paid Acquisition</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#ff6b35;"></div>
+      <div>
+        <div class="tech-name">Google Analytics 4</div>
+        <div class="tech-cat">Analytics</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#7fff6e;"></div>
+      <div>
+        <div class="tech-name">Google Tag Manager</div>
+        <div class="tech-cat">Tag Management</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#00e5ff;"></div>
+      <div>
+        <div class="tech-name">BigQuery</div>
+        <div class="tech-cat">Data Warehouse</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#7fff6e;"></div>
+      <div>
+        <div class="tech-name">Looker Studio</div>
+        <div class="tech-cat">Visualization</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#ff6b35;"></div>
+      <div>
+        <div class="tech-name">Power BI</div>
+        <div class="tech-cat">Business Intelligence</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#00e5ff;"></div>
+      <div>
+        <div class="tech-name">Tableau</div>
+        <div class="tech-cat">Data Visualization</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#7fff6e;"></div>
+      <div>
+        <div class="tech-name">Stape / GTM SS</div>
+        <div class="tech-cat">Server-Side Tracking</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#ff6b35;"></div>
+      <div>
+        <div class="tech-name">HubSpot / Salesforce</div>
+        <div class="tech-cat">CRM Integration</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#00e5ff;"></div>
+      <div>
+        <div class="tech-name">OpenRouter (Groq, Qwen)</div>
+        <div class="tech-cat">AI Automation</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#7fff6e;"></div>
+      <div>
+        <div class="tech-name">SQL</div>
+        <div class="tech-cat">Data Querying</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#ff6b35;"></div>
+      <div>
+        <div class="tech-name">Vercel / Netlify</div>
+        <div class="tech-cat">Deployment</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#ff3d6b;"></div>
+      <div>
+        <div class="tech-name">Hotjar</div>
+        <div class="tech-cat">Behavior Analytics / Heatmaps</div>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-dot" style="background:#f5c842;"></div>
+      <div>
+        <div class="tech-name">Triple Whale</div>
+        <div class="tech-cat">Ecommerce Attribution & MER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VERTICAL EXPERTISE ══ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">05 //</span>
+    <h2 class="section-title">Vertical Expertise</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="verticals">
+    <div class="vertical-card" style="--v-color: var(--accent);">
+      <div class="vertical-name">Ecommerce & Shopping</div>
+      <ul class="vertical-items">
+        <li>Google Shopping & PMax asset groups</li>
+        <li>Product feed optimization</li>
+        <li>Seasonal budget scaling</li>
+        <li>Revenue attribution modeling</li>
+      </ul>
+    </div>
+    <div class="vertical-card" style="--v-color: var(--accent2);">
+      <div class="vertical-name">Healthcare & MedSpa</div>
+      <ul class="vertical-items">
+        <li>HIPAA-compliant campaign structure</li>
+        <li>Lead quality tracking</li>
+        <li>Compliance-safe targeting</li>
+        <li>Privacy-first data architecture</li>
+      </ul>
+    </div>
+    <div class="vertical-card" style="--v-color: var(--accent3);">
+      <div class="vertical-name">B2B SaaS & Mid-Market</div>
+      <ul class="vertical-items">
+        <li>Pipeline attribution models</li>
+        <li>Long sales cycle tracking</li>
+        <li>CRM-to-Google Ads integration</li>
+        <li>MQL / SQL funnel analytics</li>
+      </ul>
+    </div>
+    <div class="vertical-card" style="--v-color: var(--accent);">
+      <div class="vertical-name">Legal, Finance & Home Services</div>
+      <ul class="vertical-items">
+        <li>High-intent search campaigns</li>
+        <li>Local Service Ads</li>
+        <li>Aggressive CPA management</li>
+        <li>Call tracking & lead attribution</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <h2 class="cta-title">
+    Let's build something<br>
+    <span style="color: var(--accent);">that compounds.</span>
+  </h2>
+  <p class="cta-sub">
+    Performance marketing that starts with clean data and ends with compounding growth.
+  </p>
+  <a href="https://book.hanslacida.com" class="btn">
+    ◈ Start a Conversation
+  </a>
+</section>
+
+<footer>
+  <span>HansLacida.com — Performance Marketing Data Analyst</span>
+  <span>USA · Philippines · 2026</span>
+</footer>
+
+</body>
+</html>
