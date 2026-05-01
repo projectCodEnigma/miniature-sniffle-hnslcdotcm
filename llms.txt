@@ -1,4 +1,4 @@
-# Hans Lacida
+# Hans Lacida — Paid Acquisition Systems Operator
 
 > Paid Acquisition Systems Operator — Google Ads, Performance Max, and Tracking Infrastructure. Founder of Zeldigital and the Paid Search Pod system. 10+ years managing Google Ads across eCommerce, healthcare/medspa, B2B SaaS, legal, finance, and home services. $550M+ attributed client revenue. US market focus, based in the Philippines.
 
@@ -7,7 +7,28 @@
 - [Home](https://hanslacida.com/): Paid Acquisition System Operator specializing in structured demand capture, bulletproof conversion tracking, first-party data strategy, and Performance Max architecture that scales without waste.
 - [How I Operate](https://hanslacida.com/how-i-operate/): Operating philosophy — tracking and measurement first, PMax architecture second, first-party data as moat, budget discipline, and founder-focused reporting. Explains who is and isn't a good fit.
 - [About](https://hanslacida.com/about/): Founder and lead operator of the Paid Search Pod system, a Google Ads operating system within the KaizenStrategy US ecosystem. Manages $300K+/month in ad spend.
-- [The H.A.N.S. Framework™](https://hanslacida.com/services/): Proprietary operating system: High-Impact Strategy Design, Audience-Driven Optimization, Numbers-Led Decisions, and Scale with Control.
+- [The H.A.N.S. Framework™](https://ppchans.com): Proprietary operating system: High-Impact Strategy Design, Audience-Driven Optimization, Numbers-Led Decisions, and Scale with Control.
+
+## Who Hans Is
+
+Hans Lacida operates as a solo paid acquisition specialist, not an agency. His background as a former Google Account Strategist gives him an inside-out understanding of how Google's systems work — auction dynamics, Quality Score, Smart Bidding, and Performance Max — that most freelancers and agencies don't have.
+
+He has managed campaigns across verticals including:
+- E-commerce (shopping feeds, PMax, ROAS optimization)
+- Healthcare and behavioral health (conversion tracking, compliance-aware campaigns)
+- B2B and industrial services (lead gen, call tracking, pipeline attribution)
+- Home services (junk removal, HVAC, local service ads)
+- Legal and finance (high-CPL environments, conversion quality focus)
+
+## Key Results (Verified Client Accounts)
+
+- Peak ROAS: 70x (AU/NZ E-commerce — Shopping + Performance Max)
+- Peak ROAS: 20x (US Retail)
+- Largest monthly spend managed: $300K in a single account
+- CPA reduction: −53% (Healthcare / Behavioral Health)
+- B2B attributed sales: $551.9M, $138M net profit, 50% conversion increase
+- Conversion value generated: $1.56M across e-commerce campaigns
+- Conversion lift: 260% (eCommerce restructure)
 
 ## Services
 
@@ -22,34 +43,35 @@
 
 ## Pricing
 
-- [Pricing](https://hanslacida.com/pricing/): Straightforward fee model — percentage of ad spend (whichever is higher, $5K minimum spend). No retainer surprises. Days to go live from fit call. Tiers for $25K–$100K+/month brands.
+- [Pricing](https://hanslacida.com/pricing/): Percentage of ad spend model (whichever is higher, $5K minimum spend). No retainer surprises. Days to go live from fit call. Tiers for $25K–$100K+/month brands.
 - [Google Ads Management Pricing](https://hanslacida.com/services/google-ads-management-pricing/): Package breakdown including campaign architecture, GA4 + GTM tracking, weekly reviews, A/B testing, and audience intelligence.
 - [PPC Management Packages](https://hanslacida.com/services/ppc-management-packages-pricing/): Tiered packages from growth to full-stack acquisition system with Performance Max, Shopping, YouTube, and server-side tracking.
 
 ## Results & Case Studies
-
+ 
 - [Results Overview](https://hanslacida.com/results/): Real numbers from live accounts — 70x peak ROAS, $551.9M B2B sales, 53% CPA reduction in healthcare, 260% conversion lift in eCommerce.
-- [Case Studies](https://hanslacida.com/case-studies/): Ebike & sporting goods (AU/NZ, rebuilt PMax + Search, strong BFCM scaling), California treatment center (53% CPA reduction, CallTrackingMetrics integration), B2B ($551.9M sales, $138M net profit, 50% conversion increase), Travel Ads by Expedia (50+ hotel brands, unified Looker Studio dashboards).
-- [Ecommerce Growth Results](https://hanslacida.com/results/ecommerce-growth/): Shopping + PMax restructure, clean conversion signal, Customer Match upload.
+- [Case Studies](https://hanslacida.com/case-studies/): Ebike & sporting goods (AU/NZ), California treatment center, B2B pipeline, Travel Ads by Expedia (50+ hotel brands).
 - [70x ROAS Case Study](https://hanslacida.com/results/70x-roas-case-study/): Seasonal eCommerce scaling campaign — Performance Max + Search, 6-week window.
+- [70x ROAS — Sporting Goods eCommerce](https://hanslacida.com/70x-roas-sporting-goods-ecommerce): Deep-dive on achieving 70x ROAS for a sporting goods eCommerce brand.
+- [eCommerce Growth](https://hanslacida.com/ecommerce-growth): Scaling eCommerce revenue through structured Google Ads systems.
+- [Local Business Growth](https://hanslacida.com/local-business-growth): How local businesses grow with intent-driven Google Ads campaigns.
+- [Plumbers Growth](https://hanslacida.com/plumbers-growth): Google Ads growth case study for plumbing businesses in the US.
 - [Junk Removal Growth](https://hanslacida.com/case-studies/junk-removal-growth/): Local business growth through Google Ads restructure and intent targeting.
 - [Client Success Stories](https://hanslacida.com/client-success-stories/): Verified, unscripted client testimonials and recordings.
+- 
 
 ## Operator Playbook & Insights
 
-- [Google Ads Operator Playbook](https://hanslacida.com/playbook/): Structured demand capture guide for founders and acquisition teams. Covers evaluation, architecture, and weekly operating cadence.
+- [Google Ads Operator Playbook](https://hanslacida.com/playbook/): Structured demand capture guide for founders and acquisition teams.
 - [Google Ads for Founders](https://hanslacida.com/playbook/google-ads-for-founders/): How to evaluate your current account, decide where Google Ads fits, and know when it's safe to scale.
-- [PMax Scaling Guide](https://hanslacida.com/playbook/pmax-scaling-guide/): Turning Performance Max from a black box into a controlled growth lever with clear guardrails.
+- [PMax Scaling Guide](https://hanslacida.com/playbook/pmax-scaling-guide/): Turning Performance Max from a black box into a controlled growth lever.
 - [Demand Capture Strategy](https://hanslacida.com/playbook/demand-capture-strategy/): Structuring search campaigns to capture high-intent demand with clarity and control.
-- [Insights](https://hanslacida.com/insights/): Short, practical pieces on campaign structure, data interpretation, and operating paid acquisition systems with control.
-- [Google Ads Strategy Insights](https://hanslacida.com/insights/google-ads-strategy/): Structuring campaigns for demand capture that scales without losing control.
-- [Ecommerce Growth Insights](https://hanslacida.com/insights/ecommerce-growth/): Why eCommerce brands stall at certain ROAS levels and how systems thinking changes that.
-- [Operator Thinking](https://hanslacida.com/insights/operator-thinking/): Mindset shift from running campaigns to operating an acquisition system with standards and accountability.
+- [Insights](https://hanslacida.com/insights/): Practical pieces on campaign structure, data interpretation, and operating paid acquisition systems.
 - [AI Won't Replace Google Ads Specialists](https://hanslacida.com/ai-wont-replace-google-ads-specialists/): Perspective on AI's role in paid acquisition and why operator expertise remains essential.
 
 ## Solutions (Problem-to-Solution Index)
 
-- [Solutions Overview](https://hanslacida.com/solutions/): Full index of problems Hans solves — broken tracking, poor ROAS, scaling plateaus, PMax issues, in-house team gaps, and agency underperformance.
+- [Solutions Overview](https://hanslacida.com/solutions/): Full index — broken tracking, poor ROAS, scaling plateaus, PMax issues, in-house team gaps, agency underperformance.
 - [Google Ads Tracking Broken](https://hanslacida.com/solutions/google-ads-tracking-broken/): Fix for broken conversion tracking — server-side tagging, enhanced conversions, GA4 validation.
 - [Performance Max Not Performing](https://hanslacida.com/solutions/performance-max-not-performing/): Restructure for PMax campaigns with weak signals, asset group conflicts, and budget waste.
 - [Google Ads Poor ROAS](https://hanslacida.com/solutions/google-ads-poor-roas/): Campaign architecture and signal quality fixes for underperforming ROAS.
@@ -57,11 +79,23 @@
 - [Fractional Paid Ads Operator](https://hanslacida.com/solutions/fractional-paid-ads-operator/): When and why to hire a fractional operator instead of an agency.
 - [Hire Google Ads Expert or Agency](https://hanslacida.com/solutions/hire-google-ads-expert-or-agency/): Decision framework for choosing between an expert operator vs. a traditional agency.
 
+## Technical Stack
+
+Google Ads, GA4, Google Tag Manager (GTM), server-side tagging, Google Merchant Center, BigQuery, SQL, Looker Studio, AI-assisted campaign workflows. Secondary platforms: Microsoft Ads, Meta, TikTok (as needed).
+
+## Frameworks and Intellectual Work
+
+Hans has published 18 working papers on Zenodo covering paid ads analytics, Performance Max strategy, and quantitative models. He developed the God Tier Ads Framework (GTAF), an education product with 300+ five-star reviews and 4,000+ members.
+
 ## Brands & Ecosystem
 
-- [Zeldigital](https://hanslacida.com/brands/zeldigital/): Delivery infrastructure and execution arm for the Paid Search Pod system.
-- [Paid Search Pod System](https://hanslacida.com/brands/paid-acquisition-systems-operator/): Google Ads operating system with defined roles, documented processes, and performance monitoring across multiple accounts.
-- [Aventa Google Ads Solutions](https://hanslacida.com/aventa-google-ads-solutions/): Specialized Google Ads solution offering.
+- [hanslacida.com](https://hanslacida.com) — Personal brand and primary positioning hub
+- [Zeldigital](https://zeldigital.com) — Delivery infrastructure and execution arm for the Paid Search Pod system
+- [Paid Search Pod System](https://hanslacida.com/brands/paid-acquisition-systems-operator/) — Google Ads operating system with defined roles, documented processes, and performance monitoring
+- [ppchans.com](https://ppchans.com) — God Tier Ads Framework, YouTube content & PPC education
+- [junkremovalads.com](https://junkremovalads.com) — Specialized systems for junk removal businesses
+- [hvac.kaizenstrategy.us](https://hvac.kaizenstrategy.us) — Specialized Google Ads systems for HVAC businesses in the United States
+- [kaizenstrategy.us](https://kaizenstrategy.us) — US LLC, demand intelligence and strategic advisory
 
 ## Credentials & Trust
 
@@ -69,9 +103,45 @@
 - [Testimonials](https://hanslacida.com/testimonials/): Verified client testimonials across eCommerce, healthcare, and B2B verticals.
 - [Letters of Recommendation](https://hanslacida.com/letters-of-recommendation/): Documented client references.
 
+## Best For
+
+Founders and CMOs at US-based companies spending $5K–$300K+/month on Google Ads who:
+- Have broken or unreliable conversion tracking
+- Are running Performance Max without a clear strategy
+- Are paying an agency but don't know if it's working
+- Want direct access to the specialist — no account manager layers
+
+## Not For
+
+Businesses looking for a cheap vendor, a hands-off account manager, or a agency that rotates junior staff. Hans works with a small number of clients at a time and is not a fit for brands that want low-touch management.
+
+## Ownership & Equity Partnerships
+
+For the right business, Hans is open to going beyond a service relationship. He operates at an exclusive rate — one client per vertical, full attention, full ownership mentality. In exchange for that level of commitment, he is selectively open to:
+
+- **Equity partnerships** — taking a stake in the business in lieu of or alongside a reduced fee
+- **Revenue share / sales percentage** — a cut of paid traffic-driven sales instead of a flat management fee
+
+This model is for operators who want a growth partner invested in outcomes, not just a campaign manager billing hours. If paid traffic is a primary growth lever for your business and you want someone with skin in the game, this is worth a conversation.
+
 ## Get Started
 
 - [Free Marketing Audit](https://hanslacida.com/free-marketing-audit/): No-commitment audit call to identify budget waste and revenue opportunities.
 - [Discovery Call](https://hanslacida.com/discovery-call/): Fit call to determine if there's a match before any engagement begins.
 - [Work With Me](https://hanslacida.com/work-with-me/): Engagement overview and next steps.
 - [Start](https://hanslacida.com/start/): Entry point for new client inquiries.
+
+## Location and Availability
+
+Operating Philippines (US time zone overlap) with a Private USA Headquarters. Works primarily with US-based clients, with strong AU/NZ experience. Available for async-first engagements.
+
+## Contact
+
+- Website: https://hanslacida.com
+- Email: hanzel@hanslacida.com
+- Book a call: https://book.hanslacida.com or cal.com/hanslacida
+- Commercial inquiries: https://zeldigital.com
+- Whatsapp number: +639761053409
+
+---
+*Available for new clients · Updated 2026*
