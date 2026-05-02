@@ -3,10 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pricing — HansLacida · Zeldigital</title>
+<title>Pricing — Hans Lacida · Zeldigital · Google Ads Management</title>
+<meta name="description" content="Transparent Google Ads management pricing from Hans Lacida (Zeldigital). $1,500/month or 10% of ad spend — whichever is higher. $5K+ ad spend required. No hourly tracking.">
+<link rel="canonical" href="https://hanslacida.com/pricing/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is there a $5,000/month minimum ad spend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Below $5K, data volume is too thin to optimize meaningfully. This threshold ensures there's enough signal to make decisions that actually compound over time — and that the engagement is worthwhile for both sides."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Google Ads management cost with Hans Lacida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Ads management is priced at $1,500/month or 10% of monthly ad spend — whichever is higher. A minimum ad spend of $5,000/month is required. No hourly tracking. No hidden fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we structure this as a flat retainer or a hybrid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A flat monthly retainer works well for brands that need cost predictability and a defined scope. A retainer + percentage of ad spend hybrid is available when both floor stability and scale alignment matter. Raise it on the fit call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast is onboarding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most accounts are live within 7 days of the fit call. Conversion tracking, campaign structure, and reporting setup happen in the first week — not strung across a month of kickoffs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a long-term contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Engagements are structured for 90-day minimum cycles — enough runway to build systems that produce compounding results. After that, month-to-month. No year-long lock-ins."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
 :root {
   --ink: #0f0f0d;
@@ -25,11 +78,8 @@
   --sans: 'Instrument Sans', sans-serif;
   --mono: 'DM Mono', monospace;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 body {
   font-family: var(--sans);
   background: var(--paper);
@@ -41,692 +91,288 @@ body {
 
 /* ── NAV ── */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: sticky; top: 0; z-index: 100;
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
   padding: 0 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   height: 56px;
 }
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+.nav-brand { display: flex; align-items: center; gap: 10px; }
 .nav-mark {
-  width: 28px; height: 28px;
-  border-radius: 6px;
-  background: var(--ink);
-  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  background: var(--ink); display: flex; align-items: center; justify-content: center;
 }
-
 .nav-mark svg { width: 14px; height: 14px; }
-
-.nav-name {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: 0.04em;
-}
-
-.nav-sub {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 12.5px;
-  color: var(--ink-3);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.15s;
-}
-
+.nav-name { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink); letter-spacing: 0.04em; }
+.nav-name a { text-decoration: none; color: inherit; }
+.nav-sub { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.04em; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 12.5px; color: var(--ink-3); text-decoration: none; letter-spacing: 0.02em; transition: color 0.15s; }
 .nav-links a:hover { color: var(--ink); }
-
 .nav-cta {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--paper) !important;
-  background: var(--ink);
-  padding: 7px 16px;
-  border-radius: 4px;
-  letter-spacing: 0.03em;
+  font-size: 12px !important; font-weight: 500;
+  color: var(--paper) !important; background: var(--ink);
+  padding: 7px 16px; border-radius: 4px; letter-spacing: 0.03em;
   transition: opacity 0.15s !important;
 }
-
 .nav-cta:hover { opacity: 0.8; color: var(--paper) !important; }
 
 /* ── HERO ── */
 .hero {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1100px; margin: 0 auto;
   padding: 6rem 2.5rem 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: end;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end;
 }
-
 .hero-kicker {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-3);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 10px;
 }
-
-.hero-kicker::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 1px;
-  background: var(--ink-3);
-}
-
+.hero-kicker::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ink-3); }
 .hero-title {
-  font-family: var(--serif);
-  font-size: clamp(38px, 5vw, 58px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 1.5rem;
+  font-family: var(--serif); font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 1.5rem;
 }
-
-.hero-title em {
-  font-style: italic;
-  color: var(--ink-3);
-}
-
-.hero-body {
-  font-size: 15px;
-  color: var(--ink-2);
-  line-height: 1.75;
-  max-width: 420px;
-}
-
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 0.5rem;
-}
-
+.hero-title em { font-style: italic; color: var(--ink-3); }
+.hero-body { font-size: 15px; color: var(--ink-2); line-height: 1.75; max-width: 420px; }
+.hero-right { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 0.5rem; }
 .hero-stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+}
+.hero-stat { background: var(--paper); padding: 1.5rem; }
+.hero-stat-val { font-family: var(--serif); font-size: 32px; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+.hero-stat-lbl { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+
+/* ── CATALOGUE BANNER ── */
+.catalogue-banner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 2.5rem 2.5rem;
+}
+.catalogue-strip {
+  background: var(--green-light);
+  border: 1px solid rgba(29, 140, 94, 0.2);
   border-radius: 10px;
-  overflow: hidden;
+  padding: 1.25rem 1.75rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  flex-wrap: wrap;
 }
-
-.hero-stat {
-  background: var(--paper);
-  padding: 1.5rem;
+.cs-left { display: flex; align-items: center; gap: 14px; }
+.cs-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(29,140,94,0.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-
-.hero-stat-val {
-  font-family: var(--serif);
-  font-size: 32px;
-  color: var(--ink);
-  line-height: 1;
-  margin-bottom: 4px;
+.cs-text-head { font-size: 13px; font-weight: 600; color: var(--green); margin-bottom: 2px; }
+.cs-text-sub { font-size: 12px; color: var(--ink-3); }
+.cs-cta {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--green); background: rgba(29,140,94,0.12);
+  border: 1px solid rgba(29,140,94,0.25); padding: 8px 18px; border-radius: 5px;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
 }
-
-.hero-stat-lbl {
-  font-size: 12px;
-  color: var(--ink-3);
-  line-height: 1.4;
-}
+.cs-cta:hover { background: rgba(29,140,94,0.2); border-color: rgba(29,140,94,0.4); }
 
 /* ── DIVIDER ── */
-.full-rule {
-  border: none;
-  border-top: 1px solid var(--rule);
-}
+.full-rule { border: none; border-top: 1px solid var(--rule); }
 
 /* ── SECTION ── */
-.section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2.5rem;
-}
-
-.section-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 2.5rem;
-}
-
-.section-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
-.section-count {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-4);
-}
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem; }
+.section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+.section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+.section-count { font-family: var(--mono); font-size: 11px; color: var(--ink-4); }
 
 /* ── CARDS ── */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  overflow: hidden;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
   margin-bottom: 1.5rem;
 }
-
 .card {
-  background: var(--paper);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.2s;
-  position: relative;
+  background: var(--paper); padding: 2rem;
+  display: flex; flex-direction: column; transition: background 0.2s; position: relative;
 }
-
 .card:hover { background: var(--paper-2); }
-
-.card.featured {
-  background: var(--ink);
-  color: var(--paper);
-}
-
+.card.featured { background: var(--ink); color: var(--paper); }
 .card.featured:hover { background: #1c1c18; }
-
-.card-tier {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 1.5rem;
-}
-
+.card-tier { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.5rem; }
 .card.featured .card-tier { color: rgba(245,244,239,0.45); }
-
-.card-badge {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--paper);
-  color: var(--ink);
-  padding: 3px 10px;
-  border-radius: 3px;
-  margin-bottom: 1rem;
-  width: fit-content;
-}
-
-.price-main {
-  font-family: var(--serif);
-  font-size: 40px;
-  line-height: 1;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-
+.card-badge { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper); color: var(--ink); padding: 3px 10px; border-radius: 3px; margin-bottom: 1rem; width: fit-content; }
+.price-main { font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--ink); margin-bottom: 4px; }
 .card.featured .price-main { color: var(--paper); }
-
-.price-sub {
-  font-size: 12px;
-  color: var(--ink-3);
-  line-height: 1.5;
-  margin-bottom: 6px;
-}
-
+.price-sub { font-size: 12px; color: var(--ink-3); line-height: 1.5; margin-bottom: 6px; }
 .card.featured .price-sub { color: rgba(245,244,239,0.5); }
-
-.or-divider {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink-4);
-  letter-spacing: 0.1em;
-  margin: 8px 0;
-}
-
+.or-divider { font-family: var(--mono); font-size: 10px; color: var(--ink-4); letter-spacing: 0.1em; margin: 8px 0; }
 .card.featured .or-divider { color: rgba(245,244,239,0.3); }
-
-.price-alt {
-  font-family: var(--serif);
-  font-size: 22px;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-
+.price-alt { font-family: var(--serif); font-size: 22px; color: var(--ink); margin-bottom: 4px; }
 .card.featured .price-alt { color: var(--paper); }
-
-.feats {
-  margin-top: 1.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 1px solid var(--rule);
-  padding-top: 1.5rem;
-}
-
+.feats { margin-top: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
 .card.featured .feats { border-top-color: rgba(245,244,239,0.12); }
-
-.feat {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 12.5px;
-  color: var(--ink-2);
-  line-height: 1.5;
-}
-
+.feat { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
 .card.featured .feat { color: rgba(245,244,239,0.65); }
-
-.feat-dot {
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--paper-3);
-  flex-shrink: 0;
-  margin-top: 7px;
-}
-
+.feat-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--paper-3); flex-shrink: 0; margin-top: 7px; }
 .feat-dot.on { background: var(--green); }
 .card.featured .feat-dot.on { background: #5dd9a4; }
 .card.featured .feat-dot { background: rgba(245,244,239,0.2); }
 
 .card-btn {
-  margin-top: 2rem;
-  display: block;
-  padding: 10px 16px;
-  text-align: center;
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  border: 1px solid var(--rule);
-  border-radius: 5px;
-  cursor: pointer;
-  background: transparent;
-  color: var(--ink);
-  transition: all 0.15s;
-  font-family: var(--sans);
+  margin-top: 2rem; display: block; padding: 10px 16px; text-align: center;
+  font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em;
+  border: 1px solid var(--rule); border-radius: 5px; cursor: pointer;
+  background: transparent; color: var(--ink); transition: all 0.15s;
+  font-family: var(--sans); text-decoration: none;
 }
-
 .card-btn:hover { background: var(--paper-3); }
-
-.card.featured .card-btn {
-  background: var(--paper);
-  color: var(--ink);
-  border-color: transparent;
-}
-
+.card.featured .card-btn { background: var(--paper); color: var(--ink); border-color: transparent; }
 .card.featured .card-btn:hover { background: var(--paper-2); }
+
+/* ── CATALOGUE CTA INSIDE TIERS ── */
+.catalogue-micro {
+  margin-top: 0.75rem; text-align: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--ink-4); text-decoration: none; display: block;
+  transition: color 0.15s;
+}
+.catalogue-micro:hover { color: var(--accent); }
+.card.featured .catalogue-micro { color: rgba(245,244,239,0.3); }
+.card.featured .catalogue-micro:hover { color: rgba(245,244,239,0.65); }
 
 /* ── FOOTNOTE BOX ── */
 .footnote-box {
-  background: var(--accent-light);
-  border: 1px solid rgba(26,79,214,0.15);
-  border-radius: 10px;
-  padding: 1.5rem 2rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.25rem;
-  align-items: start;
+  background: var(--accent-light); border: 1px solid rgba(26,79,214,0.15);
+  border-radius: 10px; padding: 1.5rem 2rem;
+  display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: start;
 }
-
-.fn-icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: rgba(26,79,214,0.12);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
+.fn-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(26,79,214,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
 .fn-icon svg { width: 14px; height: 14px; }
-
-.fn-head {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 6px;
-  letter-spacing: 0.01em;
-}
-
-.fn-body {
-  font-size: 13px;
-  color: var(--ink-2);
-  line-height: 1.75;
-}
-
+.fn-head { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 6px; letter-spacing: 0.01em; }
+.fn-body { font-size: 13px; color: var(--ink-2); line-height: 1.75; }
 .fn-body strong { font-weight: 600; color: var(--ink); }
-
-.fn-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 1rem;
-}
-
-.fn-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  background: rgba(26,79,214,0.08);
-  border: 1px solid rgba(26,79,214,0.15);
-  padding: 3px 10px;
-  border-radius: 99px;
-}
+.fn-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+.fn-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--accent); background: rgba(26,79,214,0.08); border: 1px solid rgba(26,79,214,0.15); padding: 3px 10px; border-radius: 99px; }
 
 /* ── CALCULATOR ── */
-.calc-wrap {
-  background: var(--paper-2);
-  border-radius: 12px;
-  border: 1px solid var(--rule);
-  overflow: hidden;
-}
-
-.calc-head {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.calc-title {
-  font-family: var(--serif);
-  font-size: 18px;
-  color: var(--ink);
-}
-
-.calc-note {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-4);
-  letter-spacing: 0.06em;
-}
-
-.calc-body {
-  padding: 2rem;
-}
-
-.slider-wrap {
-  margin-bottom: 1.5rem;
-}
-
-.slider-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 12px;
-}
-
-.slider-label {
-  font-size: 13px;
-  color: var(--ink-3);
-}
-
-.slider-val {
-  font-family: var(--serif);
-  font-size: 22px;
-  color: var(--ink);
-}
-
+.calc-wrap { background: var(--paper-2); border-radius: 12px; border: 1px solid var(--rule); overflow: hidden; }
+.calc-head { padding: 1.5rem 2rem; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; }
+.calc-title { font-family: var(--serif); font-size: 18px; color: var(--ink); }
+.calc-note { font-family: var(--mono); font-size: 11px; color: var(--ink-4); letter-spacing: 0.06em; }
+.calc-body { padding: 2rem; }
+.slider-wrap { margin-bottom: 1.5rem; }
+.slider-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.slider-label { font-size: 13px; color: var(--ink-3); }
+.slider-val { font-family: var(--serif); font-size: 22px; color: var(--ink); }
 input[type=range] {
-  width: 100%;
-  height: 2px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: var(--paper-3);
-  border-radius: 99px;
-  outline: none;
-  cursor: pointer;
+  width: 100%; height: 2px; -webkit-appearance: none; appearance: none;
+  background: var(--paper-3); border-radius: 99px; outline: none; cursor: pointer;
 }
-
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  background: var(--ink);
-  border: 3px solid var(--paper);
-  box-shadow: 0 0 0 1px var(--ink);
-  cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%; background: var(--ink);
+  border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--ink); cursor: pointer;
 }
-
 .calc-results {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  overflow: hidden;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden;
   margin-top: 1.5rem;
 }
+.res-cell { background: var(--paper); padding: 1.25rem 1.5rem; }
+.res-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 6px; }
+.res-val { font-family: var(--serif); font-size: 26px; color: var(--ink); line-height: 1; }
+.res-note { font-size: 11px; color: var(--ink-4); margin-top: 4px; }
 
-.res-cell {
-  background: var(--paper);
-  padding: 1.25rem 1.5rem;
+/* ── CALC CTA ── */
+.calc-cta-row {
+  margin-top: 1.5rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
 }
-
-.res-lbl {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-  margin-bottom: 6px;
+.calc-cta-main {
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  background: var(--ink); color: var(--paper); padding: 10px 22px;
+  border-radius: 5px; text-decoration: none; letter-spacing: 0.02em;
+  transition: opacity 0.15s;
 }
-
-.res-val {
-  font-family: var(--serif);
-  font-size: 26px;
-  color: var(--ink);
-  line-height: 1;
+.calc-cta-main:hover { opacity: 0.8; }
+.calc-cta-sub {
+  font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color 0.15s;
 }
-
-.res-note {
-  font-size: 11px;
-  color: var(--ink-4);
-  margin-top: 4px;
-}
+.calc-cta-sub:hover { color: var(--accent); }
 
 /* ── FAQ ── */
 .faq-list { display: flex; flex-direction: column; }
-
-.faq-item {
+.faq-item { border-top: 1px solid var(--rule); padding: 1.25rem 0; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.faq-q { font-size: 13.5px; font-weight: 500; color: var(--ink); line-height: 1.5; padding-top: 1px; }
+.faq-a { font-size: 13.5px; color: var(--ink-2); line-height: 1.75; }
+.faq-section-cta {
+  margin-top: 2rem; padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
-  padding: 1.25rem 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
 }
-
-.faq-q {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.5;
-  padding-top: 1px;
+.faq-section-cta a {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none; transition: color 0.15s;
 }
-
-.faq-a {
-  font-size: 13.5px;
-  color: var(--ink-2);
-  line-height: 1.75;
-}
+.faq-section-cta a:hover { color: var(--ink); }
+.faq-section-cta span { font-family: var(--mono); font-size: 11px; color: var(--ink-4); }
 
 /* ── BOTTOM CTA ── */
-.cta-strip {
-  background: var(--ink);
-  margin: 0;
-  padding: 5rem 2.5rem;
-}
-
-.cta-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4rem;
-  align-items: center;
-}
-
-.cta-title {
-  font-family: var(--serif);
-  font-size: clamp(26px, 3.5vw, 40px);
-  color: var(--paper);
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-}
-
+.cta-strip { background: var(--ink); margin: 0; padding: 5rem 2.5rem; }
+.cta-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
+.cta-title { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px); color: var(--paper); line-height: 1.2; margin-bottom: 0.75rem; }
 .cta-title em { font-style: italic; color: rgba(245,244,239,0.45); }
-
-.cta-sub {
-  font-size: 14px;
-  color: rgba(245,244,239,0.5);
-  line-height: 1.7;
-  max-width: 440px;
-}
-
-.cta-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 180px;
-}
-
-.btn-pri {
-  display: block;
-  padding: 13px 24px;
-  text-align: center;
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  background: var(--paper);
-  color: var(--ink);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  letter-spacing: 0.02em;
-  transition: opacity 0.15s;
-  text-decoration: none;
-}
-
+.cta-sub { font-size: 14px; color: rgba(245,244,239,0.5); line-height: 1.7; max-width: 440px; }
+.cta-actions { display: flex; flex-direction: column; gap: 10px; min-width: 200px; }
+.btn-pri { display: block; padding: 13px 24px; text-align: center; font-family: var(--sans); font-size: 13px; font-weight: 500; background: var(--paper); color: var(--ink); border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.02em; transition: opacity 0.15s; text-decoration: none; }
 .btn-pri:hover { opacity: 0.88; }
-
-.btn-sec {
-  display: block;
-  padding: 12px 24px;
-  text-align: center;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: rgba(245,244,239,0.55);
-  border: 1px solid rgba(245,244,239,0.15);
-  border-radius: 5px;
-  cursor: pointer;
-  background: transparent;
-  letter-spacing: 0.02em;
+.btn-sec { display: block; padding: 12px 24px; text-align: center; font-family: var(--sans); font-size: 13px; color: rgba(245,244,239,0.55); border: 1px solid rgba(245,244,239,0.15); border-radius: 5px; cursor: pointer; background: transparent; letter-spacing: 0.02em; transition: all 0.15s; text-decoration: none; }
+.btn-sec:hover { color: var(--paper); border-color: rgba(245,244,239,0.35); }
+.btn-catalogue {
+  display: block; padding: 12px 24px; text-align: center;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(245,244,239,0.45); border: 1px dashed rgba(245,244,239,0.15);
+  border-radius: 5px; background: transparent; text-decoration: none;
   transition: all 0.15s;
-  text-decoration: none;
 }
+.btn-catalogue:hover { color: rgba(245,244,239,0.75); border-color: rgba(245,244,239,0.3); }
+.cta-pill { font-family: var(--mono); font-size: 10px; color: rgba(245,244,239,0.3); letter-spacing: 0.08em; text-align: center; margin-top: 6px; text-transform: uppercase; }
 
-.btn-sec:hover {
-  color: var(--paper);
-  border-color: rgba(245,244,239,0.35);
+/* ── WHATSAPP STRIP ── */
+.wa-strip {
+  background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1.25rem 2.5rem;
 }
-
-.cta-pill {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(245,244,239,0.3);
-  letter-spacing: 0.08em;
-  text-align: center;
-  margin-top: 6px;
-  text-transform: uppercase;
+.wa-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  flex-wrap: wrap;
 }
+.wa-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em;
+  color: rgba(245,244,239,0.55); text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+  padding: 10px 18px; background: rgba(255,255,255,0.03);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.wa-link:hover { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.3); color: #4ddc94; }
+.wa-icon { flex-shrink: 0; }
+.wa-note { font-family: var(--mono); font-size: 10px; color: rgba(245,244,239,0.25); letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* ── FOOTER ── */
-footer {
-  background: var(--ink);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 1.5rem 2.5rem;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-brand {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: rgba(245,244,239,0.3);
-  letter-spacing: 0.08em;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.footer-links a {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: rgba(245,244,239,0.3);
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  transition: color 0.15s;
-}
-
+footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2.5rem; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.footer-brand { font-family: var(--mono); font-size: 11px; color: rgba(245,244,239,0.3); letter-spacing: 0.08em; }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+.footer-links a { font-family: var(--mono); font-size: 11px; color: rgba(245,244,239,0.3); text-decoration: none; letter-spacing: 0.06em; transition: color 0.15s; }
 .footer-links a:hover { color: rgba(245,244,239,0.6); }
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-up {
-  opacity: 0;
-  animation: fadeUp 0.55s ease forwards;
-}
-
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { opacity: 0; animation: fadeUp 0.55s ease forwards; }
 .fade-up:nth-child(1) { animation-delay: 0.05s; }
 .fade-up:nth-child(2) { animation-delay: 0.12s; }
 .fade-up:nth-child(3) { animation-delay: 0.19s; }
@@ -737,12 +383,10 @@ footer {
 @media (max-width: 800px) {
   nav { padding: 0 1.25rem; }
   .nav-links { display: none; }
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 3rem 1.25rem 2.5rem;
-    gap: 2.5rem;
-  }
+  .hero { grid-template-columns: 1fr; padding: 3rem 1.25rem 2.5rem; gap: 2.5rem; }
   .section { padding: 3rem 1.25rem; }
+  .catalogue-banner { padding: 0 1.25rem 2rem; }
+  .catalogue-strip { flex-direction: column; align-items: flex-start; }
   .cards { grid-template-columns: 1fr; }
   .faq-item { grid-template-columns: 1fr; gap: 0.75rem; }
   .calc-results { grid-template-columns: 1fr; }
@@ -751,12 +395,13 @@ footer {
   .footnote-box { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
   .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+  .wa-inner { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
   <div class="nav-brand">
     <div class="nav-mark">
@@ -773,14 +418,15 @@ footer {
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="/results">Results</a></li>
-    <li><a href="/playbook">Playbook</a></li>
+    <li><a href="/results/">Results</a></li>
+    <li><a href="/playbook/">Playbook</a></li>
+    <li><a href="/faq/">FAQ</a></li>
     <li><a href="/brands/paid-acquisition-systems-operator/" style="font-weight:500;color:var(--ink)">Operator</a></li>
-    <li><a href="/#contact" class="nav-cta">Book fit call ↗</a></li>
+    <li><a href="https://book.hanslacida.com" class="nav-cta">Book fit call ↗</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section class="hero">
   <div>
     <p class="hero-kicker fade-up">Pricing · Zeldigital</p>
@@ -814,15 +460,35 @@ footer {
   </div>
 </section>
 
+<!-- ── PRICING CATALOGUE BANNER ── -->
+<div class="catalogue-banner">
+  <div class="catalogue-strip fade-up">
+    <div class="cs-left">
+      <div class="cs-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="5" height="5" rx="1" fill="#1d8c5e"/>
+          <rect x="9" y="2" width="5" height="5" rx="1" fill="#1d8c5e" opacity="0.5"/>
+          <rect x="2" y="9" width="5" height="5" rx="1" fill="#1d8c5e" opacity="0.5"/>
+          <rect x="9" y="9" width="5" height="5" rx="1" fill="#1d8c5e"/>
+        </svg>
+      </div>
+      <div>
+        <p class="cs-text-head">Looking for the full pricing breakdown?</p>
+        <p class="cs-text-sub">View all service tiers, add-ons, and one-time packages in the complete pricing catalogue.</p>
+      </div>
+    </div>
+    <a href="https://hanslacida.com/pricing/pricing-catalogue/" class="cs-cta">View Pricing Catalogue ↗</a>
+  </div>
+</div>
+
 <hr class="full-rule">
 
-<!-- TIERS -->
+<!-- ── TIERS ── -->
 <section class="section">
   <div class="section-header">
     <span class="section-label">Engagement tiers</span>
     <span class="section-count">03 options</span>
   </div>
-
   <div class="cards">
 
     <!-- CORE -->
@@ -834,15 +500,16 @@ footer {
       <p class="price-alt">10% of spend</p>
       <p class="price-sub">Whichever is higher · $5K min spend</p>
       <div class="feats">
-        <div class="feat"><span class="feat-dot on"></span>Campaign architecture & setup</div>
+        <div class="feat"><span class="feat-dot on"></span>Campaign architecture &amp; setup</div>
         <div class="feat"><span class="feat-dot on"></span>GA4 + GTM conversion tracking</div>
         <div class="feat"><span class="feat-dot on"></span>Weekly performance reviews</div>
         <div class="feat"><span class="feat-dot on"></span>Direct strategist access</div>
-        <div class="feat"><span class="feat-dot on"></span>Ongoing A/B testing & optimization</div>
-        <div class="feat"><span class="feat-dot"></span>Audience & competitor intelligence</div>
+        <div class="feat"><span class="feat-dot on"></span>Ongoing A/B testing &amp; optimization</div>
+        <div class="feat"><span class="feat-dot"></span>Audience &amp; competitor intelligence</div>
         <div class="feat"><span class="feat-dot"></span>Channel expansion (Amazon, TikTok)</div>
       </div>
-      <button class="card-btn" onclick="window.open('https://www.hanslacida.com/#contact','_blank')">Book fit call ↗</button>
+      <a href="https://book.hanslacida.com" target="_blank" class="card-btn">Book fit call ↗</a>
+      <a href="https://hanslacida.com/pricing/pricing-catalogue/" class="catalogue-micro">Full breakdown in pricing catalogue →</a>
     </div>
 
     <!-- GROWTH (featured) -->
@@ -856,14 +523,15 @@ footer {
       <p class="price-sub">Recommended for $25K–$100K/mo</p>
       <div class="feats">
         <div class="feat"><span class="feat-dot on"></span>Everything in Core</div>
-        <div class="feat"><span class="feat-dot on"></span>Audience & competitor intelligence</div>
+        <div class="feat"><span class="feat-dot on"></span>Audience &amp; competitor intelligence</div>
         <div class="feat"><span class="feat-dot on"></span>Intent signals + conversion patterns</div>
         <div class="feat"><span class="feat-dot on"></span>Server-side events + call tracking</div>
         <div class="feat"><span class="feat-dot on"></span>Performance Max architecture</div>
         <div class="feat"><span class="feat-dot on"></span>Shopping + YouTube + Display</div>
         <div class="feat"><span class="feat-dot"></span>Channel expansion (Amazon, TikTok)</div>
       </div>
-      <button class="card-btn" onclick="window.open('https://www.hanslacida.com/#contact','_blank')">Book fit call ↗</button>
+      <a href="https://book.hanslacida.com" target="_blank" class="card-btn">Book fit call ↗</a>
+      <a href="https://hanslacida.com/pricing/pricing-catalogue/" class="catalogue-micro">Full breakdown in pricing catalogue →</a>
     </div>
 
     <!-- SCALE -->
@@ -881,9 +549,10 @@ footer {
         <div class="feat"><span class="feat-dot on"></span>Programmatic demand capture</div>
         <div class="feat"><span class="feat-dot on"></span>Unified cross-channel reporting</div>
         <div class="feat"><span class="feat-dot on"></span>Fractional CMO advisory</div>
-        <div class="feat"><span class="feat-dot on"></span>Custom SLA & dedicated support</div>
+        <div class="feat"><span class="feat-dot on"></span>Custom SLA &amp; dedicated support</div>
       </div>
-      <button class="card-btn" onclick="window.open('https://www.hanslacida.com/#contact','_blank')">Submit proposal ↗</button>
+      <a href="https://tr.ee/yF6vkB" target="_blank" class="card-btn">Submit proposal ↗</a>
+      <a href="https://hanslacida.com/pricing/pricing-catalogue/" class="catalogue-micro">Full breakdown in pricing catalogue →</a>
     </div>
 
   </div>
@@ -911,20 +580,23 @@ footer {
         <span class="fn-tag">Custom by proposal</span>
         <span class="fn-tag">No fixed menu</span>
       </div>
+      <p style="margin-top:1.25rem;">
+        <a href="https://hanslacida.com/pricing/pricing-catalogue/" style="font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color 0.15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--accent)'">
+          View complete pricing catalogue ↗
+        </a>
+      </p>
     </div>
   </div>
-
 </section>
 
 <hr class="full-rule">
 
-<!-- CALCULATOR -->
+<!-- ── CALCULATOR ── -->
 <section class="section">
   <div class="section-header">
     <span class="section-label">Ad spend calculator</span>
     <span class="section-count">Estimate only</span>
   </div>
-
   <div class="calc-wrap">
     <div class="calc-head">
       <span class="calc-title">What will I pay?</span>
@@ -955,19 +627,22 @@ footer {
           <p class="res-note">Spend + fee combined</p>
         </div>
       </div>
+      <div class="calc-cta-row">
+        <a href="https://book.hanslacida.com" target="_blank" class="calc-cta-main">Book a fit call — this spend qualifies ↗</a>
+        <a href="https://hanslacida.com/pricing/pricing-catalogue/" class="calc-cta-sub">See full pricing breakdown →</a>
+      </div>
     </div>
   </div>
 </section>
 
 <hr class="full-rule">
 
-<!-- FAQ -->
+<!-- ── FAQ ── -->
 <section class="section">
   <div class="section-header">
     <span class="section-label">Common questions</span>
     <span class="section-count">06 items</span>
   </div>
-
   <div class="faq-list">
     <div class="faq-item">
       <p class="faq-q">Why is there a $5,000/month minimum ad spend?</p>
@@ -994,9 +669,14 @@ footer {
       <p class="faq-a">Engagements are structured for 90-day minimum cycles — enough runway to build systems that produce compounding results. After that, month-to-month. No year-long lock-ins.</p>
     </div>
   </div>
+  <div class="faq-section-cta">
+    <a href="/faq/">See all FAQs on the full FAQ page →</a>
+    <span>·</span>
+    <a href="https://hanslacida.com/pricing/pricing-catalogue/">View pricing catalogue →</a>
+  </div>
 </section>
 
-<!-- BOTTOM CTA -->
+<!-- ── BOTTOM CTA ── -->
 <div class="cta-strip">
   <div class="cta-inner">
     <div>
@@ -1004,22 +684,41 @@ footer {
       <p class="cta-sub">One operator, direct access. If there's a match, we move fast. If there isn't, I'll say so honestly.</p>
     </div>
     <div class="cta-actions">
-      <a href="https://www.hanslacida.com/#contact" target="_blank" class="btn-pri">Book fit call ↗</a>
-      <a href="mailto:hello@hanslacida.com" class="btn-sec">hello@hanslacida.com</a>
-      <p class="cta-pill">US market · No layers</p>
+      <a href="https://book.hanslacida.com" target="_blank" class="btn-pri">Book fit call ↗</a>
+      <a href="mailto:hanzel@hanslacida.com" class="btn-sec">hanzel@hanslacida.com</a>
+      <a href="https://hanslacida.com/pricing/pricing-catalogue/" class="btn-catalogue">View Pricing Catalogue ↗</a>
+      <p class="cta-pill">US market · No layers · book.hanslacida.com</p>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ── WHATSAPP STRIP ── -->
+<div class="wa-strip">
+  <div class="wa-inner">
+    <a href="https://wa.me/639761053409" target="_blank" rel="noopener" class="wa-link">
+      <span class="wa-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#4ddc94">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.054 23.446a.75.75 0 0 0 .917.97l5.775-1.516A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 0 1-4.964-1.357l-.356-.212-3.43.9.917-3.337-.232-.373A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+        </svg>
+      </span>
+      +63 976 105 3409 — WhatsApp
+    </a>
+    <span class="wa-note">Strictly for business inquiries · International</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <span class="footer-brand">© 2025 HansLacida · Zeldigital</span>
+    <span class="footer-brand">© 2026 HansLacida · Zeldigital</span>
     <ul class="footer-links">
-      <li><a href="/results">Results</a></li>
-      <li><a href="/playbook">Playbook</a></li>
+      <li><a href="/results/">Results</a></li>
+      <li><a href="/playbook/">Playbook</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="https://hanslacida.com/pricing/pricing-catalogue/">Pricing Catalogue</a></li>
       <li><a href="/#testimonial">What Client Says</a></li>
-      <li><a href="/paid-acquisition-systems-operator/">Operator</a></li>
+      <li><a href="/brands/paid-acquisition-systems-operator/">Operator</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
   </div>
@@ -1041,6 +740,5 @@ function calc() {
 }
 calc();
 </script>
-
 </body>
 </html>
